@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "hiyoshi_cfh_web", "hiyoshi_cfh_web\hiyoshi_cfh_web.csproj", "{96737616-82D2-4673-84E1-FA346A3E8D5B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PublishScripts", "PublishScripts", "{4FB822F7-8834-41F7-9BDC-823530596214}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\AzureWebsitePublishModule.psm1 = PublishScripts\AzureWebsitePublishModule.psm1
+		PublishScripts\Publish-WebApplicationWebsite.ps1 = PublishScripts\Publish-WebApplicationWebsite.ps1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configurations", "Configurations", "{08796B78-2EE1-4BE3-8316-BDCE3CD9DD14}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\Configurations\hiyoshicfhweb-WAWS-dev.json = PublishScripts\Configurations\hiyoshicfhweb-WAWS-dev.json
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{96737616-82D2-4673-84E1-FA346A3E8D5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96737616-82D2-4673-84E1-FA346A3E8D5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96737616-82D2-4673-84E1-FA346A3E8D5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96737616-82D2-4673-84E1-FA346A3E8D5B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{08796B78-2EE1-4BE3-8316-BDCE3CD9DD14} = {4FB822F7-8834-41F7-9BDC-823530596214}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,21 @@
+{
+    "environmentSettings": {
+        "webSite": {
+            "name": "hiyoshicfhweb",
+            "location": "Japan West"
+        },
+        "databases": [
+            {
+                "connectionStringName": "DefaultConnection",
+                "databaseName": "hiyoshicfhweb_db",
+                "serverName": "hiyoshicfhdb",
+                "user": "hiyoshicfh",
+                "password": "",
+                "edition": "",
+                "size": "",
+                "collation": "",
+                "location": "Japan West"
+            }
+        ]
+    }
+}
