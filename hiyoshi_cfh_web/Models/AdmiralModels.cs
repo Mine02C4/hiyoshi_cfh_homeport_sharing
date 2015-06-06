@@ -1,0 +1,42 @@
+﻿using System.Collections.Generic;
+using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
+
+namespace hiyoshi_cfh_web.Models
+{
+    public class AdmiralContext : DbContext
+    {
+        public DbSet<Admiral> Admirals { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Conventions.Remove<IncludeMetadataConvention>();
+        }
+    }
+    public class Admiral
+    {
+        /// <summary>
+        /// システム内部での提督識別子。
+        /// </summary>
+        public int AdmiralId { get; set; }
+        /// <summary>
+        /// 提督名。
+        /// </summary>
+        public string Name { get; set; }
+
+        /// <summary>
+        /// 所有する艦娘。
+        /// </summary>
+        public virtual ICollection<Ship> Ships { get; set; }
+
+        /// <summary>
+        /// 提督経験値
+        /// </summary>
+        public int Experience { get; set; }
+
+        /// <summary>
+        /// 提督レベル
+        /// </summary>
+        public int Level { get; set; }
+    }
+}
