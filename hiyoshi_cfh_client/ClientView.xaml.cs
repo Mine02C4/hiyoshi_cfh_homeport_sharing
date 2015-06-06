@@ -27,7 +27,7 @@ namespace hiyoshi_cfh_client
 
         private async void Send(object sender, RoutedEventArgs e)
         {
-
+            
         }
     }
 }
