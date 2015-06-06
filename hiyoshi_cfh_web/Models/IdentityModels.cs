@@ -3,6 +3,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using System.Data.Entity.ModelConfiguration.Conventions;
 
 namespace hiyoshi_cfh_web.Models
 {
@@ -24,6 +25,11 @@ namespace hiyoshi_cfh_web.Models
             : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
+
+        public DbSet<Admiral> Admirals { get; set; }
+        public DbSet<Ship> Ships { get; set; }
+        public DbSet<ShipInfo> ShipInfoes { get; set; }
+        public DbSet<ShipType> ShipTypes { get; set; }
 
         public static ApplicationDbContext Create()
         {

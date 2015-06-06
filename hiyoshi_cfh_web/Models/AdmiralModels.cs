@@ -1,18 +1,8 @@
 ﻿using System.Collections.Generic;
-using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 
 namespace hiyoshi_cfh_web.Models
 {
-    public class AdmiralContext : DbContext
-    {
-        public DbSet<Admiral> Admirals { get; set; }
-
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
-            modelBuilder.Conventions.Remove<IncludeMetadataConvention>();
-        }
-    }
     public class Admiral
     {
         /// <summary>

@@ -1,19 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 
 namespace hiyoshi_cfh_web.Models
 {
-    public class ShipContext : DbContext
-    {
-        public DbSet<Ship> Ships { get; set; }
-
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
-            modelBuilder.Conventions.Remove<IncludeMetadataConvention>();
-        }
-    }
-
     public class Ship
     {
         /// <summary>
@@ -66,7 +55,7 @@ namespace hiyoshi_cfh_web.Models
 
     public class ShipType
     {
-        public int ShiTypeId { get; set; }
+        public int ShipTypeId { get; set; }
         public string Name { get; set; }
         public int SortNumber { get; set; }
     }
