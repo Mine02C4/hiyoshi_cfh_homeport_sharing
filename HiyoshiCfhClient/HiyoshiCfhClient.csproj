@@ -7,8 +7,8 @@
     <ProjectGuid>{199C3539-7492-433D-B4BB-CD2B49C37E76}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>hiyoshi_cfh_client</RootNamespace>
-    <AssemblyName>hiyoshi_cfh_client</AssemblyName>
+    <RootNamespace>HiyoshiCfhClient</RootNamespace>
+    <AssemblyName>HiyoshiCfhClient</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

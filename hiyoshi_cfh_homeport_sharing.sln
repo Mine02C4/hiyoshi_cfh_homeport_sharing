@@ -16,7 +16,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configurations", "Configura
 		PublishScripts\Configurations\hiyoshicfhweb-WAWS-dev.json = PublishScripts\Configurations\hiyoshicfhweb-WAWS-dev.json
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "hiyoshi_cfh_client", "hiyoshi_cfh_client\hiyoshi_cfh_client.csproj", "{199C3539-7492-433D-B4BB-CD2B49C37E76}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HiyoshiCfhClient", "HiyoshiCfhClient\HiyoshiCfhClient.csproj", "{199C3539-7492-433D-B4BB-CD2B49C37E76}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

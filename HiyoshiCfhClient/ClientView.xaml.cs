@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace hiyoshi_cfh_client
+namespace HiyoshiCfhClient
 {
     /// <summary>
     /// ClientView.xaml の相互作用ロジック

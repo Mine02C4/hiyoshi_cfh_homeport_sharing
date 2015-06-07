@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace hiyoshi_cfh_client
+namespace HiyoshiCfhClient
 {
     [Export(typeof(IToolPlugin))]
     [ExportMetadata("Title", "日吉連合艦隊司令部クライアント")]
