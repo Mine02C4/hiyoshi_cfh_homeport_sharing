@@ -27,7 +27,10 @@ namespace HiyoshiCfhClient
 
         private async void Send(object sender, RoutedEventArgs e)
         {
-            
+            string baseUri = TargetHost.Text;
+            // TODO: 送信処理の実装
+            Client client = new Client(baseUri);
+            DebugConsole.Text += client.CollectShipsData();
         }
     }
 }

@@ -22,7 +22,7 @@ namespace HiyoshiCfhClient
 
         public string ToolName
         {
-            get { return "日吉"; }
+            get { return "日吉連合艦隊司令部"; }
         }
 
         public object GetSettingsView()

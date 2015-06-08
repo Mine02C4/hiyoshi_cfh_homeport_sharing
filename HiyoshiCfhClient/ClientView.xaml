@@ -3,8 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             mc:Ignorable="d" Height="320" Width="560">
+             mc:Ignorable="d"
+             d:DesignHeight="320" d:DesignWidth="560">
     <StackPanel>
-        <Button x:Name="SendButton" Content="送信" Click="Send"  />
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="送信先ホスト" />
+            <TextBox x:Name="TargetHost" Width="200" Margin="10,0" />
+            <Button x:Name="SendButton" Content="送信" Click="Send" />
+        </StackPanel>
+        <TextBlock x:Name="DebugConsole" TextWrapping="Wrap"/>
     </StackPanel>
 </UserControl>
