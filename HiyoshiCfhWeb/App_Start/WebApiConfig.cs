@@ -1,7 +1,5 @@
 ﻿using HiyoshiCfhWeb.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+using Microsoft.Owin.Security.OAuth;
 using System.Web.Http;
 using System.Web.OData.Builder;
 using System.Web.OData.Extensions;
@@ -12,6 +10,11 @@ namespace HiyoshiCfhWeb
     {
         public static void Register(HttpConfiguration config)
         {
+            // Web API configuration and services
+            // ベアラ トークン認証のみを使用するように、Web API を設定します。
+            config.SuppressDefaultHostAuthentication();
+            config.Filters.Add(new HostAuthenticationFilter(OAuthDefaults.AuthenticationType));
+
             config.MapHttpAttributeRoutes();
 
             config.Routes.MapHttpRoute(

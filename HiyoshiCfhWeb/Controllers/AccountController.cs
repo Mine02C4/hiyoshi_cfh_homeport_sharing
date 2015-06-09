@@ -52,6 +52,18 @@ namespace HiyoshiCfhWeb.Controllers
             }
         }
 
+        // Authorize アクションは、任意の保護された 
+        // Web API にアクセスしたときに呼び出されるエンド ポイントです。ユーザーがログインしていない場合は、
+        // Login ページに リダイレクトされます。正常にログインすると、Web API を呼び出すことができます。
+        [HttpGet]
+        public ActionResult Authorize()
+        {
+            var claims = new ClaimsPrincipal(User).Claims.ToArray();
+            var identity = new ClaimsIdentity(claims, "Bearer");
+            AuthenticationManager.SignIn(identity);
+            return new EmptyResult();
+        }
+
         //
         // GET: /Account/Login
         [AllowAnonymous]

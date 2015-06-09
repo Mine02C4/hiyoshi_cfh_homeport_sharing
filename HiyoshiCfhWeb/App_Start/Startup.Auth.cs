@@ -1,16 +1,37 @@
-﻿using System;
+﻿using HiyoshiCfhWeb.Controllers;
+using HiyoshiCfhWeb.Models;
+using HiyoshiCfhWeb.Provider;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
+using Microsoft.Owin.Security.OAuth;
 using Owin;
-using HiyoshiCfhWeb.Models;
+using System;
 
 namespace HiyoshiCfhWeb
 {
     public partial class Startup
     {
+        public static OAuthAuthorizationServerOptions OAuthOptions { get; private set; }
+        public static string PublicClientId { get; private set; }
+
+        // アプリケーションによる OAuthAuthorization の使用を有効にします。その後に Web API を保護できます
+        static Startup()
+        {
+            PublicClientId = "web";
+
+            OAuthOptions = new OAuthAuthorizationServerOptions
+            {
+                TokenEndpointPath = new PathString("/Token"),
+                AuthorizeEndpointPath = new PathString("/Account/Authorize"),
+                Provider = new ApplicationOAuthProvider(PublicClientId),
+                AccessTokenExpireTimeSpan = TimeSpan.FromDays(14),
+                AllowInsecureHttp = true
+            };
+        }
+
         // 認証設定の詳細については、http://go.microsoft.com/fwlink/?LinkId=301864 を参照してください
         public void ConfigureAuth(IAppBuilder app)
         {
@@ -63,6 +84,9 @@ namespace HiyoshiCfhWeb
                 ClientId = Properties.SecretSettings.Default.GoogleClientId,
                 ClientSecret = Properties.SecretSettings.Default.GoogleClientSecret
             });
+
+            // アプリケーションがベアラ トークンを使用してユーザーを認証できるようにします
+            app.UseOAuthBearerTokens(OAuthOptions);
         }
     }
 }
