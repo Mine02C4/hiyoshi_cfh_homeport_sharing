@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generation date: 2015/06/09 18:48:31
+// Generation date: 2015/06/10 2:43:38
 namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
 {
     /// <summary>

@@ -30,7 +30,7 @@ namespace HiyoshiCfhClient
             string baseUri = TargetHost.Text;
             // TODO: 送信処理の実装
             Client client = new Client(baseUri);
-            DebugConsole.Text += client.CollectShipsData();
+            DebugConsole.Text += await client.CollectShipsData();
         }
     }
 }
