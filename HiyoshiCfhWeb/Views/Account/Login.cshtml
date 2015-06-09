@@ -7,7 +7,7 @@
 <h2>@ViewBag.Title.</h2>
 <div class="row">
     <div class="col-md-8">
-        <section id="loginForm">
+        @*<section id="loginForm">
             @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
             {
                 @Html.AntiForgeryToken()
@@ -47,9 +47,9 @@
                 @* これを有効にする前に、パスワード リセット機能に対するアカウント確認を有効にしてください。
                     <p>
                         @Html.ActionLink("パスワードを忘れた場合", "ForgotPassword")
-                    </p>*@
+                    </p>*//@
             }
-        </section>
+        </section>*@
     </div>
     <div class="col-md-4">
         <section id="socialLoginForm">

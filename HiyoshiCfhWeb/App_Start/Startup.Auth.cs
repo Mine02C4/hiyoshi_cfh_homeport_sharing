@@ -34,7 +34,7 @@ namespace HiyoshiCfhWeb
                         validateInterval: TimeSpan.FromMinutes(30),
                         regenerateIdentity: (manager, user) => user.GenerateUserIdentityAsync(manager))
                 }
-            });            
+            });
             app.UseExternalSignInCookie(DefaultAuthenticationTypes.ExternalCookie);
 
             // 2 要素認証プロセスの中で 2 つ目の要素を確認するときにユーザー情報を一時的に保存するように設定します。
@@ -58,11 +58,11 @@ namespace HiyoshiCfhWeb
             //   appId: "",
             //   appSecret: "");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = Properties.SecretSettings.Default.GoogleClientId,
+                ClientSecret = Properties.SecretSettings.Default.GoogleClientSecret
+            });
         }
     }
 }

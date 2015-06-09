@@ -30,6 +30,7 @@ namespace HiyoshiCfhWeb.Controllers
 
         // GET: odata/ShipTypes
         [EnableQuery]
+        [Authorize]
         public IQueryable<ShipType> GetShipTypes()
         {
             return db.ShipTypes;
