@@ -32,5 +32,11 @@ namespace HiyoshiCfhClient
             Client client = new Client(baseUri);
             DebugConsole.Text += await client.CollectShipsData();
         }
+
+        private async void GetShipTypes(object sender, RoutedEventArgs e)
+        {
+            Client client = new Client();
+            DebugConsole.Text += await client.GetShipTypes();
+        }
     }
 }

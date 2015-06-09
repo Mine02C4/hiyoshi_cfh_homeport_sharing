@@ -11,6 +11,9 @@
             <TextBox x:Name="TargetHost" Width="200" Margin="10,0" />
             <Button x:Name="SendButton" Content="送信" Click="Send" />
         </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Button x:Name="GetShipTypesButton" Content="艦種マスタを取得" Click="GetShipTypes" />
+        </StackPanel>
         <TextBlock x:Name="DebugConsole" TextWrapping="Wrap"/>
     </StackPanel>
 </UserControl>
