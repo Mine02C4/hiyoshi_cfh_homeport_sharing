@@ -1,7 +1,10 @@
-﻿using System;
+﻿using HiyoshiCfhWeb.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using System.Web.OData.Builder;
+using System.Web.OData.Extensions;
 
 namespace HiyoshiCfhWeb
 {
@@ -16,6 +19,9 @@ namespace HiyoshiCfhWeb
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+            ODataConventionModelBuilder builder = new ODataConventionModelBuilder();
+            builder.EntitySet<ShipType>("ShipTypes");
+            config.MapODataServiceRoute("odata", "odata", builder.GetEdmModel());
         }
     }
 }

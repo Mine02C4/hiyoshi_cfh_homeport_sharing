@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HiyoshiCfhWeb.Models;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -8,9 +9,8 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.ModelBinding;
-using System.Web.Http.OData;
-using System.Web.Http.OData.Routing;
-using HiyoshiCfhWeb.Models;
+using System.Web.OData;
+using System.Web.OData.Routing;
 
 namespace HiyoshiCfhWeb.Controllers
 {
