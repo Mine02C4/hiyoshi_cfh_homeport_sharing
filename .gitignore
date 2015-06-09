@@ -187,3 +187,15 @@ FakesAssemblies/
 GeneratedArtifacts/
 _Pvt_Extensions/
 ModelManifest.xml
+
+## Editor backup and swap files
+*~
+.\#*
+\#**\#
+.*.sw[op]
+.sw[op]
+
+# SecretSettings(e.g. API Key)
+SecretSettings.settings
+SecretSettings.Designer.cs
+
