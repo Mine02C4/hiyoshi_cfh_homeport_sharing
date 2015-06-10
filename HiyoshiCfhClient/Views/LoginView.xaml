@@ -1,0 +1,42 @@
+﻿<metro:MetroWindow x:Class="HiyoshiCfhClient.Views.LoginView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:metro="http://schemes.grabacr.net/winfx/2014/controls"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" 
+             xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
+             mc:Ignorable="d" Height="400" Width="600">
+    <metro:MetroWindow.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MetroRadiance;component/Styles/Controls.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MetroRadiance;component/Themes/Dark.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/KanColleViewer;component/Styles/Controls.Text.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/KanColleViewer;component/Themes/Generic.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </metro:MetroWindow.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Border metro:MetroWindow.IsCaptionBar="True">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Text="日吉連合艦隊司令部 ログイン" Margin="10,5,8,5" Style="{DynamicResource CaptionTextStyleKey}" />
+                <metro:SystemButtons Grid.Column="1"
+                                     HorizontalAlignment="Right"
+                                     VerticalAlignment="Top" />
+            </Grid>
+        </Border>
+        <Grid Grid.Row="1">
+            <WebBrowser x:Name="WebBrowser" Source="http://hiyoshicfhweb.azurewebsites.net/Account/Authorize?client_id=web&amp;response_type=token&amp;state=" />
+        </Grid>
+    </Grid>
+</metro:MetroWindow>

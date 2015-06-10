@@ -1,4 +1,6 @@
 ﻿using Grabacr07.KanColleViewer.Composition;
+using HiyoshiCfhClient.ViewModels;
+using HiyoshiCfhClient.Views;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
@@ -15,9 +17,10 @@ namespace HiyoshiCfhClient
     [ExportMetadata("Author", "@mine_studio")]
     public class HiyoshiCfhClient : IToolPlugin
     {
+        private readonly ClientViewModel cvm = new ClientViewModel();
         public object GetToolView()
         {
-            return new ClientView();
+            return new ClientView { DataContext = cvm };
         }
 
         public string ToolName
