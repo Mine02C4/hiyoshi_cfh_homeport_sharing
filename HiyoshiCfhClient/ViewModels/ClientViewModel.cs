@@ -29,10 +29,31 @@ namespace HiyoshiCfhClient.ViewModels
         }
         #endregion
 
-        public void OpenLoginWindow()
+        #region Token変更通知プロパティ
+        private string _Token;
+
+        public string Token
         {
-            var message = new TransitionMessage("Show/LoginWindow");
-            this.Messenger.RaiseAsync(message);
+            get
+            { return _Token; }
+            set
+            {
+                if (_Token == value)
+                    return;
+                _Token = value;
+                RaisePropertyChanged();
+            }
+        }
+        #endregion
+
+        public async void OpenLoginWindow()
+        {
+            using (var vm = new LoginViewModel())
+            {
+                var message = new TransitionMessage(vm, "Show/LoginWindow");
+                Messenger.RaiseAsync(message);
+                Token = vm.AccessToken;
+            }
         }
 
         public async void Send()

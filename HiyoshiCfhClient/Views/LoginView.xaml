@@ -6,9 +6,18 @@
              xmlns:metro="http://schemes.grabacr.net/winfx/2014/controls"
              xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" 
              xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
+             xmlns:livet="http://schemas.livet-mvvm.net/2011/wpf"
              xmlns:viewModels="clr-namespace:HiyoshiCfhClient.ViewModels"
              d:DataContext="{d:DesignInstance viewModels:LoginViewModel}"
              mc:Ignorable="d" Height="400" Width="600">
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Closed">
+            <livet:DataContextDisposeAction/>
+        </i:EventTrigger>
+        <livet:InteractionMessageTrigger MessageKey="Close" Messenger="{Binding Messenger}">
+            <livet:WindowInteractionMessageAction />
+        </livet:InteractionMessageTrigger>
+    </i:Interaction.Triggers>
     <metro:MetroWindow.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -41,7 +50,7 @@
             </Grid>
         </Border>
         <Grid Grid.Row="1">
-            <WebBrowser x:Name="WebBrowser" Source="http://hiyoshicfhweb.azurewebsites.net/Account/Authorize?client_id=web&amp;response_type=token&amp;state=" >
+            <WebBrowser x:Name="WebBrowser" Source="http://hiyoshicfhweb.azurewebsites.net/Account/Authorize?client_id=web&amp;response_type=token&amp;state=">
                 <i:Interaction.Triggers>
                     <i:EventTrigger EventName="Navigating">
                         <ei:CallMethodAction TargetObject="{Binding}" MethodName="WebBrowser_Navigating"/>

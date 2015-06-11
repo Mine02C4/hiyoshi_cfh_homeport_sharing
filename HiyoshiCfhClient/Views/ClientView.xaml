@@ -13,7 +13,7 @@
              d:DataContext="{d:DesignInstance viewModels:ClientViewModel}">
     <i:Interaction.Triggers>
         <livet:InteractionMessageTrigger Messenger="{Binding Messenger}" MessageKey="Show/LoginWindow">
-            <livet:TransitionInteractionMessageAction Mode="NewOrActive" WindowType="views:LoginView" IsOwned="False" />
+            <livet:TransitionInteractionMessageAction Mode="NewOrActive" WindowType="views:LoginView" IsOwned="True" />
         </livet:InteractionMessageTrigger>
         <i:EventTrigger EventName="Closed">
             <livet:DataContextDisposeAction/>
@@ -22,34 +22,42 @@
     <UserControl.DataContext>
         <viewModels:ClientViewModel />
     </UserControl.DataContext>
-    <StackPanel>
-        <StackPanel Orientation="Horizontal" Margin="10,10,10,0">
-            <TextBlock Text="送信先ホスト" />
-            <TextBox x:Name="TargetHost" Width="200" Margin="10,0" />
-            <Button x:Name="SendButton" Content="送信">
-                <i:Interaction.Triggers>
-                    <i:EventTrigger EventName="Click">
-                        <ei:CallMethodAction TargetObject="{Binding}" MethodName="Send"/>
-                    </i:EventTrigger>
-                </i:Interaction.Triggers>
-            </Button>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="10,10,10,0">
+                <TextBlock Text="送信先ホスト" />
+                <TextBox x:Name="TargetHost" Width="200" Margin="10,0" />
+                <Button x:Name="SendButton" Content="送信">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="Click">
+                            <ei:CallMethodAction TargetObject="{Binding}" MethodName="Send"/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </Button>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Button x:Name="GetShipTypesButton" Content="艦種マスタを取得" Margin="10">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="Click">
+                            <ei:CallMethodAction TargetObject="{Binding}" MethodName="GetShipTypes"/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </Button>
+                <Button x:Name="OpenLoginDialog" Content="ログイン" Margin="10">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="Click">
+                            <ei:CallMethodAction TargetObject="{Binding}" MethodName="OpenLoginWindow"/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </Button>
+                <TextBlock Text="Token:" Margin="0" VerticalAlignment="Center" />
+                <TextBlock Text="{Binding Token}" Margin="5" VerticalAlignment="Center" />
+            </StackPanel>
         </StackPanel>
-        <StackPanel Orientation="Horizontal">
-            <Button x:Name="GetShipTypesButton" Content="艦種マスタを取得" Margin="10">
-                <i:Interaction.Triggers>
-                    <i:EventTrigger EventName="Click">
-                        <ei:CallMethodAction TargetObject="{Binding}" MethodName="GetShipTypes"/>
-                    </i:EventTrigger>
-                </i:Interaction.Triggers>
-            </Button>
-            <Button x:Name="OpenLoginDialog" Content="ログイン" Margin="10">
-                <i:Interaction.Triggers>
-                    <i:EventTrigger EventName="Click">
-                        <ei:CallMethodAction TargetObject="{Binding}" MethodName="OpenLoginWindow"/>
-                    </i:EventTrigger>
-                </i:Interaction.Triggers>
-            </Button>
-        </StackPanel>
-        <TextBlock x:Name="DebugConsole" TextWrapping="Wrap" Text="{Binding DebugConsole}" />
-    </StackPanel>
+        <TextBlock x:Name="DebugConsole" TextWrapping="Wrap" Text="{Binding DebugConsole}" Grid.Row="1" Background="{DynamicResource {x:Static SystemColors.WindowTextBrushKey}}" Margin="10" />
+    </Grid>
 </UserControl>
