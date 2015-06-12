@@ -55,7 +55,7 @@
                     </i:Interaction.Triggers>
                 </Button>
                 <TextBlock Text="Token:" Margin="0" VerticalAlignment="Center" />
-                <TextBlock Text="{Binding Token}" Margin="5" VerticalAlignment="Center" />
+                <TextBlock Text="{Binding AccessToken}" Margin="5" VerticalAlignment="Center" />
             </StackPanel>
         </StackPanel>
         <TextBlock x:Name="DebugConsole" TextWrapping="Wrap" Text="{Binding DebugConsole}" Grid.Row="1" Background="{DynamicResource {x:Static SystemColors.WindowTextBrushKey}}" Margin="10" />

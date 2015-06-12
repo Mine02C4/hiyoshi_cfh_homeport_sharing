@@ -1,4 +1,5 @@
-﻿using Livet;
+﻿using HiyoshiCfhClient.Models;
+using Livet;
 using Livet.Messaging;
 using System;
 using System.Collections.Generic;
@@ -29,18 +30,35 @@ namespace HiyoshiCfhClient.ViewModels
         }
         #endregion
 
-        #region Token変更通知プロパティ
-        private string _Token;
+        #region AccessToken変更通知プロパティ
+        private string _AccessToken;
 
-        public string Token
+        public string AccessToken
         {
             get
-            { return _Token; }
+            { return _AccessToken; }
             set
             {
-                if (_Token == value)
+                if (_AccessToken == value)
                     return;
-                _Token = value;
+                _AccessToken = value;
+                RaisePropertyChanged();
+            }
+        }
+        #endregion
+
+        #region TokenType変更通知プロパティ
+        private string _TokenType;
+
+        public string TokenType
+        {
+            get
+            { return _TokenType; }
+            set
+            {
+                if (_TokenType == value)
+                    return;
+                _TokenType = value;
                 RaisePropertyChanged();
             }
         }
@@ -62,7 +80,10 @@ namespace HiyoshiCfhClient.ViewModels
             switch (e.PropertyName)
             {
                 case "AccessToken":
-                    Token = (sender as LoginViewModel).AccessToken;
+                    AccessToken = (sender as LoginViewModel).AccessToken;
+                    break;
+                case "TokenType":
+                    TokenType = (sender as LoginViewModel).TokenType;
                     break;
                 default:
                     break;
@@ -72,13 +93,13 @@ namespace HiyoshiCfhClient.ViewModels
         public async void Send()
         {
             // TODO: 送信処理の実装
-            Client client = new Client();
+            Client client = new Client(TokenType, AccessToken);
             DebugConsole += await client.CollectShipsData();
         }
 
         public async void GetShipTypes()
         {
-            Client client = new Client();
+            Client client = new Client(TokenType, AccessToken);
             DebugConsole += await client.GetShipTypes();
         }
     }
