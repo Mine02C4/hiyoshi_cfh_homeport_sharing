@@ -65,7 +65,7 @@ namespace HiyoshiCfhClient
         {
             Context.SendingRequest2 += (sender, eventArgs) =>
             {
-                eventArgs.RequestMessage.SetHeader("Authorization",  TokenType + " " + AccessToken);
+                eventArgs.RequestMessage.SetHeader("Authorization", TokenType + " " + AccessToken);
             };
             try
             {
