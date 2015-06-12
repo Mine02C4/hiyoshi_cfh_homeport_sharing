@@ -50,9 +50,22 @@ namespace HiyoshiCfhClient.ViewModels
         {
             using (var vm = new LoginViewModel())
             {
+                vm.PropertyChanged += vm_PropertyChanged;
                 var message = new TransitionMessage(vm, "Show/LoginWindow");
-                Messenger.RaiseAsync(message);
-                Token = vm.AccessToken;
+                await Messenger.RaiseAsync(message);
+            }
+        }
+
+        void vm_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+            DebugConsole += "Raised property change: " + e.PropertyName + "\n";
+            switch (e.PropertyName)
+            {
+                case "AccessToken":
+                    Token = (sender as LoginViewModel).AccessToken;
+                    break;
+                default:
+                    break;
             }
         }
 

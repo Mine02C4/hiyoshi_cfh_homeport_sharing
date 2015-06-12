@@ -14,8 +14,39 @@ namespace HiyoshiCfhClient.ViewModels
 {
     class LoginViewModel : ViewModel
     {
-        public string AccessToken { get; private set; }
-        public string TokenType { get; private set; }
+        #region AccessToken変更通知プロパティ
+        private string _AccessToken;
+
+        public string AccessToken
+        {
+            get
+            { return _AccessToken; }
+            set
+            {
+                if (_AccessToken == value)
+                    return;
+                _AccessToken = value;
+                RaisePropertyChanged();
+            }
+        }
+        #endregion
+
+        #region TokenType変更通知プロパティ
+        private string _TokenType;
+
+        public string TokenType
+        {
+            get
+            { return _TokenType; }
+            set
+            {
+                if (_TokenType == value)
+                    return;
+                _TokenType = value;
+                RaisePropertyChanged();
+            }
+        }
+        #endregion
 
         public async void WebBrowser_Navigating(object sender, NavigatingCancelEventArgs e)
         {
@@ -27,7 +58,8 @@ namespace HiyoshiCfhClient.ViewModels
             {
                 AccessToken = accessToken;
                 TokenType = tokenType;
-                await Task.Run(() => {
+                await Task.Run(() =>
+                {
                     Thread.Sleep(1000);
                     Messenger.Raise(new WindowActionMessage(WindowAction.Close, "Close"));
                 });
@@ -40,7 +72,7 @@ namespace HiyoshiCfhClient.ViewModels
             var m = regex.Match(fragment);
             if (m.Success)
             {
-                return HttpUtility.UrlDecode(Regex.Replace(m.Value, @"\+", " "));
+                return HttpUtility.UrlDecode(Regex.Replace(m.Groups[1].Value, @"\+", " "));
             }
             else
             {
