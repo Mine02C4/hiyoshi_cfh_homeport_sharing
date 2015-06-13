@@ -25,6 +25,7 @@ namespace HiyoshiCfhWeb
             ODataConventionModelBuilder builder = new ODataConventionModelBuilder();
             builder.EntitySet<ShipType>("ShipTypes");
             builder.EntitySet<ShipInfo>("ShipInfoes");
+            builder.EntitySet<Admiral>("Admirals");
             config.MapODataServiceRoute("odata", "odata", builder.GetEdmModel());
         }
     }
