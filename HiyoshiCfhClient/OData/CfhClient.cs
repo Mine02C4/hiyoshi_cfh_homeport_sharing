@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generation date: 2015/06/10 7:56:35
+// Generation date: 2015/06/14 6:55:35
 namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
 {
     /// <summary>
@@ -147,6 +147,291 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
         }
     }
     /// <summary>
+    /// There are no comments for ShipInfoSingle in the schema.
+    /// </summary>
+    [global::Microsoft.OData.Client.OriginalNameAttribute("ShipInfoSingle")]
+    public partial class ShipInfoSingle : global::Microsoft.OData.Client.DataServiceQuerySingle<ShipInfo>
+    {
+        /// <summary>
+        /// Initialize a new ShipInfoSingle object.
+        /// </summary>
+        public ShipInfoSingle(global::Microsoft.OData.Client.DataServiceContext context, string path)
+            : base(context, path) {}
+
+        /// <summary>
+        /// Initialize a new ShipInfoSingle object.
+        /// </summary>
+        public ShipInfoSingle(global::Microsoft.OData.Client.DataServiceContext context, string path, bool isComposable)
+            : base(context, path, isComposable) {}
+
+        /// <summary>
+        /// Initialize a new ShipInfoSingle object.
+        /// </summary>
+        public ShipInfoSingle(global::Microsoft.OData.Client.DataServiceQuerySingle<ShipInfo> query)
+            : base(query) {}
+
+        /// <summary>
+        /// There are no comments for ShipType in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("ShipType")]
+        public global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.ShipTypeSingle ShipType
+        {
+            get
+            {
+                if (!this.IsComposable)
+                {
+                    throw new global::System.NotSupportedException("The previous function is not composable.");
+                }
+                if ((this._ShipType == null))
+                {
+                    this._ShipType = new global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.ShipTypeSingle(this.Context, GetPath("ShipType"));
+                }
+                return this._ShipType;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        private global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.ShipTypeSingle _ShipType;
+    }
+    /// <summary>
+    /// There are no comments for ShipInfo in the schema.
+    /// </summary>
+    /// <KeyProperties>
+    /// ShipInfoId
+    /// </KeyProperties>
+    [global::Microsoft.OData.Client.Key("ShipInfoId")]
+    [global::Microsoft.OData.Client.OriginalNameAttribute("ShipInfo")]
+    public partial class ShipInfo : global::Microsoft.OData.Client.BaseEntityType, global::System.ComponentModel.INotifyPropertyChanged
+    {
+        /// <summary>
+        /// Create a new ShipInfo object.
+        /// </summary>
+        /// <param name="shipInfoId">Initial value of ShipInfoId.</param>
+        /// <param name="sortId">Initial value of SortId.</param>
+        /// <param name="shipSpeed">Initial value of ShipSpeed.</param>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        public static ShipInfo CreateShipInfo(int shipInfoId, int sortId, global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.ShipSpeed shipSpeed)
+        {
+            ShipInfo shipInfo = new ShipInfo();
+            shipInfo.ShipInfoId = shipInfoId;
+            shipInfo.SortId = sortId;
+            shipInfo.ShipSpeed = shipSpeed;
+            return shipInfo;
+        }
+        /// <summary>
+        /// There are no comments for Property ShipInfoId in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("ShipInfoId")]
+        public int ShipInfoId
+        {
+            get
+            {
+                return this._ShipInfoId;
+            }
+            set
+            {
+                this.OnShipInfoIdChanging(value);
+                this._ShipInfoId = value;
+                this.OnShipInfoIdChanged();
+                this.OnPropertyChanged("ShipInfoId");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        private int _ShipInfoId;
+        partial void OnShipInfoIdChanging(int value);
+        partial void OnShipInfoIdChanged();
+        /// <summary>
+        /// There are no comments for Property SortId in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("SortId")]
+        public int SortId
+        {
+            get
+            {
+                return this._SortId;
+            }
+            set
+            {
+                this.OnSortIdChanging(value);
+                this._SortId = value;
+                this.OnSortIdChanged();
+                this.OnPropertyChanged("SortId");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        private int _SortId;
+        partial void OnSortIdChanging(int value);
+        partial void OnSortIdChanged();
+        /// <summary>
+        /// There are no comments for Property Name in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Name")]
+        public string Name
+        {
+            get
+            {
+                return this._Name;
+            }
+            set
+            {
+                this.OnNameChanging(value);
+                this._Name = value;
+                this.OnNameChanged();
+                this.OnPropertyChanged("Name");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        private string _Name;
+        partial void OnNameChanging(string value);
+        partial void OnNameChanged();
+        /// <summary>
+        /// There are no comments for Property ShipTypeId in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("ShipTypeId")]
+        public global::System.Nullable<int> ShipTypeId
+        {
+            get
+            {
+                return this._ShipTypeId;
+            }
+            set
+            {
+                this.OnShipTypeIdChanging(value);
+                this._ShipTypeId = value;
+                this.OnShipTypeIdChanged();
+                this.OnPropertyChanged("ShipTypeId");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        private global::System.Nullable<int> _ShipTypeId;
+        partial void OnShipTypeIdChanging(global::System.Nullable<int> value);
+        partial void OnShipTypeIdChanged();
+        /// <summary>
+        /// There are no comments for Property Slots in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Slots")]
+        public global::System.Collections.ObjectModel.ObservableCollection<int> Slots
+        {
+            get
+            {
+                return this._Slots;
+            }
+            set
+            {
+                this.OnSlotsChanging(value);
+                this._Slots = value;
+                this.OnSlotsChanged();
+                this.OnPropertyChanged("Slots");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        private global::System.Collections.ObjectModel.ObservableCollection<int> _Slots = new global::System.Collections.ObjectModel.ObservableCollection<int>();
+        partial void OnSlotsChanging(global::System.Collections.ObjectModel.ObservableCollection<int> value);
+        partial void OnSlotsChanged();
+        /// <summary>
+        /// There are no comments for Property ShipSpeed in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("ShipSpeed")]
+        public global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.ShipSpeed ShipSpeed
+        {
+            get
+            {
+                return this._ShipSpeed;
+            }
+            set
+            {
+                this.OnShipSpeedChanging(value);
+                this._ShipSpeed = value;
+                this.OnShipSpeedChanged();
+                this.OnPropertyChanged("ShipSpeed");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        private global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.ShipSpeed _ShipSpeed;
+        partial void OnShipSpeedChanging(global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.ShipSpeed value);
+        partial void OnShipSpeedChanged();
+        /// <summary>
+        /// There are no comments for Property NextRemodelingLevel in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("NextRemodelingLevel")]
+        public global::System.Nullable<int> NextRemodelingLevel
+        {
+            get
+            {
+                return this._NextRemodelingLevel;
+            }
+            set
+            {
+                this.OnNextRemodelingLevelChanging(value);
+                this._NextRemodelingLevel = value;
+                this.OnNextRemodelingLevelChanged();
+                this.OnPropertyChanged("NextRemodelingLevel");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        private global::System.Nullable<int> _NextRemodelingLevel;
+        partial void OnNextRemodelingLevelChanging(global::System.Nullable<int> value);
+        partial void OnNextRemodelingLevelChanged();
+        /// <summary>
+        /// There are no comments for Property ShipType in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("ShipType")]
+        public global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.ShipType ShipType
+        {
+            get
+            {
+                return this._ShipType;
+            }
+            set
+            {
+                this.OnShipTypeChanging(value);
+                this._ShipType = value;
+                this.OnShipTypeChanged();
+                this.OnPropertyChanged("ShipType");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        private global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.ShipType _ShipType;
+        partial void OnShipTypeChanging(global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.ShipType value);
+        partial void OnShipTypeChanged();
+        /// <summary>
+        /// This event is raised when the value of the property is changed
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        /// <summary>
+        /// The value of the property is changed
+        /// </summary>
+        /// <param name="property">property name</param>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        protected virtual void OnPropertyChanged(string property)
+        {
+            if ((this.PropertyChanged != null))
+            {
+                this.PropertyChanged(this, new global::System.ComponentModel.PropertyChangedEventArgs(property));
+            }
+        }
+    }
+    /// <summary>
+    /// There are no comments for ShipSpeed in the schema.
+    /// </summary>
+    [global::Microsoft.OData.Client.OriginalNameAttribute("ShipSpeed")]
+    public enum ShipSpeed
+    {
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Low")]
+        Low = 10,
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Fast")]
+        Fast = 20
+    }
+    /// <summary>
     /// Class containing all extension methods
     /// </summary>
     public static class ExtensionMethods
@@ -173,6 +458,29 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
                 { "ShipTypeId", shipTypeId }
             };
             return new global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.ShipTypeSingle(source.Context, source.GetKeyPath(global::Microsoft.OData.Client.Serializer.GetKeyString(source.Context, keys)));
+        }
+        /// <summary>
+        /// Get an entity of type global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.ShipInfo as global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.ShipInfoSingle specified by key from an entity set
+        /// </summary>
+        /// <param name="source">source entity set</param>
+        /// <param name="keys">dictionary with the names and values of keys</param>
+        public static global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.ShipInfoSingle ByKey(this global::Microsoft.OData.Client.DataServiceQuery<global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.ShipInfo> source, global::System.Collections.Generic.Dictionary<string, object> keys)
+        {
+            return new global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.ShipInfoSingle(source.Context, source.GetKeyPath(global::Microsoft.OData.Client.Serializer.GetKeyString(source.Context, keys)));
+        }
+        /// <summary>
+        /// Get an entity of type global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.ShipInfo as global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.ShipInfoSingle specified by key from an entity set
+        /// </summary>
+        /// <param name="source">source entity set</param>
+        /// <param name="shipInfoId">The value of shipInfoId</param>
+        public static global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.ShipInfoSingle ByKey(this global::Microsoft.OData.Client.DataServiceQuery<global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.ShipInfo> source,
+            int shipInfoId)
+        {
+            global::System.Collections.Generic.Dictionary<string, object> keys = new global::System.Collections.Generic.Dictionary<string, object>
+            {
+                { "ShipInfoId", shipInfoId }
+            };
+            return new global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.ShipInfoSingle(source.Context, source.GetKeyPath(global::Microsoft.OData.Client.Serializer.GetKeyString(source.Context, keys)));
         }
     }
 }
@@ -264,12 +572,38 @@ namespace HiyoshiCfhClient.Default
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
         private global::Microsoft.OData.Client.DataServiceQuery<global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.ShipType> _ShipTypes;
         /// <summary>
+        /// There are no comments for ShipInfoes in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("ShipInfoes")]
+        public global::Microsoft.OData.Client.DataServiceQuery<global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.ShipInfo> ShipInfoes
+        {
+            get
+            {
+                if ((this._ShipInfoes == null))
+                {
+                    this._ShipInfoes = base.CreateQuery<global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.ShipInfo>("ShipInfoes");
+                }
+                return this._ShipInfoes;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        private global::Microsoft.OData.Client.DataServiceQuery<global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.ShipInfo> _ShipInfoes;
+        /// <summary>
         /// There are no comments for ShipTypes in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
         public void AddToShipTypes(global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.ShipType shipType)
         {
             base.AddObject("ShipTypes", shipType);
+        }
+        /// <summary>
+        /// There are no comments for ShipInfoes in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        public void AddToShipInfoes(global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.ShipInfo shipInfo)
+        {
+            base.AddObject("ShipInfoes", shipInfo);
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
         private abstract class GeneratedEdmModel
@@ -288,10 +622,32 @@ namespace HiyoshiCfhClient.Default
         <Property Name=""Name"" Type=""Edm.String"" />
         <Property Name=""SortNumber"" Type=""Edm.Int32"" Nullable=""false"" />
       </EntityType>
+      <EntityType Name=""ShipInfo"">
+        <Key>
+          <PropertyRef Name=""ShipInfoId"" />
+        </Key>
+        <Property Name=""ShipInfoId"" Type=""Edm.Int32"" Nullable=""false"" />
+        <Property Name=""SortId"" Type=""Edm.Int32"" Nullable=""false"" />
+        <Property Name=""Name"" Type=""Edm.String"" />
+        <Property Name=""ShipTypeId"" Type=""Edm.Int32"" />
+        <Property Name=""Slots"" Type=""Collection(Edm.Int32)"" Nullable=""false"" />
+        <Property Name=""ShipSpeed"" Type=""HiyoshiCfhWeb.Models.ShipSpeed"" Nullable=""false"" />
+        <Property Name=""NextRemodelingLevel"" Type=""Edm.Int32"" />
+        <NavigationProperty Name=""ShipType"" Type=""HiyoshiCfhWeb.Models.ShipType"">
+          <ReferentialConstraint Property=""ShipTypeId"" ReferencedProperty=""ShipTypeId"" />
+        </NavigationProperty>
+      </EntityType>
+      <EnumType Name=""ShipSpeed"">
+        <Member Name=""Low"" Value=""10"" />
+        <Member Name=""Fast"" Value=""20"" />
+      </EnumType>
     </Schema>
     <Schema Namespace=""Default"" xmlns=""http://docs.oasis-open.org/odata/ns/edm"">
       <EntityContainer Name=""Container"">
         <EntitySet Name=""ShipTypes"" EntityType=""HiyoshiCfhWeb.Models.ShipType"" />
+        <EntitySet Name=""ShipInfoes"" EntityType=""HiyoshiCfhWeb.Models.ShipInfo"">
+          <NavigationPropertyBinding Path=""ShipType"" Target=""ShipTypes"" />
+        </EntitySet>
       </EntityContainer>
     </Schema>
   </edmx:DataServices>
