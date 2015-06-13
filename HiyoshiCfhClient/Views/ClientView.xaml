@@ -47,6 +47,13 @@
                         </i:EventTrigger>
                     </i:Interaction.Triggers>
                 </Button>
+                <Button x:Name="ClearConsoleButton" Content="クリア" Margin="10">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="Click">
+                            <ei:CallMethodAction TargetObject="{Binding}" MethodName="ClearConsole"/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </Button>
                 <Button x:Name="OpenLoginDialog" Content="ログイン" Margin="10">
                     <i:Interaction.Triggers>
                         <i:EventTrigger EventName="Click">

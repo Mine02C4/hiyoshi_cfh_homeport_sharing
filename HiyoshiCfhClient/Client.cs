@@ -52,7 +52,14 @@ namespace HiyoshiCfhClient
                 var webShipType = ConvertShipType(shipType.Value);
                 Context.AddToShipTypes(webShipType);
             }
-            await Context.SaveChangesAsync();
+            try
+            {
+                await Context.SaveChangesAsync();
+            }
+            catch (Exception ex)
+            {
+                return ex.Message + System.Environment.NewLine;
+            }
             output += "ships" + System.Environment.NewLine;
             foreach (var ship in ships)
             {
@@ -79,7 +86,7 @@ namespace HiyoshiCfhClient
             }
             catch (Exception ex)
             {
-                return ex.Message;
+                return ex.Message + System.Environment.NewLine;
             }
         }
     }

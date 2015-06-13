@@ -102,5 +102,10 @@ namespace HiyoshiCfhClient.ViewModels
             Client client = new Client(TokenType, AccessToken);
             DebugConsole += await client.GetShipTypes();
         }
+
+        public void ClearConsole()
+        {
+            DebugConsole = "";
+        }
     }
 }
