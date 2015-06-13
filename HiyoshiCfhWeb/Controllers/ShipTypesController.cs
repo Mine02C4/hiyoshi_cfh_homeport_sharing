@@ -88,8 +88,6 @@ namespace HiyoshiCfhWeb.Controllers
                 return BadRequest(ModelState);
             }
             var _shipType = db.ShipTypes.Find(shipType.ShipTypeId);
-            System.Diagnostics.Trace.TraceInformation("ShipTypeId = " + shipType.ShipTypeId);
-            System.Diagnostics.Trace.TraceInformation("_shipType {0}", _shipType);
             if (_shipType == null)
             {
                 db.ShipTypes.Add(shipType);
