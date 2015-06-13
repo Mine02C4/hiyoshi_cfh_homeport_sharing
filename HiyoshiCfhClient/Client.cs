@@ -1,12 +1,14 @@
 ﻿using Grabacr07.KanColleWrapper;
 using HiyoshiCfhClient.Default;
 using WebShipType = HiyoshiCfhClient.HiyoshiCfhWeb.Models.ShipType;
+using WebShipInfo = HiyoshiCfhClient.HiyoshiCfhWeb.Models.ShipInfo;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Grabacr07.KanColleWrapper.Models;
+using System.Collections.ObjectModel;
 
 namespace HiyoshiCfhClient
 {
@@ -26,6 +28,27 @@ namespace HiyoshiCfhClient
             return webShipType;
         }
 
+        private static WebShipInfo ConvertShipInfo(ShipInfo shipInfo)
+        {
+            var webShipInfo = new WebShipInfo();
+            webShipInfo.ShipInfoId = shipInfo.Id;
+            webShipInfo.SortId = shipInfo.SortId;
+            webShipInfo.Name = shipInfo.Name;
+            webShipInfo.ShipTypeId = shipInfo.ShipType.Id;
+            webShipInfo.Slots = new ObservableCollection<int>(shipInfo.Slots);
+            switch (shipInfo.Speed)
+            {
+                case ShipSpeed.Fast:
+                    webShipInfo.ShipSpeed = HiyoshiCfhWeb.Models.ShipSpeed.Fast;
+                    break;
+                case ShipSpeed.Low:
+                    webShipInfo.ShipSpeed = HiyoshiCfhWeb.Models.ShipSpeed.Low;
+                    break;
+            }
+            webShipInfo.NextRemodelingLevel = shipInfo.NextRemodelingLevel;
+            return webShipInfo;
+        }
+
         public Client(string tokenType, string accessToken, string baseUri)
         {
             TokenType = tokenType;
@@ -39,6 +62,44 @@ namespace HiyoshiCfhClient
             TokenType = tokenType;
             AccessToken = accessToken;
             Context = new Container(new Uri("http://hiyoshicfhweb.azurewebsites.net/odata"));
+            if (tokenType != null && accessToken != null)
+            {
+                Context.SendingRequest2 += (sender, eventArgs) =>
+                {
+                    eventArgs.RequestMessage.SetHeader("Authorization", TokenType + " " + AccessToken);
+                };
+            }
+        }
+
+        public async Task SendShipTypes()
+        {
+            await Task.Run(() =>
+            {
+                var shipTypes = KanColleClient.Current.Master.ShipTypes;
+                foreach (var shipType in shipTypes)
+                {
+                    var webShipType = ConvertShipType(shipType.Value);
+                    Context.AddToShipTypes(webShipType);
+                }
+                Context.SaveChanges();
+            });
+        }
+
+        public async Task SendShipInfoes()
+        {
+            await Task.Run(() =>
+            {
+                var shipInfoes = KanColleClient.Current.Master.Ships;
+                foreach (var shipInfo in shipInfoes)
+                {
+                    if (shipInfo.Value.SortId != 0)
+                    {
+                        var webShipInfo = ConvertShipInfo(shipInfo.Value);
+                        Context.AddToShipInfoes(webShipInfo);
+                    }
+                }
+                Context.SaveChanges();
+            });
         }
 
         public async Task<string> CollectShipsData()
@@ -70,10 +131,6 @@ namespace HiyoshiCfhClient
 
         public async Task<string> GetShipTypes()
         {
-            Context.SendingRequest2 += (sender, eventArgs) =>
-            {
-                eventArgs.RequestMessage.SetHeader("Authorization", TokenType + " " + AccessToken);
-            };
             try
             {
                 var shipTypes = await Context.ShipTypes.ExecuteAsync();

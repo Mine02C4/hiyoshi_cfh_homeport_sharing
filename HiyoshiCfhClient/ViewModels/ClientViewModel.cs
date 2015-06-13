@@ -107,5 +107,31 @@ namespace HiyoshiCfhClient.ViewModels
         {
             DebugConsole = "";
         }
+
+        public async void SendShipTypes()
+        {
+            Client client = new Client(TokenType, AccessToken);
+            try
+            {
+                await client.SendShipTypes();
+            }
+            catch (Exception ex)
+            {
+                DebugConsole += ex.ToString() + System.Environment.NewLine;
+            }
+        }
+
+        public async void SendShipInfoes()
+        {
+            Client client = new Client(TokenType, AccessToken);
+            try
+            {
+                await client.SendShipInfoes();
+            }
+            catch (Exception ex)
+            {
+                DebugConsole += ex.ToString() + System.Environment.NewLine;
+            }
+        }
     }
 }
