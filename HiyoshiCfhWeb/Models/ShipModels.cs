@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity.Infrastructure;
 
 namespace HiyoshiCfhWeb.Models
@@ -43,6 +44,7 @@ namespace HiyoshiCfhWeb.Models
 
     public class ShipInfo
     {
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ShipInfoId { get; set; }
         public int SortId { get; set; }
         public string Name { get; set; }
@@ -55,6 +57,7 @@ namespace HiyoshiCfhWeb.Models
 
     public class ShipType
     {
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ShipTypeId { get; set; }
         public string Name { get; set; }
         public int SortNumber { get; set; }

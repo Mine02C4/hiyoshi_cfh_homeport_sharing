@@ -87,10 +87,21 @@ namespace HiyoshiCfhWeb.Controllers
             {
                 return BadRequest(ModelState);
             }
-
-            db.ShipTypes.Add(shipType);
-            db.SaveChanges();
-
+            var _shipType = db.ShipTypes.Find(shipType.ShipTypeId);
+            System.Diagnostics.Trace.TraceInformation("ShipTypeId = " + shipType.ShipTypeId);
+            System.Diagnostics.Trace.TraceInformation("_shipType {0}", _shipType);
+            if (_shipType == null)
+            {
+                db.ShipTypes.Add(shipType);
+                db.SaveChanges();
+            }
+            else
+            {
+                db.Entry(_shipType).State = EntityState.Detached;
+                db.ShipTypes.Attach(shipType);
+                db.Entry(shipType).State = EntityState.Modified;
+                db.SaveChanges();
+            }
             return Created(shipType);
         }
 
