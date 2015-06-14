@@ -39,7 +39,6 @@ namespace HiyoshiCfhClient
             webShipInfo.SortId = shipInfo.SortId;
             webShipInfo.Name = shipInfo.Name;
             webShipInfo.ShipTypeId = shipInfo.ShipType.Id;
-            webShipInfo.Slots = new ObservableCollection<int>(shipInfo.Slots);
             switch (shipInfo.Speed)
             {
                 case ShipSpeed.Fast:
@@ -185,9 +184,13 @@ namespace HiyoshiCfhClient
                     Trace.TraceError("Error: {0}", ex);
                 }
             }
-            if (Context.ApplyingChanges)
+            try
             {
                 await Context.SaveChangesAsync();
+            }
+            catch (Exception ex)
+            {
+                Trace.TraceError("Error: {0}", ex);
             }
         }
 
@@ -196,7 +199,7 @@ namespace HiyoshiCfhClient
             var webShipInfoes = (await GetShipInfoesFromServer()).ToList();
             foreach (var shipInfo in KanColleClient.Current.Master.Ships)
             {
-                if (webShipInfoes.Where(x =>
+                if (shipInfo.Value.SortId != 0 && webShipInfoes.Where(x =>
                     x.ShipInfoId == shipInfo.Value.Id &&
                     x.Name == shipInfo.Value.Name &&
                     x.SortId == shipInfo.Value.SortId &&
@@ -206,9 +209,13 @@ namespace HiyoshiCfhClient
                     Context.AddToShipInfoes(ConvertShipInfo(shipInfo.Value));
                 }
             }
-            if (Context.ApplyingChanges)
+            try
             {
                 await Context.SaveChangesAsync();
+            }
+            catch (Exception ex)
+            {
+                Trace.TraceError("Error: {0}", ex);
             }
         }
 
@@ -224,8 +231,8 @@ namespace HiyoshiCfhClient
 
         public async Task UpdateShips()
         {
-            var webShips = GetShipFromServer();
-            var ships = KanColleClient.Current.Homeport.Organization.Ships;
+            var webShips = GetShipFromServer().ToList();
+            var ships = KanColleClient.Current.Homeport.Organization.Ships.ToList();
             // まずは存在しない艦娘の削除と更新
             foreach (var webShip in webShips)
             {
@@ -249,9 +256,13 @@ namespace HiyoshiCfhClient
                     Context.AddToShips(ConvertShip(ship.Value, Admiral.AdmiralId));
                 }
             }
-            if (Context.ApplyingChanges)
+            try
             {
                 await Context.SaveChangesAsync();
+            }
+            catch (Exception ex)
+            {
+                Trace.TraceError("Error: {0}", ex);
             }
         }
 

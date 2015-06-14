@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generation date: 2015/06/14 12:50:43
+// Generation date: 2015/06/15 0:43:03
 namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
 {
     /// <summary>
@@ -310,29 +310,6 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
         private global::System.Nullable<int> _ShipTypeId;
         partial void OnShipTypeIdChanging(global::System.Nullable<int> value);
         partial void OnShipTypeIdChanged();
-        /// <summary>
-        /// There are no comments for Property Slots in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("Slots")]
-        public global::System.Collections.ObjectModel.ObservableCollection<int> Slots
-        {
-            get
-            {
-                return this._Slots;
-            }
-            set
-            {
-                this.OnSlotsChanging(value);
-                this._Slots = value;
-                this.OnSlotsChanged();
-                this.OnPropertyChanged("Slots");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
-        private global::System.Collections.ObjectModel.ObservableCollection<int> _Slots = new global::System.Collections.ObjectModel.ObservableCollection<int>();
-        partial void OnSlotsChanging(global::System.Collections.ObjectModel.ObservableCollection<int> value);
-        partial void OnSlotsChanged();
         /// <summary>
         /// There are no comments for Property ShipSpeed in the schema.
         /// </summary>
@@ -1451,7 +1428,6 @@ namespace HiyoshiCfhClient.Default
         <Property Name=""SortId"" Type=""Edm.Int32"" Nullable=""false"" />
         <Property Name=""Name"" Type=""Edm.String"" />
         <Property Name=""ShipTypeId"" Type=""Edm.Int32"" />
-        <Property Name=""Slots"" Type=""Collection(Edm.Int32)"" Nullable=""false"" />
         <Property Name=""ShipSpeed"" Type=""HiyoshiCfhWeb.Models.ShipSpeed"" Nullable=""false"" />
         <Property Name=""NextRemodelingLevel"" Type=""Edm.Int32"" />
         <NavigationProperty Name=""ShipType"" Type=""HiyoshiCfhWeb.Models.ShipType"">
