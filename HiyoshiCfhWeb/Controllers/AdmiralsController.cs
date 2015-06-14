@@ -70,6 +70,10 @@ namespace HiyoshiCfhWeb.Controllers
             {
                 return BadRequest(ModelState);
             }
+            if (db.Admirals.Where(x => x.MemberId == Admiral.MemberId).Count() > 0)
+            {
+                return Conflict();
+            }
             db.Admirals.Add(Admiral);
             db.SaveChanges();
             return Created(Admiral);
