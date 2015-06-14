@@ -207,12 +207,13 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\AdmiralsController.cs" />
+    <Compile Include="Controllers\HeadquartersController.cs" />
+    <Compile Include="Controllers\OData\AdmiralsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\ShipInfoesController.cs" />
-    <Compile Include="Controllers\ShipsController.cs" />
-    <Compile Include="Controllers\ShipTypesController.cs" />
+    <Compile Include="Controllers\OData\ShipInfoesController.cs" />
+    <Compile Include="Controllers\OData\ShipsController.cs" />
+    <Compile Include="Controllers\OData\ShipTypesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -231,6 +232,10 @@
     <Compile Include="Migrations\201506140014340_AddMemberId.cs" />
     <Compile Include="Migrations\201506140014340_AddMemberId.Designer.cs">
       <DependentUpon>201506140014340_AddMemberId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201506142131471_AddRelationshipShipAndShipInfo.cs" />
+    <Compile Include="Migrations\201506142131471_AddRelationshipShipAndShipInfo.Designer.cs">
+      <DependentUpon>201506142131471_AddRelationshipShipAndShipInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -320,6 +325,10 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>SecretSettings.Designer.cs</LastGenOutput>
     </None>
+    <Content Include="Views\Headquarters\Index.cshtml" />
+    <Content Include="Views\Headquarters\Homeport.cshtml" />
+    <Content Include="Views\Shared\_AdmiralPartial.cshtml" />
+    <Content Include="Views\Shared\_ShipTablePartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -340,6 +349,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201506140014340_AddMemberId.resx">
       <DependentUpon>201506140014340_AddMemberId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201506142131471_AddRelationshipShipAndShipInfo.resx">
+      <DependentUpon>201506142131471_AddRelationshipShipAndShipInfo.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

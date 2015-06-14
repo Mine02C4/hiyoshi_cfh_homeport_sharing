@@ -1,0 +1,12 @@
+﻿@model HiyoshiCfhWeb.Models.Admiral
+@using System.Linq;
+@using HiyoshiCfhWeb.Models;
+
+@{
+    ViewBag.Title = "Homeport";
+}
+
+<h2>母港</h2>
+
+@Html.Partial("_AdmiralPartial", Model)
+@Html.Partial("_ShipTablePartial", Model.Ships)

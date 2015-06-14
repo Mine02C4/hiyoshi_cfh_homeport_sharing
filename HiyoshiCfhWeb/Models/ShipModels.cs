@@ -46,6 +46,22 @@ namespace HiyoshiCfhWeb.Models
         public int Luck { get; set; }
         // TODO: スロット情報は後回し。
         // public int[] Slots { get; set; }
+
+        [NotMapped]
+        public int? LevelForNextRemodeling
+        {
+            get
+            {
+                if (ShipInfo.NextRemodelingLevel == null)
+                {
+                    return null;
+                }
+                else
+                {
+                    return ShipInfo.NextRemodelingLevel - Level;
+                }
+            }
+        }
     }
 
     public class ShipInfo
