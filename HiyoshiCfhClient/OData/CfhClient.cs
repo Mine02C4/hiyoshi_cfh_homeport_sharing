@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generation date: 2015/06/14 9:18:13
+// Generation date: 2015/06/14 12:50:43
 namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
 {
     /// <summary>
@@ -1377,6 +1377,24 @@ namespace HiyoshiCfhClient.Default
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
         private global::Microsoft.OData.Client.DataServiceQuery<global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.Admiral> _Admirals;
         /// <summary>
+        /// There are no comments for Ships in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Ships")]
+        public global::Microsoft.OData.Client.DataServiceQuery<global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.Ship> Ships
+        {
+            get
+            {
+                if ((this._Ships == null))
+                {
+                    this._Ships = base.CreateQuery<global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.Ship>("Ships");
+                }
+                return this._Ships;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        private global::Microsoft.OData.Client.DataServiceQuery<global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.Ship> _Ships;
+        /// <summary>
         /// There are no comments for ShipTypes in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
@@ -1399,6 +1417,14 @@ namespace HiyoshiCfhClient.Default
         public void AddToAdmirals(global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.Admiral admiral)
         {
             base.AddObject("Admirals", admiral);
+        }
+        /// <summary>
+        /// There are no comments for Ships in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        public void AddToShips(global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.Ship ship)
+        {
+            base.AddObject("Ships", ship);
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
         private abstract class GeneratedEdmModel
@@ -1477,7 +1503,12 @@ namespace HiyoshiCfhClient.Default
         <EntitySet Name=""ShipInfoes"" EntityType=""HiyoshiCfhWeb.Models.ShipInfo"">
           <NavigationPropertyBinding Path=""ShipType"" Target=""ShipTypes"" />
         </EntitySet>
-        <EntitySet Name=""Admirals"" EntityType=""HiyoshiCfhWeb.Models.Admiral"" />
+        <EntitySet Name=""Admirals"" EntityType=""HiyoshiCfhWeb.Models.Admiral"">
+          <NavigationPropertyBinding Path=""Ships"" Target=""Ships"" />
+        </EntitySet>
+        <EntitySet Name=""Ships"" EntityType=""HiyoshiCfhWeb.Models.Ship"">
+          <NavigationPropertyBinding Path=""Admiral"" Target=""Admirals"" />
+        </EntitySet>
       </EntityContainer>
     </Schema>
   </edmx:DataServices>

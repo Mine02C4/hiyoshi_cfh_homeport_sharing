@@ -29,12 +29,10 @@
         </Grid.RowDefinitions>
         <StackPanel>
             <StackPanel Orientation="Horizontal" Margin="10,10,10,0">
-                <TextBlock Text="送信先ホスト" />
-                <TextBox x:Name="TargetHost" Width="200" Margin="10,0" />
-                <Button x:Name="SendButton" Content="送信">
+                <Button Content="テスト開始">
                     <i:Interaction.Triggers>
                         <i:EventTrigger EventName="Click">
-                            <ei:CallMethodAction TargetObject="{Binding}" MethodName="Send"/>
+                            <ei:CallMethodAction TargetObject="{Binding}" MethodName="StartTest"/>
                         </i:EventTrigger>
                     </i:Interaction.Triggers>
                 </Button>
@@ -88,6 +86,6 @@
                 </Button>
             </StackPanel>
         </StackPanel>
-        <TextBlock x:Name="DebugConsole" TextWrapping="Wrap" Text="{Binding DebugConsole}" Grid.Row="1" Background="{DynamicResource {x:Static SystemColors.WindowTextBrushKey}}" Margin="10" />
+        <TextBox x:Name="DebugConsole" IsReadOnly="True" BorderThickness="0" TextWrapping="Wrap" Text="{Binding DebugConsole}" Grid.Row="1" Background="{DynamicResource {x:Static SystemColors.WindowTextBrushKey}}" Margin="10" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" />
     </Grid>
 </UserControl>

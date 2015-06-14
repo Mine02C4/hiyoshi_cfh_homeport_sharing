@@ -1,18 +1,12 @@
-﻿using HiyoshiCfhClient.Models;
-using Livet;
+﻿using Livet;
 using Livet.Messaging;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace HiyoshiCfhClient.ViewModels
 {
     class ClientViewModel : ViewModel
     {
-        public string BaseUri { get; set; }
-
         #region DebugConsole変更通知プロパティ
         private string _DebugConsole;
 
@@ -64,6 +58,8 @@ namespace HiyoshiCfhClient.ViewModels
         }
         #endregion
 
+        Client Client;
+
         public async void OpenLoginWindow()
         {
             using (var vm = new LoginViewModel())
@@ -95,6 +91,37 @@ namespace HiyoshiCfhClient.ViewModels
             // TODO: 送信処理の実装
             Client client = new Client(TokenType, AccessToken);
             DebugConsole += await client.CollectShipsData();
+        }
+
+        /// <summary>
+        /// プラグインの起動シーケンスのテスト。
+        /// </summary>
+        public async void StartTest()
+        {
+            this.PropertyChanged += InitClient;
+            OpenLoginWindow();
+        }
+
+        void InitClient(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+            if (TokenType != null && AccessToken != null)
+            {
+                try
+                {
+                    this.PropertyChanged -= InitClient;
+                    Task.Factory.StartNew(async () =>
+                    {
+                        Client = new Client(TokenType, AccessToken);
+                        await Client.InitAdmiralInformation();
+                        await Client.UpdateMasterData();
+                        await Client.UpdateShips();
+                    });
+                }
+                catch (Exception ex)
+                {
+                    DebugConsole += ex.ToString() + System.Environment.NewLine;
+                }
+            }
         }
 
         public async void GetShipTypes()

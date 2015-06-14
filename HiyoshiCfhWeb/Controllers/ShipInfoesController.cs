@@ -15,6 +15,7 @@ namespace HiyoshiCfhWeb.Controllers
 
         // GET: odata/ShipInfoes
         [EnableQuery]
+        [AllowAnonymous]
         public IQueryable<ShipInfo> GetShipInfoes()
         {
             return db.ShipInfoes;
@@ -22,6 +23,7 @@ namespace HiyoshiCfhWeb.Controllers
 
         // GET: odata/ShipInfoes(5)
         [EnableQuery]
+        [AllowAnonymous]
         public SingleResult<ShipInfo> GetShipInfo([FromODataUri] int key)
         {
             return SingleResult.Create(db.ShipInfoes.Where(ShipInfo => ShipInfo.ShipInfoId == key));
@@ -152,6 +154,15 @@ namespace HiyoshiCfhWeb.Controllers
             db.SaveChanges();
 
             return StatusCode(HttpStatusCode.NoContent);
+        }
+
+        // GET odata/ShipInfoes(5)/ShipType
+        [EnableQuery]
+        [AllowAnonymous]
+        public SingleResult<ShipType> GetShipType([FromODataUri] int key)
+        {
+            var result = db.ShipInfoes.Where(m => m.ShipInfoId == key).Select(m => m.ShipType);
+            return SingleResult.Create(result);
         }
 
         protected override void Dispose(bool disposing)
