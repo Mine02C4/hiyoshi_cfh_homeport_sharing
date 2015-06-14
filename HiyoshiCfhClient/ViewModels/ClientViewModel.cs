@@ -133,5 +133,18 @@ namespace HiyoshiCfhClient.ViewModels
                 DebugConsole += ex.ToString() + System.Environment.NewLine;
             }
         }
+
+        public async void RegisterAdmiral()
+        {
+            Client client = new Client(TokenType, AccessToken);
+            try
+            {
+                await client.RegisterAdmiral();
+            }
+            catch (Exception ex)
+            {
+                DebugConsole += ex.ToString() + System.Environment.NewLine;
+            }
+        }
     }
 }

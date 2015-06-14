@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generation date: 2015/06/14 8:43:06
+// Generation date: 2015/06/14 9:18:13
 namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
 {
     /// <summary>
@@ -481,13 +481,15 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
         /// Create a new Admiral object.
         /// </summary>
         /// <param name="admiralId">Initial value of AdmiralId.</param>
+        /// <param name="memberId">Initial value of MemberId.</param>
         /// <param name="experience">Initial value of Experience.</param>
         /// <param name="level">Initial value of Level.</param>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
-        public static Admiral CreateAdmiral(int admiralId, int experience, int level)
+        public static Admiral CreateAdmiral(int admiralId, int memberId, int experience, int level)
         {
             Admiral admiral = new Admiral();
             admiral.AdmiralId = admiralId;
+            admiral.MemberId = memberId;
             admiral.Experience = experience;
             admiral.Level = level;
             return admiral;
@@ -515,6 +517,29 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
         private int _AdmiralId;
         partial void OnAdmiralIdChanging(int value);
         partial void OnAdmiralIdChanged();
+        /// <summary>
+        /// There are no comments for Property MemberId in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("MemberId")]
+        public int MemberId
+        {
+            get
+            {
+                return this._MemberId;
+            }
+            set
+            {
+                this.OnMemberIdChanging(value);
+                this._MemberId = value;
+                this.OnMemberIdChanged();
+                this.OnPropertyChanged("MemberId");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        private int _MemberId;
+        partial void OnMemberIdChanging(int value);
+        partial void OnMemberIdChanged();
         /// <summary>
         /// There are no comments for Property Name in the schema.
         /// </summary>
@@ -1412,6 +1437,7 @@ namespace HiyoshiCfhClient.Default
           <PropertyRef Name=""AdmiralId"" />
         </Key>
         <Property Name=""AdmiralId"" Type=""Edm.Int32"" Nullable=""false"" />
+        <Property Name=""MemberId"" Type=""Edm.Int32"" Nullable=""false"" />
         <Property Name=""Name"" Type=""Edm.String"" />
         <Property Name=""Experience"" Type=""Edm.Int32"" Nullable=""false"" />
         <Property Name=""Level"" Type=""Edm.Int32"" Nullable=""false"" />

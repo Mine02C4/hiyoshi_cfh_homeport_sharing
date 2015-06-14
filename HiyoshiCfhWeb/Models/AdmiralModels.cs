@@ -9,6 +9,12 @@ namespace HiyoshiCfhWeb.Models
         /// システム内部での提督識別子。
         /// </summary>
         public int AdmiralId { get; set; }
+
+        /// <summary>
+        /// ゲーム内部での提督ID。
+        /// </summary>
+        public int MemberId { get; set; }
+
         /// <summary>
         /// 提督名。
         /// </summary>

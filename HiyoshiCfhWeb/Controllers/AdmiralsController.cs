@@ -1,18 +1,14 @@
 ﻿using HiyoshiCfhWeb.Models;
-using System;
-using System.Collections.Generic;
-using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Http;
 using System.Web.OData;
 
 namespace HiyoshiCfhWeb.Controllers
 {
     [Authorize]
-    public class AdmiralController : ODataController
+    public class AdmiralsController : ODataController
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
@@ -74,33 +70,8 @@ namespace HiyoshiCfhWeb.Controllers
             {
                 return BadRequest(ModelState);
             }
-            var _Admiral = db.Admirals.Find(Admiral.AdmiralId);
-            if (_Admiral == null)
-            {
-                db.Admirals.Add(Admiral);
-                db.SaveChanges();
-            }
-            else
-            {
-                db.Entry(_Admiral).State = EntityState.Detached;
-                db.Admirals.Attach(Admiral);
-                db.Entry(Admiral).State = EntityState.Modified;
-                try
-                {
-                    db.SaveChanges();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!AdmiralExists(Admiral.AdmiralId))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-            }
+            db.Admirals.Add(Admiral);
+            db.SaveChanges();
             return Created(Admiral);
         }
 

@@ -2,6 +2,7 @@
 using HiyoshiCfhClient.Default;
 using WebShipType = HiyoshiCfhClient.HiyoshiCfhWeb.Models.ShipType;
 using WebShipInfo = HiyoshiCfhClient.HiyoshiCfhWeb.Models.ShipInfo;
+using WebAdmiral = HiyoshiCfhClient.HiyoshiCfhWeb.Models.Admiral;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -47,6 +48,16 @@ namespace HiyoshiCfhClient
             }
             webShipInfo.NextRemodelingLevel = shipInfo.NextRemodelingLevel;
             return webShipInfo;
+        }
+
+        private static WebAdmiral ConvertAdmiral(Admiral admiral)
+        {
+            var webAdmiral = new WebAdmiral();
+            webAdmiral.Name = admiral.Nickname;
+            webAdmiral.Experience = admiral.Experience;
+            webAdmiral.Level = admiral.Level;
+            webAdmiral.MemberId = int.Parse(admiral.MemberId);
+            return webAdmiral;
         }
 
         public Client(string tokenType, string accessToken, string baseUri)
@@ -98,6 +109,17 @@ namespace HiyoshiCfhClient
                         Context.AddToShipInfoes(webShipInfo);
                     }
                 }
+                Context.SaveChanges();
+            });
+        }
+
+        public async Task RegisterAdmiral()
+        {
+            await Task.Run(() =>
+            {
+                // TODO: 登録エラーの実装
+                var admiral = ConvertAdmiral(KanColleClient.Current.Homeport.Admiral);
+                Context.AddToAdmirals(admiral);
                 Context.SaveChanges();
             });
         }
