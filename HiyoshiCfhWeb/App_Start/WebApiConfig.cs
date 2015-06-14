@@ -16,7 +16,7 @@ namespace HiyoshiCfhWeb
             config.Filters.Add(new HostAuthenticationFilter(OAuthDefaults.AuthenticationType));
 
             config.MapHttpAttributeRoutes();
-
+            config.IncludeErrorDetailPolicy = IncludeErrorDetailPolicy.Always;
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",
