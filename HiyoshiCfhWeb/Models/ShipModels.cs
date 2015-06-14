@@ -24,6 +24,12 @@ namespace HiyoshiCfhWeb.Models
         public int ShipId { get; set; }
 
         /// <summary>
+        /// 艦娘マスタとの対応。
+        /// </summary>
+        public int ShipInfoId { get; set; }
+        public virtual ShipInfo ShipInfo { get; set; }
+
+        /// <summary>
         /// 艦娘のレベル。
         /// </summary>
         public int Level { get; set; }
