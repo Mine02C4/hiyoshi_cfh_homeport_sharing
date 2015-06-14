@@ -67,6 +67,7 @@ namespace HiyoshiCfhClient
             var webShip = new WebShip();
             webShip.AdmiralId = admiralId;
             webShip.ShipId = ship.Id;
+            webShip.ShipInfoId = ship.Info.Id;
             webShip.Level = ship.Level;
             webShip.IsLocked = ship.IsLocked;
             webShip.Exp = ship.Exp;

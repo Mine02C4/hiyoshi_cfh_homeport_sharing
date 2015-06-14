@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generation date: 2015/06/15 0:43:03
+// Generation date: 2015/06/15 6:37:45
 namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
 {
     /// <summary>
@@ -673,6 +673,28 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
         private global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.AdmiralSingle _Admiral;
+        /// <summary>
+        /// There are no comments for ShipInfo in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("ShipInfo")]
+        public global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.ShipInfoSingle ShipInfo
+        {
+            get
+            {
+                if (!this.IsComposable)
+                {
+                    throw new global::System.NotSupportedException("The previous function is not composable.");
+                }
+                if ((this._ShipInfo == null))
+                {
+                    this._ShipInfo = new global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.ShipInfoSingle(this.Context, GetPath("ShipInfo"));
+                }
+                return this._ShipInfo;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        private global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.ShipInfoSingle _ShipInfo;
     }
     /// <summary>
     /// There are no comments for Ship in the schema.
@@ -803,6 +825,29 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
         private int _ShipId;
         partial void OnShipIdChanging(int value);
         partial void OnShipIdChanged();
+        /// <summary>
+        /// There are no comments for Property ShipInfoId in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("ShipInfoId")]
+        public global::System.Nullable<int> ShipInfoId
+        {
+            get
+            {
+                return this._ShipInfoId;
+            }
+            set
+            {
+                this.OnShipInfoIdChanging(value);
+                this._ShipInfoId = value;
+                this.OnShipInfoIdChanged();
+                this.OnPropertyChanged("ShipInfoId");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        private global::System.Nullable<int> _ShipInfoId;
+        partial void OnShipInfoIdChanging(global::System.Nullable<int> value);
+        partial void OnShipInfoIdChanged();
         /// <summary>
         /// There are no comments for Property Level in the schema.
         /// </summary>
@@ -1102,6 +1147,29 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
         private global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.Admiral _Admiral;
         partial void OnAdmiralChanging(global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.Admiral value);
         partial void OnAdmiralChanged();
+        /// <summary>
+        /// There are no comments for Property ShipInfo in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("ShipInfo")]
+        public global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.ShipInfo ShipInfo
+        {
+            get
+            {
+                return this._ShipInfo;
+            }
+            set
+            {
+                this.OnShipInfoChanging(value);
+                this._ShipInfo = value;
+                this.OnShipInfoChanged();
+                this.OnPropertyChanged("ShipInfo");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        private global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.ShipInfo _ShipInfo;
+        partial void OnShipInfoChanging(global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.ShipInfo value);
+        partial void OnShipInfoChanged();
         /// <summary>
         /// This event is raised when the value of the property is changed
         /// </summary>
@@ -1452,6 +1520,7 @@ namespace HiyoshiCfhClient.Default
         <Property Name=""ShipUid"" Type=""Edm.Int32"" Nullable=""false"" />
         <Property Name=""AdmiralId"" Type=""Edm.Int32"" />
         <Property Name=""ShipId"" Type=""Edm.Int32"" Nullable=""false"" />
+        <Property Name=""ShipInfoId"" Type=""Edm.Int32"" />
         <Property Name=""Level"" Type=""Edm.Int32"" Nullable=""false"" />
         <Property Name=""IsLocked"" Type=""Edm.Boolean"" Nullable=""false"" />
         <Property Name=""Exp"" Type=""Edm.Int32"" Nullable=""false"" />
@@ -1466,6 +1535,9 @@ namespace HiyoshiCfhClient.Default
         <Property Name=""Luck"" Type=""Edm.Int32"" Nullable=""false"" />
         <NavigationProperty Name=""Admiral"" Type=""HiyoshiCfhWeb.Models.Admiral"">
           <ReferentialConstraint Property=""AdmiralId"" ReferencedProperty=""AdmiralId"" />
+        </NavigationProperty>
+        <NavigationProperty Name=""ShipInfo"" Type=""HiyoshiCfhWeb.Models.ShipInfo"">
+          <ReferentialConstraint Property=""ShipInfoId"" ReferencedProperty=""ShipInfoId"" />
         </NavigationProperty>
       </EntityType>
       <EnumType Name=""ShipSpeed"">
@@ -1484,6 +1556,7 @@ namespace HiyoshiCfhClient.Default
         </EntitySet>
         <EntitySet Name=""Ships"" EntityType=""HiyoshiCfhWeb.Models.Ship"">
           <NavigationPropertyBinding Path=""Admiral"" Target=""Admirals"" />
+          <NavigationPropertyBinding Path=""ShipInfo"" Target=""ShipInfoes"" />
         </EntitySet>
       </EntityContainer>
     </Schema>
