@@ -50,7 +50,6 @@ namespace HiyoshiCfhWeb.Models
         public string Name { get; set; }
         public int ShipTypeId { get; set; }
         public virtual ShipType ShipType { get; set; }
-        public int[] Slots { get; set; }
         public ShipSpeed ShipSpeed { get; set; }
         public int? NextRemodelingLevel { get; set; }
     }
