@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generation date: 2015/06/15 6:37:45
+// Generation date: 2015/06/17 3:33:41
 namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
 {
     /// <summary>
@@ -461,14 +461,16 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
         /// <param name="memberId">Initial value of MemberId.</param>
         /// <param name="experience">Initial value of Experience.</param>
         /// <param name="level">Initial value of Level.</param>
+        /// <param name="maxShipCount">Initial value of MaxShipCount.</param>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
-        public static Admiral CreateAdmiral(int admiralId, int memberId, int experience, int level)
+        public static Admiral CreateAdmiral(int admiralId, int memberId, int experience, int level, int maxShipCount)
         {
             Admiral admiral = new Admiral();
             admiral.AdmiralId = admiralId;
             admiral.MemberId = memberId;
             admiral.Experience = experience;
             admiral.Level = level;
+            admiral.MaxShipCount = maxShipCount;
             return admiral;
         }
         /// <summary>
@@ -586,6 +588,52 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
         private int _Level;
         partial void OnLevelChanging(int value);
         partial void OnLevelChanged();
+        /// <summary>
+        /// There are no comments for Property MaxShipCount in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("MaxShipCount")]
+        public int MaxShipCount
+        {
+            get
+            {
+                return this._MaxShipCount;
+            }
+            set
+            {
+                this.OnMaxShipCountChanging(value);
+                this._MaxShipCount = value;
+                this.OnMaxShipCountChanged();
+                this.OnPropertyChanged("MaxShipCount");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        private int _MaxShipCount;
+        partial void OnMaxShipCountChanging(int value);
+        partial void OnMaxShipCountChanged();
+        /// <summary>
+        /// There are no comments for Property Rank in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Rank")]
+        public string Rank
+        {
+            get
+            {
+                return this._Rank;
+            }
+            set
+            {
+                this.OnRankChanging(value);
+                this._Rank = value;
+                this.OnRankChanged();
+                this.OnPropertyChanged("Rank");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        private string _Rank;
+        partial void OnRankChanging(string value);
+        partial void OnRankChanged();
         /// <summary>
         /// There are no comments for Property Ships in the schema.
         /// </summary>
@@ -1511,6 +1559,8 @@ namespace HiyoshiCfhClient.Default
         <Property Name=""Name"" Type=""Edm.String"" />
         <Property Name=""Experience"" Type=""Edm.Int32"" Nullable=""false"" />
         <Property Name=""Level"" Type=""Edm.Int32"" Nullable=""false"" />
+        <Property Name=""MaxShipCount"" Type=""Edm.Int32"" Nullable=""false"" />
+        <Property Name=""Rank"" Type=""Edm.String"" />
         <NavigationProperty Name=""Ships"" Type=""Collection(HiyoshiCfhWeb.Models.Ship)"" />
       </EntityType>
       <EntityType Name=""Ship"">
