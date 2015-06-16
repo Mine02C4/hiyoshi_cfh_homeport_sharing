@@ -59,6 +59,7 @@ namespace HiyoshiCfhClient
             webAdmiral.Experience = admiral.Experience;
             webAdmiral.Level = admiral.Level;
             webAdmiral.MemberId = int.Parse(admiral.MemberId);
+            admiral.Rank
             return webAdmiral;
         }
 

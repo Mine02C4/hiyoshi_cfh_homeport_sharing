@@ -34,5 +34,15 @@ namespace HiyoshiCfhWeb.Models
         /// 提督レベル
         /// </summary>
         public int Level { get; set; }
+
+        /// <summary>
+        /// 最大保有可能 艦娘数
+        /// </summary>
+        public int MaxShipCount { get; set; }
+
+        /// <summary>
+        /// 階級
+        /// </summary>
+        public string Rank { get; set; }
     }
 }

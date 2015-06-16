@@ -237,9 +237,14 @@
     <Compile Include="Migrations\201506142131471_AddRelationshipShipAndShipInfo.Designer.cs">
       <DependentUpon>201506142131471_AddRelationshipShipAndShipInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201506160352119_AddPropertyToAdmiralModel.cs" />
+    <Compile Include="Migrations\201506160352119_AddPropertyToAdmiralModel.Designer.cs">
+      <DependentUpon>201506160352119_AddPropertyToAdmiralModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AdmiralModels.cs" />
+    <Compile Include="Models\FleetModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\ShipModels.cs" />
@@ -352,6 +357,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201506142131471_AddRelationshipShipAndShipInfo.resx">
       <DependentUpon>201506142131471_AddRelationshipShipAndShipInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201506160352119_AddPropertyToAdmiralModel.resx">
+      <DependentUpon>201506160352119_AddPropertyToAdmiralModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
