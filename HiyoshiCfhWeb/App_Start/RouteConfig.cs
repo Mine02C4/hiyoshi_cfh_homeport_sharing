@@ -13,6 +13,12 @@ namespace HiyoshiCfhWeb
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+
+            routes.MapRoute(
+                name: "Ship",
+                url: "Ship/{id}",
+                defaults: new { controller = "Ship", action = "Index", id = UrlParameter.Optional }
+            );
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",

@@ -1,0 +1,53 @@
+﻿@model HiyoshiCfhWeb.Models.ShipInfo
+
+@{
+    ViewBag.Title = Model.Name;
+}
+
+<h2>@Model.Name</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ShipType.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShipType.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SortId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SortId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ShipSpeed)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShipSpeed)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NextRemodelingLevel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NextRemodelingLevel)
+        </dd>
+
+    </dl>
+</div>
