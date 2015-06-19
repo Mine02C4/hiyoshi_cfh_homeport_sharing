@@ -139,6 +139,10 @@ namespace HiyoshiCfhClient
                 await RegisterAdmiral();
                 Admiral = await GetAdmiral(memberId);
             }
+            else
+            {
+                await UpdateAdmiral();
+            }
         }
 
         async Task<WebAdmiral> GetAdmiral(int MemberId)
@@ -151,13 +155,21 @@ namespace HiyoshiCfhClient
 
         public async Task RegisterAdmiral()
         {
-            await Task.Run(() =>
-            {
-                // TODO: 登録エラーの実装
-                var admiral = ConvertAdmiral(KanColleClient.Current.Homeport.Admiral);
-                Context.AddToAdmirals(admiral);
-                Context.SaveChanges();
-            });
+            // TODO: 登録エラーの実装
+            var admiral = ConvertAdmiral(KanColleClient.Current.Homeport.Admiral);
+            Context.AddToAdmirals(admiral);
+            await Context.SaveChangesAsync();
+            Admiral = admiral;
+        }
+
+        public async Task UpdateAdmiral()
+        {
+            var admiral = ConvertAdmiral(KanColleClient.Current.Homeport.Admiral);
+            admiral.AdmiralId = Admiral.AdmiralId;
+            Context.Detach(Admiral);
+            Context.AttachTo("Admirals", admiral);
+            Context.ChangeState(admiral, EntityStates.Modified);
+            await Context.SaveChangesAsync();
         }
 
         public async Task UpdateMasterData()
