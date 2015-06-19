@@ -253,12 +253,13 @@ namespace HiyoshiCfhClient
             {
                 if (ships.Where(x => x.Value.Id == webShip.ShipId).Count() == 0)
                 {
-                    Context.DeleteObject(webShips);
+                    Context.DeleteObject(webShip);
                 }
                 else
                 {
-                    Context.Detach(webShips);
+                    Context.Detach(webShip);
                     var ship = ConvertShip(ships.Where(x => x.Value.Id == webShip.ShipId).First().Value, Admiral.AdmiralId);
+                    ship.ShipUid = webShip.ShipUid;
                     Context.AttachTo("Ships", ship);
                     Context.ChangeState(ship, EntityStates.Modified);
                 }

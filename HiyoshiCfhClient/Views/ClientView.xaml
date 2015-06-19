@@ -61,7 +61,7 @@
                     </i:Interaction.Triggers>
                 </Button>
                 <TextBlock Text="Token:" Margin="0" VerticalAlignment="Center" />
-                <TextBlock Text="{Binding AccessToken}" Margin="5" VerticalAlignment="Center" Height="10" />
+                <TextBlock Text="{Binding AccessToken}" VerticalAlignment="Center" Height="10" />
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <Button Content="艦種マスタ送信" Margin="10">
