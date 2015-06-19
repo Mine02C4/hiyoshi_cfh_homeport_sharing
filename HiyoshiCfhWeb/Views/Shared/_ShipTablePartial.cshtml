@@ -53,7 +53,7 @@
         @Html.DisplayFor(modelItem => item.ShipId)
         </td>
         <td>
-        @Html.DisplayFor(modelItem => item.ShipInfo.Name)
+        @Html.ActionLink(item.ShipInfo.Name, "Index", "Ship", routeValues: new { id = item.ShipInfo.Name }, htmlAttributes: null)
         </td>
         <td>
         @Html.DisplayFor(modelItem => item.Level)
