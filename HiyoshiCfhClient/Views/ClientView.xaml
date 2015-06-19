@@ -28,31 +28,32 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <StackPanel>
-            <StackPanel Orientation="Horizontal" Margin="10,10,10,0">
-                <Button Content="テスト開始">
+            <StackPanel Orientation="Horizontal" Margin="10">
+                <Button Content="テスト開始(一連の基本動作)">
                     <i:Interaction.Triggers>
                         <i:EventTrigger EventName="Click">
                             <ei:CallMethodAction TargetObject="{Binding}" MethodName="StartTest"/>
                         </i:EventTrigger>
                     </i:Interaction.Triggers>
                 </Button>
+                <TextBlock Text="下のボタンはすべて開発用です。" Margin="10,0,0,0" />
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <Button x:Name="GetShipTypesButton" Content="艦種マスタを取得" Margin="10">
+                <Button x:Name="GetShipTypesButton" Content="艦種マスタを取得" Margin="10,0">
                     <i:Interaction.Triggers>
                         <i:EventTrigger EventName="Click">
                             <ei:CallMethodAction TargetObject="{Binding}" MethodName="GetShipTypes"/>
                         </i:EventTrigger>
                     </i:Interaction.Triggers>
                 </Button>
-                <Button x:Name="ClearConsoleButton" Content="クリア" Margin="10">
+                <Button x:Name="ClearConsoleButton" Content="クリア" Margin="10,0">
                     <i:Interaction.Triggers>
                         <i:EventTrigger EventName="Click">
                             <ei:CallMethodAction TargetObject="{Binding}" MethodName="ClearConsole"/>
                         </i:EventTrigger>
                     </i:Interaction.Triggers>
                 </Button>
-                <Button x:Name="OpenLoginDialog" Content="ログイン" Margin="10">
+                <Button x:Name="OpenLoginDialog" Content="ログイン" Margin="10,0">
                     <i:Interaction.Triggers>
                         <i:EventTrigger EventName="Click">
                             <ei:CallMethodAction TargetObject="{Binding}" MethodName="OpenLoginWindow"/>
@@ -60,7 +61,7 @@
                     </i:Interaction.Triggers>
                 </Button>
                 <TextBlock Text="Token:" Margin="0" VerticalAlignment="Center" />
-                <TextBlock Text="{Binding AccessToken}" Margin="5" VerticalAlignment="Center" />
+                <TextBlock Text="{Binding AccessToken}" Margin="5" VerticalAlignment="Center" Height="10" />
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <Button Content="艦種マスタ送信" Margin="10">
