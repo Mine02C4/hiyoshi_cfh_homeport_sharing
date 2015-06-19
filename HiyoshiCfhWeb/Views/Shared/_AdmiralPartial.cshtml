@@ -2,5 +2,6 @@
 <h2>提督基本情報</h2>
 <h3>@Model.Name 提督</h3>
 <p>司令部レベル: Lv. @Model.Level</p>
-<p>累積経験値: Lv. @Model.Experience</p>
-<p>所属艦娘: @Model.Ships.Count</p>
+<p>累積経験値: @Model.Experience</p>
+<p>所属艦娘: @Model.Ships.Count / @Model.MaxShipCount</p>
+<p>階級: @Model.Rank</p>
