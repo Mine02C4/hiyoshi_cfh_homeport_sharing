@@ -4,37 +4,13 @@
     ViewBag.Title = Model.Name;
 }
 
-<h2>@Model.Name</h2>
+<h2>@Html.DisplayFor(model => model.ShipType.Name) @Model.Name</h2>
 
 <div>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.ShipType.Name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ShipType.Name)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.SortId)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.SortId)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ShipSpeed)
+            速力
         </dt>
 
         <dd>
@@ -42,11 +18,18 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.NextRemodelingLevel)
+            次の改装レベル
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.NextRemodelingLevel)
+            @if (Model.NextRemodelingLevel != null)
+            {
+                Html.DisplayFor(modelItem => Model.NextRemodelingLevel);
+            }
+            else
+            {
+                <text>改装完了</text>
+            }
         </dd>
 
     </dl>
