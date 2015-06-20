@@ -16,7 +16,7 @@ namespace HiyoshiCfhWeb.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-                private ApplicationUserManager _userManager;
+        private ApplicationUserManager _userManager;
         public ApplicationUserManager UserManager
         {
             get
