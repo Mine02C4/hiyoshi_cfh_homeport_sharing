@@ -4,9 +4,14 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using System.Data.Entity.ModelConfiguration.Conventions;
+using System;
 
 namespace HiyoshiCfhWeb.Models
 {
+    public class ApplicationUserLogin : IdentityUserLogin<string> { }
+    public class ApplicationUserClaim : IdentityUserClaim<string> { }
+    public class ApplicationUserRole : IdentityUserRole<string> { }
+
     // ApplicationUser クラスにプロパティを追加することでユーザーのプロファイル データを追加できます。詳細については、http://go.microsoft.com/fwlink/?LinkID=317594 を参照してください。
     public class ApplicationUser : IdentityUser
     {
@@ -16,6 +21,37 @@ namespace HiyoshiCfhWeb.Models
             var userIdentity = await manager.CreateIdentityAsync(this, DefaultAuthenticationTypes.ApplicationCookie);
             // ここにカスタム ユーザー クレームを追加します
             return userIdentity;
+        }
+    }
+
+    public class ApplicationRole : IdentityRole<string, ApplicationUserRole>
+    {
+        public ApplicationRole()
+        {
+            this.Id = Guid.NewGuid().ToString();
+        }
+
+        public ApplicationRole(string name)
+            : this()
+        {
+            this.Name = name;
+        }
+    }
+
+    public class ApplicationRoleStore
+    : RoleStore<ApplicationRole, string, ApplicationUserRole>,
+    IQueryableRoleStore<ApplicationRole, string>,
+    IRoleStore<ApplicationRole, string>, IDisposable
+    {
+        public ApplicationRoleStore()
+            : base(new IdentityDbContext())
+        {
+            base.DisposeContext = true;
+        }
+
+        public ApplicationRoleStore(DbContext context)
+            : base(context)
+        {
         }
     }
 

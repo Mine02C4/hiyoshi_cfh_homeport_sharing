@@ -214,6 +214,7 @@
     <Compile Include="Controllers\OData\ShipInfoesController.cs" />
     <Compile Include="Controllers\OData\ShipsController.cs" />
     <Compile Include="Controllers\OData\ShipTypesController.cs" />
+    <Compile Include="Controllers\RoleController.cs" />
     <Compile Include="Controllers\ShipsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -337,6 +338,10 @@
     <Content Include="Views\Shared\_AdmiralPartial.cshtml" />
     <Content Include="Views\Shared\_ShipTablePartial.cshtml" />
     <Content Include="Views\Ship\Index.cshtml" />
+    <Content Include="Views\Role\Create.cshtml" />
+    <Content Include="Views\Role\Index.cshtml" />
+    <Content Include="Views\Role\Edit.cshtml" />
+    <Content Include="Views\Role\ManageUserRoles.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
