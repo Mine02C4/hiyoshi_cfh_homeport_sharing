@@ -1,4 +1,5 @@
 ﻿using HiyoshiCfhWeb.Models;
+using System;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Net;
@@ -43,6 +44,7 @@ namespace HiyoshiCfhWeb.Controllers
             }
 
             patch.Put(Admiral);
+            Admiral.UpdateUtc = DateTime.UtcNow;
 
             try
             {
@@ -97,6 +99,7 @@ namespace HiyoshiCfhWeb.Controllers
             }
 
             patch.Patch(Admiral);
+            Admiral.UpdateUtc = DateTime.UtcNow;
 
             try
             {

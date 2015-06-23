@@ -123,6 +123,7 @@
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -243,9 +244,14 @@
     <Compile Include="Migrations\201506160352119_AddPropertyToAdmiralModel.Designer.cs">
       <DependentUpon>201506160352119_AddPropertyToAdmiralModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201506231717562_AddUpdateUtcToAdmiralModel.cs" />
+    <Compile Include="Migrations\201506231717562_AddUpdateUtcToAdmiralModel.Designer.cs">
+      <DependentUpon>201506231717562_AddUpdateUtcToAdmiralModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AdmiralModels.cs" />
+    <Compile Include="Models\Attributes.cs" />
     <Compile Include="Models\FleetModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -368,6 +374,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201506160352119_AddPropertyToAdmiralModel.resx">
       <DependentUpon>201506160352119_AddPropertyToAdmiralModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201506231717562_AddUpdateUtcToAdmiralModel.resx">
+      <DependentUpon>201506231717562_AddUpdateUtcToAdmiralModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

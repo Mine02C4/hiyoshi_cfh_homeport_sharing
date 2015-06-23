@@ -1,5 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity.Infrastructure;
+using System.Runtime.Serialization;
 
 namespace HiyoshiCfhWeb.Models
 {
@@ -44,5 +47,9 @@ namespace HiyoshiCfhWeb.Models
         /// 階級
         /// </summary>
         public string Rank { get; set; }
+
+        [IgnoreDataMember]
+        [DateTimeKind(DateTimeKind.Utc)]
+        public DateTime UpdateUtc { get; set; }
     }
 }

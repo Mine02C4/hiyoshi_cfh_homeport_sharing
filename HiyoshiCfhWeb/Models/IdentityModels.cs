@@ -5,6 +5,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using System;
+using System.Data.Entity.Infrastructure;
 
 namespace HiyoshiCfhWeb.Models
 {
@@ -60,6 +61,8 @@ namespace HiyoshiCfhWeb.Models
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
+            ((IObjectContextAdapter)this).ObjectContext.ObjectMaterialized +=
+                (sender, e) => DateTimeKindAttribute.Apply(e.Entity);
         }
 
         public DbSet<Admiral> Admirals { get; set; }
