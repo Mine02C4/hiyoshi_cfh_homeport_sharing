@@ -215,7 +215,7 @@
     <Compile Include="Controllers\OData\ShipsController.cs" />
     <Compile Include="Controllers\OData\ShipTypesController.cs" />
     <Compile Include="Controllers\RoleController.cs" />
-    <Compile Include="Controllers\ShipsController.cs" />
+    <Compile Include="Controllers\ShipController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
