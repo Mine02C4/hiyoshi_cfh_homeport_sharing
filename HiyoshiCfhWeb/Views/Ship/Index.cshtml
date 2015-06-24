@@ -14,7 +14,14 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.ShipSpeed)
+            @if (Model.ShipSpeed == HiyoshiCfhWeb.Models.ShipSpeed.Fast)
+            {
+                <text>高速</text>
+            }
+            else
+            {
+                <text>低速</text>
+            }
         </dd>
 
         <dt>
@@ -24,7 +31,7 @@
         <dd>
             @if (Model.NextRemodelingLevel != null)
             {
-                Html.DisplayFor(modelItem => Model.NextRemodelingLevel);
+                <text>Lv. @Model.NextRemodelingLevel</text>
             }
             else
             {
