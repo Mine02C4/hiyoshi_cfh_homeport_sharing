@@ -348,6 +348,7 @@
     <Content Include="Views\Role\Index.cshtml" />
     <Content Include="Views\Role\Edit.cshtml" />
     <Content Include="Views\Role\ManageUserRoles.cshtml" />
+    <Content Include="Views\Shared\_SimpleStatisticsPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
