@@ -36,14 +36,14 @@
 ### ウェブフロントエンド
 
 * ASP.NET MVC 5 (ウェブアプリケーションフレームワーク)
-** Razor (ビューエンジン)
+  * Razor (ビューエンジン)
 * ASP.NET Identity (認証)
-** OAuth 2.0, OpenID Connect (Google経由の認証に使用。基本的にはライブラリに丸投げ)
+  * OAuth 2.0, OpenID Connect (Google経由の認証に使用。基本的にはライブラリに丸投げ)
 
 ### データベース
 
 * ADO.NET Entity Framework (ORM)
-** Code First Migrationを使用している。
+  * Code First Migrationを使用している。
 
 ### ウェブAPI
 
