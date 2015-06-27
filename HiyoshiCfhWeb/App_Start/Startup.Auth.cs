@@ -9,6 +9,7 @@ using Microsoft.Owin.Security.Google;
 using Microsoft.Owin.Security.OAuth;
 using Owin;
 using System;
+using System.Configuration;
 
 namespace HiyoshiCfhWeb
 {
@@ -79,10 +80,11 @@ namespace HiyoshiCfhWeb
             //   appId: "",
             //   appSecret: "");
 
+            var appSettings = ConfigurationManager.AppSettings;
             app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             {
-                ClientId = Properties.SecretSettings.Default.GoogleClientId,
-                ClientSecret = Properties.SecretSettings.Default.GoogleClientSecret
+                ClientId = appSettings["GoogleClientId"],
+                ClientSecret = appSettings["GoogleClientSecret"]
             });
 
             // アプリケーションがベアラ トークンを使用してユーザーを認証できるようにします
