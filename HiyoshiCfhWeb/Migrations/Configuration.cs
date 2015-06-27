@@ -1,5 +1,6 @@
 namespace HiyoshiCfhWeb.Migrations
 {
+    using Microsoft.AspNet.Identity.EntityFramework;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
@@ -26,6 +27,7 @@ namespace HiyoshiCfhWeb.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
+            context.Roles.AddOrUpdate(r => r.Name, new IdentityRole { Name = "Admin" });
         }
     }
 }
