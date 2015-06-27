@@ -195,7 +195,3 @@ ModelManifest.xml
 .*.sw[op]
 .sw[op]
 
-# SecretSettings(e.g. API Key)
-SecretSettings.settings
-SecretSettings.Designer.cs
-
