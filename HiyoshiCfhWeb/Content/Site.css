@@ -22,3 +22,24 @@ select,
 textarea {
     max-width: 280px;
 }
+
+#Google {
+    background-image: url('signin-google.png');
+    background-position: center top;
+    width: 473px;
+    height: 108px;
+    overflow: hidden;
+    text-indent: 100%;
+    white-space: nowrap;
+    padding: 0;
+    border: none;
+    outline: none;
+}
+
+#Google:hover {
+    background-position: center -108px;
+}
+
+#Google:active {
+    background-position: center -216px;
+}

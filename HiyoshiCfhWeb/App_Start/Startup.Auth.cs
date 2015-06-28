@@ -67,19 +67,7 @@ namespace HiyoshiCfhWeb
             // これは、ログイン時の「このアカウントを記憶する」オプションに似ています。
             app.UseTwoFactorRememberBrowserCookie(DefaultAuthenticationTypes.TwoFactorRememberBrowserCookie);
 
-            // 次の行のコメントを解除して、サード パーティのログイン プロバイダーを使用したログインを有効にします
-            //app.UseMicrosoftAccountAuthentication(
-            //    clientId: "",
-            //    clientSecret: "");
-
-            //app.UseTwitterAuthentication(
-            //   consumerKey: "",
-            //   consumerSecret: "");
-
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
-
+            // GoogleによるOAuth 2.0認証を設定
             var appSettings = ConfigurationManager.AppSettings;
             app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             {
