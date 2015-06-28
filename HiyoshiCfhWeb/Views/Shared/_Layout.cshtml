@@ -21,7 +21,6 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("ホーム", "Index", "Home")</li>
                     <li>@Html.ActionLink("詳細", "About", "Home")</li>
                     <li>@Html.ActionLink("連絡先", "Contact", "Home")</li>
                     <li>@Html.ActionLink("所属提督", "Index", "Headquarters")</li>
@@ -34,7 +33,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - マイ ASP.NET アプリケーション</p>
+            <p>&copy; @DateTime.Now.Year - <a href="http://mine02c4.nagoya/">Mine02C4</a></p>
         </footer>
     </div>
     @Scripts.Render("~/bundles/jquery")
