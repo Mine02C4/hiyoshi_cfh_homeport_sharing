@@ -238,6 +238,10 @@
     <Compile Include="Migrations\201506231717562_AddUpdateUtcToAdmiralModel.Designer.cs">
       <DependentUpon>201506231717562_AddUpdateUtcToAdmiralModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201506290809019_AddPermissionModel.cs" />
+    <Compile Include="Migrations\201506290809019_AddPermissionModel.Designer.cs">
+      <DependentUpon>201506290809019_AddPermissionModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AdmiralModels.cs" />
@@ -245,11 +249,13 @@
     <Compile Include="Models\FleetModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\PermissionModels.cs" />
     <Compile Include="Models\ShipModels.cs" />
     <Compile Include="Models\SlotItemModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Provider\ApplicationOAuthProvider.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="Controllers\PermissionController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -328,6 +334,11 @@
     <Content Include="Views\Role\Edit.cshtml" />
     <Content Include="Views\Role\ManageUserRoles.cshtml" />
     <Content Include="Views\Shared\_SimpleStatisticsPartial.cshtml" />
+    <Content Include="Views\Permission\Create.cshtml" />
+    <Content Include="Views\Permission\Delete.cshtml" />
+    <Content Include="Views\Permission\Details.cshtml" />
+    <Content Include="Views\Permission\Edit.cshtml" />
+    <Content Include="Views\Permission\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -357,6 +368,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201506231717562_AddUpdateUtcToAdmiralModel.resx">
       <DependentUpon>201506231717562_AddUpdateUtcToAdmiralModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201506290809019_AddPermissionModel.resx">
+      <DependentUpon>201506290809019_AddPermissionModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

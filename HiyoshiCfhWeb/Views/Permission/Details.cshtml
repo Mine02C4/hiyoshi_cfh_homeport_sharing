@@ -1,0 +1,26 @@
+﻿@model HiyoshiCfhWeb.Models.Permission
+
+@{
+    ViewBag.Title = "事前登録許可の詳細";
+}
+
+<h2>事前登録許可の詳細</h2>
+
+<div>
+    <h4>Permission</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PermissionId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
