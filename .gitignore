@@ -195,3 +195,5 @@ ModelManifest.xml
 .*.sw[op]
 .sw[op]
 
+# Exclude distribution plugin
+/HiyoshiCfhWeb/Content/Plugin/
