@@ -1,22 +1,22 @@
 ﻿@model HiyoshiCfhWeb.Models.Admiral
 <h2>簡易統計</h2>
 @{
-    var st = Model.Ships.GroupBy(ship => ship.ShipInfo.ShipType.Name).Select((ship) => new
+    var st = Model.Ships.GroupBy(ship => new { ship.ShipInfo.ShipType.Name }).Select(x => new
     {
-        Name = ship.First().ShipInfo.ShipType.Name,
-        Sum = ship.Sum((Ship) => Ship.Exp)        
+        Name = x.Key.Name,
+        Sum = x.Sum((Ship) => Ship.Exp)
     }).OrderByDescending((x) => x.Sum);
 }
 <h3>艦種毎の累積経験値</h3>
 <dl class="dl-horizontal">
-    
-        @foreach (var item in st)
-        {
-            <dt>
-                @item.Name
-            </dt>
-            <dd>
-                @item.Sum
-            </dd>
-        }
+
+    @foreach (var item in st)
+    {
+        <dt>
+            @item.Name
+        </dt>
+        <dd>
+            @item.Sum
+        </dd>
+    }
 </dl>

@@ -17,7 +17,6 @@ namespace HiyoshiCfhWeb.Controllers
 
         public ActionResult Homeport(string id)
         {
-            System.Diagnostics.Trace.TraceInformation("name = {0}", id);
             var admiral = db.Admirals.Where(x => x.Name.Equals(id)).First();
             var results = db.Ships.Where(x => x.AdmiralId == admiral.AdmiralId).Join(db.ShipInfoes, ship => ship.ShipInfoId, shipInfo => shipInfo.ShipInfoId, (ship, shipInfo) => new
             {

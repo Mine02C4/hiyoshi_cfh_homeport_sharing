@@ -7,4 +7,13 @@
 <ul>
     <li>@Html.ActionLink("事前登録許可", "Index", "Permission")</li>
     <li>@Html.ActionLink("権限管理", "Index", "Role")</li>
+    <li>@Html.ActionLink("ユーザー", "Users")</li>
 </ul>
+
+@using (Html.BeginForm("Deduplication", null))
+{
+    @Html.AntiForgeryToken()
+    <div class="form-actions no-color">
+        <input type="submit" value="重複除去" class="btn btn-default" />
+    </div>
+}

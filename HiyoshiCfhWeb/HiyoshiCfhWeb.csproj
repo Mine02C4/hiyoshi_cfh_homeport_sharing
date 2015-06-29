@@ -341,6 +341,7 @@
     <Content Include="Views\Permission\Edit.cshtml" />
     <Content Include="Views\Permission\Index.cshtml" />
     <Content Include="Views\Configuration\Index.cshtml" />
+    <Content Include="Views\Configuration\Users.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
