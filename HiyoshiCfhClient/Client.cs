@@ -22,6 +22,8 @@ namespace HiyoshiCfhClient
         string TokenType;
         string AccessToken;
         WebAdmiral Admiral;
+        public delegate void DebugConsole(string msg);
+        DebugConsole _DebugConsole;
 
         private static WebShipType ConvertShipType(ShipType shipType)
         {
@@ -99,6 +101,20 @@ namespace HiyoshiCfhClient
             }
         }
 
+        public Client(string tokenType, string accessToken, DebugConsole debugConsole)
+            : this(tokenType, accessToken)
+        {
+            _DebugConsole = debugConsole;
+        }
+
+        private void OutDebugConsole(string msg)
+        {
+            if (_DebugConsole != null)
+            {
+                _DebugConsole(msg);
+            }
+        }
+
         public async Task SendShipTypes()
         {
             await Task.Run(() =>
@@ -132,6 +148,7 @@ namespace HiyoshiCfhClient
 
         public async Task InitAdmiralInformation()
         {
+            OutDebugConsole("InitAdmiralInformation");
             var memberId = int.Parse(KanColleClient.Current.Homeport.Admiral.MemberId);
             Admiral = await GetAdmiral(memberId);
             if (Admiral == null)
@@ -147,6 +164,7 @@ namespace HiyoshiCfhClient
 
         async Task<WebAdmiral> GetAdmiral(int MemberId)
         {
+            OutDebugConsole("GetAdmiral");
             return await Task.Run(() =>
             {
                 return Context.Admirals.Where(x => x.MemberId == MemberId).FirstOrDefault();
@@ -155,6 +173,7 @@ namespace HiyoshiCfhClient
 
         public async Task RegisterAdmiral()
         {
+            OutDebugConsole("RegisterAdmiral");
             // TODO: 登録エラーの実装
             var admiral = ConvertAdmiral(KanColleClient.Current.Homeport.Admiral);
             Context.AddToAdmirals(admiral);
@@ -164,6 +183,7 @@ namespace HiyoshiCfhClient
 
         public async Task UpdateAdmiral()
         {
+            OutDebugConsole("UpdateAdmiral");
             var admiral = ConvertAdmiral(KanColleClient.Current.Homeport.Admiral);
             admiral.AdmiralId = Admiral.AdmiralId;
             Context.Detach(Admiral);
@@ -174,12 +194,14 @@ namespace HiyoshiCfhClient
 
         public async Task UpdateMasterData()
         {
+            OutDebugConsole("UpdateMasterData");
             await UpdateShipTypes();
             await UpdateShipInfoes();
         }
 
         async Task UpdateShipTypes()
         {
+            OutDebugConsole("UpdateShipTypes");
             var webShipTypes = (await GetShipTypesFromServer()).ToList();
             foreach (var shipType in KanColleClient.Current.Master.ShipTypes)
             {
@@ -211,6 +233,7 @@ namespace HiyoshiCfhClient
 
         async Task UpdateShipInfoes()
         {
+            OutDebugConsole("UpdateShipInfoes");
             var webShipInfoes = (await GetShipInfoesFromServer()).ToList();
             foreach (var shipInfo in KanColleClient.Current.Master.Ships)
             {
@@ -246,6 +269,7 @@ namespace HiyoshiCfhClient
 
         public async Task UpdateShips()
         {
+            OutDebugConsole("UpdateShips");
             var webShips = GetShipFromServer().ToList();
             var ships = KanColleClient.Current.Homeport.Organization.Ships.ToList();
             // まずは存在しない艦娘の削除と更新

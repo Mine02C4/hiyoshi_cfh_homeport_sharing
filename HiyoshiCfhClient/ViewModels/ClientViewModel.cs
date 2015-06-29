@@ -72,7 +72,6 @@ namespace HiyoshiCfhClient.ViewModels
 
         void vm_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
-            DebugConsole += "Raised property change: " + e.PropertyName + "\n";
             switch (e.PropertyName)
             {
                 case "AccessToken":
@@ -111,10 +110,12 @@ namespace HiyoshiCfhClient.ViewModels
                     this.PropertyChanged -= InitClient;
                     Task.Factory.StartNew(async () =>
                     {
-                        Client = new Client(TokenType, AccessToken);
+                        OutDebugConsole("Start init client thread");
+                        Client = new Client(TokenType, AccessToken, OutDebugConsole);
                         await Client.InitAdmiralInformation();
                         await Client.UpdateMasterData();
                         await Client.UpdateShips();
+                        OutDebugConsole("End init client thread");
                     });
                 }
                 catch (Exception ex)
@@ -172,6 +173,11 @@ namespace HiyoshiCfhClient.ViewModels
             {
                 DebugConsole += ex.ToString() + System.Environment.NewLine;
             }
+        }
+
+        private void OutDebugConsole(string msg)
+        {
+            DebugConsole += msg + System.Environment.NewLine;
         }
     }
 }
