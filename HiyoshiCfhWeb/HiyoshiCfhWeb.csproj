@@ -198,6 +198,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ConfigurationController.cs" />
     <Compile Include="Controllers\HeadquartersController.cs" />
     <Compile Include="Controllers\OData\AdmiralsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -339,6 +340,7 @@
     <Content Include="Views\Permission\Details.cshtml" />
     <Content Include="Views\Permission\Edit.cshtml" />
     <Content Include="Views\Permission\Index.cshtml" />
+    <Content Include="Views\Configuration\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

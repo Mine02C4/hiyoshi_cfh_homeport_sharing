@@ -10,7 +10,7 @@ using HiyoshiCfhWeb.Models;
 
 namespace HiyoshiCfhWeb.Views
 {
-    [Authorize(Roles="Admin")]
+    [Authorize(Roles = "Admin")]
     public class PermissionController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
