@@ -277,6 +277,7 @@ namespace HiyoshiCfhClient
             {
                 if (ships.Where(x => x.Value.Id == webShip.ShipId).Count() == 0)
                 {
+                    OutDebugConsole("Delete: " + webShip.ToString());
                     Context.DeleteObject(webShip);
                 }
                 else
@@ -284,6 +285,7 @@ namespace HiyoshiCfhClient
                     Context.Detach(webShip);
                     var ship = ConvertShip(ships.Where(x => x.Value.Id == webShip.ShipId).First().Value, Admiral.AdmiralId);
                     ship.ShipUid = webShip.ShipUid;
+                    OutDebugConsole("Update: " + ship.ToString());
                     Context.AttachTo("Ships", ship);
                     Context.ChangeState(ship, EntityStates.Modified);
                 }
@@ -293,16 +295,20 @@ namespace HiyoshiCfhClient
             {
                 if (webShips.Where(x => x.ShipId == ship.Value.Id).Count() == 0)
                 {
+                    OutDebugConsole("Add: " + ship.Value.ToString());
                     Context.AddToShips(ConvertShip(ship.Value, Admiral.AdmiralId));
                 }
             }
             try
             {
+                OutDebugConsole("Saving ship data");
                 await Context.SaveChangesAsync();
+                OutDebugConsole("Saved ship data");
             }
             catch (Exception ex)
             {
                 Trace.TraceError("Error: {0}", ex);
+                OutDebugConsole("Error: " + ex.ToString());
             }
         }
 
