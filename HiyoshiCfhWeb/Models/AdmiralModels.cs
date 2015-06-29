@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity.Infrastructure;
 using System.Runtime.Serialization;
@@ -12,6 +13,13 @@ namespace HiyoshiCfhWeb.Models
         /// システム内部での提督識別子。
         /// </summary>
         public int AdmiralId { get; set; }
+
+        /// <summary>
+        /// ASP.NET Identityのユーザーとのリレーションシップ
+        /// </summary>
+        [IgnoreDataMember]
+        public string UserId { get; set; }
+        public virtual ApplicationUser User { get; set; }
 
         /// <summary>
         /// ゲーム内部での提督ID。

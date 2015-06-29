@@ -1,4 +1,5 @@
 ﻿using HiyoshiCfhWeb.Models;
+using Microsoft.AspNet.Identity;
 using System;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
@@ -42,6 +43,10 @@ namespace HiyoshiCfhWeb.Controllers
             {
                 return NotFound();
             }
+            if (Admiral.UserId != User.Identity.GetUserId())
+            {
+                return StatusCode(HttpStatusCode.Forbidden);
+            }
 
             patch.Put(Admiral);
             Admiral.UpdateUtc = DateTime.UtcNow;
@@ -76,6 +81,7 @@ namespace HiyoshiCfhWeb.Controllers
             {
                 return Conflict();
             }
+            Admiral.UserId = User.Identity.GetUserId();
             db.Admirals.Add(Admiral);
             db.SaveChanges();
             return Created(Admiral);
@@ -96,6 +102,10 @@ namespace HiyoshiCfhWeb.Controllers
             if (Admiral == null)
             {
                 return NotFound();
+            }
+            if (Admiral.UserId != User.Identity.GetUserId())
+            {
+                return StatusCode(HttpStatusCode.Forbidden);
             }
 
             patch.Patch(Admiral);
@@ -127,6 +137,10 @@ namespace HiyoshiCfhWeb.Controllers
             if (Admiral == null)
             {
                 return NotFound();
+            }
+            if (Admiral.UserId != User.Identity.GetUserId())
+            {
+                return StatusCode(HttpStatusCode.Forbidden);
             }
 
             db.Admirals.Remove(Admiral);

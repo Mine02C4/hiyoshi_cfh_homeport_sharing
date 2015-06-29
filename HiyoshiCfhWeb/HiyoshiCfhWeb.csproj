@@ -243,6 +243,10 @@
     <Compile Include="Migrations\201506290809019_AddPermissionModel.Designer.cs">
       <DependentUpon>201506290809019_AddPermissionModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201506291734497_AddRelationshipAdmiralToUser.cs" />
+    <Compile Include="Migrations\201506291734497_AddRelationshipAdmiralToUser.Designer.cs">
+      <DependentUpon>201506291734497_AddRelationshipAdmiralToUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AdmiralModels.cs" />
@@ -374,6 +378,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201506290809019_AddPermissionModel.resx">
       <DependentUpon>201506290809019_AddPermissionModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201506291734497_AddRelationshipAdmiralToUser.resx">
+      <DependentUpon>201506291734497_AddRelationshipAdmiralToUser.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

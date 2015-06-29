@@ -6,6 +6,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using System;
 using System.Data.Entity.Infrastructure;
+using System.Collections.Generic;
 
 namespace HiyoshiCfhWeb.Models
 {
@@ -23,6 +24,8 @@ namespace HiyoshiCfhWeb.Models
             // ここにカスタム ユーザー クレームを追加します
             return userIdentity;
         }
+
+        public virtual ICollection<Admiral> Admirals { get; set; }
     }
 
     public class ApplicationRole : IdentityRole<string, ApplicationUserRole>
