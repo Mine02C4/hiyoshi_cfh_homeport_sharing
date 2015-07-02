@@ -8,8 +8,9 @@
              xmlns:livet="http://schemas.livet-mvvm.net/2011/wpf"
              xmlns:views="clr-namespace:HiyoshiCfhClient.Views"
              xmlns:viewModels="clr-namespace:HiyoshiCfhClient.ViewModels"
+             xmlns:controls="clr-namespace:HiyoshiCfhClient.Views.Controls"
              mc:Ignorable="d"
-             d:DesignHeight="320" d:DesignWidth="560"
+             d:DesignHeight="520" d:DesignWidth="560"
              d:DataContext="{d:DesignInstance viewModels:ClientViewModel}">
     <i:Interaction.Triggers>
         <livet:InteractionMessageTrigger Messenger="{Binding Messenger}" MessageKey="Show/LoginWindow">
@@ -24,10 +25,20 @@
     </UserControl.DataContext>
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="300" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <StackPanel>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <!-- 完成版向けのUIテスト領域 -->
+            <controls:Logo />
+            <TextBlock Grid.Row="1" Text="ここに動作状況を表示予定" TextAlignment="Center" Margin="10,0,10,20" />
+        </Grid>
+        <StackPanel Grid.Row="1">
             <StackPanel Orientation="Horizontal" Margin="10">
                 <Button Content="テスト開始(一連の基本動作)">
                     <i:Interaction.Triggers>
@@ -87,6 +98,6 @@
                 </Button>
             </StackPanel>
         </StackPanel>
-        <TextBox x:Name="DebugConsole" IsReadOnly="True" BorderThickness="0" TextWrapping="Wrap" Text="{Binding DebugConsole}" Grid.Row="1" Background="{DynamicResource {x:Static SystemColors.WindowTextBrushKey}}" Margin="10" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" />
+        <TextBox x:Name="DebugConsole" IsReadOnly="True" BorderThickness="0" TextWrapping="Wrap" Text="{Binding DebugConsole}" Grid.Row="2" Background="{DynamicResource {x:Static SystemColors.WindowTextBrushKey}}" Margin="10" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" />
     </Grid>
 </UserControl>

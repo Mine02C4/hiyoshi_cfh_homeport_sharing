@@ -95,19 +95,34 @@ namespace HiyoshiCfhClient.ViewModels
         /// <summary>
         /// プラグインの起動シーケンスのテスト。
         /// </summary>
-        public async void StartTest()
+        public void StartTest()
         {
-            this.PropertyChanged += InitClient;
-            OpenLoginWindow();
+            if (CheckToken())
+            {
+                InitClient();
+            }
+            else
+            {
+                this.PropertyChanged += HandleLogin;
+                OpenLoginWindow();
+            }
         }
 
-        void InitClient(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        void HandleLogin(object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
-            if (TokenType != null && AccessToken != null)
+            if (CheckToken())
+            {
+                this.PropertyChanged -= HandleLogin;
+                InitClient();
+            }
+        }
+
+        void InitClient()
+        {
+            if (CheckToken())
             {
                 try
                 {
-                    this.PropertyChanged -= InitClient;
                     Task.Factory.StartNew(async () =>
                     {
                         OutDebugConsole("Start init client thread");
@@ -120,7 +135,7 @@ namespace HiyoshiCfhClient.ViewModels
                 }
                 catch (Exception ex)
                 {
-                    DebugConsole += ex.ToString() + System.Environment.NewLine;
+                    OutDebugConsole(ex.ToString());
                 }
             }
         }
@@ -145,7 +160,7 @@ namespace HiyoshiCfhClient.ViewModels
             }
             catch (Exception ex)
             {
-                DebugConsole += ex.ToString() + System.Environment.NewLine;
+                OutDebugConsole(ex.ToString());
             }
         }
 
@@ -158,7 +173,7 @@ namespace HiyoshiCfhClient.ViewModels
             }
             catch (Exception ex)
             {
-                DebugConsole += ex.ToString() + System.Environment.NewLine;
+                OutDebugConsole(ex.ToString());
             }
         }
 
@@ -171,8 +186,13 @@ namespace HiyoshiCfhClient.ViewModels
             }
             catch (Exception ex)
             {
-                DebugConsole += ex.ToString() + System.Environment.NewLine;
+                OutDebugConsole(ex.ToString());
             }
+        }
+
+        private bool CheckToken()
+        {
+            return AccessToken != null && AccessToken.Length > 0 && TokenType != null && TokenType.Length > 0;
         }
 
         private void OutDebugConsole(string msg)

@@ -1,0 +1,28 @@
+﻿<UserControl 
+	x:Class="HiyoshiCfhClient.Views.Controls.Logo"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	mc:Ignorable="d"
+	d:DesignWidth="640" d:DesignHeight="640">
+
+    <Viewbox x:Name="LayoutRoot">
+        <Canvas x:Name="ロゴ" HorizontalAlignment="Left" Height="1280" UseLayoutRounding="False" VerticalAlignment="Top" Width="1280" Margin="-100">
+            <Canvas x:Name="レイヤー_1" Height="867" Canvas.Left="140" Canvas.Top="207" Width="1000">
+                <Path Data="F1M238.456,846.983L0,433.5 250,0 726.912,0z" Fill="#FFBACDE8" Height="846.983" Canvas.Left="0" Canvas.Top="0" Width="726.912"/>
+                <Path Data="F1M488.456,0L726.912,413.483 476.912,846.983 0,846.983z" Fill="#FFEAB9B5" Height="846.983" Canvas.Left="273.088" Canvas.Top="20.017" Width="726.912"/>
+            </Canvas>
+            <Canvas x:Name="レイヤー_3" Height="571.935" Canvas.Left="232.586" Canvas.Top="376.366" Width="803.914">
+                <Path Data="F1M113.213,73.445L41.18,31.857 0,103.183 72.033,144.772 29.629,218.217 108.724,263.882 234.711,45.665 155.617,0z" Fill="#FFB2341E" Height="263.882" Canvas.Left="569.203" Canvas.Top="308.053" Width="234.711"/>
+                <Path Data="F1M121.498,190.437L193.531,232.025 234.711,160.699 162.678,119.11 205.082,45.665 125.987,0 0,218.217 79.094,263.882z" Fill="#FF2757B2" Height="263.882" Canvas.Left="0" Canvas.Top="0" Width="234.711"/>
+            </Canvas>
+            <Canvas x:Name="レイヤー_4" Height="830.141" Canvas.Left="312.675" Canvas.Top="200.859" Width="732.454">
+                <Path Data="F1M632.041,440.875L625.9,447.016 0,6.141 6.141,0 632.041,361.364z" Fill="#FF754C24" Height="447.016" Canvas.Left="100.413" Canvas.Top="0" Width="632.041"/>
+                <Path Data="F1M625.9,440.875L0,79.512 0,0 625.9,361.364z" Fill="#FFC69C6D" Height="440.875" Canvas.Left="100.413" Canvas.Top="6.141" Width="625.9"/>
+                <Path Data="F1M9,666.451L0,666.451 347.029,0 381.68,20.104z" Fill="#FF754C24" Height="666.451" Canvas.Left="34.65" Canvas.Top="163.69" Width="381.68"/>
+                <Path Data="F1M34.65,666.209L0,646.227 372.679,0 407.33,19.983z" Fill="#FFA67C52" Height="666.209" Canvas.Left="0" Canvas.Top="163.45" Width="407.33"/>
+            </Canvas>
+        </Canvas>
+    </Viewbox>
+</UserControl>
