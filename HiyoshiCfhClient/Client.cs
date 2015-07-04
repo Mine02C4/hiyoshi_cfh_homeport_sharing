@@ -53,37 +53,6 @@ namespace HiyoshiCfhClient
             }
         }
 
-        public async Task SendShipTypes()
-        {
-            await Task.Run(() =>
-            {
-                var shipTypes = KanColleClient.Current.Master.ShipTypes;
-                foreach (var shipType in shipTypes)
-                {
-                    var webShipType = new WebShipType(shipType.Value);
-                    Context.AddToShipTypes(webShipType);
-                }
-                Context.SaveChanges();
-            });
-        }
-
-        public async Task SendShipInfoes()
-        {
-            await Task.Run(() =>
-            {
-                var shipInfoes = KanColleClient.Current.Master.Ships;
-                foreach (var shipInfo in shipInfoes)
-                {
-                    if (shipInfo.Value.SortId != 0)
-                    {
-                        var webShipInfo = new WebShipInfo(shipInfo.Value);
-                        Context.AddToShipInfoes(webShipInfo);
-                    }
-                }
-                Context.SaveChanges();
-            });
-        }
-
         public async Task InitAdmiralInformation()
         {
             OutDebugConsole("InitAdmiralInformation");
@@ -256,51 +225,6 @@ namespace HiyoshiCfhClient
         public IQueryable<WebShip> GetShipFromServer()
         {
             return Context.Ships.Where(x => x.AdmiralId == Admiral.AdmiralId);
-        }
-
-        public async Task<string> CollectShipsData()
-        {
-            var ships = KanColleClient.Current.Homeport.Organization.Ships;
-            var shipTypes = KanColleClient.Current.Master.ShipTypes;
-            string output = "shipTypes" + System.Environment.NewLine;
-            foreach (var shipType in shipTypes)
-            {
-                output += shipType.ToString() + System.Environment.NewLine;
-                var webShipType = new WebShipType(shipType.Value);
-                Context.AddToShipTypes(webShipType);
-            }
-            try
-            {
-                await Context.SaveChangesAsync();
-            }
-            catch (Exception ex)
-            {
-                return ex.Message + System.Environment.NewLine;
-            }
-            output += "ships" + System.Environment.NewLine;
-            foreach (var ship in ships)
-            {
-                output += ship.ToString() + System.Environment.NewLine;
-            }
-            return output;
-        }
-
-        public async Task<string> GetShipTypes()
-        {
-            try
-            {
-                var shipTypes = await Context.ShipTypes.ExecuteAsync();
-                string output = "shipTypes(Server)" + System.Environment.NewLine;
-                foreach (var shipType in shipTypes)
-                {
-                    output += shipType.ToString() + System.Environment.NewLine;
-                }
-                return output;
-            }
-            catch (Exception ex)
-            {
-                return ex.Message + System.Environment.NewLine;
-            }
         }
     }
 }

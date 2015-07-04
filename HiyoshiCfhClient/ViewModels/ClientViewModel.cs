@@ -94,13 +94,6 @@ namespace HiyoshiCfhClient.ViewModels
             }
         }
 
-        public async void Send()
-        {
-            // TODO: 送信処理の実装
-            Client client = new Client(TokenType, AccessToken);
-            DebugConsole += await client.CollectShipsData();
-        }
-
         /// <summary>
         /// プラグインの起動シーケンスのテスト。
         /// </summary>
@@ -153,54 +146,9 @@ namespace HiyoshiCfhClient.ViewModels
             }
         }
 
-        public async void GetShipTypes()
-        {
-            Client client = new Client(TokenType, AccessToken);
-            DebugConsole += await client.GetShipTypes();
-        }
-
         public void ClearConsole()
         {
             DebugConsole = "";
-        }
-
-        public async void SendShipTypes()
-        {
-            Client client = new Client(TokenType, AccessToken);
-            try
-            {
-                await client.SendShipTypes();
-            }
-            catch (Exception ex)
-            {
-                OutDebugConsole(ex.ToString());
-            }
-        }
-
-        public async void SendShipInfoes()
-        {
-            Client client = new Client(TokenType, AccessToken);
-            try
-            {
-                await client.SendShipInfoes();
-            }
-            catch (Exception ex)
-            {
-                OutDebugConsole(ex.ToString());
-            }
-        }
-
-        public async void RegisterAdmiral()
-        {
-            Client client = new Client(TokenType, AccessToken);
-            try
-            {
-                await client.RegisterAdmiral();
-            }
-            catch (Exception ex)
-            {
-                OutDebugConsole(ex.ToString());
-            }
         }
 
         private bool CheckToken()

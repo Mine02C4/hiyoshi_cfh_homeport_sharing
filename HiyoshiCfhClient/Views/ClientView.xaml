@@ -50,52 +50,15 @@
                 <TextBlock Text="下のボタンはすべて開発用です。" Margin="10,0,0,0" />
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <Button x:Name="GetShipTypesButton" Content="艦種マスタを取得" Margin="10,0">
-                    <i:Interaction.Triggers>
-                        <i:EventTrigger EventName="Click">
-                            <ei:CallMethodAction TargetObject="{Binding}" MethodName="GetShipTypes"/>
-                        </i:EventTrigger>
-                    </i:Interaction.Triggers>
-                </Button>
-                <Button x:Name="ClearConsoleButton" Content="クリア" Margin="10,0">
+                <Button x:Name="ClearConsoleButton" Content="コンソールのクリア" Margin="10,0">
                     <i:Interaction.Triggers>
                         <i:EventTrigger EventName="Click">
                             <ei:CallMethodAction TargetObject="{Binding}" MethodName="ClearConsole"/>
                         </i:EventTrigger>
                     </i:Interaction.Triggers>
                 </Button>
-                <Button x:Name="OpenLoginDialog" Content="ログイン" Margin="10,0">
-                    <i:Interaction.Triggers>
-                        <i:EventTrigger EventName="Click">
-                            <ei:CallMethodAction TargetObject="{Binding}" MethodName="OpenLoginWindow"/>
-                        </i:EventTrigger>
-                    </i:Interaction.Triggers>
-                </Button>
                 <TextBlock Text="Token:" Margin="0" VerticalAlignment="Center" />
                 <TextBlock Text="{Binding AccessToken}" VerticalAlignment="Center" Height="10" />
-            </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <Button Content="艦種マスタ送信" Margin="10">
-                    <i:Interaction.Triggers>
-                        <i:EventTrigger EventName="Click">
-                            <ei:CallMethodAction TargetObject="{Binding}" MethodName="SendShipTypes"/>
-                        </i:EventTrigger>
-                    </i:Interaction.Triggers>
-                </Button>
-                <Button Content="艦娘マスタ送信" Margin="10">
-                    <i:Interaction.Triggers>
-                        <i:EventTrigger EventName="Click">
-                            <ei:CallMethodAction TargetObject="{Binding}" MethodName="SendShipInfoes"/>
-                        </i:EventTrigger>
-                    </i:Interaction.Triggers>
-                </Button>
-                <Button Content="提督情報登録" Margin="10">
-                    <i:Interaction.Triggers>
-                        <i:EventTrigger EventName="Click">
-                            <ei:CallMethodAction TargetObject="{Binding}" MethodName="RegisterAdmiral"/>
-                        </i:EventTrigger>
-                    </i:Interaction.Triggers>
-                </Button>
             </StackPanel>
         </StackPanel>
         <TextBox x:Name="DebugConsole" IsReadOnly="True" BorderThickness="0" TextWrapping="Wrap" Text="{Binding DebugConsole}" Grid.Row="2" Background="{DynamicResource {x:Static SystemColors.WindowTextBrushKey}}" Margin="10" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" />
