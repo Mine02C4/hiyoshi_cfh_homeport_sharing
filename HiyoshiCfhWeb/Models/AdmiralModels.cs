@@ -19,6 +19,7 @@ namespace HiyoshiCfhWeb.Models
         /// </summary>
         [IgnoreDataMember]
         public string UserId { get; set; }
+        [IgnoreDataMember]
         public virtual ApplicationUser User { get; set; }
 
         /// <summary>
