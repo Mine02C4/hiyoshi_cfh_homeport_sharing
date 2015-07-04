@@ -25,68 +25,6 @@ namespace HiyoshiCfhClient
         public delegate void DebugConsole(string msg);
         DebugConsole _DebugConsole;
 
-        private static WebShipType ConvertShipType(ShipType shipType)
-        {
-            var webShipType = new WebShipType();
-            webShipType.ShipTypeId = shipType.Id;
-            webShipType.Name = shipType.Name;
-            webShipType.SortNumber = shipType.SortNumber;
-            return webShipType;
-        }
-
-        private static WebShipInfo ConvertShipInfo(ShipInfo shipInfo)
-        {
-            var webShipInfo = new WebShipInfo();
-            webShipInfo.ShipInfoId = shipInfo.Id;
-            webShipInfo.SortId = shipInfo.SortId;
-            webShipInfo.Name = shipInfo.Name;
-            webShipInfo.ShipTypeId = shipInfo.ShipType.Id;
-            switch (shipInfo.Speed)
-            {
-                case ShipSpeed.Fast:
-                    webShipInfo.ShipSpeed = HiyoshiCfhWeb.Models.ShipSpeed.Fast;
-                    break;
-                case ShipSpeed.Low:
-                    webShipInfo.ShipSpeed = HiyoshiCfhWeb.Models.ShipSpeed.Low;
-                    break;
-            }
-            webShipInfo.NextRemodelingLevel = shipInfo.NextRemodelingLevel;
-            return webShipInfo;
-        }
-
-        private static WebAdmiral ConvertAdmiral(Admiral admiral)
-        {
-            var webAdmiral = new WebAdmiral();
-            webAdmiral.Name = admiral.Nickname;
-            webAdmiral.Experience = admiral.Experience;
-            webAdmiral.Level = admiral.Level;
-            webAdmiral.MemberId = int.Parse(admiral.MemberId);
-            webAdmiral.MaxShipCount = admiral.MaxShipCount;
-            webAdmiral.Rank = admiral.Rank;
-            return webAdmiral;
-        }
-
-        private static WebShip ConvertShip(Ship ship, int admiralId)
-        {
-            var webShip = new WebShip();
-            webShip.AdmiralId = admiralId;
-            webShip.ShipId = ship.Id;
-            webShip.ShipInfoId = ship.Info.Id;
-            webShip.Level = ship.Level;
-            webShip.IsLocked = ship.IsLocked;
-            webShip.Exp = ship.Exp;
-            webShip.ExpForNextLevel = ship.ExpForNextLevel;
-            webShip.Hp = ship.HP.Current;
-            webShip.Fuel = ship.Fuel.Current;
-            webShip.Bull = ship.Bull.Current;
-            webShip.Firepower = ship.Firepower.Current;
-            webShip.Torpedo = ship.Torpedo.Current;
-            webShip.AA = ship.AA.Current;
-            webShip.Armer = ship.Armer.Current;
-            webShip.Luck = ship.Luck.Current;
-            return webShip;
-        }
-
         public Client(string tokenType, string accessToken)
         {
             TokenType = tokenType;
@@ -122,7 +60,7 @@ namespace HiyoshiCfhClient
                 var shipTypes = KanColleClient.Current.Master.ShipTypes;
                 foreach (var shipType in shipTypes)
                 {
-                    var webShipType = ConvertShipType(shipType.Value);
+                    var webShipType = new WebShipType(shipType.Value);
                     Context.AddToShipTypes(webShipType);
                 }
                 Context.SaveChanges();
@@ -138,7 +76,7 @@ namespace HiyoshiCfhClient
                 {
                     if (shipInfo.Value.SortId != 0)
                     {
-                        var webShipInfo = ConvertShipInfo(shipInfo.Value);
+                        var webShipInfo = new WebShipInfo(shipInfo.Value);
                         Context.AddToShipInfoes(webShipInfo);
                     }
                 }
@@ -175,7 +113,7 @@ namespace HiyoshiCfhClient
         {
             OutDebugConsole("RegisterAdmiral");
             // TODO: 登録エラーの実装
-            var admiral = ConvertAdmiral(KanColleClient.Current.Homeport.Admiral);
+            var admiral = new WebAdmiral(KanColleClient.Current.Homeport.Admiral);
             Context.AddToAdmirals(admiral);
             await Context.SaveChangesAsync();
             Admiral = admiral;
@@ -184,7 +122,7 @@ namespace HiyoshiCfhClient
         public async Task UpdateAdmiral()
         {
             OutDebugConsole("UpdateAdmiral");
-            var admiral = ConvertAdmiral(KanColleClient.Current.Homeport.Admiral);
+            var admiral = new WebAdmiral(KanColleClient.Current.Homeport.Admiral);
             admiral.AdmiralId = Admiral.AdmiralId;
             Context.Detach(Admiral);
             Context.AttachTo("Admirals", admiral);
@@ -213,7 +151,7 @@ namespace HiyoshiCfhClient
                         x.SortNumber == shipType.Value.SortNumber
                         ).Count() == 0)
                     {
-                        Context.AddToShipTypes(ConvertShipType(shipType.Value));
+                        Context.AddToShipTypes(new WebShipType(shipType.Value));
                     }
                 }
                 catch (Exception ex)
@@ -244,7 +182,7 @@ namespace HiyoshiCfhClient
                     x.NextRemodelingLevel == shipInfo.Value.NextRemodelingLevel
                     ).Count() == 0)
                 {
-                    Context.AddToShipInfoes(ConvertShipInfo(shipInfo.Value));
+                    Context.AddToShipInfoes(new WebShipInfo(shipInfo.Value));
                 }
             }
             try
@@ -283,7 +221,7 @@ namespace HiyoshiCfhClient
                 else
                 {
                     Context.Detach(webShip);
-                    var ship = ConvertShip(ships.Where(x => x.Value.Id == webShip.ShipId).First().Value, Admiral.AdmiralId);
+                    var ship = new WebShip(ships.Where(x => x.Value.Id == webShip.ShipId).First().Value, Admiral.AdmiralId);
                     ship.ShipUid = webShip.ShipUid;
                     OutDebugConsole("Update: " + ship.ToString());
                     Context.AttachTo("Ships", ship);
@@ -296,7 +234,7 @@ namespace HiyoshiCfhClient
                 if (webShips.Where(x => x.ShipId == ship.Value.Id).Count() == 0)
                 {
                     OutDebugConsole("Add: " + ship.Value.ToString());
-                    Context.AddToShips(ConvertShip(ship.Value, Admiral.AdmiralId));
+                    Context.AddToShips(new WebShip(ship.Value, Admiral.AdmiralId));
                 }
             }
             try
@@ -325,7 +263,7 @@ namespace HiyoshiCfhClient
             foreach (var shipType in shipTypes)
             {
                 output += shipType.ToString() + System.Environment.NewLine;
-                var webShipType = ConvertShipType(shipType.Value);
+                var webShipType = new WebShipType(shipType.Value);
                 Context.AddToShipTypes(webShipType);
             }
             try
