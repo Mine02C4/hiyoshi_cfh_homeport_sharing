@@ -9,20 +9,20 @@ using System.IO;
 namespace HiyoshiCfhClient.Models
 {
     [Serializable]
-    public class ApiKey : NotificationObject
+    public class Settings : NotificationObject
     {
         private static string path = Path.Combine(
             Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
             "HiyoshiCfh",
             "HiyoshiCfhClient",
             Properties.Settings.Default.SettingFile);
-        public static ApiKey Current { get; set; }
+        public static Settings Current { get; set; }
 
         public static void Init()
         {
             if (path == null || !File.Exists(path))
             {
-                Current = new ApiKey();
+                Current = new Settings();
             }
             else
             {
@@ -30,8 +30,8 @@ namespace HiyoshiCfhClient.Models
                 try
                 {
                     stream = new StreamReader(path, new UTF8Encoding(false));
-                    var serializer = new XmlSerializer(typeof(ApiKey));
-                    Current = (ApiKey)serializer.Deserialize(stream);
+                    var serializer = new XmlSerializer(typeof(Settings));
+                    Current = (Settings)serializer.Deserialize(stream);
                 }
                 finally
                 {
@@ -86,7 +86,7 @@ namespace HiyoshiCfhClient.Models
                 var dir = Path.GetDirectoryName(Path.GetFullPath(path)) ?? "";
                 Directory.CreateDirectory(dir);
                 stream = new StreamWriter(path, false, new UTF8Encoding(false));
-                var serializer = new XmlSerializer(typeof(ApiKey));
+                var serializer = new XmlSerializer(typeof(Settings));
                 serializer.Serialize(stream, this);
             }
             finally

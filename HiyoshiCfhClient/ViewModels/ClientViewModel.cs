@@ -61,12 +61,12 @@ namespace HiyoshiCfhClient.ViewModels
 
         Client Client;
 
-        public void Initialize()
+        public ClientViewModel()
         {
             OutDebugConsole("Initialize");
-            ApiKey.Init();
-            AccessToken = ApiKey.Current.AccessToken;
-            TokenType = ApiKey.Current.TokenType;
+            Settings.Init();
+            AccessToken = Settings.Current.AccessToken;
+            TokenType = Settings.Current.TokenType;
         }
 
         public async void OpenLoginWindow()
@@ -135,9 +135,9 @@ namespace HiyoshiCfhClient.ViewModels
                     try
                     {
                         OutDebugConsole("Start init client thread");
-                        ApiKey.Current.AccessToken = AccessToken;
-                        ApiKey.Current.TokenType = TokenType;
-                        ApiKey.Current.Save();
+                        Settings.Current.AccessToken = AccessToken;
+                        Settings.Current.TokenType = TokenType;
+                        Settings.Current.Save();
                         Client = new Client(TokenType, AccessToken, OutDebugConsole);
                         await Client.InitAdmiralInformation();
                         await Client.UpdateMasterData();
