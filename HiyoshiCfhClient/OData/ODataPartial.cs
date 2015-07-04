@@ -94,6 +94,22 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
             return string.Format("ID = {0}, ShipInfoId = {1}, Level = {2}", this.ShipId, this.ShipInfoId, this.Level);
         }
 
+        public override bool Equals(Object obj)
+        {
+            if (obj == null || GetType() != obj.GetType())
+            {
+                return false;
+            }
+            var a = (Ship)obj;
+            return this == a;
+        }
+
+        public override int GetHashCode()
+        {
+            var properties = typeof(Ship).GetProperties();
+            return ShipId ^ Hp ^ Fuel ^ Bull;
+        }
+
         public static bool operator !=(Ship a, Ship b)
         {
             var properties = typeof(Ship).GetProperties();
