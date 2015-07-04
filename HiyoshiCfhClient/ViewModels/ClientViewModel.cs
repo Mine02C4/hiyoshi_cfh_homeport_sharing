@@ -158,7 +158,7 @@ namespace HiyoshiCfhClient.ViewModels
 
         private void OutDebugConsole(string msg)
         {
-            DebugConsole += msg + System.Environment.NewLine;
+            DebugConsole += DateTime.Now.ToString("O") + " : " +  msg + System.Environment.NewLine;
         }
     }
 }
