@@ -1,4 +1,5 @@
-﻿using Livet;
+﻿using HiyoshiCfhClient.Models;
+using Livet;
 using Livet.Messaging;
 using System;
 using System.Threading.Tasks;
@@ -59,6 +60,14 @@ namespace HiyoshiCfhClient.ViewModels
         #endregion
 
         Client Client;
+
+        public void Initialize()
+        {
+            OutDebugConsole("Initialize");
+            ApiKey.Init();
+            AccessToken = ApiKey.Current.AccessToken;
+            TokenType = ApiKey.Current.TokenType;
+        }
 
         public async void OpenLoginWindow()
         {
@@ -121,22 +130,26 @@ namespace HiyoshiCfhClient.ViewModels
         {
             if (CheckToken())
             {
-                try
+                Task.Factory.StartNew(async () =>
                 {
-                    Task.Factory.StartNew(async () =>
+                    try
                     {
                         OutDebugConsole("Start init client thread");
+                        ApiKey.Current.AccessToken = AccessToken;
+                        ApiKey.Current.TokenType = TokenType;
+                        ApiKey.Current.Save();
                         Client = new Client(TokenType, AccessToken, OutDebugConsole);
                         await Client.InitAdmiralInformation();
                         await Client.UpdateMasterData();
                         await Client.UpdateShips();
                         OutDebugConsole("End init client thread");
-                    });
-                }
-                catch (Exception ex)
-                {
-                    OutDebugConsole(ex.ToString());
-                }
+
+                    }
+                    catch (Exception ex)
+                    {
+                        OutDebugConsole(ex.ToString());
+                    }
+                });
             }
         }
 

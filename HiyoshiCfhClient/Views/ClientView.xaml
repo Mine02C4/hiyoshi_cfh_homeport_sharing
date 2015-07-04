@@ -16,6 +16,9 @@
         <livet:InteractionMessageTrigger Messenger="{Binding Messenger}" MessageKey="Show/LoginWindow">
             <livet:TransitionInteractionMessageAction Mode="NewOrActive" WindowType="views:LoginView" IsOwned="True" />
         </livet:InteractionMessageTrigger>
+        <i:EventTrigger EventName="Loaded">
+            <livet:LivetCallMethodAction MethodTarget="{Binding}" MethodName="Initialize"/>
+        </i:EventTrigger>
         <i:EventTrigger EventName="Closed">
             <livet:DataContextDisposeAction/>
         </i:EventTrigger>
