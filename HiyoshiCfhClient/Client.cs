@@ -220,12 +220,15 @@ namespace HiyoshiCfhClient
                 }
                 else
                 {
-                    Context.Detach(webShip);
                     var ship = new WebShip(ships.Where(x => x.Value.Id == webShip.ShipId).First().Value, Admiral.AdmiralId);
-                    ship.ShipUid = webShip.ShipUid;
-                    OutDebugConsole("Update: " + ship.ToString());
-                    Context.AttachTo("Ships", ship);
-                    Context.ChangeState(ship, EntityStates.Modified);
+                    if (ship != webShip)
+                    {
+                        Context.Detach(webShip);
+                        ship.ShipUid = webShip.ShipUid;
+                        OutDebugConsole("Update: " + ship.ToString());
+                        Context.AttachTo("Ships", ship);
+                        Context.ChangeState(ship, EntityStates.Modified);
+                    }
                 }
             }
             // 新しく手に入った艦娘の追加

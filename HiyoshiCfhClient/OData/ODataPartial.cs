@@ -93,5 +93,26 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
         {
             return string.Format("ID = {0}, ShipInfoId = {1}, Level = {2}", this.ShipId, this.ShipInfoId, this.Level);
         }
+
+        public static bool operator !=(Ship a, Ship b)
+        {
+            var properties = typeof(Ship).GetProperties();
+            foreach (var property in properties)
+            {
+                var type = Nullable.GetUnderlyingType(property.PropertyType) ?? property.PropertyType;
+                if (property.Name != "ShipUid" && type.IsValueType
+                    && property.GetValue(a) != null && property.GetValue(b) != null
+                    && !Convert.ChangeType(property.GetValue(a), type).Equals(Convert.ChangeType(property.GetValue(b), type)))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public static bool operator ==(Ship a, Ship b)
+        {
+            return !(a != b);
+        }
     }
 }
