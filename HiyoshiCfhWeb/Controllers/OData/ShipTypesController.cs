@@ -9,23 +9,13 @@ using System.Web.OData;
 
 namespace HiyoshiCfhWeb.Controllers
 {
-    /*
-    このコントローラーのルートを追加するには、WebApiConfig クラスで追加の変更が必要になる場合があります。場合に応じてこれらのステートメントを WebApiConfig クラスの Register メソッドにマージしてください。OData URL は大文字と小文字が区別されるので注意してください。
-
-    using System.Web.Http.OData.Builder;
-    using System.Web.Http.OData.Extensions;
-    using HiyoshiCfhWeb.Models;
-    ODataConventionModelBuilder builder = new ODataConventionModelBuilder();
-    builder.EntitySet<ShipType>("ShipTypes");
-    config.Routes.MapODataServiceRoute("odata", "odata", builder.GetEdmModel());
-    */
+    [Authorize]
     public class ShipTypesController : ODataController
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: odata/ShipTypes
         [EnableQuery]
-        [Authorize]
         public IQueryable<ShipType> GetShipTypes()
         {
             return db.ShipTypes;

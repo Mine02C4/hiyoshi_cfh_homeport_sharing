@@ -9,6 +9,7 @@ using System.Web.OData;
 
 namespace HiyoshiCfhWeb.Controllers
 {
+    [Authorize]
     public class ShipsController : ODataController
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -28,7 +29,6 @@ namespace HiyoshiCfhWeb.Controllers
         }
 
         // PUT: odata/Ships(5)
-        [Authorize]
         public IHttpActionResult Put([FromODataUri] int key, Delta<Ship> patch)
         {
             Validate(patch.GetEntity());
@@ -66,7 +66,6 @@ namespace HiyoshiCfhWeb.Controllers
         }
 
         // POST: odata/Ships
-        [Authorize]
         public IHttpActionResult Post(Ship Ship)
         {
             if (!ModelState.IsValid)
@@ -79,7 +78,6 @@ namespace HiyoshiCfhWeb.Controllers
         }
 
         // PATCH: odata/Ships(5)
-        [Authorize]
         [AcceptVerbs("PATCH", "MERGE")]
         public IHttpActionResult Patch([FromODataUri] int key, Delta<Ship> patch)
         {
@@ -118,7 +116,6 @@ namespace HiyoshiCfhWeb.Controllers
         }
 
         // DELETE: odata/Ships(5)
-        [Authorize]
         public IHttpActionResult Delete([FromODataUri] int key)
         {
             Ship Ship = db.Ships.Find(key);
