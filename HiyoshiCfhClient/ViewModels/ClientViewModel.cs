@@ -111,7 +111,7 @@ namespace HiyoshiCfhClient.ViewModels
                                 try
                                 {
                                     OutDebugConsole("Handle Change of ships: " + EnableAutoUpdate.ToString());
-                                    if (EnableAutoUpdate)
+                                    if (CheckToken() && EnableAutoUpdate)
                                     {
                                         await PrepareClient();
                                         await Client.UpdateShips();
