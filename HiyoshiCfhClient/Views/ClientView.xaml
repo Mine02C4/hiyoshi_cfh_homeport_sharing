@@ -47,6 +47,7 @@
                         </i:EventTrigger>
                     </i:Interaction.Triggers>
                 </Button>
+                <CheckBox VerticalAlignment="Center" Margin="10,0,0,0" Content="自動更新" IsChecked="{Binding EnableAutoUpdate}" />
                 <TextBlock Text="下のボタンはすべて開発用です。" Margin="10,0,0,0" />
             </StackPanel>
             <StackPanel Orientation="Horizontal">

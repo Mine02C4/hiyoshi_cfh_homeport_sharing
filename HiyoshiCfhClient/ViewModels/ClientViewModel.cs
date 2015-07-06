@@ -1,7 +1,12 @@
-﻿using HiyoshiCfhClient.Models;
+﻿using Grabacr07.KanColleViewer.Composition;
+using Grabacr07.KanColleWrapper;
+using Grabacr07.KanColleWrapper.Models.Raw;
+using HiyoshiCfhClient.Models;
 using Livet;
+using Livet.EventListeners;
 using Livet.Messaging;
 using System;
+using System.ComponentModel.Composition;
 using System.Threading.Tasks;
 
 namespace HiyoshiCfhClient.ViewModels
@@ -59,7 +64,26 @@ namespace HiyoshiCfhClient.ViewModels
         }
         #endregion
 
-        Client Client;
+        #region EnableAutoUpdate変更通知プロパティ
+        private bool _EnableAutoUpdate;
+
+        public bool EnableAutoUpdate
+        {
+            get
+            { return _EnableAutoUpdate; }
+            set
+            {
+                if (_EnableAutoUpdate == value)
+                    return;
+                _EnableAutoUpdate = value;
+                RaisePropertyChanged();
+            }
+        }
+        #endregion
+
+        PropertyChangedEventListener AutoUpdateToggleListener = null;
+
+        Client Client = null;
 
         public ClientViewModel()
         {
@@ -67,6 +91,34 @@ namespace HiyoshiCfhClient.ViewModels
             Settings.Init();
             AccessToken = Settings.Current.AccessToken;
             TokenType = Settings.Current.TokenType;
+            EnableAutoUpdate = false;
+            KanColleClient.Current.Proxy.api_start2.TryParse<kcsapi_start2>().Subscribe(x =>
+            {
+                OutDebugConsole("kcsapi_start2: " + x.ToString());
+                var lis = new PropertyChangedEventListener(this);
+                lis.RegisterHandler(() => EnableAutoUpdate, (_, __) =>
+                {
+                    if (EnableAutoUpdate)
+                    {
+                        if (AutoUpdateToggleListener == null)
+                        {
+                            AutoUpdateToggleListener = new PropertyChangedEventListener(KanColleClient.Current.Homeport.Organization);
+                            AutoUpdateToggleListener.RegisterHandler(() => KanColleClient.Current.Homeport.Organization.Ships,
+                            async (s, h) =>
+                            {
+                                OutDebugConsole("Handle Change of ships: " + EnableAutoUpdate.ToString());
+                                if (EnableAutoUpdate)
+                                {
+                                    await PrepareClient();
+                                    await Client.UpdateShips();
+                                }
+                            });
+                            this.CompositeDisposable.Add(AutoUpdateToggleListener);
+                        }
+                    }
+                });
+                this.CompositeDisposable.Add(lis);
+            });
         }
 
         public async void OpenLoginWindow()
@@ -115,7 +167,20 @@ namespace HiyoshiCfhClient.ViewModels
             if (CheckToken())
             {
                 this.PropertyChanged -= HandleLogin;
+                Settings.Current.AccessToken = AccessToken;
+                Settings.Current.TokenType = TokenType;
+                Settings.Current.Save();
                 InitClient();
+            }
+        }
+
+        async Task PrepareClient()
+        {
+            if (Client == null)
+            {
+                Client = new Client(TokenType, AccessToken, OutDebugConsole);
+                await Client.InitAdmiralInformation();
+                await Client.UpdateMasterData();
             }
         }
 
@@ -128,15 +193,9 @@ namespace HiyoshiCfhClient.ViewModels
                     try
                     {
                         OutDebugConsole("Start init client thread");
-                        Settings.Current.AccessToken = AccessToken;
-                        Settings.Current.TokenType = TokenType;
-                        Settings.Current.Save();
-                        Client = new Client(TokenType, AccessToken, OutDebugConsole);
-                        await Client.InitAdmiralInformation();
-                        await Client.UpdateMasterData();
+                        await PrepareClient();
                         await Client.UpdateShips();
                         OutDebugConsole("End init client thread");
-
                     }
                     catch (Exception ex)
                     {
@@ -158,7 +217,7 @@ namespace HiyoshiCfhClient.ViewModels
 
         private void OutDebugConsole(string msg)
         {
-            DebugConsole += DateTime.Now.ToString("O") + " : " +  msg + System.Environment.NewLine;
+            DebugConsole += DateTime.Now.ToString("O") + " : " + msg + System.Environment.NewLine;
         }
     }
 }
