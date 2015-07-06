@@ -7,6 +7,8 @@ using Livet.EventListeners;
 using Livet.Messaging;
 using System;
 using System.ComponentModel.Composition;
+using System.IO;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace HiyoshiCfhClient.ViewModels
@@ -106,11 +108,18 @@ namespace HiyoshiCfhClient.ViewModels
                             AutoUpdateToggleListener.RegisterHandler(() => KanColleClient.Current.Homeport.Organization.Ships,
                             async (s, h) =>
                             {
-                                OutDebugConsole("Handle Change of ships: " + EnableAutoUpdate.ToString());
-                                if (EnableAutoUpdate)
+                                try
                                 {
-                                    await PrepareClient();
-                                    await Client.UpdateShips();
+                                    OutDebugConsole("Handle Change of ships: " + EnableAutoUpdate.ToString());
+                                    if (EnableAutoUpdate)
+                                    {
+                                        await PrepareClient();
+                                        await Client.UpdateShips();
+                                    }
+                                }
+                                catch (Exception ex)
+                                {
+                                    OutDebugConsole(ex.ToString());
                                 }
                             });
                             this.CompositeDisposable.Add(AutoUpdateToggleListener);
@@ -215,9 +224,32 @@ namespace HiyoshiCfhClient.ViewModels
             return AccessToken != null && AccessToken.Length > 0 && TokenType != null && TokenType.Length > 0;
         }
 
+        private static string logPath = Path.Combine(
+            Environment.CurrentDirectory,
+            "HiyoshiCfhClient.log");
+
         private void OutDebugConsole(string msg)
         {
-            DebugConsole += DateTime.Now.ToString("O") + " : " + msg + System.Environment.NewLine;
+            var log = DateTime.Now.ToString("O") + " : " + msg + System.Environment.NewLine;
+            DebugConsole += log;
+            Task.Factory.StartNew(async () =>
+            {
+                StreamWriter stream = null;
+
+                try
+                {
+                    stream = new StreamWriter(logPath, true, new UTF8Encoding(false));
+                    await stream.WriteAsync(log);
+                }
+                finally
+                {
+                    if (stream != null)
+                    {
+                        stream.Close();
+                        stream.Dispose();
+                    }
+                }
+            });
         }
     }
 }
