@@ -188,8 +188,14 @@ namespace HiyoshiCfhClient.ViewModels
             if (Client == null)
             {
                 Client = new Client(TokenType, AccessToken, OutDebugConsole);
-                await Client.InitAdmiralInformation();
-                await Client.UpdateMasterData();
+                try
+                {
+                    await Client.InitClientAsync();
+                }
+                catch (DeniedAccessToAdmiral)
+                {
+                    OutDebugConsole("提督情報の変更が拒否されました。ログインアカウントが異なります。");
+                }
             }
         }
 

@@ -13,6 +13,7 @@ using Grabacr07.KanColleWrapper.Models;
 using System.Collections.ObjectModel;
 using Microsoft.OData.Client;
 using System.Diagnostics;
+using System.Threading;
 
 namespace HiyoshiCfhClient
 {
@@ -21,9 +22,12 @@ namespace HiyoshiCfhClient
         Container Context;
         string TokenType;
         string AccessToken;
-        WebAdmiral Admiral;
+        WebAdmiral Admiral = null;
         public delegate void DebugConsole(string msg);
         DebugConsole _DebugConsole;
+        IQueryable<WebShip> Ships = null;
+        LimitedConcurrencyLevelTaskScheduler taskScheduler;
+        TaskFactory factory;
 
         public Client(string tokenType, string accessToken)
         {
@@ -37,6 +41,8 @@ namespace HiyoshiCfhClient
                     eventArgs.RequestMessage.SetHeader("Authorization", TokenType + " " + AccessToken);
                 };
             }
+            taskScheduler = new LimitedConcurrencyLevelTaskScheduler(1);
+            factory = new TaskFactory(taskScheduler);
         }
 
         public Client(string tokenType, string accessToken, DebugConsole debugConsole)
@@ -53,42 +59,62 @@ namespace HiyoshiCfhClient
             }
         }
 
-        public async Task InitAdmiralInformation()
+        public async Task InitClientAsync()
         {
-            OutDebugConsole("InitAdmiralInformation");
-            var memberId = int.Parse(KanColleClient.Current.Homeport.Admiral.MemberId);
-            Admiral = await GetAdmiral(memberId);
-            if (Admiral == null)
+            await factory.StartNew(() =>
             {
-                await RegisterAdmiral();
-                Admiral = await GetAdmiral(memberId);
-            }
-            else
-            {
-                await UpdateAdmiral();
-            }
-        }
-
-        async Task<WebAdmiral> GetAdmiral(int MemberId)
-        {
-            OutDebugConsole("GetAdmiral");
-            return await Task.Run(() =>
-            {
-                return Context.Admirals.Where(x => x.MemberId == MemberId).FirstOrDefault();
+                InitAdmiral();
+                UpdateMasterData();
+                InitShips();
             });
         }
 
-        public async Task RegisterAdmiral()
+        void InitShips()
         {
-            OutDebugConsole("RegisterAdmiral");
-            // TODO: 登録エラーの実装
-            var admiral = new WebAdmiral(KanColleClient.Current.Homeport.Admiral);
-            Context.AddToAdmirals(admiral);
-            await Context.SaveChangesAsync();
-            Admiral = admiral;
+            CheckAdmiral();
+            if (Ships == null)
+            {
+                Ships = Context.Ships.Where(x => x.AdmiralId == Admiral.AdmiralId);
+            }
         }
 
-        public async Task UpdateAdmiral()
+        /// <summary>
+        /// サーバーから提督情報を取得し、同期します。初回の場合は新規に追加し、アクセス拒否された場合は例外を投げます。
+        /// </summary>
+        void InitAdmiral()
+        {
+            OutDebugConsole("InitAdmiral");
+            var memberId = int.Parse(KanColleClient.Current.Homeport.Admiral.MemberId);
+            Admiral = GetAdmiral(memberId);
+            // 新規の場合は登録処理
+            if (Admiral == null)
+            {
+                var admiral = new WebAdmiral(KanColleClient.Current.Homeport.Admiral);
+                Context.AddToAdmirals(admiral);
+                Context.SaveChanges();
+                Admiral = GetAdmiral(memberId);
+            }
+            else // 既存の場合は更新処理
+            {
+                UpdateAdmiral();
+            }
+        }
+
+        void CheckAdmiral()
+        {
+            if (Admiral == null)
+            {
+                throw new AdmiralNotInitialized();
+            }
+        }
+
+        WebAdmiral GetAdmiral(int memberId)
+        {
+            OutDebugConsole("GetAdmiral");
+            return Context.Admirals.Where(x => x.MemberId == memberId).FirstOrDefault();
+        }
+
+        void UpdateAdmiral()
         {
             OutDebugConsole("UpdateAdmiral");
             var admiral = new WebAdmiral(KanColleClient.Current.Homeport.Admiral);
@@ -96,20 +122,27 @@ namespace HiyoshiCfhClient
             Context.Detach(Admiral);
             Context.AttachTo("Admirals", admiral);
             Context.ChangeState(admiral, EntityStates.Modified);
-            await Context.SaveChangesAsync();
+            try
+            {
+                Context.SaveChanges();
+            }
+            catch (DataServiceRequestException)
+            {
+                throw new DeniedAccessToAdmiral();
+            }
         }
 
-        public async Task UpdateMasterData()
+        void UpdateMasterData()
         {
             OutDebugConsole("UpdateMasterData");
-            await UpdateShipTypes();
-            await UpdateShipInfoes();
+            UpdateShipTypes();
+            UpdateShipInfoes();
         }
 
-        async Task UpdateShipTypes()
+        void UpdateShipTypes()
         {
             OutDebugConsole("UpdateShipTypes");
-            var webShipTypes = (await GetShipTypesFromServer()).ToList();
+            var webShipTypes = Context.ShipTypes.Execute().ToList();
             foreach (var shipType in KanColleClient.Current.Master.ShipTypes)
             {
                 try
@@ -125,23 +158,23 @@ namespace HiyoshiCfhClient
                 }
                 catch (Exception ex)
                 {
-                    Trace.TraceError("Error: {0}", ex);
+                    OutDebugConsole("Error: " + ex.ToString());
                 }
             }
             try
             {
-                await Context.SaveChangesAsync();
+                Context.SaveChanges();
             }
             catch (Exception ex)
             {
-                Trace.TraceError("Error: {0}", ex);
+                OutDebugConsole("Error: " + ex.ToString());
             }
         }
 
-        async Task UpdateShipInfoes()
+        void UpdateShipInfoes()
         {
             OutDebugConsole("UpdateShipInfoes");
-            var webShipInfoes = (await GetShipInfoesFromServer()).ToList();
+            var webShipInfoes = Context.ShipInfoes.Execute().ToList();
             foreach (var shipInfo in KanColleClient.Current.Master.Ships)
             {
                 if (shipInfo.Value.SortId != 0 && webShipInfoes.Where(x =>
@@ -156,75 +189,209 @@ namespace HiyoshiCfhClient
             }
             try
             {
-                await Context.SaveChangesAsync();
+                Context.SaveChanges();
             }
             catch (Exception ex)
             {
-                Trace.TraceError("Error: {0}", ex);
-            }
-        }
-
-        async Task<IEnumerable<WebShipType>> GetShipTypesFromServer()
-        {
-            return await Context.ShipTypes.ExecuteAsync();
-        }
-
-        async Task<IEnumerable<WebShipInfo>> GetShipInfoesFromServer()
-        {
-            return await Context.ShipInfoes.ExecuteAsync();
-        }
-
-        public async Task UpdateShips()
-        {
-            OutDebugConsole("UpdateShips");
-            var webShips = GetShipFromServer().ToList();
-            var ships = KanColleClient.Current.Homeport.Organization.Ships.ToList();
-            // まずは存在しない艦娘の削除と更新
-            foreach (var webShip in webShips)
-            {
-                if (ships.Where(x => x.Value.Id == webShip.ShipId).Count() == 0)
-                {
-                    OutDebugConsole("Delete: " + webShip.ToString());
-                    Context.DeleteObject(webShip);
-                }
-                else
-                {
-                    var ship = new WebShip(ships.Where(x => x.Value.Id == webShip.ShipId).First().Value, Admiral.AdmiralId);
-                    if (ship != webShip)
-                    {
-                        Context.Detach(webShip);
-                        ship.ShipUid = webShip.ShipUid;
-                        OutDebugConsole("Update: " + ship.ToString());
-                        Context.AttachTo("Ships", ship);
-                        Context.ChangeState(ship, EntityStates.Modified);
-                    }
-                }
-            }
-            // 新しく手に入った艦娘の追加
-            foreach (var ship in ships)
-            {
-                if (webShips.Where(x => x.ShipId == ship.Value.Id).Count() == 0)
-                {
-                    OutDebugConsole("Add: " + ship.Value.ToString());
-                    Context.AddToShips(new WebShip(ship.Value, Admiral.AdmiralId));
-                }
-            }
-            try
-            {
-                OutDebugConsole("Saving ship data");
-                await Context.SaveChangesAsync();
-                OutDebugConsole("Saved ship data");
-            }
-            catch (Exception ex)
-            {
-                Trace.TraceError("Error: {0}", ex);
                 OutDebugConsole("Error: " + ex.ToString());
             }
         }
 
-        public IQueryable<WebShip> GetShipFromServer()
+        public async Task UpdateShips()
         {
-            return Context.Ships.Where(x => x.AdmiralId == Admiral.AdmiralId);
+            await factory.StartNew(() =>
+            {
+                OutDebugConsole("UpdateShips");
+                try
+                {
+                    var webShips = Context.Ships.Where(x => x.AdmiralId == Admiral.AdmiralId).ToList();
+                    var ships = KanColleClient.Current.Homeport.Organization.Ships.ToList();
+                    // まずは存在しない艦娘の削除と更新
+                    foreach (var webShip in webShips)
+                    {
+                        if (ships.Where(x => x.Value.Id == webShip.ShipId).Count() == 0)
+                        {
+                            OutDebugConsole("Delete: " + webShip.ToString());
+                            Context.DeleteObject(webShip);
+                        }
+                        else
+                        {
+                            var ship = new WebShip(ships.Where(x => x.Value.Id == webShip.ShipId).First().Value, Admiral.AdmiralId);
+                            if (ship != webShip)
+                            {
+                                Context.Detach(webShip);
+                                ship.ShipUid = webShip.ShipUid;
+                                OutDebugConsole("Update: " + ship.ToString());
+                                Context.AttachTo("Ships", ship);
+                                Context.ChangeState(ship, EntityStates.Modified);
+                            }
+                        }
+                    }
+                    // 新しく手に入った艦娘の追加
+                    foreach (var ship in ships)
+                    {
+                        if (webShips.Where(x => x.ShipId == ship.Value.Id).Count() == 0)
+                        {
+                            OutDebugConsole("Add: " + ship.Value.ToString());
+                            Context.AddToShips(new WebShip(ship.Value, Admiral.AdmiralId));
+                        }
+                    }
+                    OutDebugConsole("Saving ship data");
+                    Context.SaveChanges();
+                    OutDebugConsole("Saved ship data");
+                }
+                catch (DataServiceRequestException)
+                {
+                    throw new DeniedAccessToAdmiral();
+                }
+            });
+        }
+
+        /// <summary>
+        /// 使用するスレッドの上限数を設けたタスクスケジューラー
+        /// </summary>
+        class LimitedConcurrencyLevelTaskScheduler : TaskScheduler
+        {
+            /// <summary>
+            /// 現在のスレッドがタスクを実行しているかどうか
+            /// </summary>
+            [ThreadStatic]
+            private static bool _currentThreadIsProcessingItems;
+
+            /// <summary>
+            /// 実行されるタスクのリスト
+            /// </summary>
+            private readonly LinkedList<Task> _tasks = new LinkedList<Task>(); // protected by lock(_tasks)
+
+            /// <summary>
+            /// 同時実行可能なタスク数の上限
+            /// </summary>
+            private readonly int _maxDegreeOfParallelism;
+
+            /// <summary>
+            /// 現在実行しているタスク数
+            /// </summary>
+            private int _delegatesQueuedOrRunning = 0;
+
+            /// <summary>
+            /// 上限数を指定してインスタンスを生成
+            /// </summary>
+            /// <param name="maxDegreeOfParallelism">同時実行可能なタスクの上限数(1以上の整数)</param>
+            public LimitedConcurrencyLevelTaskScheduler(int maxDegreeOfParallelism)
+            {
+                if (maxDegreeOfParallelism < 1) throw new ArgumentOutOfRangeException("maxDegreeOfParallelism");
+                _maxDegreeOfParallelism = maxDegreeOfParallelism;
+            }
+
+            /// <summary>
+            /// タスクをタスクキューに追加
+            /// </summary>
+            /// <param name="task">追加するタスク</param>
+            protected sealed override void QueueTask(Task task)
+            {
+                lock (_tasks)
+                {
+                    _tasks.AddLast(task);
+                    if (_delegatesQueuedOrRunning < _maxDegreeOfParallelism)
+                    {
+                        _delegatesQueuedOrRunning++;
+                        NotifyThreadPoolOfPendingWork();
+                    }
+                }
+            }
+
+            /// <summary>
+            /// 実行すべき作業があることをThreadPoolに通知します
+            /// </summary>
+            private void NotifyThreadPoolOfPendingWork()
+            {
+                ThreadPool.UnsafeQueueUserWorkItem(_ =>
+                {
+                    _currentThreadIsProcessingItems = true;
+                    try
+                    {
+                        while (true)
+                        {
+                            Task item;
+                            lock (_tasks)
+                            {
+                                if (_tasks.Count == 0)
+                                {
+                                    _delegatesQueuedOrRunning--;
+                                    break;
+                                }
+                                item = _tasks.First.Value;
+                                _tasks.RemoveFirst();
+                            }
+                            base.TryExecuteTask(item);
+                        }
+                    }
+                    finally { _currentThreadIsProcessingItems = false; }
+                }, null);
+            }
+
+            /// <summary>
+            /// 現在のスレッドでタスクを実行しようとします
+            /// </summary>
+            /// <param name="task"></param>
+            /// <param name="taskWasPreviouslyQueued"></param>
+            /// <returns></returns>
+            protected sealed override bool TryExecuteTaskInline(Task task, bool taskWasPreviouslyQueued)
+            {
+                if (!_currentThreadIsProcessingItems) return false;
+                if (taskWasPreviouslyQueued)
+                {
+                    if (TryDequeue(task))
+                        return base.TryExecuteTask(task);
+                    else
+                        return false;
+                }
+                else
+                {
+                    return base.TryExecuteTask(task);
+                }
+            }
+
+            /// <summary>
+            /// 事前にスケジュールされてたタスクをスケジューラーから取り除きます
+            /// </summary>
+            /// <param name="task"></param>
+            /// <returns></returns>
+            protected sealed override bool TryDequeue(Task task)
+            {
+                lock (_tasks) return _tasks.Remove(task);
+            }
+
+            public sealed override int MaximumConcurrencyLevel { get { return _maxDegreeOfParallelism; } }
+
+            protected sealed override IEnumerable<Task> GetScheduledTasks()
+            {
+                bool lockTaken = false;
+                try
+                {
+                    Monitor.TryEnter(_tasks, ref lockTaken);
+                    if (lockTaken) return _tasks;
+                    else throw new NotSupportedException();
+                }
+                finally
+                {
+                    if (lockTaken) Monitor.Exit(_tasks);
+                }
+            }
         }
     }
+
+    #region 例外クラス
+    public class AdmiralNotInitialized : Exception
+    {
+        public AdmiralNotInitialized() { }
+        public AdmiralNotInitialized(string message) : base(message) { }
+    }
+
+    public class DeniedAccessToAdmiral : Exception
+    {
+        public DeniedAccessToAdmiral() { }
+        public DeniedAccessToAdmiral(string message) : base(message) { }
+    }
+    #endregion
 }
