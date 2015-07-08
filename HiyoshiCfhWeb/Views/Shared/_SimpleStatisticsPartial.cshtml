@@ -1,9 +1,26 @@
 ﻿@model HiyoshiCfhWeb.Models.Admiral
 <h2>簡易統計</h2>
 @{
-    var st = Model.Ships.GroupBy(ship => new { ship.ShipInfo.ShipType.Name }).Select(x => new
+    var st = Model.Ships.GroupBy(ship =>
     {
-        Name = x.Key.Name,
+        var type = ship.ShipInfo.ShipType.Name;
+        switch (type)
+        {
+            case "戦艦":
+            case "航空戦艦":
+                type = "戦艦+航空戦艦";
+                break;
+            case "潜水艦":
+            case "潜水空母":
+                type = "潜水艦+潜水空母";
+                break;
+            default:
+                break;
+        }
+        return type;
+    }).Select(x => new
+    {
+        Name = x.Key,
         Sum = x.Sum((Ship) => Ship.Exp)
     }).OrderByDescending((x) => x.Sum);
 }
