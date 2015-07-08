@@ -83,6 +83,8 @@ namespace HiyoshiCfhClient.ViewModels
         }
         #endregion
 
+        bool IsInited = false;
+
         PropertyChangedEventListener AutoUpdateToggleListener = null;
 
         Client Client = null;
@@ -93,41 +95,43 @@ namespace HiyoshiCfhClient.ViewModels
             Settings.Init();
             AccessToken = Settings.Current.AccessToken;
             TokenType = Settings.Current.TokenType;
-            EnableAutoUpdate = false;
-            KanColleClient.Current.Proxy.api_start2.TryParse<kcsapi_start2>().Subscribe(x =>
+            EnableAutoUpdate = true;
+            var kccListener = new PropertyChangedEventListener(KanColleClient.Current);
+            kccListener.RegisterHandler(() => KanColleClient.Current.IsStarted, (_, __) =>
             {
-                OutDebugConsole("kcsapi_start2: " + x.ToString());
-                var lis = new PropertyChangedEventListener(this);
-                lis.RegisterHandler(() => EnableAutoUpdate, (_, __) =>
+                if (!IsInited && KanColleClient.Current.IsStarted)
                 {
-                    if (EnableAutoUpdate)
+                    InitHandlers();
+                }
+            });
+            this.CompositeDisposable.Add(kccListener);
+        }
+
+        void InitHandlers()
+        {
+            if (AutoUpdateToggleListener == null)
+            {
+                AutoUpdateToggleListener = new PropertyChangedEventListener(KanColleClient.Current.Homeport.Organization);
+                AutoUpdateToggleListener.RegisterHandler(() => KanColleClient.Current.Homeport.Organization.Ships,
+                async (s, h) =>
+                {
+                    try
                     {
-                        if (AutoUpdateToggleListener == null)
+                        OutDebugConsole("Handle Change of ships");
+                        if (CheckToken() && EnableAutoUpdate && KanColleClient.Current.Homeport.Organization.Ships.Count > 0)
                         {
-                            AutoUpdateToggleListener = new PropertyChangedEventListener(KanColleClient.Current.Homeport.Organization);
-                            AutoUpdateToggleListener.RegisterHandler(() => KanColleClient.Current.Homeport.Organization.Ships,
-                            async (s, h) =>
-                            {
-                                try
-                                {
-                                    OutDebugConsole("Handle Change of ships: " + EnableAutoUpdate.ToString());
-                                    if (CheckToken() && EnableAutoUpdate)
-                                    {
-                                        await PrepareClient();
-                                        await Client.UpdateShips();
-                                    }
-                                }
-                                catch (Exception ex)
-                                {
-                                    OutDebugConsole(ex.ToString());
-                                }
-                            });
-                            this.CompositeDisposable.Add(AutoUpdateToggleListener);
+                            await PrepareClient();
+                            await Client.UpdateShips();
                         }
                     }
+                    catch (Exception ex)
+                    {
+                        OutDebugConsole(ex.ToString());
+                    }
                 });
-                this.CompositeDisposable.Add(lis);
-            });
+                this.CompositeDisposable.Add(AutoUpdateToggleListener);
+                IsInited = true;
+            }
         }
 
         public async void OpenLoginWindow()
@@ -188,14 +192,7 @@ namespace HiyoshiCfhClient.ViewModels
             if (Client == null)
             {
                 Client = new Client(TokenType, AccessToken, OutDebugConsole);
-                try
-                {
-                    await Client.InitClientAsync();
-                }
-                catch (DeniedAccessToAdmiral)
-                {
-                    OutDebugConsole("提督情報の変更が拒否されました。ログインアカウントが異なります。");
-                }
+                await Client.InitClientAsync();
             }
         }
 
@@ -212,6 +209,10 @@ namespace HiyoshiCfhClient.ViewModels
                         await Client.UpdateShips();
                         OutDebugConsole("End init client thread");
                     }
+                    catch (DeniedAccessToAdmiral)
+                    {
+                        OutDebugConsole("提督情報の変更が拒否されました。ログインアカウントが異なります。");
+                    }
                     catch (Exception ex)
                     {
                         OutDebugConsole(ex.ToString());
@@ -225,7 +226,14 @@ namespace HiyoshiCfhClient.ViewModels
             DebugConsole = "";
         }
 
-        private bool CheckToken()
+        void ClearToken()
+        {
+            AccessToken = null;
+            TokenType = null;
+            Client = null;
+        }
+
+        bool CheckToken()
         {
             return AccessToken != null && AccessToken.Length > 0 && TokenType != null && TokenType.Length > 0;
         }
