@@ -206,6 +206,7 @@
     <Compile Include="Controllers\OData\ShipInfoesController.cs" />
     <Compile Include="Controllers\OData\ShipsController.cs" />
     <Compile Include="Controllers\OData\ShipTypesController.cs" />
+    <Compile Include="Controllers\PluginController.cs" />
     <Compile Include="Controllers\RoleController.cs" />
     <Compile Include="Controllers\ShipController.cs" />
     <Compile Include="Global.asax.cs">
@@ -351,6 +352,7 @@
     <Content Include="Views\Permission\Index.cshtml" />
     <Content Include="Views\Configuration\Index.cshtml" />
     <Content Include="Views\Configuration\Users.cshtml" />
+    <Content Include="Views\Plugin\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

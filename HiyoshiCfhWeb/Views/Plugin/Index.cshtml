@@ -1,0 +1,13 @@
+﻿@model IEnumerable<FileInfo>
+@{
+    ViewBag.Title = "プラグイン";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<ul>
+    @foreach (var file in Model)
+    {
+        <li><a href="~/Content/Plugin/@file.Name">@file.Name</a> (更新日時: @TimeZoneInfo.ConvertTimeFromUtc(file.LastWriteTimeUtc, TimeZoneInfo.FindSystemTimeZoneById("Tokyo Standard Time")))</li>
+    }
+</ul>
