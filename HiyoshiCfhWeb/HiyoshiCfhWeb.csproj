@@ -351,17 +351,12 @@
     <Content Include="Views\Configuration\Index.cshtml" />
     <Content Include="Views\Configuration\Users.cshtml" />
     <Content Include="Views\Plugin\Index.cshtml" />
-    <Compile Include="XML\Quests.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
+    <Compile Include="XML\Quests.cs">
       <DependentUpon>Quests.xsd</DependentUpon>
     </Compile>
-    <None Include="XML\Quests.xsd">
+    <Content Include="XML\Quests.xsd">
       <SubType>Designer</SubType>
-      <CustomToolNamespace>HiyoshiCfhWeb.XML</CustomToolNamespace>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Quests.Designer.cs</LastGenOutput>
-    </None>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -427,6 +422,11 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
+  <PropertyGroup>
+    <PreBuildEvent>CALL "$(DevEnvDir)..\Tools\VsDevCmd.bat"
+cd $(ProjectDir)XML
+xsd Quests.xsd /c /l:cs /n:HiyoshiCfhWeb.XML</PreBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
