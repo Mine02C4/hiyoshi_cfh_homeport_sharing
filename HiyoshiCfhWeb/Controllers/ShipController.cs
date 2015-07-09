@@ -14,7 +14,9 @@ namespace HiyoshiCfhWeb.Controllers
         // GET: Ships
         public ActionResult Index(string id)
         {
-            return View(db.ShipInfoes.Where(x => x.Name == id).First());
+            var shipInfo = db.ShipInfoes.Where(x => x.Name == id).First();
+            var ships = db.Ships.Where(x => x.ShipInfoId == shipInfo.ShipInfoId).OrderByDescending(x => x.Exp).ToList();
+            return View(Tuple.Create(shipInfo, ships));
         }
     }
 }

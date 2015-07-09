@@ -1,10 +1,12 @@
-﻿@model HiyoshiCfhWeb.Models.ShipInfo
+﻿@model Tuple<HiyoshiCfhWeb.Models.ShipInfo, List<HiyoshiCfhWeb.Models.Ship>>
 
 @{
-    ViewBag.Title = Model.Name;
+    ViewBag.Title = Model.Item1.Name;
+    var shipInfo = Model.Item1;
+    var ships = Model.Item2;
 }
 
-<h2>@Html.DisplayFor(model => model.ShipType.Name) @Model.Name</h2>
+<h2>@Html.DisplayFor(model => model.Item1.ShipType.Name) @shipInfo.Name</h2>
 
 <div>
     <hr />
@@ -14,7 +16,7 @@
         </dt>
 
         <dd>
-            @if (Model.ShipSpeed == HiyoshiCfhWeb.Models.ShipSpeed.Fast)
+            @if (shipInfo.ShipSpeed == HiyoshiCfhWeb.Models.ShipSpeed.Fast)
             {
                 <text>高速</text>
             }
@@ -29,9 +31,9 @@
         </dt>
 
         <dd>
-            @if (Model.NextRemodelingLevel != null)
+            @if (shipInfo.NextRemodelingLevel != null)
             {
-                <text>Lv. @Model.NextRemodelingLevel</text>
+                <text>Lv. @shipInfo.NextRemodelingLevel</text>
             }
             else
             {
@@ -41,3 +43,39 @@
 
     </dl>
 </div>
+
+<h3>各母港への所属状況</h3>
+
+<table class="table">
+    <tr>
+        <th>
+            提督
+        </th>
+        <th>
+            レベル
+        </th>
+        <th>
+            累積経験値
+        </th>
+        <th>
+            次レベルまでの経験値
+        </th>
+    </tr>
+    @foreach (var item in ships)
+    {
+        <tr>
+            <td>
+                @Html.ActionLink(item.Admiral.Name, "Homeport", "Headquarters", new { id = item.Admiral.Name }, null)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Level)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Exp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ExpForNextLevel)
+            </td>
+        </tr>
+    }
+</table>
