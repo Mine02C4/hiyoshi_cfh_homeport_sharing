@@ -351,6 +351,17 @@
     <Content Include="Views\Configuration\Index.cshtml" />
     <Content Include="Views\Configuration\Users.cshtml" />
     <Content Include="Views\Plugin\Index.cshtml" />
+    <Compile Include="XML\Quests.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Quests.xsd</DependentUpon>
+    </Compile>
+    <None Include="XML\Quests.xsd">
+      <SubType>Designer</SubType>
+      <CustomToolNamespace>HiyoshiCfhWeb.XML</CustomToolNamespace>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Quests.Designer.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

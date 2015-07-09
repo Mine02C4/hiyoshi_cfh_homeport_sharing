@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Quests"
+    targetNamespace="http://hiyoshicfh.pyonpyon.tokyo/Quests.xsd"
+    elementFormDefault="qualified"
+    xmlns="http://hiyoshicfh.pyonpyon.tokyo/Quests.xsd"
+    xmlns:mstns="http://hiyoshicfh.pyonpyon.tokyo/Quests.xsd"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+>
+  <xs:simpleType name="Category">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="composition"/>
+      <xs:enumeration value="sortie"/>
+      <xs:enumeration value="practice"/>
+      <xs:enumeration value="expeditions"/>
+      <xs:enumeration value="supply"/>
+      <xs:enumeration value="building"/>
+      <xs:enumeration value="remodelling"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Type">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="onetime"/>
+      <xs:enumeration value="daily"/>
+      <xs:enumeration value="weekly"/>
+      <xs:enumeration value="monthly"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="Bonus">
+    <xs:sequence>
+      <xs:element name="Fuel" type="xs:unsignedInt"/>
+      <xs:element name="Bull" type="xs:unsignedInt"/>
+      <xs:element name="Steel" type="xs:unsignedInt"/>
+      <xs:element name="Bauxite" type="xs:unsignedInt"/>
+      <xs:element name="InstantBuildMaterials" type="xs:unsignedInt"/>
+      <xs:element name="InstantRepairMaterials" type="xs:unsignedInt"/>
+      <xs:element name="DevelopmentMaterials" type="xs:unsignedInt"/>
+      <xs:element name="RenovationMaterials" type="xs:unsignedInt"/>
+      <xs:element name="Other" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Quest">
+    <xs:sequence>
+      <xs:element name="Name" type="xs:string"/>
+      <xs:element name="Content" type="xs:string"/>
+      <xs:element name="Bonus" type="Bonus"/>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:string"/>
+    <xs:attribute name="Category" type="Category"/>
+    <xs:attribute name="Type" type="Type"/>
+  </xs:complexType>
+  <xs:element name="Quests">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Quest" type="Quest" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
