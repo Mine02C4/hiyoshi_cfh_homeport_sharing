@@ -26,8 +26,6 @@ namespace HiyoshiCfhWeb.XML {
         
         private Quest[] questField;
         
-        private string pyonpyonField;
-        
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("Quest")]
         public Quest[] Quest {
@@ -36,16 +34,6 @@ namespace HiyoshiCfhWeb.XML {
             }
             set {
                 this.questField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string pyonpyon {
-            get {
-                return this.pyonpyonField;
-            }
-            set {
-                this.pyonpyonField = value;
             }
         }
     }
