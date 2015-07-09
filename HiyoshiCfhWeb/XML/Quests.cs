@@ -94,7 +94,7 @@ namespace HiyoshiCfhWeb.XML {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string id {
+        public string Id {
             get {
                 return this.idField;
             }

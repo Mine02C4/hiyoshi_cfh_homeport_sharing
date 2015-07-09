@@ -44,7 +44,7 @@
       <xs:element name="Content" type="xs:string"/>
       <xs:element name="Bonus" type="Bonus"/>
     </xs:sequence>
-    <xs:attribute name="id" type="xs:string"/>
+    <xs:attribute name="Id" type="xs:string"/>
     <xs:attribute name="Category" type="Category"/>
     <xs:attribute name="Type" type="Type"/>
   </xs:complexType>
