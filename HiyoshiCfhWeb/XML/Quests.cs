@@ -52,6 +52,8 @@ namespace HiyoshiCfhWeb.XML {
         
         private Bonus bonusField;
         
+        private DependencyAchieve[] dependencyField;
+        
         private string idField;
         
         private Category categoryField;
@@ -89,6 +91,17 @@ namespace HiyoshiCfhWeb.XML {
             }
             set {
                 this.bonusField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayItemAttribute("Achieve", IsNullable=false)]
+        public DependencyAchieve[] Dependency {
+            get {
+                return this.dependencyField;
+            }
+            set {
+                this.dependencyField = value;
             }
         }
         
@@ -261,6 +274,28 @@ namespace HiyoshiCfhWeb.XML {
             }
             set {
                 this.otherField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://hiyoshicfh.pyonpyon.tokyo/Quests.xsd")]
+    public partial class DependencyAchieve {
+        
+        private string idField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Id {
+            get {
+                return this.idField;
+            }
+            set {
+                this.idField = value;
             }
         }
     }

@@ -38,11 +38,21 @@
       <xs:element name="Other" type="xs:string" minOccurs="0"/>
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="Dependency">
+    <xs:sequence>
+      <xs:element name="Achieve" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:attribute name="Id" type="xs:string"/>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="Quest">
     <xs:sequence>
       <xs:element name="Name" type="xs:string"/>
       <xs:element name="Content" type="xs:string"/>
       <xs:element name="Bonus" type="Bonus"/>
+      <xs:element name="Dependency" type="Dependency"/>
     </xs:sequence>
     <xs:attribute name="Id" type="xs:string"/>
     <xs:attribute name="Category" type="Category"/>
