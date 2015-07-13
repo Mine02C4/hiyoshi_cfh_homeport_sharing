@@ -82,6 +82,7 @@ namespace HiyoshiCfhWeb.Controllers
                 return Conflict();
             }
             Admiral.UserId = User.Identity.GetUserId();
+            Admiral.UpdateUtc = DateTime.UtcNow;
             db.Admirals.Add(Admiral);
             db.SaveChanges();
             return Created(Admiral);
