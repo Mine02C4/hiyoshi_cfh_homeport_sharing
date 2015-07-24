@@ -199,6 +199,7 @@ namespace HiyoshiCfhClient
 
         public async Task UpdateShips()
         {
+            CheckAdmiral();
             await factory.StartNew(() =>
             {
                 OutDebugConsole("UpdateShips");

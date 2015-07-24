@@ -5,6 +5,7 @@ using HiyoshiCfhClient.Models;
 using Livet;
 using Livet.EventListeners;
 using Livet.Messaging;
+using Microsoft.OData.Client;
 using System;
 using System.ComponentModel.Composition;
 using System.IO;
@@ -124,6 +125,28 @@ namespace HiyoshiCfhClient.ViewModels
                             await Client.UpdateShips();
                         }
                     }
+                    catch (DataServiceQueryException ex)
+                    {
+                        if (ex.InnerException is DataServiceClientException)
+                        {
+                            var iex = ex.InnerException as DataServiceClientException;
+                            if (iex.StatusCode == 401)
+                            {
+                                // 認証失敗
+                                ClearToken();
+                                OutDebugConsole("認証に失敗しました。再認証が必要です。");
+                                Client = null;
+                            }
+                            else
+                            {
+                                OutDebugConsole(ex.ToString());
+                            }
+                        }
+                        else
+                        {
+                            OutDebugConsole(ex.ToString());
+                        }
+                    }
                     catch (Exception ex)
                     {
                         OutDebugConsole(ex.ToString());
@@ -230,6 +253,9 @@ namespace HiyoshiCfhClient.ViewModels
         {
             AccessToken = null;
             TokenType = null;
+            Settings.Current.AccessToken = null;
+            Settings.Current.TokenType = null;
+            Settings.Current.Save();
             Client = null;
         }
 
