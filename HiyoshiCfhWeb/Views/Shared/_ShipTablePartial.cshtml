@@ -49,49 +49,49 @@
 
     @foreach (var item in Model)
     {
-        <tr @(item.LevelForNextRemodeling <= 0 ? "class=\"info\"" : String.Empty)>
-        <td>
-        @Html.DisplayFor(modelItem => item.ShipId)
-        </td>
-        <td>
-        @Html.ActionLink(item.ShipInfo.Name, "Index", "Ship", routeValues: new { id = item.ShipInfo.Name }, htmlAttributes: null)
-        </td>
-        <td>
-        @Html.DisplayFor(modelItem => item.Level)
-        </td>
-        <td>
-        @Html.DisplayFor(modelItem => item.IsLocked)
-        </td>
-        <td>
-        @Html.DisplayFor(modelItem => item.Exp)
-        </td>
-        <td>
-        @Html.DisplayFor(modelItem => item.ExpForNextLevel)
-        </td>
-        <td>
-        @Html.DisplayFor(modelItem => item.Hp)
-        </td>
-        <td>
-        @Html.DisplayFor(modelItem => item.Fuel)
-        </td>
-        <td>
-        @Html.DisplayFor(modelItem => item.Bull)
-        </td>
-        <td>
-        @Html.DisplayFor(modelItem => item.Firepower)
-        </td>
-        <td>
-        @Html.DisplayFor(modelItem => item.Torpedo)
-        </td>
-        <td>
-        @Html.DisplayFor(modelItem => item.AA)
-        </td>
-        <td>
-        @Html.DisplayFor(modelItem => item.Armer)
-        </td>
-        <td>
-        @Html.DisplayFor(modelItem => item.Luck)
-        </td>
+        <tr class="@(item.LevelForNextRemodeling <= 0 ? "info" : null)">
+            <td>
+                @Html.DisplayFor(modelItem => item.ShipId)
+            </td>
+            <td>
+                @Html.ActionLink(item.ShipInfo.Name, "Index", "Ship", routeValues: new { id = item.ShipInfo.Name }, htmlAttributes: null)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Level)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsLocked)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Exp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ExpForNextLevel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Hp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fuel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Bull)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Firepower)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Torpedo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AA)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Armer)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Luck)
+            </td>
         </tr>
     }
 
