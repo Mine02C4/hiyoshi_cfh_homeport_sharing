@@ -109,6 +109,7 @@
       <HintPath>..\packages\Rx-Linq.2.2.5\lib\net45\System.Reactive.Linq.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Web" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -136,6 +137,8 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="Utils\QuestsTracker.cs" />
+    <Compile Include="Utils\Tasks.cs" />
     <Compile Include="ViewModels\ClientViewModel.cs" />
     <Compile Include="Views\ClientView.xaml.cs">
       <DependentUpon>ClientView.xaml</DependentUpon>
@@ -186,7 +189,7 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>cd $(TargetDir)
-for %25%25a in ( $(TargetFileName) Microsoft.OData.*.dll Microsoft.Spatial.dll ) do (
+for %25%25a in ( $(TargetFileName) Microsoft.OData.*.dll System.Reactive.*.dll Microsoft.Spatial.dll ) do (
 xcopy /Y %25%25a $(SolutionDir)HiyoshiCfhWeb\Content\Plugin\
 )</PostBuildEvent>
   </PropertyGroup>

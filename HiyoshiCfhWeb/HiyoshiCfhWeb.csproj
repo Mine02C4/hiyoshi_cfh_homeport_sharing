@@ -204,6 +204,7 @@
     <Compile Include="Controllers\OData\AdmiralsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\OData\QuestsController.cs" />
     <Compile Include="Controllers\OData\ShipInfoesController.cs" />
     <Compile Include="Controllers\OData\ShipsController.cs" />
     <Compile Include="Controllers\OData\ShipTypesController.cs" />
@@ -249,6 +250,14 @@
     <Compile Include="Migrations\201506291734497_AddRelationshipAdmiralToUser.Designer.cs">
       <DependentUpon>201506291734497_AddRelationshipAdmiralToUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201508011843310_AddQuestModel.cs" />
+    <Compile Include="Migrations\201508011843310_AddQuestModel.Designer.cs">
+      <DependentUpon>201508011843310_AddQuestModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201508012108116_AddQuestNo.cs" />
+    <Compile Include="Migrations\201508012108116_AddQuestNo.Designer.cs">
+      <DependentUpon>201508012108116_AddQuestNo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AdmiralModels.cs" />
@@ -257,12 +266,14 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\PermissionModels.cs" />
+    <Compile Include="Models\QuestModels.cs" />
     <Compile Include="Models\ShipModels.cs" />
     <Compile Include="Models\SlotItemModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Provider\ApplicationOAuthProvider.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Controllers\PermissionController.cs" />
+    <Compile Include="XML\QuestsPartial.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -274,6 +285,9 @@
     <Content Include="Content\Plugin\Microsoft.OData.Core.dll" />
     <Content Include="Content\Plugin\Microsoft.OData.Edm.dll" />
     <Content Include="Content\Plugin\Microsoft.Spatial.dll" />
+    <Content Include="Content\Plugin\System.Reactive.Core.dll" />
+    <Content Include="Content\Plugin\System.Reactive.Interfaces.dll" />
+    <Content Include="Content\Plugin\System.Reactive.Linq.dll" />
     <Content Include="Content\signin-google.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -285,6 +299,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.css.map" />
+    <Content Include="XML\Style.xsl" />
     <None Include="Properties\PublishProfiles\hiyoshicfhweb.pubxml">
       <SubType>Designer</SubType>
     </None>
@@ -355,9 +370,13 @@
     <Compile Include="XML\Quests.cs">
       <DependentUpon>Quests.xsd</DependentUpon>
     </Compile>
+    <Content Include="XML\Quests.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="XML\Quests.xsd">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Views\Headquarters\Quests.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -393,6 +412,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201506291734497_AddRelationshipAdmiralToUser.resx">
       <DependentUpon>201506291734497_AddRelationshipAdmiralToUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201508011843310_AddQuestModel.resx">
+      <DependentUpon>201508011843310_AddQuestModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201508012108116_AddQuestNo.resx">
+      <DependentUpon>201508012108116_AddQuestNo.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

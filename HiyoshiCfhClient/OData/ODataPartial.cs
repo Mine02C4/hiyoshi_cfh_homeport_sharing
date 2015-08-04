@@ -106,7 +106,6 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
 
         public override int GetHashCode()
         {
-            var properties = typeof(Ship).GetProperties();
             return ShipId ^ Hp ^ Fuel ^ Bull;
         }
 
@@ -127,6 +126,77 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
         }
 
         public static bool operator ==(Ship a, Ship b)
+        {
+            return !(a != b);
+        }
+    }
+
+    public partial class Quest
+    {
+        public Quest() { }
+
+        public Quest(Grabacr07.KanColleWrapper.Models.Raw.kcsapi_quest quest, int admiralId)
+        {
+            QuestNo = quest.api_no;
+            Category = (QuestCategory)quest.api_category;
+            if (Enum.IsDefined(typeof(QuestType), quest.api_type))
+            {
+                Type = (QuestType)quest.api_type;
+            }
+            else if (quest.api_type == 5)
+            {
+                Type = QuestType.Daily;
+            }
+            else
+            {
+                Type = QuestType.Monthly;
+            }
+            Name = quest.api_title;
+            Content = quest.api_detail;
+            Fuel = quest.api_get_material[0];
+            Bull = quest.api_get_material[1];
+            Steel = quest.api_get_material[2];
+            Bauxite = quest.api_get_material[3];
+            AdmiralId = admiralId;
+        }
+
+        public override string ToString()
+        {
+            return string.Format("ID = {0}, No = {1}, Name = {2}", this.QuestId, this.QuestNo, this.Name);
+        }
+
+        public override bool Equals(Object obj)
+        {
+            if (obj == null || GetType() != obj.GetType())
+            {
+                return false;
+            }
+            var a = (Quest)obj;
+            return this == a;
+        }
+
+        public override int GetHashCode()
+        {
+            return QuestId ^ QuestNo ^ Fuel ^ Bull ^ Steel ^ Bauxite;
+        }
+
+        public static bool operator !=(Quest a, Quest b)
+        {
+            var properties = typeof(Quest).GetProperties();
+            foreach (var property in properties)
+            {
+                var type = Nullable.GetUnderlyingType(property.PropertyType) ?? property.PropertyType;
+                if (property.Name != "QuestId" && type.IsValueType
+                    && property.GetValue(a) != null && property.GetValue(b) != null
+                    && !Convert.ChangeType(property.GetValue(a), type).Equals(Convert.ChangeType(property.GetValue(b), type)))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public static bool operator ==(Quest a, Quest b)
         {
             return !(a != b);
         }

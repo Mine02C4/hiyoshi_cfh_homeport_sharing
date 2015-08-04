@@ -4,6 +4,7 @@ using WebShipType = HiyoshiCfhClient.HiyoshiCfhWeb.Models.ShipType;
 using WebShipInfo = HiyoshiCfhClient.HiyoshiCfhWeb.Models.ShipInfo;
 using WebAdmiral = HiyoshiCfhClient.HiyoshiCfhWeb.Models.Admiral;
 using WebShip = HiyoshiCfhClient.HiyoshiCfhWeb.Models.Ship;
+using WebQuest = HiyoshiCfhClient.HiyoshiCfhWeb.Models.Quest;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,7 @@ using System.Collections.ObjectModel;
 using Microsoft.OData.Client;
 using System.Diagnostics;
 using System.Threading;
+using HiyoshiCfhClient.Utils;
 
 namespace HiyoshiCfhClient
 {
@@ -33,14 +35,7 @@ namespace HiyoshiCfhClient
         {
             TokenType = tokenType;
             AccessToken = accessToken;
-            Context = new Container(new Uri("http://hiyoshicfhweb.azurewebsites.net/odata"));
-            if (tokenType != null && accessToken != null)
-            {
-                Context.SendingRequest2 += (sender, eventArgs) =>
-                {
-                    eventArgs.RequestMessage.SetHeader("Authorization", TokenType + " " + AccessToken);
-                };
-            }
+            ResetContext();
             taskScheduler = new LimitedConcurrencyLevelTaskScheduler(1);
             factory = new TaskFactory(taskScheduler);
         }
@@ -49,6 +44,19 @@ namespace HiyoshiCfhClient
             : this(tokenType, accessToken)
         {
             _DebugConsole = debugConsole;
+        }
+
+        private void ResetContext()
+        {
+            Context = new Container(new Uri("http://hiyoshicfhweb.azurewebsites.net/odata"));
+            if (TokenType != null && AccessToken != null)
+            {
+                Context.SendingRequest2 += (sender, eventArgs) =>
+                {
+                    eventArgs.RequestMessage.SetHeader("Authorization", TokenType + " " + AccessToken);
+                };
+            }
+            //Context.SaveChangesDefaultOptions = SaveChangesOptions.BatchWithSingleChangeset;
         }
 
         private void OutDebugConsole(string msg)
@@ -128,6 +136,7 @@ namespace HiyoshiCfhClient
             }
             catch (DataServiceRequestException)
             {
+                ResetContext();
                 throw new DeniedAccessToAdmiral();
             }
         }
@@ -241,144 +250,68 @@ namespace HiyoshiCfhClient
                     Context.SaveChanges();
                     OutDebugConsole("Saved ship data");
                 }
-                catch (DataServiceRequestException)
+                catch (DataServiceRequestException ex)
                 {
+                    ResetContext();
                     throw new DeniedAccessToAdmiral();
                 }
             });
         }
 
-        /// <summary>
-        /// 使用するスレッドの上限数を設けたタスクスケジューラー
-        /// </summary>
-        class LimitedConcurrencyLevelTaskScheduler : TaskScheduler
+        public async Task UpdateQuests(IEnumerable<Grabacr07.KanColleWrapper.Models.Raw.kcsapi_quest> quests)
         {
-            /// <summary>
-            /// 現在のスレッドがタスクを実行しているかどうか
-            /// </summary>
-            [ThreadStatic]
-            private static bool _currentThreadIsProcessingItems;
-
-            /// <summary>
-            /// 実行されるタスクのリスト
-            /// </summary>
-            private readonly LinkedList<Task> _tasks = new LinkedList<Task>(); // protected by lock(_tasks)
-
-            /// <summary>
-            /// 同時実行可能なタスク数の上限
-            /// </summary>
-            private readonly int _maxDegreeOfParallelism;
-
-            /// <summary>
-            /// 現在実行しているタスク数
-            /// </summary>
-            private int _delegatesQueuedOrRunning = 0;
-
-            /// <summary>
-            /// 上限数を指定してインスタンスを生成
-            /// </summary>
-            /// <param name="maxDegreeOfParallelism">同時実行可能なタスクの上限数(1以上の整数)</param>
-            public LimitedConcurrencyLevelTaskScheduler(int maxDegreeOfParallelism)
+            CheckAdmiral();
+            await factory.StartNew(() =>
             {
-                if (maxDegreeOfParallelism < 1) throw new ArgumentOutOfRangeException("maxDegreeOfParallelism");
-                _maxDegreeOfParallelism = maxDegreeOfParallelism;
-            }
-
-            /// <summary>
-            /// タスクをタスクキューに追加
-            /// </summary>
-            /// <param name="task">追加するタスク</param>
-            protected sealed override void QueueTask(Task task)
-            {
-                lock (_tasks)
-                {
-                    _tasks.AddLast(task);
-                    if (_delegatesQueuedOrRunning < _maxDegreeOfParallelism)
-                    {
-                        _delegatesQueuedOrRunning++;
-                        NotifyThreadPoolOfPendingWork();
-                    }
-                }
-            }
-
-            /// <summary>
-            /// 実行すべき作業があることをThreadPoolに通知します
-            /// </summary>
-            private void NotifyThreadPoolOfPendingWork()
-            {
-                ThreadPool.UnsafeQueueUserWorkItem(_ =>
-                {
-                    _currentThreadIsProcessingItems = true;
-                    try
-                    {
-                        while (true)
-                        {
-                            Task item;
-                            lock (_tasks)
-                            {
-                                if (_tasks.Count == 0)
-                                {
-                                    _delegatesQueuedOrRunning--;
-                                    break;
-                                }
-                                item = _tasks.First.Value;
-                                _tasks.RemoveFirst();
-                            }
-                            base.TryExecuteTask(item);
-                        }
-                    }
-                    finally { _currentThreadIsProcessingItems = false; }
-                }, null);
-            }
-
-            /// <summary>
-            /// 現在のスレッドでタスクを実行しようとします
-            /// </summary>
-            /// <param name="task"></param>
-            /// <param name="taskWasPreviouslyQueued"></param>
-            /// <returns></returns>
-            protected sealed override bool TryExecuteTaskInline(Task task, bool taskWasPreviouslyQueued)
-            {
-                if (!_currentThreadIsProcessingItems) return false;
-                if (taskWasPreviouslyQueued)
-                {
-                    if (TryDequeue(task))
-                        return base.TryExecuteTask(task);
-                    else
-                        return false;
-                }
-                else
-                {
-                    return base.TryExecuteTask(task);
-                }
-            }
-
-            /// <summary>
-            /// 事前にスケジュールされてたタスクをスケジューラーから取り除きます
-            /// </summary>
-            /// <param name="task"></param>
-            /// <returns></returns>
-            protected sealed override bool TryDequeue(Task task)
-            {
-                lock (_tasks) return _tasks.Remove(task);
-            }
-
-            public sealed override int MaximumConcurrencyLevel { get { return _maxDegreeOfParallelism; } }
-
-            protected sealed override IEnumerable<Task> GetScheduledTasks()
-            {
-                bool lockTaken = false;
+                OutDebugConsole("UpdateQuests");
                 try
                 {
-                    Monitor.TryEnter(_tasks, ref lockTaken);
-                    if (lockTaken) return _tasks;
-                    else throw new NotSupportedException();
+                    var webQuests = Context.Quests.Where(x => x.AdmiralId == Admiral.AdmiralId).ToList();
+                    // まずは存在しない任務の削除と更新
+                    foreach (var webQuest in webQuests)
+                    {
+                        if (quests.Where(x => x.api_no == webQuest.QuestNo).Count() == 0)
+                        {
+                            OutDebugConsole("Delete: " + webQuest.ToString());
+                            Context.DeleteObject(webQuest);
+                        }
+                        else
+                        {
+                            var quest = new WebQuest(quests.Where(x => x.api_no == webQuest.QuestNo).First(), Admiral.AdmiralId);
+                            if (quest != webQuest)
+                            {
+                                Context.Detach(webQuest);
+                                quest.QuestId = webQuest.QuestId;
+                                OutDebugConsole("Update: " + quest.ToString());
+                                Context.AttachTo("Quests", quest);
+                                Context.UpdateObject(quest);
+                            }
+                        }
+                    }
+                    // 追加
+                    foreach (var quest in quests)
+                    {
+                        if (webQuests.Where(x => x.QuestNo == quest.api_no).Count() == 0)
+                        {
+                            OutDebugConsole("Add: " + quest.ToString());
+                            // 追加で何故か事故る
+                            Context.AddToQuests(new WebQuest(quest, Admiral.AdmiralId));
+                        }
+                    }
+                    OutDebugConsole("Saving quest data");
+                    Context.SaveChanges();
+                    OutDebugConsole("Saved quest data");
+                    foreach (var quest in quests)
+                    {
+                        Context.Detach(quest);
+                    }
                 }
-                finally
+                catch (DataServiceRequestException ex)
                 {
-                    if (lockTaken) Monitor.Exit(_tasks);
+                    ResetContext();
+                    throw new DeniedAccessToAdmiral();
                 }
-            }
+            });
         }
     }
 

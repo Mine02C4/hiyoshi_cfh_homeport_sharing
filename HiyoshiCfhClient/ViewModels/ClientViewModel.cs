@@ -1,14 +1,14 @@
-﻿using Grabacr07.KanColleViewer.Composition;
-using Grabacr07.KanColleWrapper;
+﻿using Grabacr07.KanColleWrapper;
 using Grabacr07.KanColleWrapper.Models.Raw;
 using HiyoshiCfhClient.Models;
+using HiyoshiCfhClient.Utils;
 using Livet;
 using Livet.EventListeners;
 using Livet.Messaging;
 using Microsoft.OData.Client;
 using System;
-using System.ComponentModel.Composition;
 using System.IO;
+using System.Reactive.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -85,15 +85,15 @@ namespace HiyoshiCfhClient.ViewModels
         #endregion
 
         bool IsInited = false;
-
-        PropertyChangedEventListener AutoUpdateToggleListener = null;
-
+        PropertyChangedEventListener OrganizationListener = null;
         Client Client = null;
+        QuestsTracker QuestsTracker;
 
         public ClientViewModel()
         {
             OutDebugConsole("Initialize");
             Settings.Init();
+            QuestsTracker = new QuestsTracker();
             AccessToken = Settings.Current.AccessToken;
             TokenType = Settings.Current.TokenType;
             EnableAutoUpdate = true;
@@ -110,10 +110,10 @@ namespace HiyoshiCfhClient.ViewModels
 
         void InitHandlers()
         {
-            if (AutoUpdateToggleListener == null)
+            if (OrganizationListener == null)
             {
-                AutoUpdateToggleListener = new PropertyChangedEventListener(KanColleClient.Current.Homeport.Organization);
-                AutoUpdateToggleListener.RegisterHandler(() => KanColleClient.Current.Homeport.Organization.Ships,
+                OrganizationListener = new PropertyChangedEventListener(KanColleClient.Current.Homeport.Organization);
+                OrganizationListener.RegisterHandler(() => KanColleClient.Current.Homeport.Organization.Ships,
                 async (s, h) =>
                 {
                     try
@@ -152,10 +152,38 @@ namespace HiyoshiCfhClient.ViewModels
                         OutDebugConsole(ex.ToString());
                     }
                 });
-                this.CompositeDisposable.Add(AutoUpdateToggleListener);
+                this.CompositeDisposable.Add(OrganizationListener);
+                var proxy = KanColleClient.Current.Proxy;
+                proxy.api_get_member_questlist
+                    .Select(QuestsTracker.QuestListSerialize)
+                    .Where(x => x != null)
+                    .Subscribe(async x => { await this.HandleQuests(x); });
                 IsInited = true;
             }
         }
+
+        async Task HandleQuests(kcsapi_questlist questlist)
+        {
+            await Task.Factory.StartNew(async () =>
+            {
+                OutDebugConsole("Handle questlist");
+                try
+                {
+                    QuestsTracker.AddPage(questlist);
+                    if (QuestsTracker.IsIntegral)
+                    {
+                        await PrepareClient();
+                        await Client.UpdateQuests(QuestsTracker.DisplayedQuests);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    OutDebugConsole(ex.ToString());
+                }
+            });
+        }
+
+
 
         public async void OpenLoginWindow()
         {

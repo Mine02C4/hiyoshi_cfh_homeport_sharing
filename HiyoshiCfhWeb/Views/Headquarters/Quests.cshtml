@@ -1,0 +1,113 @@
+﻿@model Tuple<HiyoshiCfhWeb.XML.Quests, List<HiyoshiCfhWeb.Models.Quest>>
+
+@{
+    ViewBag.Title = "任務進捗";
+    var questMaster = Model.Item1;
+    var quests = Model.Item2;
+}
+
+<h2>@ViewBag.Title</h2>
+
+<h3>表示された任務</h3>
+
+<table class="table">
+    <tr>
+        <th>
+            カテゴリ
+        </th>
+        <th>
+            タイプ
+        </th>
+        <th>
+            任務名
+        </th>
+        <th>
+            内容
+        </th>
+        <th>
+            燃料
+        </th>
+        <th>
+            弾薬
+        </th>
+        <th>
+            鋼材
+        </th>
+        <th>
+            ボーキサイト
+        </th>
+    </tr>
+
+    @foreach (var item in quests)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Content)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fuel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Bull)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Steel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Bauxite)
+            </td>
+        </tr>
+    }
+
+</table>
+
+<h3>任務マスター</h3>
+
+<table class="table">
+    <tr>
+        <th>
+            ID
+        </th>
+        <th>
+            任務名
+        </th>
+        <th>
+            依存関係
+        </th>
+    </tr>
+
+    @foreach (var item in questMaster.Quest)
+    {
+        <tr>
+            <td>
+                @item.Id
+            </td>
+            <td>
+                @item.Name
+            </td>
+            <td>
+                @if (item.Dependency.Count() > 0)
+                {
+                    <ul>
+                        @foreach(var achieve in item.Dependency)
+                        {
+                            <li>
+                                @achieve.Id
+                            </li>
+                        }
+                    </ul>
+                }
+            </td>
+        </tr>
+    }
+
+</table>
