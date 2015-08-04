@@ -21,6 +21,7 @@ namespace HiyoshiCfhWeb.Controllers
         }
 
         private ApplicationDbContext db = new ApplicationDbContext();
+        private Dictionary<string, List<XML.Quest>> retrietingEdge = null;
 
         // GET: Headquarters
         public ActionResult Index()
@@ -58,23 +59,45 @@ namespace HiyoshiCfhWeb.Controllers
                 }
             }
             var quests = db.Quests.Where(x => x.Admiral.Name == id).OrderBy(x => x.QuestNo).ToList();
-            foreach (var quest in quests)
+            if (retrietingEdge == null)
             {
-                // 必要条件での絞込
-                var match = questMaster.Quest.Where(x => x.Compare(quest));
-                if (match.Count() == 1)
+                retrietingEdge = new Dictionary<string, List<XML.Quest>>();
+                foreach (var quest in questMaster.Quest)
                 {
-                    quest.Name += " " + match.First().Id;
-                }
-                else if (match.Count() > 1)
-                {
-                    foreach (var m in match)
+                    foreach (var item in quest.Dependency)
                     {
-                        quest.Name += " " + m.Id;
+                        if (!retrietingEdge.ContainsKey(item.Id))
+                        {
+                            retrietingEdge.Add(item.Id, new List<XML.Quest>());
+                        }
+                        retrietingEdge[item.Id].Add(quest);
                     }
                 }
             }
-            return View(Tuple.Create(questMaster, quests));
+            Action<XML.Quest> dig = null;
+            dig = qid =>
+            {
+                qid.State = XML.QuestState.Invisible;
+                List<XML.Quest> qs;
+                if (retrietingEdge.TryGetValue(qid.Id, out qs))
+                {
+                    foreach (var q in qs)
+                    {
+                        dig(q);
+                    }
+                }
+            };
+            foreach (var quest in quests)
+            {
+                var match = questMaster.Quest.Where(x => x.Compare(quest));
+                foreach (var m in match)
+                {
+                    quest.Name += " " + m.Id;
+                    dig(m);
+                    m.State = XML.QuestState.Visible;
+                }
+            }
+            return View(Tuple.Create(questMaster, quests, retrietingEdge));
         }
     }
 }

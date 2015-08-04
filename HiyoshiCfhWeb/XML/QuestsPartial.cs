@@ -7,6 +7,13 @@ namespace HiyoshiCfhWeb.XML
 {
     public partial class Quest
     {
+        public QuestState State { get; set; }
+
+        public Quest()
+        {
+            State = QuestState.Achieved;
+        }
+
         public bool Compare(HiyoshiCfhWeb.Models.Quest quest)
         {
             if (Bonus.Fuel == quest.Fuel && Bonus.Bull == quest.Bull &&
@@ -72,5 +79,12 @@ namespace HiyoshiCfhWeb.XML
             }
             return false;
         }
+    }
+
+    public enum QuestState
+    {
+        Invisible,
+        Visible,
+        Achieved,
     }
 }

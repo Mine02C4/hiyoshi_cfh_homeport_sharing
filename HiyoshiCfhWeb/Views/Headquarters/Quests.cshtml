@@ -1,9 +1,25 @@
-﻿@model Tuple<HiyoshiCfhWeb.XML.Quests, List<HiyoshiCfhWeb.Models.Quest>>
+﻿@using HiyoshiCfhWeb.XML
+@model Tuple<HiyoshiCfhWeb.XML.Quests, List<HiyoshiCfhWeb.Models.Quest>, Dictionary<string, List<Quest>>>
 
 @{
     ViewBag.Title = "任務進捗";
     var questMaster = Model.Item1;
     var quests = Model.Item2;
+    var retrietingEdge = Model.Item3;
+    Func<QuestState, string> StateToClass = s =>
+    {
+        switch (s)
+        {
+            case QuestState.Invisible:
+                return null;
+            case QuestState.Visible:
+                return "info";
+            case QuestState.Achieved:
+                return "success";
+            default:
+                return null;
+        }
+    };
 }
 
 <h2>@ViewBag.Title</h2>
@@ -87,7 +103,7 @@
 
     @foreach (var item in questMaster.Quest)
     {
-        <tr>
+        <tr class="@(StateToClass(item.State))">
             <td>
                 @item.Id
             </td>
@@ -98,7 +114,7 @@
                 @if (item.Dependency.Count() > 0)
                 {
                     <ul>
-                        @foreach(var achieve in item.Dependency)
+                        @foreach (var achieve in item.Dependency)
                         {
                             <li>
                                 @achieve.Id
@@ -110,4 +126,36 @@
         </tr>
     }
 
+</table>
+
+<h3>逆辺</h3>
+
+<table class="table">
+    <tr>
+        <th>
+            元
+        </th>
+        <th>
+            先
+        </th>
+    </tr>
+    @foreach (var item in retrietingEdge)
+    {
+        <tr>
+            <td>
+                @item.Key
+            </td>
+            <td>
+                <ul>
+                    @foreach (var x in item.Value)
+                    {
+                        <li>
+                            @x.Id
+                        </li>
+                    }
+                </ul>
+
+            </td>
+        </tr>
+    }
 </table>
