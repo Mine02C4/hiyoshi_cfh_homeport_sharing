@@ -2156,6 +2156,88 @@
 <Achieve Id="B14"/>
 </Dependency>
 </Quest>
+<Quest Id="A54" Category="composition" Type="onetime">
+<Name>
+「第一水雷戦隊」北方突入準備！
+</Name>
+<Content>
+「阿武隈」を旗艦として「響」「初霜」「若葉」「五月雨」「島風」による一水戦を編成せよ！
+</Content>
+<Bonus>
+<Fuel>
+150
+</Fuel>
+<Bull>
+150
+</Bull>
+<Steel>
+0
+</Steel>
+<Bauxite>
+0
+</Bauxite>
+<InstantBuildMaterials>
+0
+</InstantBuildMaterials>
+<InstantRepairMaterials>
+2
+</InstantRepairMaterials>
+<DevelopmentMaterials>
+0
+</DevelopmentMaterials>
+<RenovationMaterials>
+0
+</RenovationMaterials>
+<Other>
+家具箱(中)x1
+</Other>
+</Bonus>
+<Dependency>
+<Achieve Id="B21"/>
+<Achieve Id="B22"/>
+<Achieve Id="Bd1"/>
+</Dependency>
+</Quest>
+<Quest Id="A55" Category="composition" Type="onetime">
+<Name>
+「第一水雷戦隊」北方再突入準備！
+</Name>
+<Content>
+「阿武隈改二」を旗艦として「響」「夕雲」「長波」「秋雲」「島風」の一水戦を再編成せよ!
+</Content>
+<Bonus>
+<Fuel>
+200
+</Fuel>
+<Bull>
+200
+</Bull>
+<Steel>
+0
+</Steel>
+<Bauxite>
+0
+</Bauxite>
+<InstantBuildMaterials>
+0
+</InstantBuildMaterials>
+<InstantRepairMaterials>
+3
+</InstantRepairMaterials>
+<DevelopmentMaterials>
+0
+</DevelopmentMaterials>
+<RenovationMaterials>
+0
+</RenovationMaterials>
+<Other>
+家具箱(大)x1
+</Other>
+</Bonus>
+<Dependency>
+<Achieve Id="C7"/>
+</Dependency>
+</Quest>
 <Quest Id="B1" Category="sortie" Type="onetime">
 <Name>
 はじめての「出撃」！
@@ -3988,16 +4070,16 @@
 <Achieve Id="B42"/>
 </Dependency>
 </Quest>
-<Quest Id="B45" Category="sortie" Type="onetime">
+<Quest Id="B46" Category="sortie" Type="onetime">
 <Name>
-「第六駆逐隊」対潜哨戒を徹底なのです！
+「第一水雷戦隊」ケ号作戦、突入せよ！
 </Name>
 <Content>
-「第六駆逐隊」を含む艦隊で鎮守府正面で対潜哨戒を実施、敵潜水艦部隊を痛打せよ！
+北方突入準備を完了した「一水戦」で北方キス島に突入！包囲網を破り、友軍を救出せよ！
 </Content>
 <Bonus>
 <Fuel>
-300
+0
 </Fuel>
 <Bull>
 300
@@ -4006,27 +4088,26 @@
 0
 </Steel>
 <Bauxite>
-0
+400
 </Bauxite>
 <InstantBuildMaterials>
 0
 </InstantBuildMaterials>
 <InstantRepairMaterials>
-0
+3
 </InstantRepairMaterials>
 <DevelopmentMaterials>
 0
 </DevelopmentMaterials>
 <RenovationMaterials>
-2
+0
 </RenovationMaterials>
 <Other>
-ソナー九三式水中聴音機
+特注家具職人x1
 </Other>
 </Bonus>
 <Dependency>
-<Achieve Id="A53"/>
-<Achieve Id="B42"/>
+<Achieve Id="A54"/>
 </Dependency>
 </Quest>
 <Quest Id="Bd1" Category="sortie" Type="daily">
@@ -5241,6 +5322,45 @@
 </Bonus>
 <Dependency>
 <Achieve Id="D17"/>
+</Dependency>
+</Quest>
+<Quest Id="C7" Category="practice" Type="onetime">
+<Name>
+北方再突入に備え、練度向上に努めよ！
+</Name>
+<Content>
+艦隊再突入に備え、艦隊練度向上を図る！本日中に「演習」で4回以上「勝利」せよ！
+</Content>
+<Bonus>
+<Fuel>
+300
+</Fuel>
+<Bull>
+0
+</Bull>
+<Steel>
+0
+</Steel>
+<Bauxite>
+0
+</Bauxite>
+<InstantBuildMaterials>
+0
+</InstantBuildMaterials>
+<InstantRepairMaterials>
+2
+</InstantRepairMaterials>
+<DevelopmentMaterials>
+0
+</DevelopmentMaterials>
+<RenovationMaterials>
+1
+</RenovationMaterials>
+<Other>
+</Other>
+</Bonus>
+<Dependency>
+<Achieve Id="A46"/>
 </Dependency>
 </Quest>
 <Quest Id="D1" Category="expeditions" Type="onetime">
