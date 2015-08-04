@@ -49,7 +49,7 @@
 
     @foreach (var item in Model)
     {
-        <tr @(item.LevelForNextRemodeling <= 0 ? "class=info" : String.Empty)>
+        <tr @(item.LevelForNextRemodeling <= 0 ? "class=\"info\"" : String.Empty)>
         <td>
         @Html.DisplayFor(modelItem => item.ShipId)
         </td>
