@@ -99,5 +99,24 @@ namespace HiyoshiCfhWeb.Controllers
             }
             return View(Tuple.Create(questMaster, quests, retrietingEdge));
         }
+
+        public ActionResult ShipType(string id, string param)
+        {
+            var admiral = db.Admirals.Where(x => x.Name.Equals(id)).First();
+            var types = param.Split('_').ToList();
+            var results = db.Ships.Where(x => x.AdmiralId == admiral.AdmiralId && types.Any(key => x.ShipInfo.ShipType.Name == key))
+                .Join(db.ShipInfoes, ship => ship.ShipInfoId, shipInfo => shipInfo.ShipInfoId, (ship, shipInfo) => new
+            {
+                ship,
+                shipInfo
+            }).OrderByDescending(x => x.ship.Level);
+            List<Ship> ships = new List<Ship>();
+            foreach (var result in results)
+            {
+                result.ship.ShipInfo = result.shipInfo;
+                ships.Add(result.ship);
+            }
+            return View(Tuple.Create(admiral, ships, param.Replace("_", "+")));
+        }
     }
 }

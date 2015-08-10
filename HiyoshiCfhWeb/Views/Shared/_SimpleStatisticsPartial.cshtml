@@ -30,7 +30,7 @@
     @foreach (var item in st)
     {
         <dt>
-            @item.Name
+            @Html.ActionLink(item.Name, "ShipType", new { param = item.Name.Replace("+", "_") })
         </dt>
         <dd>
             @item.Sum

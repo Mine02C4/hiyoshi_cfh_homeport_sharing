@@ -21,8 +21,8 @@ namespace HiyoshiCfhWeb
             );
             routes.MapRoute(
                 name: "Headquarters",
-                url: "Headquarters/{id}/{action}",
-                defaults: new { controller = "Headquarters", action = "Homeport" }
+                url: "Headquarters/{id}/{action}/{param}",
+                defaults: new { controller = "Headquarters", action = "Homeport", param = UrlParameter.Optional }
             );
             routes.MapRoute(
                 name: "Default",
