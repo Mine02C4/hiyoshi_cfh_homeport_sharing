@@ -1,6 +1,6 @@
 ﻿using Codeplex.Data;
-using Fiddler;
 using Grabacr07.KanColleWrapper.Models.Raw;
+using Nekoxy;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -110,7 +110,7 @@ namespace HiyoshiCfhClient.Utils
         {
             try
             {
-                var djson = DynamicJson.Parse(session.GetResponseBodyAsString().Replace("svdata=", ""));
+                var djson = DynamicJson.Parse(session.Response.BodyAsString.Replace("svdata=", ""));
                 var questlist = new kcsapi_questlist
                 {
                     api_count = Convert.ToInt32(djson.api_data.api_count),

@@ -27,8 +27,8 @@ namespace HiyoshiCfhClient.Views
         public LoginView()
         {
             InitializeComponent();
-            Grabacr07.KanColleViewer.Views.Controls.WebBrowserHelper.SetScriptErrorsSuppressed(this.WebBrowser, true);
-            Grabacr07.KanColleViewer.Views.Controls.WebBrowserHelper.SetAllowWebBrowserDrop(this.WebBrowser, false);
+            MetroTrilithon.Controls.WebBrowserHelper.SetScriptErrorsSuppressed(this.WebBrowser, true);
+            MetroTrilithon.Controls.WebBrowserHelper.SetAllowWebBrowserDrop(this.WebBrowser, false);
         }
     }
 }

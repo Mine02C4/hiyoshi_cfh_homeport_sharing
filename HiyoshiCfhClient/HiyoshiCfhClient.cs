@@ -10,27 +10,26 @@ using System.Threading.Tasks;
 
 namespace HiyoshiCfhClient
 {
-    [Export(typeof(IToolPlugin))]
+    [Export(typeof(IPlugin))]
+    [Export(typeof(ITool))]
     [ExportMetadata("Title", "日吉連合艦隊司令部クライアント")]
     [ExportMetadata("Description", "日吉連合艦隊司令部のシステムを利用するためのクライアントです。")]
     [ExportMetadata("Version", "1.0")]
     [ExportMetadata("Author", "@mine_studio")]
-    public class HiyoshiCfhClient : IToolPlugin
+    [ExportMetadata("Guid", "673349DA-5502-4C0F-B2D5-B1284B347B6E")]
+    public class HiyoshiCfhClient : IPlugin, ITool
     {
         private readonly ClientViewModel cvm = new ClientViewModel();
-        public object GetToolView()
+        public object View
         {
-            return new ClientView { DataContext = cvm };
+            get { return new ClientView { DataContext = cvm }; }
         }
 
-        public string ToolName
+        public string Name
         {
             get { return "日吉連合艦隊司令部"; }
         }
 
-        public object GetSettingsView()
-        {
-            return null;
-        }
+        public void Initialize() { }
     }
 }
