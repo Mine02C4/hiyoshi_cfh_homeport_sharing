@@ -46,6 +46,10 @@ namespace HiyoshiCfhWeb.Models
         public int Luck { get; set; }
         // TODO: スロット情報は後回し。
         // public int[] Slots { get; set; }
+        /// <summary>
+        /// 出撃識別札
+        /// </summary>
+        public int? SortieTag { get; set; }
 
         [NotMapped]
         public int? LevelForNextRemodeling

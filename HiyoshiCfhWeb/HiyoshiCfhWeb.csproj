@@ -258,6 +258,10 @@
     <Compile Include="Migrations\201508012108116_AddQuestNo.Designer.cs">
       <DependentUpon>201508012108116_AddQuestNo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201508130430018_AddSortieTag.cs" />
+    <Compile Include="Migrations\201508130430018_AddSortieTag.Designer.cs">
+      <DependentUpon>201508130430018_AddSortieTag.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AdmiralModels.cs" />
@@ -297,9 +301,7 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="XML\Style.xsl" />
-    <None Include="Properties\PublishProfiles\hiyoshicfhweb.pubxml">
-      <SubType>Designer</SubType>
-    </None>
+    <None Include="Properties\PublishProfiles\hiyoshicfhweb.pubxml" />
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
     <Content Include="Icon.png" />
     <Content Include="Scripts\bootstrap.js" />
@@ -416,6 +418,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201508012108116_AddQuestNo.resx">
       <DependentUpon>201508012108116_AddQuestNo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201508130430018_AddSortieTag.resx">
+      <DependentUpon>201508130430018_AddSortieTag.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

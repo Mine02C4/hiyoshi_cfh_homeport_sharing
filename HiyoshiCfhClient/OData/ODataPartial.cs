@@ -81,6 +81,7 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
             AA = ship.AA.Current;
             Armer = ship.Armer.Current;
             Luck = ship.Luck.Current;
+            SortieTag = ship.SallyArea;
         }
 
         public Ship(Grabacr07.KanColleWrapper.Models.Ship ship, int admiralId)

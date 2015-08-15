@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generation date: 2015/08/03 2:44:36
+// Generation date: 2015/08/15 15:45:28
 namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
 {
     /// <summary>
@@ -1173,6 +1173,29 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
         partial void OnLuckChanging(int value);
         partial void OnLuckChanged();
         /// <summary>
+        /// There are no comments for Property SortieTag in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("SortieTag")]
+        public global::System.Nullable<int> SortieTag
+        {
+            get
+            {
+                return this._SortieTag;
+            }
+            set
+            {
+                this.OnSortieTagChanging(value);
+                this._SortieTag = value;
+                this.OnSortieTagChanged();
+                this.OnPropertyChanged("SortieTag");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        private global::System.Nullable<int> _SortieTag;
+        partial void OnSortieTagChanging(global::System.Nullable<int> value);
+        partial void OnSortieTagChanged();
+        /// <summary>
         /// There are no comments for Property Admiral in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
@@ -2057,6 +2080,7 @@ namespace HiyoshiCfhClient.Default
         <Property Name=""AA"" Type=""Edm.Int32"" Nullable=""false"" />
         <Property Name=""Armer"" Type=""Edm.Int32"" Nullable=""false"" />
         <Property Name=""Luck"" Type=""Edm.Int32"" Nullable=""false"" />
+        <Property Name=""SortieTag"" Type=""Edm.Int32"" />
         <NavigationProperty Name=""Admiral"" Type=""HiyoshiCfhWeb.Models.Admiral"">
           <ReferentialConstraint Property=""AdmiralId"" ReferencedProperty=""AdmiralId"" />
         </NavigationProperty>
