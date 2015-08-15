@@ -62,9 +62,24 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Level)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SortieTag)
-            </td>
+            @switch (item.SortieTag)
+            {
+                case 1:
+                <td style="background-color: #3C677F; color: #FFF">初動作戦</td>
+                    break;
+                case 2:
+                <td style="background-color: #3B662A; color: #FFF">機動部隊</td>
+                    break;
+                case 3:
+                <td style="background-color: #839842; color: #FFF">挺身部隊</td>
+                    break;
+                case 4:
+                <td style="background-color: #906736; color: #FFF">西部方面</td>
+                    break;
+                default:
+                <td></td>
+                    break;
+            }
             <td>
                 @Html.DisplayFor(modelItem => item.IsLocked)
             </td>

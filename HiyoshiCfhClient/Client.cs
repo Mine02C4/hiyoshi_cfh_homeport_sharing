@@ -227,7 +227,7 @@ namespace HiyoshiCfhClient
                         else
                         {
                             var ship = new WebShip(ships.Where(x => x.Value.Id == webShip.ShipId).First().Value, Admiral.AdmiralId);
-                            if (ship != webShip)
+                            if (ship != webShip || webShip.SortieTag == null)
                             {
                                 Context.Detach(webShip);
                                 ship.ShipUid = webShip.ShipUid;
