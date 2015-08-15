@@ -112,23 +112,12 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
 
         public static bool operator !=(Ship a, Ship b)
         {
-            var properties = typeof(Ship).GetProperties();
-            foreach (var property in properties)
-            {
-                var type = Nullable.GetUnderlyingType(property.PropertyType) ?? property.PropertyType;
-                if (property.Name != "ShipUid" && type.IsValueType
-                    && property.GetValue(a) != null && property.GetValue(b) != null
-                    && !Convert.ChangeType(property.GetValue(a), type).Equals(Convert.ChangeType(property.GetValue(b), type)))
-                {
-                    return true;
-                }
-            }
-            return false;
+            return !(a == b);
         }
 
         public static bool operator ==(Ship a, Ship b)
         {
-            return !(a != b);
+            return Util.EqualModel<Ship>(a, b, new string[] { "ShipUid" });
         }
     }
 
@@ -183,23 +172,31 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
 
         public static bool operator !=(Quest a, Quest b)
         {
-            var properties = typeof(Quest).GetProperties();
-            foreach (var property in properties)
-            {
-                var type = Nullable.GetUnderlyingType(property.PropertyType) ?? property.PropertyType;
-                if (property.Name != "QuestId" && type.IsValueType
-                    && property.GetValue(a) != null && property.GetValue(b) != null
-                    && !Convert.ChangeType(property.GetValue(a), type).Equals(Convert.ChangeType(property.GetValue(b), type)))
-                {
-                    return true;
-                }
-            }
-            return false;
+            return !(a == b);
         }
 
         public static bool operator ==(Quest a, Quest b)
         {
-            return !(a != b);
+            return Util.EqualModel<Quest>(a, b, new string[] { "QuestId" });
+        }
+    }
+
+    static class Util
+    {
+        public static bool EqualModel<T>(T a, T b, string[] ignoreProperties = null)
+        {
+            var properties = typeof(T).GetProperties();
+            foreach (var property in properties)
+            {
+                var type = Nullable.GetUnderlyingType(property.PropertyType) ?? property.PropertyType;
+                if ((ignoreProperties == null || !(ignoreProperties.Any(key => property.Name == key))) && type.IsValueType
+                    && property.GetValue(a) != null && property.GetValue(b) != null
+                    && !Convert.ChangeType(property.GetValue(a), type).Equals(Convert.ChangeType(property.GetValue(b), type)))
+                {
+                    return false;
+                }
+            }
+            return true;
         }
     }
 }
