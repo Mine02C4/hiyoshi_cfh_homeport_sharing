@@ -134,10 +134,11 @@ namespace HiyoshiCfhClient
             {
                 Context.SaveChanges();
             }
-            catch (DataServiceRequestException)
+            catch (DataServiceRequestException ex)
             {
                 ResetContext();
-                throw new DeniedAccessToAdmiral();
+                JudgeForbiddenOrNot(ex);
+                throw ex;
             }
         }
 
@@ -253,7 +254,8 @@ namespace HiyoshiCfhClient
                 catch (DataServiceRequestException ex)
                 {
                     ResetContext();
-                    throw new DeniedAccessToAdmiral();
+                    JudgeForbiddenOrNot(ex);
+                    throw ex;
                 }
             });
         }
@@ -309,9 +311,22 @@ namespace HiyoshiCfhClient
                 catch (DataServiceRequestException ex)
                 {
                     ResetContext();
-                    throw new DeniedAccessToAdmiral();
+                    JudgeForbiddenOrNot(ex);
+                    throw ex;
                 }
             });
+        }
+
+        static void JudgeForbiddenOrNot(DataServiceRequestException ex)
+        {
+            if (ex.InnerException is DataServiceClientException)
+            {
+                var iex = ex.InnerException as DataServiceClientException;
+                if (iex.StatusCode == 401)
+                {
+                    throw new DeniedAccessToAdmiral();
+                }
+            }
         }
     }
 
