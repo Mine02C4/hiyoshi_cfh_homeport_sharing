@@ -23,45 +23,49 @@
     <UserControl.DataContext>
         <viewModels:ClientViewModel />
     </UserControl.DataContext>
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="300" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
+    <ScrollViewer VerticalScrollBarVisibility="Auto"
+                  HorizontalScrollBarVisibility="Disabled"
+                  PanningMode="Both">
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="*" />
+                <RowDefinition Height="300" />
                 <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
             </Grid.RowDefinitions>
-            <!-- 完成版向けのUIテスト領域 -->
-            <controls:Logo />
-            <TextBlock Grid.Row="1" Text="ここに動作状況を表示予定" TextAlignment="Center" Margin="10,0,10,20" />
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <!-- 完成版向けのUIテスト領域 -->
+                <controls:Logo />
+                <TextBlock Grid.Row="1" Text="ここに動作状況を表示予定" TextAlignment="Center" Margin="10,0,10,20" />
+            </Grid>
+            <StackPanel Grid.Row="1">
+                <StackPanel Orientation="Horizontal" Margin="10">
+                    <Button Content="テスト開始(一連の基本動作)">
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="Click">
+                                <ei:CallMethodAction TargetObject="{Binding}" MethodName="StartTest"/>
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                    </Button>
+                    <CheckBox VerticalAlignment="Center" Margin="10,0,0,0" Content="自動更新" IsChecked="{Binding EnableAutoUpdate}" />
+                    <TextBlock Text="ログインするには「テスト開始」を押してください。" Margin="10,0,0,0" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Button x:Name="ClearConsoleButton" Content="コンソールのクリア" Margin="10,0">
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="Click">
+                                <ei:CallMethodAction TargetObject="{Binding}" MethodName="ClearConsole"/>
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                    </Button>
+                    <TextBlock Text="Token:" Margin="0" VerticalAlignment="Center" />
+                    <TextBlock Text="{Binding AccessToken}" VerticalAlignment="Center" Margin="0" />
+                </StackPanel>
+            </StackPanel>
+            <TextBox x:Name="DebugConsole" IsReadOnly="True" BorderThickness="0" TextWrapping="Wrap" Text="{Binding DebugConsole}" Grid.Row="2" Background="{DynamicResource {x:Static SystemColors.WindowTextBrushKey}}" Margin="10" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" />
         </Grid>
-        <StackPanel Grid.Row="1">
-            <StackPanel Orientation="Horizontal" Margin="10">
-                <Button Content="テスト開始(一連の基本動作)">
-                    <i:Interaction.Triggers>
-                        <i:EventTrigger EventName="Click">
-                            <ei:CallMethodAction TargetObject="{Binding}" MethodName="StartTest"/>
-                        </i:EventTrigger>
-                    </i:Interaction.Triggers>
-                </Button>
-                <CheckBox VerticalAlignment="Center" Margin="10,0,0,0" Content="自動更新" IsChecked="{Binding EnableAutoUpdate}" />
-                <TextBlock Text="ログインするには「テスト開始」を押してください。" Margin="10,0,0,0" />
-            </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <Button x:Name="ClearConsoleButton" Content="コンソールのクリア" Margin="10,0">
-                    <i:Interaction.Triggers>
-                        <i:EventTrigger EventName="Click">
-                            <ei:CallMethodAction TargetObject="{Binding}" MethodName="ClearConsole"/>
-                        </i:EventTrigger>
-                    </i:Interaction.Triggers>
-                </Button>
-                <TextBlock Text="Token:" Margin="0" VerticalAlignment="Center" />
-                <TextBlock Text="{Binding AccessToken}" VerticalAlignment="Center" Margin="0" />
-            </StackPanel>
-        </StackPanel>
-        <TextBox x:Name="DebugConsole" IsReadOnly="True" BorderThickness="0" TextWrapping="Wrap" Text="{Binding DebugConsole}" Grid.Row="2" Background="{DynamicResource {x:Static SystemColors.WindowTextBrushKey}}" Margin="10" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" />
-    </Grid>
+    </ScrollViewer>
 </UserControl>
