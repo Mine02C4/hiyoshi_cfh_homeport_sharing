@@ -33,7 +33,7 @@ namespace HiyoshiCfhWeb.Provider
                 }
                 else if (context.ClientId == "web")
                 {
-                    var expectedUri = new Uri(context.Request.Uri, "/");
+                    var expectedUri = new Uri(context.Request.Uri, "/Account/Succeeded");
                     context.Validated(expectedUri.AbsoluteUri);
                 }
             }

@@ -375,6 +375,7 @@
     </Content>
     <Content Include="Views\Headquarters\Quests.cshtml" />
     <Content Include="Views\Headquarters\ShipType.cshtml" />
+    <Content Include="Views\Account\Succeeded.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
