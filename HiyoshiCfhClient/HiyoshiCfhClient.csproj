@@ -44,8 +44,8 @@
       <HintPath>..\packages\KanColleViewer.Controls.1.2.0.0\lib\net45\KanColleViewer.Controls.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="KanColleWrapper, Version=1.2.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\KanColleWrapper.1.2.1.0\lib\net45\KanColleWrapper.dll</HintPath>
+    <Reference Include="KanColleWrapper, Version=1.2.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\KanColleWrapper.1.2.3.0\lib\net45\KanColleWrapper.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Livet, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b0b1d3f711ef38cb, processorArchitecture=MSIL">
@@ -68,8 +68,8 @@
       <HintPath>..\packages\MetroRadiance.Core.1.1.0.2\lib\net45\MetroRadiance.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="MetroTrilithon.Desktop, Version=0.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\MetroTrilithon.Desktop.0.1.0.0\lib\net45\MetroTrilithon.Desktop.dll</HintPath>
+    <Reference Include="MetroTrilithon.Desktop, Version=0.1.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroTrilithon.Desktop.0.1.2.0\lib\net45\MetroTrilithon.Desktop.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.Expression.Drawing, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
