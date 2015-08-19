@@ -118,5 +118,11 @@ namespace HiyoshiCfhWeb.Controllers
             }
             return View(Tuple.Create(admiral, ships, param.Replace("_", "+")));
         }
+
+        public ActionResult Event(string id)
+        {
+            var admiral = db.Admirals.Where(x => x.Name.Equals(id)).First();
+            return View(admiral);
+        }
     }
 }

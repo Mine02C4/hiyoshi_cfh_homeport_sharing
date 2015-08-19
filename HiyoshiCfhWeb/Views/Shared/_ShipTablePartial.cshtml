@@ -1,119 +1,121 @@
 ﻿@model IEnumerable<HiyoshiCfhWeb.Models.Ship>
 <h2>所属艦娘一覧</h2>
-<table class="table">
-    <tr>
-        <th>
-            ID
-        </th>
-        <th>
-            艦名
-        </th>
-        <th>
-            レベル
-        </th>
-        <th>
-            出撃識別札
-        </th>
-        <th>
-            ロック
-        </th>
-        <th>
-            累積経験値
-        </th>
-        <th>
-            次レベルまでの経験値
-        </th>
-        <th>
-            HP
-        </th>
-        <th>
-            燃料
-        </th>
-        <th>
-            弾薬
-        </th>
-        <th>
-            火力
-        </th>
-        <th>
-            雷装
-        </th>
-        <th>
-            対空
-        </th>
-        <th>
-            装甲
-        </th>
-        <th>
-            運
-        </th>
-        <th></th>
-    </tr>
-
-    @foreach (var item in Model)
-    {
-        <tr class="@(item.LevelForNextRemodeling <= 0 ? "info" : null)">
-            <td>
-                @Html.DisplayFor(modelItem => item.ShipId)
-            </td>
-            <td>
-                @Html.ActionLink(item.ShipInfo.Name, "Index", "Ship", routeValues: new { id = item.ShipInfo.Name }, htmlAttributes: null)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Level)
-            </td>
-            @switch (item.SortieTag)
-            {
-                case 1:
-                <td style="background-color: #3C677F; color: #FFF">初動作戦</td>
-                    break;
-                case 2:
-                <td style="background-color: #3B662A; color: #FFF">機動部隊</td>
-                    break;
-                case 3:
-                <td style="background-color: #839842; color: #FFF">挺身部隊</td>
-                    break;
-                case 4:
-                <td style="background-color: #906736; color: #FFF">西部方面</td>
-                    break;
-                default:
-                <td></td>
-                    break;
-            }
-            <td>
-                @Html.DisplayFor(modelItem => item.IsLocked)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Exp)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ExpForNextLevel)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Hp)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Fuel)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Bull)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Firepower)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Torpedo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.AA)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Armer)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Luck)
-            </td>
+<div class="table-responsive">
+    <table class="table">
+        <tr>
+            <th>
+                ID
+            </th>
+            <th>
+                艦名
+            </th>
+            <th>
+                レベル
+            </th>
+            <th>
+                出撃識別札
+            </th>
+            <th>
+                ロック
+            </th>
+            <th>
+                累積経験値
+            </th>
+            <th>
+                次レベルまでの経験値
+            </th>
+            <th>
+                HP
+            </th>
+            <th>
+                燃料
+            </th>
+            <th>
+                弾薬
+            </th>
+            <th>
+                火力
+            </th>
+            <th>
+                雷装
+            </th>
+            <th>
+                対空
+            </th>
+            <th>
+                装甲
+            </th>
+            <th>
+                運
+            </th>
+            <th></th>
         </tr>
-    }
 
-</table>
+        @foreach (var item in Model)
+        {
+            <tr class="@(item.LevelForNextRemodeling <= 0 ? "info" : null)">
+                <td>
+                    @Html.DisplayFor(modelItem => item.ShipId)
+                </td>
+                <td>
+                    @Html.ActionLink(item.ShipInfo.Name, "Index", "Ship", routeValues: new { id = item.ShipInfo.Name }, htmlAttributes: null)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Level)
+                </td>
+                @switch (item.SortieTag)
+                {
+                    case 1:
+                        <td style="background-color: #3C677F; color: #FFF">初動作戦</td>
+                        break;
+                    case 2:
+                        <td style="background-color: #3B662A; color: #FFF">機動部隊</td>
+                        break;
+                    case 3:
+                        <td style="background-color: #839842; color: #FFF">挺身部隊</td>
+                        break;
+                    case 4:
+                        <td style="background-color: #906736; color: #FFF">西部方面</td>
+                        break;
+                    default:
+                        <td></td>
+                        break;
+                }
+                <td>
+                    @Html.DisplayFor(modelItem => item.IsLocked)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Exp)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ExpForNextLevel)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Hp)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Fuel)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Bull)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Firepower)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Torpedo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AA)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Armer)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Luck)
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

@@ -29,12 +29,12 @@
         </div>
     </div>
     <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - <a href="http://mine02c4.nagoya/">Mine02C4</a></p>
-        </footer>
+        @RenderBody()        
     </div>
+    <hr />
+    <footer class="container">
+        <p>&copy; @DateTime.Now.Year - <a href="http://mine02c4.nagoya/">Mine02C4</a></p>
+    </footer>
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
