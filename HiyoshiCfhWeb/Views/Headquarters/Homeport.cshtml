@@ -15,8 +15,8 @@
     </div>
     <div class="col-md-4">
         <h3>各種ツール</h3>
-        <p class="btn btn-default">@Html.ActionLink("任務進捗", "Quests")</p>
-        <p class="btn btn-default">@Html.ActionLink("イベント", "Event")</p>
+        <p>@Html.ActionLink("任務進捗", "Quests", null, new { @class = "btn btn-default" })</p>
+        <p>@Html.ActionLink("イベント", "Event", null, new { @class = "btn btn-default" })</p>
     </div>
 </div>
 @Html.Partial("_ShipTablePartial", Model.Ships)
