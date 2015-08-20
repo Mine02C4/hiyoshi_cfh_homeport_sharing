@@ -19,4 +19,4 @@
         <p>@Html.ActionLink("イベント", "Event", null, new { @class = "btn btn-default" })</p>
     </div>
 </div>
-@Html.Partial("_ShipTablePartial", Model.Ships)
+@Html.Partial("_ShipTablePartial", Model.Ships.OrderByDescending(x => x.Level))

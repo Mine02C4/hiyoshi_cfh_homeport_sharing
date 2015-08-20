@@ -32,18 +32,6 @@ namespace HiyoshiCfhWeb.Controllers
         public ActionResult Homeport(string id)
         {
             var admiral = db.Admirals.Where(x => x.Name.Equals(id)).First();
-            var results = db.Ships.Where(x => x.AdmiralId == admiral.AdmiralId).Join(db.ShipInfoes, ship => ship.ShipInfoId, shipInfo => shipInfo.ShipInfoId, (ship, shipInfo) => new
-            {
-                ship,
-                shipInfo
-            }).OrderByDescending(x => x.ship.Level);
-            List<Ship> ships = new List<Ship>();
-            foreach (var result in results)
-            {
-                result.ship.ShipInfo = result.shipInfo;
-                ships.Add(result.ship);
-            }
-            admiral.Ships = ships;
             return View(admiral);
         }
 
