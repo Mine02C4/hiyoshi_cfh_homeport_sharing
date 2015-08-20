@@ -112,5 +112,12 @@ namespace HiyoshiCfhWeb.Controllers
             var admiral = db.Admirals.Where(x => x.Name.Equals(id)).First();
             return View(admiral);
         }
+
+        public ActionResult Materials(string id)
+        {
+            var admiral = db.Admirals.Where(x => x.Name.Equals(id)).First();
+            var records = db.MaterialRecords.Where(x => x.AdmiralId == admiral.AdmiralId).OrderBy(x => x.TimeUtc);
+            return View(Tuple.Create(admiral, records));
+        }
     }
 }

@@ -1,0 +1,48 @@
+﻿@model Tuple<HiyoshiCfhWeb.Models.Admiral, IOrderedQueryable<HiyoshiCfhWeb.Models.MaterialRecord>>
+@{
+    var admiral = Model.Item1;
+    var records = Model.Item2;
+    ViewBag.Title = string.Format("資材統計({0} 提督)", admiral.Name);    
+}
+
+<h2>@ViewBag.Title</h2>
+
+<div id="main_graph" style="width: 100%; height: 500px;"></div>
+
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">
+    google.load("visualization", "1", { packages: ["corechart"] });
+    google.setOnLoadCallback(drawChart);
+    function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+            ['時刻', '燃料', '弾薬', '鋼材', 'ボーキサイト', '高速建造材', '高速修復材', '開発資材', '改修資材'],
+            @foreach (var record in records)
+	        {
+                <text>
+                [new Date("@TimeZoneInfo.ConvertTimeFromUtc(record.TimeUtc, TimeZoneInfo.FindSystemTimeZoneById("Tokyo Standard Time")).ToString("O")"),
+                @(record.Type == HiyoshiCfhWeb.Models.MaterialType.Fuel ? record.Value.ToString() : String.Empty),
+                @(record.Type == HiyoshiCfhWeb.Models.MaterialType.Bull ? record.Value.ToString() : String.Empty),
+                @(record.Type == HiyoshiCfhWeb.Models.MaterialType.Steel ? record.Value.ToString() : String.Empty),
+                @(record.Type == HiyoshiCfhWeb.Models.MaterialType.Bauxite ? record.Value.ToString() : String.Empty),
+                @(record.Type == HiyoshiCfhWeb.Models.MaterialType.InstantBuildMaterials ? record.Value.ToString() : String.Empty),
+                @(record.Type == HiyoshiCfhWeb.Models.MaterialType.InstantRepairMaterials ? record.Value.ToString() : String.Empty),
+                @(record.Type == HiyoshiCfhWeb.Models.MaterialType.RenovationMaterials ? record.Value.ToString() : String.Empty),
+                @(record.Type == HiyoshiCfhWeb.Models.MaterialType.DevelopmentMaterials ? record.Value.ToString() : String.Empty),
+                ],
+                </text>
+	        }
+        ]);
+
+        var options = {
+            hAxis: {
+                format: 'yyyy/M/d H:mm:ss'
+            },
+            interpolateNulls: true,
+            areaOpacity: 0.1
+        };
+
+        var chart = new google.visualization.AreaChart(document.getElementById('main_graph'));
+
+        chart.draw(data, options);
+    }
+</script>
