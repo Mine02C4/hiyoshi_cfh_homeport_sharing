@@ -11,7 +11,7 @@ namespace HiyoshiCfhWeb.Migrations
                 "dbo.Quests",
                 c => new
                     {
-                        QuestId = c.Int(nullable: false),
+                        QuestId = c.Int(nullable: false, identity: true),
                         AdmiralId = c.Int(nullable: false),
                         Category = c.Int(nullable: false),
                         Type = c.Int(nullable: false),
