@@ -204,6 +204,7 @@
     <Compile Include="Controllers\OData\AdmiralsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\OData\MaterialRecordsController.cs" />
     <Compile Include="Controllers\OData\QuestsController.cs" />
     <Compile Include="Controllers\OData\ShipInfoesController.cs" />
     <Compile Include="Controllers\OData\ShipsController.cs" />
@@ -262,6 +263,10 @@
     <Compile Include="Migrations\201508130430018_AddSortieTag.Designer.cs">
       <DependentUpon>201508130430018_AddSortieTag.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201508200901329_AddMaterialRecord.cs" />
+    <Compile Include="Migrations\201508200901329_AddMaterialRecord.Designer.cs">
+      <DependentUpon>201508200901329_AddMaterialRecord.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AdmiralModels.cs" />
@@ -269,6 +274,7 @@
     <Compile Include="Models\FleetModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\MaterialModels.cs" />
     <Compile Include="Models\PermissionModels.cs" />
     <Compile Include="Models\QuestModels.cs" />
     <Compile Include="Models\ShipModels.cs" />
@@ -421,6 +427,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201508130430018_AddSortieTag.resx">
       <DependentUpon>201508130430018_AddSortieTag.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201508200901329_AddMaterialRecord.resx">
+      <DependentUpon>201508200901329_AddMaterialRecord.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

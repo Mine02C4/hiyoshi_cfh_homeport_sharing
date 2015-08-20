@@ -28,6 +28,7 @@ namespace HiyoshiCfhWeb
             builder.EntitySet<Admiral>("Admirals");
             builder.EntitySet<Ship>("Ships");
             builder.EntitySet<Quest>("Quests");
+            builder.EntitySet<MaterialRecord>("MaterialRecords");
             config.MapODataServiceRoute("odata", "odata", builder.GetEdmModel());
         }
     }

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generation date: 2015/08/15 15:45:28
+// Generation date: 2015/08/20 18:10:25
 namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
 {
     /// <summary>
@@ -1649,6 +1649,211 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
         }
     }
     /// <summary>
+    /// There are no comments for MaterialRecordSingle in the schema.
+    /// </summary>
+    [global::Microsoft.OData.Client.OriginalNameAttribute("MaterialRecordSingle")]
+    public partial class MaterialRecordSingle : global::Microsoft.OData.Client.DataServiceQuerySingle<MaterialRecord>
+    {
+        /// <summary>
+        /// Initialize a new MaterialRecordSingle object.
+        /// </summary>
+        public MaterialRecordSingle(global::Microsoft.OData.Client.DataServiceContext context, string path)
+            : base(context, path) {}
+
+        /// <summary>
+        /// Initialize a new MaterialRecordSingle object.
+        /// </summary>
+        public MaterialRecordSingle(global::Microsoft.OData.Client.DataServiceContext context, string path, bool isComposable)
+            : base(context, path, isComposable) {}
+
+        /// <summary>
+        /// Initialize a new MaterialRecordSingle object.
+        /// </summary>
+        public MaterialRecordSingle(global::Microsoft.OData.Client.DataServiceQuerySingle<MaterialRecord> query)
+            : base(query) {}
+
+        /// <summary>
+        /// There are no comments for Admiral in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Admiral")]
+        public global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.AdmiralSingle Admiral
+        {
+            get
+            {
+                if (!this.IsComposable)
+                {
+                    throw new global::System.NotSupportedException("The previous function is not composable.");
+                }
+                if ((this._Admiral == null))
+                {
+                    this._Admiral = new global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.AdmiralSingle(this.Context, GetPath("Admiral"));
+                }
+                return this._Admiral;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        private global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.AdmiralSingle _Admiral;
+    }
+    /// <summary>
+    /// There are no comments for MaterialRecord in the schema.
+    /// </summary>
+    /// <KeyProperties>
+    /// MaterialRecordId
+    /// </KeyProperties>
+    [global::Microsoft.OData.Client.Key("MaterialRecordId")]
+    [global::Microsoft.OData.Client.OriginalNameAttribute("MaterialRecord")]
+    public partial class MaterialRecord : global::Microsoft.OData.Client.BaseEntityType, global::System.ComponentModel.INotifyPropertyChanged
+    {
+        /// <summary>
+        /// Create a new MaterialRecord object.
+        /// </summary>
+        /// <param name="materialRecordId">Initial value of MaterialRecordId.</param>
+        /// <param name="type">Initial value of Type.</param>
+        /// <param name="value">Initial value of Value.</param>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        public static MaterialRecord CreateMaterialRecord(int materialRecordId, global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.MaterialType type, int value)
+        {
+            MaterialRecord materialRecord = new MaterialRecord();
+            materialRecord.MaterialRecordId = materialRecordId;
+            materialRecord.Type = type;
+            materialRecord.Value = value;
+            return materialRecord;
+        }
+        /// <summary>
+        /// There are no comments for Property MaterialRecordId in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("MaterialRecordId")]
+        public int MaterialRecordId
+        {
+            get
+            {
+                return this._MaterialRecordId;
+            }
+            set
+            {
+                this.OnMaterialRecordIdChanging(value);
+                this._MaterialRecordId = value;
+                this.OnMaterialRecordIdChanged();
+                this.OnPropertyChanged("MaterialRecordId");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        private int _MaterialRecordId;
+        partial void OnMaterialRecordIdChanging(int value);
+        partial void OnMaterialRecordIdChanged();
+        /// <summary>
+        /// There are no comments for Property AdmiralId in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("AdmiralId")]
+        public global::System.Nullable<int> AdmiralId
+        {
+            get
+            {
+                return this._AdmiralId;
+            }
+            set
+            {
+                this.OnAdmiralIdChanging(value);
+                this._AdmiralId = value;
+                this.OnAdmiralIdChanged();
+                this.OnPropertyChanged("AdmiralId");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        private global::System.Nullable<int> _AdmiralId;
+        partial void OnAdmiralIdChanging(global::System.Nullable<int> value);
+        partial void OnAdmiralIdChanged();
+        /// <summary>
+        /// There are no comments for Property Type in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Type")]
+        public global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.MaterialType Type
+        {
+            get
+            {
+                return this._Type;
+            }
+            set
+            {
+                this.OnTypeChanging(value);
+                this._Type = value;
+                this.OnTypeChanged();
+                this.OnPropertyChanged("Type");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        private global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.MaterialType _Type;
+        partial void OnTypeChanging(global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.MaterialType value);
+        partial void OnTypeChanged();
+        /// <summary>
+        /// There are no comments for Property Value in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Value")]
+        public int Value
+        {
+            get
+            {
+                return this._Value;
+            }
+            set
+            {
+                this.OnValueChanging(value);
+                this._Value = value;
+                this.OnValueChanged();
+                this.OnPropertyChanged("Value");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        private int _Value;
+        partial void OnValueChanging(int value);
+        partial void OnValueChanged();
+        /// <summary>
+        /// There are no comments for Property Admiral in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Admiral")]
+        public global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.Admiral Admiral
+        {
+            get
+            {
+                return this._Admiral;
+            }
+            set
+            {
+                this.OnAdmiralChanging(value);
+                this._Admiral = value;
+                this.OnAdmiralChanged();
+                this.OnPropertyChanged("Admiral");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        private global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.Admiral _Admiral;
+        partial void OnAdmiralChanging(global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.Admiral value);
+        partial void OnAdmiralChanged();
+        /// <summary>
+        /// This event is raised when the value of the property is changed
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        /// <summary>
+        /// The value of the property is changed
+        /// </summary>
+        /// <param name="property">property name</param>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        protected virtual void OnPropertyChanged(string property)
+        {
+            if ((this.PropertyChanged != null))
+            {
+                this.PropertyChanged(this, new global::System.ComponentModel.PropertyChangedEventArgs(property));
+            }
+        }
+    }
+    /// <summary>
     /// There are no comments for ShipSpeed in the schema.
     /// </summary>
     [global::Microsoft.OData.Client.OriginalNameAttribute("ShipSpeed")]
@@ -1694,6 +1899,29 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
         Weekly = 3,
         [global::Microsoft.OData.Client.OriginalNameAttribute("Monthly")]
         Monthly = 4
+    }
+    /// <summary>
+    /// There are no comments for MaterialType in the schema.
+    /// </summary>
+    [global::Microsoft.OData.Client.OriginalNameAttribute("MaterialType")]
+    public enum MaterialType
+    {
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Fuel")]
+        Fuel = 1,
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Bull")]
+        Bull = 2,
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Steel")]
+        Steel = 3,
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Bauxite")]
+        Bauxite = 4,
+        [global::Microsoft.OData.Client.OriginalNameAttribute("InstantBuildMaterials")]
+        InstantBuildMaterials = 5,
+        [global::Microsoft.OData.Client.OriginalNameAttribute("InstantRepairMaterials")]
+        InstantRepairMaterials = 6,
+        [global::Microsoft.OData.Client.OriginalNameAttribute("DevelopmentMaterials")]
+        DevelopmentMaterials = 7,
+        [global::Microsoft.OData.Client.OriginalNameAttribute("RenovationMaterials")]
+        RenovationMaterials = 8
     }
     /// <summary>
     /// Class containing all extension methods
@@ -1814,6 +2042,29 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
                 { "QuestId", questId }
             };
             return new global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.QuestSingle(source.Context, source.GetKeyPath(global::Microsoft.OData.Client.Serializer.GetKeyString(source.Context, keys)));
+        }
+        /// <summary>
+        /// Get an entity of type global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.MaterialRecord as global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.MaterialRecordSingle specified by key from an entity set
+        /// </summary>
+        /// <param name="source">source entity set</param>
+        /// <param name="keys">dictionary with the names and values of keys</param>
+        public static global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.MaterialRecordSingle ByKey(this global::Microsoft.OData.Client.DataServiceQuery<global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.MaterialRecord> source, global::System.Collections.Generic.Dictionary<string, object> keys)
+        {
+            return new global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.MaterialRecordSingle(source.Context, source.GetKeyPath(global::Microsoft.OData.Client.Serializer.GetKeyString(source.Context, keys)));
+        }
+        /// <summary>
+        /// Get an entity of type global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.MaterialRecord as global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.MaterialRecordSingle specified by key from an entity set
+        /// </summary>
+        /// <param name="source">source entity set</param>
+        /// <param name="materialRecordId">The value of materialRecordId</param>
+        public static global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.MaterialRecordSingle ByKey(this global::Microsoft.OData.Client.DataServiceQuery<global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.MaterialRecord> source,
+            int materialRecordId)
+        {
+            global::System.Collections.Generic.Dictionary<string, object> keys = new global::System.Collections.Generic.Dictionary<string, object>
+            {
+                { "MaterialRecordId", materialRecordId }
+            };
+            return new global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.MaterialRecordSingle(source.Context, source.GetKeyPath(global::Microsoft.OData.Client.Serializer.GetKeyString(source.Context, keys)));
         }
     }
 }
@@ -1977,6 +2228,24 @@ namespace HiyoshiCfhClient.Default
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
         private global::Microsoft.OData.Client.DataServiceQuery<global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.Quest> _Quests;
         /// <summary>
+        /// There are no comments for MaterialRecords in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("MaterialRecords")]
+        public global::Microsoft.OData.Client.DataServiceQuery<global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.MaterialRecord> MaterialRecords
+        {
+            get
+            {
+                if ((this._MaterialRecords == null))
+                {
+                    this._MaterialRecords = base.CreateQuery<global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.MaterialRecord>("MaterialRecords");
+                }
+                return this._MaterialRecords;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        private global::Microsoft.OData.Client.DataServiceQuery<global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.MaterialRecord> _MaterialRecords;
+        /// <summary>
         /// There are no comments for ShipTypes in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
@@ -2015,6 +2284,14 @@ namespace HiyoshiCfhClient.Default
         public void AddToQuests(global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.Quest quest)
         {
             base.AddObject("Quests", quest);
+        }
+        /// <summary>
+        /// There are no comments for MaterialRecords in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        public void AddToMaterialRecords(global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.MaterialRecord materialRecord)
+        {
+            base.AddObject("MaterialRecords", materialRecord);
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
         private abstract class GeneratedEdmModel
@@ -2107,6 +2384,18 @@ namespace HiyoshiCfhClient.Default
           <ReferentialConstraint Property=""AdmiralId"" ReferencedProperty=""AdmiralId"" />
         </NavigationProperty>
       </EntityType>
+      <EntityType Name=""MaterialRecord"">
+        <Key>
+          <PropertyRef Name=""MaterialRecordId"" />
+        </Key>
+        <Property Name=""MaterialRecordId"" Type=""Edm.Int32"" Nullable=""false"" />
+        <Property Name=""AdmiralId"" Type=""Edm.Int32"" />
+        <Property Name=""Type"" Type=""HiyoshiCfhWeb.Models.MaterialType"" Nullable=""false"" />
+        <Property Name=""Value"" Type=""Edm.Int32"" Nullable=""false"" />
+        <NavigationProperty Name=""Admiral"" Type=""HiyoshiCfhWeb.Models.Admiral"">
+          <ReferentialConstraint Property=""AdmiralId"" ReferencedProperty=""AdmiralId"" />
+        </NavigationProperty>
+      </EntityType>
       <EnumType Name=""ShipSpeed"">
         <Member Name=""Low"" Value=""10"" />
         <Member Name=""Fast"" Value=""20"" />
@@ -2126,6 +2415,16 @@ namespace HiyoshiCfhClient.Default
         <Member Name=""Weekly"" Value=""3"" />
         <Member Name=""Monthly"" Value=""4"" />
       </EnumType>
+      <EnumType Name=""MaterialType"">
+        <Member Name=""Fuel"" Value=""1"" />
+        <Member Name=""Bull"" Value=""2"" />
+        <Member Name=""Steel"" Value=""3"" />
+        <Member Name=""Bauxite"" Value=""4"" />
+        <Member Name=""InstantBuildMaterials"" Value=""5"" />
+        <Member Name=""InstantRepairMaterials"" Value=""6"" />
+        <Member Name=""DevelopmentMaterials"" Value=""7"" />
+        <Member Name=""RenovationMaterials"" Value=""8"" />
+      </EnumType>
     </Schema>
     <Schema Namespace=""Default"" xmlns=""http://docs.oasis-open.org/odata/ns/edm"">
       <EntityContainer Name=""Container"">
@@ -2141,6 +2440,9 @@ namespace HiyoshiCfhClient.Default
           <NavigationPropertyBinding Path=""ShipInfo"" Target=""ShipInfoes"" />
         </EntitySet>
         <EntitySet Name=""Quests"" EntityType=""HiyoshiCfhWeb.Models.Quest"">
+          <NavigationPropertyBinding Path=""Admiral"" Target=""Admirals"" />
+        </EntitySet>
+        <EntitySet Name=""MaterialRecords"" EntityType=""HiyoshiCfhWeb.Models.MaterialRecord"">
           <NavigationPropertyBinding Path=""Admiral"" Target=""Admirals"" />
         </EntitySet>
       </EntityContainer>

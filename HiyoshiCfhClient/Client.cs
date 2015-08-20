@@ -91,7 +91,7 @@ namespace HiyoshiCfhClient
         /// </summary>
         void InitAdmiral()
         {
-            OutDebugConsole("InitAdmiral");
+            OutDebugConsole("InitAdmiral TID = " + Thread.CurrentThread.ManagedThreadId.ToString());
             var memberId = int.Parse(KanColleClient.Current.Homeport.Admiral.MemberId);
             Admiral = GetAdmiral(memberId);
             // 新規の場合は登録処理
@@ -144,7 +144,7 @@ namespace HiyoshiCfhClient
 
         void UpdateMasterData()
         {
-            OutDebugConsole("UpdateMasterData");
+            OutDebugConsole("UpdateMasterData TID = " + Thread.CurrentThread.ManagedThreadId.ToString());
             UpdateShipTypes();
             UpdateShipInfoes();
         }
@@ -209,10 +209,10 @@ namespace HiyoshiCfhClient
 
         public async Task UpdateShips()
         {
-            CheckAdmiral();
             await factory.StartNew(() =>
             {
                 OutDebugConsole("UpdateShips");
+                CheckAdmiral();
                 try
                 {
                     var webShips = Context.Ships.Where(x => x.AdmiralId == Admiral.AdmiralId).ToList();
@@ -296,7 +296,6 @@ namespace HiyoshiCfhClient
                         if (webQuests.Where(x => x.QuestNo == quest.api_no).Count() == 0)
                         {
                             OutDebugConsole("Add: " + quest.ToString());
-                            // 追加で何故か事故る
                             Context.AddToQuests(new WebQuest(quest, Admiral.AdmiralId));
                         }
                     }
@@ -315,6 +314,31 @@ namespace HiyoshiCfhClient
                     throw ex;
                 }
             });
+        }
+
+        public async Task AddMaterialRecord(HiyoshiCfhWeb.Models.MaterialType type, int value)
+        {
+            await factory.StartNew(() =>
+            {
+                OutDebugConsole("AddMaterialRecord TID = " + Thread.CurrentThread.ManagedThreadId.ToString());
+                CheckAdmiral();
+                try
+                {
+                    var record = new HiyoshiCfhWeb.Models.MaterialRecord();
+                    record.Type = type;
+                    record.Value = value;
+                    record.AdmiralId = Admiral.AdmiralId;
+                    Context.AddToMaterialRecords(record);
+                    Context.SaveChanges();
+                }
+                catch (DataServiceRequestException ex)
+                {
+                    ResetContext();
+                    JudgeForbiddenOrNot(ex);
+                    throw ex;
+                }
+            }
+            );
         }
 
         static void JudgeForbiddenOrNot(DataServiceRequestException ex)

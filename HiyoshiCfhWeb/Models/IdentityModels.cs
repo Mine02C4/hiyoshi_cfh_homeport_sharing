@@ -74,6 +74,7 @@ namespace HiyoshiCfhWeb.Models
         public DbSet<ShipType> ShipTypes { get; set; }
         public DbSet<Permission> Permissions { get; set; }
         public DbSet<Quest> Quests { get; set; }
+        public DbSet<MaterialRecord> MaterialRecords { get; set; }
 
         public static ApplicationDbContext Create()
         {

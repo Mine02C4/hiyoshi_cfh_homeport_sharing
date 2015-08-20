@@ -11,6 +11,7 @@ using System.IO;
 using System.Reactive.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MaterialType = HiyoshiCfhClient.HiyoshiCfhWeb.Models.MaterialType;
 
 namespace HiyoshiCfhClient.ViewModels
 {
@@ -112,6 +113,7 @@ namespace HiyoshiCfhClient.ViewModels
         {
             if (OrganizationListener == null)
             {
+                #region 艦娘の変更検知
                 OrganizationListener = new PropertyChangedEventListener(KanColleClient.Current.Homeport.Organization);
                 OrganizationListener.RegisterHandler(() => KanColleClient.Current.Homeport.Organization.Ships,
                 async (s, h) =>
@@ -153,13 +155,64 @@ namespace HiyoshiCfhClient.ViewModels
                     }
                 });
                 this.CompositeDisposable.Add(OrganizationListener);
+                #endregion
+                #region 任務の取得検知
                 var proxy = KanColleClient.Current.Proxy;
                 proxy.api_get_member_questlist
                     .Select(QuestsTracker.QuestListSerialize)
                     .Where(x => x != null)
                     .Subscribe(async x => { await this.HandleQuests(x); });
+                #endregion
+                #region 資材の変更検知
+                KanColleClient.Current.Homeport.Materials.PropertyChanged += MaterialsChanged;
+                #endregion
                 IsInited = true;
             }
+        }
+
+        private async void MaterialsChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+            var materials = sender as Materials;
+            OutDebugConsole("Handle material: " + e.PropertyName);
+            OutDebugConsole(string.Format("Fuel: {0} Bull: {1} Steel: {2} Bauxite: {3}",
+                materials.Fuel, materials.Ammunition, materials.Steel, materials.Bauxite));
+            try
+            {
+                switch (e.PropertyName)
+                {
+                    case "Fuel":
+                        await Client.AddMaterialRecord(MaterialType.Fuel, materials.Fuel);
+                        break;
+                    case "Ammunition":
+                        await Client.AddMaterialRecord(MaterialType.Bull, materials.Ammunition);
+                        break;
+                    case "Steel":
+                        await Client.AddMaterialRecord(MaterialType.Steel, materials.Steel);
+                        break;
+                    case "Bauxite":
+                        await Client.AddMaterialRecord(MaterialType.Bauxite, materials.Bauxite);
+                        break;
+                    case "InstantBuildMaterials":
+                        await Client.AddMaterialRecord(MaterialType.InstantBuildMaterials, materials.InstantBuildMaterials);
+                        break;
+                    case "InstantRepairMaterials":
+                        await Client.AddMaterialRecord(MaterialType.InstantRepairMaterials, materials.InstantRepairMaterials);
+                        break;
+                    case "DevelopmentMaterials":
+                        await Client.AddMaterialRecord(MaterialType.DevelopmentMaterials, materials.DevelopmentMaterials);
+                        break;
+                    case "ImprovementMaterials":
+                        await Client.AddMaterialRecord(MaterialType.RenovationMaterials, materials.ImprovementMaterials);
+                        break;
+                    default:
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                OutDebugConsole(ex.ToString());
+            }
+
         }
 
         async Task HandleQuests(kcsapi_questlist questlist)
