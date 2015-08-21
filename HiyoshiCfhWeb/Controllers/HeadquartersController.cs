@@ -113,11 +113,36 @@ namespace HiyoshiCfhWeb.Controllers
             return View(admiral);
         }
 
-        public ActionResult Materials(string id)
+        public ActionResult Materials(string id, string type)
         {
             var admiral = db.Admirals.Where(x => x.Name.Equals(id)).First();
-            var records = db.MaterialRecords.Where(x => x.AdmiralId == admiral.AdmiralId).OrderBy(x => x.TimeUtc);
-            return View(Tuple.Create(admiral, records));
+
+            if (type != null && type == "json")
+            {
+                var obj =
+                    Material.List.Select(m =>
+                        new
+                        {
+                            key = m.Name,
+                            values = db.MaterialRecords.Where(x => x.AdmiralId == admiral.AdmiralId && x.Type == m.Type).OrderBy(x => x.TimeUtc)
+                                .Select(x => new
+                                {
+                                    x.TimeUtc,
+                                    x.Value
+                                }).ToList().Select(x => new[] {
+                                    TimeZoneInfo.ConvertTimeFromUtc(x.TimeUtc, TimeZoneInfo.FindSystemTimeZoneById("Tokyo Standard Time")).ToString("O"),
+                                    x.Value.ToString()
+                                }).ToArray()
+                        }).ToArray();
+                var jsonResult = Json(obj, JsonRequestBehavior.AllowGet);
+                jsonResult.MaxJsonLength = 10240000;
+                return jsonResult;
+            }
+            else
+            {
+                var records = db.MaterialRecords.Where(x => x.AdmiralId == admiral.AdmiralId).OrderBy(x => x.TimeUtc);
+                return View(Tuple.Create(admiral, records));
+            }
         }
     }
 }
