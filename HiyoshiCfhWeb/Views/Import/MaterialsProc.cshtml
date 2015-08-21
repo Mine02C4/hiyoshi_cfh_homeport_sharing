@@ -1,0 +1,39 @@
+﻿@model Tuple<int, int, string, bool>
+
+@{
+    ViewBag.Title = "資材統計のインポート処理";
+    var start = Model.Item1;
+    var end = Model.Item2;
+    var filename = Model.Item3;
+    var isFinished = Model.Item4;
+}
+
+<h2>@ViewBag.Title</h2>
+
+<p>ファイル名: @filename</p>
+
+@if (start == 0 && end == 0)
+{
+    <p class="alert alert-warning">正常にインポートを行うために、通信が安定した場所でインポートを開始してください。また、処理中にブラウザを閉じたりしないでください。</p>
+    <p>@Html.ActionLink("インポート", "MaterialsProc", new { id = "0-1000" }, new { @class = "btn btn-primary" })</p>
+}
+else
+{
+    <p>区間[@start, @end)のインポート完了。</p>
+    if (isFinished)
+    {
+        <p class="alert alert-success">全区間でのインポートが完了しました。</p>
+    }
+    else
+    {
+        <p>インポートを続けます。お待ちください。</p>
+        <p class="alert alert-warning">
+            <strong>警告</strong> 現在インポート作業中です。このタブを閉じないでください。万一問題が発生した場合はやり直さずに管理者に連絡してください。
+        </p>
+        <script>
+            setTimeout(function () {
+                location.href = "@Url.Action("MaterialsProc", new { id = end.ToString() + "-" + (end + 1000).ToString() })"
+            }, 1000);
+        </script>
+    }
+}

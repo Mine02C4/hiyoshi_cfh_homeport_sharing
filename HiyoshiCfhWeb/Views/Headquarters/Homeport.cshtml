@@ -17,6 +17,7 @@
         <h3>各種ツール</h3>
         <p>@Html.ActionLink("任務進捗", "Quests", null, new { @class = "btn btn-default" })</p>
         <p>@Html.ActionLink("イベント", "Event", null, new { @class = "btn btn-default" })</p>
+        <p>@Html.ActionLink("資材統計", "Materials", null, new { @class = "btn btn-default" })</p>
     </div>
 </div>
 @Html.Partial("_ShipTablePartial", Model.Ships.OrderByDescending(x => x.Level))

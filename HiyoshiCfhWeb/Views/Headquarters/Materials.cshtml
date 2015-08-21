@@ -7,6 +7,8 @@
 
 <h2>@ViewBag.Title</h2>
 
+<p>@Html.ActionLink("インポート", "Materials", "Import", null, new { @class = "btn btn-info" })</p>
+
 <div id="main_graph" style="width: 100%; height: 500px;"></div>
 
 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
@@ -26,8 +28,8 @@
                 @(record.Type == HiyoshiCfhWeb.Models.MaterialType.Bauxite ? record.Value.ToString() : String.Empty),
                 @(record.Type == HiyoshiCfhWeb.Models.MaterialType.InstantBuildMaterials ? record.Value.ToString() : String.Empty),
                 @(record.Type == HiyoshiCfhWeb.Models.MaterialType.InstantRepairMaterials ? record.Value.ToString() : String.Empty),
-                @(record.Type == HiyoshiCfhWeb.Models.MaterialType.RenovationMaterials ? record.Value.ToString() : String.Empty),
                 @(record.Type == HiyoshiCfhWeb.Models.MaterialType.DevelopmentMaterials ? record.Value.ToString() : String.Empty),
+                @(record.Type == HiyoshiCfhWeb.Models.MaterialType.RenovationMaterials ? record.Value.ToString() : String.Empty),
                 ],
                 </text>
 	        }
