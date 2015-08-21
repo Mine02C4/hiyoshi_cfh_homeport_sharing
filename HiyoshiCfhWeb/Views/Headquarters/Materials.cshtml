@@ -2,49 +2,39 @@
 @{
     var admiral = Model.Item1;
     var records = Model.Item2;
-    ViewBag.Title = string.Format("資材統計({0} 提督)", admiral.Name);    
+    ViewBag.Title = string.Format("資材統計({0} 提督)", admiral.Name);
 }
 
 <h2>@ViewBag.Title</h2>
 
 <p>@Html.ActionLink("インポート", "Materials", "Import", null, new { @class = "btn btn-info" })</p>
 
-<div id="main_graph" style="width: 100%; height: 500px;"></div>
+<svg id="main_chart" style="height: 600px; overflow: visible"></svg>
 
-<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript" src="@Url.Content("/Scripts/d3/d3.min.js")"></script>
+<script type="text/javascript" src="@Url.Content("/Scripts/nv.d3.min.js")"></script>
 <script type="text/javascript">
-    google.load("visualization", "1", { packages: ["corechart"] });
-    google.setOnLoadCallback(drawChart);
-    function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-            ['時刻', '燃料', '弾薬', '鋼材', 'ボーキサイト', '高速建造材', '高速修復材', '開発資材', '改修資材'],
-            @foreach (var record in records)
-	        {
-                <text>
-                [new Date("@TimeZoneInfo.ConvertTimeFromUtc(record.TimeUtc, TimeZoneInfo.FindSystemTimeZoneById("Tokyo Standard Time")).ToString("O")"),
-                @(record.Type == HiyoshiCfhWeb.Models.MaterialType.Fuel ? record.Value.ToString() : String.Empty),
-                @(record.Type == HiyoshiCfhWeb.Models.MaterialType.Bull ? record.Value.ToString() : String.Empty),
-                @(record.Type == HiyoshiCfhWeb.Models.MaterialType.Steel ? record.Value.ToString() : String.Empty),
-                @(record.Type == HiyoshiCfhWeb.Models.MaterialType.Bauxite ? record.Value.ToString() : String.Empty),
-                @(record.Type == HiyoshiCfhWeb.Models.MaterialType.InstantBuildMaterials ? record.Value.ToString() : String.Empty),
-                @(record.Type == HiyoshiCfhWeb.Models.MaterialType.InstantRepairMaterials ? record.Value.ToString() : String.Empty),
-                @(record.Type == HiyoshiCfhWeb.Models.MaterialType.DevelopmentMaterials ? record.Value.ToString() : String.Empty),
-                @(record.Type == HiyoshiCfhWeb.Models.MaterialType.RenovationMaterials ? record.Value.ToString() : String.Empty),
-                ],
-                </text>
-	        }
-        ]);
+    d3.json("@Url.Action("Materials", new { type = "json" })", function (data) {
+        var colors = d3.scale.category20();
+        var keyColor = function (d, i) { return colors(d.key) };
+        var chart = nv.models.lineChart()
+                .x(function (d) { return new Date(d["time"]) })
+                .y(function (d) { return d["value"] })
+                .showLegend(true)
+                .showYAxis(true)
+                .showXAxis(true)
+                .color(keyColor);
 
-        var options = {
-            hAxis: {
-                format: 'yyyy/M/d H:mm:ss'
-            },
-            interpolateNulls: true,
-            areaOpacity: 0.1
-        };
-
-        var chart = new google.visualization.AreaChart(document.getElementById('main_graph'));
-
-        chart.draw(data, options);
-    }
+        chart.xAxis.tickFormat(
+            function (d) {
+                return d3.time.format("%Y-%m-%d %H:%M:%S")(new Date(d))
+            });
+        chart.yAxis.tickFormat(d3.format(',.0d'));
+        chart.forceY(0);
+        d3.select('#main_chart').datum(data).call(chart);
+        nv.utils.windowResize(function () {
+            chart.update();
+        });
+        return chart;
+    });
 </script>

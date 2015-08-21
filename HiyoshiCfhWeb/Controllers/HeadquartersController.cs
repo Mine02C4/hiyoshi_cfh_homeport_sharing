@@ -116,24 +116,48 @@ namespace HiyoshiCfhWeb.Controllers
         public ActionResult Materials(string id, string type)
         {
             var admiral = db.Admirals.Where(x => x.Name.Equals(id)).First();
-
             if (type != null && type == "json")
             {
+                var nlimit = 530;
                 var obj =
                     Material.List.Select(m =>
-                        new
+                    {
+                        var count = db.MaterialRecords.Where(x => x.AdmiralId == admiral.AdmiralId && x.Type == m.Type).Count();
+                        if (count <= nlimit)
                         {
-                            key = m.Name,
-                            values = db.MaterialRecords.Where(x => x.AdmiralId == admiral.AdmiralId && x.Type == m.Type).OrderBy(x => x.TimeUtc)
-                                .Select(x => new
-                                {
-                                    x.TimeUtc,
-                                    x.Value
-                                }).ToList().Select(x => new[] {
-                                    TimeZoneInfo.ConvertTimeFromUtc(x.TimeUtc, TimeZoneInfo.FindSystemTimeZoneById("Tokyo Standard Time")).ToString("O"),
-                                    x.Value.ToString()
-                                }).ToArray()
-                        }).ToArray();
+                            return new
+                            {
+                                key = m.Name,
+                                values = db.MaterialRecords.Where(x => x.AdmiralId == admiral.AdmiralId && x.Type == m.Type).OrderBy(x => x.TimeUtc)
+                                    .Select(x => new
+                                    {
+                                        x.TimeUtc,
+                                        x.Value
+                                    }).ToList().Select(x => new
+                                    {
+                                        time = TimeZoneInfo.ConvertTimeFromUtc(x.TimeUtc, TimeZoneInfo.FindSystemTimeZoneById("Tokyo Standard Time")).ToString("O"),
+                                        value = x.Value
+                                    }).ToArray()
+                            };
+                        }
+                        else
+                        {
+                            return new
+                            {
+                                key = m.Name,
+                                values = db.MaterialRecords.Where(x => x.AdmiralId == admiral.AdmiralId && x.Type == m.Type).OrderBy(x => x.TimeUtc)
+                                    .Select(x => new
+                                    {
+                                        x.TimeUtc,
+                                        x.Value
+                                    }).ToList().Where((x, i) => i % (count / nlimit + 1) == 0).Select(x => new
+                                    {
+                                        time = TimeZoneInfo.ConvertTimeFromUtc(x.TimeUtc, TimeZoneInfo.FindSystemTimeZoneById("Tokyo Standard Time")).ToString("O"),
+                                        value = x.Value
+                                    }).ToArray()
+                            };
+                        }
+                    }).ToArray();
                 var jsonResult = Json(obj, JsonRequestBehavior.AllowGet);
                 jsonResult.MaxJsonLength = 10240000;
                 return jsonResult;
