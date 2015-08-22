@@ -113,14 +113,27 @@ namespace HiyoshiCfhWeb.Controllers
             return View(admiral);
         }
 
-        public ActionResult Materials(string id, string type)
+        public ActionResult Materials(string id, string type, string target)
         {
             var admiral = db.Admirals.Where(x => x.Name.Equals(id)).First();
             if (type != null && type == "json")
             {
+                List<MaterialTuple> material;
+                if (target == null)
+                {
+                    material = Material.List;
+                }
+                else if (target == "main")
+                {
+                    material = Material.List.GetRange(0, 4);
+                }
+                else
+                {
+                    material = Material.List.GetRange(4, 4);
+                }
                 var nlimit = 530;
                 var obj =
-                    Material.List.Select(m =>
+                    material.Select(m =>
                     {
                         var count = db.MaterialRecords.Where(x => x.AdmiralId == admiral.AdmiralId && x.Type == m.Type).Count();
                         if (count <= nlimit)
