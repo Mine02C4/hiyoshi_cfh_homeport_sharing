@@ -155,10 +155,7 @@ namespace HiyoshiCfhWeb.Controllers
                         }
                         else
                         {
-                            return new
-                            {
-                                key = m.Name,
-                                values = db.MaterialRecords.Where(x => x.AdmiralId == admiral.AdmiralId && x.Type == m.Type).OrderBy(x => x.TimeUtc)
+                            var values = db.MaterialRecords.Where(x => x.AdmiralId == admiral.AdmiralId && x.Type == m.Type).OrderBy(x => x.TimeUtc)
                                     .Select(x => new
                                     {
                                         x.TimeUtc,
@@ -167,7 +164,17 @@ namespace HiyoshiCfhWeb.Controllers
                                     {
                                         time = TimeZoneInfo.ConvertTimeFromUtc(x.TimeUtc, TimeZoneInfo.FindSystemTimeZoneById("Tokyo Standard Time")).ToString("O"),
                                         value = x.Value
-                                    }).ToArray()
+                                    }).ToList();
+                            values.Add(new
+                                    {
+                                        time = TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, TimeZoneInfo.FindSystemTimeZoneById("Tokyo Standard Time")).ToString("O"),
+                                        value = db.MaterialRecords.Where(x => x.AdmiralId == admiral.AdmiralId && x.Type == m.Type).OrderByDescending(x => x.TimeUtc).First().Value
+                                    }
+                                );
+                            return new
+                            {
+                                key = m.Name,
+                                values = values.ToArray()
                             };
                         }
                     }).ToArray();
