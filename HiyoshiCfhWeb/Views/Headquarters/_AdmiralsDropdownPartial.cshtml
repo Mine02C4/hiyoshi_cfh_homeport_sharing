@@ -1,0 +1,17 @@
+﻿@{
+    var db = HiyoshiCfhWeb.Models.ApplicationDbContext.Create();
+    var admirals = db.Admirals;
+}
+
+<div class="dropdown" style="text-align: right; float: right">
+    <button class="btn btn-default dropdown-toggle" type="button" id="admiraldropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+        提督切り替え
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="admiraldropdown">
+        @foreach (var admiral in admirals)
+        {
+        <li>@Html.ActionLink(admiral.Name, null, new { id = admiral.Name })</li>
+        }
+    </ul>
+</div>

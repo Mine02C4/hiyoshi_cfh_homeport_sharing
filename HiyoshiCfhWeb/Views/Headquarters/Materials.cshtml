@@ -5,6 +5,8 @@
     ViewBag.Title = string.Format("資材統計({0} 提督)", admiral.Name);
 }
 
+@Html.Partial("_AdmiralsDropdownPartial")
+
 <h2>@ViewBag.Title</h2>
 
 <p>@Html.ActionLink("インポート", "Materials", "Import", null, new { @class = "btn btn-info" })</p>
