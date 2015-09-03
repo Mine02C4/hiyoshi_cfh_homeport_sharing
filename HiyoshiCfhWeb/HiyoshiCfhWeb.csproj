@@ -213,6 +213,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ConfigurationController.cs" />
+    <Compile Include="Controllers\EventController.cs" />
     <Compile Include="Controllers\HeadquartersController.cs" />
     <Compile Include="Controllers\ImportController.cs" />
     <Compile Include="Controllers\OData\AdmiralsController.cs" />
@@ -408,6 +409,8 @@
     <Content Include="Views\Headquarters\Materials.cshtml" />
     <Content Include="Views\Import\Materials.cshtml" />
     <Content Include="Views\Import\MaterialsProc.cshtml" />
+    <Content Include="Views\Event\e2015summer.cshtml" />
+    <Content Include="Views\Headquarters\_AdmiralsDropdownPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,0 +1,112 @@
+﻿@model List<HiyoshiCfhWeb.Models.Admiral>
+
+@{
+    ViewBag.Title = "2015年 夏 イベント 「反撃！第二次SN作戦」";
+    HiyoshiCfhWeb.Models.Ship ship;
+}
+
+<h2>@ViewBag.Title</h2>
+
+<h3>新艦娘</h3>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>提督</th>
+            <th>@Html.ActionLink("江風", "Index", "Ship", routeValues: new { id = "江風" }, htmlAttributes: null)</th>
+            <th>@Html.ActionLink("海風", "Index", "Ship", routeValues: new { id = "海風" }, htmlAttributes: null)</th>
+            <th>@Html.ActionLink("風雲", "Index", "Ship", routeValues: new { id = "風雲" }, htmlAttributes: null)</th>
+            <th>@Html.ActionLink("照月", "Index", "Ship", routeValues: new { id = "照月" }, htmlAttributes: null)</th>
+            <th>@Html.ActionLink("Libeccio", "Index", "Ship", routeValues: new { id = "Libeccio" }, htmlAttributes: null)</th>
+            <th>@Html.ActionLink("瑞穂", "Index", "Ship", routeValues: new { id = "瑞穂" }, htmlAttributes: null)</th>
+            <th>@Html.ActionLink("速吸", "Index", "Ship", routeValues: new { id = "速吸" }, htmlAttributes: null)</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var admiral in Model)
+        {
+            <tr>
+                <td>
+                    @Html.ActionLink(admiral.Name, "Homeport", "Headquarters", new { id = admiral.Name }, null)
+                </td>
+                <td>
+                    @{
+            ship = admiral.Ships.Where(x => x.ShipInfo.Name == "江風" || x.ShipInfo.Name == "江風改").FirstOrDefault();
+            if (ship != null)
+            {
+                <text>
+                    Lv.@ship.Level @(ship.ShipInfo.Name == "江風改" ? "(改)" : String.Empty)
+                </text>
+            }
+                    }
+                </td>
+                <td>
+                    @{
+            ship = admiral.Ships.Where(x => x.ShipInfo.Name == "海風" || x.ShipInfo.Name == "海風改").FirstOrDefault();
+            if (ship != null)
+            {
+                <text>
+                    Lv.@ship.Level @(ship.ShipInfo.Name == "海風改" ? "(改)" : String.Empty)
+                </text>
+            }
+                    }
+                </td>
+                <td>
+                    @{
+            ship = admiral.Ships.Where(x => x.ShipInfo.Name == "風雲" || x.ShipInfo.Name == "風雲改").FirstOrDefault();
+            if (ship != null)
+            {
+                <text>
+                    Lv.@ship.Level @(ship.ShipInfo.Name == "風雲改" ? "(改)" : String.Empty)
+                </text>
+            }
+                    }
+                </td>
+                <td>
+                    @{
+            ship = admiral.Ships.Where(x => x.ShipInfo.Name == "照月" || x.ShipInfo.Name == "照月改").FirstOrDefault();
+            if (ship != null)
+            {
+                <text>
+                    Lv.@ship.Level @(ship.ShipInfo.Name == "照月改" ? "(改)" : String.Empty)
+                </text>
+            }
+                    }
+                </td>
+                <td>
+                    @{
+            ship = admiral.Ships.Where(x => x.ShipInfo.Name == "Libeccio" || x.ShipInfo.Name == "Libeccio改").FirstOrDefault();
+            if (ship != null)
+            {
+                <text>
+                    Lv.@ship.Level @(ship.ShipInfo.Name == "Libeccio改" ? "(改)" : String.Empty)
+                </text>
+            }
+                    }
+                </td>
+                <td>
+                    @{
+            ship = admiral.Ships.Where(x => x.ShipInfo.Name == "瑞穂" || x.ShipInfo.Name == "瑞穂改").FirstOrDefault();
+            if (ship != null)
+            {
+                <text>
+                    Lv.@ship.Level @(ship.ShipInfo.Name == "瑞穂改" ? "(改)" : String.Empty)
+                </text>
+            }
+                    }
+                </td>
+                <td>
+                    @{
+            ship = admiral.Ships.Where(x => x.ShipInfo.Name == "速吸" || x.ShipInfo.Name == "速吸改").FirstOrDefault();
+            if (ship != null)
+            {
+                <text>
+                    Lv.@ship.Level @(ship.ShipInfo.Name == "速吸改" ? "(改)" : String.Empty)
+                </text>
+            }
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -4,7 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - 日吉連合艦隊司令部</title>
+    <title>@(ViewBag.Title == null ? String.Empty : ViewBag.Title + " - ")日吉連合艦隊司令官</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
@@ -21,7 +21,7 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("所属提督", "Index", "Headquarters", new { id = string.Empty }, null)</li>
+                    <li>@Html.ActionLink("所属提督", "Index", "Headquarters", new { id = String.Empty }, null)</li>
                     <li>@Html.ActionLink("プラグイン", "Index", "Plugin")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
@@ -29,7 +29,7 @@
         </div>
     </div>
     <div class="container body-content">
-        @RenderBody()        
+        @RenderBody()
     </div>
     <hr />
     <footer class="container">
