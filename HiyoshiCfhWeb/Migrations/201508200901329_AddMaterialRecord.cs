@@ -17,7 +17,7 @@ namespace HiyoshiCfhWeb.Migrations
                         Type = c.Int(nullable: false),
                         Value = c.Int(nullable: false),
                     })
-                .PrimaryKey(t => t.MaterialRecordId)
+                .PrimaryKey(t => t.MaterialRecordId, null, false)
                 .ForeignKey("dbo.Admirals", t => t.AdmiralId, cascadeDelete: true)
                 .Index(t => t.AdmiralId);
             

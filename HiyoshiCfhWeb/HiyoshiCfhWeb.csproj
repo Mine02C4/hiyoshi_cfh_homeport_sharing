@@ -282,6 +282,10 @@
     <Compile Include="Migrations\201508200901329_AddMaterialRecord.Designer.cs">
       <DependentUpon>201508200901329_AddMaterialRecord.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201509031940435_AddTimeUtcIndex.cs" />
+    <Compile Include="Migrations\201509031940435_AddTimeUtcIndex.Designer.cs">
+      <DependentUpon>201509031940435_AddTimeUtcIndex.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AdmiralModels.cs" />
@@ -458,6 +462,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201508200901329_AddMaterialRecord.resx">
       <DependentUpon>201508200901329_AddMaterialRecord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201509031940435_AddTimeUtcIndex.resx">
+      <DependentUpon>201509031940435_AddTimeUtcIndex.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

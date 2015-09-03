@@ -110,3 +110,75 @@
         }
     </tbody>
 </table>
+
+@{
+    var materials = HiyoshiCfhWeb.Models.Material.List.GetRange(0, 4);
+    materials.Add(HiyoshiCfhWeb.Models.Material.List.Where(x => x.Name == "高速修復材").First());
+    var db = HiyoshiCfhWeb.Models.ApplicationDbContext.Create();
+    var eventStart = new DateTime(2015, 8, 10, 13, 40, 0);
+}
+
+<h3>資材消費</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th rowspan="2">提督</th>
+            @foreach (var material in materials)
+            {
+                <th colspan="3" class="text-center"
+                    style="border-bottom: none; border-left: 2px solid #DDD">@material.Name</th>
+            }
+        </tr>
+        <tr>
+            @foreach (var material in materials)
+            {
+                <th style="border-left: 2px solid #DDD">開始</th>
+                <th>現在</th>
+                <th>差分</th>
+            }
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var admiral in Model)
+        {
+            <tr>
+                <td>
+                    @Html.ActionLink(admiral.Name, "Materials", "Headquarters", new { id = admiral.Name }, null)
+                </td>
+                @foreach (var material in materials)
+                {
+                    var start = db.MaterialRecords
+                        .Where(x => x.AdmiralId == admiral.AdmiralId && x.Type == material.Type)
+                        .OrderBy(x => x.TimeUtc).FirstOrDefault(x => x.TimeUtc > eventStart);
+                    var end = db.MaterialRecords
+                        .Where(x => x.AdmiralId == admiral.AdmiralId && x.Type == material.Type)
+                        .OrderByDescending(x => x.TimeUtc).FirstOrDefault();
+                    if (start != null)
+                    {
+                        <td style="border-left: 2px solid #DDD"
+                            title="@TimeZoneInfo.ConvertTimeFromUtc(start.TimeUtc, TimeZoneInfo.FindSystemTimeZoneById("Tokyo Standard Time")).ToString("yyyy年M月d日 HH:mm:ss")">
+                            @start.Value
+                        </td>
+                    }
+                    else
+                    {
+                        <td style="border-left: 2px solid #DDD" />
+                    }
+                    if (end != null)
+                    {
+                        <td title="@TimeZoneInfo.ConvertTimeFromUtc(end.TimeUtc, TimeZoneInfo.FindSystemTimeZoneById("Tokyo Standard Time")).ToString("yyyy年M月d日 HH:mm:ss")">
+                            @end.Value
+                        </td>
+                    }
+                    else
+                    {
+                        <td />
+                    }
+                    <td>
+                        @(start == null || end == null ? String.Empty : (end.Value - start.Value).ToString())
+                    </td>
+                }
+            </tr>
+        }
+    </tbody>
+</table>

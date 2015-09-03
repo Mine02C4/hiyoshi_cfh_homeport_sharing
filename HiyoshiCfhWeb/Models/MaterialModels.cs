@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.Web;
@@ -11,11 +13,13 @@ namespace HiyoshiCfhWeb.Models
         /// <summary>
         /// システム内部での識別子
         /// </summary>
+        [Key]
         public int MaterialRecordId { get; set; }
         public int AdmiralId { get; set; }
         public virtual Admiral Admiral { get; set; }
         [IgnoreDataMember]
         [DateTimeKind(DateTimeKind.Utc)]
+        [Index(IsClustered=true)]
         public DateTime TimeUtc { get; set; }
         public MaterialType Type { get; set; }
         public int Value { get; set; }
@@ -33,7 +37,8 @@ namespace HiyoshiCfhWeb.Models
         RenovationMaterials = 8
     }
 
-    public static class Material {
+    public static class Material
+    {
         public static List<MaterialTuple> List;
 
         static Material()
