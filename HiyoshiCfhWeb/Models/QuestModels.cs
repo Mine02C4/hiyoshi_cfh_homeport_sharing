@@ -10,6 +10,11 @@ namespace HiyoshiCfhWeb.Models
 {
     public class Quest
     {
+        public Quest()
+        {
+            IsMatched = false;
+        }
+
         /// <summary>
         /// システム内部での識別子
         /// </summary>
@@ -22,24 +27,20 @@ namespace HiyoshiCfhWeb.Models
 
         public int AdmiralId { get; set; }
         public virtual Admiral Admiral { get; set; }
-
         public QuestCategory Category { get; set; }
-
         public QuestType Type { get; set; }
-
         [Required]
         public string Name { get; set; }
-
         [Required]
         public string Content { get; set; }
-
         public int Fuel { get; set; }
-
         public int Bull { get; set; }
-
         public int Steel { get; set; }
-
         public int Bauxite { get; set; }
+
+        [IgnoreDataMember]
+        [NotMapped]
+        public bool IsMatched { get; set; }
     }
 
     public enum QuestCategory

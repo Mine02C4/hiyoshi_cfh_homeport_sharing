@@ -81,6 +81,7 @@ namespace HiyoshiCfhWeb.Controllers
                 foreach (var m in match)
                 {
                     quest.Name += " " + m.Id;
+                    quest.IsMatched = true;
                     dig(m);
                     m.State = XML.QuestState.Visible;
                 }

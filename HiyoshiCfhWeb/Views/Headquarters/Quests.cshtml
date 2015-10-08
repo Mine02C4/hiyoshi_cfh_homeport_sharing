@@ -26,7 +26,7 @@
 
 <h2>@ViewBag.Title</h2>
 
-<h3>表示された任務</h3>
+<h3>任務マスターと対応できなかった任務</h3>
 
 <table class="table">
     <tr>
@@ -56,7 +56,7 @@
         </th>
     </tr>
 
-    @foreach (var item in quests)
+    @foreach (var item in quests.Where(x => x.IsMatched == false))
     {
         <tr>
             <td>
