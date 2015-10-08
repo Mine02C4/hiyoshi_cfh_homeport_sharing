@@ -128,7 +128,7 @@ namespace HiyoshiCfhClient.ViewModels
                         }
                     }
                     catch (DeniedAccessToAdmiral)
-                    {                        
+                    {
                         OutDebugConsole("認証に失敗しました。再認証が必要です。");
                         ReLogin();
                     }
