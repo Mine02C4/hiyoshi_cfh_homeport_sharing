@@ -2037,85 +2037,6 @@
       <Achieve Id="B16"/>
     </Dependency>
   </Quest>
-  <Quest Id="A52" Category="composition" Type="onetime">
-    <Name>
-      海上突入部隊を編成せよ！
-    </Name>
-    <Content>
-      戦艦「比叡」「霧島」軽巡「長良」駆逐艦「暁」「雷」「電」による海上突入部隊を編成せよ！
-    </Content>
-    <Bonus>
-      <Fuel>
-        0
-      </Fuel>
-      <Bull>
-        300
-      </Bull>
-      <Steel>
-        0
-      </Steel>
-      <Bauxite>
-        0
-      </Bauxite>
-      <InstantBuildMaterials>
-        0
-      </InstantBuildMaterials>
-      <InstantRepairMaterials>
-        2
-      </InstantRepairMaterials>
-      <DevelopmentMaterials>
-        2
-      </DevelopmentMaterials>
-      <RenovationMaterials>
-        0
-      </RenovationMaterials>
-      <Other>
-      </Other>
-    </Bonus>
-    <Dependency>
-      <Achieve Id="B16"/>
-    </Dependency>
-  </Quest>
-  <Quest Id="A53" Category="composition" Type="onetime">
-    <Name>
-      新編「第六駆逐隊」を編成せよ！
-    </Name>
-    <Content>
-      「暁改二」を旗艦とした「響」「雷」「電」4隻による第六駆逐隊を編成せよ！
-    </Content>
-    <Bonus>
-      <Fuel>
-        150
-      </Fuel>
-      <Bull>
-        150
-      </Bull>
-      <Steel>
-        0
-      </Steel>
-      <Bauxite>
-        0
-      </Bauxite>
-      <InstantBuildMaterials>
-        0
-      </InstantBuildMaterials>
-      <InstantRepairMaterials>
-        0
-      </InstantRepairMaterials>
-      <DevelopmentMaterials>
-        0
-      </DevelopmentMaterials>
-      <RenovationMaterials>
-        0
-      </RenovationMaterials>
-      <Other>
-        探照灯
-      </Other>
-    </Bonus>
-    <Dependency>
-      <Achieve Id="B14"/>
-    </Dependency>
-  </Quest>
   <Quest Id="A53" Category="composition" Type="onetime">
     <Name>
       新編「第六駆逐隊」を編成せよ！
@@ -2194,8 +2115,6 @@
     </Bonus>
     <Dependency>
       <Achieve Id="B21"/>
-      <Achieve Id="B22"/>
-      <Achieve Id="Bd1"/>
     </Dependency>
   </Quest>
   <Quest Id="A55" Category="composition" Type="onetime">
@@ -2203,7 +2122,7 @@
       「第一水雷戦隊」北方再突入準備！
     </Name>
     <Content>
-      「阿武隈改二」を旗艦として「響」「夕雲」「長波」「秋雲」「島風」の一水戦を再編成せよ!
+      「阿武隈改二」を旗艦として「響」「夕雲」「長波」「秋雲」「島風」の一水戦を再編成せよ！
     </Content>
     <Bonus>
       <Fuel>
@@ -2236,6 +2155,125 @@
     </Bonus>
     <Dependency>
       <Achieve Id="C7"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="A56" Category="composition" Type="onetime">
+    <Name>
+      「第五航空戦隊」を再編成せよ！
+    </Name>
+    <Content>
+      「翔鶴」「瑞鶴」と随伴駆逐艦「朧」「秋雲」を基幹とした第五航空戦隊を再編成せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        300
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        300
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        3
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="A23"/>
+      <Achieve Id="Bm6"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="A57" Category="composition" Type="onetime">
+    <Name>
+      新編「第二一戦隊」出撃準備！
+    </Name>
+    <Content>
+      「那智改二」「足柄改二」及び「多摩」「木曾」を基幹とした、第二一戦隊を編成せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        150
+      </Fuel>
+      <Bull>
+        150
+      </Bull>
+      <Steel>
+        150
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        2
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        2
+      </RenovationMaterials>
+      <Other>
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="A50"/>
+      <Achieve Id="B34"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="A58" Category="composition" Type="onetime">
+    <Name>
+      「第十六戦隊(第一次)」を編成せよ！
+    </Name>
+    <Content>
+      「足柄」を旗艦として「球磨」「長良」を擁する、第十六戦隊(第一次)を編成せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        150
+      </Fuel>
+      <Bull>
+        150
+      </Bull>
+      <Steel>
+        150
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        2
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        2
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="Bd2"/>
     </Dependency>
   </Quest>
   <Quest Id="B1" Category="sortie" Type="onetime">
@@ -3865,7 +3903,6 @@
       </Other>
     </Bonus>
     <Dependency>
-      <Achieve Id="A52"/>
       <Achieve Id="C5"/>
     </Dependency>
   </Quest>
@@ -3989,46 +4026,6 @@
       <Achieve Id="Bw9"/>
     </Dependency>
   </Quest>
-  <Quest Id="B44" Category="sortie" Type="onetime">
-    <Name>
-      海上突入部隊、進発せよ！
-    </Name>
-    <Content>
-      「比叡」「霧島」「長良」「暁」「雷」「電」の艦隊で、南方海域進出作戦を実施、敵を撃滅せよ！
-    </Content>
-    <Bonus>
-      <Fuel>
-        500
-      </Fuel>
-      <Bull>
-        0
-      </Bull>
-      <Steel>
-        500
-      </Steel>
-      <Bauxite>
-        0
-      </Bauxite>
-      <InstantBuildMaterials>
-        0
-      </InstantBuildMaterials>
-      <InstantRepairMaterials>
-        0
-      </InstantRepairMaterials>
-      <DevelopmentMaterials>
-        5
-      </DevelopmentMaterials>
-      <RenovationMaterials>
-        2
-      </RenovationMaterials>
-      <Other>
-      </Other>
-    </Bonus>
-    <Dependency>
-      <Achieve Id="A52"/>
-      <Achieve Id="Bw9"/>
-    </Dependency>
-  </Quest>
   <Quest Id="B45" Category="sortie" Type="onetime">
     <Name>
       「第六駆逐隊」対潜哨戒を徹底なのです！
@@ -4108,6 +4105,248 @@
     </Bonus>
     <Dependency>
       <Achieve Id="A54"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="B47" Category="sortie" Type="onetime">
+    <Name>
+      「第一水雷戦隊」北方ケ号作戦、再突入！
+    </Name>
+    <Content>
+      北方再突入準備の新編「一水戦」で北方キス島に再突入を敢行、同撤収作戦を完遂せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        400
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        500
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        4
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        4
+      </RenovationMaterials>
+      <Other>
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="A55"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="B48" Category="sortie" Type="onetime">
+    <Name>
+      鎮守府正面の対潜哨戒を強化せよ！
+    </Name>
+    <Content>
+      鎮守府正面の対潜哨戒を強化し、海上資源輸送路の安全を確立せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        300
+      </Fuel>
+      <Bull>
+        300
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        特注家具職人x1
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="Bd1"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="B49" Category="sortie" Type="onetime">
+    <Name>
+      「空母機動部隊」北方海域に進出せよ！
+    </Name>
+    <Content>
+      航空母艦を旗艦とした空母機動部隊を北方AL海域方面に展開、敵戦力を撃滅せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        500
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        500
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        3
+      </RenovationMaterials>
+      <Other>
+        戦闘糧食x1
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="B32"/>
+      <Achieve Id="Bd8"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="B50" Category="sortie" Type="onetime">
+    <Name>
+      「第五航空戦隊」珊瑚諸島沖に出撃せよ！
+    </Name>
+    <Content>
+      再編成した「第五航空戦隊」を珊瑚諸島沖に展開、敵機動部隊を捕捉撃滅せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        500
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        3
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        給糧艦「伊良湖」x1
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="A56"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="B51" Category="sortie" Type="onetime">
+    <Name>
+      新編「第二一戦隊」北方へ出撃せよ！
+    </Name>
+    <Content>
+      新編「第二一戦隊」を基幹とする艦隊で北方海域モーレイ海に出撃、敵を撃滅せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        300
+      </Fuel>
+      <Bull>
+        300
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        戦闘糧食x1
+        プレゼント箱x1
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="A57"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="B52" Category="sortie" Type="onetime">
+    <Name>
+      「第十六戦隊(第一次)」出撃せよ！
+    </Name>
+    <Content>
+      「第十六戦隊(第一次)」をバシー島沖に展開、敵艦隊を撃滅せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        200
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        200
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        家具箱(中)x1
+        プレゼント箱x1
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="A57"/>
     </Dependency>
   </Quest>
   <Quest Id="Bd1" Category="sortie" Type="daily">
