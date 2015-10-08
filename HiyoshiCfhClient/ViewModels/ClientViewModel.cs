@@ -127,27 +127,10 @@ namespace HiyoshiCfhClient.ViewModels
                             await Client.UpdateShips();
                         }
                     }
-                    catch (DataServiceQueryException ex)
-                    {
-                        if (ex.InnerException is DataServiceClientException)
-                        {
-                            var iex = ex.InnerException as DataServiceClientException;
-                            if (iex.StatusCode == 401)
-                            {
-                                // 認証失敗
-                                ClearToken();
-                                OutDebugConsole("認証に失敗しました。再認証が必要です。");
-                                Client = null;
-                            }
-                            else
-                            {
-                                OutDebugConsole(ex.ToString());
-                            }
-                        }
-                        else
-                        {
-                            OutDebugConsole(ex.ToString());
-                        }
+                    catch (DeniedAccessToAdmiral)
+                    {                        
+                        OutDebugConsole("認証に失敗しました。再認証が必要です。");
+                        ReLogin();
                     }
                     catch (Exception ex)
                     {
@@ -208,6 +191,11 @@ namespace HiyoshiCfhClient.ViewModels
                         break;
                 }
             }
+            catch (DeniedAccessToAdmiral)
+            {
+                OutDebugConsole("認証に失敗しました。再認証が必要です。");
+                ReLogin();
+            }
             catch (Exception ex)
             {
                 OutDebugConsole(ex.ToString());
@@ -229,14 +217,17 @@ namespace HiyoshiCfhClient.ViewModels
                         await Client.UpdateQuests(QuestsTracker.DisplayedQuests);
                     }
                 }
+                catch (DeniedAccessToAdmiral)
+                {
+                    OutDebugConsole("認証に失敗しました。再認証が必要です。");
+                    ReLogin();
+                }
                 catch (Exception ex)
                 {
                     OutDebugConsole(ex.ToString());
                 }
             });
         }
-
-
 
         public async void OpenLoginWindow()
         {
@@ -274,9 +265,17 @@ namespace HiyoshiCfhClient.ViewModels
             }
             else
             {
-                this.PropertyChanged += HandleLogin;
-                OpenLoginWindow();
+                StartLogin();
             }
+        }
+
+        /// <summary>
+        /// ログインシーケンの開始
+        /// </summary>
+        private void StartLogin()
+        {
+            this.PropertyChanged += HandleLogin;
+            OpenLoginWindow();
         }
 
         void HandleLogin(object sender, System.ComponentModel.PropertyChangedEventArgs e)
@@ -343,6 +342,13 @@ namespace HiyoshiCfhClient.ViewModels
         bool CheckToken()
         {
             return AccessToken != null && AccessToken.Length > 0 && TokenType != null && TokenType.Length > 0;
+        }
+
+        void ReLogin()
+        {
+            ClearToken();
+            Client = null;
+            StartLogin();
         }
 
         private static string logPath = Path.Combine(

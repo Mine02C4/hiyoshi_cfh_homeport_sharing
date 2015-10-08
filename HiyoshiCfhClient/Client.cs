@@ -341,13 +341,14 @@ namespace HiyoshiCfhClient
             );
         }
 
-        static void JudgeForbiddenOrNot(DataServiceRequestException ex)
+        void JudgeForbiddenOrNot(DataServiceRequestException ex)
         {
             if (ex.InnerException is DataServiceClientException)
             {
                 var iex = ex.InnerException as DataServiceClientException;
                 if (iex.StatusCode == 401)
                 {
+                    Admiral = null;
                     throw new DeniedAccessToAdmiral();
                 }
             }
