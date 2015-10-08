@@ -129,35 +129,3 @@
     }
 
 </table>
-
-<h3>逆辺</h3>
-
-<table class="table">
-    <tr>
-        <th>
-            元
-        </th>
-        <th>
-            先
-        </th>
-    </tr>
-    @foreach (var item in retrietingEdge)
-    {
-        <tr>
-            <td>
-                @item.Key
-            </td>
-            <td>
-                <ul>
-                    @foreach (var x in item.Value)
-                    {
-                        <li>
-                            @x.Id
-                        </li>
-                    }
-                </ul>
-
-            </td>
-        </tr>
-    }
-</table>
