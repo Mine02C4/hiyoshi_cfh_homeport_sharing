@@ -86,6 +86,358 @@
     </table>
 }
 
+<h3>期間限定「秋の秋刀魚祭り」</h3>
+<table class="table">
+    <tr>
+        <th>
+            ID
+        </th>
+        <th>
+            任務名
+        </th>
+        <th>
+            内容
+        </th>
+    </tr>
+    @foreach (var item in questMaster.Quest.Where(x => x.Id.StartsWith("S")))
+    {
+        <tr class="@(StateToClass(item.State))">
+            <td>
+                @item.Id
+            </td>
+            <td>
+                @item.Name
+            </td>
+            <td>
+                @item.Content
+            </td>
+        </tr>
+    }
+</table>
+
+<div class="row">
+    <div class="col-md-4">
+        <h3>デイリー</h3>
+        <h4>出撃</h4>
+        <table class="table">
+            @foreach (var item in questMaster.Quest
+                .Where(x => x.Type == HiyoshiCfhWeb.XML.Type.daily && x.Category == Category.sortie))
+            {
+                <tr class="@(StateToClass(item.State))">
+                    <td>
+                        @item.Id
+                    </td>
+                    <td>
+                        @item.Name
+                    </td>
+                </tr>
+            }
+        </table>
+        <h4>演習</h4>
+        <table class="table">
+            @foreach (var item in questMaster.Quest
+                .Where(x => x.Type == HiyoshiCfhWeb.XML.Type.daily && x.Category == Category.practice))
+            {
+                <tr class="@(StateToClass(item.State))">
+                    <td>
+                        @item.Id
+                    </td>
+                    <td>
+                        @item.Name
+                    </td>
+                </tr>
+            }
+        </table>
+        <h4>遠征</h4>
+        <table class="table">
+            @foreach (var item in questMaster.Quest
+                .Where(x => x.Type == HiyoshiCfhWeb.XML.Type.daily && x.Category == Category.expeditions))
+            {
+                <tr class="@(StateToClass(item.State))">
+                    <td>
+                        @item.Id
+                    </td>
+                    <td>
+                        @item.Name
+                    </td>
+                </tr>
+            }
+        </table>
+        <h4>補給/入渠</h4>
+        <table class="table">
+            @foreach (var item in questMaster.Quest
+                .Where(x => x.Type == HiyoshiCfhWeb.XML.Type.daily && x.Category == Category.supply))
+            {
+                <tr class="@(StateToClass(item.State))">
+                    <td>
+                        @item.Id
+                    </td>
+                    <td>
+                        @item.Name
+                    </td>
+                </tr>
+            }
+        </table>
+        <h4>工廠</h4>
+        <table class="table">
+            @foreach (var item in questMaster.Quest
+                .Where(x => x.Type == HiyoshiCfhWeb.XML.Type.daily && x.Category == Category.building))
+            {
+                <tr class="@(StateToClass(item.State))">
+                    <td>
+                        @item.Id
+                    </td>
+                    <td>
+                        @item.Name
+                    </td>
+                </tr>
+            }
+        </table>
+        <h4>改装</h4>
+        <table class="table">
+            @foreach (var item in questMaster.Quest
+                .Where(x => x.Type == HiyoshiCfhWeb.XML.Type.daily && x.Category == Category.remodelling))
+            {
+                <tr class="@(StateToClass(item.State))">
+                    <td>
+                        @item.Id
+                    </td>
+                    <td>
+                        @item.Name
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+    <div class="col-md-4">
+        <h3>ウィークリー</h3>
+        <h4>出撃</h4>
+        <table class="table">
+            @foreach (var item in questMaster.Quest
+                .Where(x => x.Type == HiyoshiCfhWeb.XML.Type.weekly && x.Category == Category.sortie))
+            {
+                <tr class="@(StateToClass(item.State))">
+                    <td>
+                        @item.Id
+                    </td>
+                    <td>
+                        @item.Name
+                    </td>
+                </tr>
+            }
+        </table>
+        <h4>演習</h4>
+        <table class="table">
+            @foreach (var item in questMaster.Quest
+                .Where(x => x.Type == HiyoshiCfhWeb.XML.Type.weekly && x.Category == Category.practice))
+            {
+                <tr class="@(StateToClass(item.State))">
+                    <td>
+                        @item.Id
+                    </td>
+                    <td>
+                        @item.Name
+                    </td>
+                </tr>
+            }
+        </table>
+        <h4>遠征</h4>
+        <table class="table">
+            @foreach (var item in questMaster.Quest
+                .Where(x => x.Type == HiyoshiCfhWeb.XML.Type.weekly && x.Category == Category.expeditions))
+            {
+                <tr class="@(StateToClass(item.State))">
+                    <td>
+                        @item.Id
+                    </td>
+                    <td>
+                        @item.Name
+                    </td>
+                </tr>
+            }
+        </table>
+        <h4>工廠</h4>
+        <table class="table">
+            @foreach (var item in questMaster.Quest
+                .Where(x => x.Type == HiyoshiCfhWeb.XML.Type.weekly && x.Category == Category.building))
+            {
+                <tr class="@(StateToClass(item.State))">
+                    <td>
+                        @item.Id
+                    </td>
+                    <td>
+                        @item.Name
+                    </td>
+                </tr>
+            }
+        </table>
+        <h4>改装</h4>
+        <table class="table">
+            @foreach (var item in questMaster.Quest
+                .Where(x => x.Type == HiyoshiCfhWeb.XML.Type.weekly && x.Category == Category.remodelling))
+            {
+                <tr class="@(StateToClass(item.State))">
+                    <td>
+                        @item.Id
+                    </td>
+                    <td>
+                        @item.Name
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+    <div class="col-md-4">
+        <h3>マンスリー</h3>
+        <h4>出撃</h4>
+        <table class="table">
+            @foreach (var item in questMaster.Quest
+                .Where(x => x.Type == HiyoshiCfhWeb.XML.Type.monthly && x.Category == Category.sortie))
+            {
+                <tr class="@(StateToClass(item.State))">
+                    <td>
+                        @item.Id
+                    </td>
+                    <td>
+                        @item.Name
+                    </td>
+                </tr>
+            }
+        </table>
+        <h4>演習</h4>
+        <table class="table">
+            @foreach (var item in questMaster.Quest
+                .Where(x => x.Type == HiyoshiCfhWeb.XML.Type.monthly && x.Category == Category.practice))
+            {
+                <tr class="@(StateToClass(item.State))">
+                    <td>
+                        @item.Id
+                    </td>
+                    <td>
+                        @item.Name
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>
+
+<h3>単発</h3>
+<div class="row">
+    <div class="col-md-4">
+        <h4>編成</h4>
+        <table class="table">
+            @foreach (var item in questMaster.Quest
+                .Where(x => x.Category == Category.composition))
+            {
+                <tr class="@(StateToClass(item.State))">
+                    <td>
+                        @item.Id
+                    </td>
+                    <td>
+                        @item.Name
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+    <div class="col-md-4">
+        <h4>出撃</h4>
+        <table class="table">
+            @foreach (var item in questMaster.Quest
+                .Where(x => x.Type == HiyoshiCfhWeb.XML.Type.onetime && x.Category == Category.sortie))
+            {
+                <tr class="@(StateToClass(item.State))">
+                    <td>
+                        @item.Id
+                    </td>
+                    <td>
+                        @item.Name
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+    <div class="col-md-4">
+        <h4>演習</h4>
+        <table class="table">
+            @foreach (var item in questMaster.Quest
+                .Where(x => x.Type == HiyoshiCfhWeb.XML.Type.onetime && x.Category == Category.practice))
+            {
+                <tr class="@(StateToClass(item.State))">
+                    <td>
+                        @item.Id
+                    </td>
+                    <td>
+                        @item.Name
+                    </td>
+                </tr>
+            }
+        </table>
+        <h4>遠征</h4>
+        <table class="table">
+            @foreach (var item in questMaster.Quest
+                .Where(x => x.Type == HiyoshiCfhWeb.XML.Type.onetime && x.Category == Category.expeditions))
+            {
+                <tr class="@(StateToClass(item.State))">
+                    <td>
+                        @item.Id
+                    </td>
+                    <td>
+                        @item.Name
+                    </td>
+                </tr>
+            }
+        </table>
+        <h4>補給/入渠</h4>
+        <table class="table">
+            @foreach (var item in questMaster.Quest
+                .Where(x => x.Type == HiyoshiCfhWeb.XML.Type.onetime && x.Category == Category.supply))
+            {
+                <tr class="@(StateToClass(item.State))">
+                    <td>
+                        @item.Id
+                    </td>
+                    <td>
+                        @item.Name
+                    </td>
+                </tr>
+            }
+        </table>
+        <h4>工廠</h4>
+        <table class="table">
+            @foreach (var item in questMaster.Quest
+                .Where(x => x.Type == HiyoshiCfhWeb.XML.Type.onetime && x.Category == Category.building))
+            {
+                <tr class="@(StateToClass(item.State))">
+                    <td>
+                        @item.Id
+                    </td>
+                    <td>
+                        @item.Name
+                    </td>
+                </tr>
+            }
+        </table>
+        <h4>改装</h4>
+        <table class="table">
+            @foreach (var item in questMaster.Quest
+                .Where(x => x.Type == HiyoshiCfhWeb.XML.Type.onetime && x.Category == Category.remodelling))
+            {
+                <tr class="@(StateToClass(item.State))">
+                    <td>
+                        @item.Id
+                    </td>
+                    <td>
+                        @item.Name
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>
+
+
 <h3>任務マスター</h3>
 <table class="table">
     <tr>
