@@ -5684,10 +5684,10 @@
   </Quest>
   <Quest Id="D2" Category="expeditions" Type="daily">
     <Name>
-      「遠征」を3回成功させよう！
+      「遠征」を３回成功させよう！
     </Name>
     <Content>
-      本日中に「遠征」を3回成功させよう！
+      本日中に「遠征」３回成功させよう！
     </Content>
     <Bonus>
       <Fuel>
@@ -7763,7 +7763,7 @@
   </Quest>
   <Quest Id="SB03" Category="sortie" Type="onetime">
     <Name>
-      秋刀魚漁：「秋刀魚」を収穫しよう！
+      秋刀魚漁：「秋刀魚」を収獲しよう！
     </Name>
     <Content>
       近海及び北方海域の漁場に展開する敵艦隊を撃破して、「秋刀魚」を3尾入手せよ！
@@ -7803,7 +7803,7 @@
   </Quest>
   <Quest Id="SB04" Category="sortie" Type="onetime">
     <Name>
-      秋刀魚漁：「秋刀魚」をもっと収穫しなきゃ！
+      秋刀魚漁：「秋刀魚」をもっと収獲しなきゃ！
     </Name>
     <Content>
       ちょっと大変だけれど、漁場の安全を確保して「秋刀魚」を10尾確保しなきゃ駄目よ！
