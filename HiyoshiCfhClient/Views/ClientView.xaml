@@ -20,9 +20,6 @@
             <livet:DataContextDisposeAction/>
         </i:EventTrigger>
     </i:Interaction.Triggers>
-    <UserControl.DataContext>
-        <viewModels:ClientViewModel />
-    </UserControl.DataContext>
     <ScrollViewer VerticalScrollBarVisibility="Auto"
                   HorizontalScrollBarVisibility="Disabled"
                   PanningMode="Both">

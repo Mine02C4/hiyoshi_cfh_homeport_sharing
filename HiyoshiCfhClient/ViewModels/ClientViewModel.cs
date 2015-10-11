@@ -285,8 +285,8 @@ namespace HiyoshiCfhClient.ViewModels
             {
                 this.PropertyChanged += HandleLogin;
                 setHandleLogin = true;
-                OpenLoginWindow();
             }
+            OpenLoginWindow();
         }
 
         void HandleLogin(object sender, System.ComponentModel.PropertyChangedEventArgs e)
