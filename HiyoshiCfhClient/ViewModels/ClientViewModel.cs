@@ -161,6 +161,7 @@ namespace HiyoshiCfhClient.ViewModels
                 materials.Fuel, materials.Ammunition, materials.Steel, materials.Bauxite));
             try
             {
+                await PrepareClient();
                 switch (e.PropertyName)
                 {
                     case "Fuel":
