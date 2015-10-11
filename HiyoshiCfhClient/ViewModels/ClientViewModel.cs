@@ -86,6 +86,7 @@ namespace HiyoshiCfhClient.ViewModels
         #endregion
 
         bool IsInited = false;
+        bool setHandleLogin = false;
         PropertyChangedEventListener OrganizationListener = null;
         Client Client = null;
         QuestsTracker QuestsTracker;
@@ -197,6 +198,11 @@ namespace HiyoshiCfhClient.ViewModels
                 OutDebugConsole("認証に失敗しました。再認証が必要です。");
                 ReLogin();
             }
+            catch (AdmiralNotInitialized)
+            {
+                OutDebugConsole("認証が必要です。");
+                ReLogin();
+            }
             catch (Exception ex)
             {
                 OutDebugConsole(ex.ToString());
@@ -275,8 +281,12 @@ namespace HiyoshiCfhClient.ViewModels
         /// </summary>
         private void StartLogin()
         {
-            this.PropertyChanged += HandleLogin;
-            OpenLoginWindow();
+            if (!setHandleLogin)
+            {
+                this.PropertyChanged += HandleLogin;
+                setHandleLogin = true;
+                OpenLoginWindow();
+            }
         }
 
         void HandleLogin(object sender, System.ComponentModel.PropertyChangedEventArgs e)
@@ -284,6 +294,7 @@ namespace HiyoshiCfhClient.ViewModels
             if (CheckToken())
             {
                 this.PropertyChanged -= HandleLogin;
+                setHandleLogin = false;
                 Settings.Current.AccessToken = AccessToken;
                 Settings.Current.TokenType = TokenType;
                 Settings.Current.Save();
@@ -295,6 +306,10 @@ namespace HiyoshiCfhClient.ViewModels
         {
             if (Client == null)
             {
+                if (TokenType == null || AccessToken == null)
+                {
+                    throw new AdmiralNotInitialized();
+                }
                 Client = new Client(TokenType, AccessToken, OutDebugConsole);
                 await Client.InitClientAsync();
             }
