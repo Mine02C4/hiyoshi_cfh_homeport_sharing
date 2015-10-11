@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generation date: 2015/08/20 18:10:25
+// Generation date: 2015/10/11 17:03:15
 namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
 {
     /// <summary>
@@ -51,7 +51,7 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
         /// </summary>
         /// <param name="shipTypeId">Initial value of ShipTypeId.</param>
         /// <param name="sortNumber">Initial value of SortNumber.</param>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         public static ShipType CreateShipType(int shipTypeId, int sortNumber)
         {
             ShipType shipType = new ShipType();
@@ -62,7 +62,7 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
         /// <summary>
         /// There are no comments for Property ShipTypeId in the schema.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         [global::Microsoft.OData.Client.OriginalNameAttribute("ShipTypeId")]
         public int ShipTypeId
         {
@@ -78,14 +78,14 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
                 this.OnPropertyChanged("ShipTypeId");
             }
         }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         private int _ShipTypeId;
         partial void OnShipTypeIdChanging(int value);
         partial void OnShipTypeIdChanged();
         /// <summary>
         /// There are no comments for Property Name in the schema.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         [global::Microsoft.OData.Client.OriginalNameAttribute("Name")]
         public string Name
         {
@@ -101,14 +101,14 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
                 this.OnPropertyChanged("Name");
             }
         }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         private string _Name;
         partial void OnNameChanging(string value);
         partial void OnNameChanged();
         /// <summary>
         /// There are no comments for Property SortNumber in the schema.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         [global::Microsoft.OData.Client.OriginalNameAttribute("SortNumber")]
         public int SortNumber
         {
@@ -124,20 +124,20 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
                 this.OnPropertyChanged("SortNumber");
             }
         }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         private int _SortNumber;
         partial void OnSortNumberChanging(int value);
         partial void OnSortNumberChanged();
         /// <summary>
         /// This event is raised when the value of the property is changed
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         /// <summary>
         /// The value of the property is changed
         /// </summary>
         /// <param name="property">property name</param>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         protected virtual void OnPropertyChanged(string property)
         {
             if ((this.PropertyChanged != null))
@@ -173,7 +173,7 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
         /// <summary>
         /// There are no comments for ShipType in the schema.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         [global::Microsoft.OData.Client.OriginalNameAttribute("ShipType")]
         public global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.ShipTypeSingle ShipType
         {
@@ -190,7 +190,7 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
                 return this._ShipType;
             }
         }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         private global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.ShipTypeSingle _ShipType;
     }
     /// <summary>
@@ -209,7 +209,7 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
         /// <param name="shipInfoId">Initial value of ShipInfoId.</param>
         /// <param name="sortId">Initial value of SortId.</param>
         /// <param name="shipSpeed">Initial value of ShipSpeed.</param>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         public static ShipInfo CreateShipInfo(int shipInfoId, int sortId, global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.ShipSpeed shipSpeed)
         {
             ShipInfo shipInfo = new ShipInfo();
@@ -221,7 +221,7 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
         /// <summary>
         /// There are no comments for Property ShipInfoId in the schema.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         [global::Microsoft.OData.Client.OriginalNameAttribute("ShipInfoId")]
         public int ShipInfoId
         {
@@ -237,14 +237,14 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
                 this.OnPropertyChanged("ShipInfoId");
             }
         }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         private int _ShipInfoId;
         partial void OnShipInfoIdChanging(int value);
         partial void OnShipInfoIdChanged();
         /// <summary>
         /// There are no comments for Property SortId in the schema.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         [global::Microsoft.OData.Client.OriginalNameAttribute("SortId")]
         public int SortId
         {
@@ -260,14 +260,14 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
                 this.OnPropertyChanged("SortId");
             }
         }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         private int _SortId;
         partial void OnSortIdChanging(int value);
         partial void OnSortIdChanged();
         /// <summary>
         /// There are no comments for Property Name in the schema.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         [global::Microsoft.OData.Client.OriginalNameAttribute("Name")]
         public string Name
         {
@@ -283,14 +283,14 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
                 this.OnPropertyChanged("Name");
             }
         }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         private string _Name;
         partial void OnNameChanging(string value);
         partial void OnNameChanged();
         /// <summary>
         /// There are no comments for Property ShipTypeId in the schema.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         [global::Microsoft.OData.Client.OriginalNameAttribute("ShipTypeId")]
         public global::System.Nullable<int> ShipTypeId
         {
@@ -306,14 +306,14 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
                 this.OnPropertyChanged("ShipTypeId");
             }
         }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         private global::System.Nullable<int> _ShipTypeId;
         partial void OnShipTypeIdChanging(global::System.Nullable<int> value);
         partial void OnShipTypeIdChanged();
         /// <summary>
         /// There are no comments for Property ShipSpeed in the schema.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         [global::Microsoft.OData.Client.OriginalNameAttribute("ShipSpeed")]
         public global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.ShipSpeed ShipSpeed
         {
@@ -329,14 +329,14 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
                 this.OnPropertyChanged("ShipSpeed");
             }
         }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         private global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.ShipSpeed _ShipSpeed;
         partial void OnShipSpeedChanging(global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.ShipSpeed value);
         partial void OnShipSpeedChanged();
         /// <summary>
         /// There are no comments for Property NextRemodelingLevel in the schema.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         [global::Microsoft.OData.Client.OriginalNameAttribute("NextRemodelingLevel")]
         public global::System.Nullable<int> NextRemodelingLevel
         {
@@ -352,14 +352,14 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
                 this.OnPropertyChanged("NextRemodelingLevel");
             }
         }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         private global::System.Nullable<int> _NextRemodelingLevel;
         partial void OnNextRemodelingLevelChanging(global::System.Nullable<int> value);
         partial void OnNextRemodelingLevelChanged();
         /// <summary>
         /// There are no comments for Property ShipType in the schema.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         [global::Microsoft.OData.Client.OriginalNameAttribute("ShipType")]
         public global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.ShipType ShipType
         {
@@ -375,20 +375,20 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
                 this.OnPropertyChanged("ShipType");
             }
         }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         private global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.ShipType _ShipType;
         partial void OnShipTypeChanging(global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.ShipType value);
         partial void OnShipTypeChanged();
         /// <summary>
         /// This event is raised when the value of the property is changed
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         /// <summary>
         /// The value of the property is changed
         /// </summary>
         /// <param name="property">property name</param>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         protected virtual void OnPropertyChanged(string property)
         {
             if ((this.PropertyChanged != null))
@@ -424,7 +424,7 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
         /// <summary>
         /// There are no comments for Ships in the schema.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         [global::Microsoft.OData.Client.OriginalNameAttribute("Ships")]
         public global::Microsoft.OData.Client.DataServiceQuery<global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.Ship> Ships
         {
@@ -441,7 +441,7 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
                 return this._Ships;
             }
         }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         private global::Microsoft.OData.Client.DataServiceQuery<global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.Ship> _Ships;
     }
     /// <summary>
@@ -462,7 +462,7 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
         /// <param name="experience">Initial value of Experience.</param>
         /// <param name="level">Initial value of Level.</param>
         /// <param name="maxShipCount">Initial value of MaxShipCount.</param>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         public static Admiral CreateAdmiral(int admiralId, int memberId, int experience, int level, int maxShipCount)
         {
             Admiral admiral = new Admiral();
@@ -476,7 +476,7 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
         /// <summary>
         /// There are no comments for Property AdmiralId in the schema.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         [global::Microsoft.OData.Client.OriginalNameAttribute("AdmiralId")]
         public int AdmiralId
         {
@@ -492,14 +492,14 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
                 this.OnPropertyChanged("AdmiralId");
             }
         }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         private int _AdmiralId;
         partial void OnAdmiralIdChanging(int value);
         partial void OnAdmiralIdChanged();
         /// <summary>
         /// There are no comments for Property MemberId in the schema.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         [global::Microsoft.OData.Client.OriginalNameAttribute("MemberId")]
         public int MemberId
         {
@@ -515,14 +515,14 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
                 this.OnPropertyChanged("MemberId");
             }
         }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         private int _MemberId;
         partial void OnMemberIdChanging(int value);
         partial void OnMemberIdChanged();
         /// <summary>
         /// There are no comments for Property Name in the schema.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         [global::Microsoft.OData.Client.OriginalNameAttribute("Name")]
         public string Name
         {
@@ -538,14 +538,14 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
                 this.OnPropertyChanged("Name");
             }
         }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         private string _Name;
         partial void OnNameChanging(string value);
         partial void OnNameChanged();
         /// <summary>
         /// There are no comments for Property Experience in the schema.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         [global::Microsoft.OData.Client.OriginalNameAttribute("Experience")]
         public int Experience
         {
@@ -561,14 +561,14 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
                 this.OnPropertyChanged("Experience");
             }
         }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         private int _Experience;
         partial void OnExperienceChanging(int value);
         partial void OnExperienceChanged();
         /// <summary>
         /// There are no comments for Property Level in the schema.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         [global::Microsoft.OData.Client.OriginalNameAttribute("Level")]
         public int Level
         {
@@ -584,14 +584,14 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
                 this.OnPropertyChanged("Level");
             }
         }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         private int _Level;
         partial void OnLevelChanging(int value);
         partial void OnLevelChanged();
         /// <summary>
         /// There are no comments for Property MaxShipCount in the schema.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         [global::Microsoft.OData.Client.OriginalNameAttribute("MaxShipCount")]
         public int MaxShipCount
         {
@@ -607,14 +607,14 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
                 this.OnPropertyChanged("MaxShipCount");
             }
         }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         private int _MaxShipCount;
         partial void OnMaxShipCountChanging(int value);
         partial void OnMaxShipCountChanged();
         /// <summary>
         /// There are no comments for Property Rank in the schema.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         [global::Microsoft.OData.Client.OriginalNameAttribute("Rank")]
         public string Rank
         {
@@ -630,14 +630,14 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
                 this.OnPropertyChanged("Rank");
             }
         }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         private string _Rank;
         partial void OnRankChanging(string value);
         partial void OnRankChanged();
         /// <summary>
         /// There are no comments for Property Ships in the schema.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         [global::Microsoft.OData.Client.OriginalNameAttribute("Ships")]
         public global::Microsoft.OData.Client.DataServiceCollection<global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.Ship> Ships
         {
@@ -653,20 +653,20 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
                 this.OnPropertyChanged("Ships");
             }
         }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         private global::Microsoft.OData.Client.DataServiceCollection<global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.Ship> _Ships = new global::Microsoft.OData.Client.DataServiceCollection<global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.Ship>(null, global::Microsoft.OData.Client.TrackingMode.None);
         partial void OnShipsChanging(global::Microsoft.OData.Client.DataServiceCollection<global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.Ship> value);
         partial void OnShipsChanged();
         /// <summary>
         /// This event is raised when the value of the property is changed
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         /// <summary>
         /// The value of the property is changed
         /// </summary>
         /// <param name="property">property name</param>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         protected virtual void OnPropertyChanged(string property)
         {
             if ((this.PropertyChanged != null))
@@ -702,7 +702,7 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
         /// <summary>
         /// There are no comments for Admiral in the schema.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         [global::Microsoft.OData.Client.OriginalNameAttribute("Admiral")]
         public global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.AdmiralSingle Admiral
         {
@@ -719,12 +719,12 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
                 return this._Admiral;
             }
         }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         private global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.AdmiralSingle _Admiral;
         /// <summary>
         /// There are no comments for ShipInfo in the schema.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         [global::Microsoft.OData.Client.OriginalNameAttribute("ShipInfo")]
         public global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.ShipInfoSingle ShipInfo
         {
@@ -741,7 +741,7 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
                 return this._ShipInfo;
             }
         }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         private global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.ShipInfoSingle _ShipInfo;
     }
     /// <summary>
@@ -771,7 +771,7 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
         /// <param name="aA">Initial value of AA.</param>
         /// <param name="armer">Initial value of Armer.</param>
         /// <param name="luck">Initial value of Luck.</param>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         public static Ship CreateShip(int shipUid, 
                     int shipId, 
                     int level, 
@@ -807,7 +807,7 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
         /// <summary>
         /// There are no comments for Property ShipUid in the schema.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         [global::Microsoft.OData.Client.OriginalNameAttribute("ShipUid")]
         public int ShipUid
         {
@@ -823,14 +823,14 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
                 this.OnPropertyChanged("ShipUid");
             }
         }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         private int _ShipUid;
         partial void OnShipUidChanging(int value);
         partial void OnShipUidChanged();
         /// <summary>
         /// There are no comments for Property AdmiralId in the schema.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         [global::Microsoft.OData.Client.OriginalNameAttribute("AdmiralId")]
         public global::System.Nullable<int> AdmiralId
         {
@@ -846,14 +846,14 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
                 this.OnPropertyChanged("AdmiralId");
             }
         }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         private global::System.Nullable<int> _AdmiralId;
         partial void OnAdmiralIdChanging(global::System.Nullable<int> value);
         partial void OnAdmiralIdChanged();
         /// <summary>
         /// There are no comments for Property ShipId in the schema.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         [global::Microsoft.OData.Client.OriginalNameAttribute("ShipId")]
         public int ShipId
         {
@@ -869,14 +869,14 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
                 this.OnPropertyChanged("ShipId");
             }
         }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         private int _ShipId;
         partial void OnShipIdChanging(int value);
         partial void OnShipIdChanged();
         /// <summary>
         /// There are no comments for Property ShipInfoId in the schema.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         [global::Microsoft.OData.Client.OriginalNameAttribute("ShipInfoId")]
         public global::System.Nullable<int> ShipInfoId
         {
@@ -892,14 +892,14 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
                 this.OnPropertyChanged("ShipInfoId");
             }
         }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         private global::System.Nullable<int> _ShipInfoId;
         partial void OnShipInfoIdChanging(global::System.Nullable<int> value);
         partial void OnShipInfoIdChanged();
         /// <summary>
         /// There are no comments for Property Level in the schema.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         [global::Microsoft.OData.Client.OriginalNameAttribute("Level")]
         public int Level
         {
@@ -915,14 +915,14 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
                 this.OnPropertyChanged("Level");
             }
         }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         private int _Level;
         partial void OnLevelChanging(int value);
         partial void OnLevelChanged();
         /// <summary>
         /// There are no comments for Property IsLocked in the schema.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         [global::Microsoft.OData.Client.OriginalNameAttribute("IsLocked")]
         public bool IsLocked
         {
@@ -938,14 +938,14 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
                 this.OnPropertyChanged("IsLocked");
             }
         }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         private bool _IsLocked;
         partial void OnIsLockedChanging(bool value);
         partial void OnIsLockedChanged();
         /// <summary>
         /// There are no comments for Property Exp in the schema.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         [global::Microsoft.OData.Client.OriginalNameAttribute("Exp")]
         public int Exp
         {
@@ -961,14 +961,14 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
                 this.OnPropertyChanged("Exp");
             }
         }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         private int _Exp;
         partial void OnExpChanging(int value);
         partial void OnExpChanged();
         /// <summary>
         /// There are no comments for Property ExpForNextLevel in the schema.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         [global::Microsoft.OData.Client.OriginalNameAttribute("ExpForNextLevel")]
         public int ExpForNextLevel
         {
@@ -984,14 +984,14 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
                 this.OnPropertyChanged("ExpForNextLevel");
             }
         }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         private int _ExpForNextLevel;
         partial void OnExpForNextLevelChanging(int value);
         partial void OnExpForNextLevelChanged();
         /// <summary>
         /// There are no comments for Property Hp in the schema.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         [global::Microsoft.OData.Client.OriginalNameAttribute("Hp")]
         public int Hp
         {
@@ -1007,14 +1007,14 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
                 this.OnPropertyChanged("Hp");
             }
         }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         private int _Hp;
         partial void OnHpChanging(int value);
         partial void OnHpChanged();
         /// <summary>
         /// There are no comments for Property Fuel in the schema.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         [global::Microsoft.OData.Client.OriginalNameAttribute("Fuel")]
         public int Fuel
         {
@@ -1030,14 +1030,14 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
                 this.OnPropertyChanged("Fuel");
             }
         }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         private int _Fuel;
         partial void OnFuelChanging(int value);
         partial void OnFuelChanged();
         /// <summary>
         /// There are no comments for Property Bull in the schema.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         [global::Microsoft.OData.Client.OriginalNameAttribute("Bull")]
         public int Bull
         {
@@ -1053,14 +1053,14 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
                 this.OnPropertyChanged("Bull");
             }
         }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         private int _Bull;
         partial void OnBullChanging(int value);
         partial void OnBullChanged();
         /// <summary>
         /// There are no comments for Property Firepower in the schema.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         [global::Microsoft.OData.Client.OriginalNameAttribute("Firepower")]
         public int Firepower
         {
@@ -1076,14 +1076,14 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
                 this.OnPropertyChanged("Firepower");
             }
         }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         private int _Firepower;
         partial void OnFirepowerChanging(int value);
         partial void OnFirepowerChanged();
         /// <summary>
         /// There are no comments for Property Torpedo in the schema.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         [global::Microsoft.OData.Client.OriginalNameAttribute("Torpedo")]
         public int Torpedo
         {
@@ -1099,14 +1099,14 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
                 this.OnPropertyChanged("Torpedo");
             }
         }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         private int _Torpedo;
         partial void OnTorpedoChanging(int value);
         partial void OnTorpedoChanged();
         /// <summary>
         /// There are no comments for Property AA in the schema.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         [global::Microsoft.OData.Client.OriginalNameAttribute("AA")]
         public int AA
         {
@@ -1122,14 +1122,14 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
                 this.OnPropertyChanged("AA");
             }
         }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         private int _AA;
         partial void OnAAChanging(int value);
         partial void OnAAChanged();
         /// <summary>
         /// There are no comments for Property Armer in the schema.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         [global::Microsoft.OData.Client.OriginalNameAttribute("Armer")]
         public int Armer
         {
@@ -1145,14 +1145,14 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
                 this.OnPropertyChanged("Armer");
             }
         }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         private int _Armer;
         partial void OnArmerChanging(int value);
         partial void OnArmerChanged();
         /// <summary>
         /// There are no comments for Property Luck in the schema.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         [global::Microsoft.OData.Client.OriginalNameAttribute("Luck")]
         public int Luck
         {
@@ -1168,14 +1168,14 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
                 this.OnPropertyChanged("Luck");
             }
         }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         private int _Luck;
         partial void OnLuckChanging(int value);
         partial void OnLuckChanged();
         /// <summary>
         /// There are no comments for Property SortieTag in the schema.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         [global::Microsoft.OData.Client.OriginalNameAttribute("SortieTag")]
         public global::System.Nullable<int> SortieTag
         {
@@ -1191,14 +1191,14 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
                 this.OnPropertyChanged("SortieTag");
             }
         }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         private global::System.Nullable<int> _SortieTag;
         partial void OnSortieTagChanging(global::System.Nullable<int> value);
         partial void OnSortieTagChanged();
         /// <summary>
         /// There are no comments for Property Admiral in the schema.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         [global::Microsoft.OData.Client.OriginalNameAttribute("Admiral")]
         public global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.Admiral Admiral
         {
@@ -1214,14 +1214,14 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
                 this.OnPropertyChanged("Admiral");
             }
         }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         private global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.Admiral _Admiral;
         partial void OnAdmiralChanging(global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.Admiral value);
         partial void OnAdmiralChanged();
         /// <summary>
         /// There are no comments for Property ShipInfo in the schema.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         [global::Microsoft.OData.Client.OriginalNameAttribute("ShipInfo")]
         public global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.ShipInfo ShipInfo
         {
@@ -1237,20 +1237,20 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
                 this.OnPropertyChanged("ShipInfo");
             }
         }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         private global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.ShipInfo _ShipInfo;
         partial void OnShipInfoChanging(global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.ShipInfo value);
         partial void OnShipInfoChanged();
         /// <summary>
         /// This event is raised when the value of the property is changed
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         /// <summary>
         /// The value of the property is changed
         /// </summary>
         /// <param name="property">property name</param>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         protected virtual void OnPropertyChanged(string property)
         {
             if ((this.PropertyChanged != null))
@@ -1286,7 +1286,7 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
         /// <summary>
         /// There are no comments for Admiral in the schema.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         [global::Microsoft.OData.Client.OriginalNameAttribute("Admiral")]
         public global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.AdmiralSingle Admiral
         {
@@ -1303,7 +1303,7 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
                 return this._Admiral;
             }
         }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         private global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.AdmiralSingle _Admiral;
     }
     /// <summary>
@@ -1329,7 +1329,7 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
         /// <param name="bull">Initial value of Bull.</param>
         /// <param name="steel">Initial value of Steel.</param>
         /// <param name="bauxite">Initial value of Bauxite.</param>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         public static Quest CreateQuest(int questId, 
                     int questNo, 
                     global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.QuestCategory category, 
@@ -1357,7 +1357,7 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
         /// <summary>
         /// There are no comments for Property QuestId in the schema.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         [global::Microsoft.OData.Client.OriginalNameAttribute("QuestId")]
         public int QuestId
         {
@@ -1373,14 +1373,14 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
                 this.OnPropertyChanged("QuestId");
             }
         }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         private int _QuestId;
         partial void OnQuestIdChanging(int value);
         partial void OnQuestIdChanged();
         /// <summary>
         /// There are no comments for Property QuestNo in the schema.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         [global::Microsoft.OData.Client.OriginalNameAttribute("QuestNo")]
         public int QuestNo
         {
@@ -1396,14 +1396,14 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
                 this.OnPropertyChanged("QuestNo");
             }
         }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         private int _QuestNo;
         partial void OnQuestNoChanging(int value);
         partial void OnQuestNoChanged();
         /// <summary>
         /// There are no comments for Property AdmiralId in the schema.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         [global::Microsoft.OData.Client.OriginalNameAttribute("AdmiralId")]
         public global::System.Nullable<int> AdmiralId
         {
@@ -1419,14 +1419,14 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
                 this.OnPropertyChanged("AdmiralId");
             }
         }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         private global::System.Nullable<int> _AdmiralId;
         partial void OnAdmiralIdChanging(global::System.Nullable<int> value);
         partial void OnAdmiralIdChanged();
         /// <summary>
         /// There are no comments for Property Category in the schema.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         [global::Microsoft.OData.Client.OriginalNameAttribute("Category")]
         public global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.QuestCategory Category
         {
@@ -1442,14 +1442,14 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
                 this.OnPropertyChanged("Category");
             }
         }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         private global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.QuestCategory _Category;
         partial void OnCategoryChanging(global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.QuestCategory value);
         partial void OnCategoryChanged();
         /// <summary>
         /// There are no comments for Property Type in the schema.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         [global::Microsoft.OData.Client.OriginalNameAttribute("Type")]
         public global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.QuestType Type
         {
@@ -1465,14 +1465,14 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
                 this.OnPropertyChanged("Type");
             }
         }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         private global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.QuestType _Type;
         partial void OnTypeChanging(global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.QuestType value);
         partial void OnTypeChanged();
         /// <summary>
         /// There are no comments for Property Name in the schema.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         [global::Microsoft.OData.Client.OriginalNameAttribute("Name")]
         public string Name
         {
@@ -1488,14 +1488,14 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
                 this.OnPropertyChanged("Name");
             }
         }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         private string _Name;
         partial void OnNameChanging(string value);
         partial void OnNameChanged();
         /// <summary>
         /// There are no comments for Property Content in the schema.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         [global::Microsoft.OData.Client.OriginalNameAttribute("Content")]
         public string Content
         {
@@ -1511,14 +1511,14 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
                 this.OnPropertyChanged("Content");
             }
         }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         private string _Content;
         partial void OnContentChanging(string value);
         partial void OnContentChanged();
         /// <summary>
         /// There are no comments for Property Fuel in the schema.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         [global::Microsoft.OData.Client.OriginalNameAttribute("Fuel")]
         public int Fuel
         {
@@ -1534,14 +1534,14 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
                 this.OnPropertyChanged("Fuel");
             }
         }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         private int _Fuel;
         partial void OnFuelChanging(int value);
         partial void OnFuelChanged();
         /// <summary>
         /// There are no comments for Property Bull in the schema.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         [global::Microsoft.OData.Client.OriginalNameAttribute("Bull")]
         public int Bull
         {
@@ -1557,14 +1557,14 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
                 this.OnPropertyChanged("Bull");
             }
         }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         private int _Bull;
         partial void OnBullChanging(int value);
         partial void OnBullChanged();
         /// <summary>
         /// There are no comments for Property Steel in the schema.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         [global::Microsoft.OData.Client.OriginalNameAttribute("Steel")]
         public int Steel
         {
@@ -1580,14 +1580,14 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
                 this.OnPropertyChanged("Steel");
             }
         }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         private int _Steel;
         partial void OnSteelChanging(int value);
         partial void OnSteelChanged();
         /// <summary>
         /// There are no comments for Property Bauxite in the schema.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         [global::Microsoft.OData.Client.OriginalNameAttribute("Bauxite")]
         public int Bauxite
         {
@@ -1603,14 +1603,14 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
                 this.OnPropertyChanged("Bauxite");
             }
         }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         private int _Bauxite;
         partial void OnBauxiteChanging(int value);
         partial void OnBauxiteChanged();
         /// <summary>
         /// There are no comments for Property Admiral in the schema.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         [global::Microsoft.OData.Client.OriginalNameAttribute("Admiral")]
         public global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.Admiral Admiral
         {
@@ -1626,20 +1626,20 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
                 this.OnPropertyChanged("Admiral");
             }
         }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         private global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.Admiral _Admiral;
         partial void OnAdmiralChanging(global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.Admiral value);
         partial void OnAdmiralChanged();
         /// <summary>
         /// This event is raised when the value of the property is changed
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         /// <summary>
         /// The value of the property is changed
         /// </summary>
         /// <param name="property">property name</param>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         protected virtual void OnPropertyChanged(string property)
         {
             if ((this.PropertyChanged != null))
@@ -1675,7 +1675,7 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
         /// <summary>
         /// There are no comments for Admiral in the schema.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         [global::Microsoft.OData.Client.OriginalNameAttribute("Admiral")]
         public global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.AdmiralSingle Admiral
         {
@@ -1692,7 +1692,7 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
                 return this._Admiral;
             }
         }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         private global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.AdmiralSingle _Admiral;
     }
     /// <summary>
@@ -1711,7 +1711,7 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
         /// <param name="materialRecordId">Initial value of MaterialRecordId.</param>
         /// <param name="type">Initial value of Type.</param>
         /// <param name="value">Initial value of Value.</param>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         public static MaterialRecord CreateMaterialRecord(int materialRecordId, global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.MaterialType type, int value)
         {
             MaterialRecord materialRecord = new MaterialRecord();
@@ -1723,7 +1723,7 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
         /// <summary>
         /// There are no comments for Property MaterialRecordId in the schema.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         [global::Microsoft.OData.Client.OriginalNameAttribute("MaterialRecordId")]
         public int MaterialRecordId
         {
@@ -1739,14 +1739,14 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
                 this.OnPropertyChanged("MaterialRecordId");
             }
         }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         private int _MaterialRecordId;
         partial void OnMaterialRecordIdChanging(int value);
         partial void OnMaterialRecordIdChanged();
         /// <summary>
         /// There are no comments for Property AdmiralId in the schema.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         [global::Microsoft.OData.Client.OriginalNameAttribute("AdmiralId")]
         public global::System.Nullable<int> AdmiralId
         {
@@ -1762,14 +1762,14 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
                 this.OnPropertyChanged("AdmiralId");
             }
         }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         private global::System.Nullable<int> _AdmiralId;
         partial void OnAdmiralIdChanging(global::System.Nullable<int> value);
         partial void OnAdmiralIdChanged();
         /// <summary>
         /// There are no comments for Property Type in the schema.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         [global::Microsoft.OData.Client.OriginalNameAttribute("Type")]
         public global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.MaterialType Type
         {
@@ -1785,14 +1785,14 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
                 this.OnPropertyChanged("Type");
             }
         }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         private global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.MaterialType _Type;
         partial void OnTypeChanging(global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.MaterialType value);
         partial void OnTypeChanged();
         /// <summary>
         /// There are no comments for Property Value in the schema.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         [global::Microsoft.OData.Client.OriginalNameAttribute("Value")]
         public int Value
         {
@@ -1808,14 +1808,14 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
                 this.OnPropertyChanged("Value");
             }
         }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         private int _Value;
         partial void OnValueChanging(int value);
         partial void OnValueChanged();
         /// <summary>
         /// There are no comments for Property Admiral in the schema.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         [global::Microsoft.OData.Client.OriginalNameAttribute("Admiral")]
         public global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.Admiral Admiral
         {
@@ -1831,20 +1831,20 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
                 this.OnPropertyChanged("Admiral");
             }
         }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         private global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.Admiral _Admiral;
         partial void OnAdmiralChanging(global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.Admiral value);
         partial void OnAdmiralChanged();
         /// <summary>
         /// This event is raised when the value of the property is changed
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         /// <summary>
         /// The value of the property is changed
         /// </summary>
         /// <param name="property">property name</param>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         protected virtual void OnPropertyChanged(string property)
         {
             if ((this.PropertyChanged != null))
@@ -2079,7 +2079,7 @@ namespace HiyoshiCfhClient.Default
         /// <summary>
         /// Initialize a new Container object.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         public Container(global::System.Uri serviceRoot) : 
                 base(serviceRoot, global::Microsoft.OData.Client.ODataProtocolVersion.V4)
         {
@@ -2095,7 +2095,7 @@ namespace HiyoshiCfhClient.Default
         /// in Visual Studio is different from the one indicated in the
         /// server schema, use type-mappers to map between the two.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         protected global::System.Type ResolveTypeFromName(string typeName)
         {
             global::System.Type resolvedType = this.DefaultResolveType(typeName, "HiyoshiCfhWeb.Models", "HiyoshiCfhClient.HiyoshiCfhWeb.Models");
@@ -2115,7 +2115,7 @@ namespace HiyoshiCfhClient.Default
         /// in Visual Studio is different from the one indicated in the
         /// server schema, use type-mappers to map between the two.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         protected string ResolveNameFromType(global::System.Type clientType)
         {
             global::Microsoft.OData.Client.OriginalNameAttribute originalNameAttribute = (global::Microsoft.OData.Client.OriginalNameAttribute)global::System.Linq.Enumerable.SingleOrDefault(global::Microsoft.OData.Client.Utility.GetCustomAttributes(clientType, typeof(global::Microsoft.OData.Client.OriginalNameAttribute), true));
@@ -2140,7 +2140,7 @@ namespace HiyoshiCfhClient.Default
         /// <summary>
         /// There are no comments for ShipTypes in the schema.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         [global::Microsoft.OData.Client.OriginalNameAttribute("ShipTypes")]
         public global::Microsoft.OData.Client.DataServiceQuery<global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.ShipType> ShipTypes
         {
@@ -2153,12 +2153,12 @@ namespace HiyoshiCfhClient.Default
                 return this._ShipTypes;
             }
         }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         private global::Microsoft.OData.Client.DataServiceQuery<global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.ShipType> _ShipTypes;
         /// <summary>
         /// There are no comments for ShipInfoes in the schema.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         [global::Microsoft.OData.Client.OriginalNameAttribute("ShipInfoes")]
         public global::Microsoft.OData.Client.DataServiceQuery<global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.ShipInfo> ShipInfoes
         {
@@ -2171,12 +2171,12 @@ namespace HiyoshiCfhClient.Default
                 return this._ShipInfoes;
             }
         }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         private global::Microsoft.OData.Client.DataServiceQuery<global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.ShipInfo> _ShipInfoes;
         /// <summary>
         /// There are no comments for Admirals in the schema.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         [global::Microsoft.OData.Client.OriginalNameAttribute("Admirals")]
         public global::Microsoft.OData.Client.DataServiceQuery<global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.Admiral> Admirals
         {
@@ -2189,12 +2189,12 @@ namespace HiyoshiCfhClient.Default
                 return this._Admirals;
             }
         }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         private global::Microsoft.OData.Client.DataServiceQuery<global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.Admiral> _Admirals;
         /// <summary>
         /// There are no comments for Ships in the schema.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         [global::Microsoft.OData.Client.OriginalNameAttribute("Ships")]
         public global::Microsoft.OData.Client.DataServiceQuery<global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.Ship> Ships
         {
@@ -2207,12 +2207,12 @@ namespace HiyoshiCfhClient.Default
                 return this._Ships;
             }
         }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         private global::Microsoft.OData.Client.DataServiceQuery<global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.Ship> _Ships;
         /// <summary>
         /// There are no comments for Quests in the schema.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         [global::Microsoft.OData.Client.OriginalNameAttribute("Quests")]
         public global::Microsoft.OData.Client.DataServiceQuery<global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.Quest> Quests
         {
@@ -2225,12 +2225,12 @@ namespace HiyoshiCfhClient.Default
                 return this._Quests;
             }
         }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         private global::Microsoft.OData.Client.DataServiceQuery<global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.Quest> _Quests;
         /// <summary>
         /// There are no comments for MaterialRecords in the schema.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         [global::Microsoft.OData.Client.OriginalNameAttribute("MaterialRecords")]
         public global::Microsoft.OData.Client.DataServiceQuery<global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.MaterialRecord> MaterialRecords
         {
@@ -2243,12 +2243,12 @@ namespace HiyoshiCfhClient.Default
                 return this._MaterialRecords;
             }
         }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         private global::Microsoft.OData.Client.DataServiceQuery<global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.MaterialRecord> _MaterialRecords;
         /// <summary>
         /// There are no comments for ShipTypes in the schema.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         public void AddToShipTypes(global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.ShipType shipType)
         {
             base.AddObject("ShipTypes", shipType);
@@ -2256,7 +2256,7 @@ namespace HiyoshiCfhClient.Default
         /// <summary>
         /// There are no comments for ShipInfoes in the schema.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         public void AddToShipInfoes(global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.ShipInfo shipInfo)
         {
             base.AddObject("ShipInfoes", shipInfo);
@@ -2264,7 +2264,7 @@ namespace HiyoshiCfhClient.Default
         /// <summary>
         /// There are no comments for Admirals in the schema.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         public void AddToAdmirals(global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.Admiral admiral)
         {
             base.AddObject("Admirals", admiral);
@@ -2272,7 +2272,7 @@ namespace HiyoshiCfhClient.Default
         /// <summary>
         /// There are no comments for Ships in the schema.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         public void AddToShips(global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.Ship ship)
         {
             base.AddObject("Ships", ship);
@@ -2280,7 +2280,7 @@ namespace HiyoshiCfhClient.Default
         /// <summary>
         /// There are no comments for Quests in the schema.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         public void AddToQuests(global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.Quest quest)
         {
             base.AddObject("Quests", quest);
@@ -2288,17 +2288,17 @@ namespace HiyoshiCfhClient.Default
         /// <summary>
         /// There are no comments for MaterialRecords in the schema.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         public void AddToMaterialRecords(global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.MaterialRecord materialRecord)
         {
             base.AddObject("MaterialRecords", materialRecord);
         }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         private abstract class GeneratedEdmModel
         {
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
             private static global::Microsoft.OData.Edm.IEdmModel ParsedModel = LoadModelFromString();
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
             private const string Edmx = @"<edmx:Edmx Version=""4.0"" xmlns:edmx=""http://docs.oasis-open.org/odata/ns/edmx"">
   <edmx:DataServices>
     <Schema Namespace=""HiyoshiCfhWeb.Models"" xmlns=""http://docs.oasis-open.org/odata/ns/edm"">
@@ -2449,12 +2449,12 @@ namespace HiyoshiCfhClient.Default
     </Schema>
   </edmx:DataServices>
 </edmx:Edmx>";
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
             public static global::Microsoft.OData.Edm.IEdmModel GetInstance()
             {
                 return ParsedModel;
             }
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
             private static global::Microsoft.OData.Edm.IEdmModel LoadModelFromString()
             {
                 global::System.Xml.XmlReader reader = CreateXmlReader(Edmx);
@@ -2467,7 +2467,7 @@ namespace HiyoshiCfhClient.Default
                     ((global::System.IDisposable)(reader)).Dispose();
                 }
             }
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.3.0")]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
             private static global::System.Xml.XmlReader CreateXmlReader(string edmxToParse)
             {
                 return global::System.Xml.XmlReader.Create(new global::System.IO.StringReader(edmxToParse));
