@@ -63,6 +63,40 @@ namespace HiyoshiCfhWeb.Controllers
                     }
                 }
             }
+
+            // ウィークリーはデイリーがトリガーのため、デイリーをリセットされると、
+            // 表示状況からは決定論的に進捗を求められない。
+            // そのため、Bw9、Bw7が完了しない前提で、未完了を初期値として、
+            // 表示された任務から依存するものを完了済みにするアプローチをとる。
+            Action<XML.Quest> fdig = null;
+            fdig = qid =>
+            {
+                qid.State = XML.QuestState.Achieved;
+                foreach (var item in qid.Dependency)
+                {
+                    var q = questMaster.Quest.Where(x => x.Id == item.Id).FirstOrDefault();
+                    if (q != null && qid.Type == q.Type)
+                    {
+                        fdig(q);
+                    }
+                }
+            };
+            foreach (var quest in questMaster.Quest
+                .Where(x => x.Type == XML.Type.weekly && x.Category == XML.Category.sortie))
+            {
+                quest.State = XML.QuestState.Invisible;
+            }
+            foreach (var quest in quests
+                .Where(x => x.Type == QuestType.Weekly && x.Category == QuestCategory.Sortie))
+            {
+                var match = questMaster.Quest.Where(x => x.Compare(quest));
+                foreach (var m in match)
+                {
+                    m.State = XML.QuestState.Visible;
+                    fdig(m);
+                }
+            }
+            // すべての任務に対して逆辺をたどり、未完了をマークしていく。
             Action<XML.Quest> dig = null;
             dig = qid =>
             {
@@ -72,7 +106,10 @@ namespace HiyoshiCfhWeb.Controllers
                 {
                     foreach (var q in qs)
                     {
-                        dig(q);
+                        if (qid.Type == XML.Type.onetime || qid.Type == q.Type)
+                        {
+                            dig(q);
+                        }
                     }
                 }
             };
@@ -94,12 +131,20 @@ namespace HiyoshiCfhWeb.Controllers
         {
             var admiral = db.Admirals.Where(x => x.Name.Equals(id)).First();
             var types = param.Split('_').ToList();
-            var results = db.Ships.Where(x => x.AdmiralId == admiral.AdmiralId && types.Any(key => x.ShipInfo.ShipType.Name == key))
-                .Join(db.ShipInfoes, ship => ship.ShipInfoId, shipInfo => shipInfo.ShipInfoId, (ship, shipInfo) => new
-            {
-                ship,
-                shipInfo
-            }).OrderByDescending(x => x.ship.Level);
+            var results = db.Ships
+                .Where(x => x.AdmiralId == admiral.AdmiralId &&
+                    types.Any(key => x.ShipInfo.ShipType.Name == key))
+                .Join(
+                    db.ShipInfoes,
+                    ship => ship.ShipInfoId,
+                    shipInfo => shipInfo.ShipInfoId,
+                    (ship, shipInfo)
+                    => new
+                    {
+                        ship,
+                        shipInfo
+                    })
+                .OrderByDescending(x => x.ship.Level);
             List<Ship> ships = new List<Ship>();
             foreach (var result in results)
             {
@@ -137,42 +182,55 @@ namespace HiyoshiCfhWeb.Controllers
                 var obj =
                     material.Select(m =>
                     {
-                        var count = db.MaterialRecords.Where(x => x.AdmiralId == admiral.AdmiralId && x.Type == m.Type).Count();
+                        var count = db.MaterialRecords
+                            .Where(x => x.AdmiralId == admiral.AdmiralId && x.Type == m.Type)
+                            .Count();
                         if (count <= nlimit)
                         {
                             return new
                             {
                                 key = m.Name,
-                                values = db.MaterialRecords.Where(x => x.AdmiralId == admiral.AdmiralId && x.Type == m.Type).OrderBy(x => x.TimeUtc)
-                                    .Select(x => new
-                                    {
-                                        x.TimeUtc,
-                                        x.Value
-                                    }).ToList().Select(x => new
-                                    {
-                                        time = x.TimeUtc.UtcToJst().ToString("O"),
-                                        value = x.Value
-                                    }).ToArray()
+                                values = db.MaterialRecords
+                                .Where(x => x.AdmiralId == admiral.AdmiralId && x.Type == m.Type)
+                                .OrderBy(x => x.TimeUtc)
+                                .Select(x => new
+                                {
+                                    x.TimeUtc,
+                                    x.Value
+                                }).ToList()
+                                .Select(x => new
+                                {
+                                    time = x.TimeUtc.UtcToJst().ToString("O"),
+                                    value = x.Value
+                                }).ToArray()
                             };
                         }
                         else
                         {
-                            var values = db.MaterialRecords.Where(x => x.AdmiralId == admiral.AdmiralId && x.Type == m.Type).OrderBy(x => x.TimeUtc)
-                                    .Select(x => new
-                                    {
-                                        x.TimeUtc,
-                                        x.Value
-                                    }).ToList().Where((x, i) => i % (count / nlimit + 1) == 0).Select(x => new
-                                    {
-                                        time = x.TimeUtc.UtcToJst().ToString("O"),
-                                        value = x.Value
-                                    }).ToList();
+                            var values = db.MaterialRecords
+                                .Where(x => x.AdmiralId == admiral.AdmiralId && x.Type == m.Type)
+                                .OrderBy(x => x.TimeUtc)
+                                .Select(x => new
+                                {
+                                    x.TimeUtc,
+                                    x.Value
+                                })
+                                .ToList().Where((x, i) => i % (count / nlimit + 1) == 0)
+                                .Select(x => new
+                                {
+                                    time = x.TimeUtc.UtcToJst().ToString("O"),
+                                    value = x.Value
+                                }).ToList();
                             values.Add(new
-                                    {
-                                        time = DateTime.UtcNow.UtcToJst().ToString("O"),
-                                        value = db.MaterialRecords.Where(x => x.AdmiralId == admiral.AdmiralId && x.Type == m.Type).OrderByDescending(x => x.TimeUtc).First().Value
-                                    }
-                                );
+                                {
+                                    time = DateTime.UtcNow.UtcToJst().ToString("O"),
+                                    value = db.MaterialRecords
+                                        .Where(x => x.AdmiralId == admiral.AdmiralId &&
+                                            x.Type == m.Type)
+                                        .OrderByDescending(x => x.TimeUtc)
+                                        .First().Value
+                                }
+                            );
                             return new
                             {
                                 key = m.Name,
@@ -186,7 +244,9 @@ namespace HiyoshiCfhWeb.Controllers
             }
             else
             {
-                var records = db.MaterialRecords.Where(x => x.AdmiralId == admiral.AdmiralId).OrderBy(x => x.TimeUtc);
+                var records = db.MaterialRecords
+                    .Where(x => x.AdmiralId == admiral.AdmiralId)
+                    .OrderBy(x => x.TimeUtc);
                 return View(Tuple.Create(admiral, records));
             }
         }
