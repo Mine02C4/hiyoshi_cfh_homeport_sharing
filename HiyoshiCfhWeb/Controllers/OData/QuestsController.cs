@@ -1,4 +1,5 @@
 ﻿using HiyoshiCfhWeb.Models;
+using System;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
@@ -45,6 +46,7 @@ namespace HiyoshiCfhWeb.Controllers.OData
             }
 
             patch.Put(quest);
+            quest.Admiral.UpdateQuestsUtc = DateTime.UtcNow;
 
             try
             {
@@ -73,6 +75,7 @@ namespace HiyoshiCfhWeb.Controllers.OData
                 return BadRequest(ModelState);
             }
 
+            quest.Admiral.UpdateQuestsUtc = DateTime.UtcNow;
             db.Quests.Add(quest);
             db.SaveChanges();
 
@@ -97,6 +100,7 @@ namespace HiyoshiCfhWeb.Controllers.OData
             }
 
             patch.Patch(quest);
+            quest.Admiral.UpdateQuestsUtc = DateTime.UtcNow;
 
             try
             {
@@ -126,6 +130,7 @@ namespace HiyoshiCfhWeb.Controllers.OData
                 return NotFound();
             }
 
+            quest.Admiral.UpdateQuestsUtc = DateTime.UtcNow;
             db.Quests.Remove(quest);
             db.SaveChanges();
 

@@ -57,8 +57,18 @@ namespace HiyoshiCfhWeb.Models
         /// </summary>
         public string Rank { get; set; }
 
+        /// <summary>
+        /// 提督情報の最終更新日時
+        /// </summary>
         [IgnoreDataMember]
         [DateTimeKind(DateTimeKind.Utc)]
         public DateTime UpdateUtc { get; set; }
+
+        /// <summary>
+        /// 任務の最終更新日時
+        /// </summary>
+        [IgnoreDataMember]
+        [DateTimeKind(DateTimeKind.Utc)]
+        public DateTime? UpdateQuestsUtc { get; set; }
     }
 }
