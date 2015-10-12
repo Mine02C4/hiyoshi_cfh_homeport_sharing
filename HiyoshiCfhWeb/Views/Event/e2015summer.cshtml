@@ -1,5 +1,5 @@
-﻿@model List<HiyoshiCfhWeb.Models.Admiral>
-
+﻿@using HiyoshiCfhWeb.Extensions
+@model List<HiyoshiCfhWeb.Models.Admiral>
 @{
     ViewBag.Title = "2015年 夏 イベント 「反撃！第二次SN作戦」";
     HiyoshiCfhWeb.Models.Ship ship;
@@ -156,7 +156,7 @@
                     if (start != null)
                     {
                         <td style="border-left: 2px solid #DDD"
-                            title="@TimeZoneInfo.ConvertTimeFromUtc(start.TimeUtc, TimeZoneInfo.FindSystemTimeZoneById("Tokyo Standard Time")).ToString("yyyy年M月d日 HH:mm:ss")">
+                            title="@start.TimeUtc.UtcToJst().ToString("yyyy年M月d日 HH:mm:ss")">
                             @start.Value
                         </td>
                     }
@@ -166,7 +166,7 @@
                     }
                     if (end != null)
                     {
-                        <td title="@TimeZoneInfo.ConvertTimeFromUtc(end.TimeUtc, TimeZoneInfo.FindSystemTimeZoneById("Tokyo Standard Time")).ToString("yyyy年M月d日 HH:mm:ss")">
+                        <td title="@end.TimeUtc.UtcToJst().ToString("yyyy年M月d日 HH:mm:ss")">
                             @end.Value
                         </td>
                     }

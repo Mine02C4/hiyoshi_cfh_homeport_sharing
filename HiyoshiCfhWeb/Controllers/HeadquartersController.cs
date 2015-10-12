@@ -1,4 +1,5 @@
-﻿using HiyoshiCfhWeb.Models;
+﻿using HiyoshiCfhWeb.Extensions;
+using HiyoshiCfhWeb.Models;
 using XmlQuests = HiyoshiCfhWeb.XML.Quests;
 using System.Web.Mvc;
 using System.Linq;
@@ -149,7 +150,7 @@ namespace HiyoshiCfhWeb.Controllers
                                         x.Value
                                     }).ToList().Select(x => new
                                     {
-                                        time = TimeZoneInfo.ConvertTimeFromUtc(x.TimeUtc, TimeZoneInfo.FindSystemTimeZoneById("Tokyo Standard Time")).ToString("O"),
+                                        time = x.TimeUtc.UtcToJst().ToString("O"),
                                         value = x.Value
                                     }).ToArray()
                             };
@@ -163,12 +164,12 @@ namespace HiyoshiCfhWeb.Controllers
                                         x.Value
                                     }).ToList().Where((x, i) => i % (count / nlimit + 1) == 0).Select(x => new
                                     {
-                                        time = TimeZoneInfo.ConvertTimeFromUtc(x.TimeUtc, TimeZoneInfo.FindSystemTimeZoneById("Tokyo Standard Time")).ToString("O"),
+                                        time = x.TimeUtc.UtcToJst().ToString("O"),
                                         value = x.Value
                                     }).ToList();
                             values.Add(new
                                     {
-                                        time = TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, TimeZoneInfo.FindSystemTimeZoneById("Tokyo Standard Time")).ToString("O"),
+                                        time = DateTime.UtcNow.UtcToJst().ToString("O"),
                                         value = db.MaterialRecords.Where(x => x.AdmiralId == admiral.AdmiralId && x.Type == m.Type).OrderByDescending(x => x.TimeUtc).First().Value
                                     }
                                 );

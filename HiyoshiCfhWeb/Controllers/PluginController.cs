@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HiyoshiCfhWeb.Extensions;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.IO.Compression;
@@ -40,8 +41,7 @@ namespace HiyoshiCfhWeb.Controllers
                 foreach (var file in PluginFiles)
                 {
                     var entry = zip.CreateEntry(file.Name);
-                    entry.LastWriteTime = TimeZoneInfo.ConvertTimeFromUtc(file.LastWriteTimeUtc,
-                        TimeZoneInfo.FindSystemTimeZoneById("Tokyo Standard Time"));
+                    entry.LastWriteTime = file.LastWriteTimeUtc.UtcToJst();
                     using (var writer = new BinaryWriter(entry.Open()))
                     {
                         writer.Write(System.IO.File.ReadAllBytes(file.FullName));

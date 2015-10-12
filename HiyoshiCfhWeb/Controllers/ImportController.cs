@@ -1,4 +1,5 @@
-﻿using HiyoshiCfhWeb.Models;
+﻿using HiyoshiCfhWeb.Extensions;
+using HiyoshiCfhWeb.Models;
 using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
@@ -69,7 +70,7 @@ namespace HiyoshiCfhWeb.Controllers
                         while (reader.Read())
                         {
                             var record = new MaterialRecord();
-                            record.TimeUtc = TimeZoneInfo.ConvertTimeToUtc(reader.GetDateTime(1), TimeZoneInfo.FindSystemTimeZoneById("Tokyo Standard Time"));
+                            record.TimeUtc = reader.GetDateTime(1).JstToUtc();
                             record.Type = (MaterialType)reader.GetInt32(2);
                             record.Value = reader.GetInt32(3);
                             record.AdmiralId = admiral.AdmiralId;

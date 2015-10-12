@@ -1,5 +1,6 @@
-﻿@model HiyoshiCfhWeb.Models.Admiral
-<h2>提督基本情報 (@TimeZoneInfo.ConvertTimeFromUtc(Model.UpdateUtc, TimeZoneInfo.FindSystemTimeZoneById("Tokyo Standard Time")).ToString("yyyy年M月d日 HH:mm:ss") 時点)</h2>
+﻿@using HiyoshiCfhWeb.Extensions
+@model HiyoshiCfhWeb.Models.Admiral
+<h2>提督基本情報 (@Model.UpdateUtc.UtcToJst().ToString("yyyy年M月d日 HH:mm:ss") 時点)</h2>
 <h3>@Model.Name 提督</h3>
 <p>司令部レベル: Lv. @Model.Level</p>
 <p>累積経験値: @Model.Experience</p>
