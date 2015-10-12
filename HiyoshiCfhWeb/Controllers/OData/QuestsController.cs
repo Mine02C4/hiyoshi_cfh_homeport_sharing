@@ -46,7 +46,11 @@ namespace HiyoshiCfhWeb.Controllers.OData
             }
 
             patch.Put(quest);
-            quest.Admiral.UpdateQuestsUtc = DateTime.UtcNow;
+            var admiral = db.Admirals.Where(x => x.AdmiralId == quest.AdmiralId).FirstOrDefault();
+            if (admiral != null)
+            {
+                admiral.UpdateQuestsUtc = DateTime.UtcNow;
+            }
 
             try
             {
@@ -75,7 +79,11 @@ namespace HiyoshiCfhWeb.Controllers.OData
                 return BadRequest(ModelState);
             }
 
-            quest.Admiral.UpdateQuestsUtc = DateTime.UtcNow;
+            var admiral = db.Admirals.Where(x => x.AdmiralId == quest.AdmiralId).FirstOrDefault();
+            if (admiral != null)
+            {
+                admiral.UpdateQuestsUtc = DateTime.UtcNow;
+            }
             db.Quests.Add(quest);
             db.SaveChanges();
 
@@ -100,7 +108,11 @@ namespace HiyoshiCfhWeb.Controllers.OData
             }
 
             patch.Patch(quest);
-            quest.Admiral.UpdateQuestsUtc = DateTime.UtcNow;
+            var admiral = db.Admirals.Where(x => x.AdmiralId == quest.AdmiralId).FirstOrDefault();
+            if (admiral != null)
+            {
+                admiral.UpdateQuestsUtc = DateTime.UtcNow;
+            }
 
             try
             {
@@ -130,7 +142,11 @@ namespace HiyoshiCfhWeb.Controllers.OData
                 return NotFound();
             }
 
-            quest.Admiral.UpdateQuestsUtc = DateTime.UtcNow;
+            var admiral = db.Admirals.Where(x => x.AdmiralId == quest.AdmiralId).FirstOrDefault();
+            if (admiral != null)
+            {
+                admiral.UpdateQuestsUtc = DateTime.UtcNow;
+            }
             db.Quests.Remove(quest);
             db.SaveChanges();
 
