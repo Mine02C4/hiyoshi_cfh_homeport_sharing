@@ -129,17 +129,22 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
         {
             QuestNo = quest.api_no;
             Category = (QuestCategory)quest.api_category;
-            if (Enum.IsDefined(typeof(QuestType), quest.api_type))
+            switch (quest.api_type)
             {
-                Type = (QuestType)quest.api_type;
-            }
-            else if (quest.api_type == 5)
-            {
-                Type = QuestType.Daily;
-            }
-            else
-            {
-                Type = QuestType.Monthly;
+                case 1:
+                    Type = QuestType.OneTime;
+                    break;
+                case 2:
+                case 4:
+                case 5:
+                    Type = QuestType.Daily;
+                    break;
+                case 3:
+                    Type = QuestType.Weekly;
+                    break;
+                default:
+                    Type = QuestType.Monthly;
+                    break;
             }
             Name = quest.api_title;
             Content = quest.api_detail;
