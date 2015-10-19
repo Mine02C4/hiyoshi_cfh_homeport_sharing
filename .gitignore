@@ -197,3 +197,7 @@ ModelManifest.xml
 
 # Exclude distribution plugin
 /HiyoshiCfhWeb/Content/Plugin/
+
+# Azure deploy configurations
+/PublishScripts/Configurations/
+
