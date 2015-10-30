@@ -2276,6 +2276,126 @@
       <Achieve Id="Bd2"/>
     </Dependency>
   </Quest>
+  <Quest Id="A59" Category="composition" Type="onetime">
+    <Name>
+      「第三航空戦隊」を編成せよ！ 
+    </Name>
+    <Content>
+      「瑞鶴改」を旗艦とし、「瑞鳳」「千歳」「千代田」を加えた4隻の空母部隊を編成せよ！ 
+    </Content>
+    <Bonus>
+      <Fuel>
+        200
+      </Fuel>
+      <Bull>
+        200
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        200
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        2
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        熟練搭乗員x1
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="Bm6"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="A60" Category="composition" Type="onetime">
+    <Name>
+      「第四航空戦隊」を編成せよ！
+    </Name>
+    <Content>
+      航空戦艦「伊勢改」及び「日向改」を基幹戦力とした第四航空戦隊を編成せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        200
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        200
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        2
+      </RenovationMaterials>
+      <Other>
+        水上爆撃機 瑞雲(六三四空)
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="B53"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="A61" Category="composition" Type="onetime">
+    <Name>
+      「小沢艦隊」を編成せよ！
+    </Name>
+    <Content>
+      「瑞鶴改」旗艦、空母「瑞鳳改」「千歳」「千代田」及び「伊勢改」「日向改」を配備せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        300
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        300
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        2
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        応急修理要員x1
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="A60"/>
+    </Dependency>
+  </Quest>
   <Quest Id="B1" Category="sortie" Type="onetime">
     <Name>
       はじめての「出撃」！
@@ -4346,7 +4466,87 @@
       </Other>
     </Bonus>
     <Dependency>
-      <Achieve Id="A57"/>
+      <Achieve Id="A58"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="B53" Category="sortie" Type="onetime">
+    <Name>
+      「第三航空戦隊」南西諸島防衛線に出撃！
+    </Name>
+    <Content>
+      編成した「第三航空戦隊」を南西諸島防衛線に展開、敵侵攻部隊を捕捉迎撃せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        300
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        2
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        給糧艦「伊良湖」x1
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="A59"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="B54" Category="sortie" Type="onetime">
+    <Name>
+      「小沢艦隊」出撃せよ！
+    </Name>
+    <Content>
+      「小沢艦隊」を沖ノ島海域前面に展開し、侵攻する敵機動部隊を捕捉、これを撃滅せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        300
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        300
+      </Steel>
+      <Bauxite>
+        300
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        3
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        艦上戦闘機 零戦52型丙(六〇一空)
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="A61"/>
     </Dependency>
   </Quest>
   <Quest Id="Bd1" Category="sortie" Type="daily">
@@ -6032,7 +6232,7 @@
         0
       </RenovationMaterials>
       <Other>
-        水上爆撃機瑞雲(六三四空)
+        水上爆撃機 瑞雲(六三四空)
       </Other>
     </Bonus>
     <Dependency>
@@ -6111,7 +6311,7 @@
         0
       </RenovationMaterials>
       <Other>
-        水上爆撃機瑞雲(六三四空)
+        水上爆撃機 瑞雲(六三四空)
       </Other>
     </Bonus>
     <Dependency>
@@ -7371,6 +7571,84 @@
       <Achieve Id="D19"/>
     </Dependency>
   </Quest>
+  <Quest Id="F22" Category="building" Type="onetime">
+    <Name>
+      精鋭「艦戦」隊の新編成
+    </Name>
+    <Content>
+      要熟練搭乗員：練度max「零戦21型」搭載「鳳翔」秘書艦で「零戦21型」x2「九六艦戦」x1廃棄！
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        50
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+      </Other>
+    </Bonus>
+    <Dependency>
+    </Dependency>
+  </Quest>
+  <Quest Id="F23" Category="building" Type="onetime">
+    <Name>
+      試製航空艤装の追加試作
+    </Name>
+    <Content>
+      「工廠」で装備アイテムを9つ「廃棄」して、「試製甲板カタパルト」を追加試作します。
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        100
+      </Steel>
+      <Bauxite>
+        50
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        試製甲板カタパルトx1
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="A54"/>
+    </Dependency>
+  </Quest>
   <Quest Id="G1" Category="remodelling" Type="onetime">
     <Name>
       はじめての「近代化改修」！
@@ -7759,126 +8037,6 @@
     </Bonus>
     <Dependency>
       <Achieve Id="A16"/>
-    </Dependency>
-  </Quest>
-  <Quest Id="SB03" Category="sortie" Type="onetime">
-    <Name>
-      秋刀魚漁：「秋刀魚」を収獲しよう！
-    </Name>
-    <Content>
-      近海及び北方海域の漁場に展開する敵艦隊を撃破して、「秋刀魚」を3尾入手せよ！
-    </Content>
-    <Bonus>
-      <Fuel>
-        300
-      </Fuel>
-      <Bull>
-        0
-      </Bull>
-      <Steel>
-        0
-      </Steel>
-      <Bauxite>
-        0
-      </Bauxite>
-      <InstantBuildMaterials>
-        0
-      </InstantBuildMaterials>
-      <InstantRepairMaterials>
-        0
-      </InstantRepairMaterials>
-      <DevelopmentMaterials>
-        0
-      </DevelopmentMaterials>
-      <RenovationMaterials>
-        0
-      </RenovationMaterials>
-      <Other>
-        ソナー 九三式水中聴音機
-        特注家具職人x1
-      </Other>
-    </Bonus>
-    <Dependency>
-    </Dependency>
-  </Quest>
-  <Quest Id="SB04" Category="sortie" Type="onetime">
-    <Name>
-      秋刀魚漁：「秋刀魚」をもっと収獲しなきゃ！
-    </Name>
-    <Content>
-      ちょっと大変だけれど、漁場の安全を確保して「秋刀魚」を10尾確保しなきゃ駄目よ！
-    </Content>
-    <Bonus>
-      <Fuel>
-        550
-      </Fuel>
-      <Bull>
-        0
-      </Bull>
-      <Steel>
-        0
-      </Steel>
-      <Bauxite>
-        0
-      </Bauxite>
-      <InstantBuildMaterials>
-        0
-      </InstantBuildMaterials>
-      <InstantRepairMaterials>
-        0
-      </InstantRepairMaterials>
-      <DevelopmentMaterials>
-        0
-      </DevelopmentMaterials>
-      <RenovationMaterials>
-        0
-      </RenovationMaterials>
-      <Other>
-        ソナー 三式水中探信儀
-        給糧艦「伊良湖」x3
-      </Other>
-    </Bonus>
-    <Dependency>
-      <Achieve Id="SB03"/>
-    </Dependency>
-  </Quest>
-  <Quest Id="SB05" Category="sortie" Type="onetime">
-    <Name>
-      秋刀魚漁：もっと頑張ってもいいのよ！
-    </Name>
-    <Content>
-      かなり大変だけれど、秋刀魚漁、もっともっと頑張ってもいいのよ！
-    </Content>
-    <Bonus>
-      <Fuel>
-        800
-      </Fuel>
-      <Bull>
-        300
-      </Bull>
-      <Steel>
-        300
-      </Steel>
-      <Bauxite>
-        300
-      </Bauxite>
-      <InstantBuildMaterials>
-        0
-      </InstantBuildMaterials>
-      <InstantRepairMaterials>
-        0
-      </InstantRepairMaterials>
-      <DevelopmentMaterials>
-        0
-      </DevelopmentMaterials>
-      <RenovationMaterials>
-        0
-      </RenovationMaterials>
-      <Other>
-      </Other>
-    </Bonus>
-    <Dependency>
-      <Achieve Id="SB04"/>
     </Dependency>
   </Quest>
 </Quests>
