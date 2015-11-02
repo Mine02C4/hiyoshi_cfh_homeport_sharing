@@ -2314,6 +2314,7 @@
     </Bonus>
     <Dependency>
       <Achieve Id="Bm6"/>
+      <Achieve Id="F21"/>
     </Dependency>
   </Quest>
   <Quest Id="A60" Category="composition" Type="onetime">
@@ -2394,6 +2395,48 @@
     </Bonus>
     <Dependency>
       <Achieve Id="A60"/>
+      <Achieve Id="Bm7"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="A62" Category="composition" Type="onetime">
+    <Name>
+      「小沢艦隊」を編成せよ！
+    </Name>
+    <Content>
+      改二改装を終えた翔鶴型航空母艦2隻と同護衛艦による新航空戦隊を新編成せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        300
+      </Bull>
+      <Steel>
+        300
+      </Steel>
+      <Bauxite>
+        300
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        給糧艦「伊良湖」x1
+        熟練搭乗員x1
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="F29"/>
     </Dependency>
   </Quest>
   <Quest Id="B1" Category="sortie" Type="onetime">
@@ -7571,7 +7614,7 @@
       <Achieve Id="D19"/>
     </Dependency>
   </Quest>
-  <Quest Id="F22" Category="building" Type="onetime">
+  <Quest Id="F22" Category="building" Type="monthly">
     <Name>
       精鋭「艦戦」隊の新編成
     </Name>
@@ -7604,9 +7647,11 @@
         0
       </RenovationMaterials>
       <Other>
+        艦上戦闘機 零式艦戦21型(熟練)
       </Other>
     </Bonus>
     <Dependency>
+      <Achieve Id="Bm6"/>
     </Dependency>
   </Quest>
   <Quest Id="F23" Category="building" Type="onetime">
@@ -7647,6 +7692,290 @@
     </Bonus>
     <Dependency>
       <Achieve Id="A54"/>
+    </Dependency>
+  </Quest>  
+  <Quest Id="F24" Category="building" Type="onetime">
+    <Name>
+      機種転換
+    </Name>
+    <Content>
+      「零戦21型(熟練)」搭載空母を秘書艦にして、新たに「零戦52型」を2つ廃棄！
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        50
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        艦上戦闘機 零式艦戦52型(熟練)
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="F22"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="F25" Category="building" Type="onetime">
+    <Name>
+      機種転換
+    </Name>
+    <Content>
+      練度max「零戦21型(熟練)」搭載空母を秘書艦にして、新たに「零戦52型」を2つ廃棄！
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        50
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        艦上戦闘機 零式艦戦52型(熟練)
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="F24"/>
+      <Achieve Id="Bm5"/>
+      <Achieve Id="Bm6"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="F26" Category="building" Type="onetime">
+    <Name>
+      「艦戦」隊の再編成
+    </Name>
+    <Content>
+      練度max「零戦52型(熟練)」搭載「瑞鶴」が秘書艦で「零戦52型丙(六〇一空)」を廃棄！
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        50
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        艦上戦闘機 零式艦戦52型丙(付岩井小隊)
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="F24"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="F27" Category="building" Type="onetime">
+    <Name>
+      機種転換＆部隊再編
+    </Name>
+    <Content>
+      練度max「零戦52型丙(付岩井小隊)」搭載「瑞鶴」秘書艦で「零戦62型(爆戦)」を2つ廃棄！
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        50
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        艦上爆撃機 零式艦戦62型(爆戦／岩井隊)
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="F26"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="F28" Category="building" Type="onetime">
+    <Name>
+      「艦戦」隊の再編成
+    </Name>
+    <Content>
+      練度max「零戦21型(熟練)」搭載「瑞鶴」が秘書の状態で「零戦21型」を2つ廃棄！
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        50
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        艦上戦闘機 零式艦戦21型(付岩本小隊)
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="A61"/>
+      <Achieve Id="F22"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="F29" Category="building" Type="onetime">
+    <Name>
+      機種転換
+    </Name>
+    <Content>
+      練度max「零戦21型(付岩本小隊)」搭載「瑞鶴」秘書艦で「零戦52型」を2つ廃棄！
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        50
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        艦上戦闘機 零式艦戦52型甲(付岩本小隊)
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="F23"/>
+      <Achieve Id="F28"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="F30" Category="building" Type="onetime">
+    <Name>
+      機種転換＆部隊再編
+    </Name>
+    <Content>
+      部隊を再編する！練度max「零戦52型甲(付岩本小隊)」搭載「瑞鶴」秘書艦で、「彩雲」を2つ廃棄！
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        50
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        艦上戦闘機 零式艦戦53型(岩本隊)
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="A62"/>
     </Dependency>
   </Quest>
   <Quest Id="G1" Category="remodelling" Type="onetime">
