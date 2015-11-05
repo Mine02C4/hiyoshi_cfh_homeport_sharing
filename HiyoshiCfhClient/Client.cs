@@ -218,12 +218,13 @@ namespace HiyoshiCfhClient
                     SyncWithOData(KanColleClient.Current.Homeport.Organization.Ships.Values.ToList(),
                         Context.Ships.Where(x => x.AdmiralId == Admiral.AdmiralId).ToList(), "Ships",
                         (x, y) => x.Id == y.ShipId, x => new WebShip(x, Admiral.AdmiralId),
-                        x => Context.AddToShips(x), x => x.SortieTag == null,
+                        x => Context.AddToShips(x),
                         (x, y) =>
                         {
                             x.ShipUid = y.ShipUid;
                             return x;
-                        }
+                        },
+                        x => x.SortieTag == null
                     );
                     OutDebugConsole("Saving ship data");
                     Context.SaveChanges();
@@ -246,37 +247,16 @@ namespace HiyoshiCfhClient
                 OutDebugConsole("UpdateQuests");
                 try
                 {
-                    var webQuests = Context.Quests.Where(x => x.AdmiralId == Admiral.AdmiralId).ToList();
-                    // まずは存在しない任務の削除と更新
-                    foreach (var webQuest in webQuests)
-                    {
-                        if (quests.Where(x => x.api_no == webQuest.QuestNo).Count() == 0)
+                    SyncWithOData(quests,
+                        Context.Quests.Where(x => x.AdmiralId == Admiral.AdmiralId).ToList(),
+                        "Quests", (x, y) => x.api_no == y.QuestNo,
+                        x => new WebQuest(x, Admiral.AdmiralId),
+                        x => Context.AddToQuests(x), (x, y) =>
                         {
-                            OutDebugConsole("Delete: " + webQuest.ToString());
-                            Context.DeleteObject(webQuest);
+                            x.QuestId = y.QuestId;
+                            return x;
                         }
-                        else
-                        {
-                            var quest = new WebQuest(quests.Where(x => x.api_no == webQuest.QuestNo).First(), Admiral.AdmiralId);
-                            if (quest != webQuest)
-                            {
-                                Context.Detach(webQuest);
-                                quest.QuestId = webQuest.QuestId;
-                                OutDebugConsole("Update: " + quest.ToString());
-                                Context.AttachTo("Quests", quest);
-                                Context.UpdateObject(quest);
-                            }
-                        }
-                    }
-                    // 追加
-                    foreach (var quest in quests)
-                    {
-                        if (webQuests.Where(x => x.QuestNo == quest.api_no).Count() == 0)
-                        {
-                            OutDebugConsole("Add: " + quest.ToString());
-                            Context.AddToQuests(new WebQuest(quest, Admiral.AdmiralId));
-                        }
-                    }
+                    );
                     OutDebugConsole("Saving quest data");
                     Context.SaveChanges();
                     OutDebugConsole("Saved quest data");
@@ -332,11 +312,10 @@ namespace HiyoshiCfhClient
             }
         }
 
-        void SyncWithOData<T, U>(List<T> localList, List<U> odataList,
+        void SyncWithOData<T, U>(IEnumerable<T> localList, IEnumerable<U> odataList,
             string entitySetName,
-            Func<T, U, bool> matching, Func<T, U> createOData,
-            Action<U> addOData,
-            Func<U, bool> checkNull = null, Func<U, U, U> prepareOData = null)
+            Func<T, U, bool> matching, Func<T, U> createOData, Action<U> addOData,
+            Func<U, U, U> prepareOData = null, Func<U, bool> checkNull = null)
             where U : Microsoft.OData.Client.BaseEntityType
         {
             // まずは存在しないデータの削除と更新
@@ -350,7 +329,7 @@ namespace HiyoshiCfhClient
                 else
                 {
                     var update = createOData(localList.Where(x => matching(x, odata)).First());
-                    if (!update.Equals(odata))
+                    if (!update.Equals(odata) || (checkNull != null && checkNull(odata)))
                     {
                         Context.Detach(odata);
                         if (prepareOData != null)
