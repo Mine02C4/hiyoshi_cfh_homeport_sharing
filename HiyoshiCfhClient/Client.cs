@@ -153,9 +153,9 @@ namespace HiyoshiCfhClient
         {
             OutDebugConsole("UpdateShipTypes");
             var webShipTypes = Context.ShipTypes.Execute().ToList();
-            foreach (var shipType in KanColleClient.Current.Master.ShipTypes)
+            try
             {
-                try
+                foreach (var shipType in KanColleClient.Current.Master.ShipTypes)
                 {
                     if (webShipTypes.Where(x =>
                         x.ShipTypeId == shipType.Value.Id &&
@@ -166,13 +166,6 @@ namespace HiyoshiCfhClient
                         Context.AddToShipTypes(new WebShipType(shipType.Value));
                     }
                 }
-                catch (Exception ex)
-                {
-                    OutDebugConsole("Error: " + ex.ToString());
-                }
-            }
-            try
-            {
                 Context.SaveChanges();
             }
             catch (Exception ex)
@@ -184,21 +177,21 @@ namespace HiyoshiCfhClient
         void UpdateShipInfoes()
         {
             OutDebugConsole("UpdateShipInfoes");
-            var webShipInfoes = Context.ShipInfoes.Execute().ToList();
-            foreach (var shipInfo in KanColleClient.Current.Master.Ships)
-            {
-                if (shipInfo.Value.SortId != 0 && webShipInfoes.Where(x =>
-                    x.ShipInfoId == shipInfo.Value.Id &&
-                    x.Name == shipInfo.Value.Name &&
-                    x.SortId == shipInfo.Value.SortId &&
-                    x.NextRemodelingLevel == shipInfo.Value.NextRemodelingLevel
-                    ).Count() == 0)
-                {
-                    Context.AddToShipInfoes(new WebShipInfo(shipInfo.Value));
-                }
-            }
             try
             {
+                var webShipInfoes = Context.ShipInfoes.Execute().ToList();
+                foreach (var shipInfo in KanColleClient.Current.Master.Ships)
+                {
+                    if (shipInfo.Value.SortId != 0 && webShipInfoes.Where(x =>
+                        x.ShipInfoId == shipInfo.Value.Id &&
+                        x.Name == shipInfo.Value.Name &&
+                        x.SortId == shipInfo.Value.SortId &&
+                        x.NextRemodelingLevel == shipInfo.Value.NextRemodelingLevel
+                        ).Count() == 0)
+                    {
+                        Context.AddToShipInfoes(new WebShipInfo(shipInfo.Value));
+                    }
+                }
                 Context.SaveChanges();
             }
             catch (Exception ex)
