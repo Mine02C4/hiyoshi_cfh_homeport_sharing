@@ -215,38 +215,16 @@ namespace HiyoshiCfhClient
                 CheckAdmiral();
                 try
                 {
-                    var webShips = Context.Ships.Where(x => x.AdmiralId == Admiral.AdmiralId).ToList();
-                    var ships = KanColleClient.Current.Homeport.Organization.Ships.ToList();
-                    // まずは存在しない艦娘の削除と更新
-                    foreach (var webShip in webShips)
-                    {
-                        if (ships.Where(x => x.Value.Id == webShip.ShipId).Count() == 0)
+                    SyncWithOData(KanColleClient.Current.Homeport.Organization.Ships.Values.ToList(),
+                        Context.Ships.Where(x => x.AdmiralId == Admiral.AdmiralId).ToList(), "Ships",
+                        (x, y) => x.Id == y.ShipId, x => new WebShip(x, Admiral.AdmiralId),
+                        x => Context.AddToShips(x), x => x.SortieTag == null,
+                        (x, y) =>
                         {
-                            OutDebugConsole("Delete: " + webShip.ToString());
-                            Context.DeleteObject(webShip);
+                            x.ShipUid = y.ShipUid;
+                            return x;
                         }
-                        else
-                        {
-                            var ship = new WebShip(ships.Where(x => x.Value.Id == webShip.ShipId).First().Value, Admiral.AdmiralId);
-                            if (ship != webShip || webShip.SortieTag == null)
-                            {
-                                Context.Detach(webShip);
-                                ship.ShipUid = webShip.ShipUid;
-                                OutDebugConsole("Update: " + ship.ToString());
-                                Context.AttachTo("Ships", ship);
-                                Context.ChangeState(ship, EntityStates.Modified);
-                            }
-                        }
-                    }
-                    // 新しく手に入った艦娘の追加
-                    foreach (var ship in ships)
-                    {
-                        if (webShips.Where(x => x.ShipId == ship.Value.Id).Count() == 0)
-                        {
-                            OutDebugConsole("Add: " + ship.Value.ToString());
-                            Context.AddToShips(new WebShip(ship.Value, Admiral.AdmiralId));
-                        }
-                    }
+                    );
                     OutDebugConsole("Saving ship data");
                     Context.SaveChanges();
                     OutDebugConsole("Saved ship data");
@@ -350,6 +328,48 @@ namespace HiyoshiCfhClient
                 {
                     Admiral = null;
                     throw new DeniedAccessToAdmiral();
+                }
+            }
+        }
+
+        void SyncWithOData<T, U>(List<T> localList, List<U> odataList,
+            string entitySetName,
+            Func<T, U, bool> matching, Func<T, U> createOData,
+            Action<U> addOData,
+            Func<U, bool> checkNull = null, Func<U, U, U> prepareOData = null)
+            where U : Microsoft.OData.Client.BaseEntityType
+        {
+            // まずは存在しないデータの削除と更新
+            foreach (var odata in odataList)
+            {
+                if (localList.Where(x => matching(x, odata)).Count() == 0)
+                {
+                    OutDebugConsole("Delete: " + odata.ToString());
+                    Context.DeleteObject(odata);
+                }
+                else
+                {
+                    var update = createOData(localList.Where(x => matching(x, odata)).First());
+                    if (!update.Equals(odata))
+                    {
+                        Context.Detach(odata);
+                        if (prepareOData != null)
+                        {
+                            update = prepareOData(update, odata);
+                        }
+                        OutDebugConsole("Update: " + update.ToString());
+                        Context.AttachTo(entitySetName, update);
+                        Context.ChangeState(update, EntityStates.Modified);
+                    }
+                }
+            }
+            // 新しいデータの追加
+            foreach (var local in localList)
+            {
+                if (odataList.Where(x => matching(local, x)).Count() == 0)
+                {
+                    OutDebugConsole("Add: " + local.ToString());
+                    addOData(createOData(local));
                 }
             }
         }
