@@ -47,7 +47,9 @@ namespace HiyoshiCfhWeb.Controllers
                     questMaster = (XmlQuests)serializer.Deserialize(reader);
                 }
             }
-            var quests = db.Quests.Where(x => x.Admiral.Name == id).OrderBy(x => x.QuestNo).ToList();
+            var admiral = db.Admirals.Where(x => x.Name.Equals(id)).First();
+            var quests = db.Quests.Where(x => x.AdmiralId == admiral.AdmiralId)
+                .OrderBy(x => x.QuestNo).ToList();
             if (retrietingEdge == null)
             {
                 retrietingEdge = new Dictionary<string, List<XML.Quest>>();
@@ -124,7 +126,7 @@ namespace HiyoshiCfhWeb.Controllers
                     m.State = XML.QuestState.Visible;
                 }
             }
-            return View(Tuple.Create(questMaster, quests, retrietingEdge));
+            return View(Tuple.Create(admiral, questMaster, quests));
         }
 
         public ActionResult ShipType(string id, string param)

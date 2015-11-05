@@ -1,10 +1,10 @@
 ﻿@using HiyoshiCfhWeb.XML
-@model Tuple<HiyoshiCfhWeb.XML.Quests, List<HiyoshiCfhWeb.Models.Quest>, Dictionary<string, List<Quest>>>
+@model Tuple<HiyoshiCfhWeb.Models.Admiral, Quests, List<HiyoshiCfhWeb.Models.Quest>>
 @{
     ViewBag.Title = "任務進捗";
-    var questMaster = Model.Item1;
-    var quests = Model.Item2;
-    var retrietingEdge = Model.Item3;
+    var admiral = Model.Item1;
+    var questMaster = Model.Item2;
+    var quests = Model.Item3;
     Func<QuestState, string> StateToClass = s =>
     {
         switch (s)
