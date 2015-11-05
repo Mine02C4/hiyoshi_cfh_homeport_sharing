@@ -36,6 +36,31 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
         {
             return string.Format("ID = {0}, Name = \"{1}\"", this.ShipTypeId, this.Name);
         }
+
+        public override bool Equals(Object obj)
+        {
+            if (obj == null || GetType() != obj.GetType())
+            {
+                return false;
+            }
+            var a = (ShipType)obj;
+            return this == a;
+        }
+
+        public override int GetHashCode()
+        {
+            return ShipTypeId ^ SortNumber;
+        }
+
+        public static bool operator !=(ShipType a, ShipType b)
+        {
+            return !(a == b);
+        }
+
+        public static bool operator ==(ShipType a, ShipType b)
+        {
+            return Util.EqualModel<ShipType>(a, b);
+        }
     }
 
     public partial class ShipInfo
@@ -58,6 +83,31 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
                     break;
             }
             NextRemodelingLevel = shipInfo.NextRemodelingLevel;
+        }
+
+        public override bool Equals(Object obj)
+        {
+            if (obj == null || GetType() != obj.GetType())
+            {
+                return false;
+            }
+            var a = (ShipInfo)obj;
+            return this == a;
+        }
+
+        public override int GetHashCode()
+        {
+            return ShipInfoId ^ SortId;
+        }
+
+        public static bool operator !=(ShipInfo a, ShipInfo b)
+        {
+            return !(a == b);
+        }
+
+        public static bool operator ==(ShipInfo a, ShipInfo b)
+        {
+            return Util.EqualModel<ShipInfo>(a, b);
         }
     }
 
