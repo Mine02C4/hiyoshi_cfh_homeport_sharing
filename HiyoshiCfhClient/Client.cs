@@ -180,16 +180,16 @@ namespace HiyoshiCfhClient
             try
             {
                 var webShipInfoes = Context.ShipInfoes.Execute().ToList();
-                foreach (var shipInfo in KanColleClient.Current.Master.Ships)
+                foreach (var shipInfo in KanColleClient.Current.Master.Ships.Values)
                 {
-                    if (shipInfo.Value.SortId != 0 && webShipInfoes.Where(x =>
-                        x.ShipInfoId == shipInfo.Value.Id &&
-                        x.Name == shipInfo.Value.Name &&
-                        x.SortId == shipInfo.Value.SortId &&
-                        x.NextRemodelingLevel == shipInfo.Value.NextRemodelingLevel
+                    var webShipInfo = new WebShipInfo(shipInfo);
+                    if (shipInfo.SortId != 0 && webShipInfoes.Where(x =>
+                        x.Equals(webShipInfo) &&
+                        x.NextRemodelingLevel == shipInfo.NextRemodelingLevel &&
+                        x.Name == shipInfo.Name
                         ).Count() == 0)
                     {
-                        Context.AddToShipInfoes(new WebShipInfo(shipInfo.Value));
+                        Context.AddToShipInfoes(webShipInfo);
                     }
                 }
                 Context.SaveChanges();
