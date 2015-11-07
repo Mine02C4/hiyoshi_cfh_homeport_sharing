@@ -244,11 +244,31 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
             foreach (var property in properties)
             {
                 var type = Nullable.GetUnderlyingType(property.PropertyType) ?? property.PropertyType;
-                if ((ignoreProperties == null || !(ignoreProperties.Any(key => property.Name == key))) && type.IsValueType
-                    && property.GetValue(a) != null && property.GetValue(b) != null
-                    && !Convert.ChangeType(property.GetValue(a), type).Equals(Convert.ChangeType(property.GetValue(b), type)))
+                if (ignoreProperties == null || !(ignoreProperties.Any(key => property.Name == key)))
                 {
-                    return false;
+                    var pa = property.GetValue(a);
+                    var pb = property.GetValue(b);
+                    if (type.IsValueType)
+                    {
+                        if (pa == null || pb == null)
+                        {
+                            if (pa != pb)
+                            {
+                                return false;
+                            }
+                        }
+                        else if (!Convert.ChangeType(pa, type).Equals(Convert.ChangeType(pb, type)))
+                        {
+                            return false;
+                        }
+                    }
+                    else if (type == typeof(string))
+                    {
+                        if (!Convert.ChangeType(pa, type).Equals(Convert.ChangeType(pb, type)))
+                        {
+                            return false;
+                        }
+                    }
                 }
             }
             return true;

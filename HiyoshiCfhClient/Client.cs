@@ -183,11 +183,8 @@ namespace HiyoshiCfhClient
                 foreach (var shipInfo in KanColleClient.Current.Master.Ships.Values)
                 {
                     var webShipInfo = new WebShipInfo(shipInfo);
-                    if (shipInfo.SortId != 0 && webShipInfoes.Where(x =>
-                        x.Equals(webShipInfo) &&
-                        x.NextRemodelingLevel == shipInfo.NextRemodelingLevel &&
-                        x.Name == shipInfo.Name
-                        ).Count() == 0)
+                    if (shipInfo.SortId != 0 &&
+                        webShipInfoes.Where(x => x.Equals(webShipInfo)).Count() == 0)
                     {
                         Context.AddToShipInfoes(webShipInfo);
                     }
@@ -216,8 +213,7 @@ namespace HiyoshiCfhClient
                         {
                             x.ShipUid = y.ShipUid;
                             return x;
-                        },
-                        x => x.SortieTag == null
+                        }
                     );
                     OutDebugConsole("Saving ship data");
                     Context.SaveChanges();
