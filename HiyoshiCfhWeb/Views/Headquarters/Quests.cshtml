@@ -21,8 +21,9 @@
     };
     var unmatchedQuests = quests.Where(x => x.IsMatched == false);
 }
-@Html.Partial("_AdmiralsDropdownPartial")
-<h2>@ViewBag.Title</h2>
+
+@Html.Partial("_HeaderPartial", admiral)
+
 @if (unmatchedQuests.Count() > 0)
 {
     <h3>任務マスターと対応できなかった任務</h3>

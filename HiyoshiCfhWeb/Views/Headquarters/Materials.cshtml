@@ -2,12 +2,10 @@
 @{
     var admiral = Model.Item1;
     var records = Model.Item2;
-    ViewBag.Title = string.Format("資材統計({0} 提督)", admiral.Name);
+    ViewBag.Title = "資材統計";
 }
 
-@Html.Partial("_AdmiralsDropdownPartial")
-
-<h2>@ViewBag.Title</h2>
+@Html.Partial("_HeaderPartial", admiral)
 
 <p>@Html.ActionLink("インポート", "Materials", "Import", null, new { @class = "btn btn-info" })</p>
 

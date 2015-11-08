@@ -3,13 +3,15 @@
 @using HiyoshiCfhWeb.Models;
 @{
     ViewBag.Title = "母港";
+    var admiral = Model;
 }
-@Html.Partial("_AdmiralsDropdownPartial")
-<h2>@ViewBag.Title</h2>
-@Html.Partial("_AdmiralPartial", Model)
+
+@Html.Partial("_HeaderPartial", admiral)
+
+@Html.Partial("_AdmiralPartial", admiral)
 <div class="row">
     <div class="col-md-8">
-        @Html.Partial("_SimpleStatisticsPartial", Model)
+        @Html.Partial("_SimpleStatisticsPartial", admiral)
     </div>
     <div class="col-md-4">
         <h3>各種ツール</h3>
@@ -18,4 +20,4 @@
         <p>@Html.ActionLink("資材統計", "Materials", null, new { @class = "btn btn-default" })</p>
     </div>
 </div>
-@Html.Partial("_ShipTablePartial", Model.Ships.OrderByDescending(x => x.Level))
+@Html.Partial("_ShipTablePartial", admiral.Ships.OrderByDescending(x => x.Level))

@@ -24,6 +24,13 @@ namespace HiyoshiCfhWeb.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
         private Dictionary<string, List<XML.Quest>> retrietingEdge = null;
 
+        public static List<Tuple<string, string>> subPages = new List<Tuple<string, string>> {
+            Tuple.Create("母港", ""),
+            Tuple.Create("任務進捗", "Quests"),
+            Tuple.Create("イベント", "Event"),
+            Tuple.Create("資材統計", "Materials"),
+        };
+
         // GET: Headquarters
         public ActionResult Index()
         {

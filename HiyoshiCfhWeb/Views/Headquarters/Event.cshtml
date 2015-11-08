@@ -1,18 +1,17 @@
 ﻿@model HiyoshiCfhWeb.Models.Admiral
 
 @{
-    ViewBag.Title = "2015年 夏イベント";
+    ViewBag.Title = "イベント";
     var tags = new[] {
                      Tuple.Create(1, "初動作戦", "#3C677F"),
                      Tuple.Create(2, "機動部隊", "#3B662A"),
                      Tuple.Create(3, "挺身部隊", "#839842"),
                      Tuple.Create(4, "西部方面", "#906736"),
                  };
+    var admiral = Model;
 }
 
-@Html.Partial("_AdmiralsDropdownPartial")
-
-<h2>@ViewBag.Title</h2>
+@Html.Partial("_HeaderPartial", admiral)
 
 <table class="table">
     <tr>
@@ -94,7 +93,7 @@
                         レベル
                     </th>
                 </tr>
-                @foreach (var ship in Model.Ships.Where(x => x.SortieTag == tag.Item1).OrderByDescending(x => x.Level))
+                @foreach (var ship in admiral.Ships.Where(x => x.SortieTag == tag.Item1).OrderByDescending(x => x.Level))
                 {
                     <tr style="border-left: 5px solid @tag.Item3">
                         <td>

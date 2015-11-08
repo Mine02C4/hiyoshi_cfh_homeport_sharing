@@ -420,6 +420,7 @@
     <Content Include="Views\Import\MaterialsProc.cshtml" />
     <Content Include="Views\Event\e2015summer.cshtml" />
     <Content Include="Views\Headquarters\_AdmiralsDropdownPartial.cshtml" />
+    <Content Include="Views\Headquarters\_HeaderPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
