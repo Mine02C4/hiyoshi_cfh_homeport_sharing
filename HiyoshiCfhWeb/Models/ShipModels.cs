@@ -96,6 +96,28 @@ namespace HiyoshiCfhWeb.Models
         public int ShipTypeId { get; set; }
         public string Name { get; set; }
         public int SortNumber { get; set; }
+
+        public static string GroupShipType(string type)
+        {
+            switch (type)
+            {
+                case "戦艦":
+                case "航空戦艦":
+                    type = "戦艦+航空戦艦";
+                    break;
+                case "潜水艦":
+                case "潜水空母":
+                    type = "潜水艦+潜水空母";
+                    break;
+                case "正規空母":
+                case "装甲空母":
+                    type = "正規空母+装甲空母";
+                    break;
+                default:
+                    break;
+            }
+            return type;
+        }
     }
 
     public enum ShipSpeed

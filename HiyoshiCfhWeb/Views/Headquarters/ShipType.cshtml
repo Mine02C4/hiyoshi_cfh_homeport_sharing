@@ -1,20 +1,14 @@
 ﻿@model Tuple<HiyoshiCfhWeb.Models.Admiral, List<HiyoshiCfhWeb.Models.Ship>, string>
 @using System.Linq;
 @using HiyoshiCfhWeb.Models;
-
 @{
     var admiral = Model.Item1;
     var ships = Model.Item2;
     var shipType = Model.Item3;
     ViewBag.Title = "所属艦娘(" + shipType + ")";
+    ViewBag.ShipType = shipType;
 }
-
-<h2>@ViewBag.Title</h2>
-
-@Html.Partial("_AdmiralsDropdownPartial")
-
-<h3>@admiral.Name 提督</h3>
-
+@Html.Partial("_HeaderPartial", admiral)
 <div class="row">
     <div class="col-md-8">
         @Html.Partial("_SimpleStatisticsPartial", admiral)
