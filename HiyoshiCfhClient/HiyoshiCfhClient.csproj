@@ -44,8 +44,8 @@
       <HintPath>..\packages\KanColleViewer.Controls.1.2.0.0\lib\net45\KanColleViewer.Controls.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="KanColleWrapper, Version=1.2.4.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\KanColleWrapper.1.2.4.0\lib\net45\KanColleWrapper.dll</HintPath>
+    <Reference Include="KanColleWrapper, Version=1.2.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\KanColleWrapper.1.2.6.0\lib\net45\KanColleWrapper.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Livet, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b0b1d3f711ef38cb, processorArchitecture=MSIL">
