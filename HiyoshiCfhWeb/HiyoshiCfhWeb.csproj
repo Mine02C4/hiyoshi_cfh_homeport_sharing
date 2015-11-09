@@ -220,6 +220,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\OData\MaterialRecordsController.cs" />
+    <Compile Include="Controllers\OData\ODataControllerBase.cs" />
     <Compile Include="Controllers\OData\QuestsController.cs" />
     <Compile Include="Controllers\OData\ShipInfoesController.cs" />
     <Compile Include="Controllers\OData\ShipsController.cs" />

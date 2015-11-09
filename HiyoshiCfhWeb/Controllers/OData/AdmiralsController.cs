@@ -10,26 +10,16 @@ using System.Web.OData;
 namespace HiyoshiCfhWeb.Controllers
 {
     [Authorize]
-    public class AdmiralsController : ODataController
+    public class AdmiralsController : ODataControllerBase<Admiral>
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
-
-        // GET: odata/Admirals
-        [EnableQuery]
-        public IQueryable<Admiral> GetAdmirals()
+        public AdmiralsController()
+            : base()
         {
-            return db.Admirals;
-        }
-
-        // GET: odata/Admirals(5)
-        [EnableQuery]
-        public SingleResult<Admiral> GetAdmiral([FromODataUri] int key)
-        {
-            return SingleResult.Create(db.Admirals.Where(Admiral => Admiral.AdmiralId == key));
+            dbs = db.Admirals;
         }
 
         // PUT: odata/Admirals(5)
-        public IHttpActionResult Put([FromODataUri] int key, Delta<Admiral> patch)
+        public override IHttpActionResult Put([FromODataUri] int key, Delta<Admiral> patch)
         {
             Validate(patch.GetEntity());
 
@@ -57,7 +47,7 @@ namespace HiyoshiCfhWeb.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!AdmiralExists(key))
+                if (!Exists(key))
                 {
                     return NotFound();
                 }
@@ -71,7 +61,7 @@ namespace HiyoshiCfhWeb.Controllers
         }
 
         // POST: odata/Admirals
-        public IHttpActionResult Post(Admiral Admiral)
+        public override IHttpActionResult Post(Admiral Admiral)
         {
             if (!ModelState.IsValid)
             {
@@ -90,7 +80,7 @@ namespace HiyoshiCfhWeb.Controllers
 
         // PATCH: odata/Admirals(5)
         [AcceptVerbs("PATCH", "MERGE")]
-        public IHttpActionResult Patch([FromODataUri] int key, Delta<Admiral> patch)
+        public override IHttpActionResult Patch([FromODataUri] int key, Delta<Admiral> patch)
         {
             Validate(patch.GetEntity());
 
@@ -118,7 +108,7 @@ namespace HiyoshiCfhWeb.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!AdmiralExists(key))
+                if (!Exists(key))
                 {
                     return NotFound();
                 }
@@ -132,7 +122,7 @@ namespace HiyoshiCfhWeb.Controllers
         }
 
         // DELETE: odata/Admirals(5)
-        public IHttpActionResult Delete([FromODataUri] int key)
+        public override IHttpActionResult Delete([FromODataUri] int key)
         {
             Admiral Admiral = db.Admirals.Find(key);
             if (Admiral == null)
@@ -148,20 +138,6 @@ namespace HiyoshiCfhWeb.Controllers
             db.SaveChanges();
 
             return StatusCode(HttpStatusCode.NoContent);
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
-        }
-
-        private bool AdmiralExists(int key)
-        {
-            return db.Admirals.Count(e => e.AdmiralId == key) > 0;
         }
     }
 }

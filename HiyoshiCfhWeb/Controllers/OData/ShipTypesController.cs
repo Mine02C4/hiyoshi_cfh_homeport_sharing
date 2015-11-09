@@ -10,63 +10,16 @@ using System.Web.OData;
 namespace HiyoshiCfhWeb.Controllers
 {
     [Authorize]
-    public class ShipTypesController : ODataController
+    public class ShipTypesController : ODataControllerBase<ShipType>
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
-
-        // GET: odata/ShipTypes
-        [EnableQuery]
-        public IQueryable<ShipType> GetShipTypes()
+        public ShipTypesController()
+            : base()
         {
-            return db.ShipTypes;
-        }
-
-        // GET: odata/ShipTypes(5)
-        [EnableQuery]
-        public SingleResult<ShipType> GetShipType([FromODataUri] int key)
-        {
-            return SingleResult.Create(db.ShipTypes.Where(shipType => shipType.ShipTypeId == key));
-        }
-
-        // PUT: odata/ShipTypes(5)
-        public IHttpActionResult Put([FromODataUri] int key, Delta<ShipType> patch)
-        {
-            Validate(patch.GetEntity());
-
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            ShipType shipType = db.ShipTypes.Find(key);
-            if (shipType == null)
-            {
-                return NotFound();
-            }
-
-            patch.Put(shipType);
-
-            try
-            {
-                db.SaveChanges();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!ShipTypeExists(key))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return Updated(shipType);
+            dbs = db.ShipTypes;
         }
 
         // POST: odata/ShipTypes
-        public IHttpActionResult Post(ShipType shipType)
+        public override IHttpActionResult Post(ShipType shipType)
         {
             if (!ModelState.IsValid)
             {
@@ -89,7 +42,7 @@ namespace HiyoshiCfhWeb.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!ShipTypeExists(shipType.ShipTypeId))
+                    if (!Exists(shipType.ShipTypeId))
                     {
                         return NotFound();
                     }
@@ -100,73 +53,6 @@ namespace HiyoshiCfhWeb.Controllers
                 }
             }
             return Created(shipType);
-        }
-
-        // PATCH: odata/ShipTypes(5)
-        [AcceptVerbs("PATCH", "MERGE")]
-        public IHttpActionResult Patch([FromODataUri] int key, Delta<ShipType> patch)
-        {
-            Validate(patch.GetEntity());
-
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            ShipType shipType = db.ShipTypes.Find(key);
-            if (shipType == null)
-            {
-                return NotFound();
-            }
-
-            patch.Patch(shipType);
-
-            try
-            {
-                db.SaveChanges();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!ShipTypeExists(key))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return Updated(shipType);
-        }
-
-        // DELETE: odata/ShipTypes(5)
-        public IHttpActionResult Delete([FromODataUri] int key)
-        {
-            ShipType shipType = db.ShipTypes.Find(key);
-            if (shipType == null)
-            {
-                return NotFound();
-            }
-
-            db.ShipTypes.Remove(shipType);
-            db.SaveChanges();
-
-            return StatusCode(HttpStatusCode.NoContent);
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
-        }
-
-        private bool ShipTypeExists(int key)
-        {
-            return db.ShipTypes.Count(e => e.ShipTypeId == key) > 0;
         }
     }
 }
