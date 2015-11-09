@@ -292,6 +292,10 @@
     <Compile Include="Migrations\201510121840356_AddUpdateQuestsUtc.Designer.cs">
       <DependentUpon>201510121840356_AddUpdateQuestsUtc.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201511091725510_ImproveShipInfo.cs" />
+    <Compile Include="Migrations\201511091725510_ImproveShipInfo.Designer.cs">
+      <DependentUpon>201511091725510_ImproveShipInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AdmiralModels.cs" />
@@ -475,6 +479,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201510121840356_AddUpdateQuestsUtc.resx">
       <DependentUpon>201510121840356_AddUpdateQuestsUtc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511091725510_ImproveShipInfo.resx">
+      <DependentUpon>201511091725510_ImproveShipInfo.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

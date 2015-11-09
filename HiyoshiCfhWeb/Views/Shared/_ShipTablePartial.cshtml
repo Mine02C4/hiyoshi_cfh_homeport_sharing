@@ -91,28 +91,37 @@
                     @Html.DisplayFor(modelItem => item.ExpForNextLevel)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Hp)
+                    @Html.DisplayFor(modelItem => item.Hp)/
+                    @Html.DisplayFor(modelItem => item.ShipInfo.MaxHp)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Fuel)
+                    @Html.DisplayFor(modelItem => item.Fuel)/
+                    @Html.DisplayFor(modelItem => item.ShipInfo.MaxFuel)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Bull)
+                    @Html.DisplayFor(modelItem => item.Bull)/
+                    @Html.DisplayFor(modelItem => item.ShipInfo.MaxBull)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Firepower)
+                    @Html.DisplayFor(modelItem => item.Firepower)/
+                    @Html.DisplayFor(modelItem => item.ShipInfo.MaxFirepower)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Torpedo)
+                    @Html.DisplayFor(modelItem => item.Torpedo)/
+                    @Html.DisplayFor(modelItem => item.ShipInfo.MaxTorpedo)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.AA)
+                    @Html.DisplayFor(modelItem => item.AA)/
+                    @Html.DisplayFor(modelItem => item.ShipInfo.MaxAA)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Armer)
+                    @Html.DisplayFor(modelItem => item.Armer)/
+                    @Html.DisplayFor(modelItem => item.ShipInfo.MaxArmer)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Luck)
+                    @Html.DisplayFor(modelItem => item.Luck)/
+                    @Html.DisplayFor(modelItem => item.ShipInfo.MinLuck) - 
+                    @Html.DisplayFor(modelItem => item.ShipInfo.MaxLuck)
                 </td>
             </tr>
         }

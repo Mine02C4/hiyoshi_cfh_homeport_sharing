@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generation date: 2015/10/11 17:03:15
+// Generation date: 2015/11/10 2:43:41
 namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
 {
     /// <summary>
@@ -209,13 +209,42 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
         /// <param name="shipInfoId">Initial value of ShipInfoId.</param>
         /// <param name="sortId">Initial value of SortId.</param>
         /// <param name="shipSpeed">Initial value of ShipSpeed.</param>
+        /// <param name="maxHp">Initial value of MaxHp.</param>
+        /// <param name="maxFuel">Initial value of MaxFuel.</param>
+        /// <param name="maxBull">Initial value of MaxBull.</param>
+        /// <param name="maxFirepower">Initial value of MaxFirepower.</param>
+        /// <param name="maxTorpedo">Initial value of MaxTorpedo.</param>
+        /// <param name="maxAA">Initial value of MaxAA.</param>
+        /// <param name="maxArmer">Initial value of MaxArmer.</param>
+        /// <param name="maxLuck">Initial value of MaxLuck.</param>
+        /// <param name="minLuck">Initial value of MinLuck.</param>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        public static ShipInfo CreateShipInfo(int shipInfoId, int sortId, global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.ShipSpeed shipSpeed)
+        public static ShipInfo CreateShipInfo(int shipInfoId, 
+                    int sortId, 
+                    global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.ShipSpeed shipSpeed, 
+                    int maxHp, 
+                    int maxFuel, 
+                    int maxBull, 
+                    int maxFirepower, 
+                    int maxTorpedo, 
+                    int maxAA, 
+                    int maxArmer, 
+                    int maxLuck, 
+                    int minLuck)
         {
             ShipInfo shipInfo = new ShipInfo();
             shipInfo.ShipInfoId = shipInfoId;
             shipInfo.SortId = sortId;
             shipInfo.ShipSpeed = shipSpeed;
+            shipInfo.MaxHp = maxHp;
+            shipInfo.MaxFuel = maxFuel;
+            shipInfo.MaxBull = maxBull;
+            shipInfo.MaxFirepower = maxFirepower;
+            shipInfo.MaxTorpedo = maxTorpedo;
+            shipInfo.MaxAA = maxAA;
+            shipInfo.MaxArmer = maxArmer;
+            shipInfo.MaxLuck = maxLuck;
+            shipInfo.MinLuck = minLuck;
             return shipInfo;
         }
         /// <summary>
@@ -356,6 +385,236 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
         private global::System.Nullable<int> _NextRemodelingLevel;
         partial void OnNextRemodelingLevelChanging(global::System.Nullable<int> value);
         partial void OnNextRemodelingLevelChanged();
+        /// <summary>
+        /// There are no comments for Property Kana in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Kana")]
+        public string Kana
+        {
+            get
+            {
+                return this._Kana;
+            }
+            set
+            {
+                this.OnKanaChanging(value);
+                this._Kana = value;
+                this.OnKanaChanged();
+                this.OnPropertyChanged("Kana");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private string _Kana;
+        partial void OnKanaChanging(string value);
+        partial void OnKanaChanged();
+        /// <summary>
+        /// There are no comments for Property MaxHp in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("MaxHp")]
+        public int MaxHp
+        {
+            get
+            {
+                return this._MaxHp;
+            }
+            set
+            {
+                this.OnMaxHpChanging(value);
+                this._MaxHp = value;
+                this.OnMaxHpChanged();
+                this.OnPropertyChanged("MaxHp");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private int _MaxHp;
+        partial void OnMaxHpChanging(int value);
+        partial void OnMaxHpChanged();
+        /// <summary>
+        /// There are no comments for Property MaxFuel in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("MaxFuel")]
+        public int MaxFuel
+        {
+            get
+            {
+                return this._MaxFuel;
+            }
+            set
+            {
+                this.OnMaxFuelChanging(value);
+                this._MaxFuel = value;
+                this.OnMaxFuelChanged();
+                this.OnPropertyChanged("MaxFuel");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private int _MaxFuel;
+        partial void OnMaxFuelChanging(int value);
+        partial void OnMaxFuelChanged();
+        /// <summary>
+        /// There are no comments for Property MaxBull in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("MaxBull")]
+        public int MaxBull
+        {
+            get
+            {
+                return this._MaxBull;
+            }
+            set
+            {
+                this.OnMaxBullChanging(value);
+                this._MaxBull = value;
+                this.OnMaxBullChanged();
+                this.OnPropertyChanged("MaxBull");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private int _MaxBull;
+        partial void OnMaxBullChanging(int value);
+        partial void OnMaxBullChanged();
+        /// <summary>
+        /// There are no comments for Property MaxFirepower in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("MaxFirepower")]
+        public int MaxFirepower
+        {
+            get
+            {
+                return this._MaxFirepower;
+            }
+            set
+            {
+                this.OnMaxFirepowerChanging(value);
+                this._MaxFirepower = value;
+                this.OnMaxFirepowerChanged();
+                this.OnPropertyChanged("MaxFirepower");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private int _MaxFirepower;
+        partial void OnMaxFirepowerChanging(int value);
+        partial void OnMaxFirepowerChanged();
+        /// <summary>
+        /// There are no comments for Property MaxTorpedo in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("MaxTorpedo")]
+        public int MaxTorpedo
+        {
+            get
+            {
+                return this._MaxTorpedo;
+            }
+            set
+            {
+                this.OnMaxTorpedoChanging(value);
+                this._MaxTorpedo = value;
+                this.OnMaxTorpedoChanged();
+                this.OnPropertyChanged("MaxTorpedo");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private int _MaxTorpedo;
+        partial void OnMaxTorpedoChanging(int value);
+        partial void OnMaxTorpedoChanged();
+        /// <summary>
+        /// There are no comments for Property MaxAA in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("MaxAA")]
+        public int MaxAA
+        {
+            get
+            {
+                return this._MaxAA;
+            }
+            set
+            {
+                this.OnMaxAAChanging(value);
+                this._MaxAA = value;
+                this.OnMaxAAChanged();
+                this.OnPropertyChanged("MaxAA");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private int _MaxAA;
+        partial void OnMaxAAChanging(int value);
+        partial void OnMaxAAChanged();
+        /// <summary>
+        /// There are no comments for Property MaxArmer in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("MaxArmer")]
+        public int MaxArmer
+        {
+            get
+            {
+                return this._MaxArmer;
+            }
+            set
+            {
+                this.OnMaxArmerChanging(value);
+                this._MaxArmer = value;
+                this.OnMaxArmerChanged();
+                this.OnPropertyChanged("MaxArmer");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private int _MaxArmer;
+        partial void OnMaxArmerChanging(int value);
+        partial void OnMaxArmerChanged();
+        /// <summary>
+        /// There are no comments for Property MaxLuck in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("MaxLuck")]
+        public int MaxLuck
+        {
+            get
+            {
+                return this._MaxLuck;
+            }
+            set
+            {
+                this.OnMaxLuckChanging(value);
+                this._MaxLuck = value;
+                this.OnMaxLuckChanged();
+                this.OnPropertyChanged("MaxLuck");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private int _MaxLuck;
+        partial void OnMaxLuckChanging(int value);
+        partial void OnMaxLuckChanged();
+        /// <summary>
+        /// There are no comments for Property MinLuck in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("MinLuck")]
+        public int MinLuck
+        {
+            get
+            {
+                return this._MinLuck;
+            }
+            set
+            {
+                this.OnMinLuckChanging(value);
+                this._MinLuck = value;
+                this.OnMinLuckChanged();
+                this.OnPropertyChanged("MinLuck");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private int _MinLuck;
+        partial void OnMinLuckChanging(int value);
+        partial void OnMinLuckChanged();
         /// <summary>
         /// There are no comments for Property ShipType in the schema.
         /// </summary>
@@ -2320,6 +2579,16 @@ namespace HiyoshiCfhClient.Default
         <Property Name=""ShipTypeId"" Type=""Edm.Int32"" />
         <Property Name=""ShipSpeed"" Type=""HiyoshiCfhWeb.Models.ShipSpeed"" Nullable=""false"" />
         <Property Name=""NextRemodelingLevel"" Type=""Edm.Int32"" />
+        <Property Name=""Kana"" Type=""Edm.String"" />
+        <Property Name=""MaxHp"" Type=""Edm.Int32"" Nullable=""false"" />
+        <Property Name=""MaxFuel"" Type=""Edm.Int32"" Nullable=""false"" />
+        <Property Name=""MaxBull"" Type=""Edm.Int32"" Nullable=""false"" />
+        <Property Name=""MaxFirepower"" Type=""Edm.Int32"" Nullable=""false"" />
+        <Property Name=""MaxTorpedo"" Type=""Edm.Int32"" Nullable=""false"" />
+        <Property Name=""MaxAA"" Type=""Edm.Int32"" Nullable=""false"" />
+        <Property Name=""MaxArmer"" Type=""Edm.Int32"" Nullable=""false"" />
+        <Property Name=""MaxLuck"" Type=""Edm.Int32"" Nullable=""false"" />
+        <Property Name=""MinLuck"" Type=""Edm.Int32"" Nullable=""false"" />
         <NavigationProperty Name=""ShipType"" Type=""HiyoshiCfhWeb.Models.ShipType"">
           <ReferentialConstraint Property=""ShipTypeId"" ReferencedProperty=""ShipTypeId"" />
         </NavigationProperty>

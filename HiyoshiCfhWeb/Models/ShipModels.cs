@@ -78,6 +78,16 @@ namespace HiyoshiCfhWeb.Models
         public virtual ShipType ShipType { get; set; }
         public ShipSpeed ShipSpeed { get; set; }
         public int? NextRemodelingLevel { get; set; }
+        public string Kana { get; set; }
+        public int MaxHp { get; set; }
+        public int MaxFuel { get; set; }
+        public int MaxBull { get; set; }
+        public int MaxFirepower { get; set; }
+        public int MaxTorpedo { get; set; }
+        public int MaxAA { get; set; }
+        public int MaxArmer { get; set; }
+        public int MaxLuck { get; set; }
+        public int MinLuck { get; set; }
     }
 
     public class ShipType

@@ -179,16 +179,10 @@ namespace HiyoshiCfhClient
             OutDebugConsole("UpdateShipInfoes");
             try
             {
-                var webShipInfoes = Context.ShipInfoes.Execute().ToList();
-                foreach (var shipInfo in KanColleClient.Current.Master.Ships.Values)
-                {
-                    var webShipInfo = new WebShipInfo(shipInfo);
-                    if (shipInfo.SortId != 0 &&
-                        webShipInfoes.Where(x => x.Equals(webShipInfo)).Count() == 0)
-                    {
-                        Context.AddToShipInfoes(webShipInfo);
-                    }
-                }
+                SyncWithOData(KanColleClient.Current.Master.Ships.Values.Where(x => x.SortId != 0),
+                    Context.ShipInfoes.Execute().ToList(), "ShipInfoes",
+                    (x, y) => x.Id == y.ShipInfoId, x => new WebShipInfo(x),
+                    x => Context.AddToShipInfoes(x));
                 Context.SaveChanges();
             }
             catch (Exception ex)

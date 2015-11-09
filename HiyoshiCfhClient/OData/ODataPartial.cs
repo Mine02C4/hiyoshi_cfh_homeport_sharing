@@ -83,6 +83,16 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
                     break;
             }
             NextRemodelingLevel = shipInfo.NextRemodelingLevel;
+            Kana = shipInfo.Kana;
+            MaxHp = shipInfo.HP;
+            MaxFuel = shipInfo.MaxFuel;
+            MaxBull = shipInfo.MaxBull;
+            MaxFirepower = shipInfo.MaxFirepower;
+            MaxTorpedo = shipInfo.MaxTorpedo;
+            MaxAA = shipInfo.MaxAA;
+            MaxArmer = shipInfo.MaxArmer;
+            MaxLuck = shipInfo.MaxLuck;
+            MinLuck = shipInfo.MinLuck;
         }
 
         public override bool Equals(Object obj)
@@ -248,7 +258,7 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
                 {
                     var pa = property.GetValue(a);
                     var pb = property.GetValue(b);
-                    if (type.IsValueType)
+                    if (type.IsValueType || type == typeof(string))
                     {
                         if (pa == null || pb == null)
                         {
@@ -258,13 +268,6 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
                             }
                         }
                         else if (!Convert.ChangeType(pa, type).Equals(Convert.ChangeType(pb, type)))
-                        {
-                            return false;
-                        }
-                    }
-                    else if (type == typeof(string))
-                    {
-                        if (!Convert.ChangeType(pa, type).Equals(Convert.ChangeType(pb, type)))
                         {
                             return false;
                         }
