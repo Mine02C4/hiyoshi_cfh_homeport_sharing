@@ -1,0 +1,96 @@
+﻿@model HiyoshiCfhWeb.Models.Admiral
+@{
+    var admiral = Model;
+    ViewBag.Title = "近代化改修";
+}
+@Html.Partial("_HeaderPartial", admiral)
+
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    ID
+                </th>
+                <th>
+                    艦名
+                </th>
+                <th>
+                    レベル
+                </th>
+                <th>
+                    火力
+                </th>
+                <th>
+                    雷装
+                </th>
+                <th>
+                    対空
+                </th>
+                <th>
+                    装甲
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in admiral.Ships.OrderByDescending(x => x.Level))
+            {
+                <tr class="@(item.LevelForNextRemodeling <= 0 ? "info" : null)">
+                    <td>
+                        @item.ShipId
+                    </td>
+                    <td style="@(item.ShipInfo.NextRemodelingLevel == null ? "background: #FCE0BB" : null)">
+                        @Html.ActionLink(item.ShipInfo.Name, "Index", "Ship", routeValues: new { id = item.ShipInfo.Name }, htmlAttributes: null)
+                    </td>
+                    <td>
+                        @item.Level
+                    </td>
+                    <td style="@(item.ShipInfo.MaxFirepower > item.Firepower ? null : "background: #F60E05")">
+                        @item.Firepower
+                        @if (item.ShipInfo.MaxFirepower > item.Firepower)
+                        {
+                            <text>(+@(item.ShipInfo.MaxFirepower - item.Firepower))</text>
+                        }
+                        else
+                        {
+                            <text>(MAX)</text>
+                        }
+                    </td>
+                    <td style="@(item.ShipInfo.MaxTorpedo > item.Torpedo ? null : "background: #0576F6")">
+                        @item.Torpedo
+                        @if (item.ShipInfo.MaxTorpedo > item.Torpedo)
+                        {
+                            <text>(+@(item.ShipInfo.MaxTorpedo - item.Torpedo))</text>
+                        }
+                        else
+                        {
+                            <text>(MAX)</text>
+                        }
+                    </td>
+                    <td style="@(item.ShipInfo.MaxAA > item.AA ? null : "background: #F66B05")">
+                        @item.AA
+                        @if (item.ShipInfo.MaxAA > item.AA)
+                        {
+                            <text>(+@(item.ShipInfo.MaxAA - item.AA))</text>
+                        }
+                        else
+                        {
+                            <text>(MAX)</text>
+                        }
+                    </td>
+                    <td style="@(item.ShipInfo.MaxArmer > item.Armer ? null : "background: #F6A605")">
+                        @item.Armer
+                        @if (item.ShipInfo.MaxArmer > item.Armer)
+                        {
+                            <text>(+@(item.ShipInfo.MaxArmer - item.Armer))</text>
+                        }
+                        else
+                        {
+                            <text>(MAX)</text>
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
