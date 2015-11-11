@@ -33,22 +33,6 @@
             <th>
                 弾薬
             </th>
-            <th>
-                火力
-            </th>
-            <th>
-                雷装
-            </th>
-            <th>
-                対空
-            </th>
-            <th>
-                装甲
-            </th>
-            <th>
-                運
-            </th>
-            <th></th>
         </tr>
 
         @foreach (var item in Model)
@@ -91,37 +75,34 @@
                     @Html.DisplayFor(modelItem => item.ExpForNextLevel)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Hp)/
-                    @Html.DisplayFor(modelItem => item.ShipInfo.MaxHp)
+                    @{var percentHp = (int)(item.Hp * 100.0 / item.ShipInfo.MaxHp);}
+                    <div class="progress" style="margin-bottom: 0; width: 100px">
+                        <div class="progress-bar" role="progressbar"
+                             aria-valuenow="@percentHp"
+                             aria-valuemin="0" aria-valuemax="100" style="width: @percentHp%;">
+                            @percentHp%
+                        </div>
+                    </div>
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Fuel)/
-                    @Html.DisplayFor(modelItem => item.ShipInfo.MaxFuel)
+                    @{var percentFuel = (int)(item.Fuel * 100.0 / item.ShipInfo.MaxFuel);}
+                    <div class="progress " style="margin-bottom: 0; width: 100px">
+                        <div class="progress-bar progress-bar-success" role="progressbar"
+                             aria-valuenow="@percentFuel"
+                             aria-valuemin="0" aria-valuemax="100" style="width: @percentFuel%;">
+                            @percentFuel%
+                        </div>
+                    </div>
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Bull)/
-                    @Html.DisplayFor(modelItem => item.ShipInfo.MaxBull)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Firepower)/
-                    @Html.DisplayFor(modelItem => item.ShipInfo.MaxFirepower)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Torpedo)/
-                    @Html.DisplayFor(modelItem => item.ShipInfo.MaxTorpedo)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.AA)/
-                    @Html.DisplayFor(modelItem => item.ShipInfo.MaxAA)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Armer)/
-                    @Html.DisplayFor(modelItem => item.ShipInfo.MaxArmer)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Luck)/
-                    @Html.DisplayFor(modelItem => item.ShipInfo.MinLuck) - 
-                    @Html.DisplayFor(modelItem => item.ShipInfo.MaxLuck)
+                    @{var percentBull = (int)(item.Bull * 100.0 / item.ShipInfo.MaxBull);}
+                    <div class="progress" style="margin-bottom: 0; width: 100px">
+                        <div class="progress-bar progress-bar-warning" role="progressbar"
+                             aria-valuenow="@percentBull"
+                             aria-valuemin="0" aria-valuemax="100" style="width: @percentBull%;">
+                            @percentBull%
+                        </div>
+                    </div>
                 </td>
             </tr>
         }
