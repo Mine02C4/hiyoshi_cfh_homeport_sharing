@@ -427,6 +427,7 @@
     <Content Include="Views\Headquarters\_AdmiralsDropdownPartial.cshtml" />
     <Content Include="Views\Headquarters\_HeaderPartial.cshtml" />
     <Content Include="Views\Headquarters\Modernization.cshtml" />
+    <Content Include="Views\Headquarters\Leveling.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

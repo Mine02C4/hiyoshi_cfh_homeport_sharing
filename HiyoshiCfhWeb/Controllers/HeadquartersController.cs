@@ -30,6 +30,7 @@ namespace HiyoshiCfhWeb.Controllers
             Tuple.Create("イベント", "Event"),
             Tuple.Create("資材統計", "Materials"),
             Tuple.Create("近代化改修", "Modernization"),
+            Tuple.Create("レベリング", "Leveling"),
         };
 
         // GET: Headquarters
@@ -262,6 +263,12 @@ namespace HiyoshiCfhWeb.Controllers
         }
 
         public ActionResult Modernization(string id)
+        {
+            var admiral = db.Admirals.Where(x => x.Name.Equals(id)).First();
+            return View(admiral);
+        }
+
+        public ActionResult Leveling(string id)
         {
             var admiral = db.Admirals.Where(x => x.Name.Equals(id)).First();
             return View(admiral);
