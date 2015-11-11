@@ -30,6 +30,9 @@
                 <th>
                     装甲
                 </th>
+                <th>
+                    運
+                </th>
             </tr>
         </thead>
         <tbody>
@@ -44,8 +47,16 @@
                     </td>
                     <td>
                         @item.Level
+                        @if (item.ShipInfo.NextRemodelingLevel == null)
+                        {
+                            <text>改造完了</text>
+                        }
+                        else
+                        {
+                            @(item.LevelForNextRemodeling <= 0 ? "改造可能" : "(+" + item.LevelForNextRemodeling.ToString() + ")")
+                        }
                     </td>
-                    <td style="@(item.ShipInfo.MaxFirepower > item.Firepower ? null : "background: #F60E05")">
+                    <td style="@(item.ShipInfo.MaxFirepower > item.Firepower ? null : "background: #FF8374")">
                         @item.Firepower
                         @if (item.ShipInfo.MaxFirepower > item.Firepower)
                         {
@@ -56,7 +67,7 @@
                             <text>(MAX)</text>
                         }
                     </td>
-                    <td style="@(item.ShipInfo.MaxTorpedo > item.Torpedo ? null : "background: #0576F6")">
+                    <td style="@(item.ShipInfo.MaxTorpedo > item.Torpedo ? null : "background: #8EBEF6")">
                         @item.Torpedo
                         @if (item.ShipInfo.MaxTorpedo > item.Torpedo)
                         {
@@ -67,7 +78,7 @@
                             <text>(MAX)</text>
                         }
                     </td>
-                    <td style="@(item.ShipInfo.MaxAA > item.AA ? null : "background: #F66B05")">
+                    <td style="@(item.ShipInfo.MaxAA > item.AA ? null : "background: #F69B4D")">
                         @item.AA
                         @if (item.ShipInfo.MaxAA > item.AA)
                         {
@@ -78,11 +89,22 @@
                             <text>(MAX)</text>
                         }
                     </td>
-                    <td style="@(item.ShipInfo.MaxArmer > item.Armer ? null : "background: #F6A605")">
+                    <td style="@(item.ShipInfo.MaxArmer > item.Armer ? null : "background: #F6CF63")">
                         @item.Armer
                         @if (item.ShipInfo.MaxArmer > item.Armer)
                         {
                             <text>(+@(item.ShipInfo.MaxArmer - item.Armer))</text>
+                        }
+                        else
+                        {
+                            <text>(MAX)</text>
+                        }
+                    </td>
+                    <td style="@(item.ShipInfo.MaxLuck > item.Luck ? null : "background: #69EB91")">
+                        @item.Luck
+                        @if (item.ShipInfo.MaxLuck > item.Luck)
+                        {
+                            <text>(+@(item.ShipInfo.MaxLuck - item.Luck))</text>
                         }
                         else
                         {
