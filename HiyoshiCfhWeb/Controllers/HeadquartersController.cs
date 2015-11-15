@@ -135,6 +135,48 @@ namespace HiyoshiCfhWeb.Controllers
                     m.State = XML.QuestState.Visible;
                 }
             }
+            // デイリーの完了状況からウィークリーの状態を再走査
+            Action<XML.Quest> dfs = null;
+            dfs = qid =>
+            {
+                if (qid.Dependency
+                    .All(x =>
+                    {
+                        var q = questMaster.Quest.Where(y => y.Id == x.Id).FirstOrDefault();
+                        if (q != null && q.State == XML.QuestState.Achieved)
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }))
+                {
+                    qid.State = XML.QuestState.Achieved;
+                    List<XML.Quest> qs;
+                    if (retrietingEdge.TryGetValue(qid.Id, out qs))
+                    {
+                        foreach (var q in qs.Where(x => x.State == XML.QuestState.Invisible))
+                        {
+                            dfs(q);
+                        }
+                    }
+                }
+            };
+            foreach (var quest in questMaster.Quest
+                .Where(x => x.Type == XML.Type.daily && x.State == XML.QuestState.Achieved))
+            {
+                List<XML.Quest> qs;
+                if (retrietingEdge.TryGetValue(quest.Id, out qs))
+                {
+                    foreach (var item in qs
+                        .Where(x => x.Type == XML.Type.weekly && x.State == XML.QuestState.Invisible))
+                    {
+                        dfs(item);
+                    }
+                }
+            }
             return View(Tuple.Create(admiral, questMaster, quests));
         }
 
