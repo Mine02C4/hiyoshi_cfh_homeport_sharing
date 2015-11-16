@@ -291,6 +291,21 @@
                 </tr>
             }
         </table>
+        <h4>工廠</h4>
+        <table class="table">
+            @foreach (var item in questMaster.Quest
+                .Where(x => x.Type == HiyoshiCfhWeb.XML.Type.monthly && x.Category == Category.building))
+            {
+                <tr class="@(StateToClass(item.State))">
+                    <td>
+                        @item.Id
+                    </td>
+                    <td>
+                        @item.Name
+                    </td>
+                </tr>
+            }
+        </table>
     </div>
 </div>
 

@@ -75,6 +75,8 @@ namespace HiyoshiCfhWeb.XML
                 }
                 if (Name.Trim() != quest.Name.Trim())
                     return false;
+                if (Content.Trim() != quest.Content.Trim())
+                    return false;
                 return true;
             }
             return false;
