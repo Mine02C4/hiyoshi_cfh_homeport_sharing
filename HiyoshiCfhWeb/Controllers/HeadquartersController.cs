@@ -13,11 +13,19 @@ namespace HiyoshiCfhWeb.Controllers
 {
     public class HeadquartersController : Controller
     {
+        public static string XmlVirtualPath
+        {
+            get
+            {
+                return "~/XML/Quests.xml";
+            }
+        }
+
         private string XmlPath
         {
             get
             {
-                return Server.MapPath("~/XML/Quests.xml");
+                return Server.MapPath(XmlVirtualPath);
             }
         }
 

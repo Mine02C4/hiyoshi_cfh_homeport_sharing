@@ -216,6 +216,7 @@
     <Compile Include="Controllers\EventController.cs" />
     <Compile Include="Controllers\HeadquartersController.cs" />
     <Compile Include="Controllers\ImportController.cs" />
+    <Compile Include="Controllers\MonitorController.cs" />
     <Compile Include="Controllers\OData\AdmiralsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -428,6 +429,7 @@
     <Content Include="Views\Headquarters\_HeaderPartial.cshtml" />
     <Content Include="Views\Headquarters\Modernization.cshtml" />
     <Content Include="Views\Headquarters\Leveling.cshtml" />
+    <Content Include="Views\Monitor\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

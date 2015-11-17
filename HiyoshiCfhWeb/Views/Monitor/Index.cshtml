@@ -1,0 +1,71 @@
+﻿@model IEnumerable<HiyoshiCfhWeb.Models.Quest>
+@{
+    ViewBag.Title = "モニター";
+    var quests = Model;
+}
+
+<h2>モニター</h2>
+
+<h3>任務マスターと対応できなかった任務</h3>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                カテゴリ
+            </th>
+            <th>
+                タイプ
+            </th>
+            <th>
+                任務名
+            </th>
+            <th>
+                内容
+            </th>
+            <th>
+                燃料
+            </th>
+            <th>
+                弾薬
+            </th>
+            <th>
+                鋼材
+            </th>
+            <th>
+                ボーキサイト
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in quests)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Category)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Type)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Content)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Fuel)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Bull)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Steel)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Bauxite)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
