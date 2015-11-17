@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Xml.Serialization;
-using Livet;
 using System.IO;
+using Grabacr07.KanColleWrapper;
 
 namespace HiyoshiCfhClient.Models
 {
     [Serializable]
-    public class Settings : NotificationObject
+    public class Settings : Notifier
     {
         private static string path = Path.Combine(
             Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
