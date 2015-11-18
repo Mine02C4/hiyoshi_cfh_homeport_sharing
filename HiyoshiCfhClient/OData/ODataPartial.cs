@@ -181,6 +181,137 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
         }
     }
 
+    public partial class SlotItem
+    {
+        public SlotItem() { }
+
+        public SlotItem(Grabacr07.KanColleWrapper.Models.SlotItem slotItem)
+        {
+            Id = slotItem.Id;
+            SlotItemInfoId = slotItem.Info.Id;
+            Level = slotItem.Level;
+            Adept = slotItem.Adept;
+        }
+
+        public SlotItem(Grabacr07.KanColleWrapper.Models.SlotItem slotItem, int admiralId)
+            : this(slotItem)
+        {
+            AdmiralId = admiralId;
+        }
+
+        public override string ToString()
+        {
+            return string.Format("ID = {0}, SlotItemInfoId = {1}", this.Id, this.SlotItemInfoId);
+        }
+
+        public override bool Equals(Object obj)
+        {
+            if (obj == null || GetType() != obj.GetType())
+            {
+                return false;
+            }
+            var a = (SlotItem)obj;
+            return this == a;
+        }
+
+        public override int GetHashCode()
+        {
+            return Id ^ Level ^ Adept;
+        }
+
+        public static bool operator !=(SlotItem a, SlotItem b)
+        {
+            return !(a == b);
+        }
+
+        public static bool operator ==(SlotItem a, SlotItem b)
+        {
+            return Util.EqualModel<SlotItem>(a, b, new string[] { "SlotItemUid" });
+        }
+    }
+
+    public partial class SlotItemInfo
+    {
+        public SlotItemInfo() { }
+
+        public SlotItemInfo(Grabacr07.KanColleWrapper.Models.SlotItemInfo slotItemInfo)
+        {
+            SlotItemInfoId = slotItemInfo.Id;
+            Name = slotItemInfo.Name;
+            switch (slotItemInfo.Type)
+            {
+                case Grabacr07.KanColleWrapper.Models.SlotItemType.大型電探:
+                    Type = SlotItemType.大型電探;
+                    break;
+                case Grabacr07.KanColleWrapper.Models.SlotItemType.小型電探:
+                    Type = SlotItemType.小型電探;
+                    break;
+                case Grabacr07.KanColleWrapper.Models.SlotItemType.応急修理要員:
+                    Type = SlotItemType.応急修理要員;
+                    break;
+                case Grabacr07.KanColleWrapper.Models.SlotItemType.探照灯:
+                    Type = SlotItemType.探照灯;
+                    break;
+                case Grabacr07.KanColleWrapper.Models.SlotItemType.水上偵察機:
+                    Type = SlotItemType.水上偵察機;
+                    break;
+                case Grabacr07.KanColleWrapper.Models.SlotItemType.水上爆撃機:
+                    Type = SlotItemType.水上爆撃機;
+                    break;
+                case Grabacr07.KanColleWrapper.Models.SlotItemType.艦上偵察機:
+                    Type = SlotItemType.艦上偵察機;
+                    break;
+                case Grabacr07.KanColleWrapper.Models.SlotItemType.艦上戦闘機:
+                    Type = SlotItemType.艦上戦闘機;
+                    break;
+                case Grabacr07.KanColleWrapper.Models.SlotItemType.艦上攻撃機:
+                    Type = SlotItemType.艦上攻撃機;
+                    break;
+                case Grabacr07.KanColleWrapper.Models.SlotItemType.艦上爆撃機:
+                    Type = SlotItemType.艦上爆撃機;
+                    break;
+                default:
+                    Type = SlotItemType.不明;
+                    break;
+            }
+            CategoryId = slotItemInfo.CategoryId;
+            Firepower = slotItemInfo.Firepower;
+            Torpedo = slotItemInfo.Torpedo;
+            AA = slotItemInfo.AA;
+            Armer = slotItemInfo.Armer;
+            Bomb = slotItemInfo.Bomb;
+            AS = slotItemInfo.ASW;
+            Hit = slotItemInfo.Hit;
+            Evasiveness = slotItemInfo.Evade;
+            Search = slotItemInfo.ViewRange;
+        }
+
+        public override bool Equals(Object obj)
+        {
+            if (obj == null || GetType() != obj.GetType())
+            {
+                return false;
+            }
+            var a = (SlotItemInfo)obj;
+            return this == a;
+        }
+
+        public override int GetHashCode()
+        {
+            return SlotItemInfoId ^ CategoryId;
+        }
+
+        public static bool operator !=(SlotItemInfo a, SlotItemInfo b)
+        {
+            return !(a == b);
+        }
+
+        public static bool operator ==(SlotItemInfo a, SlotItemInfo b)
+        {
+            return Util.EqualModel<SlotItemInfo>(a, b);
+        }
+    }
+
     public partial class Quest
     {
         public Quest() { }
