@@ -5,3 +5,51 @@
 }
 @Html.Partial("_HeaderPartial", admiral)
 
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    ID
+                </th>
+                <th>
+                    艦種
+                </th>
+                <th>
+                    艦名
+                </th>
+                <th>
+                    レベル
+                </th>
+                <th>
+                    改造状況
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in admiral.Ships.OrderByDescending(x => x.Level))
+            {
+                <tr>
+                    <td>
+                        @item.ShipId
+                    </td>
+                    <td>
+                        @item.ShipInfo.ShipType.Name
+                    </td>
+                    <td>
+                        @Html.ActionLink(item.ShipInfo.Name, "Index", "Ship", routeValues: new { id = item.ShipInfo.Name }, htmlAttributes: null)
+                    </td>
+                    <td>
+                        @item.Level
+                    </td>
+                    <td>
+
+                    </td>
+                    <td>
+                        @item.S
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
