@@ -43,10 +43,14 @@
                         @item.Level
                     </td>
                     <td>
-
-                    </td>
-                    <td>
-                        @item.S
+                        @if (item.ShipInfo.NextRemodelingLevel == null)
+                        {
+                            <text>改造完了</text>
+                        }
+                        else
+                        {
+                            @(item.LevelForNextRemodeling <= 0 ? "改造可能" : "(+" + item.LevelForNextRemodeling.ToString() + ")")
+                        }
                     </td>
                 </tr>
             }
