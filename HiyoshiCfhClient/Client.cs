@@ -1,9 +1,11 @@
 ﻿using Grabacr07.KanColleWrapper;
 using HiyoshiCfhClient.Default;
-using WebShipType = HiyoshiCfhClient.HiyoshiCfhWeb.Models.ShipType;
-using WebShipInfo = HiyoshiCfhClient.HiyoshiCfhWeb.Models.ShipInfo;
 using WebAdmiral = HiyoshiCfhClient.HiyoshiCfhWeb.Models.Admiral;
 using WebShip = HiyoshiCfhClient.HiyoshiCfhWeb.Models.Ship;
+using WebShipType = HiyoshiCfhClient.HiyoshiCfhWeb.Models.ShipType;
+using WebShipInfo = HiyoshiCfhClient.HiyoshiCfhWeb.Models.ShipInfo;
+using WebSlotItem = HiyoshiCfhClient.HiyoshiCfhWeb.Models.SlotItem;
+using WebSlotItemInfo = HiyoshiCfhClient.HiyoshiCfhWeb.Models.SlotItemInfo;
 using WebQuest = HiyoshiCfhClient.HiyoshiCfhWeb.Models.Quest;
 using System;
 using System.Collections.Generic;
@@ -147,6 +149,7 @@ namespace HiyoshiCfhClient
             OutDebugConsole("UpdateMasterData TID = " + Thread.CurrentThread.ManagedThreadId.ToString());
             UpdateShipTypes();
             UpdateShipInfoes();
+            UpdateSlotItemInfoes();
         }
 
         void UpdateShipTypes()
@@ -191,6 +194,23 @@ namespace HiyoshiCfhClient
             }
         }
 
+        void UpdateSlotItemInfoes()
+        {
+            OutDebugConsole("UpdateSlotItemInfoes");
+            try
+            {
+                SyncWithOData(KanColleClient.Current.Master.SlotItems.Values,
+                    Context.SlotItemInfoes.Execute().ToList(), "SlotItemInfoes",
+                    (x, y) => x.Id == y.SlotItemInfoId, x => new WebSlotItemInfo(x),
+                    x => Context.AddToSlotItemInfoes(x));
+                Context.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                OutDebugConsole("Error: " + ex.ToString());
+            }
+        }
+
         public async Task UpdateShips()
         {
             await factory.StartNew(() =>
@@ -212,6 +232,37 @@ namespace HiyoshiCfhClient
                     OutDebugConsole("Saving ship data");
                     Context.SaveChanges();
                     OutDebugConsole("Saved ship data");
+                }
+                catch (DataServiceRequestException ex)
+                {
+                    ResetContext();
+                    JudgeForbiddenOrNot(ex);
+                    throw ex;
+                }
+            });
+        }
+
+        public async Task UpdateSlotItems()
+        {
+            await factory.StartNew(() =>
+            {
+                OutDebugConsole("UpdateSlotItems");
+                CheckAdmiral();
+                try
+                {
+                    SyncWithOData(KanColleClient.Current.Homeport.Itemyard.SlotItems.Values.ToList(),
+                        Context.SlotItems.Where(x => x.AdmiralId == Admiral.AdmiralId).ToList(), "SlotItems",
+                        (x, y) => x.Id == y.Id, x => new WebSlotItem(x, Admiral.AdmiralId),
+                        x => Context.AddToSlotItems(x),
+                        (x, y) =>
+                        {
+                            x.SlotItemUid = y.SlotItemUid;
+                            return x;
+                        }
+                    );
+                    OutDebugConsole("Saving SlotItem data");
+                    Context.SaveChanges();
+                    OutDebugConsole("Saved SlotItem data");
                 }
                 catch (DataServiceRequestException ex)
                 {

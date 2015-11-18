@@ -88,6 +88,7 @@ namespace HiyoshiCfhClient.ViewModels
         bool IsInited = false;
         bool setHandleLogin = false;
         PropertyChangedEventListener OrganizationListener = null;
+        PropertyChangedEventListener ItemyardListener = null;
         Client Client = null;
         QuestsTracker QuestsTracker;
 
@@ -112,7 +113,7 @@ namespace HiyoshiCfhClient.ViewModels
 
         void InitHandlers()
         {
-            if (OrganizationListener == null)
+            if (OrganizationListener == null || ItemyardListener == null)
             {
                 #region 艦娘の変更検知
                 OrganizationListener = new PropertyChangedEventListener(KanColleClient.Current.Homeport.Organization);
@@ -126,6 +127,7 @@ namespace HiyoshiCfhClient.ViewModels
                         {
                             await PrepareClient();
                             await Client.UpdateShips();
+                            await Client.UpdateSlotItems();
                         }
                     }
                     catch (DeniedAccessToAdmiral)
@@ -139,6 +141,27 @@ namespace HiyoshiCfhClient.ViewModels
                     }
                 });
                 this.CompositeDisposable.Add(OrganizationListener);
+                #endregion
+                #region 装備の変更検知
+                ItemyardListener = new PropertyChangedEventListener(KanColleClient.Current.Homeport.Itemyard);
+                ItemyardListener.RegisterHandler(() => KanColleClient.Current.Homeport.Itemyard.SlotItems,
+                async (s, h) =>
+                {
+                    try
+                    {
+                        OutDebugConsole("Handle Change of SlotItems");
+                        if (CheckToken() && EnableAutoUpdate && KanColleClient.Current.Homeport.Itemyard.SlotItems.Count > 0)
+                        {
+                            await PrepareClient();
+                            await Client.UpdateSlotItems();
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        OutDebugConsole(ex.ToString());
+                    }
+                });
+                this.CompositeDisposable.Add(ItemyardListener);
                 #endregion
                 #region 任務の取得検知
                 var proxy = KanColleClient.Current.Proxy;
@@ -326,6 +349,7 @@ namespace HiyoshiCfhClient.ViewModels
                         OutDebugConsole("Start init client thread");
                         await PrepareClient();
                         await Client.UpdateShips();
+                        await Client.UpdateSlotItems();
                         OutDebugConsole("End init client thread");
                     }
                     catch (DeniedAccessToAdmiral)
