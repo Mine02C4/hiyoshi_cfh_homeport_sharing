@@ -52,6 +52,7 @@ namespace HiyoshiCfhWeb.Models
 
     public enum SlotItemType
     {
+        不明 = 0,
         艦上戦闘機 = 6,
         艦上爆撃機 = 7,
         艦上攻撃機 = 8,
