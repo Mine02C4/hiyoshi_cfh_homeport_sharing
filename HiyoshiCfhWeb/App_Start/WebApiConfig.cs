@@ -23,10 +23,12 @@ namespace HiyoshiCfhWeb
                 defaults: new { id = RouteParameter.Optional }
             );
             ODataConventionModelBuilder builder = new ODataConventionModelBuilder();
-            builder.EntitySet<ShipType>("ShipTypes");
-            builder.EntitySet<ShipInfo>("ShipInfoes");
             builder.EntitySet<Admiral>("Admirals");
             builder.EntitySet<Ship>("Ships");
+            builder.EntitySet<ShipType>("ShipTypes");
+            builder.EntitySet<ShipInfo>("ShipInfoes");
+            builder.EntitySet<SlotItem>("SlotItems");
+            builder.EntitySet<SlotItemInfo>("SlotItemInfoes");
             builder.EntitySet<Quest>("Quests");
             builder.EntitySet<MaterialRecord>("MaterialRecords");
             config.MapODataServiceRoute("odata", "odata", builder.GetEdmModel());
