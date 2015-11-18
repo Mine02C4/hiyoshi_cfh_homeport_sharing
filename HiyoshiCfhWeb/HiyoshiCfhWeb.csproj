@@ -436,6 +436,7 @@
     <Content Include="Views\Headquarters\Modernization.cshtml" />
     <Content Include="Views\Headquarters\Leveling.cshtml" />
     <Content Include="Views\Monitor\Index.cshtml" />
+    <Content Include="Views\Headquarters\Equipments.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

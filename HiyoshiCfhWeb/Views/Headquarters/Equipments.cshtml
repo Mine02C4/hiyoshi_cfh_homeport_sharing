@@ -1,0 +1,61 @@
+﻿@model HiyoshiCfhWeb.Models.Admiral
+
+@{
+    ViewBag.Title = "保有装備";
+    var admiral = Model;
+}
+
+@Html.Partial("_HeaderPartial", admiral)
+
+<table class="table">
+    <tr>
+        <th rowspan="2">
+            ID
+        </th>
+        <th rowspan="2">
+            名前
+        </th>
+        <th colspan="11">
+            レベル
+        </th>
+        <th rowspan="2">
+            熟練度
+        </th>
+    </tr>
+    <tr style="color: #1E65FF">
+        @for (int i = 0; i <= 10; i++)
+        {
+            <th>★+@i</th>
+        }
+    </tr>
+    @foreach (var item in admiral.SlotItems
+        .OrderBy(x => x.SlotItemInfo.CategoryId)
+        .ThenBy(x => x.SlotItemInfo.SlotItemInfoId)
+        .ThenBy(x => x.Level))
+    {
+        <tr>
+            <td>
+                @item.Id
+            </td>
+            <td>
+                @item.SlotItemInfo.Name
+            </td>
+            @for (int i = 0; i <= item.Level; i++)
+            {
+                <td style="background-color: #1E65FF; color: #fff">
+                    @if (i == item.Level)
+                    {
+                        <text>★+@item.Level</text>
+                    }
+                </td>
+            }
+            @for (int i = item.Level; i <= 10; i++)
+            {
+                <td></td>
+            }
+            <td>
+                @item.Adept
+            </td>
+        </tr>
+    }
+</table>

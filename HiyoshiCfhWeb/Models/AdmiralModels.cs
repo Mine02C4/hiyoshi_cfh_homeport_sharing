@@ -38,6 +38,11 @@ namespace HiyoshiCfhWeb.Models
         public virtual ICollection<Ship> Ships { get; set; }
 
         /// <summary>
+        /// 保有する装備。
+        /// </summary>
+        public virtual ICollection<SlotItem> SlotItems { get; set; }
+
+        /// <summary>
         /// 提督経験値
         /// </summary>
         public int Experience { get; set; }
