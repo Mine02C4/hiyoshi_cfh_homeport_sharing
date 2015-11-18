@@ -14,11 +14,53 @@ namespace HiyoshiCfhWeb.Models
         /// </summary>
         [Key]
         public int SlotItemUid { get; set; }
+
+        /// <summary>
+        /// 所有する提督。
+        /// </summary>
+        public int AdmiralId { get; set; }
+        public virtual Admiral Admiral { get; set; }
+
+        /// <summary>
+        /// ゲーム内部で振られる各母港内での識別子。
+        /// </summary>
+        public int Id { get; set; }
+
+        public int SlotItemInfoId { get; set; }
+        public virtual SlotItemInfo SlotItemInfo { get; set; }
+        public int Level { get; set; }
+        public int Adept { get; set; }
     }
 
     public class SlotItemInfo
     {
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int SlotItemInfoId { get; set; }
+        public string Name { get; set; }
+        public SlotItemType Type { get; set; }
+        public int CategoryId { get; set; }
+        public int Firepower { get; set; }
+        public int Torpedo { get; set; }
+        public int AA { get; set; }
+        public int Armer { get; set; }
+        public int Bomb { get; set; }
+        public int AS { get; set; }
+        public int Hit { get; set; }
+        public int Evasiveness { get; set; }
+        public int Search { get; set; }
+    }
+
+    public enum SlotItemType
+    {
+        艦上戦闘機 = 6,
+        艦上爆撃機 = 7,
+        艦上攻撃機 = 8,
+        艦上偵察機 = 9,
+        水上偵察機 = 10,
+        水上爆撃機 = 11,
+        小型電探 = 12,
+        大型電探 = 13,
+        応急修理要員 = 23,
+        探照灯 = 29,
     }
 }

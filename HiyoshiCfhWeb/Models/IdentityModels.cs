@@ -72,6 +72,8 @@ namespace HiyoshiCfhWeb.Models
         public DbSet<Ship> Ships { get; set; }
         public DbSet<ShipInfo> ShipInfoes { get; set; }
         public DbSet<ShipType> ShipTypes { get; set; }
+        public DbSet<SlotItem> SlotItems { get; set; }
+        public DbSet<SlotItemInfo> SlotItemInfoes { get; set; }
         public DbSet<Permission> Permissions { get; set; }
         public DbSet<Quest> Quests { get; set; }
         public DbSet<MaterialRecord> MaterialRecords { get; set; }
