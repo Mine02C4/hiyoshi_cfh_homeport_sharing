@@ -226,6 +226,8 @@
     <Compile Include="Controllers\OData\ShipInfoesController.cs" />
     <Compile Include="Controllers\OData\ShipsController.cs" />
     <Compile Include="Controllers\OData\ShipTypesController.cs" />
+    <Compile Include="Controllers\OData\SlotItemInfoesController.cs" />
+    <Compile Include="Controllers\OData\SlotItemsController.cs" />
     <Compile Include="Controllers\PluginController.cs" />
     <Compile Include="Controllers\RoleController.cs" />
     <Compile Include="Controllers\ShipController.cs" />
