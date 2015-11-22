@@ -1,4 +1,7 @@
 ﻿@model IEnumerable<HiyoshiCfhWeb.Models.Ship>
+@{
+    var tags = HiyoshiCfhWeb.Models.Event.Events.Last().SortieTags;
+}
 <h2>所属艦娘一覧</h2>
 <div class="table-responsive">
     <table class="table">
@@ -47,23 +50,14 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.Level)
                 </td>
-                @switch (item.SortieTag)
+                @{var tag = tags.Where(x => x.InternalId == item.SortieTag).FirstOrDefault();}
+                @if (tag != null)
                 {
-                    case 1:
-                        <td style="background-color: #3C677F; color: #FFF">初動作戦</td>
-                        break;
-                    case 2:
-                        <td style="background-color: #3B662A; color: #FFF">機動部隊</td>
-                        break;
-                    case 3:
-                        <td style="background-color: #839842; color: #FFF">挺身部隊</td>
-                        break;
-                    case 4:
-                        <td style="background-color: #906736; color: #FFF">西部方面</td>
-                        break;
-                    default:
-                        <td></td>
-                        break;
+                    <td style="background-color: @tag.WebColor; color: #FFF">@tag.Name</td>
+                }
+                else
+                {
+                    <td></td>
                 }
                 <td>
                     @Html.DisplayFor(modelItem => item.IsLocked)

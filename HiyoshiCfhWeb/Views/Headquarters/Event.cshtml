@@ -2,10 +2,7 @@
 
 @{
     ViewBag.Title = "イベント";
-    var tags = new[] {
-                     Tuple.Create(1, "輸送作戦", "#3B662A"),
-                     Tuple.Create(2, "派遣作戦", "#906736"),
-                 };
+    var tags = HiyoshiCfhWeb.Models.Event.Events.Last().SortieTags;
     var admiral = Model;
 }
 
@@ -20,9 +17,9 @@
         <th>E4</th>
         <th>E5</th>
     </tr>
-    <tr style="background: @tags[0].Item3; color: #fff">
+    <tr style="background: @tags[0].WebColor; color: #fff">
         <td>
-            @tags[0].Item2
+            @tags[0].Name
         </td>
         <td></td>
         <td></td>
@@ -30,9 +27,9 @@
         <td style="background: #fff"></td>
         <td></td>
     </tr>
-    <tr style="background: @tags[1].Item3; color: #fff">
+    <tr style="background: @tags[1].WebColor; color: #fff">
         <td>
-            @tags[1].Item2
+            @tags[1].Name
         </td>
         <td style="background: #fff"></td>
         <td style="background: #fff"></td>
@@ -48,7 +45,7 @@
     @foreach (var tag in tags)
     {
         <div class="col-md-3 col-sm-6">
-            <h4>@tag.Item2</h4>
+            <h4>@tag.Name</h4>
             <table class="table">
                 <tr>
                     <th>
@@ -61,9 +58,9 @@
                         レベル
                     </th>
                 </tr>
-                @foreach (var ship in admiral.Ships.Where(x => x.SortieTag == tag.Item1).OrderByDescending(x => x.Level))
+                @foreach (var ship in admiral.Ships.Where(x => x.SortieTag == tag.InternalId).OrderByDescending(x => x.Level))
                 {
-                    <tr style="border-left: 5px solid @tag.Item3">
+                    <tr style="border-left: 5px solid @tag.WebColor">
                         <td>
                             @Html.DisplayFor(modelItem => ship.ShipId)
                         </td>
