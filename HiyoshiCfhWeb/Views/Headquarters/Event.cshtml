@@ -41,7 +41,7 @@
 
 <h3>出撃識別札</h3>
 
-<div class="raw">
+<div class="raw clearfix">
     @foreach (var tag in tags)
     {
         <div class="col-md-3 col-sm-6">
@@ -75,4 +75,49 @@
             </table>
         </div>
     }
+</div>
+
+<div class="raw">
+
+    <h3>主要4資材</h3>
+
+    <svg id="main_chart" style="height: 600px; overflow: visible"></svg>
+
+    <h3>バケツ</h3>
+
+    <svg id="bucket_chart" style="height: 200px; overflow: visible"></svg>
+
+    <script type="text/javascript" src="@Url.Content("/Scripts/d3/d3.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("/Scripts/nv.d3.min.js")"></script>
+    <script type="text/javascript">
+        function setup_chart(url, selector) {
+            d3.json(url, function (data) {
+                var colors = d3.scale.category20();
+                var keyColor = function (d, i) { return colors(d.key) };
+                var chart = nv.models.lineChart()
+                        .x(function (d) { return new Date(d["time"]) })
+                        .y(function (d) { return d["value"] })
+                        .showLegend(true)
+                        .showYAxis(true)
+                        .showXAxis(true)
+                        .color(keyColor);
+
+                chart.xAxis.tickFormat(
+                    function (d) {
+                        return d3.time.format("%Y-%m-%d %H:%M:%S")(new Date(d))
+                    });
+                chart.yAxis.tickFormat(d3.format(',.0d'));
+                chart.forceY(0);
+                d3.select(selector).datum(data).call(chart);
+                nv.utils.windowResize(function () {
+                    chart.update();
+                });
+                return chart;
+            });
+        }
+        setup_chart("@Html.Raw(Url.Action("Materials",
+        new { type = "json", target = "main", range = "event" }))", "#main_chart");
+        setup_chart("@Html.Raw(Url.Action("Materials",
+        new { type = "json", target = "bucket", range = "event" }))", "#bucket_chart");
+    </script>
 </div>

@@ -15,7 +15,7 @@ namespace HiyoshiCfhWeb.Models
                     new SortieTag("輸送作戦", Color.FromArgb(0x3B662A), 1),
                     new SortieTag("派遣作戦", Color.FromArgb(0x906736), 2)
                 },
-                new DateTimeOffset(2015, 11, 28, 21, 17, 0, new TimeSpan(9, 0, 0)),
+                new DateTimeOffset(2015, 11, 18, 21, 17, 0, new TimeSpan(9, 0, 0)),
                 new DateTimeOffset(2015, 12,  7, 11,  0, 0, new TimeSpan(9, 0, 0))
             )
         };

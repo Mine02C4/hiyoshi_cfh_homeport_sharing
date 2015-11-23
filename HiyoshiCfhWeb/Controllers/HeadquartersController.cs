@@ -222,7 +222,7 @@ namespace HiyoshiCfhWeb.Controllers
             return View(admiral);
         }
 
-        public ActionResult Materials(string id, string type, string target)
+        public ActionResult Materials(string id, string type, string target, string range)
         {
             var admiral = db.Admirals.Where(x => x.Name.Equals(id)).First();
             if (type != null && type == "json")
@@ -236,16 +236,31 @@ namespace HiyoshiCfhWeb.Controllers
                 {
                     material = Material.List.GetRange(0, 4);
                 }
+                else if (target == "bucket")
+                {
+                    material = Material.List.GetRange(5, 1);
+                }
                 else
                 {
                     material = Material.List.GetRange(4, 4);
+                }
+                Func<MaterialTuple, Func<MaterialRecord, bool>> materialFilter = null;
+                if (range != null && range == "event")
+                {
+                    var ev = Models.Event.Events.Last();
+                    materialFilter = m => x => x.AdmiralId == admiral.AdmiralId && x.Type == m.Type &&
+                        x.TimeUtc > ev.StartTime.UtcDateTime && x.TimeUtc < ev.FinishTime.UtcDateTime;
+                }
+                else
+                {
+                    materialFilter = m => x => x.AdmiralId == admiral.AdmiralId && x.Type == m.Type;
                 }
                 var nlimit = 530;
                 var obj =
                     material.Select(m =>
                     {
                         var count = db.MaterialRecords
-                            .Where(x => x.AdmiralId == admiral.AdmiralId && x.Type == m.Type)
+                            .Where(materialFilter(m))
                             .Count();
                         if (count <= nlimit)
                         {
@@ -253,7 +268,7 @@ namespace HiyoshiCfhWeb.Controllers
                             {
                                 key = m.Name,
                                 values = db.MaterialRecords
-                                .Where(x => x.AdmiralId == admiral.AdmiralId && x.Type == m.Type)
+                                .Where(materialFilter(m))
                                 .OrderBy(x => x.TimeUtc)
                                 .Select(x => new
                                 {
@@ -270,7 +285,7 @@ namespace HiyoshiCfhWeb.Controllers
                         else
                         {
                             var values = db.MaterialRecords
-                                .Where(x => x.AdmiralId == admiral.AdmiralId && x.Type == m.Type)
+                                .Where(materialFilter(m))
                                 .OrderBy(x => x.TimeUtc)
                                 .Select(x => new
                                 {
@@ -287,8 +302,7 @@ namespace HiyoshiCfhWeb.Controllers
                                 {
                                     time = DateTime.UtcNow.UtcToJst().ToString("O"),
                                     value = db.MaterialRecords
-                                        .Where(x => x.AdmiralId == admiral.AdmiralId &&
-                                            x.Type == m.Type)
+                                        .Where(materialFilter(m))
                                         .OrderByDescending(x => x.TimeUtc)
                                         .First().Value
                                 }
