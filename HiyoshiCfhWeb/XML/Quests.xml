@@ -5109,7 +5109,7 @@
       「空母機動部隊」西へ！
     </Name>
     <Content>
-      航空母艦2隻(随伴駆逐艦2隻)を基幹とする空母機動部隊で、カレー洋の敵艦隊を撃滅せよ！
+      航空母艦2隻(随伴駆逐艦2隻)を基幹とする空母機動艦隊で、カレー洋の敵艦隊を撃滅せよ！
     </Content>
     <Bonus>
       <Fuel>
@@ -7734,7 +7734,7 @@
       <Achieve Id="F22"/>
     </Dependency>
   </Quest>
-  <Quest Id="F25" Category="building" Type="onetime">
+  <Quest Id="F25" Category="building" Type="monthly">
     <Name>
       機種転換
     </Name>
@@ -7821,7 +7821,7 @@
       機種転換＆部隊再編
     </Name>
     <Content>
-      練度max「零戦52型丙(付岩井小隊)」搭載「瑞鶴」秘書艦で「零戦62型(爆戦)」を2つ廃棄！
+      練度max「零戦52型丙(付岩井小隊)」搭載「瑞鶴」秘書艦で、「零戦62型(爆戦)」を2つ廃棄！
     </Content>
     <Bonus>
       <Fuel>
