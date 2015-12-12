@@ -181,7 +181,7 @@ namespace HiyoshiCfhWeb.Models
             }
         }
 
-        public static IEnumerable<int> TotalList
+        public static List<int> TotalList
         {
             get
             {
