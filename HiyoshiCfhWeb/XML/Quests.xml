@@ -2439,6 +2439,125 @@
       <Achieve Id="F29"/>
     </Dependency>
   </Quest>
+  <Quest Id="A63" Category="composition" Type="onetime">
+    <Name>
+      「第十六戦隊(第二次)」を編成せよ！
+    </Name>
+    <Content>
+      「名取」を旗艦として「五十鈴」「鬼怒」を擁する、第十六戦隊(第二次)を編成せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        160
+      </Fuel>
+      <Bull>
+        160
+      </Bull>
+      <Steel>
+        160
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        2
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        2
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="B52"/>
+      <Achieve Id="C5"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="A64" Category="composition" Type="onetime">
+    <Name>
+      「新編成航空戦隊」を編成せよ！
+    </Name>
+    <Content>
+      空母2隻＋(航空戦艦or航空巡洋艦)2隻＋駆逐艦2隻の新航空戦隊を編成せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        200
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        200
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        2
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        2
+      </RenovationMaterials>
+      <Other>
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="B55"/>
+      <Achieve Id="B50"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="A65" Category="composition" Type="onetime">
+    <Name>
+      精強な「水上反撃部隊」を再編成せよ！
+    </Name>
+    <Content>
+      駆逐艦「霞」旗艦、「足柄」「大淀」「朝霜」「清霜」他の水上反撃部隊を再編成せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        300
+      </Fuel>
+      <Bull>
+        300
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        3
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="B56"/>
+    </Dependency>
+  </Quest>
   <Quest Id="B1" Category="sortie" Type="onetime">
     <Name>
       はじめての「出撃」！
@@ -4590,6 +4709,128 @@
     </Bonus>
     <Dependency>
       <Achieve Id="A61"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="B55" Category="sortie" Type="onetime">
+    <Name>
+      「第十六戦隊(第二次)」出撃せよ！
+    </Name>
+    <Content>
+      「第十六戦隊(第二次)」をオリョール海に展開、敵主力艦隊を捕捉、これを撃滅せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        320
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        320
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        家具箱(大)x1
+        給糧艦「間宮」x1
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="A63"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="B56" Category="sortie" Type="onetime">
+    <Name>
+      新編成航空戦隊、北方へ進出せよ！
+    </Name>
+    <Content>
+      「新編成航空戦隊」をアルフォンシーノ方面へ進出、敵泊地の機動部隊を撃滅せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        400
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        400
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        2
+      </RenovationMaterials>
+      <Other>
+        特注家具職人x1
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="A64"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="B57" Category="sortie" Type="onetime">
+    <Name>
+      「礼号作戦」実施せよ！
+    </Name>
+    <Content>
+      精強な「水上反撃部隊」で、南西諸島沖ノ島沖に突入！同海域の敵戦力を撃滅せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        300
+      </Fuel>
+      <Bull>
+        700
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        3
+      </RenovationMaterials>
+      <Other>
+        プレゼント箱x1
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="A65"/>
+      <Achieve Id="Bm5"/>
     </Dependency>
   </Quest>
   <Quest Id="Bd1" Category="sortie" Type="daily">
