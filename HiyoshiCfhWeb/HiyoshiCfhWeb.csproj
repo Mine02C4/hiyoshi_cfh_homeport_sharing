@@ -308,6 +308,7 @@
     <Compile Include="Models\AdmiralModels.cs" />
     <Compile Include="Models\Attributes.cs" />
     <Compile Include="Models\EventModels.cs" />
+    <Compile Include="Models\ExperienceModels.cs" />
     <Compile Include="Models\FleetModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />

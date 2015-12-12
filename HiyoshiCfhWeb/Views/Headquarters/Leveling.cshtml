@@ -5,55 +5,77 @@
 }
 @Html.Partial("_HeaderPartial", admiral)
 
-<div class="table-responsive">
-    <table class="table">
-        <thead>
-            <tr>
-                <th>
-                    ID
-                </th>
-                <th>
-                    艦種
-                </th>
-                <th>
-                    艦名
-                </th>
-                <th>
-                    レベル
-                </th>
-                <th>
-                    改造状況
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in admiral.Ships.OrderByDescending(x => x.Level))
-            {
+<div class="row">
+    <div class="table-responsive col-md-8">
+        <table class="table">
+            <thead>
                 <tr>
-                    <td>
-                        @item.ShipId
-                    </td>
-                    <td>
-                        @item.ShipInfo.ShipType.Name
-                    </td>
-                    <td>
-                        @Html.ActionLink(item.ShipInfo.Name, "Index", "Ship", routeValues: new { id = item.ShipInfo.Name }, htmlAttributes: null)
-                    </td>
-                    <td>
-                        @item.Level
-                    </td>
-                    <td>
-                        @if (item.ShipInfo.NextRemodelingLevel == null)
-                        {
-                            <text>改造完了</text>
-                        }
-                        else
-                        {
-                            @(item.LevelForNextRemodeling <= 0 ? "改造可能" : "(+" + item.LevelForNextRemodeling.ToString() + ")")
-                        }
-                    </td>
+                    <th>
+                        ID
+                    </th>
+                    <th>
+                        艦種
+                    </th>
+                    <th>
+                        艦名
+                    </th>
+                    <th>
+                        レベル
+                    </th>
+                    <th>
+                        改造状況
+                    </th>
                 </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in admiral.Ships.OrderByDescending(x => x.Level))
+                {
+                    <tr>
+                        <td>
+                            @item.ShipId
+                        </td>
+                        <td>
+                            @item.ShipInfo.ShipType.Name
+                        </td>
+                        <td>
+                            @Html.ActionLink(item.ShipInfo.Name, "Index", "Ship", routeValues: new { id = item.ShipInfo.Name }, htmlAttributes: null)
+                        </td>
+                        <td>
+                            @item.Level
+                        </td>
+                        <td>
+                            @if (item.ShipInfo.NextRemodelingLevel == null)
+                            {
+                                <text>改造完了</text>
+                            }
+                            else
+                            {
+                                @(item.LevelForNextRemodeling <= 0 ? "改造可能" : "(+" + item.LevelForNextRemodeling.ToString() + ")")
+                            }
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    @{
+        var totalList = HiyoshiCfhWeb.Models.Experience.TotalList.Select((total, index) => new
+        {
+            level = index,
+            total = total
+        });
+        var maxExp = totalList.Last().total;
+        var height = 1000;
+    }
+    <div class="col-md-4">
+        <svg height="@height" version="1.1" xmlns="http://www.w3.org/2000/svg">
+            @foreach (var total in totalList)
+            {
+                <line x1="0" y1="@((double)total.total * height / maxExp)"
+                      x2="100" y2="@((double)total.total * height / maxExp)"
+                      stroke="#888888" stroke-width="1px" />
             }
-        </tbody>
-    </table>
+            <line x1="" />
+        </svg>
+    </div>
 </div>
