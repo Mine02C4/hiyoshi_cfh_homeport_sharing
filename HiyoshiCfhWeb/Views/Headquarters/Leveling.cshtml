@@ -5,9 +5,9 @@
 }
 @Html.Partial("_HeaderPartial", admiral)
 
-<div class="row">
+<div class="row leveling-wrap">
     <div class="table-responsive col-md-8">
-        <table class="table">
+        <table class="table leveling">
             <thead>
                 <tr>
                     <th>
@@ -24,6 +24,9 @@
                     </th>
                     <th>
                         改造状況
+                    </th>
+                    <th>
+                        累積経験値
                     </th>
                 </tr>
             </thead>
@@ -53,6 +56,9 @@
                                 @(item.LevelForNextRemodeling <= 0 ? "改造可能" : "(+" + item.LevelForNextRemodeling.ToString() + ")")
                             }
                         </td>
+                        <td>
+                            @item.Exp
+                        </td>
                     </tr>
                 }
             </tbody>
@@ -65,16 +71,103 @@
             total = total
         });
         var maxExp = totalList.Last().total;
-        var height = 1000;
+        var height = 3000;
+        var width = 300;
     }
     <div class="col-md-4">
-        <svg height="@height" version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <svg id="meter" version="1.1" xmlns="http://www.w3.org/2000/svg">
             @foreach (var total in totalList)
             {
                 <line x1="0" y1="@((double)total.total * height / maxExp)"
-                      x2="100" y2="@((double)total.total * height / maxExp)"
+                      x2="@width" y2="@((double)total.total * height / maxExp)"
                       stroke="#888888" stroke-width="1px" />
             }
         </svg>
     </div>
+    <script type="text/javascript">
+        var totalList = [
+            @foreach (var total in HiyoshiCfhWeb.Models.Experience.TotalList)
+            {
+                <text>@total,</text>
+            }
+        ];
+        var leveling = {
+            current_ship: null,
+            milestone: 100,
+            meter_max_exp: 0
+        };
+        window.onload = function () {
+            $("div.leveling-wrap").height(
+                $("div.leveling-wrap").height() + $(window).height() - $("body").height()
+                );
+            rebuildMeter(totalList[100]);
+            $("table.leveling tbody tr").click(function () {
+                $("table.leveling tbody tr.active").removeClass("active");
+                $(this).addClass("active");
+                var height = $("#meter").height();
+                leveling.current_ship = {
+                    name: $(this).children().eq(2).text().trim(),
+                    level: Number($(this).children().eq(3).text()),
+                    exp: Number($(this).children().eq(5).text()),
+                };
+                deleteLine();
+                var position = leveling.current_ship.exp * height / leveling.meter_max_exp;
+                drawShip(position, leveling.current_ship.name);
+            });
+            function drawShip(position, name) {
+                var width = $("#meter").width();
+                var g = $(document.createElementNS("http://www.w3.org/2000/svg", "g"));
+                g.attr({
+                    "id": "current-indicator"
+                });
+                $("#meter").append(g);
+                var line = $(document.createElementNS("http://www.w3.org/2000/svg", "line"));
+                line.attr({
+                    "x1": 0,
+                    "y1": position,
+                    "x2": width,
+                    "y2": position,
+                    "stroke": "#121EA4",
+                    "stroke-width": "1px"
+                });
+                g.append(line);
+                var ship_text = $(document.createElementNS("http://www.w3.org/2000/svg", "text"));
+                ship_text.attr({
+                    "x": 10,
+                    "y": position
+                });
+                ship_text.text(name);
+                g.append(ship_text);
+            }
+            function deleteLine() {
+                $("#current-indicator").remove();
+            }
+            function rebuildMeter(meter_max_exp) {
+                leveling.meter_max_exp = meter_max_exp;
+                $("#meter").empty();
+                var height = $("#meter").height();
+                var width = $("#meter").width();
+                totalList.forEach(function (element, index) {
+                    var g = $(document.createElementNS("http://www.w3.org/2000/svg", "g"));
+                    g.attr({
+                        "id": "scale"
+                    });
+                    $("#meter").append(g);
+                    if (index > 0 && element <= meter_max_exp) {
+                        var line = $(document.createElementNS("http://www.w3.org/2000/svg", "line"));
+                        line.attr({
+                            "x1": 0,
+                            "y1": element * height / meter_max_exp,
+                            "x2": width,
+                            "y2": element * height / meter_max_exp,
+                            "stroke": index % 10 == 0 ? "#666666" : "#888888",
+                            "stroke-width": "0.5px",
+                            "id": "lv" + index
+                        });
+                        g.append(line);
+                    }
+                });
+            }
+        };
+    </script>
 </div>

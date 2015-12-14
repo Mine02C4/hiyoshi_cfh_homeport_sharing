@@ -36,10 +36,30 @@ textarea {
     outline: none;
 }
 
-#Google:hover {
-    background-position: center -108px;
+    #Google:hover {
+        background-position: center -108px;
+    }
+
+    #Google:active {
+        background-position: center -216px;
+    }
+
+div.leveling-wrap {
+    height: 1000px;
 }
 
-#Google:active {
-    background-position: center -216px;
+    div.leveling-wrap > div {
+        height: 100%;
+    }
+
+table.leveling tbody tr {
+    cursor: pointer;
+}
+
+    table.leveling tbody tr:hover {
+        background-color: #d3d3d3;
+    }
+
+svg#meter {
+    height: 100%;
 }
