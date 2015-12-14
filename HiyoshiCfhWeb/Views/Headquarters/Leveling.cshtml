@@ -46,7 +46,7 @@
                         <td>
                             @item.Level
                         </td>
-                        <td>
+                        <td data-nextremodelinglevel="@item.ShipInfo.NextRemodelingLevel">
                             @if (item.ShipInfo.NextRemodelingLevel == null)
                             {
                                 <text>改造完了</text>
@@ -64,28 +64,11 @@
             </tbody>
         </table>
     </div>
-    @{
-        var totalList = HiyoshiCfhWeb.Models.Experience.TotalList.Select((total, index) => new
-        {
-            level = index,
-            total = total
-        });
-        var maxExp = totalList.Last().total;
-        var height = 3000;
-        var width = 300;
-    }
     <div class="col-md-4">
-        <svg id="meter" version="1.1" xmlns="http://www.w3.org/2000/svg">
-            @foreach (var total in totalList)
-            {
-                <line x1="0" y1="@((double)total.total * height / maxExp)"
-                      x2="@width" y2="@((double)total.total * height / maxExp)"
-                      stroke="#888888" stroke-width="1px" />
-            }
-        </svg>
+        <svg id="meter" version="1.1" xmlns="http://www.w3.org/2000/svg"></svg>
     </div>
     <script type="text/javascript">
-        var totalList = [
+        var total_list = [
             @foreach (var total in HiyoshiCfhWeb.Models.Experience.TotalList)
             {
                 <text>@total,</text>
@@ -93,33 +76,51 @@
         ];
         var leveling = {
             current_ship: null,
-            milestone: 100,
-            meter_max_exp: 0
+            milestone_level: 100,
+            milestone_text: "",
+            meter_max_exp: 0,
+            positionFromExp: function (exp) {
+                var height = $("#meter").height();
+                return height - exp * height / this.meter_max_exp;
+            }
+        };
+        var colors = {
+            light_scale: "#666666",
+            heavy_scale: "#888888",
+            indicator: "#121EA4",
+            milestone: "#E73333"
         };
         window.onload = function () {
             $("div.leveling-wrap").height(
                 $("div.leveling-wrap").height() + $(window).height() - $("body").height()
                 );
-            rebuildMeter(totalList[100]);
+            rebuildMeter(total_list[100]);
             $("table.leveling tbody tr").click(function () {
                 $("table.leveling tbody tr.active").removeClass("active");
                 $(this).addClass("active");
-                var height = $("#meter").height();
                 leveling.current_ship = {
                     name: $(this).children().eq(2).text().trim(),
                     level: Number($(this).children().eq(3).text()),
                     exp: Number($(this).children().eq(5).text()),
+                    nextremodelinglevel: Number($(this).children().eq(4).attr("data-nextremodelinglevel"))
                 };
-                deleteLine();
-                var position = leveling.current_ship.exp * height / leveling.meter_max_exp;
-                drawShip(position, leveling.current_ship.name);
+                if (leveling.current_ship.nextremodelinglevel) {
+                    leveling.milestone_level = leveling.current_ship.nextremodelinglevel;
+                    leveling.milestone_text = "改造";
+                } else {
+                    leveling.milestone_level = 100;
+                    leveling.milestone_text = "ケッコン";
+                }
+                deleteIndicator();
+                drawIndicator();
+                updateMilestone();
             });
-            function drawShip(position, name) {
+            function drawIndicator() {
                 var width = $("#meter").width();
+                var position = leveling.positionFromExp(leveling.current_ship.exp);
+                var name = leveling.current_ship.name;
                 var g = $(document.createElementNS("http://www.w3.org/2000/svg", "g"));
-                g.attr({
-                    "id": "current-indicator"
-                });
+                g.attr({ "id": "current-indicator" });
                 $("#meter").append(g);
                 var line = $(document.createElementNS("http://www.w3.org/2000/svg", "line"));
                 line.attr({
@@ -127,8 +128,8 @@
                     "y1": position,
                     "x2": width,
                     "y2": position,
-                    "stroke": "#121EA4",
-                    "stroke-width": "1px"
+                    "stroke": colors.indicator,
+                    "stroke-width": "1.5px"
                 });
                 g.append(line);
                 var ship_text = $(document.createElementNS("http://www.w3.org/2000/svg", "text"));
@@ -139,34 +140,59 @@
                 ship_text.text(name);
                 g.append(ship_text);
             }
-            function deleteLine() {
+            function deleteIndicator() {
                 $("#current-indicator").remove();
+            }
+            function updateMilestone() {
+                $("#current-milestone").remove();
+                var width = $("#meter").width();
+                var position = leveling.positionFromExp(total_list[leveling.milestone_level]);
+                var g = $(document.createElementNS("http://www.w3.org/2000/svg", "g"));
+                g.attr({ "id": "current-milestone" });
+                $("#meter").append(g);
+                var line = $(document.createElementNS("http://www.w3.org/2000/svg", "line"));
+                line.attr({
+                    "x1": 0,
+                    "y1": position,
+                    "x2": width,
+                    "y2": position,
+                    "stroke": colors.milestone,
+                    "stroke-width": "1.5px"
+                });
+                g.append(line);
+                var milestone_text = $(document.createElementNS("http://www.w3.org/2000/svg", "text"));
+                milestone_text.attr({
+                    "x": 10,
+                    "y": position
+                });
+                milestone_text.text(leveling.milestone_text);
+                g.append(milestone_text);
             }
             function rebuildMeter(meter_max_exp) {
                 leveling.meter_max_exp = meter_max_exp;
                 $("#meter").empty();
-                var height = $("#meter").height();
-                var width = $("#meter").width();
-                totalList.forEach(function (element, index) {
-                    var g = $(document.createElementNS("http://www.w3.org/2000/svg", "g"));
-                    g.attr({
-                        "id": "scale"
-                    });
-                    $("#meter").append(g);
+                var g = $(document.createElementNS("http://www.w3.org/2000/svg", "g"));
+                g.attr({ "id": "scale" });
+                $("#meter").append(g);
+                total_list.forEach(function (element, index) {
                     if (index > 0 && element <= meter_max_exp) {
-                        var line = $(document.createElementNS("http://www.w3.org/2000/svg", "line"));
-                        line.attr({
-                            "x1": 0,
-                            "y1": element * height / meter_max_exp,
-                            "x2": width,
-                            "y2": element * height / meter_max_exp,
-                            "stroke": index % 10 == 0 ? "#666666" : "#888888",
-                            "stroke-width": "0.5px",
-                            "id": "lv" + index
-                        });
-                        g.append(line);
+                        g.append(createScaleLine(element, index));
                     }
                 });
+            }
+            function createScaleLine(exp, level) {
+                var width = $("#meter").width();
+                var line = $(document.createElementNS("http://www.w3.org/2000/svg", "line"));
+                line.attr({
+                    "x1": 0,
+                    "y1": leveling.positionFromExp(exp),
+                    "x2": width,
+                    "y2": leveling.positionFromExp(exp),
+                    "stroke": level % 10 == 0 ? colors.heavy_scale : colors.light_scale,
+                    "stroke-width": "0.5px",
+                    "id": "lv" + level
+                });
+                return line;
             }
         };
     </script>
