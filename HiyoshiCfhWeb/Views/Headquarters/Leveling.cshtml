@@ -104,13 +104,17 @@
                     exp: Number($(this).children().eq(5).text()),
                     nextremodelinglevel: Number($(this).children().eq(4).attr("data-nextremodelinglevel"))
                 };
-                if (leveling.current_ship.nextremodelinglevel) {
+                if (leveling.current_ship.level >= 100) {
+                    leveling.milestone_level = 155;
+                    leveling.milestone_text = "カンスト";
+                } else if (leveling.current_ship.nextremodelinglevel) {
                     leveling.milestone_level = leveling.current_ship.nextremodelinglevel;
                     leveling.milestone_text = "改造";
                 } else {
                     leveling.milestone_level = 100;
                     leveling.milestone_text = "ケッコン";
                 }
+                rebuildMeter(total_list[Math.min(leveling.milestone_level + 5, 155)]);
                 deleteIndicator();
                 drawIndicator();
                 updateMilestone();
@@ -135,7 +139,8 @@
                 var ship_text = $(document.createElementNS("http://www.w3.org/2000/svg", "text"));
                 ship_text.attr({
                     "x": 10,
-                    "y": position
+                    "y": position - 10,
+                    "font-size": "30"
                 });
                 ship_text.text(name);
                 g.append(ship_text);
