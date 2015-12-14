@@ -1,7 +1,19 @@
 ﻿@using HiyoshiCfhWeb.Extensions
 @model HiyoshiCfhWeb.Models.Admiral
+@{
+    var yomeCount = Model.Ships.Where(x => x.Level >= 100).Count();
+    string yomeAnnotation = String.Empty;
+    if (yomeCount == 1)
+    {
+        yomeAnnotation = "一途な";
+    }
+    else if (yomeCount > 1)
+    {
+        yomeAnnotation = yomeCount.ToString() + "股";
+    }
+}
 <h2>提督基本情報 (@Model.UpdateUtc.UtcToJst().ToString("yyyy年M月d日 HH:mm:ss") 時点)</h2>
-<h3>@Model.Name 提督</h3>
+<h3>@Model.Name @(yomeAnnotation)提督</h3>
 <p>司令部レベル: Lv. @Model.Level</p>
 <p>累積経験値: @Model.Experience</p>
 <p>所属艦娘: @Model.Ships.Count / @Model.MaxShipCount</p>
