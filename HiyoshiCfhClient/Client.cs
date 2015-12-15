@@ -50,7 +50,7 @@ namespace HiyoshiCfhClient
 
         private void ResetContext()
         {
-            Context = new Container(new Uri("http://hiyoshicfhweb.azurewebsites.net/odata"));
+            Context = new Container(new Uri("https://hiyoshicfhweb.azurewebsites.net/odata"));
             if (TokenType != null && AccessToken != null)
             {
                 Context.SendingRequest2 += (sender, eventArgs) =>
