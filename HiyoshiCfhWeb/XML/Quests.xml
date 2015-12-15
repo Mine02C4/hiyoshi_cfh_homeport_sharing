@@ -74,7 +74,9 @@
       <Other>
       </Other>
     </Bonus>
-    <Dependency/>
+    <Dependency>
+      <Achieve Id="A1"/>
+    </Dependency>
   </Quest>
   <Quest Id="A3" Category="composition" Type="onetime">
     <Name>
@@ -111,7 +113,9 @@
       <Other>
       </Other>
     </Bonus>
-    <Dependency/>
+    <Dependency>
+      <Achieve Id="A2"/>
+    </Dependency>
   </Quest>
   <Quest Id="A4" Category="composition" Type="onetime">
     <Name>
@@ -188,7 +192,9 @@
       <Other>
       </Other>
     </Bonus>
-    <Dependency/>
+    <Dependency>
+      <Achieve Id="A3"/>
+    </Dependency>
   </Quest>
   <Quest Id="A6" Category="composition" Type="onetime">
     <Name>
@@ -225,7 +231,9 @@
       <Other>
       </Other>
     </Bonus>
-    <Dependency/>
+    <Dependency>
+      <Achieve Id="A4"/>
+    </Dependency>
   </Quest>
   <Quest Id="A7" Category="composition" Type="onetime">
     <Name>
@@ -341,7 +349,7 @@
       </Other>
     </Bonus>
     <Dependency>
-      <Achieve Id="A5"/>
+      <Achieve Id="A4"/>
     </Dependency>
   </Quest>
   <Quest Id="A10" Category="composition" Type="onetime">
@@ -458,7 +466,9 @@
       <Other>
       </Other>
     </Bonus>
-    <Dependency/>
+    <Dependency>
+      <Achieve Id="A7"/>
+    </Dependency>
   </Quest>
   <Quest Id="A13" Category="composition" Type="onetime">
     <Name>
@@ -810,7 +820,7 @@
       </Other>
     </Bonus>
     <Dependency>
-      <Achieve Id="A13"/>
+      <Achieve Id="A20"/>
     </Dependency>
   </Quest>
   <Quest Id="A22" Category="composition" Type="onetime">
@@ -1009,7 +1019,7 @@
       </Other>
     </Bonus>
     <Dependency>
-      <Achieve Id="A21"/>
+      <Achieve Id="A22"/>
     </Dependency>
   </Quest>
   <Quest Id="A27" Category="composition" Type="onetime">
@@ -1799,7 +1809,6 @@
     </Bonus>
     <Dependency>
       <Achieve Id="A23"/>
-      <Achieve Id="B14"/>
     </Dependency>
   </Quest>
   <Quest Id="A47" Category="composition" Type="onetime">
@@ -2233,7 +2242,6 @@
       </Other>
     </Bonus>
     <Dependency>
-      <Achieve Id="A50"/>
       <Achieve Id="B34"/>
     </Dependency>
   </Quest>
@@ -2630,7 +2638,9 @@
       <Other>
       </Other>
     </Bonus>
-    <Dependency/>
+    <Dependency>
+      <Achieve Id="B1"/>
+    </Dependency>
   </Quest>
   <Quest Id="B3" Category="sortie" Type="onetime">
     <Name>
@@ -2706,7 +2716,9 @@
       <Other>
       </Other>
     </Bonus>
-    <Dependency/>
+    <Dependency>
+      <Achieve Id="B2"/>
+    </Dependency>
   </Quest>
   <Quest Id="B5" Category="sortie" Type="onetime">
     <Name>
@@ -2744,7 +2756,9 @@
         駆逐艦深雪
       </Other>
     </Bonus>
-    <Dependency/>
+    <Dependency>
+      <Achieve Id="B4"/>
+    </Dependency>
   </Quest>
   <Quest Id="B6" Category="sortie" Type="onetime">
     <Name>
@@ -4466,6 +4480,7 @@
     </Bonus>
     <Dependency>
       <Achieve Id="Bd1"/>
+      <Achieve Id="B42"/>
     </Dependency>
   </Quest>
   <Quest Id="B49" Category="sortie" Type="onetime">
@@ -5889,7 +5904,9 @@
       <Other>
       </Other>
     </Bonus>
-    <Dependency/>
+    <Dependency>
+      <Achieve Id="C1"/>
+    </Dependency>
   </Quest>
   <Quest Id="C3" Category="practice" Type="daily">
     <Name>
@@ -6201,7 +6218,9 @@
       <Other>
       </Other>
     </Bonus>
-    <Dependency/>
+    <Dependency>
+      <Achieve Id="D1"/>
+    </Dependency>
   </Quest>
   <Quest Id="D3" Category="expeditions" Type="daily">
     <Name>
@@ -6280,7 +6299,9 @@
         家具箱(大)x1
       </Other>
     </Bonus>
-    <Dependency/>
+    <Dependency>
+      <Achieve Id="D1"/>
+    </Dependency>
   </Quest>
   <Quest Id="D5" Category="expeditions" Type="onetime">
     <Name>
@@ -7108,7 +7129,9 @@
       <Other>
       </Other>
     </Bonus>
-    <Dependency/>
+    <Dependency>
+      <Achieve Id="F1"/>
+    </Dependency>
   </Quest>
   <Quest Id="F3" Category="building" Type="onetime">
     <Name>
@@ -7145,7 +7168,9 @@
       <Other>
       </Other>
     </Bonus>
-    <Dependency/>
+    <Dependency>
+      <Achieve Id="F2"/>
+    </Dependency>
   </Quest>
   <Quest Id="F4" Category="building" Type="onetime">
     <Name>
@@ -7182,7 +7207,9 @@
       <Other>
       </Other>
     </Bonus>
-    <Dependency/>
+    <Dependency>
+      <Achieve Id="F3"/>
+    </Dependency>
   </Quest>
   <Quest Id="F5" Category="building" Type="daily">
     <Name>
@@ -7219,7 +7246,9 @@
       <Other>
       </Other>
     </Bonus>
-    <Dependency/>
+    <Dependency>
+      <Achieve Id="F2"/>
+    </Dependency>
   </Quest>
   <Quest Id="F6" Category="building" Type="daily">
     <Name>
@@ -7265,7 +7294,7 @@
       装備「開発」集中強化！
     </Name>
     <Content>
-      「工廠」で装備アイテムを本日中に新たに3回「開発」しよう(失敗もOK)！
+      「工廠」で装備アイテムを本日中に3回「開発」しよう(失敗もOK)！
     </Content>
     <Bonus>
       <Fuel>
@@ -7453,7 +7482,9 @@
         簡易輸送部材 ドラム缶(輸送用)x3
       </Other>
     </Bonus>
-    <Dependency/>
+    <Dependency>
+      <Achieve Id="A5"/>
+    </Dependency>
   </Quest>
   <Quest Id="F12" Category="building" Type="weekly">
     <Name>
@@ -7892,6 +7923,7 @@
       </Other>
     </Bonus>
     <Dependency>
+      <Achieve Id="A19"/>
       <Achieve Id="Bm6"/>
     </Dependency>
   </Quest>
@@ -7932,7 +7964,7 @@
       </Other>
     </Bonus>
     <Dependency>
-      <Achieve Id="A54"/>
+      <Achieve Id="B54"/>
     </Dependency>
   </Quest>
   <Quest Id="F24" Category="building" Type="onetime">
@@ -7972,6 +8004,7 @@
       </Other>
     </Bonus>
     <Dependency>
+      <Achieve Id="A59"/>
       <Achieve Id="F22"/>
     </Dependency>
   </Quest>
@@ -8014,7 +8047,6 @@
     <Dependency>
       <Achieve Id="F24"/>
       <Achieve Id="Bm5"/>
-      <Achieve Id="Bm6"/>
     </Dependency>
   </Quest>
   <Quest Id="F26" Category="building" Type="onetime">
@@ -8054,6 +8086,7 @@
       </Other>
     </Bonus>
     <Dependency>
+      <Achieve Id="B53"/>
       <Achieve Id="F24"/>
     </Dependency>
   </Quest>
@@ -8094,6 +8127,7 @@
       </Other>
     </Bonus>
     <Dependency>
+      <Achieve Id="B54"/>
       <Achieve Id="F26"/>
     </Dependency>
   </Quest>
@@ -8291,7 +8325,9 @@
       <Other>
       </Other>
     </Bonus>
-    <Dependency/>
+    <Dependency>
+      <Achieve Id="G1"/>
+    </Dependency>
   </Quest>
   <Quest Id="G3" Category="remodelling" Type="weekly">
     <Name>
