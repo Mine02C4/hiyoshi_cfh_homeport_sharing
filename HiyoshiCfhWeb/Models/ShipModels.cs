@@ -37,6 +37,7 @@ namespace HiyoshiCfhWeb.Models
         public int Exp { get; set; }
         public int ExpForNextLevel { get; set; }
         public int Hp { get; set; }
+        public int MaxHp { get; set; }
         public int Fuel { get; set; }
         public int Bull { get; set; }
         public int Firepower { get; set; }
@@ -79,6 +80,9 @@ namespace HiyoshiCfhWeb.Models
         public ShipSpeed ShipSpeed { get; set; }
         public int? NextRemodelingLevel { get; set; }
         public string Kana { get; set; }
+        /// <summary>
+        /// 耐久の最大値。ケッコンカッコカリではこの値ではなくなる。
+        /// </summary>
         public int MaxHp { get; set; }
         public int MaxFuel { get; set; }
         public int MaxBull { get; set; }

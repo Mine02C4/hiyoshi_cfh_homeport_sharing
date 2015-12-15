@@ -134,6 +134,7 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
             Exp = ship.Exp;
             ExpForNextLevel = ship.ExpForNextLevel;
             Hp = ship.HP.Current;
+            MaxHp = ship.HP.Maximum;
             Fuel = ship.Fuel.Current;
             Bull = ship.Bull.Current;
             Firepower = ship.Firepower.Current;

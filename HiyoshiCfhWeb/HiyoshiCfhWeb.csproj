@@ -305,6 +305,10 @@
     <Compile Include="Migrations\201511181935264_AddSlotItem.Designer.cs">
       <DependentUpon>201511181935264_AddSlotItem.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201512150252082_AddMaxHp.cs" />
+    <Compile Include="Migrations\201512150252082_AddMaxHp.Designer.cs">
+      <DependentUpon>201512150252082_AddMaxHp.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AdmiralModels.cs" />
@@ -1284,6 +1288,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201511181935264_AddSlotItem.resx">
       <DependentUpon>201511181935264_AddSlotItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512150252082_AddMaxHp.resx">
+      <DependentUpon>201512150252082_AddMaxHp.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

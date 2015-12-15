@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generation date: 2015/11/19 6:46:03
+// Generation date: 2015/12/15 11:58:36
 namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
 {
     /// <summary>
@@ -57,6 +57,28 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         private global::Microsoft.OData.Client.DataServiceQuery<global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.Ship> _Ships;
+        /// <summary>
+        /// There are no comments for SlotItems in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("SlotItems")]
+        public global::Microsoft.OData.Client.DataServiceQuery<global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.SlotItem> SlotItems
+        {
+            get
+            {
+                if (!this.IsComposable)
+                {
+                    throw new global::System.NotSupportedException("The previous function is not composable.");
+                }
+                if ((this._SlotItems == null))
+                {
+                    this._SlotItems = Context.CreateQuery<global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.SlotItem>(GetPath("SlotItems"));
+                }
+                return this._SlotItems;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private global::Microsoft.OData.Client.DataServiceQuery<global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.SlotItem> _SlotItems;
     }
     /// <summary>
     /// There are no comments for Admiral in the schema.
@@ -272,6 +294,29 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
         partial void OnShipsChanging(global::Microsoft.OData.Client.DataServiceCollection<global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.Ship> value);
         partial void OnShipsChanged();
         /// <summary>
+        /// There are no comments for Property SlotItems in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("SlotItems")]
+        public global::Microsoft.OData.Client.DataServiceCollection<global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.SlotItem> SlotItems
+        {
+            get
+            {
+                return this._SlotItems;
+            }
+            set
+            {
+                this.OnSlotItemsChanging(value);
+                this._SlotItems = value;
+                this.OnSlotItemsChanged();
+                this.OnPropertyChanged("SlotItems");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private global::Microsoft.OData.Client.DataServiceCollection<global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.SlotItem> _SlotItems = new global::Microsoft.OData.Client.DataServiceCollection<global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.SlotItem>(null, global::Microsoft.OData.Client.TrackingMode.None);
+        partial void OnSlotItemsChanging(global::Microsoft.OData.Client.DataServiceCollection<global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.SlotItem> value);
+        partial void OnSlotItemsChanged();
+        /// <summary>
         /// This event is raised when the value of the property is changed
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
@@ -378,6 +423,7 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
         /// <param name="exp">Initial value of Exp.</param>
         /// <param name="expForNextLevel">Initial value of ExpForNextLevel.</param>
         /// <param name="hp">Initial value of Hp.</param>
+        /// <param name="maxHp">Initial value of MaxHp.</param>
         /// <param name="fuel">Initial value of Fuel.</param>
         /// <param name="bull">Initial value of Bull.</param>
         /// <param name="firepower">Initial value of Firepower.</param>
@@ -393,6 +439,7 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
                     int exp, 
                     int expForNextLevel, 
                     int hp, 
+                    int maxHp, 
                     int fuel, 
                     int bull, 
                     int firepower, 
@@ -409,6 +456,7 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
             ship.Exp = exp;
             ship.ExpForNextLevel = expForNextLevel;
             ship.Hp = hp;
+            ship.MaxHp = maxHp;
             ship.Fuel = fuel;
             ship.Bull = bull;
             ship.Firepower = firepower;
@@ -625,6 +673,29 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
         private int _Hp;
         partial void OnHpChanging(int value);
         partial void OnHpChanged();
+        /// <summary>
+        /// There are no comments for Property MaxHp in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("MaxHp")]
+        public int MaxHp
+        {
+            get
+            {
+                return this._MaxHp;
+            }
+            set
+            {
+                this.OnMaxHpChanging(value);
+                this._MaxHp = value;
+                this.OnMaxHpChanged();
+                this.OnPropertyChanged("MaxHp");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
+        private int _MaxHp;
+        partial void OnMaxHpChanging(int value);
+        partial void OnMaxHpChanged();
         /// <summary>
         /// There are no comments for Property Fuel in the schema.
         /// </summary>
@@ -3394,6 +3465,7 @@ namespace HiyoshiCfhClient.Default
         <Property Name=""MaxShipCount"" Type=""Edm.Int32"" Nullable=""false"" />
         <Property Name=""Rank"" Type=""Edm.String"" />
         <NavigationProperty Name=""Ships"" Type=""Collection(HiyoshiCfhWeb.Models.Ship)"" />
+        <NavigationProperty Name=""SlotItems"" Type=""Collection(HiyoshiCfhWeb.Models.SlotItem)"" />
       </EntityType>
       <EntityType Name=""Ship"">
         <Key>
@@ -3408,6 +3480,7 @@ namespace HiyoshiCfhClient.Default
         <Property Name=""Exp"" Type=""Edm.Int32"" Nullable=""false"" />
         <Property Name=""ExpForNextLevel"" Type=""Edm.Int32"" Nullable=""false"" />
         <Property Name=""Hp"" Type=""Edm.Int32"" Nullable=""false"" />
+        <Property Name=""MaxHp"" Type=""Edm.Int32"" Nullable=""false"" />
         <Property Name=""Fuel"" Type=""Edm.Int32"" Nullable=""false"" />
         <Property Name=""Bull"" Type=""Edm.Int32"" Nullable=""false"" />
         <Property Name=""Firepower"" Type=""Edm.Int32"" Nullable=""false"" />
@@ -3568,6 +3641,7 @@ namespace HiyoshiCfhClient.Default
       <EntityContainer Name=""Container"">
         <EntitySet Name=""Admirals"" EntityType=""HiyoshiCfhWeb.Models.Admiral"">
           <NavigationPropertyBinding Path=""Ships"" Target=""Ships"" />
+          <NavigationPropertyBinding Path=""SlotItems"" Target=""SlotItems"" />
         </EntitySet>
         <EntitySet Name=""Ships"" EntityType=""HiyoshiCfhWeb.Models.Ship"">
           <NavigationPropertyBinding Path=""Admiral"" Target=""Admirals"" />
