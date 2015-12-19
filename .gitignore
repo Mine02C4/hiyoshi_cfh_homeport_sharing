@@ -201,3 +201,5 @@ ModelManifest.xml
 # Azure deploy configurations
 /PublishScripts/Configurations/
 
+.vs
+
