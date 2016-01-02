@@ -8412,7 +8412,7 @@
       式の準備！(その参)
     </Name>
     <Content>
-      第一艦隊旗艦に練度の高い(Lv.90以上～99以下)艦娘を配備して気持ちを整理せよ！ 
+      第一艦隊旗艦に練度の高い(Lv.90以上～99以下)艦娘を配備して気持ちを整理せよ！
     </Content>
     <Bonus>
       <Fuel>
@@ -8643,6 +8643,167 @@
     </Bonus>
     <Dependency>
       <Achieve Id="A16"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="SB08" Category="sortie" Type="onetime">
+    <Name>
+      謹賀新年！「水雷戦隊」出撃始め！
+    </Name>
+    <Content>
+      水雷戦隊を製油所地帯沿岸に展開！同海域の敵艦隊を撃滅、新年の暁に勝利を刻むのです！
+    </Content>
+    <Bonus>
+      <Fuel>
+        2016
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        応急修理女神x1
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="Bd1"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="SB09" Category="sortie" Type="onetime">
+    <Name>
+      新年の「伊良湖」のお手伝い！
+    </Name>
+    <Content>
+      大丈夫、新年は収集任務じゃないんです！東部オリョール海の敵艦隊を三回撃滅してください！
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        2016
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        2
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        給糧艦「伊良湖」x2
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="SB08"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="SB10" Category="sortie" Type="onetime">
+    <Name>
+      漲る戦艦魂！大艦巨砲なお正月！
+    </Name>
+    <Content>
+      戦艦4隻を基幹戦力とする艦隊をカレー洋へ展開！敵艦隊を反復撃滅し、同海域を制圧せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        2016
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        3
+      </RenovationMaterials>
+      <Other>
+        対艦強化弾一式徹甲弾
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="SB09"/>
+      <Achieve Id="B18"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="SB11" Category="sortie" Type="onetime">
+    <Name>
+      迎春！「機動部隊」抜錨せよ！
+    </Name>
+    <Content>
+      空母2隻を基幹戦力とする機動部隊をMS諸島沖に展開、来襲する敵攻略部隊を反復撃滅せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        2016
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        4
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        熟練搭乗員x1
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="SB10"/>
     </Dependency>
   </Quest>
 </Quests>

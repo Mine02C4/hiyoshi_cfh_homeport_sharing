@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generation date: 2015/12/15 11:58:36
+// Generation date: 2016/01/03 2:52:12
 namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
 {
     /// <summary>
@@ -2936,7 +2936,9 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
         [global::Microsoft.OData.Client.OriginalNameAttribute("Building")]
         Building = 6,
         [global::Microsoft.OData.Client.OriginalNameAttribute("Remodelling")]
-        Remodelling = 7
+        Remodelling = 7,
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Sortie2")]
+        Sortie2 = 8
     }
     /// <summary>
     /// There are no comments for QuestType in the schema.
@@ -3619,6 +3621,7 @@ namespace HiyoshiCfhClient.Default
         <Member Name=""Supply"" Value=""5"" />
         <Member Name=""Building"" Value=""6"" />
         <Member Name=""Remodelling"" Value=""7"" />
+        <Member Name=""Sortie2"" Value=""8"" />
       </EnumType>
       <EnumType Name=""QuestType"">
         <Member Name=""OneTime"" Value=""1"" />

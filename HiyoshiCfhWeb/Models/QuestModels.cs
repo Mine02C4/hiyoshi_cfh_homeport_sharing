@@ -78,7 +78,12 @@ namespace HiyoshiCfhWeb.Models
         /// <summary>
         /// 改装
         /// </summary>
-        Remodelling = 7
+        Remodelling = 7,
+
+        /// <summary>
+        /// 出撃(おそらく期間限定)
+        /// </summary>
+        Sortie2 = 8,
     }
 
     public enum QuestType
