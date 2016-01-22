@@ -4848,6 +4848,90 @@
       <Achieve Id="Bm5"/>
     </Dependency>
   </Quest>
+  <Quest Id="B58" Category="sortie" Type="onetime">
+    <Name>
+      旗艦「霞」北方海域を哨戒せよ！
+    </Name>
+    <Content>
+      旗艦「霞改二」で駆逐艦4隻を含む艦隊を北方海域に投入し、モーレイ海哨戒を実施せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        300
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        300
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        小型電探 13号対空電探改
+        戦闘糧食x1
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="A32"/>
+      <Achieve Id="A46"/>
+      <Achieve Id="C2"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="B59" Category="sortie" Type="onetime">
+    <Name>
+      旗艦「霞」出撃！敵艦隊を撃滅せよ！
+    </Name>
+    <Content>
+      旗艦「霞改二」で駆逐艦3隻を含む艦隊で南西諸島沖ノ島沖に突入！敵主力を撃滅せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        500
+      </Fuel>
+      <Bull>
+        500
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        3
+      </RenovationMaterials>
+      <Other>
+        対空機銃 25mm三連装機銃 集中配備
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="B58"/>
+      <Achieve Id="D2"/>
+    </Dependency>
+  </Quest>
   <Quest Id="Bd1" Category="sortie" Type="daily">
     <Name>
       敵艦隊を撃破せよ！
