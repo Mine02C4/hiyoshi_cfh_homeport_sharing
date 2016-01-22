@@ -87,35 +87,6 @@
     </table>
 }
 
-<h3>謹賀新年！「水雷戦隊」出撃始め！</h3>
-<table class="table">
-    <tr>
-        <th>
-            ID
-        </th>
-        <th>
-            任務名
-        </th>
-        <th>
-            内容
-        </th>
-    </tr>
-    @foreach (var item in questMaster.Quest.Where(x => x.Id.StartsWith("S")))
-    {
-        <tr class="@(StateToClass(item.State))">
-            <td>
-                @item.Id
-            </td>
-            <td>
-                @item.Name
-            </td>
-            <td>
-                @item.Content
-            </td>
-        </tr>
-    }
-</table>
-
 <div class="row">
     <div class="col-md-4">
         <h3>デイリー</h3>
