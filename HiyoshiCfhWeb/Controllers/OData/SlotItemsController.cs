@@ -11,6 +11,14 @@ namespace HiyoshiCfhWeb.Controllers.OData
             : base()
         {
             dbs = db.SlotItems;
+            detectDuplication = x =>
+            {
+                if (dbs.Where(y => y.AdmiralId == x.AdmiralId &&
+                    y.Id == x.Id).Count() > 0)
+                    return true;
+                else
+                    return false;
+            };
         }
     }
 }

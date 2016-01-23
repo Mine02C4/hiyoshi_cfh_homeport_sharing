@@ -20,6 +20,7 @@ namespace HiyoshiCfhWeb.Controllers
         protected DbSet<T> dbs;
         protected Action<T> updateTimeStamp = (x) => { };
         protected Action<T> updateOwnTimeStamp = (x) => { };
+        protected Func<T, bool> detectDuplication = (x) => false;
 
         // GET: odata/xxx
         [EnableQuery]
@@ -80,6 +81,10 @@ namespace HiyoshiCfhWeb.Controllers
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
+            }
+            if (detectDuplication(obj))
+            {
+                return Conflict();
             }
             updateOwnTimeStamp(obj);
             updateTimeStamp(obj);
