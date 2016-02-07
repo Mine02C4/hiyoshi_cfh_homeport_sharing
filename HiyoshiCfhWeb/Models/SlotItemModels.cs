@@ -28,7 +28,15 @@ namespace HiyoshiCfhWeb.Models
 
         public int SlotItemInfoId { get; set; }
         public virtual SlotItemInfo SlotItemInfo { get; set; }
+
+        /// <summary>
+        /// 改修レベル
+        /// </summary>
         public int Level { get; set; }
+
+        /// <summary>
+        /// 熟練度
+        /// </summary>
         public int Adept { get; set; }
     }
 
