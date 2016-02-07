@@ -2,10 +2,312 @@
 
 @{
     ViewBag.Title = "保有装備";
+    var db = HiyoshiCfhWeb.Models.ApplicationDbContext.Create();
     var admiral = Model;
+    var groupedItems = admiral.SlotItems.GroupBy(x => new
+    {
+        SlotItemInfo = x.SlotItemInfo,
+        Level = x.Level,
+        Adept = x.Adept
+    }).Select(x => new
+    {
+        Key = x.Key,
+        Count = x.Count()
+    });
 }
 
 @Html.Partial("_HeaderPartial", admiral)
+
+<div class="row">
+    <div class="col-md-4">
+        <h3>主砲</h3>
+        <h4>小口径</h4>
+        <table class="table">
+            @foreach (var item in groupedItems.Where(x => x.Key.SlotItemInfo.CategoryId == 1)
+                .OrderBy(x => x.Key.SlotItemInfo.SlotItemInfoId))
+            {
+                <tr>
+                    <td>
+                        @item.Key.SlotItemInfo.Name x@(item.Count)
+                    </td>
+                    <td>
+                        ★+@item.Key.Level
+                    </td>
+                </tr>
+            }
+        </table>
+        <h4>中口径</h4>
+        <table class="table">
+            @foreach (var item in groupedItems.Where(x => x.Key.SlotItemInfo.CategoryId == 2)
+                .OrderBy(x => x.Key.SlotItemInfo.SlotItemInfoId))
+            {
+                <tr>
+                    <td>
+                        @item.Key.SlotItemInfo.Name x@(item.Count)
+                    </td>
+                    <td>
+                        ★+@item.Key.Level
+                    </td>
+                </tr>
+            }
+        </table>
+        <h4>大口径</h4>
+        <table class="table">
+            @foreach (var item in groupedItems.Where(x => x.Key.SlotItemInfo.CategoryId == 3)
+                .OrderBy(x => x.Key.SlotItemInfo.SlotItemInfoId))
+            {
+                <tr>
+                    <td>
+                        @item.Key.SlotItemInfo.Name x@(item.Count)
+                    </td>
+                    <td>
+                        ★+@item.Key.Level
+                    </td>
+                </tr>
+            }
+        </table>
+        <h3>副砲</h3>
+        <table class="table">
+            @foreach (var item in groupedItems.Where(x => x.Key.SlotItemInfo.CategoryId == 4)
+                .OrderBy(x => x.Key.SlotItemInfo.SlotItemInfoId))
+            {
+                <tr>
+                    <td>
+                        @item.Key.SlotItemInfo.Name x@(item.Count)
+                    </td>
+                    <td>
+                        ★+@item.Key.Level
+                    </td>
+                </tr>
+            }
+        </table>
+        <h3>魚雷</h3>
+        <table class="table">
+            @foreach (var item in groupedItems.Where(x => x.Key.SlotItemInfo.CategoryId == 5)
+                .OrderBy(x => x.Key.SlotItemInfo.SlotItemInfoId))
+            {
+                <tr>
+                    <td>
+                        @item.Key.SlotItemInfo.Name x@(item.Count)
+                    </td>
+                    <td>
+                        ★+@item.Key.Level
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+    <div class="col-md-4">
+        <h3>艦載機</h3>
+        <h4>艦上戦闘機</h4>
+        <table class="table">
+            @foreach (var item in groupedItems.Where(x => x.Key.SlotItemInfo.CategoryId == 6)
+                .OrderBy(x => x.Key.SlotItemInfo.SlotItemInfoId))
+            {
+                <tr>
+                    <td>
+                        @item.Key.SlotItemInfo.Name x@(item.Count)
+                    </td>
+                    <td>
+                        +@item.Key.Adept
+                    </td>
+                </tr>
+            }
+        </table>
+        <h4>艦上爆撃機</h4>
+        <table class="table">
+            @foreach (var item in groupedItems.Where(x => x.Key.SlotItemInfo.CategoryId == 7)
+                .OrderBy(x => x.Key.SlotItemInfo.SlotItemInfoId))
+            {
+                <tr>
+                    <td>
+                        @item.Key.SlotItemInfo.Name x@(item.Count)
+                    </td>
+                    <td>
+                        +@item.Key.Adept
+                    </td>
+                </tr>
+            }
+        </table>
+        <h4>艦上攻撃機</h4>
+        <table class="table">
+            @foreach (var item in groupedItems.Where(x => x.Key.SlotItemInfo.CategoryId == 8)
+                .OrderBy(x => x.Key.SlotItemInfo.SlotItemInfoId))
+            {
+                <tr>
+                    <td>
+                        @item.Key.SlotItemInfo.Name x@(item.Count)
+                    </td>
+                    <td>
+                        +@item.Key.Adept
+                    </td>
+                </tr>
+            }
+        </table>
+        <h4>艦上偵察機</h4>
+        <table class="table">
+            @foreach (var item in groupedItems.Where(x => x.Key.SlotItemInfo.CategoryId == 9)
+                .OrderBy(x => x.Key.SlotItemInfo.SlotItemInfoId))
+            {
+                <tr>
+                    <td>
+                        @item.Key.SlotItemInfo.Name x@(item.Count)
+                    </td>
+                    <td>
+                        +@item.Key.Adept
+                    </td>
+                </tr>
+            }
+        </table>
+        <h3>水上機</h3>
+        <h4>水上偵察機</h4>
+        <table class="table">
+            @foreach (var item in groupedItems.Where(x => x.Key.SlotItemInfo.CategoryId == 10)
+                .OrderBy(x => x.Key.SlotItemInfo.SlotItemInfoId))
+            {
+                <tr>
+                    <td>
+                        @item.Key.SlotItemInfo.Name x@(item.Count)
+                    </td>
+                    <td>
+                        +@item.Key.Adept
+                    </td>
+                </tr>
+            }
+        </table>
+        <h4>水上爆撃機</h4>
+        <table class="table">
+            @foreach (var item in groupedItems.Where(x => x.Key.SlotItemInfo.CategoryId == 11)
+                .OrderBy(x => x.Key.SlotItemInfo.SlotItemInfoId))
+            {
+                <tr>
+                    <td>
+                        @item.Key.SlotItemInfo.Name x@(item.Count)
+                    </td>
+                    <td>
+                        +@item.Key.Adept
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+    <div class="col-md-4">
+        <h3>電探</h3>
+        <h4>小型電探</h4>
+        <table class="table">
+            @foreach (var item in groupedItems.Where(x => x.Key.SlotItemInfo.CategoryId == 12)
+                .OrderBy(x => x.Key.SlotItemInfo.SlotItemInfoId))
+            {
+                <tr>
+                    <td>
+                        @item.Key.SlotItemInfo.Name x@(item.Count)
+                    </td>
+                    <td>
+                        ★+@item.Key.Level
+                    </td>
+                </tr>
+            }
+        </table>
+        <h4>大型電探</h4>
+        <table class="table">
+            @foreach (var item in groupedItems.Where(x => x.Key.SlotItemInfo.CategoryId == 13)
+                .OrderBy(x => x.Key.SlotItemInfo.SlotItemInfoId))
+            {
+                <tr>
+                    <td>
+                        @item.Key.SlotItemInfo.Name x@(item.Count)
+                    </td>
+                    <td>
+                        ★+@item.Key.Level
+                    </td>
+                </tr>
+            }
+        </table>
+        <h3>徹甲弾</h3>
+        <table class="table">
+            @foreach (var item in groupedItems.Where(x => x.Key.SlotItemInfo.CategoryId == 19)
+                .OrderBy(x => x.Key.SlotItemInfo.SlotItemInfoId))
+            {
+                <tr>
+                    <td>
+                        @item.Key.SlotItemInfo.Name x@(item.Count)
+                    </td>
+                    <td>
+                        ★+@item.Key.Level
+                    </td>
+                </tr>
+            }
+        </table>
+        <h3>対空装備</h3>
+        <h4>機銃</h4>
+        <table class="table">
+            @foreach (var item in groupedItems.Where(x => x.Key.SlotItemInfo.CategoryId == 21)
+                .OrderBy(x => x.Key.SlotItemInfo.SlotItemInfoId))
+            {
+                <tr>
+                    <td>
+                        @item.Key.SlotItemInfo.Name x@(item.Count)
+                    </td>
+                    <td>
+                        ★+@item.Key.Level
+                    </td>
+                </tr>
+            }
+        </table>
+        <h4>対空強化弾</h4>
+        <table class="table">
+            @foreach (var item in groupedItems.Where(x => x.Key.SlotItemInfo.CategoryId == 18)
+                .OrderBy(x => x.Key.SlotItemInfo.SlotItemInfoId))
+            {
+                <tr>
+                    <td>
+                        @item.Key.SlotItemInfo.Name x@(item.Count)
+                    </td>
+                    <td>
+                        ★+@item.Key.Level
+                    </td>
+                </tr>
+            }
+        </table>
+        <h3>対潜</h3>
+        <table class="table">
+            @foreach (var item in groupedItems.Where(x =>
+                    x.Key.SlotItemInfo.CategoryId == 14 ||
+                    x.Key.SlotItemInfo.CategoryId == 15)
+                .OrderBy(x => x.Key.SlotItemInfo.SlotItemInfoId))
+            {
+                <tr>
+                    <td>
+                        @item.Key.SlotItemInfo.Name x@(item.Count)
+                    </td>
+                    <td>
+                        ★+@item.Key.Level
+                    </td>
+                </tr>
+            }
+        </table>
+        <h3>その他</h3>
+        <table class="table">
+            @foreach (var item in groupedItems.Where(x =>
+                    x.Key.SlotItemInfo.CategoryId == 16 ||
+                    x.Key.SlotItemInfo.CategoryId == 17 ||
+                    x.Key.SlotItemInfo.CategoryId == 20 ||
+                    x.Key.SlotItemInfo.CategoryId == 17 ||
+                    x.Key.SlotItemInfo.CategoryId >= 22)
+                .OrderBy(x => x.Key.SlotItemInfo.SlotItemInfoId))
+            {
+                <tr>
+                    <td>
+                        @item.Key.SlotItemInfo.Name x@(item.Count)
+                    </td>
+                    <td>
+                        ★+@item.Key.Level
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>
 
 <table class="table">
     <tr>
@@ -28,14 +330,11 @@
             <th>★+@i</th>
         }
     </tr>
-    @foreach (var item in admiral.SlotItems
-        .OrderBy(x => x.SlotItemInfo.CategoryId)
-        .ThenBy(x => x.SlotItemInfo.SlotItemInfoId)
-        .ThenBy(x => x.Level))
+    @foreach (var item in admiral.SlotItems.OrderBy(x => x.SlotItemInfo.CategoryId).ThenBy(x => x.SlotItemInfo.SlotItemInfoId).ThenBy(x => x.Level))
     {
         <tr>
             <td>
-                @item.Id
+                @item.SlotItemInfo.CategoryId, @item.SlotItemInfo.SlotItemInfoId
             </td>
             <td>
                 @item.SlotItemInfo.Name

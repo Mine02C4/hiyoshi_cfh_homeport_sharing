@@ -56,6 +56,15 @@ namespace HiyoshiCfhWeb.Models
         public int Hit { get; set; }
         public int Evasiveness { get; set; }
         public int Search { get; set; }
+
+        [NotMapped]
+        public bool IsAircraft
+        {
+            get
+            {
+                return (CategoryId >= 6 && CategoryId <= 10) || CategoryId == 33;
+            }
+        }
     }
 
     public enum SlotItemType
