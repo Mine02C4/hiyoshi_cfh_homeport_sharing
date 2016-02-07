@@ -10,15 +10,6 @@ namespace HiyoshiCfhWeb.Models
     {
         private static List<Event> events = new List<Event> {
             new Event(
-                "突入！海上輸送作戦",
-                new List<SortieTag> {
-                    new SortieTag("輸送作戦", Color.FromArgb(0x3B662A), 1),
-                    new SortieTag("派遣作戦", Color.FromArgb(0x906736), 2)
-                },
-                new DateTimeOffset(2015, 11, 18, 21, 17, 0, new TimeSpan(9, 0, 0)),
-                new DateTimeOffset(2015, 12,  8, 11,  0, 0, new TimeSpan(9, 0, 0))
-            ),
-            new Event(
                 "反撃！第二次SN作戦",
                 new List<SortieTag> {
                     new SortieTag("初動作戦", Color.FromArgb(0x3C677F), 1),
@@ -28,6 +19,21 @@ namespace HiyoshiCfhWeb.Models
                 },
                 new DateTimeOffset(2015, 8, 10, 22, 43, 0, new TimeSpan(9, 0, 0)),
                 new DateTimeOffset(2015, 9,  7, 11,  0, 0, new TimeSpan(9, 0, 0))
+            ),
+            new Event(
+                "突入！海上輸送作戦",
+                new List<SortieTag> {
+                    new SortieTag("輸送作戦", Color.FromArgb(0x3B662A), 1),
+                    new SortieTag("派遣作戦", Color.FromArgb(0x906736), 2)
+                },
+                new DateTimeOffset(2015, 11, 18, 21, 17, 0, new TimeSpan(9, 0, 0)),
+                new DateTimeOffset(2015, 12,  8, 11,  0, 0, new TimeSpan(9, 0, 0))
+            ),
+            new Event(
+                "出撃！礼号作戦",
+                new List<SortieTag> {},
+                new DateTimeOffset(2016,  2, 10, 18,  0, 0, new TimeSpan(9, 0, 0)),
+                new DateTimeOffset(2016,  2, 17, 18,  0, 0, new TimeSpan(9, 0, 0))
             )
         };
 
