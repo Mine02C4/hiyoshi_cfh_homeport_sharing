@@ -16,7 +16,18 @@ namespace HiyoshiCfhWeb.Models
                     new SortieTag("派遣作戦", Color.FromArgb(0x906736), 2)
                 },
                 new DateTimeOffset(2015, 11, 18, 21, 17, 0, new TimeSpan(9, 0, 0)),
-                new DateTimeOffset(2015, 12,  7, 11,  0, 0, new TimeSpan(9, 0, 0))
+                new DateTimeOffset(2015, 12,  8, 11,  0, 0, new TimeSpan(9, 0, 0))
+            ),
+            new Event(
+                "反撃！第二次SN作戦",
+                new List<SortieTag> {
+                    new SortieTag("初動作戦", Color.FromArgb(0x3C677F), 1),
+                    new SortieTag("機動部隊", Color.FromArgb(0x3B662A), 2),
+                    new SortieTag("挺身部隊", Color.FromArgb(0x839842), 3),
+                    new SortieTag("西部方面", Color.FromArgb(0x906736), 4)
+                },
+                new DateTimeOffset(2015, 8, 10, 22, 43, 0, new TimeSpan(9, 0, 0)),
+                new DateTimeOffset(2015, 9,  7, 11,  0, 0, new TimeSpan(9, 0, 0))
             )
         };
 
