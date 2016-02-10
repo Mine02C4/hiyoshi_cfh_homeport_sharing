@@ -244,31 +244,23 @@ namespace HiyoshiCfhWeb.Controllers
                 {
                     material = Material.List.GetRange(4, 4);
                 }
-                Func<MaterialTuple, Func<MaterialRecord, bool>> materialFilter = null;
+                var records = db.MaterialRecords.Where(x => x.AdmiralId == admiral.AdmiralId);
                 if (range != null && range == "event")
                 {
                     var ev = Models.Event.Events.Last();
-                    materialFilter = m => x => x.AdmiralId == admiral.AdmiralId && x.Type == m.Type &&
-                        x.TimeUtc > ev.StartTime.UtcDateTime && x.TimeUtc < ev.FinishTime.UtcDateTime;
-                }
-                else
-                {
-                    materialFilter = m => x => x.AdmiralId == admiral.AdmiralId && x.Type == m.Type;
+                    records = records.Where(x => x.TimeUtc > ev.StartTime.UtcDateTime && x.TimeUtc < ev.FinishTime.UtcDateTime);
                 }
                 var nlimit = 530;
                 var obj =
                     material.Select(m =>
                     {
-                        var count = db.MaterialRecords
-                            .Where(materialFilter(m))
-                            .Count();
+                        var count = records.Where(x => x.Type == m.Type).Count();
                         if (count <= nlimit)
                         {
                             return new
                             {
                                 key = m.Name,
-                                values = db.MaterialRecords
-                                .Where(materialFilter(m))
+                                values = records.Where(x => x.Type == m.Type)
                                 .OrderBy(x => x.TimeUtc)
                                 .Select(x => new
                                 {
@@ -284,8 +276,7 @@ namespace HiyoshiCfhWeb.Controllers
                         }
                         else
                         {
-                            var values = db.MaterialRecords
-                                .Where(materialFilter(m))
+                            var values = records.Where(x => x.Type == m.Type)
                                 .OrderBy(x => x.TimeUtc)
                                 .Select(x => new
                                 {
@@ -299,13 +290,12 @@ namespace HiyoshiCfhWeb.Controllers
                                     value = x.Value
                                 }).ToList();
                             values.Add(new
-                                {
-                                    time = DateTime.UtcNow.UtcToJst().ToString("O"),
-                                    value = db.MaterialRecords
-                                        .Where(materialFilter(m))
+                            {
+                                time = DateTime.UtcNow.UtcToJst().ToString("O"),
+                                value = records.Where(x => x.Type == m.Type)
                                         .OrderByDescending(x => x.TimeUtc)
                                         .First().Value
-                                }
+                            }
                             );
                             return new
                             {
