@@ -1,17 +1,46 @@
 ﻿@model HiyoshiCfhWeb.Models.Admiral
 @using System.Linq;
 @using HiyoshiCfhWeb.Models;
+@using HiyoshiCfhWeb.Extensions
 @{
     ViewBag.Title = "母港";
     var admiral = Model;
+    var db = HiyoshiCfhWeb.Models.ApplicationDbContext.Create();
+    var materials = Material.List.Select(m =>
+    {
+        var record = db.MaterialRecords
+        .Where(x => x.AdmiralId == admiral.AdmiralId && x.Type == m.Type)
+        .OrderByDescending(x => x.TimeUtc).FirstOrDefault();
+        return new
+        {
+            Name = m.Name,
+            Time = record.TimeUtc,
+            Value = record.Value
+        };
+    });
+    var materialUpdate = materials.Max(x => x.Time);
 }
 
 @Html.Partial("_HeaderPartial", admiral)
 
 @Html.Partial("_AdmiralPartial", admiral)
 <div class="row">
-    <div class="col-md-8">
+    <div class="col-md-4">
         @Html.Partial("_SimpleStatisticsPartial", admiral)
+    </div>
+    <div class="col-md-4">
+        <h2>資材(@materialUpdate.UtcToJst().ToString("yyyy年M月d日 HH:mm:ss") 時点)</h2>
+        <dl class="dl-horizontal">
+            @foreach (var item in materials)
+            {
+                <dt>
+                    @item.Name
+                </dt>
+                <dd>
+                    @item.Value
+                </dd>
+            }
+        </dl>
     </div>
     <div class="col-md-4">
         <h3>各種ツール</h3>
