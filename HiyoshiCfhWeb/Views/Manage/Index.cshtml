@@ -2,9 +2,7 @@
 @{
     ViewBag.Title = "管理";
 }
-
 <h2>@ViewBag.Title</h2>
-
 <p class="text-success">@ViewBag.StatusMessage</p>
 <div>
     <h4>アカウント設定の変更</h4>
@@ -17,27 +15,28 @@
         </dd>
         @*
             電話番号を 2 要素認証システムの第 2 認証要素としてお使いいただけます。
-             
+
              SMS を使用する 2 要素認証をサポートするようにこの ASP.NET アプリケーションを設定する方法の詳細については、
                 <a href="http://go.microsoft.com/fwlink/?LinkId=403804">こちらの記事</a>をご覧ください。
-             
+
              2 要素認証の設定が完了したら、次のブロックのコメントを解除してください。
         *@
-        @*  
+        @*
             <dt>電話番号:</dt>
             <dd>
-                @(Model.PhoneNumber ?? "なし") [
+                @(Model.PhoneNumber ?? "なし")
                 @if (Model.PhoneNumber != null)
                 {
-                    @Html.ActionLink("変更", "AddPhoneNumber")
-                    @: &nbsp;|&nbsp;
-                    @Html.ActionLink("削除", "RemovePhoneNumber")
+                    <br />
+                    <text>[&nbsp;&nbsp;<a asp-controller="Manage" asp-action="AddPhoneNumber">変更</a>&nbsp;&nbsp;]</text>
+                    <form asp-controller="Manage" asp-action="RemovePhoneNumber" method="post" role="form">
+                        [<button type="submit" class="btn-link">削除</button>]
+                    </form>
                 }
                 else
                 {
-                    @Html.ActionLink("追加", "AddPhoneNumber")
+                    <text>[&nbsp;&nbsp;<a asp-controller="Manage" asp-action="AddPhoneNumber">追加</a>&nbsp;&nbsp;]</text>
                 }
-                ]
             </dd>
         *@
         <dt>2 要素認証:</dt>
