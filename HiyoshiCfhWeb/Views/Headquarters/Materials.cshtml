@@ -24,19 +24,22 @@
         d3.json(url, function (data) {
             var colors = d3.scale.category20();
             var keyColor = function (d, i) { return colors(d.key) };
-            var chart = nv.models.lineChart()
+            var chart = nv.models.lineWithFocusChart()
                     .x(function (d) { return new Date(d["time"]) })
                     .y(function (d) { return d["value"] })
                     .showLegend(true)
-                    .showYAxis(true)
-                    .showXAxis(true)
                     .color(keyColor);
 
             chart.xAxis.tickFormat(
                 function (d) {
                     return d3.time.format("%Y-%m-%d %H:%M:%S")(new Date(d))
                 });
+            chart.x2Axis.tickFormat(
+                function (d) {
+                    return d3.time.format("%Y-%m-%d %H:%M:%S")(new Date(d))
+                });
             chart.yAxis.tickFormat(d3.format(',.0d'));
+            chart.y2Axis.tickFormat(d3.format(',.0d'));
             chart.forceY(0);
             d3.select(selector).datum(data).call(chart);
             nv.utils.windowResize(function () {
@@ -45,6 +48,46 @@
             return chart;
         });
     }
-    setup_chart("@Html.Raw(Url.Action("Materials", new { type = "json", target = "main" }))", "#main_chart");
+    var svg;
+    var w = 1140;
+    var h = 600;
+    var x = d3.time.scale().range([0, w]);
+    var y = d3.scale.linear().range([h, 0]);
+    var xAxis = d3.svg.axis().scale(x).orient("bottom").tickSize(-h, 0).tickPadding(6);
+    var yAxis = d3.svg.axis().scale(y).orient("right").tickSize(-w).tickPadding(6);
+    var line = d3.svg.line()
+                .interpolate("step-after")
+                .x(function (d) { return x(new Date(d["time"])); })
+                .y(function (d) { return y(d["value"]); });
+    function setup_chart2(url, selector) {
+        d3.json(url, function (data) {            
+            svg = d3.select(selector);
+            svg.append("svg:rect")
+                .attr("class", "pane")
+                .attr("width", w)
+                .attr("height", h)
+                .call(d3.behavior.zoom().on("zoom", zoom));
+            svg.append("svg:path")
+                .attr("class", "line");
+
+            svg.append("svg:g")
+                .attr("class", "x axis")
+                .attr("transform", "translate(0," + h + ")");
+            x.domain([new Date(1999, 0, 1), new Date(2003, 0, 0)]);
+            y.domain([0, d3.max(data, function (d) { return d["value"]; })]);
+            svg.select("path.line").data(data);
+            draw();
+        });
+    }
+    function zoom() {
+        d3.transform(x);
+        draw();
+    }
+    function draw() {
+        svg.select("g.x.axis").call(xAxis);
+        svg.select("g.y.axis").call(yAxis);
+        svg.select("path.line").attr("d", line);
+    }
+    setup_chart2("@Html.Raw(Url.Action("Materials", new { type = "json", target = "main" }))", "#main_chart");
     setup_chart("@Html.Raw(Url.Action("Materials", new { type = "json", target = "other" }))", "#other_chart");
 </script>
