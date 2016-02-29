@@ -33,7 +33,7 @@ namespace HiyoshiCfhWeb.Models
                 "出撃！礼号作戦",
                 new List<SortieTag> {},
                 new DateTimeOffset(2016,  2, 10, 18,  0, 0, new TimeSpan(9, 0, 0)),
-                new DateTimeOffset(2016,  2, 26, 18,  0, 0, new TimeSpan(9, 0, 0))
+                new DateTimeOffset(2016,  2, 29, 11,  0, 0, new TimeSpan(9, 0, 0))
             )
         };
 
