@@ -245,9 +245,14 @@ namespace HiyoshiCfhWeb.Controllers
                     material = Material.List.GetRange(4, 4);
                 }
                 var records = db.MaterialRecords.Where(x => x.AdmiralId == admiral.AdmiralId);
+                bool addCurrentValue = true;
                 if (range != null && range == "event")
                 {
                     var ev = Models.Event.Events.Last();
+                    if (!ev.IsInDeployment)
+                    {
+                        addCurrentValue = false;
+                    }
                     records = records.Where(x => x.TimeUtc > ev.StartTime.UtcDateTime && x.TimeUtc < ev.FinishTime.UtcDateTime);
                 }
                 var nlimit = 530;
@@ -289,14 +294,17 @@ namespace HiyoshiCfhWeb.Controllers
                                     time = x.TimeUtc.UtcToJst().ToString("O"),
                                     value = x.Value
                                 }).ToList();
-                            values.Add(new
+                            if (addCurrentValue)
                             {
-                                time = DateTime.UtcNow.UtcToJst().ToString("O"),
-                                value = records.Where(x => x.Type == m.Type)
-                                        .OrderByDescending(x => x.TimeUtc)
-                                        .First().Value
+                                values.Add(new
+                                {
+                                    time = DateTime.UtcNow.UtcToJst().ToString("O"),
+                                    value = records.Where(x => x.Type == m.Type)
+                                            .OrderByDescending(x => x.TimeUtc)
+                                            .First().Value
+                                }
+                                );
                             }
-                            );
                             return new
                             {
                                 key = m.Name,
