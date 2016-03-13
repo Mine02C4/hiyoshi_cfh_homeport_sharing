@@ -2444,6 +2444,7 @@
       </Other>
     </Bonus>
     <Dependency>
+      <Achieve Id="F23"/>
       <Achieve Id="F29"/>
     </Dependency>
   </Quest>
@@ -2484,7 +2485,6 @@
     </Bonus>
     <Dependency>
       <Achieve Id="B52"/>
-      <Achieve Id="C5"/>
     </Dependency>
   </Quest>
   <Quest Id="A64" Category="composition" Type="onetime">
@@ -2522,9 +2522,9 @@
       <Other>
       </Other>
     </Bonus>
-    <Dependency>
-      <Achieve Id="B55"/>
+    <Dependency>      
       <Achieve Id="B50"/>
+      <Achieve Id="B55"/>
     </Dependency>
   </Quest>
   <Quest Id="A65" Category="composition" Type="onetime">
@@ -2563,7 +2563,88 @@
       </Other>
     </Bonus>
     <Dependency>
+      <Achieve Id="A46"/>
       <Achieve Id="B56"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="A66" Category="composition" Type="onetime">
+    <Name>
+      「第三十一戦隊(第一次)」を編成せよ！
+    </Name>
+    <Content>
+      「五十鈴改二」旗艦、「皐月改二」「卯月改」を含む、対潜機動水上部隊を編成せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        310
+      </Fuel>
+      <Bull>
+        310
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        2
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        給糧艦「伊良湖」x1
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="B55"/>
+      <Achieve Id="Bd2"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="A67" Category="composition" Type="onetime">
+    <Name>
+      「第二七駆逐隊」を編成せよ！
+    </Name>
+    <Content>
+      「白露改」旗艦、「時雨」「春雨」「五月雨」4隻による第二七駆逐隊を編成せよ！ 
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        270
+      </Bull>
+      <Steel>
+        270
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        2
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        2
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+      </Other>
+    </Bonus>
+    <Dependency>
+      <!-- 不明 -->
     </Dependency>
   </Quest>
   <Quest Id="B1" Category="sortie" Type="onetime">
@@ -4887,7 +4968,6 @@
     </Bonus>
     <Dependency>
       <Achieve Id="A32"/>
-      <Achieve Id="A46"/>
       <Achieve Id="C2"/>
     </Dependency>
   </Quest>
@@ -4930,6 +5010,87 @@
     <Dependency>
       <Achieve Id="B58"/>
       <Achieve Id="D2"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="B60" Category="sortie" Type="onetime">
+    <Name>
+      「第三十一戦隊」出撃せよ！
+    </Name>
+    <Content>
+      第三十一戦隊(第一次)を鎮守府近海航路に出撃させ、同航路の安全確保に努めよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        600
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        3
+      </RenovationMaterials>
+      <Other>
+        菱餅
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="A66"/>
+      <Achieve Id="G2"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="B61" Category="sortie" Type="onetime">
+    <Name>
+      「第二七駆逐隊」出撃せよ！
+    </Name>
+    <Content>
+      「白露改」旗艦の第二七戦隊を含む艦隊をオリョール海に展開、同海域の敵艦隊を撃滅せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        500
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        500
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        家具「春の一番」掛け軸
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="A67"/>
     </Dependency>
   </Quest>
   <Quest Id="Bd1" Category="sortie" Type="daily">
