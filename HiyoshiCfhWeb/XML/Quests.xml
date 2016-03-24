@@ -3711,7 +3711,7 @@
         0
       </RenovationMaterials>
       <Other>
-        大口径主砲試製35.6cm三連装砲
+        大口径主砲 試製35.6cm三連装砲
       </Other>
     </Bonus>
     <Dependency>
@@ -3752,7 +3752,7 @@
       </RenovationMaterials>
       <Other>
         家具箱(大)x1
-        航空要員熟練艦載機整備員
+        航空要員 熟練艦載機整備員
       </Other>
     </Bonus>
     <Dependency>
@@ -3873,7 +3873,7 @@
         0
       </RenovationMaterials>
       <Other>
-        対艦強化弾一式徹甲弾
+        対艦強化弾 一式徹甲弾
       </Other>
     </Bonus>
     <Dependency>
@@ -3913,7 +3913,7 @@
         0
       </RenovationMaterials>
       <Other>
-        対艦強化弾一式徹甲弾
+        対艦強化弾 一式徹甲弾
       </Other>
     </Bonus>
     <Dependency>
@@ -5087,6 +5087,46 @@
       </RenovationMaterials>
       <Other>
         家具「春の一番」掛け軸
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="A67"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="B62" Category="sortie" Type="onetime">
+    <Name>
+      強襲上陸作戦用戦力を増強せよ！
+    </Name>
+    <Content>
+      中部海域における航空偵察「K作戦」を実施しつつ、強襲上陸作戦用戦力の強化を図れ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        600
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        3
+      </RenovationMaterials>
+      <Other>
+        上陸用舟艇 大発動艇
       </Other>
     </Bonus>
     <Dependency>
