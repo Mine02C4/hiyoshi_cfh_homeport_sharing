@@ -2522,7 +2522,7 @@
       <Other>
       </Other>
     </Bonus>
-    <Dependency>      
+    <Dependency>
       <Achieve Id="B50"/>
       <Achieve Id="B55"/>
     </Dependency>
@@ -2613,7 +2613,7 @@
       「第二七駆逐隊」を編成せよ！
     </Name>
     <Content>
-      「白露改」旗艦、「時雨」「春雨」「五月雨」4隻による第二七駆逐隊を編成せよ！ 
+      「白露改」旗艦、「時雨」「春雨」「五月雨」4隻による第二七駆逐隊を編成せよ！
     </Content>
     <Bonus>
       <Fuel>
@@ -5133,6 +5133,127 @@
       <Achieve Id="A67"/>
     </Dependency>
   </Quest>
+  <Quest Id="B63" Category="sortie" Type="onetime">
+    <Name>
+      製油所地帯を防衛せよ！
+    </Name>
+    <Content>
+      水雷戦隊を製油所地帯沿岸に展開！同海域に出没する敵艦隊を三回以上撃滅せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        400
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        戦闘糧食x1
+        勲章x1
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="Bd2"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="B64" Category="sortie" Type="onetime">
+    <Name>
+      南西諸島防衛線を強化せよ！
+    </Name>
+    <Content>
+      南西諸島防衛線に有力な艦隊を展開、同方面に来襲する敵艦隊を五回以上撃滅せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        400
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        戦闘糧食x1
+        特注家具職人x1
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="B63"/>
+      <Achieve Id="F31"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="B65" Category="sortie" Type="onetime">
+    <Name>
+      オリョール海の制海権を確保せよ！
+    </Name>
+    <Content>
+      大潮を旗艦とする艦隊を東部オリョール海に反復出撃、同方面敵艦隊を完全撃滅せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        400
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        200
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+      </Other>
+    </Bonus>
+    <Dependency>
+    </Dependency>
+  </Quest>
   <Quest Id="Bd1" Category="sortie" Type="daily">
     <Name>
       敵艦隊を撃破せよ！
@@ -6043,7 +6164,7 @@
       南方海域珊瑚諸島沖の制空権を握れ！
     </Name>
     <Content>
-      南方海域珊瑚諸島沖に出撃し、敵機動部隊本体を捕捉撃滅、これに完全勝利せよ！ 
+      南方海域珊瑚諸島沖に出撃し、敵機動部隊本体を捕捉撃滅、これに完全勝利せよ！
     </Content>
     <Bonus>
       <Fuel>
@@ -8532,6 +8653,46 @@
       </RenovationMaterials>
       <Other>
         艦上戦闘機 零式艦戦53型(岩本隊)
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="A62"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="F31" Category="building" Type="onetime">
+    <Name>
+      新家具の準備
+    </Name>
+    <Content>
+      「工廠」で装備アイテムを9つ「廃棄」して、新家具の準備をします。
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        90
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        特注家具職人x1
       </Other>
     </Bonus>
     <Dependency>
