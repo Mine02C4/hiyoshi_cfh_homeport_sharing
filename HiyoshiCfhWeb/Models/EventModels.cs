@@ -105,11 +105,11 @@ namespace HiyoshiCfhWeb.Models
         public Color BaseColor { get; private set; }
         public int InternalId { get; private set; }
 
-        public SortieTag(string name, Color color, int id)
+        public SortieTag(string name, Color color, int internalId)
         {
             Name = name;
             BaseColor = color;
-            InternalId = id;
+            InternalId = internalId;
         }
 
         public string WebColor
