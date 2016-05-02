@@ -34,6 +34,17 @@ namespace HiyoshiCfhWeb.Models
                 new List<SortieTag> {},
                 new DateTimeOffset(2016,  2, 10, 18,  0, 0, new TimeSpan(9, 0, 0)),
                 new DateTimeOffset(2016,  2, 29, 11,  0, 0, new TimeSpan(9, 0, 0))
+            ),
+            new Event(
+                "開設！基地航空隊",
+                new List<SortieTag> {
+                    new SortieTag("青", Color.FromArgb(0x004EEA), 1),
+                    new SortieTag("緑", Color.FromArgb(0x00A30A), 2),
+                    new SortieTag("橙", Color.FromArgb(0x839842), 3),
+                    new SortieTag("黄", Color.FromArgb(0xD7DB00), 4)
+                },
+                new DateTimeOffset(2016, 5,  3,  3, 50, 0, new TimeSpan(9, 0, 0)),
+                new DateTimeOffset(2016, 5, 30, 11,  0, 0, new TimeSpan(9, 0, 0))
             )
         };
 
