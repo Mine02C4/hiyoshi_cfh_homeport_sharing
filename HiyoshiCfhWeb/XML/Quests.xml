@@ -2648,6 +2648,46 @@
       <Achieve Id="Bd2"/>
     </Dependency>
   </Quest>
+  <Quest Id="A68" Category="composition" Type="onetime">
+    <Name>
+      強行高速輸送部隊を編成せよ！
+    </Name>
+    <Content>
+      「川内改二」旗艦、「江風改二」「時雨改二」他駆逐2隻による水雷戦隊を編成せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        100
+      </Fuel>
+      <Bull>
+        100
+      </Bull>
+      <Steel>
+        100
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        2
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="A60"/>
+      <Achieve Id="Bd1"/>
+    </Dependency>
+  </Quest>
   <Quest Id="B1" Category="sortie" Type="onetime">
     <Name>
       はじめての「出撃」！
@@ -5299,6 +5339,126 @@
       <Achieve Id="B59"/>
     </Dependency>
   </Quest>
+  <Quest Id="B67" Category="sortie" Type="onetime">
+    <Name>
+      艦隊、三周年！
+    </Name>
+    <Content>
+      三周年を記念しバシー島沖及び東部オリョール海に出撃、同海域の敵艦隊を撃滅せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        1000
+      </Fuel>
+      <Bull>
+        1000
+      </Bull>
+      <Steel>
+        1000
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        シークレット家具 「三周年記念」掛け軸
+      </Other>
+    </Bonus>
+    <Dependency>
+    </Dependency>
+  </Quest>
+  <Quest Id="B68" Category="sortie" Type="onetime">
+    <Name>
+      強行高速輸送部隊、出撃せよ！
+    </Name>
+    <Content>
+      「江風改二」「時雨改二」「川内改二」他駆逐2隻を含む艦隊で、ジャム島攻略作戦を実施せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        500
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        500
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        2
+      </RenovationMaterials>
+      <Other>
+        給糧艦「伊良湖」x1
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="A68"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="B69" Category="sortie" Type="onetime">
+    <Name>
+      「第一航空戦隊」西へ！
+    </Name>
+    <Content>
+      旗艦「赤城」同僚艦「加賀」を中核とする艦隊で、深海東洋艦隊漸減作戦を貫徹せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        800
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        800
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        3
+      </RenovationMaterials>
+      <Other>
+        熟練搭乗員x1
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="B68"/>
+      <Achieve Id="F33"/>
+    </Dependency>
+  </Quest>
   <Quest Id="Bd1" Category="sortie" Type="daily">
     <Name>
       敵艦隊を撃破せよ！
@@ -6592,6 +6752,47 @@
     </Bonus>
     <Dependency>
       <Achieve Id="Bd1"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="C9" Category="practice" Type="onetime">
+    <Name>
+      上陸部隊演習
+    </Name>
+    <Content>
+      島嶼攻略部隊の練度向上のため、本日中に演習で4回以上「勝利」せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        200
+      </Bull>
+      <Steel>
+        200
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        2
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        戦闘糧食x1
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="F32"/>
+      <Achieve Id="Bd2"/>
     </Dependency>
   </Quest>
   <Quest Id="D1" Category="expeditions" Type="onetime">
@@ -8742,6 +8943,87 @@
     </Bonus>
     <Dependency>
       <Achieve Id="Bd2"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="F32" Category="building" Type="onetime">
+    <Name>
+      新装備の準備
+    </Name>
+    <Content>
+      「工廠」で装備アイテムを5つ「廃棄」して、新装備配備の準備をします。 
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        50
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        家具箱(中)x1
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="Bw2"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="F33" Category="building" Type="onetime">
+    <Name>
+      上陸戦用新装備の調達
+    </Name>
+    <Content>
+      「工廠」で「7.7mm機銃」及び「12.7mm単装機銃」を二つずつ廃棄！
+    </Content>
+    <Bonus>
+      <Fuel>
+        50
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        特型内火艇特 二式内火艇
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="C9"/>
+      <Achieve Id="B46"/>
     </Dependency>
   </Quest>
   <Quest Id="G1" Category="remodelling" Type="onetime">
