@@ -1,4 +1,4 @@
 Properties/PublishProfiles
 Scripts/*
-!Scripts/js
+Content/nv.*
 

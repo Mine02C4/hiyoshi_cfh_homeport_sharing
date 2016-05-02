@@ -339,6 +339,8 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\nv.d3.css" />
+    <Content Include="Content\nv.d3.min.css" />
     <Content Include="Content\Plugin\HiyoshiCfhClient.dll" />
     <Content Include="Content\Plugin\Microsoft.OData.Client.dll" />
     <Content Include="Content\Plugin\Microsoft.OData.Core.dll" />
@@ -1132,6 +1134,8 @@
     <Content Include="Scripts\i18n\angular-locale_zh.js" />
     <Content Include="Scripts\i18n\angular-locale_zu-za.js" />
     <Content Include="Scripts\i18n\angular-locale_zu.js" />
+    <Content Include="LICENSE.md" />
+    <Content Include="Content\nv.d3.min.css.map" />
     <None Include="Scripts\jquery-2.2.3.intellisense.js" />
     <Content Include="Scripts\jquery-2.2.3.js" />
     <Content Include="Scripts\jquery-2.2.3.min.js" />
@@ -1142,7 +1146,6 @@
     <Content Include="Scripts\nv.d3.min.js" />
     <Content Include="Test.html" />
     <Content Include="XML\Style.xsl" />
-    <Content Include="LICENSE.md" />
     <None Include="Properties\PublishProfiles\hiyoshicfhweb.pubxml" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
@@ -1221,7 +1224,6 @@
     <Content Include="Views\Monitor\Index.cshtml" />
     <Content Include="Views\Headquarters\Equipments.cshtml" />
     <Content Include="Scripts\d3\LICENSE" />
-    <Content Include="Scripts\nv.d3.min.js.map" />
     <Content Include="Scripts\version.json" />
     <Content Include="Scripts\errors.json" />
     <Content Include="Scripts\angular.min.js.map" />
@@ -1237,6 +1239,7 @@
     <Content Include="Scripts\angular-aria.min.js.map" />
     <Content Include="Scripts\angular-animate.min.js.map" />
     <Content Include="Scripts\jquery-2.2.3.min.map" />
+    <Content Include="Scripts\nv.d3.min.js.map" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
