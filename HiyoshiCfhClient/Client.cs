@@ -216,28 +216,34 @@ namespace HiyoshiCfhClient
             await factory.StartNew(() =>
             {
                 OutDebugConsole("UpdateShips");
-                CheckAdmiral();
-                try
+                if (KanColleClient.Current.Homeport.Organization.Ships.Count > 0)
                 {
-                    SyncWithOData(KanColleClient.Current.Homeport.Organization.Ships.Values.ToList(),
-                        Context.Ships.Where(x => x.AdmiralId == Admiral.AdmiralId).ToList(), "Ships",
-                        (x, y) => x.Id == y.ShipId, x => new WebShip(x, Admiral.AdmiralId),
-                        x => Context.AddToShips(x),
-                        (x, y) =>
-                        {
-                            x.ShipUid = y.ShipUid;
-                            return x;
-                        }
-                    );
-                    OutDebugConsole("Saving ship data");
-                    Context.SaveChanges();
-                    OutDebugConsole("Saved ship data");
-                }
-                catch (DataServiceRequestException ex)
+                    CheckAdmiral();
+                    try
+                    {
+                        SyncWithOData(KanColleClient.Current.Homeport.Organization.Ships.Values.ToList(),
+                            Context.Ships.Where(x => x.AdmiralId == Admiral.AdmiralId).ToList(), "Ships",
+                            (x, y) => x.Id == y.ShipId, x => new WebShip(x, Admiral.AdmiralId),
+                            x => Context.AddToShips(x),
+                            (x, y) =>
+                            {
+                                x.ShipUid = y.ShipUid;
+                                return x;
+                            }
+                        );
+                        OutDebugConsole("Saving ship data");
+                        Context.SaveChanges();
+                        OutDebugConsole("Saved ship data");
+                    }
+                    catch (DataServiceRequestException ex)
+                    {
+                        ResetContext();
+                        JudgeForbiddenOrNot(ex);
+                        throw ex;
+                    }
+                } else
                 {
-                    ResetContext();
-                    JudgeForbiddenOrNot(ex);
-                    throw ex;
+                    OutDebugConsole("No ships");
                 }
             });
         }
@@ -247,28 +253,34 @@ namespace HiyoshiCfhClient
             await factory.StartNew(() =>
             {
                 OutDebugConsole("UpdateSlotItems");
-                CheckAdmiral();
-                try
+                if (KanColleClient.Current.Homeport.Itemyard.SlotItems.Count > 0)
                 {
-                    SyncWithOData(KanColleClient.Current.Homeport.Itemyard.SlotItems.Values.ToList(),
-                        Context.SlotItems.Where(x => x.AdmiralId == Admiral.AdmiralId).ToList(), "SlotItems",
-                        (x, y) => x.Id == y.Id, x => new WebSlotItem(x, Admiral.AdmiralId),
-                        x => Context.AddToSlotItems(x),
-                        (x, y) =>
-                        {
-                            x.SlotItemUid = y.SlotItemUid;
-                            return x;
-                        }
-                    );
-                    OutDebugConsole("Saving SlotItem data");
-                    Context.SaveChanges();
-                    OutDebugConsole("Saved SlotItem data");
-                }
-                catch (DataServiceRequestException ex)
+                    CheckAdmiral();
+                    try
+                    {
+                        SyncWithOData(KanColleClient.Current.Homeport.Itemyard.SlotItems.Values.ToList(),
+                            Context.SlotItems.Where(x => x.AdmiralId == Admiral.AdmiralId).ToList(), "SlotItems",
+                            (x, y) => x.Id == y.Id, x => new WebSlotItem(x, Admiral.AdmiralId),
+                            x => Context.AddToSlotItems(x),
+                            (x, y) =>
+                            {
+                                x.SlotItemUid = y.SlotItemUid;
+                                return x;
+                            }
+                        );
+                        OutDebugConsole("Saving SlotItem data");
+                        Context.SaveChanges();
+                        OutDebugConsole("Saved SlotItem data");
+                    }
+                    catch (DataServiceRequestException ex)
+                    {
+                        ResetContext();
+                        JudgeForbiddenOrNot(ex);
+                        throw ex;
+                    }
+                } else
                 {
-                    ResetContext();
-                    JudgeForbiddenOrNot(ex);
-                    throw ex;
+                    OutDebugConsole("No slot items");
                 }
             });
         }
