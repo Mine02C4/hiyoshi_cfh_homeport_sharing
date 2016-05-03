@@ -321,6 +321,7 @@ namespace HiyoshiCfhClient.ViewModels
                 Settings.Current.TokenType = TokenType;
                 Settings.Current.Save();
                 InitClient();
+                ManualUpdate();
             }
         }
 
@@ -347,8 +348,6 @@ namespace HiyoshiCfhClient.ViewModels
                     {
                         OutDebugConsole("Start init client thread");
                         await PrepareClient();
-                        await Client.UpdateShips();
-                        await Client.UpdateSlotItems();
                         OutDebugConsole("End init client thread");
                     }
                     catch (DeniedAccessToAdmiral)
@@ -360,6 +359,59 @@ namespace HiyoshiCfhClient.ViewModels
                         OutDebugConsole(ex.ToString());
                     }
                 });
+            }
+        }
+
+        public void ManualUpdate()
+        {
+            OutDebugConsole("ManualUpdate");
+            if (CheckToken())
+            {
+                Task.Factory.StartNew(async () =>
+                {
+                    await Update();
+                });
+            }
+        }
+
+        async Task Update()
+        {
+            try
+            {
+                await PrepareClient();
+                await Client.UpdateShips();
+                await Client.UpdateSlotItems();
+                var materials = KanColleClient.Current.Homeport.Materials;
+                if (materials.Fuel > 0)
+                    await Client.AddMaterialRecord(MaterialType.Fuel, materials.Fuel);
+                if (materials.Ammunition > 0)
+                    await Client.AddMaterialRecord(MaterialType.Bull, materials.Ammunition);
+                if (materials.Steel > 0)
+                    await Client.AddMaterialRecord(MaterialType.Steel, materials.Steel);
+                if (materials.Bauxite > 0)
+                    await Client.AddMaterialRecord(MaterialType.Bauxite, materials.Bauxite);
+                if (materials.InstantBuildMaterials > 0)
+                    await Client.AddMaterialRecord(MaterialType.InstantBuildMaterials, materials.InstantBuildMaterials);
+                if (materials.InstantRepairMaterials > 0)
+                    await Client.AddMaterialRecord(MaterialType.InstantRepairMaterials, materials.InstantRepairMaterials);
+                if (materials.DevelopmentMaterials > 0)
+                    await Client.AddMaterialRecord(MaterialType.DevelopmentMaterials, materials.DevelopmentMaterials);
+                if (materials.ImprovementMaterials > 0)
+                    await Client.AddMaterialRecord(MaterialType.RenovationMaterials, materials.ImprovementMaterials);
+            }
+            catch (DeniedAccessToAdmiral)
+            {
+                OutDebugConsole("認証に失敗しました。再認証が必要です。");
+                ReLogin();
+            }
+            catch (AdmiralNotInitialized)
+            {
+                OutDebugConsole("認証が必要です。");
+                ReLogin();
+            }
+            catch (Exception ex)
+            {
+                OutDebugConsole(ex.ToString());
             }
         }
 
