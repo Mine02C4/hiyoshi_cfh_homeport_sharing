@@ -386,9 +386,16 @@ namespace HiyoshiCfhClient.ViewModels
 
         void ReLogin()
         {
-            ClearToken();
-            Client = null;
-            StartLogin();
+            try
+            {
+                ClearToken();
+                Client = null;
+                StartLogin();
+            }
+            catch (Exception ex)
+            {
+                OutDebugConsole(ex.ToString());
+            }
         }
 
         private static string logPath = Path.Combine(
