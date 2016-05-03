@@ -80,21 +80,24 @@ namespace HiyoshiCfhClient.Models
 
         public void Save()
         {
-            StreamWriter stream = null;
-            try
+            lock (Current)
             {
-                var dir = Path.GetDirectoryName(Path.GetFullPath(path)) ?? "";
-                Directory.CreateDirectory(dir);
-                stream = new StreamWriter(path, false, new UTF8Encoding(false));
-                var serializer = new XmlSerializer(typeof(Settings));
-                serializer.Serialize(stream, this);
-            }
-            finally
-            {
-                if (stream != null)
+                StreamWriter stream = null;
+                try
                 {
-                    stream.Close();
-                    stream.Dispose();
+                    var dir = Path.GetDirectoryName(Path.GetFullPath(path)) ?? "";
+                    Directory.CreateDirectory(dir);
+                    stream = new StreamWriter(path, false, new UTF8Encoding(false));
+                    var serializer = new XmlSerializer(typeof(Settings));
+                    serializer.Serialize(stream, this);
+                }
+                finally
+                {
+                    if (stream != null)
+                    {
+                        stream.Close();
+                        stream.Dispose();
+                    }
                 }
             }
         }
