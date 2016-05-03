@@ -5,7 +5,6 @@ using HiyoshiCfhClient.Utils;
 using Livet;
 using Livet.EventListeners;
 using Livet.Messaging;
-using Microsoft.OData.Client;
 using System;
 using System.IO;
 using System.Reactive.Linq;
@@ -371,12 +370,16 @@ namespace HiyoshiCfhClient.ViewModels
 
         void ClearToken()
         {
-            AccessToken = null;
-            TokenType = null;
-            Settings.Current.AccessToken = null;
-            Settings.Current.TokenType = null;
-            Settings.Current.Save();
-            Client = null;
+            if (AccessToken != null || TokenType != null)
+            {
+                AccessToken = null;
+                TokenType = null;
+                Settings.Current.AccessToken = null;
+                Settings.Current.TokenType = null;
+                OutDebugConsole("Save in ClearToken");
+                Settings.Current.Save();
+                Client = null;
+            }
         }
 
         bool CheckToken()
@@ -386,6 +389,7 @@ namespace HiyoshiCfhClient.ViewModels
 
         void ReLogin()
         {
+            OutDebugConsole("ReLogin");
             try
             {
                 ClearToken();
