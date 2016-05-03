@@ -287,7 +287,7 @@ namespace HiyoshiCfhClient.ViewModels
         /// <summary>
         /// プラグインの起動シーケンスのテスト。
         /// </summary>
-        public void StartTest()
+        public void Login()
         {
             if (CheckToken())
             {

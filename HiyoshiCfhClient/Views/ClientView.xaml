@@ -40,10 +40,10 @@
             </Grid>
             <StackPanel Grid.Row="1">
                 <StackPanel Orientation="Horizontal" Margin="10">
-                    <Button Content="テスト開始(一連の基本動作)">
+                    <Button Content="ログイン">
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Click">
-                                <ei:CallMethodAction TargetObject="{Binding}" MethodName="StartTest"/>
+                                <ei:CallMethodAction TargetObject="{Binding}" MethodName="Login"/>
                             </i:EventTrigger>
                         </i:Interaction.Triggers>
                     </Button>
