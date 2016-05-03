@@ -101,7 +101,16 @@ namespace HiyoshiCfhClient
             {
                 var admiral = new WebAdmiral(KanColleClient.Current.Homeport.Admiral);
                 Context.AddToAdmirals(admiral);
-                Context.SaveChanges();
+                try
+                {
+                    Context.SaveChanges();
+                }
+                catch (DataServiceRequestException ex)
+                {
+                    ResetContext();
+                    JudgeForbiddenOrNot(ex);
+                    throw ex;
+                }
                 Admiral = GetAdmiral(memberId);
             }
             else // 既存の場合は更新処理
@@ -121,7 +130,16 @@ namespace HiyoshiCfhClient
         WebAdmiral GetAdmiral(int memberId)
         {
             OutDebugConsole("GetAdmiral");
-            return Context.Admirals.Where(x => x.MemberId == memberId).FirstOrDefault();
+            try
+            {
+                return Context.Admirals.Where(x => x.MemberId == memberId).FirstOrDefault();
+            }
+            catch (DataServiceQueryException ex)
+            {
+                ResetContext();
+                JudgeForbiddenOrNot(ex);
+                throw;
+            }
         }
 
         void UpdateAdmiral()
@@ -241,7 +259,8 @@ namespace HiyoshiCfhClient
                         JudgeForbiddenOrNot(ex);
                         throw ex;
                     }
-                } else
+                }
+                else
                 {
                     OutDebugConsole("No ships");
                 }
@@ -278,7 +297,8 @@ namespace HiyoshiCfhClient
                         JudgeForbiddenOrNot(ex);
                         throw ex;
                     }
-                } else
+                }
+                else
                 {
                     OutDebugConsole("No slot items");
                 }
@@ -345,7 +365,7 @@ namespace HiyoshiCfhClient
             );
         }
 
-        void JudgeForbiddenOrNot(DataServiceRequestException ex)
+        void JudgeForbiddenOrNot(InvalidOperationException ex)
         {
             if (ex.InnerException is DataServiceClientException)
             {
