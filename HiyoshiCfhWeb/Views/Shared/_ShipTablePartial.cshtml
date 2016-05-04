@@ -42,13 +42,13 @@
         {
             <tr class="@(item.LevelForNextRemodeling <= 0 ? "info" : null)">
                 <td>
-                    @Html.DisplayFor(modelItem => item.ShipId)
+                    @item.ShipId
                 </td>
                 <td>
                     @Html.ActionLink(item.ShipInfo.Name, "Index", "Ship", routeValues: new { id = item.ShipInfo.Name }, htmlAttributes: null)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Level)
+                    @item.Level
                 </td>
                 @{var tag = tags.Where(x => x.InternalId == item.SortieTag).FirstOrDefault();}
                 @if (tag != null)
@@ -63,10 +63,10 @@
                     @Html.DisplayFor(modelItem => item.IsLocked)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Exp)
+                    @item.Exp
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.ExpForNextLevel)
+                    @item.ExpForNextLevel
                 </td>
                 <td>
                     @{var percentHp = (int)(item.Hp * 100.0 / Math.Max(item.ShipInfo.MaxHp, item.MaxHp));}
