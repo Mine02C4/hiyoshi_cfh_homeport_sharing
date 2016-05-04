@@ -22,7 +22,7 @@
 
 ## 開発環境の準備
 
-* Visual Studio Ultimate, Community, Professional, Premium 2013
+* Visual Studio Ultimate, Community, Professional, Premium 2015
 
 上記ツールでソリューションを開き、NuGetで依存ライブラリをダウンロードしてください。
 
