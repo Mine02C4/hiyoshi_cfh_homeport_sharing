@@ -54,6 +54,11 @@ namespace HiyoshiCfhWeb.Controllers
             return View(admiral);
         }
 
+        /// <summary>
+        /// 任務進捗の表示。任務進捗推論も実装。
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public ActionResult Quests(string id)
         {
             var serializer = new XmlSerializer(typeof(XmlQuests));
