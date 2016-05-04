@@ -335,13 +335,19 @@ namespace HiyoshiCfhWeb.Controllers
 
         public ActionResult Modernization(string id)
         {
-            var admiral = db.Admirals.Where(x => x.Name.Equals(id)).First();
+            var admiral = db.Admirals.AsNoTracking().Where(x => x.Name.Equals(id)).First();
+            var ships = db.Ships.AsNoTracking().Include("ShipInfo").Where(x => x.AdmiralId == admiral.AdmiralId).ToArray();
+            db.Configuration.LazyLoadingEnabled = false;
+            admiral.Ships = ships;
             return View(admiral);
         }
 
         public ActionResult Leveling(string id)
         {
-            var admiral = db.Admirals.Where(x => x.Name.Equals(id)).First();
+            var admiral = db.Admirals.AsNoTracking().Where(x => x.Name.Equals(id)).First();
+            var ships = db.Ships.AsNoTracking().Include("ShipInfo.ShipType").Where(x => x.AdmiralId == admiral.AdmiralId).ToArray();
+            db.Configuration.LazyLoadingEnabled = false;
+            admiral.Ships = ships;
             return View(admiral);
         }
 
