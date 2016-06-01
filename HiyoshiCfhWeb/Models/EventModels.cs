@@ -38,10 +38,10 @@ namespace HiyoshiCfhWeb.Models
             new Event(
                 "開設！基地航空隊",
                 new List<SortieTag> {
-                    new SortieTag("青", Color.FromArgb(0x004EEA), 1),
-                    new SortieTag("緑", Color.FromArgb(0x00A30A), 2),
-                    new SortieTag("橙", Color.FromArgb(0x839842), 3),
-                    new SortieTag("黄", Color.FromArgb(0xD7DB00), 4)
+                    new SortieTag("連合艦隊", Color.FromArgb(0x3C677F), 1),
+                    new SortieTag("設営部隊", Color.FromArgb(0x3B662A), 2),
+                    new SortieTag("南方部隊", Color.FromArgb(0x906736), 3),
+                    new SortieTag("機動部隊", Color.FromArgb(0xC0B812), 4)
                 },
                 new DateTimeOffset(2016, 5,  3,  3, 50, 0, new TimeSpan(9, 0, 0)),
                 new DateTimeOffset(2016, 6,  1, 11, 30, 0, new TimeSpan(9, 0, 0))
