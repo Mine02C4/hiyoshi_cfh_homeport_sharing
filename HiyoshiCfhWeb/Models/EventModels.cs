@@ -44,7 +44,7 @@ namespace HiyoshiCfhWeb.Models
                     new SortieTag("黄", Color.FromArgb(0xD7DB00), 4)
                 },
                 new DateTimeOffset(2016, 5,  3,  3, 50, 0, new TimeSpan(9, 0, 0)),
-                new DateTimeOffset(2016, 5, 30, 11,  0, 0, new TimeSpan(9, 0, 0))
+                new DateTimeOffset(2016, 6,  1, 11, 30, 0, new TimeSpan(9, 0, 0))
             )
         };
 
