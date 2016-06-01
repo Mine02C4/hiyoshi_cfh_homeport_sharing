@@ -46,7 +46,7 @@ namespace HiyoshiCfhWeb.Controllers
                 return BadRequest(ModelState);
             }
 
-            T obj = dbs.Find(key);
+            var obj = dbs.Find(key);
             if (obj == null)
             {
                 return NotFound();
@@ -136,7 +136,7 @@ namespace HiyoshiCfhWeb.Controllers
         // DELETE: odata/xxx(5)
         public virtual IHttpActionResult Delete([FromODataUri] int key)
         {
-            T obj = dbs.Find(key);
+            var obj = dbs.Find(key);
             if (obj == null)
             {
                 return NotFound();
