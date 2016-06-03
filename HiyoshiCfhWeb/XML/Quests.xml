@@ -2684,8 +2684,45 @@
       </Other>
     </Bonus>
     <Dependency>
-      <Achieve Id="A60"/>
-      <Achieve Id="Bd1"/>
+      <Achieve Id="B53"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="A69" Category="composition" Type="onetime">
+    <Name>
+      新編「水雷戦隊」を含む艦隊を再編成せよ！
+    </Name>
+    <Content>
+      軽巡級を旗艦とした駆逐艦4隻からなる強力な水雷戦隊を含む艦隊を再編成せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        200
+      </Fuel>
+      <Bull>
+        200
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        2
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+      </Other>
+    </Bonus>
+    <Dependency>
     </Dependency>
   </Quest>
   <Quest Id="B1" Category="sortie" Type="onetime">
@@ -3886,7 +3923,7 @@
       「第二戦隊」抜錨！
     </Name>
     <Content>
-      「第二戦隊」を基幹とした艦隊でカレー洋に進出、反復出撃により敵海上兵力を撃破せよ！
+      「第二戦隊」を基幹とした艦隊でカレー洋に進出、反復出撃により敵海上兵力を撃滅せよ！
     </Content>
     <Bonus>
       <Fuel>
@@ -5376,6 +5413,7 @@
       </Other>
     </Bonus>
     <Dependency>
+      <Achieve Id="B7"/>
     </Dependency>
   </Quest>
   <Quest Id="B68" Category="sortie" Type="onetime">
@@ -5457,6 +5495,86 @@
     <Dependency>
       <Achieve Id="B68"/>
       <Achieve Id="F33"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="B70" Category="sortie" Type="onetime">
+    <Name>
+      新編艦隊、南西諸島防衛線へ急行せよ！
+    </Name>
+    <Content>
+      水雷戦隊を含む新編艦隊を南西諸島防衛線に展開、同方面に来襲する敵艦隊を撃破せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        300
+      </Fuel>
+      <Bull>
+        300
+      </Bull>
+      <Steel>
+        300
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        3
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        給糧艦「間宮」x1
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="A69"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="B71" Category="sortie" Type="onetime">
+    <Name>
+      鎮守府近海航路の安全確保を強化せよ！
+    </Name>
+    <Content>
+      水雷戦隊を含む新編艦隊を鎮守府近海航路に出撃させ、同航路の安全確保に努めよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        900
+      </Bull>
+      <Steel>
+        900
+      </Steel>
+      <Bauxite>
+        900
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        4
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        特注家具職人x1
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="B70"/>
     </Dependency>
   </Quest>
   <Quest Id="Bd1" Category="sortie" Type="daily">
@@ -8950,7 +9068,7 @@
       新装備の準備
     </Name>
     <Content>
-      「工廠」で装備アイテムを5つ「廃棄」して、新装備配備の準備をします。 
+      「工廠」で装備アイテムを5つ「廃棄」して、新装備配備の準備をします。
     </Content>
     <Bonus>
       <Fuel>
