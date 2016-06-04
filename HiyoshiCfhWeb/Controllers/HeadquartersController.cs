@@ -263,6 +263,12 @@ namespace HiyoshiCfhWeb.Controllers
                     }
                     records = records.Where(x => x.TimeUtc > ev.StartTime.UtcDateTime && x.TimeUtc < ev.FinishTime.UtcDateTime);
                 }
+                else
+                {
+                    addCurrentValue = true;
+                    DateTime startTime = DateTime.UtcNow.AddMonths(-1);
+                    records = records.Where(x => x.TimeUtc > startTime && x.TimeUtc < DateTime.UtcNow);
+                }
                 var nlimit = 530;
                 var obj =
                     material.Select(m =>
