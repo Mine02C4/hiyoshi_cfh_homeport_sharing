@@ -57,6 +57,10 @@
                     <CheckBox VerticalAlignment="Center" Margin="10,0,0,0" Content="自動更新" IsChecked="{Binding EnableAutoUpdate}" />
                     <TextBlock Text="手動更新は多用しないでください。" Margin="10,0,0,0" />
                 </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="10, 0, 10, 10">
+                    <TextBlock Text="Token:" Margin="0" VerticalAlignment="Center" />
+                    <TextBlock Text="{Binding AccessToken}" VerticalAlignment="Center" Margin="0" />
+                </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <Button x:Name="ClearConsoleButton" Content="コンソールのクリア" Margin="10,0">
                         <i:Interaction.Triggers>
@@ -65,8 +69,13 @@
                             </i:EventTrigger>
                         </i:Interaction.Triggers>
                     </Button>
-                    <TextBlock Text="Token:" Margin="0" VerticalAlignment="Center" />
-                    <TextBlock Text="{Binding AccessToken}" VerticalAlignment="Center" Margin="0" />
+                    <Button x:Name="WrackTokenButton" Content="トークンを破壊">
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="Click">
+                                <ei:CallMethodAction TargetObject="{Binding}" MethodName="WrackToken"/>
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                    </Button>
                 </StackPanel>
             </StackPanel>
             <TextBox x:Name="DebugConsole" IsReadOnly="True" BorderThickness="0" TextWrapping="Wrap" Text="{Binding DebugConsole}" Grid.Row="2" Background="{DynamicResource {x:Static SystemColors.WindowTextBrushKey}}" Margin="10" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" />

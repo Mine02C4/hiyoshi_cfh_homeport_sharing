@@ -454,6 +454,15 @@ namespace HiyoshiCfhClient.ViewModels
             }
         }
 
+        public void WrackToken()
+        {
+            var r = new System.Random();
+            var b = new byte[100];
+            r.NextBytes(b);
+            AccessToken = BitConverter.ToString(b).Replace("-", string.Empty);
+            Client = null;
+        }
+
         private static string logPath = Path.Combine(
             Environment.CurrentDirectory,
             "HiyoshiCfhClient.log");
