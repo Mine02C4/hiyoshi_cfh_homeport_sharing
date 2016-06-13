@@ -110,6 +110,8 @@ namespace HiyoshiCfhClient.Utils
         {
             try
             {
+                var query = System.Web.HttpUtility.ParseQueryString(session.Request.BodyAsString);
+                var hoge = session.Request;
                 var djson = DynamicJson.Parse(session.Response.BodyAsString.Replace("svdata=", ""));
                 var questlist = new kcsapi_questlist
                 {
@@ -135,6 +137,10 @@ namespace HiyoshiCfhClient.Utils
                     questlist.api_list = list.ToArray();
                 }
 
+                if (query["api_tab_id"] != "0")
+                {
+                    questlist.api_count = -1;
+                }
                 return questlist;
             }
             catch (Exception ex)

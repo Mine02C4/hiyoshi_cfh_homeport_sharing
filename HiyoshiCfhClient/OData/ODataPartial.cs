@@ -324,18 +324,22 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
             switch (quest.api_type)
             {
                 case 1:
-                    Type = QuestType.OneTime;
+                    Type = QuestType.Daily;
                     break;
                 case 2:
+                    Type = QuestType.Weekly;
+                    break;
+                case 3:
+                    Type = QuestType.Monthly;
+                    break;
                 case 4:
+                    Type = QuestType.OneTime;
+                    break;
                 case 5:
                     Type = QuestType.Daily;
                     break;
-                case 3:
-                    Type = QuestType.Weekly;
-                    break;
                 default:
-                    Type = QuestType.Monthly;
+                    Type = QuestType.Daily;
                     break;
             }
             Name = quest.api_title;

@@ -166,7 +166,7 @@ namespace HiyoshiCfhClient.ViewModels
                 var proxy = KanColleClient.Current.Proxy;
                 proxy.api_get_member_questlist
                     .Select(QuestsTracker.QuestListSerialize)
-                    .Where(x => x != null)
+                    .Where(x => x != null && x.api_count >= 0)
                     .Subscribe(async x => { await this.HandleQuests(x); });
                 #endregion
                 #region 資材の変更検知
