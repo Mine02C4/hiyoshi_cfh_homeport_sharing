@@ -17,3 +17,11 @@
         <input type="submit" value="重複除去" class="btn btn-default" />
     </div>
 }
+
+@using (Html.BeginForm("SaveSortieTags", null))
+{
+    @Html.AntiForgeryToken()
+    <div class="form-actions no-color">
+        <input type="submit" value="出撃識別札の保存" class="btn btn-default" />
+    </div>
+}

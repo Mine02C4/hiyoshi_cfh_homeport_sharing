@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Data.Entity.Migrations;
 using System.Web;
 using System.Web.Mvc;
 
@@ -42,6 +43,26 @@ namespace HiyoshiCfhWeb.Controllers
                         .OrderByDescending(x => x.ShipUid).Take(duplication.Count() - 1);
                     db.Ships.RemoveRange(ships);
                 }
+            }
+            db.SaveChangesAsync();
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult SaveSortieTags()
+        {
+            var LastEvent = Event.Events.Last();
+            var taggedShips = db.Ships.Where(x => x.SortieTag.HasValue && x.SortieTag > 0).ToList();
+            foreach (var ship in taggedShips)
+            {
+                var tagRecord = new SortieTagRecord
+                {
+                    ShipUid = ship.ShipUid,
+                    EventId = LastEvent.Id,
+                    SortieTagId = ship.SortieTag.Value
+                };
+                db.SortieTagRecords.AddOrUpdate(tagRecord);
             }
             db.SaveChangesAsync();
             return RedirectToAction("Index");
