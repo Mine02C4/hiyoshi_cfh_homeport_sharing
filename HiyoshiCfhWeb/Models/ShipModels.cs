@@ -1,6 +1,7 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Data.Entity.Infrastructure;
+using System.Linq;
 
 namespace HiyoshiCfhWeb.Models
 {
@@ -51,6 +52,7 @@ namespace HiyoshiCfhWeb.Models
         /// 出撃識別札
         /// </summary>
         public int? SortieTag { get; set; }
+        public virtual ICollection<SortieTagRecord> SortieTagRecords { get; set; }
 
         [NotMapped]
         public int? LevelForNextRemodeling
@@ -65,6 +67,36 @@ namespace HiyoshiCfhWeb.Models
                 {
                     return ShipInfo.NextRemodelingLevel - Level;
                 }
+            }
+        }
+    }
+
+    public class SortieTagRecord
+    {
+        [Key]
+        [Column(Order = 0)]
+        public int ShipUid { get; set; }
+        [Key]
+        [Column(Order = 1)]
+        public int EventId { get; set; }
+        public int SortieTagId { get; set; }
+        public virtual Ship Ship { get; set; }
+
+        [NotMapped]
+        public Event Event
+        {
+            get
+            {
+                return Event.Events.Where(x => x.Id == EventId).First();
+            }
+        }
+
+        [NotMapped]
+        public SortieTag SortieTag
+        {
+            get
+            {
+                return Event.SortieTags.Where(x => x.InternalId == SortieTagId).First();
             }
         }
     }
