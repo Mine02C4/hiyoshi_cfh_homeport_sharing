@@ -1,6 +1,6 @@
 ﻿@model IEnumerable<HiyoshiCfhWeb.Models.Ship>
 @{
-    var tags = HiyoshiCfhWeb.Models.Event.Events.Last().SortieTags;
+    var targetEvent = HiyoshiCfhWeb.Models.Event.Events.Last();
 }
 <h2>所属艦娘一覧</h2>
 <div class="table-responsive">
@@ -50,9 +50,12 @@
                 <td>
                     @item.Level
                 </td>
-                @{var tag = tags.Where(x => x.InternalId == item.SortieTag).FirstOrDefault();}
-                @if (tag != null)
+                @{
+                    var tagRecord = item.SortieTagRecords.Where(x => x.EventId == targetEvent.Id).FirstOrDefault();
+                }
+                @if (tagRecord != null)
                 {
+                    var tag = tagRecord.SortieTag;
                     <td style="background-color: @tag.WebColor; color: #FFF">@tag.Name</td>
                 }
                 else
@@ -102,7 +105,7 @@
                     @(item.Bull)/@item.ShipInfo.MaxBull
                 </td>
             </tr>
-        }
+                        }
 
     </table>
 </div>

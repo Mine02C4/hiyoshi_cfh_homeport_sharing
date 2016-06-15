@@ -51,7 +51,7 @@ namespace HiyoshiCfhWeb.Controllers
         public ActionResult Homeport(string id)
         {
             var admiral = db.Admirals.AsNoTracking().Where(x => x.Name.Equals(id)).First();            
-            var ships = db.Ships.AsNoTracking().Include("ShipInfo.ShipType").Where(x => x.AdmiralId == admiral.AdmiralId).ToArray();
+            var ships = db.Ships.AsNoTracking().Include("ShipInfo.ShipType").Include("SortieTagRecords").Where(x => x.AdmiralId == admiral.AdmiralId).ToArray();
             db.Configuration.LazyLoadingEnabled = false;
             admiral.Ships = ships;
             return View(admiral);
