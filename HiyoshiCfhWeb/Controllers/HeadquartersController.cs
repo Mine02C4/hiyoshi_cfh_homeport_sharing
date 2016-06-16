@@ -40,6 +40,7 @@ namespace HiyoshiCfhWeb.Controllers
             Tuple.Create("近代化改修", "Modernization"),
             Tuple.Create("レベリング", "Leveling"),
             Tuple.Create("保有装備", "Equipments"),
+            Tuple.Create("艦娘図鑑", "ShipsBook"),
         };
 
         // GET: Headquarters
@@ -50,7 +51,7 @@ namespace HiyoshiCfhWeb.Controllers
 
         public ActionResult Homeport(string id)
         {
-            var admiral = db.Admirals.AsNoTracking().Where(x => x.Name.Equals(id)).First();            
+            var admiral = db.Admirals.AsNoTracking().Where(x => x.Name.Equals(id)).First();
             var ships = db.Ships.AsNoTracking().Include("ShipInfo.ShipType").Include("SortieTagRecords").Where(x => x.AdmiralId == admiral.AdmiralId).ToArray();
             db.Configuration.LazyLoadingEnabled = false;
             admiral.Ships = ships;
@@ -361,6 +362,13 @@ namespace HiyoshiCfhWeb.Controllers
         {
             var admiral = db.Admirals.Where(x => x.Name.Equals(id)).First();
             return View(admiral);
+        }
+
+        public ActionResult ShipsBook(string id)
+        {
+            var admiral = db.Admirals.Include("Ships").Where(x => x.Name.Equals(id)).First();
+            var shipMaster = db.ShipInfoes.Include("ShipType").GroupBy(x => x.Kana).ToList();
+            return View(Tuple.Create(admiral, shipMaster));
         }
     }
 }

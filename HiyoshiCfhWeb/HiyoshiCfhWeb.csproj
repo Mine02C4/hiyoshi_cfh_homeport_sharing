@@ -1243,6 +1243,7 @@
     <Content Include="Scripts\jquery-2.2.3.min.map" />
     <Content Include="Scripts\nv.d3.min.js.map" />
     <Content Include="Scripts\version.json" />
+    <Content Include="Views\Headquarters\ShipsBook.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

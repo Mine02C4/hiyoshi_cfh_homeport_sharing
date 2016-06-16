@@ -1,0 +1,55 @@
+﻿@model Tuple<HiyoshiCfhWeb.Models.Admiral, List<IGrouping<string, HiyoshiCfhWeb.Models.ShipInfo>>>
+@{
+    ViewBag.Title = "艦娘図鑑";
+    var admiral = Model.Item1;
+    var shipMaster = Model.Item2;
+}
+@Html.Partial("_HeaderPartial", admiral)
+
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    艦名(仮名)
+                </th>
+                <th>
+                    艦名
+                </th>
+                <th>
+                    艦種
+                </th>
+                <th>
+                    改造レベル
+                </th>
+                <th>
+                    速力
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var series in shipMaster)
+            {
+                <tr>
+                    <td rowspan="@series.Count()">
+                        @series.Key
+                    </td>
+                    @foreach (var item in series.OrderBy(x => x.NextRemodelingLevel).OrderByDescending(x => x.NextRemodelingLevel.HasValue).Select((v, i) => new { v, i }))
+                    {
+                        if (item.i != 0)
+                        {
+                            @Html.Raw("</tr>");
+                            @Html.Raw("<tr>");
+                        }
+                        <td>
+                            @Html.ActionLink(item.v.Name, "Index", "Ship", routeValues: new { id = item.v.Name }, htmlAttributes: null)
+                        </td>
+                        <td>@item.v.ShipType.Name</td>
+                        <td>@item.v.NextRemodelingLevel</td>
+                        <td>@item.v.ShipSpeed</td>
+                    }
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
