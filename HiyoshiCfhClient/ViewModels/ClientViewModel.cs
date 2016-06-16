@@ -285,7 +285,7 @@ namespace HiyoshiCfhClient.ViewModels
         }
 
         /// <summary>
-        /// プラグインの起動シーケンスのテスト。
+        /// 手動ログイン
         /// </summary>
         public void Login()
         {
