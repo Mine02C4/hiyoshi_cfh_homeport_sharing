@@ -44,9 +44,13 @@
     </div>
     <div class="col-md-4">
         <h3>各種ツール</h3>
-        <p>@Html.ActionLink("任務進捗", "Quests", null, new { @class = "btn btn-default" })</p>
-        <p>@Html.ActionLink("イベント", "Event", null, new { @class = "btn btn-default" })</p>
-        <p>@Html.ActionLink("資材統計", "Materials", null, new { @class = "btn btn-default" })</p>
+        @foreach (var item in HiyoshiCfhWeb.Controllers.HeadquartersController.subPages)
+        {
+            if (item.Item2 != String.Empty)
+            {
+                <p>@Html.ActionLink(item.Item1, item.Item2, null, new { @class = "btn btn-default" })</p>
+            }
+        }
     </div>
 </div>
 @Html.Partial("_ShipTablePartial", admiral.Ships.OrderByDescending(x => x.Level))
