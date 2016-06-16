@@ -263,6 +263,7 @@ namespace HiyoshiCfhClient.ViewModels
             using (var vm = new LoginViewModel())
             {
                 vm.PropertyChanged += vm_PropertyChanged;
+                OutDebugConsole("TransitionMessage in OpenLoginWindow");
                 var message = new TransitionMessage(vm, "Show/LoginWindow");
                 await Messenger.RaiseAsync(message);
             }
