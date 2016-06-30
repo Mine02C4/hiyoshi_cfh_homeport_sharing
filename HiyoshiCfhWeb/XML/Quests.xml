@@ -2726,6 +2726,82 @@
       <Achieve Id="A4"/>
     </Dependency>
   </Quest>
+  <Quest Id="A70" Category="composition" Type="onetime">
+    <Name>
+      新編「第八駆逐隊」を再編成せよ！
+    </Name>
+    <Content>
+      「朝潮改二」を旗艦とした「満潮」「大潮」「荒潮」4隻による第八駆逐隊を再編成せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        200
+      </Fuel>
+      <Bull>
+        200
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        3
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+      </Other>
+    </Bonus>
+    <Dependency>
+    </Dependency>
+  </Quest>
+  <Quest Id="A71" Category="composition" Type="onetime">
+    <Name>
+      精鋭！八駆第一小隊！
+    </Name>
+    <Content>
+      「朝潮改二丁」及び「大潮改二」を含む艦隊を編成せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        250
+      </Fuel>
+      <Bull>
+        250
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+      </Other>
+    </Bonus>
+    <Dependency>
+    </Dependency>
+  </Quest>
   <Quest Id="B1" Category="sortie" Type="onetime">
     <Name>
       はじめての「出撃」！
@@ -4153,7 +4229,7 @@
         0
       </RenovationMaterials>
       <Other>
-        ソナー三式水中探信儀
+        ソナー 三式水中探信儀
       </Other>
     </Bonus>
     <Dependency>
@@ -4395,7 +4471,7 @@
         0
       </RenovationMaterials>
       <Other>
-        ソナー九三式水中聴音機
+        ソナー 九三式水中聴音機
       </Other>
     </Bonus>
     <Dependency>
@@ -4515,7 +4591,7 @@
         2
       </RenovationMaterials>
       <Other>
-        ソナー九三式水中聴音機
+        ソナー 九三式水中聴音機
       </Other>
     </Bonus>
     <Dependency>
@@ -5577,6 +5653,85 @@
     </Bonus>
     <Dependency>
       <Achieve Id="B70"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="B72" Category="sortie" Type="onetime">
+    <Name>
+      「第三十一戦隊」敵潜を制圧せよ！
+    </Name>
+    <Content>
+      第三十一戦隊(第一次)を鎮守府近海航路に再投入！反復出撃し、敵潜を制圧せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        310
+      </Fuel>
+      <Bull>
+        310
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        310
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        2
+      </RenovationMaterials>
+      <Other>
+        ソナー 三式水中探信儀
+      </Other>
+    </Bonus>
+    <Dependency>
+    </Dependency>
+  </Quest>
+  <Quest Id="B73" Category="sortie" Type="onetime">
+    <Name>
+      新編「第八駆逐隊」出撃せよ！
+    </Name>
+    <Content>
+      新編「第八駆逐隊」を含む艦隊を鎮守府近海航路に出撃させ、同航路の安全確保に努めよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        400
+      </Fuel>
+      <Bull>
+        400
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        探照灯 探照灯
+        上陸用舟艇 大発動艇
+      </Other>
+    </Bonus>
+    <Dependency>
     </Dependency>
   </Quest>
   <Quest Id="Bd1" Category="sortie" Type="daily">
@@ -7120,7 +7275,7 @@
       第二次潜水艦派遣作戦
     </Name>
     <Content>
-      第2次潜水艦派遣作戦を成功させよう！
+      第二次潜水艦派遣作戦を成功させよう！
     </Content>
     <Bonus>
       <Fuel>
@@ -7148,7 +7303,7 @@
         0
       </RenovationMaterials>
       <Other>
-        艦上爆撃機Ju87C改
+        艦上爆撃機 Ju87C改
       </Other>
     </Bonus>
     <Dependency>
@@ -7188,7 +7343,7 @@
         0
       </RenovationMaterials>
       <Other>
-        艦上爆撃機Ju87C改
+        艦上爆撃機 Ju87C改
         特注家具職人x1
       </Other>
     </Bonus>
@@ -9151,6 +9306,44 @@
       <Achieve Id="B46"/>
     </Dependency>
   </Quest>
+  <Quest Id="F34" Category="building" Type="onetime">
+    <Name>
+      対空機銃量産
+    </Name>
+    <Content>
+      「機銃」系装備を量産し、工廠で6個破棄！「装備改修」強化をサポートせよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        100
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        200
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        2
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        1
+      </RenovationMaterials>
+      <Other>
+      </Other>
+    </Bonus>
+    <Dependency>
+    </Dependency>
+  </Quest>
   <Quest Id="G1" Category="remodelling" Type="onetime">
     <Name>
       はじめての「近代化改修」！
@@ -9541,6 +9734,46 @@
     </Bonus>
     <Dependency>
       <Achieve Id="A16"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="SF" Category="building" Type="onetime">
+    <Name>
+      初夏の整理整頓
+    </Name>
+    <Content>
+      不要な装備を複数「廃棄」して、夏を迎える準備をしましょう！
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        200
+      </Steel>
+      <Bauxite>
+        200
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        戦闘糧食x1
+        家具 「涼しげな金魚鉢」
+      </Other>
+    </Bonus>
+    <Dependency>
     </Dependency>
   </Quest>
 </Quests>
