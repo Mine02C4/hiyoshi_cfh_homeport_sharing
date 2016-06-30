@@ -2644,7 +2644,7 @@
       </Other>
     </Bonus>
     <Dependency>
-      <Achieve Id="B12"/>
+      <Achieve Id="A10"/>
       <Achieve Id="Bd2"/>
     </Dependency>
   </Quest>
@@ -2723,6 +2723,7 @@
       </Other>
     </Bonus>
     <Dependency>
+      <Achieve Id="A4"/>
     </Dependency>
   </Quest>
   <Quest Id="B1" Category="sortie" Type="onetime">
@@ -5128,7 +5129,6 @@
     </Bonus>
     <Dependency>
       <Achieve Id="A66"/>
-      <Achieve Id="G2"/>
     </Dependency>
   </Quest>
   <Quest Id="B61" Category="sortie" Type="onetime">
@@ -5413,7 +5413,9 @@
       </Other>
     </Bonus>
     <Dependency>
-      <Achieve Id="B7"/>
+      <Achieve Id="B6"/>
+      <Achieve Id="A8"/>
+      <Achieve Id="A10"/>
     </Dependency>
   </Quest>
   <Quest Id="B68" Category="sortie" Type="onetime">
@@ -6869,7 +6871,7 @@
       </Other>
     </Bonus>
     <Dependency>
-      <Achieve Id="Bd1"/>
+      <Achieve Id="Bd2"/>
     </Dependency>
   </Quest>
   <Quest Id="C9" Category="practice" Type="onetime">
@@ -7786,7 +7788,9 @@
       <Other>
       </Other>
     </Bonus>
-    <Dependency/>
+    <Dependency>
+      <Achieve Id="E2"/>
+    </Dependency>
   </Quest>
   <Quest Id="E4" Category="supply" Type="daily">
     <Name>
@@ -8453,7 +8457,7 @@
       </Other>
     </Bonus>
     <Dependency>
-      <Achieve Id="B3"/>
+      <Achieve Id="B2"/>
       <Achieve Id="F8"/>
     </Dependency>
   </Quest>
@@ -8734,6 +8738,7 @@
       </Other>
     </Bonus>
     <Dependency>
+      <Achieve Id="A59"/>
       <Achieve Id="B54"/>
     </Dependency>
   </Quest>
@@ -8857,6 +8862,7 @@
     </Bonus>
     <Dependency>
       <Achieve Id="B53"/>
+      <Achieve Id="F21"/>
       <Achieve Id="F24"/>
     </Dependency>
   </Quest>
@@ -9100,6 +9106,7 @@
       </Other>
     </Bonus>
     <Dependency>
+      <Achieve Id="A13"/>
       <Achieve Id="Bw2"/>
     </Dependency>
   </Quest>
