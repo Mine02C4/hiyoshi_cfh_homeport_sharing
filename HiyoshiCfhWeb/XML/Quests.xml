@@ -9306,12 +9306,12 @@
       <Achieve Id="B46"/>
     </Dependency>
   </Quest>
-  <Quest Id="F34" Category="building" Type="onetime">
+  <Quest Id="F34" Category="building" Type="weekly">
     <Name>
       対空機銃量産
     </Name>
     <Content>
-      「機銃」系装備を量産し、工廠で6個破棄！「装備改修」強化をサポートせよ！
+      「機銃」系装備を量産し、工廠で6個廃棄！ 「装備改修」強化をサポートせよ！
     </Content>
     <Bonus>
       <Fuel>
