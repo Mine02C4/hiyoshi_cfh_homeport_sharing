@@ -23,6 +23,7 @@
       <xs:enumeration value="daily"/>
       <xs:enumeration value="weekly"/>
       <xs:enumeration value="monthly"/>
+      <xs:enumeration value="other"/>
     </xs:restriction>
   </xs:simpleType>
   <xs:complexType name="Bonus">
