@@ -106,6 +106,11 @@ namespace HiyoshiCfhWeb.Models
         /// <summary>
         /// マンスリー
         /// </summary>
-        Monthly = 4
+        Monthly = 4,
+
+        /// <summary>
+        /// その他
+        /// </summary>
+        Other = 5
     }
 }
