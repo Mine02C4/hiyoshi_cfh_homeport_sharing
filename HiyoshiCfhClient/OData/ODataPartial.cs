@@ -191,7 +191,7 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
             Id = slotItem.Id;
             SlotItemInfoId = slotItem.Info.Id;
             Level = slotItem.Level;
-            Adept = slotItem.Adept;
+            Adept = slotItem.Proficiency;
         }
 
         public SlotItem(Grabacr07.KanColleWrapper.Models.SlotItem slotItem, int admiralId)
@@ -336,10 +336,10 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
                     Type = QuestType.OneTime;
                     break;
                 case 5:
-                    Type = QuestType.Daily;
+                    Type = QuestType.Other;
                     break;
                 default:
-                    Type = QuestType.Daily;
+                    Type = QuestType.Other;
                     break;
             }
             Name = quest.api_title;
