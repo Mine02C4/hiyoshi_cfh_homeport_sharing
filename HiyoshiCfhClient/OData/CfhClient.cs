@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generation date: 2016/03/25 4:28:40
+// Generation date: 2016/07/16 10:52:53
 namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
 {
     /// <summary>
@@ -2953,7 +2953,9 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
         [global::Microsoft.OData.Client.OriginalNameAttribute("Weekly")]
         Weekly = 3,
         [global::Microsoft.OData.Client.OriginalNameAttribute("Monthly")]
-        Monthly = 4
+        Monthly = 4,
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Other")]
+        Other = 5
     }
     /// <summary>
     /// There are no comments for MaterialType in the schema.
@@ -3628,6 +3630,7 @@ namespace HiyoshiCfhClient.Default
         <Member Name=""Daily"" Value=""2"" />
         <Member Name=""Weekly"" Value=""3"" />
         <Member Name=""Monthly"" Value=""4"" />
+        <Member Name=""Other"" Value=""5"" />
       </EnumType>
       <EnumType Name=""MaterialType"">
         <Member Name=""Fuel"" Value=""1"" />
