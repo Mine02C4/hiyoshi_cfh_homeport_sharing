@@ -2,6 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
+using System.Runtime.Serialization;
 
 namespace HiyoshiCfhWeb.Models
 {
@@ -52,6 +53,7 @@ namespace HiyoshiCfhWeb.Models
         /// 出撃識別札
         /// </summary>
         public int? SortieTag { get; set; }
+        [IgnoreDataMember]
         public virtual ICollection<SortieTagRecord> SortieTagRecords { get; set; }
 
         [NotMapped]
