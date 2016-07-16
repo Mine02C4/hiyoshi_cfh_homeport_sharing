@@ -347,6 +347,9 @@ namespace HiyoshiCfhWeb.XML {
         monthly,
         
         /// <remarks/>
+        quarterly,
+        
+        /// <remarks/>
         other,
     }
 }

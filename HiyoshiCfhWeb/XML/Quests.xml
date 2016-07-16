@@ -2762,6 +2762,7 @@
       </Other>
     </Bonus>
     <Dependency>
+      <Achieve Id="A32"/>
     </Dependency>
   </Quest>
   <Quest Id="A71" Category="composition" Type="onetime">
@@ -2800,6 +2801,8 @@
       </Other>
     </Bonus>
     <Dependency>
+      <Achieve Id="B51"/>
+      <Achieve Id="B72"/>
     </Dependency>
   </Quest>
   <Quest Id="B1" Category="sortie" Type="onetime">
@@ -5692,6 +5695,8 @@
       </Other>
     </Bonus>
     <Dependency>
+      <Achieve Id="A66"/>
+      <Achieve Id="Bw5"/>
     </Dependency>
   </Quest>
   <Quest Id="B73" Category="sortie" Type="onetime">
@@ -5729,6 +5734,126 @@
       <Other>
         探照灯 探照灯
         上陸用舟艇 大発動艇
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="A70"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="B74" Category="sortie" Type="onetime">
+    <Name>
+      精鋭「八駆第一小隊」対潜哨戒！
+    </Name>
+    <Content>
+      「第八駆逐隊第一小隊」を含む艦隊で鎮守府正面対潜哨戒を反復実施！敵潜を圧倒せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        800
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        200
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        4
+      </RenovationMaterials>
+      <Other>
+        ソナー 四式水中聴音機
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="A71"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="B75" Category="sortie" Type="onetime">
+    <Name>
+      水雷戦隊、南西諸島防衛線に反復出撃せよ！
+    </Name>
+    <Content>
+      軽巡級旗艦と駆逐艦4隻を基幹とした護衛艦隊を編成、南西諸島防衛線に反復出撃し、同海域の制海権確保に努めよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        350
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        350
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        4
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        給糧艦「伊良湖」x1
+      </Other>
+    </Bonus>
+    <Dependency>
+    </Dependency>
+  </Quest>
+  <Quest Id="B76" Category="sortie" Type="onetime">
+    <Name>
+      製油所地帯沿岸の哨戒を実施せよ！
+    </Name>
+    <Content>
+      軽空母旗艦と駆逐艦3隻を基幹とした護衛艦隊を編成、製油所地帯沿岸に展開し、同海域の哨戒を実施、同海域の安全を確保せよ!
+    </Content>
+    <Bonus>
+      <Fuel>
+        600
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        家具箱(中)x1
+        特注家具職人x1
       </Other>
     </Bonus>
     <Dependency>
@@ -5851,7 +5976,7 @@
       <Achieve Id="Bd2"/>
     </Dependency>
   </Quest>
-  <Quest Id="Bd4" Category="sortie" Type="daily">
+  <Quest Id="Bd4" Category="sortie" Type="other">
     <Name>
       敵空母を３隻撃沈せよ！
     </Name>
@@ -5929,7 +6054,7 @@
       <Achieve Id="Bd2"/>
     </Dependency>
   </Quest>
-  <Quest Id="Bd6" Category="sortie" Type="daily">
+  <Quest Id="Bd6" Category="sortie" Type="other">
     <Name>
       敵輸送船団を叩け！
     </Name>
@@ -6716,6 +6841,47 @@
     <Dependency>
       <Achieve Id="A45"/>
       <Achieve Id="Bw4"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="Bq1" Category="sortie" Type="quarterly">
+    <Name>
+      沖ノ島海域迎撃戦
+    </Name>
+    <Content>
+      有力な艦隊を沖ノ島海域前面に反復投入、侵攻する敵機動部隊を迎撃、これを撃滅せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        800
+      </Fuel>
+      <Bull>
+        800
+      </Bull>
+      <Steel>
+        800
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        5
+      </RenovationMaterials>
+      <Other>
+        給糧艦「間宮」x1
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="B19"/>
+      <Achieve Id="Bm6"/>
     </Dependency>
   </Quest>
   <Quest Id="C1" Category="practice" Type="onetime">
@@ -9339,6 +9505,85 @@
         1
       </RenovationMaterials>
       <Other>
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="F18"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="F35" Category="building" Type="quarterly">
+    <Name>
+      「熟練搭乗員」養成
+    </Name>
+    <Content>
+      勲章x2消費:「鳳翔」秘書艦に練度max及び改修max「九六式艦戦」を搭載、熟練搭乗員を養成せよ！（任務達成後、部隊は消滅します）
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        100
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        4
+      </RenovationMaterials>
+      <Other>
+        熟練搭乗員x1
+      </Other>
+    </Bonus>
+    <Dependency>
+    </Dependency>
+  </Quest>
+  <Quest Id="F36" Category="building" Type="onetime">
+    <Name>
+      新型魚雷兵装の開発
+    </Name>
+    <Content>
+      勲章x2消費:「島風」秘書艦に改修max「61cm五連装(酸素)魚雷」と改修max「61cm三連装(酸素)魚雷」を装備！(任務達成後、各装備は消滅します)
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        600
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        6
+      </RenovationMaterials>
+      <Other>
+        魚雷 試製61cm六連装(酸素)魚雷
       </Other>
     </Bonus>
     <Dependency>

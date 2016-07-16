@@ -70,6 +70,11 @@ namespace HiyoshiCfhWeb.XML
                         if (quest.Type != Models.QuestType.Monthly)
                             return false;
                         break;
+                    case Type.quarterly:
+                    case Type.other:
+                        if (quest.Type != Models.QuestType.Other)
+                            return false;
+                        break;
                     default:
                         return false;
                 }
