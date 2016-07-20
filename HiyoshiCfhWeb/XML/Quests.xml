@@ -2795,13 +2795,13 @@
         0
       </DevelopmentMaterials>
       <RenovationMaterials>
-        0
+        3
       </RenovationMaterials>
       <Other>
+        給糧艦「伊良湖」x1
       </Other>
     </Bonus>
     <Dependency>
-      <Achieve Id="B51"/>
       <Achieve Id="B72"/>
     </Dependency>
   </Quest>
