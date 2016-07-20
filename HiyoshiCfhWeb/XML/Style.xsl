@@ -60,6 +60,7 @@
           <xsl:when test="@Type='daily'">デイリー</xsl:when>
           <xsl:when test="@Type='weekly'">ウィークリー</xsl:when>
           <xsl:when test="@Type='monthly'">マンスリー</xsl:when>
+          <xsl:when test="@Type='quarterly'">クォータリー</xsl:when>
           <xsl:when test="@Type='other'">その他</xsl:when>
         </xsl:choose>
       </td>

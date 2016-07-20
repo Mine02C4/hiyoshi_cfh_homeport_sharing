@@ -24,6 +24,8 @@
 
 @Html.Partial("_HeaderPartial", admiral)
 
+<p><a class="btn btn-default" href="~/XML/Quests.xml">任務XML</a></p>
+
 @if (unmatchedQuests.Count() > 0)
 {
     <h3>任務マスターと対応できなかった任務</h3>
@@ -306,6 +308,53 @@
                 </tr>
             }
         </table>
+        <h3>クォータリー</h3>
+        <h4>出撃</h4>
+        <table class="table">
+            @foreach (var item in questMaster.Quest
+                .Where(x => x.Type == HiyoshiCfhWeb.XML.Type.quarterly && x.Category == Category.sortie))
+            {
+                <tr class="@(StateToClass(item.State))">
+                    <td>
+                        @item.Id
+                    </td>
+                    <td>
+                        @item.Name
+                    </td>
+                </tr>
+            }
+        </table>
+        <h4>工廠</h4>
+        <table class="table">
+            @foreach (var item in questMaster.Quest
+                .Where(x => x.Type == HiyoshiCfhWeb.XML.Type.quarterly && x.Category == Category.building))
+            {
+                <tr class="@(StateToClass(item.State))">
+                    <td>
+                        @item.Id
+                    </td>
+                    <td>
+                        @item.Name
+                    </td>
+                </tr>
+            }
+        </table>
+        <h3>その他</h3>
+        <h4>出撃</h4>
+        <table class="table">
+            @foreach (var item in questMaster.Quest
+                .Where(x => x.Type == HiyoshiCfhWeb.XML.Type.other && x.Category == Category.sortie))
+            {
+                <tr class="@(StateToClass(item.State))">
+                    <td>
+                        @item.Id
+                    </td>
+                    <td>
+                        @item.Name
+                    </td>
+                </tr>
+            }
+        </table>
     </div>
 </div>
 
@@ -423,43 +472,3 @@
         </table>
     </div>
 </div>
-
-
-<h3>任務マスター</h3>
-<table class="table">
-    <tr>
-        <th>
-            ID
-        </th>
-        <th>
-            任務名
-        </th>
-        <th>
-            依存関係
-        </th>
-    </tr>
-    @foreach (var item in questMaster.Quest)
-    {
-        <tr class="@(StateToClass(item.State))">
-            <td>
-                @item.Id
-            </td>
-            <td>
-                @item.Name
-            </td>
-            <td>
-                @if (item.Dependency.Count() > 0)
-                {
-                    <ul>
-                        @foreach (var achieve in item.Dependency)
-                        {
-                            <li>
-                                @achieve.Id
-                            </li>
-                        }
-                    </ul>
-                }
-            </td>
-        </tr>
-    }
-</table>
