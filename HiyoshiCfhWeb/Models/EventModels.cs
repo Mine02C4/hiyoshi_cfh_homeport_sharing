@@ -45,7 +45,18 @@ namespace HiyoshiCfhWeb.Models
                 },
                 new DateTimeOffset(2016, 5,  3,  3, 50, 0, new TimeSpan(9, 0, 0)),
                 new DateTimeOffset(2016, 6,  1, 11, 30, 0, new TimeSpan(9, 0, 0))
-            )
+            ),
+            new Event(201608,
+                "迎撃！第二次マレー沖海戦",
+                new List<SortieTag>
+                {
+                    new SortieTag("哨戒部隊", Color.FromArgb(0x3C677F), 1),
+                    new SortieTag("輸送部隊", Color.FromArgb(0x3B662A), 2),
+                    new SortieTag("連合艦隊", Color.FromArgb(0xC0B812), 3)
+                },
+                new DateTimeOffset(2016, 8, 12, 22,  0, 0, new TimeSpan(9, 0, 0)),
+                new DateTimeOffset(2016, 8, 31, 11,  0, 0, new TimeSpan(9, 0, 0))
+            ),
         };
 
         public static List<Event> Events
