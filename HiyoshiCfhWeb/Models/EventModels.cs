@@ -55,7 +55,7 @@ namespace HiyoshiCfhWeb.Models
                     new SortieTag("連合艦隊", Color.FromArgb(0xC0B812), 3)
                 },
                 new DateTimeOffset(2016, 8, 12, 22,  0, 0, new TimeSpan(9, 0, 0)),
-                new DateTimeOffset(2016, 8, 31, 11,  0, 0, new TimeSpan(9, 0, 0))
+                new DateTimeOffset(2016, 8, 31, 11, 15, 0, new TimeSpan(9, 0, 0))
             ),
         };
 
