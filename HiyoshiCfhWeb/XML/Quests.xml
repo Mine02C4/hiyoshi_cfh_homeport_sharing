@@ -9718,7 +9718,7 @@
       「陸攻」隊の増勢
     </Name>
     <Content>
-      「基地航空隊」開設に向け、「陸攻」の追加調達を行う。「7.7mm機銃」及び「九九式艦爆」を各二つずつ準備せよ！（任務達成後、用意した必要装備は消滅します）
+      「基地航空隊」開設に向け、「陸攻」の追加調達を行う。「7.7mm機銃」及び&lt;br&gt;「九九式艦爆」を各二つずつ準備せよ！(任務達成後、同装備は消滅します)
     </Content>
     <Bonus>
       <Fuel>
@@ -9754,7 +9754,7 @@
       <Achieve Id="B77"/>
     </Dependency>
   </Quest>
-  <Quest Id="F39" Category="building" Type="onetime">
+  <Quest Id="F39" Category="building" Type="quarterly">
     <Name>
       主力「陸攻」の調達
     </Name>
