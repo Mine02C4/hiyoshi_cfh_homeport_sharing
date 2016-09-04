@@ -22,7 +22,7 @@
 <script type="text/javascript">
     function setup_chart(url, selector) {
         d3.json(url, function (data) {
-            var colors = d3.scale.category20();
+            var colors = d3.schemeCategory20;
             var keyColor = function (d, i) { return colors(d.key) };
             var chart = nv.models.lineWithFocusChart()
                     .x(function (d) { return new Date(d["time"]) })
@@ -51,18 +51,18 @@
     var svg;
     var w = 1140;
     var h = 600;
-    var x = d3.time.scale().range([0, w]);
-    var y = d3.scale.linear().range([h, 0]);
-    var xAxis = d3.svg.axis().scale(x).orient("bottom").tickSize(-h, 0).tickPadding(6);
-    var yAxis = d3.svg.axis().scale(y).orient("right").tickSize(-w).tickPadding(6);
-    var line = d3.svg.line()
+    var x = d3.scaleTime().range([0, w]);
+    var y = d3.scaleLinear().range([h, 0]);
+    var xAxis = d3.axisBottom(x).tickSize(-h, 0).tickPadding(6);
+    var yAxis = d3.axisRight(y).tickSize(-w).tickPadding(6);
+    var line = d3.line()
                 .x(function (d) {
                     return x(new Date(d["time"]));
                 })
                 .y(function (d) {
                     return y(d["value"]);
                 })
-                .interpolate("step-after");
+                .curve(d3.curveStepAfter);
     function setup_chart2(url, selector) {
         d3.json(url, function (error, data) {
             if (error)
