@@ -9781,7 +9781,7 @@
         0
       </InstantRepairMaterials>
       <DevelopmentMaterials>
-        0
+        2
       </DevelopmentMaterials>
       <RenovationMaterials>
         0
@@ -9800,7 +9800,7 @@
       「一式陸攻」性能向上型の調達
     </Name>
     <Content>
-      「一式陸攻」性能向上型の配備を行う。「一式陸攻」一つと「天山」二つを準備せよ！（任務達成後、用意した必要装備は消滅します／「一式陸攻」の熟練度は継承されます）
+      「一式陸攻」性能向上型の配備を行う。「一式陸攻」一つと「天山」二つを準備せよ！&lt;br&gt;(任務達成後、用意した必要装備は消滅します/「一式陸攻」の熟練度は継承されます)
     </Content>
     <Bonus>
       <Fuel>
