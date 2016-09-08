@@ -51,11 +51,12 @@
                     @item.Level
                 </td>
                 @{
+                    var tagAttr = targetEvent.SortieTags.Where(x => x.InternalId == item.SortieTag).FirstOrDefault();
                     var tagRecord = item.SortieTagRecords.Where(x => x.EventId == targetEvent.Id).FirstOrDefault();
+                    var tag = tagAttr ?? (tagRecord == null ? null : tagRecord.SortieTag);
                 }
-                @if (tagRecord != null)
+                @if (tag != null)
                 {
-                    var tag = tagRecord.SortieTag;
                     <td style="background-color: @tag.WebColor; color: #FFF">@tag.Name</td>
                 }
                 else
