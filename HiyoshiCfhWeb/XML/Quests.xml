@@ -5817,6 +5817,7 @@
       </Other>
     </Bonus>
     <Dependency>
+      <Achieve Id="B70"/>
     </Dependency>
   </Quest>
   <Quest Id="B76" Category="sortie" Type="onetime">
@@ -5857,6 +5858,8 @@
       </Other>
     </Bonus>
     <Dependency>
+      <Achieve Id="B9"/>
+      <Achieve Id="B10"/>
     </Dependency>
   </Quest>
   <Quest Id="B77" Category="sortie" Type="onetime">
@@ -5897,6 +5900,7 @@
       </Other>
     </Bonus>
     <Dependency>
+      <Achieve Id="C2"/>
     </Dependency>
   </Quest>
   <Quest Id="Bd1" Category="sortie" Type="daily">
