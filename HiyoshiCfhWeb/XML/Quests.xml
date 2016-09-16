@@ -2805,6 +2805,46 @@
       <Achieve Id="B72"/>
     </Dependency>
   </Quest>
+  <Quest Id="A72" Category="composition" Type="onetime">
+    <Name>
+      「第十九駆逐隊」を編成せよ！
+    </Name>
+    <Content>
+      特型駆逐艦「磯波」「浦波」「綾波」「敷波」4隻による第十九駆逐隊を編成せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        190
+      </Fuel>
+      <Bull>
+        190
+      </Bull>
+      <Steel>
+        190
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        2
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        戦闘糧食x1
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="Bd1"/>
+    </Dependency>
+  </Quest>
   <Quest Id="B1" Category="sortie" Type="onetime">
     <Name>
       はじめての「出撃」！
@@ -5901,6 +5941,86 @@
     </Bonus>
     <Dependency>
       <Achieve Id="C2"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="B78" Category="sortie" Type="onetime">
+    <Name>
+      「第十九駆逐隊」出撃せよ！
+    </Name>
+    <Content>
+      特型駆逐艦4隻による「第十九駆逐隊」を鎮守府近海に展開！鎮守府正面対潜哨戒を実施し、跳梁する敵潜水部隊の制圧に努めよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        300
+      </Fuel>
+      <Bull>
+        300
+      </Bull>
+      <Steel>
+        300
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        3
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        給糧艦「伊良湖」x1
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="A72"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="B79" Category="sortie" Type="onetime">
+    <Name>
+      「第十九駆逐隊」敵主力に突入せよ！
+    </Name>
+    <Content>
+      「第十九駆逐隊」を含む有力な艦隊を編成し、南西諸島海域沖ノ島沖に展開！同方面に遊弋する敵主力を捕捉、これを撃破せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        600
+      </Fuel>
+      <Bull>
+        600
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        300
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        4
+      </RenovationMaterials>
+      <Other>
+        洋上補給x1
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="B78"/>
     </Dependency>
   </Quest>
   <Quest Id="Bd1" Category="sortie" Type="daily">
@@ -9838,6 +9958,84 @@
     <Dependency>
       <Achieve Id="F39"/>
       <Achieve Id="C10"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="F41" Category="building" Type="monthly">
+    <Name>
+      「洋上補給」物資の調達
+    </Name>
+    <Content>
+      「三式弾」一つを廃棄し、燃料750及び弾薬750と「ドラム缶(輸送用)」二つと「九一式徹甲弾」一つを&lt;br&gt;用意せよ！※任務達成後、用意した資源及び必要装備(徹甲弾は改修値の低いもの優先)は消滅します。
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        洋上補給x1
+      </Other>
+    </Bonus>
+    <Dependency>
+    </Dependency>
+  </Quest>
+  <Quest Id="F42" Category="building" Type="onetime">
+    <Name>
+      「特注家具」の調達
+    </Name>
+    <Content>
+      「25mm単装機銃」一つを廃棄、家具コイン5,000と「25mm連装機銃」及び「25mm三連装機銃」を各&lt;br&gt;二つ準備せよ！　※任務達成後、用意した家具コイン及び必要装備(改修値の低いもの優先)は消滅します。
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        100
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        特注家具職人x1
+      </Other>
+    </Bonus>
+    <Dependency>
     </Dependency>
   </Quest>
   <Quest Id="G1" Category="remodelling" Type="onetime">
