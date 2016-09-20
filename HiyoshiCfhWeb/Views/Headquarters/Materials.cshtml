@@ -11,7 +11,7 @@
 
 <h3>主要4資材</h3>
 
-<svg id="main_chart" style="height: 800px; overflow: visible; width: 1140px"></svg>
+<svg id="main_chart" width="1140" height="800" style="overflow: visible"></svg>
 
 <h3>その他資材</h3>
 
@@ -55,8 +55,14 @@
         var h = 600;
         var x = d3.scaleTime().range([0, w]);
         var y = d3.scaleLinear().range([h, 0]);
+        var maxValue = Math.max(
+            d3.max(data[0]["values"], function (d) { return d["value"]; }),
+            d3.max(data[1]["values"], function (d) { return d["value"]; }),
+            d3.max(data[2]["values"], function (d) { return d["value"]; }),
+            d3.max(data[3]["values"], function (d) { return d["value"]; })
+        );
         x.domain([new Date(data[0]["values"][0]["time"]), new Date()]);
-        y.domain([0, d3.max(data[0]["values"], function (d) { return d["value"]; })]);
+        y.domain([0, maxValue]);
         var xAxis = d3.axisBottom(x).tickSize(h).tickPadding(6).tickFormat(
             function (d) {
                 return d3.timeFormat("%Y-%m-%d %H:%M:%S")(new Date(d))
@@ -77,16 +83,29 @@
                         return y(d["value"]);
                     })
                     .curve(d3.curveStepAfter);
-        var path = svg.append("path");
+
         function zoomed() {
             x2 = d3.event.transform.rescaleX(x);
             gX.call(xAxis.scale(d3.event.transform.rescaleX(x)));
-            path.attr("d", line);
+            pathFuel.attr("d", line);
+            pathBull.attr("d", line);
+            pathSteel.attr("d", line);
+            pathBauxite.attr("d", line);
         }
-        path.datum(data[0]["values"]).attr("d", line)
-            .attr("class", "line-fuel")
-            .attr("stroke", "black")
-            .attr("fill", "none");
+
+        var pathFuel = svg.append("path");
+        var pathBull = svg.append("path");
+        var pathSteel = svg.append("path");
+        var pathBauxite = svg.append("path");
+        pathFuel.datum(data[0]["values"]).attr("d", line)
+            .attr("class", "line line-fuel");
+        pathBull.datum(data[1]["values"]).attr("d", line)
+            .attr("class", "line line-bull");
+        pathSteel.datum(data[2]["values"]).attr("d", line)
+            .attr("class", "line line-steel");
+        pathBauxite.datum(data[3]["values"]).attr("d", line)
+            .attr("class", "line line-bauxite");
+
         var zoom = d3.zoom().on("zoom", zoomed);
         svg.call(zoom);
     }
@@ -112,23 +131,29 @@
             create_graph(data);
         });
     }
-    function zoom() {
-        d3.transform(x);
-        draw();
-    }
-    function draw() {
-        svg.select("g.x.axis").call(xAxis);
-        svg.select("g.y.axis").call(yAxis);
-        svg.select("path.line").attr("d", function (d) { return line(d) + "Z"; });
-    }
     setup_chart2("@Html.Raw(Url.Action("Materials", new { type = "json", target = "main" }))", "#main_chart");
     //setup_chart("@Html.Raw(Url.Action("Materials", new { type = "json", target = "other" }))", "#other_chart");
 </script>
 <style type="text/css">
-    .line-fuel {
+    .line {
         fill: none;
-        stroke: green;
         stroke-width: 1.5px;
+    }
+
+    .line-fuel {
+        stroke: green;
+    }
+
+    .line-bull {
+        stroke: chocolate;
+    }
+
+    .line-steel {
+        stroke: gray;
+    }
+
+    .line-bauxite {
+        stroke: orange;
     }
 </style>
 
