@@ -6025,6 +6025,126 @@
       <Achieve Id="B78"/>
     </Dependency>
   </Quest>
+  <Quest Id="B80" Category="sortie" Type="onetime">
+    <Name>
+      飛行場設営の準備を実施せよ！
+    </Name>
+    <Content>
+      中部海域における航空偵察「K作戦」を再度実施、さらに同方面に遊弋する敵艦隊を撃滅し、&lt;br&gt;中部海域における飛行場設営の準備を実施せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        設営隊x1
+      </Other>
+    </Bonus>
+    <Dependency>
+    </Dependency>
+  </Quest>
+  <Quest Id="B81" Category="sortie" Type="onetime">
+    <Name>
+      夜間突入！敵上陸部隊を叩け！
+    </Name>
+    <Content>
+      南方サブ島沖海域へ精鋭艦隊を突入！敵艦隊の邀撃を突破し、同方面の敵上陸部隊を叩け！
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        設営隊x1
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="B80"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="B82" Category="sortie" Type="onetime">
+    <Name>
+      夜の海を照らす「灯り」を入手せよ！
+    </Name>
+    <Content>
+      有力な艦隊をカムラン半島に投入、同方面に出没する敵艦隊を捕捉、これを撃滅せよ！&lt;br&gt;そして、夜を照らす「灯り」を入手せよ！　ある季節は夜戦以外にも使い道があるようだ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        100
+      </Fuel>
+      <Bull>
+        100
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        探照灯 探照灯
+        戦闘糧食×1
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="Bd2"/>
+    </Dependency>
+  </Quest>
   <Quest Id="Bd1" Category="sortie" Type="daily">
     <Name>
       敵艦隊を撃破せよ！
@@ -10042,6 +10162,44 @@
     <Dependency>
       <Achieve Id="C4"/>
       <Achieve Id="D11"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="F43" Category="building" Type="onetime">
+    <Name>
+      中部海域「基地航空隊」展開！
+    </Name>
+    <Content>
+      「ドラム缶(輸送用)」二つを廃棄、燃料1200及びボーキサイト3000、さらに「設営隊」一つを準備せよ！&lt;br&gt;※任務達成後、用意した資源及び「設営隊」は消滅します。
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+      </Other>
+    </Bonus>
+    <Dependency>
     </Dependency>
   </Quest>
   <Quest Id="G1" Category="remodelling" Type="onetime">
