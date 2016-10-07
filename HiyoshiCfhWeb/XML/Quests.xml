@@ -6062,6 +6062,8 @@
       </Other>
     </Bonus>
     <Dependency>
+      <Achieve Id="B41"/>
+      <Achieve Id="B62"/>
     </Dependency>
   </Quest>
   <Quest Id="B81" Category="sortie" Type="onetime">
@@ -10197,9 +10199,12 @@
         0
       </RenovationMaterials>
       <Other>
+        中部海域「基地航空隊」開放
       </Other>
     </Bonus>
     <Dependency>
+      <Achieve Id="B62"/>
+      <Achieve Id="F38"/>
     </Dependency>
   </Quest>
   <Quest Id="G1" Category="remodelling" Type="onetime">
