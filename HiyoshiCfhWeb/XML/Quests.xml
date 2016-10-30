@@ -10639,4 +10639,131 @@
     <Dependency>
     </Dependency>
   </Quest>
+  <Quest Id="SB12" Category="sortie" Type="onetime">
+    <Name>
+      秋刀魚漁：きらりーん！秋刀魚漁支援！
+    </Name>
+    <Content>
+      秋刀魚漁の漁場に展開、遊弋する敵艦隊を撃破して、「秋刀魚」を三尾入手せよ、ですって！&lt;br&gt;近海、北方海域、中部海域のどこかに秋刀魚漁に適した漁場があるみたい！
+    </Content>
+    <Bonus>
+      <Fuel>
+        500
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        ソナー 三式水中探信儀
+        特注家具職人x1
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="B6"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="SB13" Category="sortie" Type="onetime">
+    <Name>
+      秋刀魚漁：もっともーっと、秋刀魚漁！
+    </Name>
+    <Content>
+      ちょおっと大変だけど、漁場の安全を確保して「秋刀魚」を八尾確保するんだって！&lt;br&gt;あまり乱獲したり、暫く同じ海域で続けてると獲れにくくなるみたい。海域を変えてみましょ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        1000
+      </Fuel>
+      <Bull>
+        1000
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        上陸用舟艇 大発動艇
+        探照灯 探照灯
+        対地装備 WG42
+        よりいずれか一つ
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="SB12"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="SB14" Category="sortie" Type="onetime">
+    <Name>
+      秋刀魚漁：最新鋭の秋刀魚漁！もっとぉ！
+    </Name>
+    <Content>
+      かなーり大変だけれど、ほら、私たち最新鋭の秋刀魚漁支援艦隊じゃない？最新鋭、最新鋭、最新鋭の秋刀魚漁、張り切っていきましょー！よろしくお願いしまぁーす！
+    </Content>
+    <Bonus>
+      <Fuel>
+        3000
+      </Fuel>
+      <Bull>
+        3000
+      </Bull>
+      <Steel>
+        3000
+      </Steel>
+      <Bauxite>
+        1000
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        大型探照灯 96式150cm探照灯
+        シークレット家具 艦隊大漁旗
+        シークレット家具 一六式大漁旗
+        よりいずれか一つ
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="SB13"/>
+    </Dependency>
+  </Quest>
 </Quests>
