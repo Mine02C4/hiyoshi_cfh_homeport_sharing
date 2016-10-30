@@ -6144,7 +6144,7 @@
       </Other>
     </Bonus>
     <Dependency>
-      <Achieve Id="Bd2"/>
+      <Achieve Id="B6"/>
     </Dependency>
   </Quest>
   <Quest Id="Bd1" Category="sortie" Type="daily">
