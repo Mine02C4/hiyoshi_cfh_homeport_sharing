@@ -2846,6 +2846,85 @@
       <Achieve Id="B21"/>
     </Dependency>
   </Quest>
+  <Quest Id="A73" Category="composition" Type="onetime">
+    <Name>
+      「第十六戦隊(第三次)」を編成せよ！
+    </Name>
+    <Content>
+      「鬼怒」「青葉」「北上」「大井」を擁する、第十六戦隊(第三次)を編成せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        200
+      </Fuel>
+      <Bull>
+        200
+      </Bull>
+      <Steel>
+        200
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        2
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        2
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="B55"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="A74" Category="composition" Type="onetime">
+    <Name>
+      精鋭「第十六戦隊」を再編成せよ！
+    </Name>
+    <Content>
+      「鬼怒改二」を旗艦として、「北上改二」「大井改二」「球磨改」及び「青葉改」「浦波改」「敷波改」から5隻、計6隻の精鋭「第十六戦隊」を再編成せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        300
+      </Fuel>
+      <Bull>
+        300
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        3
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        応急修理要員x1
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="B84"/>
+    </Dependency>
+  </Quest>
   <Quest Id="B1" Category="sortie" Type="onetime">
     <Name>
       はじめての「出撃」！
@@ -6145,6 +6224,167 @@
     </Bonus>
     <Dependency>
       <Achieve Id="B6"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="B83" Category="sortie" Type="onetime">
+    <Name>
+      南西諸島防衛線を増強せよ！
+    </Name>
+    <Content>
+      水上機母艦または航空巡洋艦を旗艦とする有力な艦隊を南西諸島防衛線に投入、&lt;br&gt;水上機戦力によって同防衛線を強化、同方面の敵艦隊を撃滅せよ！ 
+    </Content>
+    <Bonus>
+      <Fuel>
+        300
+      </Fuel>
+      <Bull>
+        300
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        家具箱(中)x1
+        特注家具職人x1
+      </Other>
+    </Bonus>
+    <Dependency>
+    </Dependency>
+  </Quest>
+  <Quest Id="B84" Category="sortie" Type="onetime">
+    <Name>
+      「第十六戦隊(第三次)」出撃せよ！
+    </Name>
+    <Content>
+      「第十六戦隊(第三次)」を沖ノ島海域前面に展開、敵主力を捕捉、これを撃破せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        400
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        400
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        給糧艦「伊良湖」x1
+        シークレット家具 艦娘座布団の床
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="A73"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="B85" Category="sortie" Type="onetime">
+    <Name>
+      精鋭「第十六戦隊」突入せよ！
+    </Name>
+    <Content>
+      再編成を完了した精鋭「第十六戦隊」を南西諸島海域沖ノ島沖に展開、同方面に遊弋する敵主力を捕捉、これを撃破せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        600
+      </Fuel>
+      <Bull>
+        600
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        上陸用舟艇 特大発動艇
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="A74"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="B86" Category="sortie" Type="onetime">
+    <Name>
+      輸送作戦を成功させ、帰還せよ！
+    </Name>
+    <Content>
+      「鬼怒改二」を旗艦、僚艦に「浦波改」他駆逐艦3隻の計5隻の艦隊でバシー島沖における柳輸送作戦を実施、同輸送作戦を完全成功させ、帰還せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        1000
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        1000
+      </Steel>
+      <Bauxite>
+        3000
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        5
+      </RenovationMaterials>
+      <Other>
+        補給物資 洋上補給x1
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="B79"/>
     </Dependency>
   </Quest>
   <Quest Id="Bd1" Category="sortie" Type="daily">
