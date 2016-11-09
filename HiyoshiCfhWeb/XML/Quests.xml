@@ -10637,6 +10637,7 @@
       </Other>
     </Bonus>
     <Dependency>
+      <Achieve Id="B5"/>
     </Dependency>
   </Quest>
 </Quests>
