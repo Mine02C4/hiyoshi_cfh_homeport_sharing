@@ -57,6 +57,16 @@ namespace HiyoshiCfhWeb.Models
                 new DateTimeOffset(2016, 8, 12, 22,  0, 0, new TimeSpan(9, 0, 0)),
                 new DateTimeOffset(2016, 8, 31, 11, 15, 0, new TimeSpan(9, 0, 0))
             ),
+            new Event(201611,
+                "発令！艦隊作戦第三法",
+                new List<SortieTag>
+                {
+                    new SortieTag("輸送部隊", Color.FromArgb(0x3C677F), 1),
+                    new SortieTag("迎撃部隊", Color.FromArgb(0x3B662A), 2)
+                },
+                new DateTimeOffset(2016, 11, 18, 23,  0, 0, new TimeSpan(9, 0, 0)),
+                new DateTimeOffset(2016, 12,  3, 11,  0, 0, new TimeSpan(9, 0, 0))
+            ),
         };
 
         public static List<Event> Events
