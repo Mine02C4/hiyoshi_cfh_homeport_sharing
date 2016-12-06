@@ -343,8 +343,6 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\nv.d3.css" />
-    <Content Include="Content\nv.d3.min.css" />
     <Content Include="Content\Plugin\HiyoshiCfhClient.dll" />
     <Content Include="Content\Plugin\Microsoft.OData.Client.dll" />
     <Content Include="Content\Plugin\Microsoft.OData.Core.dll" />
@@ -356,7 +354,6 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="LICENSE.md" />
-    <Content Include="Content\nv.d3.min.css.map" />
     <Content Include="Scripts\angular-animate.js" />
     <Content Include="Scripts\angular-animate.min.js" />
     <Content Include="Scripts\angular-aria.js" />
