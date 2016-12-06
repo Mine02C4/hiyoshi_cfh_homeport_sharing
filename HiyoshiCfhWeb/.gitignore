@@ -1,4 +1,3 @@
 Properties/PublishProfiles
-Scripts/*
-Content/nv.*
-
+/Scripts/*
+!/Scripts/js
