@@ -62,10 +62,12 @@ namespace HiyoshiCfhWeb.Models
                 new List<SortieTag>
                 {
                     new SortieTag("輸送部隊", Color.FromArgb(0x3C677F), 1),
-                    new SortieTag("迎撃部隊", Color.FromArgb(0x3B662A), 2)
+                    new SortieTag("迎撃部隊", Color.FromArgb(0x3B662A), 2),
+                    new SortieTag("増派部隊", Color.FromArgb(0xC0B812), 3),
+                    new SortieTag("決戦部隊", Color.FromArgb(0x906736), 4)
                 },
                 new DateTimeOffset(2016, 11, 18, 23,  0, 0, new TimeSpan(9, 0, 0)),
-                new DateTimeOffset(2016, 12,  3, 11,  0, 0, new TimeSpan(9, 0, 0))
+                new DateTimeOffset(2016, 12,  9, 11,  0, 0, new TimeSpan(9, 0, 0))
             ),
         };
 
