@@ -6388,6 +6388,86 @@
       <Achieve Id="B79"/>
     </Dependency>
   </Quest>
+  <Quest Id="B87" Category="sortie" Type="onetime">
+    <Name>
+      重巡戦隊、抜錨せよ！
+    </Name>
+    <Content>
+      重巡4隻を基幹戦力とした重巡旗艦の艦隊を南西諸島海域東部オリョール海に展開し、&lt;br&gt;同海域の敵艦隊を撃滅、制海権を確保せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        400
+      </Fuel>
+      <Bull>
+        400
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        シークレット家具 手編みとフローリング
+      </Other>
+    </Bonus>
+    <Dependency>
+    </Dependency>
+  </Quest>
+  <Quest Id="B88" Category="sortie" Type="onetime">
+    <Name>
+      戦艦戦隊、出撃せよ！
+    </Name>
+    <Content>
+      戦艦2隻を中核戦力とする戦艦旗艦の艦隊を北方海域アルフォンシーノ方面に進出させ、同海域の敵戦艦を撃滅、北方海域の制海権確保に努めよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        800
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        200
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        水上戦闘機二式水戦改
+        or
+        大型飛行艇PBY-5A Catalina
+      </Other>
+    </Bonus>
+    <Dependency>
+    </Dependency>
+  </Quest>
   <Quest Id="Bd1" Category="sortie" Type="daily">
     <Name>
       敵艦隊を撃破せよ！
@@ -7806,6 +7886,46 @@
       <Achieve Id="C2"/>
     </Dependency>
   </Quest>
+  <Quest Id="C11" Category="practice" Type="onetime">
+    <Name>
+      冬季大演習
+    </Name>
+    <Content>
+      冬の一日中に「演習」で8回以上「勝利」をおさめ、艦隊のさらなる練度に努めよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        300
+      </Fuel>
+      <Bull>
+        1000
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        3
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        給糧艦「間宮」x1
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="C2"/>
+    </Dependency>
+  </Quest>
   <Quest Id="D1" Category="expeditions" Type="onetime">
     <Name>
       はじめての「遠征」！
@@ -8564,6 +8684,44 @@
     <Dependency>
       <Achieve Id="B50"/>
       <Achieve Id="D9"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="D20" Category="expeditions" Type="onetime">
+    <Name>
+      潜水艦派遣作戦による航空機技術入手
+    </Name>
+    <Content>
+      潜水艦派遣作戦により、新型航空機技術の導入に努めよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        100
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        100
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+      </Other>
+    </Bonus>
+    <Dependency>
     </Dependency>
   </Quest>
   <Quest Id="E1" Category="supply" Type="onetime">
@@ -10446,6 +10604,84 @@
     <Dependency>
       <Achieve Id="B62"/>
       <Achieve Id="F38"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="F44" Category="building" Type="onetime">
+    <Name>
+      「特注家具」の調達
+    </Name>
+    <Content>
+      「12.7cm連装高角砲」二つを廃棄し、家具コイン5,000と「14cm単装砲」及び「15.2cm単装砲」を各二つずつ準備せよ！　※任務達成後、用意した家具コイン及び必要装備(低改修を優先)は消費します。
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        100
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        特注家具職人x1
+      </Other>
+    </Bonus>
+    <Dependency>
+    </Dependency>
+  </Quest>
+  <Quest Id="F45" Category="building" Type="onetime">
+    <Name>
+      新機軸偵察機の開発
+    </Name>
+    <Content>
+      新機軸の偵察機の調達を行う。「零式水上偵察機」を二つ「工廠」で廃棄し、&lt;br&gt;「一式陸攻」一つと「彩雲」二つを準備せよ！(任務達成後、用意した必要装備は消費します) 
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        100
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        2
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        試製景雲(艦偵型)
+      </Other>
+    </Bonus>
+    <Dependency>
     </Dependency>
   </Quest>
   <Quest Id="G1" Category="remodelling" Type="onetime">
