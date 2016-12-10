@@ -7,6 +7,7 @@
     <title>@(ViewBag.Title == null ? String.Empty : ViewBag.Title + " - ")日吉連合艦隊司令官</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -35,7 +36,6 @@
     <footer class="container">
         <p>&copy; @DateTime.Now.Year - <a href="http://mine02c4.nagoya/">Mine02C4</a></p>
     </footer>
-    @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
 </body>

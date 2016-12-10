@@ -63,3 +63,11 @@ table.leveling tbody tr {
 svg#meter {
     height: 100%;
 }
+
+.q-achieved > td {
+    background-color: #5bd956;
+}
+
+.q-visible > td {
+    background-color: #edc556;
+}

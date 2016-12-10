@@ -12,9 +12,9 @@
             case QuestState.Invisible:
                 return null;
             case QuestState.Visible:
-                return "info";
+                return "q-visible";
             case QuestState.Achieved:
-                return "success";
+                return "q-achieved";
             default:
                 return null;
         }
@@ -93,7 +93,7 @@
     <div class="col-md-4">
         <h3>デイリー</h3>
         <h4>出撃</h4>
-        <table class="table">
+        <table class="table quest-table">
             @foreach (var item in questMaster.Quest
                 .Where(x => x.Type == HiyoshiCfhWeb.XML.Type.daily && x.Category == Category.sortie))
             {
@@ -108,7 +108,7 @@
             }
         </table>
         <h4>演習</h4>
-        <table class="table">
+        <table class="table quest-table">
             @foreach (var item in questMaster.Quest
                 .Where(x => x.Type == HiyoshiCfhWeb.XML.Type.daily && x.Category == Category.practice))
             {
@@ -123,7 +123,7 @@
             }
         </table>
         <h4>遠征</h4>
-        <table class="table">
+        <table class="table quest-table">
             @foreach (var item in questMaster.Quest
                 .Where(x => x.Type == HiyoshiCfhWeb.XML.Type.daily && x.Category == Category.expeditions))
             {
@@ -138,7 +138,7 @@
             }
         </table>
         <h4>補給/入渠</h4>
-        <table class="table">
+        <table class="table quest-table">
             @foreach (var item in questMaster.Quest
                 .Where(x => x.Type == HiyoshiCfhWeb.XML.Type.daily && x.Category == Category.supply))
             {
@@ -153,7 +153,7 @@
             }
         </table>
         <h4>工廠</h4>
-        <table class="table">
+        <table class="table quest-table">
             @foreach (var item in questMaster.Quest
                 .Where(x => x.Type == HiyoshiCfhWeb.XML.Type.daily && x.Category == Category.building))
             {
@@ -168,7 +168,7 @@
             }
         </table>
         <h4>改装</h4>
-        <table class="table">
+        <table class="table quest-table">
             @foreach (var item in questMaster.Quest
                 .Where(x => x.Type == HiyoshiCfhWeb.XML.Type.daily && x.Category == Category.remodelling))
             {
@@ -186,7 +186,7 @@
     <div class="col-md-4">
         <h3>ウィークリー</h3>
         <h4>出撃</h4>
-        <table class="table">
+        <table class="table quest-table">
             @foreach (var item in questMaster.Quest
                 .Where(x => x.Type == HiyoshiCfhWeb.XML.Type.weekly && x.Category == Category.sortie))
             {
@@ -201,7 +201,7 @@
             }
         </table>
         <h4>演習</h4>
-        <table class="table">
+        <table class="table quest-table">
             @foreach (var item in questMaster.Quest
                 .Where(x => x.Type == HiyoshiCfhWeb.XML.Type.weekly && x.Category == Category.practice))
             {
@@ -216,7 +216,7 @@
             }
         </table>
         <h4>遠征</h4>
-        <table class="table">
+        <table class="table quest-table">
             @foreach (var item in questMaster.Quest
                 .Where(x => x.Type == HiyoshiCfhWeb.XML.Type.weekly && x.Category == Category.expeditions))
             {
@@ -231,7 +231,7 @@
             }
         </table>
         <h4>工廠</h4>
-        <table class="table">
+        <table class="table quest-table">
             @foreach (var item in questMaster.Quest
                 .Where(x => x.Type == HiyoshiCfhWeb.XML.Type.weekly && x.Category == Category.building))
             {
@@ -246,7 +246,7 @@
             }
         </table>
         <h4>改装</h4>
-        <table class="table">
+        <table class="table quest-table">
             @foreach (var item in questMaster.Quest
                 .Where(x => x.Type == HiyoshiCfhWeb.XML.Type.weekly && x.Category == Category.remodelling))
             {
@@ -264,7 +264,7 @@
     <div class="col-md-4">
         <h3>マンスリー</h3>
         <h4>出撃</h4>
-        <table class="table">
+        <table class="table quest-table">
             @foreach (var item in questMaster.Quest
                 .Where(x => x.Type == HiyoshiCfhWeb.XML.Type.monthly && x.Category == Category.sortie))
             {
@@ -279,7 +279,7 @@
             }
         </table>
         <h4>演習</h4>
-        <table class="table">
+        <table class="table quest-table">
             @foreach (var item in questMaster.Quest
                 .Where(x => x.Type == HiyoshiCfhWeb.XML.Type.monthly && x.Category == Category.practice))
             {
@@ -294,7 +294,7 @@
             }
         </table>
         <h4>工廠</h4>
-        <table class="table">
+        <table class="table quest-table">
             @foreach (var item in questMaster.Quest
                 .Where(x => x.Type == HiyoshiCfhWeb.XML.Type.monthly && x.Category == Category.building))
             {
@@ -310,7 +310,7 @@
         </table>
         <h3>クォータリー</h3>
         <h4>出撃</h4>
-        <table class="table">
+        <table class="table quest-table">
             @foreach (var item in questMaster.Quest
                 .Where(x => x.Type == HiyoshiCfhWeb.XML.Type.quarterly && x.Category == Category.sortie))
             {
@@ -325,7 +325,7 @@
             }
         </table>
         <h4>工廠</h4>
-        <table class="table">
+        <table class="table quest-table">
             @foreach (var item in questMaster.Quest
                 .Where(x => x.Type == HiyoshiCfhWeb.XML.Type.quarterly && x.Category == Category.building))
             {
@@ -341,7 +341,7 @@
         </table>
         <h3>その他</h3>
         <h4>出撃</h4>
-        <table class="table">
+        <table class="table quest-table">
             @foreach (var item in questMaster.Quest
                 .Where(x => x.Type == HiyoshiCfhWeb.XML.Type.other && x.Category == Category.sortie))
             {
@@ -362,7 +362,7 @@
 <div class="row">
     <div class="col-md-4">
         <h4>編成</h4>
-        <table class="table">
+        <table class="table quest-table">
             @foreach (var item in questMaster.Quest
                 .Where(x => x.Category == Category.composition))
             {
@@ -379,7 +379,7 @@
     </div>
     <div class="col-md-4">
         <h4>出撃</h4>
-        <table class="table">
+        <table class="table quest-table">
             @foreach (var item in questMaster.Quest
                 .Where(x => x.Type == HiyoshiCfhWeb.XML.Type.onetime && x.Category == Category.sortie))
             {
@@ -396,7 +396,7 @@
     </div>
     <div class="col-md-4">
         <h4>演習</h4>
-        <table class="table">
+        <table class="table quest-table">
             @foreach (var item in questMaster.Quest
                 .Where(x => x.Type == HiyoshiCfhWeb.XML.Type.onetime && x.Category == Category.practice))
             {
@@ -411,7 +411,7 @@
             }
         </table>
         <h4>遠征</h4>
-        <table class="table">
+        <table class="table quest-table">
             @foreach (var item in questMaster.Quest
                 .Where(x => x.Type == HiyoshiCfhWeb.XML.Type.onetime && x.Category == Category.expeditions))
             {
@@ -426,7 +426,7 @@
             }
         </table>
         <h4>補給/入渠</h4>
-        <table class="table">
+        <table class="table quest-table">
             @foreach (var item in questMaster.Quest
                 .Where(x => x.Type == HiyoshiCfhWeb.XML.Type.onetime && x.Category == Category.supply))
             {
@@ -441,7 +441,7 @@
             }
         </table>
         <h4>工廠</h4>
-        <table class="table">
+        <table class="table quest-table">
             @foreach (var item in questMaster.Quest
                 .Where(x => x.Type == HiyoshiCfhWeb.XML.Type.onetime && x.Category == Category.building))
             {
@@ -456,7 +456,7 @@
             }
         </table>
         <h4>改装</h4>
-        <table class="table">
+        <table class="table quest-table">
             @foreach (var item in questMaster.Quest
                 .Where(x => x.Type == HiyoshiCfhWeb.XML.Type.onetime && x.Category == Category.remodelling))
             {
@@ -472,3 +472,105 @@
         </table>
     </div>
 </div>
+<div class="modal" id="quest-modal" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h2><span class="quest-id"></span>: <span class="quest-name"></span></h2>
+            </div>
+            <div class="modal-body">
+                <p class="quest-content"></p>
+                <h3>開放条件</h3>
+                <ul class="dependency"></ul>
+                <h3>報酬</h3>
+                <table class="table">
+                    <tr>
+                        <th>燃料</th>
+                        <th>弾薬</th>
+                        <th>鋼材</th>
+                        <th>ボーキサイト</th>
+                    </tr>
+                    <tr>
+                        <td class="fuel"></td>
+                        <td class="bull"></td>
+                        <td class="steel"></td>
+                        <td class="bauxite"></td>
+                    </tr>
+                    <tr>
+                        <th>高速建造材</th>
+                        <th>高速修復材</th>
+                        <th>開発資材</th>
+                        <th>改修資材</th>
+                    </tr>
+                    <tr>
+                        <td class="instant-build"></td>
+                        <td class="instant-repair"></td>
+                        <td class="development"></td>
+                        <td class="renovation"></td>
+                    </tr>
+                </table>
+                <h4>その他</h4>
+                <p class="other-bonus"></p>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(function () {
+        "use strict";
+        var questXml = null;
+        $.ajax({
+            url: '@Url.Content("~/XML/Quests.xml")',
+            type: 'GET',
+            dataType: 'xml',
+            success: function (xml) {
+                questXml = xml;
+                $('table.quest-table').each(function () {
+                    $(this).find('tr').each(function () {
+                        $(this).on('click', function () {
+                            var id = $(this).find('td')[0].innerText;
+                            var node = $(questXml).find("Quest[Id='" + id + "']");
+                            var name = node.find('Name').text();
+                            var content = node.find('Content').text();
+                            var fuel = node.find('Fuel').text();
+                            var bull = node.find('Bull').text();
+                            var steel = node.find('Steel').text();
+                            var bauxite = node.find('Bauxite').text();
+                            var instant_build = node.find('InstantBuildMaterials').text();
+                            var instant_repair = node.find('InstantRepairMaterials').text();
+                            var development = node.find('DevelopmentMaterials').text();
+                            var renovation = node.find('RenovationMaterials').text();
+                            var dialog = $('div#quest-modal');
+                            dialog.find('.quest-name').text(name);
+                            dialog.find('.quest-id').text(id);
+                            dialog.find('.quest-content').text(content);
+                            dialog.find('.fuel').text(fuel);
+                            dialog.find('.bull').text(bull);
+                            dialog.find('.steel').text(steel);
+                            dialog.find('.bauxite').text(bauxite);
+                            dialog.find('.instant-build').text(instant_build);
+                            dialog.find('.instant-repair').text(instant_repair);
+                            dialog.find('.development').text(development);
+                            dialog.find('.renovation').text(renovation);
+                            var deplist = dialog.find('.dependency');
+                            deplist.empty();
+                            node.find('Achieve').each(function () {
+                                deplist.append($('<li>').text($(this).attr('Id')));
+                            });
+                            var other = node.find('Other').text();
+                            dialog.find('.other-bonus').text(other);
+                            dialog.modal();
+                        });
+                    });
+                });
+            },
+            error: function () {
+                alert('任務XMLの読み込みに失敗');
+            }
+        });
+    });
+</script>
