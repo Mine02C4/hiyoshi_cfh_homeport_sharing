@@ -6421,6 +6421,7 @@
         0
       </RenovationMaterials>
       <Other>
+        給糧艦「伊良湖」x1
         シークレット家具 手編みとフローリング
       </Other>
     </Bonus>
@@ -6457,7 +6458,7 @@
         0
       </DevelopmentMaterials>
       <RenovationMaterials>
-        0
+        2
       </RenovationMaterials>
       <Other>
         水上戦闘機二式水戦改
@@ -6466,6 +6467,7 @@
       </Other>
     </Bonus>
     <Dependency>
+      <Achieve Id="B87"/>
     </Dependency>
   </Quest>
   <Quest Id="Bd1" Category="sortie" Type="daily">
@@ -8719,6 +8721,45 @@
         0
       </RenovationMaterials>
       <Other>
+        新型航空機設計図x1
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="D2"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="D21" Category="expeditions" Type="onetime">
+    <Name>
+      潜水艦派遣作戦による噴式技術の入手
+    </Name>
+    <Content>
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
       </Other>
     </Bonus>
     <Dependency>
@@ -10643,6 +10684,7 @@
       </Other>
     </Bonus>
     <Dependency>
+      <Achieve Id="C2"/>
     </Dependency>
   </Quest>
   <Quest Id="F45" Category="building" Type="onetime">
@@ -10650,7 +10692,7 @@
       新機軸偵察機の開発
     </Name>
     <Content>
-      新機軸の偵察機の調達を行う。「零式水上偵察機」を二つ「工廠」で廃棄し、&lt;br&gt;「一式陸攻」一つと「彩雲」二つを準備せよ！(任務達成後、用意した必要装備は消費します) 
+      新機軸の偵察機の調達を行う。「零式水上偵察機」を二つ「工廠」で廃棄し、&lt;br&gt;「一式陸攻」一つと「彩雲」二つを準備せよ！(任務達成後、用意した必要装備は消費します)
     </Content>
     <Bonus>
       <Fuel>
@@ -10682,6 +10724,47 @@
       </Other>
     </Bonus>
     <Dependency>
+      <Achieve Id="A62"/>
+      <Achieve Id="F43"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="F46" Category="building" Type="onetime">
+    <Name>
+      噴式戦闘爆撃機の開発
+    </Name>
+    <Content>
+      ネ式エンジンを搭載した新型戦闘爆撃機の開発を行う。「紫電改二」三つを「工廠」で廃棄し、「新型航空機設計図」二つと「ネ式エンジン」一つを準備せよ！(任務達成後、用意した必要アイテムは消費します)
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        100
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="F45"/>
     </Dependency>
   </Quest>
   <Quest Id="G1" Category="remodelling" Type="onetime">
@@ -10836,6 +10919,47 @@
     </Bonus>
     <Dependency>
       <Achieve Id="A14"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="G5" Category="remodelling" Type="onetime">
+    <Name>
+      航空艤装の近代化改修
+    </Name>
+    <Content>
+      鉄鋼5,500及びボーキサイト2,500を準備して、任意の正規空母の近代化改修を[航空母艦]x5隻同時使用により2回成功させよ！※任務達成後、準備した資源は消費します。
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        新型航空機設計図x1
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="B87"/>
+      <Achieve Id="G3"/>
     </Dependency>
   </Quest>
   <Quest Id="WA01" Category="composition" Type="onetime">
