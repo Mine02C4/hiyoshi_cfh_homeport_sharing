@@ -8733,10 +8733,11 @@
       潜水艦派遣作戦による噴式技術の入手
     </Name>
     <Content>
+      鉄鋼5,000及びボーキサイト1,500を準備して潜水艦派遣作戦により噴式エンジン技術を導入に努めよ！ ※任務達成後、準備した資材は消費します。
     </Content>
     <Bonus>
       <Fuel>
-        0
+        100
       </Fuel>
       <Bull>
         0
@@ -8745,7 +8746,7 @@
         0
       </Steel>
       <Bauxite>
-        0
+        100
       </Bauxite>
       <InstantBuildMaterials>
         0
@@ -8763,6 +8764,8 @@
       </Other>
     </Bonus>
     <Dependency>
+      <Achieve Id="B88"/>
+      <Achieve Id="D20"/>
     </Dependency>
   </Quest>
   <Quest Id="E1" Category="supply" Type="onetime">
