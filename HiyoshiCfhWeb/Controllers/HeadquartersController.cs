@@ -270,8 +270,8 @@ namespace HiyoshiCfhWeb.Controllers
                     addCurrentValue = false;
                     var r = new Regex(@"^ym(\d{4})(\d{2})");
                     var m = r.Match(range);
-                    int year = int.Parse(m.Groups[0].Value);
-                    int month = int.Parse(m.Groups[1].Value);
+                    int year = int.Parse(m.Groups[1].Value);
+                    int month = int.Parse(m.Groups[2].Value);
                     var start = new DateTimeOffset(year, month, 1, 0, 0, 0, new TimeSpan(9, 0, 0));
                     var end = start.AddMonths(1);
                     records = records.Where(x => x.TimeUtc >= start.UtcDateTime && x.TimeUtc < end.UtcDateTime);

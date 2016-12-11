@@ -27,29 +27,14 @@
             create_graph(data, selector);
         });
     }
-    setup_chart2("@Html.Raw(Url.Action("Materials", new { type = "json", target = "main" }))", "#main_chart");
+    setup_chart2("Materials?type=json&target=main&range=ym201612", "#main_chart");
+    //setup_chart2("@Html.Raw(Url.Action("Materials", new { type = "json", target = "main" }))", "#main_chart");
     //setup_chart("@Html.Raw(Url.Action("Materials", new { type = "json", target = "other" }))", "#other_chart");
 </script>
 <style type="text/css">
     .line {
         fill: none;
         stroke-width: 1.5px;
-    }
-
-    .line-fuel {
-        stroke: green;
-    }
-
-    .line-bull {
-        stroke: chocolate;
-    }
-
-    .line-steel {
-        stroke: gray;
-    }
-
-    .line-bauxite {
-        stroke: orange;
     }
 </style>
 
