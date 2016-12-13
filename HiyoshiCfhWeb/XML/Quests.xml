@@ -8733,7 +8733,7 @@
       潜水艦派遣作戦による噴式技術の入手
     </Name>
     <Content>
-      鉄鋼5,000及びボーキサイト1,500を準備して潜水艦派遣作戦により噴式エンジン技術を導入に努めよ！ ※任務達成後、準備した資材は消費します。
+      鉄鋼5,000及びボーキサイト1,500を準備して、潜水艦派遣作戦により&lt;br&gt;噴式エンジン技術の導入に努めよ！※任務達成後、準備した資源は消費します。
     </Content>
     <Bonus>
       <Fuel>
@@ -8755,12 +8755,13 @@
         0
       </InstantRepairMaterials>
       <DevelopmentMaterials>
-        0
+        2
       </DevelopmentMaterials>
       <RenovationMaterials>
         0
       </RenovationMaterials>
       <Other>
+        ネ式エンジンx1
       </Other>
     </Bonus>
     <Dependency>
