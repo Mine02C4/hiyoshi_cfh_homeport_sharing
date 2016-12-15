@@ -6219,7 +6219,7 @@
       </RenovationMaterials>
       <Other>
         探照灯 探照灯
-        戦闘糧食×1
+        戦闘糧食x1
       </Other>
     </Bonus>
     <Dependency>
@@ -8726,6 +8726,7 @@
     </Bonus>
     <Dependency>
       <Achieve Id="D2"/>
+      <Achieve Id="D6"/>
     </Dependency>
   </Quest>
   <Quest Id="D21" Category="expeditions" Type="onetime">
@@ -10689,6 +10690,7 @@
     </Bonus>
     <Dependency>
       <Achieve Id="C2"/>
+      <Achieve Id="F42"/>
     </Dependency>
   </Quest>
   <Quest Id="F45" Category="building" Type="onetime">
@@ -10724,7 +10726,7 @@
         0
       </RenovationMaterials>
       <Other>
-        試製景雲(艦偵型)
+        艦上偵察機 試製景雲(艦偵型)
       </Other>
     </Bonus>
     <Dependency>
@@ -10759,15 +10761,58 @@
         0
       </InstantRepairMaterials>
       <DevelopmentMaterials>
+        2
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        噴式戦闘爆撃機 橘花改
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="C3"/>
+      <Achieve Id="F45"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="F47" Category="building" Type="onetime">
+    <Name>
+      ネ式エンジンの増産
+    </Name>
+    <Content>
+      噴式航空機生産のため、ネ式エンジンの増産を行う。「零式艦戦52型」三つを「工廠」で廃棄し、「流星」「烈風」各二つと鉄鋼8,000を準備せよ！※任務達成後、用意した必要装備と資源は消費します。
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
         0
       </DevelopmentMaterials>
       <RenovationMaterials>
         0
       </RenovationMaterials>
       <Other>
+        ネ式エンジンx1
       </Other>
     </Bonus>
     <Dependency>
+      <Achieve Id="D21"/>
       <Achieve Id="F45"/>
     </Dependency>
   </Quest>
