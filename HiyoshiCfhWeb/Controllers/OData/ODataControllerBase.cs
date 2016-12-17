@@ -39,7 +39,7 @@ namespace HiyoshiCfhWeb.Controllers
         // PUT: odata/xxx(5)
         public virtual IHttpActionResult Put([FromODataUri] int key, Delta<T> patch)
         {
-            Validate(patch.GetEntity());
+            Validate(patch.GetInstance());
 
             if (!ModelState.IsValid)
             {
@@ -97,7 +97,7 @@ namespace HiyoshiCfhWeb.Controllers
         [AcceptVerbs("PATCH", "MERGE")]
         public virtual IHttpActionResult Patch([FromODataUri] int key, Delta<T> patch)
         {
-            Validate(patch.GetEntity());
+            Validate(patch.GetInstance());
 
             if (!ModelState.IsValid)
             {

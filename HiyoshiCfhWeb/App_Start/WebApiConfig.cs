@@ -31,6 +31,7 @@ namespace HiyoshiCfhWeb
             builder.EntitySet<SlotItemInfo>("SlotItemInfoes");
             builder.EntitySet<Quest>("Quests");
             builder.EntitySet<MaterialRecord>("MaterialRecords");
+            config.Count().Filter().OrderBy().Expand().Select().MaxTop(null);
             config.MapODataServiceRoute("odata", "odata", builder.GetEdmModel());
         }
     }

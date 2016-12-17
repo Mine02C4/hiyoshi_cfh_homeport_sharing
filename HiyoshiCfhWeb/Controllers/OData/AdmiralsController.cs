@@ -21,7 +21,7 @@ namespace HiyoshiCfhWeb.Controllers
         // PUT: odata/Admirals(5)
         public override IHttpActionResult Put([FromODataUri] int key, Delta<Admiral> patch)
         {
-            Validate(patch.GetEntity());
+            Validate(patch.GetInstance());
 
             if (!ModelState.IsValid)
             {
@@ -82,7 +82,7 @@ namespace HiyoshiCfhWeb.Controllers
         [AcceptVerbs("PATCH", "MERGE")]
         public override IHttpActionResult Patch([FromODataUri] int key, Delta<Admiral> patch)
         {
-            Validate(patch.GetEntity());
+            Validate(patch.GetInstance());
 
             if (!ModelState.IsValid)
             {
