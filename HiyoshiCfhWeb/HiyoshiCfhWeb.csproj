@@ -365,11 +365,21 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\Plugin\HiyoshiCfhClient.dll" />
-    <Content Include="Content\Plugin\Microsoft.OData.Client.dll" />
-    <Content Include="Content\Plugin\Microsoft.OData.Core.dll" />
-    <Content Include="Content\Plugin\Microsoft.OData.Edm.dll" />
-    <Content Include="Content\Plugin\Microsoft.Spatial.dll" />
+    <EmbeddedResource Include="Content\Plugin\HiyoshiCfhClient.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Content\Plugin\Microsoft.OData.Client.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Content\Plugin\Microsoft.OData.Core.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Content\Plugin\Microsoft.OData.Edm.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Content\Plugin\Microsoft.Spatial.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <Content Include="Content\signin-google.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />

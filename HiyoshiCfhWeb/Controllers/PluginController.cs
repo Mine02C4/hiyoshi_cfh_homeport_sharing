@@ -15,7 +15,7 @@ namespace HiyoshiCfhWeb.Controllers
         {
             get
             {
-                return Server.MapPath("~/Content/Plugin");
+                return Server.MapPath("~/bin/Content/Plugin");
             }
         }
 
