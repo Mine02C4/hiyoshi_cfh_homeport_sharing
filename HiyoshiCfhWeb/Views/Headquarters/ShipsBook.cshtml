@@ -33,7 +33,12 @@
         <tbody>
             @foreach (var series in shipMaster)
             {
-                <tr style="border-top: 2px solid rgb(0, 0, 0);">
+                string trClass = null;
+                if (admiral.Ships.Where(x => x.ShipInfo.Kana == series.Key).Count() == 0)
+                {
+                    trClass = "not-belong";
+                }
+                <tr style="border-top: 2px solid rgb(0, 0, 0);" class="@trClass">
                     <td rowspan="@series.Count()">
                         @series.Key
                     </td>
@@ -42,7 +47,14 @@
                         if (item.i != 0)
                         {
                             @Html.Raw("</tr>");
-                            @Html.Raw("<tr>");
+                            if (trClass != null)
+                            {
+                                @Html.Raw("<tr class=\"" + trClass + "\">");
+                            }
+                            else
+                            {
+                                @Html.Raw("<tr>");
+                            }
                         }
                         <td>
                             @Html.ActionLink(item.v.Name, "Index", "Ship", routeValues: new { id = item.v.Name }, htmlAttributes: null)
@@ -66,9 +78,9 @@
                                 }
                             }
                         </td>
-                    }
+                                }
                 </tr>
-            }
+                                }
         </tbody>
     </table>
 </div>

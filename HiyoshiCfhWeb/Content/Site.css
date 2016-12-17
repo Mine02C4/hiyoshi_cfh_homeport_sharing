@@ -71,3 +71,7 @@ svg#meter {
 .q-visible > td {
     background-color: #edc556;
 }
+
+table tr.not-belong td {
+    background-color: #a8a8a8;
+}
