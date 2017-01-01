@@ -6470,89 +6470,6 @@
       <Achieve Id="B87"/>
     </Dependency>
   </Quest>
-  <Quest Id="B89" Category="sortie" Type="onetime">
-    <Name>
-      冬季特別任務：精鋭「駆逐隊」、出撃！
-    </Name>
-    <Content>
-      駆逐艦4隻による精鋭「駆逐隊」を編成し、鎮守府正面海域及び南西諸島沖に出撃、&lt;br&gt;両海域の敵艦隊を捕捉、これを撃滅せよ！
-    </Content>
-    <Bonus>
-      <Fuel>
-        350
-      </Fuel>
-      <Bull>
-        350
-      </Bull>
-      <Steel>
-        0
-      </Steel>
-      <Bauxite>
-        0
-      </Bauxite>
-      <InstantBuildMaterials>
-        0
-      </InstantBuildMaterials>
-      <InstantRepairMaterials>
-        0
-      </InstantRepairMaterials>
-      <DevelopmentMaterials>
-        0
-      </DevelopmentMaterials>
-      <RenovationMaterials>
-        0
-      </RenovationMaterials>
-      <Other>
-        特注家具職人x1
-        増設バルジ(大型艦)
-        or
-        対空機銃 25mm三連装機銃 ★3
-      </Other>
-    </Bonus>
-    <Dependency>
-    </Dependency>
-  </Quest>
-  <Quest Id="B90" Category="sortie" Type="onetime">
-    <Name>
-      冬季特別任務：水上機母艦、抜錨せよ！
-    </Name>
-    <Content>
-      水上機母艦を旗艦とし、護衛駆逐艦3隻を含む艦隊を編成、&lt;br&gt;製油所地帯沿岸及び南西諸島防衛線に展開、同海域に出没する敵艦隊を撃滅せよ！
-    </Content>
-    <Bonus>
-      <Fuel>
-        0
-      </Fuel>
-      <Bull>
-        500
-      </Bull>
-      <Steel>
-        0
-      </Steel>
-      <Bauxite>
-        500
-      </Bauxite>
-      <InstantBuildMaterials>
-        0
-      </InstantBuildMaterials>
-      <InstantRepairMaterials>
-        0
-      </InstantRepairMaterials>
-      <DevelopmentMaterials>
-        0
-      </DevelopmentMaterials>
-      <RenovationMaterials>
-        0
-      </RenovationMaterials>
-      <Other>
-        補強増設x1
-        シークレット家具 ライスコロッケディナー
-      </Other>
-    </Bonus>
-    <Dependency>
-      <Achieve Id="B89"/>
-    </Dependency>
-  </Quest>
   <Quest Id="Bd1" Category="sortie" Type="daily">
     <Name>
       敵艦隊を撃破せよ！
@@ -11371,6 +11288,90 @@
     </Bonus>
     <Dependency>
       <Achieve Id="B5"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="SB15" Category="sortie" Type="onetime">
+    <Name>
+      冬季特別任務：精鋭「駆逐隊」、出撃！
+    </Name>
+    <Content>
+      駆逐艦4隻による精鋭「駆逐隊」を編成し、鎮守府正面海域及び南西諸島沖に出撃、&lt;br&gt;両海域の敵艦隊を捕捉、これを撃滅せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        350
+      </Fuel>
+      <Bull>
+        350
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        特注家具職人x1
+        増設バルジ(大型艦)
+        or
+        対空機銃 25mm三連装機銃 ★3
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="B5"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="SB16" Category="sortie" Type="onetime">
+    <Name>
+      冬季特別任務：水上機母艦、抜錨せよ！
+    </Name>
+    <Content>
+      水上機母艦を旗艦とし、護衛駆逐艦3隻を含む艦隊を編成、&lt;br&gt;製油所地帯沿岸及び南西諸島防衛線に展開、同海域に出没する敵艦隊を撃滅せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        500
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        500
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        補強増設x1
+        シークレット家具 ライスコロッケディナー
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="SB15"/>
     </Dependency>
   </Quest>
 </Quests>
