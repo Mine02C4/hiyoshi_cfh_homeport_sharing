@@ -11374,4 +11374,173 @@
       <Achieve Id="SB15"/>
     </Dependency>
   </Quest>
+  <Quest Id="SB17" Category="sortie" Type="onetime">
+    <Name>
+      謹賀新年！「水雷戦隊」出撃始め！
+    </Name>
+    <Content>
+      新春特別任務：軽巡を旗艦とした水雷戦隊を南西諸島沖、製油所地帯沿岸及び南西諸島防衛線に展開！&lt;br&gt;同三海域の敵艦隊を邀撃、新年の暁に勝利を刻むのです！ 
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        2017
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        3
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        応急修理要員 応急修理女神x1
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="B5"/>
+      <Achieve Id="Bd1"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="SB18" Category="sortie" Type="onetime">
+    <Name>
+      新春「伊良湖」のお手伝い！
+    </Name>
+    <Content>
+      新春特別任務：新春からお手伝い、すみません！水上機母艦、潜水母艦、または駆逐艦を旗艦とした艦隊で、東部オリョール海に反復出撃です！同海域の敵艦隊を撃滅、制海権確保をお願いします！
+    </Content>
+    <Bonus>
+      <Fuel>
+        2017
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        給糧艦「間宮」x1
+        給糧艦「伊良湖」x3
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="SB17"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="SB19" Category="sortie" Type="onetime">
+    <Name>
+      時代が来たか！航空火力艦なお正月！
+    </Name>
+    <Content>
+      新春特別任務：航空戦艦を旗艦とする、航空戦艦2隻と航空巡洋艦2隻を基幹戦力とする艦隊をカレー洋へ展開！反復出撃し、同海域の敵艦隊を撃滅せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        2017
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        3
+      </RenovationMaterials>
+      <Other>
+        特注家具職人x1
+        水上偵察機 紫雲
+        or
+        水上偵察機 Ro.43水偵
+        or
+        水上偵察機 OS2U
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="B18"/>
+      <Achieve Id="SB18"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="SB20" Category="sortie" Type="onetime">
+    <Name>
+      迎春！「空母機動部隊」出撃開始！
+    </Name>
+    <Content>
+      新春特別任務：航空母艦を旗艦とする護衛の駆逐艦2隻以上を擁する機動部隊で北方AL海域に展開！反復出撃によって、同艦域の敵戦力を撃滅せよ！空母機動部隊、出撃！
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        2017
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        熟練搭乗員x1
+        シークレット家具 迎春掛け軸2017
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="SB19"/>
+    </Dependency>
+  </Quest>
 </Quests>
