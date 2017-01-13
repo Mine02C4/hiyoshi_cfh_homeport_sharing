@@ -6470,6 +6470,49 @@
       <Achieve Id="B87"/>
     </Dependency>
   </Quest>
+  <Quest Id="B89" Category="sortie" Type="onetime">
+    <Name>
+      主力戦艦戦隊、抜錨せよ！
+    </Name>
+    <Content>
+      戦艦または航空戦艦2隻以上からなる強力な戦艦戦隊を中核とした艦隊を沖ノ島海域前面に展開、&lt;br&gt;侵攻する敵艦隊を捕捉、これを撃滅せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        800
+      </Bull>
+      <Steel>
+        400
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        給糧艦「伊良湖」x1
+        機関部強化 改良型艦本式タービン
+        or
+        機関部強化 強化型艦本式缶
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="B19"/>
+    </Dependency>
+  </Quest>
   <Quest Id="Bd1" Category="sortie" Type="daily">
     <Name>
       敵艦隊を撃破せよ！
@@ -10814,6 +10857,45 @@
     <Dependency>
       <Achieve Id="D21"/>
       <Achieve Id="F45"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="F48" Category="building" Type="onetime">
+    <Name>
+      「特注家具」の調達
+    </Name>
+    <Content>
+      主砲「12.7cm連装砲」を二つ廃棄、家具コイン5,000と「7.7mm機銃」及び「九六式艦戦」各二つずつ&lt;br&gt;準備せよ！　※任務達成後、用意した家具コイン及び必要装備(低改修値のもの優先)は消費します。
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        100
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        特注家具職人x1
+      </Other>
+    </Bonus>
+    <Dependency>
     </Dependency>
   </Quest>
   <Quest Id="G1" Category="remodelling" Type="onetime">
