@@ -10896,6 +10896,7 @@
       </Other>
     </Bonus>
     <Dependency>
+      <Achieve Id="F4"/>
     </Dependency>
   </Quest>
   <Quest Id="G1" Category="remodelling" Type="onetime">
