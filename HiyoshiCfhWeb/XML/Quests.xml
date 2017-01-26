@@ -6513,6 +6513,47 @@
       <Achieve Id="B19"/>
     </Dependency>
   </Quest>
+  <Quest Id="B90" Category="sortie" Type="onetime">
+    <Name>
+      精鋭「第八駆逐隊」突入せよ！
+    </Name>
+    <Content>
+      「荒潮改二」を旗艦とし、僚艦に「第八駆逐隊」から1隻を配備した精鋭第1艦隊で&lt;br&gt;サーモン海域北方に突入、同方面に接近する有力な敵艦隊を捕捉、同方面の敵戦力の漸減に努めよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        800
+      </Fuel>
+      <Bull>
+        800
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        800
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        4
+      </RenovationMaterials>
+      <Other>
+        補強増設x1
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="B81"/>
+      <Achieve Id="B73"/>
+    </Dependency>
+  </Quest>
   <Quest Id="Bd1" Category="sortie" Type="daily">
     <Name>
       敵艦隊を撃破せよ！
@@ -11626,6 +11667,88 @@
     <Dependency>
       <Achieve Id="B9"/>
       <Achieve Id="SB19"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="SB21" Category="sortie" Type="onetime">
+    <Name>
+      節分特別出撃：制海権を確保せよ！
+    </Name>
+    <Content>
+      節分実施の準備として第1艦隊に4隻(内駆逐艦2隻含む)からなる精鋭艦隊を配備、鎮守府正面海域、&lt;br&gt;南西諸島沖、及び東部オリョール海へ展開、同海域の敵艦隊を撃滅し、節分の制海権を確保せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        1200
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        給糧艦「伊良湖」x1
+        シークレット家具 節分の原稿机
+      </Other>
+    </Bonus>
+    <Dependency>
+    </Dependency>
+  </Quest>
+  <Quest Id="SF2" Category="building" Type="onetime">
+    <Name>
+      節分特別任務：節分準備！
+    </Name>
+    <Content>
+      「20.3cm連装砲(無印)」を二つ廃棄、家具コイン5,000と「12cm単装砲」「零式水上偵察機」各二つを準備せよ！　※任務達成後、用意した家具コイン及び必要装備(低改修値のもの優先)は消費します。
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        100
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        給糧艦「伊良湖」x1
+        特注家具職人x1
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="F8"/>
+      <Achieve Id="SB21"/>
     </Dependency>
   </Quest>
 </Quests>
