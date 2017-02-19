@@ -1261,6 +1261,7 @@
     <Content Include="Views\Headquarters\Equipments.cshtml" />
     <Content Include="Views\Headquarters\ShipsBook.cshtml" />
     <Content Include="Scripts\version.json" />
+    <Content Include="Views\Event\Summary.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

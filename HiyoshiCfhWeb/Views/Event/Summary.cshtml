@@ -1,0 +1,9 @@
+﻿@model HiyoshiCfhWeb.Models.Event
+@{
+    var ev = Model;
+    ViewBag.Title = ev.Name;
+}
+
+<h2>@ev.Name</h2>
+<h3>@ev.StartTime.ToString("yyyy年M月d日 HH:mm:ss") ～ @ev.FinishTime.ToString("yyyy年M月d日 HH:mm:ss")</h3>
+
