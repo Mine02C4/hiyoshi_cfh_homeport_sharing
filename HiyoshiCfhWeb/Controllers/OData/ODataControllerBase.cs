@@ -18,9 +18,10 @@ namespace HiyoshiCfhWeb.Controllers
     {
         protected ApplicationDbContext db = new ApplicationDbContext();
         protected DbSet<T> dbs;
-        protected Action<T> updateTimeStamp = (x) => { };
-        protected Action<T> updateOwnTimeStamp = (x) => { };
-        protected Func<T, bool> detectDuplication = (x) => false;
+        protected Action<T> updateTimeStamp = x => { };
+        protected Action<T> updateOwnTimeStamp = x => { };
+        protected Action<T> trapUpdate = x => { };
+        protected Func<T, bool> detectDuplication = x => false;
 
         // GET: odata/xxx
         [EnableQuery]
@@ -72,6 +73,7 @@ namespace HiyoshiCfhWeb.Controllers
                 }
             }
 
+            trapUpdate(obj);
             return Updated(obj);
         }
 
@@ -90,6 +92,7 @@ namespace HiyoshiCfhWeb.Controllers
             updateTimeStamp(obj);
             dbs.Add(obj);
             db.SaveChanges();
+            trapUpdate(obj);
             return Created(obj);
         }
 
@@ -130,6 +133,7 @@ namespace HiyoshiCfhWeb.Controllers
                 }
             }
 
+            trapUpdate(obj);
             return Updated(obj);
         }
 
@@ -145,7 +149,6 @@ namespace HiyoshiCfhWeb.Controllers
             updateTimeStamp(obj);
             dbs.Remove(obj);
             db.SaveChanges();
-
             return StatusCode(HttpStatusCode.NoContent);
         }
 
