@@ -11099,7 +11099,7 @@
       </Other>
     </Bonus>
     <Dependency>
-      <Achieve Id="F18"/>
+      <Achieve Id="B80"/>
       <Achieve Id="B91"/>
     </Dependency>
   </Quest>
