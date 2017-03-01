@@ -6559,7 +6559,7 @@
       潜水艦隊、中部海域の哨戒を実施せよ！
     </Name>
     <Content>
-      潜水艦を旗艦とし、4隻以上の有力な潜水艦を配備した第一艦隊、精鋭潜水艦隊で&lt;br&gt;中部海域哨戒線に進出、回航中の敵空母を捕捉、これを襲撃せよ！ 
+      潜水艦を旗艦とし、4隻以上の有力な潜水艦を配備した第一艦隊、精鋭潜水艦隊で&lt;br&gt;中部海域哨戒線に進出、回航中の敵空母を捕捉、これを襲撃せよ！
     </Content>
     <Bonus>
       <Fuel>
@@ -11021,6 +11021,88 @@
       <Achieve Id="F4"/>
     </Dependency>
   </Quest>
+  <Quest Id="F49" Category="building" Type="onetime">
+    <Name>
+      潜水艦武装の強化
+    </Name>
+    <Content>
+      「61cm三連装魚雷」を4つ廃棄、開発資材x120と「61cm四連装(酸素)魚雷」「九三式水中聴音機」各三つを準備せよ！　※任務達成後、用意した開発資材及び必要装備(低改修値のもの優先)は消費します。
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        100
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        潜水艦魚雷 後期型艦首魚雷(6門)
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="F18"/>
+      <Achieve Id="B91"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="F50" Category="building" Type="onetime">
+    <Name>
+      六三一空「晴嵐」隊の編成
+    </Name>
+    <Content>
+      秘書艦に「伊401」または「伊14」または「伊13」を配備。「晴嵐」を一番スロットに搭載。「瑞雲(六三一空)」を二番スロットに搭載。「晴嵐(六三一空)」を新編せよ！　※任務達成後瑞雲は消滅します。
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        水上爆撃機 晴嵐(六三一空)
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="F18"/>
+      <Achieve Id="B91"/>
+    </Dependency>
+  </Quest>
   <Quest Id="G1" Category="remodelling" Type="onetime">
     <Name>
       はじめての「近代化改修」！
@@ -11795,7 +11877,7 @@
       春の準備任務：桃の節句準備を完遂せよ！
     </Name>
     <Content>
-      春の準備任務：艦隊を東部オリョール海に反復出撃、同方面敵艦隊を覆滅し、同海域周辺の制海権を完全に確保、桃の節句を迎える準備を完遂せよ！
+      春の準備任務：艦隊を東部オリョール海に反復出撃、同方面敵艦隊を覆滅し、&lt;br&gt;同海域周辺の制海権を完全に確保、桃の節句を迎える準備を完遂せよ！
     </Content>
     <Bonus>
       <Fuel>
