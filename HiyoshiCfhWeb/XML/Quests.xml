@@ -6554,6 +6554,87 @@
       <Achieve Id="B73"/>
     </Dependency>
   </Quest>
+  <Quest Id="B91" Category="sortie" Type="onetime">
+    <Name>
+      潜水艦隊、中部海域の哨戒を実施せよ！
+    </Name>
+    <Content>
+      潜水艦を旗艦とし、4隻以上の有力な潜水艦を配備した第一艦隊、精鋭潜水艦隊で&lt;br&gt;中部海域哨戒線に進出、回航中の敵空母を捕捉、これを襲撃せよ！ 
+    </Content>
+    <Bonus>
+      <Fuel>
+        300
+      </Fuel>
+      <Bull>
+        300
+      </Bull>
+      <Steel>
+        300
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        3
+      </RenovationMaterials>
+      <Other>
+        給糧艦「伊良湖」x1
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="Bd5"/>
+      <Achieve Id="B69"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="B92" Category="sortie" Type="onetime">
+    <Name>
+      重装甲巡洋艦、鉄底海峡に突入せよ！
+    </Name>
+    <Content>
+      第一艦隊旗艦に「Zara due」を配備、同艦隊で南方サブ島沖海域へ突入！同方面の敵艦隊群を突破し、鉄底海峡に展開する敵戦力を撃破せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        700
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        増設バルジ(中型艦) 艦本新設計 増設バルジ(中型艦)
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="B91"/>
+    </Dependency>
+  </Quest>
   <Quest Id="Bd1" Category="sortie" Type="daily">
     <Name>
       敵艦隊を撃破せよ！
@@ -11709,6 +11790,47 @@
     <Dependency>
     </Dependency>
   </Quest>
+  <Quest Id="SB22" Category="sortie" Type="onetime">
+    <Name>
+      春の準備任務：桃の節句準備を完遂せよ！
+    </Name>
+    <Content>
+      春の準備任務：艦隊を東部オリョール海に反復出撃、同方面敵艦隊を覆滅し、同海域周辺の制海権を完全に確保、桃の節句を迎える準備を完遂せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        330
+      </Fuel>
+      <Bull>
+        330
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        330
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        菱餅x3
+        補強増設x1
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="SF3"/>
+    </Dependency>
+  </Quest>
   <Quest Id="SF2" Category="building" Type="onetime">
     <Name>
       節分特別任務：節分準備！
@@ -11749,6 +11871,47 @@
     <Dependency>
       <Achieve Id="F8"/>
       <Achieve Id="SB21"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="SF3" Category="building" Type="onetime">
+    <Name>
+      春の準備任務：桃の節句準備！
+    </Name>
+    <Content>
+      春の準備任務：「14cm単装砲」を二つ廃棄、家具コイン5,000と「九九式艦爆」「61cm三連装魚雷」各二つを準備せよ！　※任務達成後、用意した家具コイン及び必要装備(低改修値のもの優先)は消費します。
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        菱餅x1
+        特注家具職人x1
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="C2"/>
     </Dependency>
   </Quest>
   <Quest Id="OH1" Category="building" Type="onetime">
