@@ -2123,6 +2123,8 @@
       </Other>
     </Bonus>
     <Dependency>
+      <Achieve Id="A35"/>
+      <Achieve Id="A50"/>
       <Achieve Id="B21"/>
     </Dependency>
   </Quest>
@@ -2242,6 +2244,7 @@
       </Other>
     </Bonus>
     <Dependency>
+      <Achieve Id="A50"/>
       <Achieve Id="B34"/>
     </Dependency>
   </Quest>
@@ -2281,7 +2284,7 @@
       </Other>
     </Bonus>
     <Dependency>
-      <Achieve Id="Bd2"/>
+      <Achieve Id="A15"/>
     </Dependency>
   </Quest>
   <Quest Id="A59" Category="composition" Type="onetime">
@@ -2321,6 +2324,7 @@
       </Other>
     </Bonus>
     <Dependency>
+      <Achieve Id="A58"/>
       <Achieve Id="Bm6"/>
       <Achieve Id="F21"/>
     </Dependency>
@@ -2645,6 +2649,7 @@
     </Bonus>
     <Dependency>
       <Achieve Id="A10"/>
+      <Achieve Id="A47"/>
       <Achieve Id="Bd2"/>
     </Dependency>
   </Quest>
@@ -2762,7 +2767,7 @@
       </Other>
     </Bonus>
     <Dependency>
-      <Achieve Id="A32"/>
+      <Achieve Id="A20"/>
     </Dependency>
   </Quest>
   <Quest Id="A71" Category="composition" Type="onetime">
@@ -4799,6 +4804,7 @@
     </Bonus>
     <Dependency>
       <Achieve Id="A55"/>
+      <Achieve Id="C7"/>
     </Dependency>
   </Quest>
   <Quest Id="B48" Category="sortie" Type="onetime">
@@ -4839,7 +4845,7 @@
     </Bonus>
     <Dependency>
       <Achieve Id="Bd1"/>
-      <Achieve Id="B42"/>
+      <Achieve Id="B5"/>
     </Dependency>
   </Quest>
   <Quest Id="B49" Category="sortie" Type="onetime">
@@ -5328,6 +5334,7 @@
     </Bonus>
     <Dependency>
       <Achieve Id="A66"/>
+      <Achieve Id="Bw2"/>
     </Dependency>
   </Quest>
   <Quest Id="B61" Category="sortie" Type="onetime">
@@ -5614,7 +5621,6 @@
     <Dependency>
       <Achieve Id="B6"/>
       <Achieve Id="A8"/>
-      <Achieve Id="A10"/>
     </Dependency>
   </Quest>
   <Quest Id="B68" Category="sortie" Type="onetime">
@@ -6028,7 +6034,7 @@
       「第十九駆逐隊」出撃せよ！
     </Name>
     <Content>
-      特型駆逐艦4隻による「第十九駆逐隊」を鎮守府近海に展開！鎮守府正面対潜哨戒を実施し、跳梁する敵潜水部隊の制圧に努めよ！
+      特型駆逐艦4隻による「第十九駆逐隊」を鎮守府近海に展開！&lt;br&gt;鎮守府正面対潜哨戒を実施し、跳梁する敵潜部隊の制圧に努めよ！
     </Content>
     <Bonus>
       <Fuel>
@@ -6060,7 +6066,6 @@
       </Other>
     </Bonus>
     <Dependency>
-      <Achieve Id="A71"/>
       <Achieve Id="A72"/>
     </Dependency>
   </Quest>
@@ -6264,6 +6269,7 @@
       </Other>
     </Bonus>
     <Dependency>
+      <!-- TODO -->
     </Dependency>
   </Quest>
   <Quest Id="B84" Category="sortie" Type="onetime">
@@ -6426,6 +6432,7 @@
       </Other>
     </Bonus>
     <Dependency>
+      <Achieve Id="A10"/>
     </Dependency>
   </Quest>
   <Quest Id="B88" Category="sortie" Type="onetime">
@@ -6467,6 +6474,7 @@
       </Other>
     </Bonus>
     <Dependency>
+      <Achieve Id="B8"/>
       <Achieve Id="B87"/>
     </Dependency>
   </Quest>
