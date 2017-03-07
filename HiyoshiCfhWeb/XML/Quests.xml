@@ -11031,47 +11031,6 @@
   </Quest>
   <Quest Id="F49" Category="building" Type="onetime">
     <Name>
-      潜水艦武装の強化
-    </Name>
-    <Content>
-      「61cm三連装魚雷」を四つ廃棄、開発資材x120と「61cm四連装(酸素)魚雷」「九三式水中聴音機」各三つを準備せよ！　※任務達成後、用意した開発資材及び必要装備(低改修値のもの優先)は消費します。
-    </Content>
-    <Bonus>
-      <Fuel>
-        0
-      </Fuel>
-      <Bull>
-        100
-      </Bull>
-      <Steel>
-        0
-      </Steel>
-      <Bauxite>
-        0
-      </Bauxite>
-      <InstantBuildMaterials>
-        0
-      </InstantBuildMaterials>
-      <InstantRepairMaterials>
-        0
-      </InstantRepairMaterials>
-      <DevelopmentMaterials>
-        0
-      </DevelopmentMaterials>
-      <RenovationMaterials>
-        0
-      </RenovationMaterials>
-      <Other>
-        潜水艦魚雷 後期型艦首魚雷(6門)
-      </Other>
-    </Bonus>
-    <Dependency>
-      <Achieve Id="F18"/>
-      <Achieve Id="B91"/>
-    </Dependency>
-  </Quest>
-  <Quest Id="F50" Category="building" Type="onetime">
-    <Name>
       六三一空「晴嵐」隊の編成
     </Name>
     <Content>
@@ -11108,6 +11067,47 @@
     </Bonus>
     <Dependency>
       <Achieve Id="B80"/>
+      <Achieve Id="B91"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="F50" Category="building" Type="onetime">
+    <Name>
+      潜水艦武装の強化
+    </Name>
+    <Content>
+      「61cm三連装魚雷」を四つ廃棄、開発資材x120と「61cm四連装(酸素)魚雷」「九三式水中聴音機」各三つを準備せよ！　※任務達成後、用意した開発資材及び必要装備(低改修値のもの優先)は消費します。
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        100
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        潜水艦魚雷 後期型艦首魚雷(6門)
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="F18"/>
       <Achieve Id="B91"/>
     </Dependency>
   </Quest>
@@ -12002,6 +12002,7 @@
     </Bonus>
     <Dependency>
       <Achieve Id="C2"/>
+      <Achieve Id="F4"/>
     </Dependency>
   </Quest>
   <Quest Id="OH1" Category="building" Type="onetime">
