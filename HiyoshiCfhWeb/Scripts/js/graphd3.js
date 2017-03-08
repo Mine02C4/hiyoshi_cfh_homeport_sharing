@@ -10,23 +10,26 @@ var basedata = {
     },
     range: {
         start: {
-            year: 2016,
-            month: 12
+            year: (new Date()).getFullYear(),
+            month: (new Date()).getMonth() + 1
         },
         end: {
-            year: 2016,
-            month: 12
+            year: (new Date()).getFullYear(),
+            month: (new Date()).getMonth() + 1
         }
     },
     collection: {},
     add: function (year, month, array) {
         this.collection[String(year) + ('00' + month).slice(-2)] = array;
     },
+    getUri: function (year, month) {
+        return "Materials?type=json&target=main&range=ym" + year + ('00' + month).slice(-2);
+    },
     fetch: function (year, month, callback) {
         if (this.lock)
             return;
         this.lock = true;
-        d3.json("Materials?type=json&target=main&range=ym" + year + ('00' + month).slice(-2), function (error, data) {
+        d3.json(this.getUri(year, month), function (error, data) {
             if (error) {
                 basedata.lock = false;
                 return console.log("there was an error loading the data: " + error);
@@ -220,7 +223,7 @@ function create_graph(data, selector) {
         y.domain([0, maxValue]);
         zoomed();
     }
-    basedata.add(2016, 12, data);
+    basedata.add(basedata.range.start.year, basedata.range.start.month, data);
     for (var i = 0; i < graph.series.length; i++) {
         var path = graphG.append("path");
         graph.series[i].path = path;

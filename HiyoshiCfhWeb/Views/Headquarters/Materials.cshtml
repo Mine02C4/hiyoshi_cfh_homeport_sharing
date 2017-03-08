@@ -27,7 +27,7 @@
             create_graph(data, selector);
         });
     }
-    setup_chart2("Materials?type=json&target=main&range=ym201612", "#main_chart");
+    setup_chart2(basedata.getUri(basedata.range.start.year, basedata.range.start.month), "#main_chart");
     //setup_chart2("@Html.Raw(Url.Action("Materials", new { type = "json", target = "main" }))", "#main_chart");
     //setup_chart("@Html.Raw(Url.Action("Materials", new { type = "json", target = "other" }))", "#other_chart");
 </script>
