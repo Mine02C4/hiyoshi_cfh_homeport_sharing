@@ -6643,6 +6643,87 @@
       <Achieve Id="B91"/>
     </Dependency>
   </Quest>
+  <Quest Id="B93" Category="sortie" Type="onetime">
+    <Name>
+      南西諸島方面の敵艦隊を撃破せよ！
+    </Name>
+    <Content>
+      軽巡を旗艦とした艦隊を編成し、南西諸島防衛線、バシー島沖及び&lt;br&gt;東部オリョール海に展開、同海域に遊弋する敵艦隊を撃破せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        300
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        300
+      </Steel>
+      <Bauxite>
+        300
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        給糧艦「間宮」x1
+        給糧艦「伊良湖」x1
+      </Other>
+    </Bonus>
+    <Dependency>
+      <!-- TODO -->
+    </Dependency>
+  </Quest>
+  <Quest Id="B94" Category="sortie" Type="onetime">
+    <Name>
+      洋上航空戦力を拡充せよ！
+    </Name>
+    <Content>
+      航空母艦、または水上機母艦を旗艦とした有力な艦隊を編成、北方AL海域、西方海域カスガダマ沖、中部海域MS諸島沖に展開し、各海域の敵艦隊を撃滅せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        500
+      </Fuel>
+      <Bull>
+        500
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        1000
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        5
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        熟練搭乗員x1
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="B93"/>
+    </Dependency>
+  </Quest>
   <Quest Id="Bd1" Category="sortie" Type="daily">
     <Name>
       敵艦隊を撃破せよ！
@@ -11109,6 +11190,85 @@
     <Dependency>
       <Achieve Id="F18"/>
       <Achieve Id="B91"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="F51" Category="building" Type="onetime">
+    <Name>
+      精鋭「水戦」隊の新編成
+    </Name>
+    <Content>
+      精鋭飛行隊の新編成：練度max及び改修maxの「二式水戦改」を一番スロットに搭載した秘書艦で、&lt;br&gt;「零式艦戦21型」x2「瑞雲」x2を廃棄！　※新飛行隊を編成する「熟練搭乗員」が必要です。 
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        50
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        水上戦闘機 二式水戦改(熟練)
+      </Other>
+    </Bonus>
+    <Dependency>
+      <!-- TODO -->
+    </Dependency>
+  </Quest>
+  <Quest Id="F52" Category="building" Type="onetime">
+    <Name>
+      精鋭「水戦」隊の増勢
+    </Name>
+    <Content>
+
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="F52"/>
     </Dependency>
   </Quest>
   <Quest Id="G1" Category="remodelling" Type="onetime">
