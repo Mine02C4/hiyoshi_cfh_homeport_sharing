@@ -6721,6 +6721,7 @@
       </Other>
     </Bonus>
     <Dependency>
+      <Achieve Id="B91"/>
       <Achieve Id="B93"/>
     </Dependency>
   </Quest>
@@ -11229,7 +11230,8 @@
       </Other>
     </Bonus>
     <Dependency>
-      <!-- TODO -->
+      <Achieve Id="F7"/>
+      <Achieve Id="B88"/>
     </Dependency>
   </Quest>
   <Quest Id="F52" Category="building" Type="onetime">
