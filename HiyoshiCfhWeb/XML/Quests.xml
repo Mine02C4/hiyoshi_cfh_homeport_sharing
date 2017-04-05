@@ -11272,6 +11272,7 @@
     </Bonus>
     <Dependency>
       <Achieve Id="F51"/>
+      <Achieve Id="B94"/>
     </Dependency>
   </Quest>
   <Quest Id="G1" Category="remodelling" Type="onetime">
