@@ -7750,6 +7750,47 @@
       <Achieve Id="Bm6"/>
     </Dependency>
   </Quest>
+  <Quest Id="Bq2" Category="sortie" Type="quarterly">
+    <Name>
+      戦果拡張任務！「Z作戦」前段作戦
+    </Name>
+    <Content>
+      戦果拡張作戦：我が第一艦隊に精鋭艦艇を集中配備、同精鋭艦隊を以て、南西諸島の沖ノ島海域、&lt;br&gt;中部海域哨戒線、グアノ環礁沖の敵艦隊を撃破、中部北海域ピーコック島の敵戦力を破砕殲滅せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        2000
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        4
+      </RenovationMaterials>
+      <Other>
+        給糧艦「間宮」x3
+        戦果+350
+      </Other>
+    </Bonus>
+    <Dependency>
+      <!-- TODO -->
+    </Dependency>
+  </Quest>
   <Quest Id="C1" Category="practice" Type="onetime">
     <Name>
       はじめての「演習」！
@@ -8181,6 +8222,47 @@
     </Bonus>
     <Dependency>
       <Achieve Id="C2"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="C12" Category="practice" Type="onetime">
+    <Name>
+      春季大演習
+    </Name>
+    <Content>
+      春の一日中に「演習」で8回以上「勝利」をおさめ、艦隊の練度向上に努めよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        1000
+      </Steel>
+      <Bauxite>
+        300
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        給糧艦「間宮」x1
+        プレゼント箱x1
+      </Other>
+    </Bonus>
+    <Dependency>
+      <!-- TODO -->
     </Dependency>
   </Quest>
   <Quest Id="D1" Category="expeditions" Type="onetime">
