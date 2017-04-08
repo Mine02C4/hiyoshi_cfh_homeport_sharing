@@ -6725,6 +6725,48 @@
       <Achieve Id="B93"/>
     </Dependency>
   </Quest>
+  <Quest Id="B95" Category="sortie" Type="onetime">
+    <Name>
+      改装航空巡洋艦、出撃！
+    </Name>
+    <Content>
+      改装航空巡洋艦「鈴谷改二」を旗艦とした精強な艦隊を編成、同艦隊を南方海域に展開、&lt;br&gt;南方海域前面、及びサブ島沖海域に遊弋する敵艦隊群を捕捉、これを撃破せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        300
+      </Fuel>
+      <Bull>
+        300
+      </Bull>
+      <Steel>
+        300
+      </Steel>
+      <Bauxite>
+        700
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        4
+      </RenovationMaterials>
+      <Other>
+        水上戦闘機 強風改
+        or
+        増設バルジ(中型艦) 艦本新設計 増設バルジ(中型艦)
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="B87"/>
+    </Dependency>
+  </Quest>
   <Quest Id="Bd1" Category="sortie" Type="daily">
     <Name>
       敵艦隊を撃破せよ！
