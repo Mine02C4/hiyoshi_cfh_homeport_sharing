@@ -73,15 +73,8 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
             SortId = shipInfo.SortId;
             Name = shipInfo.Name;
             ShipTypeId = shipInfo.ShipType.Id;
-            switch (shipInfo.Speed)
-            {
-                case Grabacr07.KanColleWrapper.Models.ShipSpeed.Fast:
-                    ShipSpeed = HiyoshiCfhWeb.Models.ShipSpeed.Fast;
-                    break;
-                case Grabacr07.KanColleWrapper.Models.ShipSpeed.Low:
-                    ShipSpeed = HiyoshiCfhWeb.Models.ShipSpeed.Low;
-                    break;
-            }
+            // TODO: Remove later
+            ShipSpeed = HiyoshiCfhWeb.Models.ShipSpeed.Fast;
             NextRemodelingLevel = shipInfo.NextRemodelingLevel;
             Kana = shipInfo.Kana;
             MaxHp = shipInfo.HP;
