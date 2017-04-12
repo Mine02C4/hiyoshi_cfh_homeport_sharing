@@ -73,8 +73,6 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
             SortId = shipInfo.SortId;
             Name = shipInfo.Name;
             ShipTypeId = shipInfo.ShipType.Id;
-            // TODO: Remove later
-            ShipSpeed = HiyoshiCfhWeb.Models.ShipSpeed.Fast;
             NextRemodelingLevel = shipInfo.NextRemodelingLevel;
             Kana = shipInfo.Kana;
             MaxHp = shipInfo.HP;

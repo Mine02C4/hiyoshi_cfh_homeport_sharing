@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generation date: 2016/07/16 10:52:53
+// Generation date: 2017/04/13 0:39:45
 namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
 {
     /// <summary>
@@ -1141,7 +1141,6 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
         /// </summary>
         /// <param name="shipInfoId">Initial value of ShipInfoId.</param>
         /// <param name="sortId">Initial value of SortId.</param>
-        /// <param name="shipSpeed">Initial value of ShipSpeed.</param>
         /// <param name="maxHp">Initial value of MaxHp.</param>
         /// <param name="maxFuel">Initial value of MaxFuel.</param>
         /// <param name="maxBull">Initial value of MaxBull.</param>
@@ -1154,7 +1153,6 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
         public static ShipInfo CreateShipInfo(int shipInfoId, 
                     int sortId, 
-                    global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.ShipSpeed shipSpeed, 
                     int maxHp, 
                     int maxFuel, 
                     int maxBull, 
@@ -1168,7 +1166,6 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
             ShipInfo shipInfo = new ShipInfo();
             shipInfo.ShipInfoId = shipInfoId;
             shipInfo.SortId = sortId;
-            shipInfo.ShipSpeed = shipSpeed;
             shipInfo.MaxHp = maxHp;
             shipInfo.MaxFuel = maxFuel;
             shipInfo.MaxBull = maxBull;
@@ -1272,29 +1269,6 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
         private global::System.Nullable<int> _ShipTypeId;
         partial void OnShipTypeIdChanging(global::System.Nullable<int> value);
         partial void OnShipTypeIdChanged();
-        /// <summary>
-        /// There are no comments for Property ShipSpeed in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("ShipSpeed")]
-        public global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.ShipSpeed ShipSpeed
-        {
-            get
-            {
-                return this._ShipSpeed;
-            }
-            set
-            {
-                this.OnShipSpeedChanging(value);
-                this._ShipSpeed = value;
-                this.OnShipSpeedChanged();
-                this.OnPropertyChanged("ShipSpeed");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.4.0")]
-        private global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.ShipSpeed _ShipSpeed;
-        partial void OnShipSpeedChanging(global::HiyoshiCfhClient.HiyoshiCfhWeb.Models.ShipSpeed value);
-        partial void OnShipSpeedChanged();
         /// <summary>
         /// There are no comments for Property NextRemodelingLevel in the schema.
         /// </summary>
@@ -2878,17 +2852,6 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
         }
     }
     /// <summary>
-    /// There are no comments for ShipSpeed in the schema.
-    /// </summary>
-    [global::Microsoft.OData.Client.OriginalNameAttribute("ShipSpeed")]
-    public enum ShipSpeed
-    {
-        [global::Microsoft.OData.Client.OriginalNameAttribute("Low")]
-        Low = 10,
-        [global::Microsoft.OData.Client.OriginalNameAttribute("Fast")]
-        Fast = 20
-    }
-    /// <summary>
     /// There are no comments for SlotItemType in the schema.
     /// </summary>
     [global::Microsoft.OData.Client.OriginalNameAttribute("SlotItemType")]
@@ -3516,7 +3479,6 @@ namespace HiyoshiCfhClient.Default
         <Property Name=""SortId"" Type=""Edm.Int32"" Nullable=""false"" />
         <Property Name=""Name"" Type=""Edm.String"" />
         <Property Name=""ShipTypeId"" Type=""Edm.Int32"" />
-        <Property Name=""ShipSpeed"" Type=""HiyoshiCfhWeb.Models.ShipSpeed"" Nullable=""false"" />
         <Property Name=""NextRemodelingLevel"" Type=""Edm.Int32"" />
         <Property Name=""Kana"" Type=""Edm.String"" />
         <Property Name=""MaxHp"" Type=""Edm.Int32"" Nullable=""false"" />
@@ -3598,10 +3560,6 @@ namespace HiyoshiCfhClient.Default
           <ReferentialConstraint Property=""AdmiralId"" ReferencedProperty=""AdmiralId"" />
         </NavigationProperty>
       </EntityType>
-      <EnumType Name=""ShipSpeed"">
-        <Member Name=""Low"" Value=""10"" />
-        <Member Name=""Fast"" Value=""20"" />
-      </EnumType>
       <EnumType Name=""SlotItemType"">
         <Member Name=""不明"" Value=""0"" />
         <Member Name=""艦上戦闘機"" Value=""6"" />
