@@ -1,35 +1,16 @@
 ﻿@model Tuple<HiyoshiCfhWeb.Models.ShipInfo, List<HiyoshiCfhWeb.Models.Ship>>
-
 @{
     ViewBag.Title = Model.Item1.Name;
     var shipInfo = Model.Item1;
     var ships = Model.Item2;
 }
-
 <h2>@Html.DisplayFor(model => model.Item1.ShipType.Name) @shipInfo.Name</h2>
-
 <div>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            速力
-        </dt>
-
-        <dd>
-            @if (shipInfo.ShipSpeed == HiyoshiCfhWeb.Models.ShipSpeed.Fast)
-            {
-                <text>高速</text>
-            }
-            else
-            {
-                <text>低速</text>
-            }
-        </dd>
-
-        <dt>
             次の改装レベル
         </dt>
-
         <dd>
             @if (shipInfo.NextRemodelingLevel != null)
             {
@@ -40,12 +21,9 @@
                 <text>改装完了</text>
             }
         </dd>
-
     </dl>
 </div>
-
 <h3>各母港への所属状況</h3>
-
 <table class="table">
     <tr>
         <th>
