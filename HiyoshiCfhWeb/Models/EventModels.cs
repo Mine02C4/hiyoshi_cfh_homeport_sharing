@@ -79,6 +79,18 @@ namespace HiyoshiCfhWeb.Models
                 new DateTimeOffset(2017,  2, 11, 21, 30, 0, new TimeSpan(9, 0, 0)),
                 new DateTimeOffset(2017,  2, 28, 11,  0, 0, new TimeSpan(9, 0, 0))
             ),
+            new Event(201705,
+                "出撃！北東方面 第五艦隊",
+                new List<SortieTag>
+                {
+                    new SortieTag("第五艦隊 先遣隊", Color.FromArgb(0x3C677F), 1),
+                    new SortieTag("千島方面 根拠地隊", Color.FromArgb(0xC0B812), 2),
+                    new SortieTag("連合部隊", Color.FromArgb(0x3B662A), 3),
+                    new SortieTag("逆上陸部隊", Color.FromArgb(0x906736), 4)
+                },
+                new DateTimeOffset(2017,  5,  2, 23, 30, 0, new TimeSpan(9, 0, 0)),
+                new DateTimeOffset(2017,  5, 22, 11,  0, 0, new TimeSpan(9, 0, 0))
+            ),
         };
 
         public static List<Event> Events
