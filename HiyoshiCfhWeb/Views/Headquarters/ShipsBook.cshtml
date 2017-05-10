@@ -23,9 +23,6 @@
                     改造レベル
                 </th>
                 <th>
-                    速力
-                </th>
-                <th>
                     所属状況
                 </th>
             </tr>
@@ -61,7 +58,6 @@
                         </td>
                         <td>@item.v.ShipType.Name</td>
                         <td>@item.v.NextRemodelingLevel</td>
-                        <td>@item.v.ShipSpeed</td>
                         <td>
                             @{
                                 var ships = admiral.Ships.Where(x => x.ShipInfoId == item.v.ShipInfoId);
