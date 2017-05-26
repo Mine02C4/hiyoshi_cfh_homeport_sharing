@@ -6770,47 +6770,6 @@
   </Quest>
   <Quest Id="B96" Category="sortie" Type="onetime">
     <Name>
-      鎮守府海域警戒を厳とせよ！
-    </Name>
-    <Content>
-      巡洋艦クラスを旗艦に配備、2隻以上の駆逐艦を擁する警戒艦隊を編成せよ。同警戒艦隊を以て、&lt;br&gt;鎮守府海域(南西諸島/製油所地帯沿岸/南西諸島防衛線/鎮守府近海)の警戒任務にあたれ！
-    </Content>
-    <Bonus>
-      <Fuel>
-        400
-      </Fuel>
-      <Bull>
-        400
-      </Bull>
-      <Steel>
-        400
-      </Steel>
-      <Bauxite>
-        0
-      </Bauxite>
-      <InstantBuildMaterials>
-        0
-      </InstantBuildMaterials>
-      <InstantRepairMaterials>
-        0
-      </InstantRepairMaterials>
-      <DevelopmentMaterials>
-        0
-      </DevelopmentMaterials>
-      <RenovationMaterials>
-        0
-      </RenovationMaterials>
-      <Other>
-        給糧艦「伊良湖」x2
-        特注家具職人x1
-      </Other>
-    </Bonus>
-    <Dependency>
-      <Achieve Id="B88"/>
-    </Dependency>
-  </Quest>
-  <Quest Id="B97" Category="sortie" Type="onetime">
-    <Name>
       改装攻撃型軽空母、前線展開せよ！
     </Name>
     <Content>
@@ -6848,6 +6807,47 @@
     </Bonus>
     <Dependency>
       <Achieve Id="B95"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="B97" Category="sortie" Type="onetime">
+    <Name>
+      鎮守府海域警戒を厳とせよ！
+    </Name>
+    <Content>
+      巡洋艦クラスを旗艦に配備、2隻以上の駆逐艦を擁する警戒艦隊を編成せよ。同警戒艦隊を以て、&lt;br&gt;鎮守府海域(南西諸島/製油所地帯沿岸/南西諸島防衛線/鎮守府近海)の警戒任務にあたれ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        400
+      </Fuel>
+      <Bull>
+        400
+      </Bull>
+      <Steel>
+        400
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        給糧艦「伊良湖」x2
+        特注家具職人x1
+      </Other>
+    </Bonus>
+    <Dependency>
+      <!-- TODO -->
     </Dependency>
   </Quest>
   <Quest Id="Bd1" Category="sortie" Type="daily">
