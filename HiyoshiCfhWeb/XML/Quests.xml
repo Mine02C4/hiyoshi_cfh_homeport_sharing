@@ -2930,6 +2930,47 @@
       <Achieve Id="B84"/>
     </Dependency>
   </Quest>
+  <Quest Id="A75" Category="composition" Type="onetime">
+    <Name>
+      新編「第一戦隊」を編成せよ！
+    </Name>
+    <Content>
+      編成任務：第一艦隊に新改装された長門型戦艦一番艦「長門改二」及び同二番艦「陸奥改」からなる&lt;br&gt;新編第一戦隊を配備せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        880
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        2
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        給糧艦「伊良湖」x1
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="B31"/>
+      <Achieve Id="B52"/>
+    </Dependency>
+  </Quest>
   <Quest Id="B1" Category="sortie" Type="onetime">
     <Name>
       はじめての「出撃」！
@@ -6850,6 +6891,87 @@
       <!-- TODO -->
     </Dependency>
   </Quest>
+  <Quest Id="B98" Category="sortie" Type="onetime">
+    <Name>
+      海上護衛体制の強化に努めよ！
+    </Name>
+    <Content>
+      海上護衛作戦：駆逐艦または海防艦3隻以上を含む護衛艦隊を編成し、鎮守府海域の製油所地帯沿岸、&lt;br&gt;南西諸島防衛線、鎮守府近海、鎮守府近海航路にそれぞれ展開、各海域における作戦を成功させよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        400
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        400
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        4
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        特注家具職人x1
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="Bd2"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="B99" Category="sortie" Type="onetime">
+    <Name>
+      新編「第一戦隊」、抜錨せよ！
+    </Name>
+    <Content>
+      新編「第一戦隊」出撃任務：戦艦「長門改二」を旗艦、二番艦に「陸奥改」を配備した第一艦隊で出撃！ カレー洋リランカ島沖、サーモン海域北方に展開し、同海域の敵艦隊主力を捕捉、これを撃滅せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        880
+      </Bull>
+      <Steel>
+        880
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        4
+      </RenovationMaterials>
+      <Other>
+        増設バルジ(大型艦) 艦本新設計 増設バルジ(大型艦)
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="B98"/>
+      <Achieve Id="A75"/>
+    </Dependency>
+  </Quest>
   <Quest Id="Bd1" Category="sortie" Type="daily">
     <Name>
       敵艦隊を撃破せよ！
@@ -9188,7 +9310,6 @@
       </Other>
     </Bonus>
     <Dependency>
-      <Achieve Id="D2"/>
       <Achieve Id="D6"/>
     </Dependency>
   </Quest>
@@ -9231,6 +9352,47 @@
     <Dependency>
       <Achieve Id="B88"/>
       <Achieve Id="D20"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="D22" Category="expeditions" Type="monthly">
+    <Name>
+      輸送船団護衛を強化せよ！
+    </Name>
+    <Content>
+      遠征任務：「海上護衛任務」を反復実施し、輸送船団の護衛に務めよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        1000
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        300
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        家具箱(中)x2
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="D2"/>
+      <Achieve Id="D18"/>
     </Dependency>
   </Quest>
   <Quest Id="E1" Category="supply" Type="onetime">
