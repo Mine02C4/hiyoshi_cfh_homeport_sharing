@@ -7052,8 +7052,10 @@
       </Other>
     </Bonus>
     <Dependency>
+      <Achieve Id="B45"/>
       <Achieve Id="B98"/>
       <Achieve Id="Bw5"/>
+      <Achieve Id="F25"/>
     </Dependency>
   </Quest>
   <Quest Id="B101" Category="sortie" Type="onetime">
@@ -11894,6 +11896,8 @@
       </Other>
     </Bonus>
     <Dependency>
+      <Achieve Id="A45"/>
+      <Achieve Id="F17"/>
       <Achieve Id="F53"/>
     </Dependency>
   </Quest>
@@ -11902,8 +11906,7 @@
       新型艤装の継続研究
     </Name>
     <Content>
-      工廠任務：新型艤装の開発を継続実施する。「大口径主砲」系装備x10を廃棄、鉄鋼18,000を準備せよ！
-      ※任務達成後、準備した資源は消費します。「勲章」と「新型砲熕兵装資材」の獲得選択が可能です。
+      工廠任務：新型艤装の開発を継続実施する。「大口径主砲」系装備x10を廃棄、鉄鋼18,000を準備せよ！&lt;br&gt;※任務達成後、準備した資源は消費します。「勲章」と「新型砲熕兵装資材」の獲得選択が可能です。
     </Content>
     <Bonus>
       <Fuel>
