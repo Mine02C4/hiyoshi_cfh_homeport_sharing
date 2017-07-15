@@ -3049,7 +3049,8 @@
       </Other>
     </Bonus>
     <Dependency>
-      <!-- TODO -->
+      <Achieve Id="A60"/>
+      <Achieve Id="B14"/>
     </Dependency>
   </Quest>
   <Quest Id="A78" Category="composition" Type="onetime">
@@ -3089,8 +3090,8 @@
       </Other>
     </Bonus>
     <Dependency>
+      <Achieve Id="A54"/>
       <Achieve Id="B15"/>
-      <Achieve Id="B58"/>
     </Dependency>
   </Quest>
   <Quest Id="B1" Category="sortie" Type="onetime">
@@ -8334,6 +8335,85 @@
       <Achieve Id="Bw2"/>
     </Dependency>
   </Quest>
+  <Quest Id="Bq3" Category="sortie" Type="quarterly">
+    <Name>
+      強行輸送艦隊、抜錨！
+    </Name>
+    <Content>
+      航路護衛任務：航空戦艦(または補給艦でも可)2隻を中核とした艦隊で、鎮守府近海航路における&lt;br&gt;輸送船団護衛作戦を実施。同輸送護衛作戦を2回成功させよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        1000
+      </Fuel>
+      <Bull>
+        400
+      </Bull>
+      <Steel>
+        400
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        4
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        補給物資 洋上補給x1
+      </Other>
+    </Bonus>
+    <Dependency>
+      <!-- TODO -->
+    </Dependency>
+  </Quest>
+  <Quest Id="Bq4" Category="sortie" Type="quarterly">
+    <Name>
+      前線の航空偵察を実施せよ！
+    </Name>
+    <Content>
+      偵察任務：水上機母艦1隻と軽巡2隻を中核とした偵察艦隊を、中部海域グアノ環礁沖海域に展開、航空偵察作戦「K作戦」を反復実施せよ！さらに同方面の敵艦隊を捕捉、敵戦力の撃破に務めよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        800
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        1000
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        8
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        4
+      </RenovationMaterials>
+      <Other>
+      </Other>
+    </Bonus>
+    <Dependency>
+      <!-- TODO -->
+    </Dependency>
+  </Quest>
   <Quest Id="C1" Category="practice" Type="onetime">
     <Name>
       はじめての「演習」！
@@ -9728,6 +9808,46 @@
     <Dependency>
       <Achieve Id="D22"/>
       <Achieve Id="F54"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="D24" Category="expeditions" Type="quarterly">
+    <Name>
+      海上通商航路の警戒を厳とせよ！
+    </Name>
+    <Content>
+      遠征任務：遠征任務「警備任務」「対潜警戒任務」「海上護衛任務」「強行偵察任務」&lt;br&gt;を実施し、敵の通商破壊部隊を制圧、海上通商航路の安全を確保せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        800
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        4
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        戦闘糧食x2
+      </Other>
+    </Bonus>
+    <Dependency>
+      <!-- TODO -->
     </Dependency>
   </Quest>
   <Quest Id="E1" Category="supply" Type="onetime">
@@ -12226,6 +12346,90 @@
       </RenovationMaterials>
       <Other>
         瑞雲(六三四空／熟練)
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="B102"/>
+      <Achieve Id="F7"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="F59" Category="building" Type="onetime">
+    <Name>
+      民生産業への協力を継続せよ！
+    </Name>
+    <Content>
+      工廠任務：軍需物資を放出し、民生産業への協力を継続する。「機銃」系装備x10を廃棄、鉄鋼15,000を&lt;br&gt;準備せよ！※任務達成後、準備した資源は消費します。「特注家具職人」と「勲章」の獲得選択が可能。
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        300
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        勲章x1
+        or
+        特注家具職人x1
+        戦闘糧食x2
+      </Other>
+    </Bonus>
+    <Dependency>
+      <!-- TODO -->
+    </Dependency>
+  </Quest>
+  <Quest Id="F60" Category="building" Type="onetime">
+    <Name>
+      新型戦闘糧食の試作
+    </Name>
+    <Content>
+      料理任務：手軽に食事をとることができて、なおかつ美味しく腹にがっつりたまる新型の戦闘糧食を&lt;br&gt;開発する。「戦闘糧食」x2と燃料800及びボーキサイト150を用意せよ！油入れ送気開始！調理始め！
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        100
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        戦闘糧食 戦闘糧食(特別なおにぎり)x1
       </Other>
     </Bonus>
     <Dependency>
