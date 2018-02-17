@@ -9911,7 +9911,7 @@
       給糧艦「伊良湖」の支援
     </Name>
     <Content>
-      伊良湖支援任務:軽巡二隻以上配備した第一艦隊で本日中に演習で3回「勝利」、その後、第一艦隊旗艦に戦闘糧食を2つ装備せよ！※任務達成後、同戦闘糧食は消費します。
+      伊良湖支援任務：軽巡を2隻以上配備した第一艦隊で本日中に演習で3回「勝利」、その後、&lt;br&gt;第一艦隊旗艦に戦闘糧食を二つ装備せよ！　※任務達成後、同戦闘糧食は消費します
     </Content>
     <Bonus>
       <Fuel>
@@ -13931,7 +13931,7 @@
         0
       </InstantRepairMaterials>
       <DevelopmentMaterials>
-        0
+        4
       </DevelopmentMaterials>
       <RenovationMaterials>
         0
