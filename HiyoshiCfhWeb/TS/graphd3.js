@@ -1,4 +1,4 @@
-var MonthAndYear = (function () {
+var MonthAndYear = /** @class */ (function () {
     function MonthAndYear(year, month) {
         this.year = year;
         this.month = month;
