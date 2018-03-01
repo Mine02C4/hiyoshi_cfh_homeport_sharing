@@ -12,15 +12,24 @@
     }).OrderByDescending((x) => x.Sum);
 }
 <h3>艦種毎の累積経験値</h3>
-<dl class="dl-horizontal">
-
-    @foreach (var item in st)
-    {
-        <dt>
-            @Html.ActionLink(item.Name, "ShipType", new { param = item.Name.Replace("+", "_") })
-        </dt>
-        <dd>
-            @item.Sum
-        </dd>
-    }
-</dl>
+<table class="table table-sm">
+    <thead>
+        <tr>
+            <th scope="col">艦種</th>
+            <th scope="col">累積経験値の総計</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in st)
+        {
+            <tr>
+                <th scope="row">
+                    @Html.ActionLink(item.Name, "ShipType", new { param = item.Name.Replace("+", "_") })
+                </th>
+                <td>
+                    @item.Sum
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
