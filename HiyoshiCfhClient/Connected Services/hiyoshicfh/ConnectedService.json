@@ -1,0 +1,26 @@
+﻿{
+  "ProviderId": "Microsoft.OData.ConnectedService",
+  "Version": "0.2.0",
+  "GettingStartedDocument": {
+    "Uri": "http://odata.github.io/odata.net/"
+  },
+  "ExtendedData": {
+    "EnableNamingAlias": false,
+    "IgnoreUnexpectedElementsAndAttributes": true,
+    "IncludeT4File": false,
+    "ServiceName": "hiyoshicfh",
+    "Endpoint": "https://hiyoshicfhweb.azurewebsites.net/odata/$metadata",
+    "EdmxVersion": {
+      "Major": 4,
+      "Minor": 0,
+      "Build": 0,
+      "Revision": 0,
+      "MajorRevision": 0,
+      "MinorRevision": 0
+    },
+    "GeneratedFileNamePrefix": "HiyoshiCfh",
+    "UseNameSpacePrefix": true,
+    "NamespacePrefix": "HiyoshiCfhClient",
+    "UseDataServiceCollection": true
+  }
+}
