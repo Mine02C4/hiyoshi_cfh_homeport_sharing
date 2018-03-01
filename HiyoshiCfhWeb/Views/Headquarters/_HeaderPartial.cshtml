@@ -31,7 +31,7 @@
                     {
                         if (item.AdmiralId == admiral.AdmiralId)
                         {
-                            <a href="#" class="dropdown-item disabled">@item.Name</a>
+                            <span class="dropdown-item disabled">@item.Name</span>
                         }
                         else if (ViewBag.ShipType != null)
                         {
@@ -52,7 +52,7 @@
                     {
                         if (item.Item1 == title)
                         {
-                            <a href="#" class="dropdown-item disabled">@item.Item1</a>
+                            <span class="dropdown-item disabled">@item.Item1</span>
                         }
                         else
                         {
@@ -71,7 +71,7 @@
                         {
                             if (item == ViewBag.ShipType)
                             {
-                                <a href="#" class="dropdown-item disabled">@item</a>
+                                <span class="dropdown-item disabled">@item</span>
                             }
                             else
                             {
