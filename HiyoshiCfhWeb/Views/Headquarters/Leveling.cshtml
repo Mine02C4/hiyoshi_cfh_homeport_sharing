@@ -33,7 +33,7 @@
             <tbody>
                 @foreach (var item in admiral.Ships.OrderByDescending(x => x.Level))
                 {
-                    <tr class="@(item.ShipInfo.NextRemodelingLevel == null ? null : (item.LevelForNextRemodeling <= 0 ? "info" : "warning"))">
+                    <tr class="@(item.ShipInfo.NextRemodelingLevel == null ? null : (item.LevelForNextRemodeling <= 0 ? "table-info" : "table-warning"))">
                         <td>
                             @item.ShipId
                         </td>

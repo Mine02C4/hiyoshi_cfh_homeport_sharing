@@ -40,7 +40,7 @@
 
         @foreach (var item in Model)
         {
-            <tr class="@(item.LevelForNextRemodeling <= 0 ? "info" : null)">
+            <tr class="@(item.LevelForNextRemodeling <= 0 ? "table-info" : null)">
                 <td>
                     @item.ShipId
                 </td>
