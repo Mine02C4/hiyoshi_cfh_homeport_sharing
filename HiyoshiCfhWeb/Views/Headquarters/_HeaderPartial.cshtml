@@ -15,79 +15,74 @@
     }
 }
 
-<div class="navbar navbar-default">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <span class="navbar-brand">司令部</span>
-        </div>
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
-                       role="button" aria-haspopup="true" aria-expanded="false">@admiral.Name<span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        @foreach (var item in admirals)
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <span class="navbar-brand">司令部</span>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"
+                   role="button" aria-haspopup="true" aria-expanded="false">@admiral.Name<span class="caret"></span></a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    @foreach (var item in admirals)
+                    {
+                        if (item.AdmiralId == admiral.AdmiralId)
                         {
-                            if (item.AdmiralId == admiral.AdmiralId)
+                            <a href="#" class="dropdown-item disabled">@item.Name</a>
+                        }
+                        else if (ViewBag.ShipType != null)
+                        {
+                            @Html.ActionLink(item.Name, null, new { id = item.Name, param = ViewBag.ShipType.Replace("+", "_") }, new { @class = "dropdown-item" })
+                        }
+                        else
+                        {
+                            @Html.ActionLink(item.Name, null, new { id = item.Name }, new { @class = "dropdown-item" })
+                        }
+                    }
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"
+                   role="button" aria-haspopup="true" aria-expanded="false">@title<span class="caret"></span></a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    @foreach (var item in subPages)
+                    {
+                        if (item.Item1 == title)
+                        {
+                            <a href="#" class="dropdown-item disabled">@item.Item1</a>
+                        }
+                        else
+                        {
+                            @Html.ActionLink(item.Item1, item.Item2, new { id = admiral.Name }, new { @class = "dropdown-item" })
+                        }
+                    }
+                </div>
+            </li>
+            @if (ViewBag.ShipType != null)
+            {
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"
+                       role="button" aria-haspopup="true" aria-expanded="false">@ViewBag.ShipType<span class="caret"></span></a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        @foreach (var item in shipTypes)
+                        {
+                            if (item == ViewBag.ShipType)
                             {
-                                <li class="disabled"><a href="#">@item.Name</a></li>
-                            }
-                            else if (ViewBag.ShipType != null)
-                            {
-                                <li>@Html.ActionLink(item.Name, null, new { id = item.Name, param = ViewBag.ShipType.Replace("+", "_") })</li>
+                                <a href="#" class="dropdown-item disabled">@item</a>
                             }
                             else
                             {
-                                <li>@Html.ActionLink(item.Name, null, new { id = item.Name })</li>
+                                @Html.ActionLink(item, null, new { id = admiral.Name, param = item.Replace("+", "_") }, new { @class = "dropdown-item" })
                             }
                         }
-                    </ul>
+                    </div>
                 </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
-                       role="button" aria-haspopup="true" aria-expanded="false">@title<span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        @foreach (var item in subPages)
-                        {
-                            if (item.Item1 == title)
-                            {
-                                <li class="disabled"><a href="#">@item.Item1</a></li>
-                            }
-                            else
-                            {
-                                <li>@Html.ActionLink(item.Item1, item.Item2, new { id = admiral.Name })</li>
-                            }
-                        }
-                    </ul>
-                </li>
-                @if (ViewBag.ShipType != null)
-                {
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"
-                           role="button" aria-haspopup="true" aria-expanded="false">@ViewBag.ShipType<span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            @foreach (var item in shipTypes)
-                            {
-                                if (item == ViewBag.ShipType)
-                                {
-                                    <li class="disabled"><a href="#">@item</a></li>
-                                }
-                                else
-                                {
-                                    <li>@Html.ActionLink(item, null, new { id = admiral.Name, param = item.Replace("+", "_") })</li>
-                                }
-                            }
-                        </ul>
-                    </li>
-                }
-            </ul>
-        </div>
+            }
+        </ul>
     </div>
-</div>
+</nav>
+
 <h2>@admiral.Name 提督 - @ViewBag.Title</h2>
