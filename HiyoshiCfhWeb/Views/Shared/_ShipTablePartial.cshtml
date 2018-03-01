@@ -74,7 +74,7 @@
                 </td>
                 <td>
                     @{var percentHp = (int)(item.Hp * 100.0 / Math.Max(item.ShipInfo.MaxHp, item.MaxHp));}
-                    <div class="progress" style="margin-bottom: 0; width: 100px; float: left">
+                    <div class="progress" style="margin-bottom: 0; width: 100px; float: left; height: 20px;">
                         <div class="progress-bar" role="progressbar"
                              aria-valuenow="@percentHp"
                              aria-valuemin="0" aria-valuemax="100" style="width: @percentHp%;">
@@ -85,8 +85,8 @@
                 </td>
                 <td>
                     @{var percentFuel = (int)(item.Fuel * 100.0 / item.ShipInfo.MaxFuel);}
-                    <div class="progress " style="margin-bottom: 0; width: 100px; float: left">
-                        <div class="progress-bar progress-bar-success" role="progressbar"
+                    <div class="progress " style="margin-bottom: 0; width: 100px; float: left; height: 20px;">
+                        <div class="progress-bar bg-success" role="progressbar"
                              aria-valuenow="@percentFuel"
                              aria-valuemin="0" aria-valuemax="100" style="width: @percentFuel%;">
                             @percentFuel%
@@ -96,8 +96,8 @@
                 </td>
                 <td>
                     @{var percentBull = (int)(item.Bull * 100.0 / item.ShipInfo.MaxBull);}
-                    <div class="progress" style="margin-bottom: 0; width: 100px; float: left">
-                        <div class="progress-bar progress-bar-warning" role="progressbar"
+                    <div class="progress" style="margin-bottom: 0; width: 100px; float: left; height: 20px;">
+                        <div class="progress-bar bg-warning" role="progressbar"
                              aria-valuenow="@percentBull"
                              aria-valuemin="0" aria-valuemax="100" style="width: @percentBull%;">
                             @percentBull%
@@ -106,7 +106,7 @@
                     @(item.Bull)/@item.ShipInfo.MaxBull
                 </td>
             </tr>
-                        }
+        }
 
     </table>
 </div>
