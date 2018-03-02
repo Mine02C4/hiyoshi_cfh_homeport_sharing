@@ -24,13 +24,13 @@
 
 @Html.Partial("_HeaderPartial", admiral)
 
-<p><a class="btn btn-default" href="~/XML/Quests.xml">任務XML</a></p>
+<p><a class="btn btn-outline-secondary" href="~/XML/Quests.xml">任務XML</a></p>
 
 @if (unmatchedQuests.Count() > 0)
 {
     <h3>任務マスターと対応できなかった任務</h3>
 
-    <table class="table">
+    <table class="table table-sm">
         <tr>
             <th>
                 カテゴリ
@@ -93,7 +93,7 @@
     <div class="col-md-4">
         <h3>デイリー</h3>
         <h4>出撃</h4>
-        <table class="table quest-table">
+        <table class="table table-sm quest-table">
             @foreach (var item in questMaster.Quest
                 .Where(x => x.Type == HiyoshiCfhWeb.XML.Type.daily && x.Category == Category.sortie))
             {
@@ -108,7 +108,7 @@
             }
         </table>
         <h4>演習</h4>
-        <table class="table quest-table">
+        <table class="table table-sm quest-table">
             @foreach (var item in questMaster.Quest
                 .Where(x => x.Type == HiyoshiCfhWeb.XML.Type.daily && x.Category == Category.practice))
             {
@@ -123,7 +123,7 @@
             }
         </table>
         <h4>遠征</h4>
-        <table class="table quest-table">
+        <table class="table table-sm quest-table">
             @foreach (var item in questMaster.Quest
                 .Where(x => x.Type == HiyoshiCfhWeb.XML.Type.daily && x.Category == Category.expeditions))
             {
@@ -138,7 +138,7 @@
             }
         </table>
         <h4>補給/入渠</h4>
-        <table class="table quest-table">
+        <table class="table table-sm quest-table">
             @foreach (var item in questMaster.Quest
                 .Where(x => x.Type == HiyoshiCfhWeb.XML.Type.daily && x.Category == Category.supply))
             {
@@ -153,7 +153,7 @@
             }
         </table>
         <h4>工廠</h4>
-        <table class="table quest-table">
+        <table class="table table-sm quest-table">
             @foreach (var item in questMaster.Quest
                 .Where(x => x.Type == HiyoshiCfhWeb.XML.Type.daily && x.Category == Category.building))
             {
@@ -168,7 +168,7 @@
             }
         </table>
         <h4>改装</h4>
-        <table class="table quest-table">
+        <table class="table table-sm quest-table">
             @foreach (var item in questMaster.Quest
                 .Where(x => x.Type == HiyoshiCfhWeb.XML.Type.daily && x.Category == Category.remodelling))
             {
@@ -186,7 +186,7 @@
     <div class="col-md-4">
         <h3>ウィークリー</h3>
         <h4>出撃</h4>
-        <table class="table quest-table">
+        <table class="table table-sm quest-table">
             @foreach (var item in questMaster.Quest
                 .Where(x => x.Type == HiyoshiCfhWeb.XML.Type.weekly && x.Category == Category.sortie))
             {
@@ -201,7 +201,7 @@
             }
         </table>
         <h4>演習</h4>
-        <table class="table quest-table">
+        <table class="table table-sm quest-table">
             @foreach (var item in questMaster.Quest
                 .Where(x => x.Type == HiyoshiCfhWeb.XML.Type.weekly && x.Category == Category.practice))
             {
@@ -216,7 +216,7 @@
             }
         </table>
         <h4>遠征</h4>
-        <table class="table quest-table">
+        <table class="table table-sm quest-table">
             @foreach (var item in questMaster.Quest
                 .Where(x => x.Type == HiyoshiCfhWeb.XML.Type.weekly && x.Category == Category.expeditions))
             {
@@ -231,7 +231,7 @@
             }
         </table>
         <h4>工廠</h4>
-        <table class="table quest-table">
+        <table class="table table-sm quest-table">
             @foreach (var item in questMaster.Quest
                 .Where(x => x.Type == HiyoshiCfhWeb.XML.Type.weekly && x.Category == Category.building))
             {
@@ -246,7 +246,7 @@
             }
         </table>
         <h4>改装</h4>
-        <table class="table quest-table">
+        <table class="table table-sm quest-table">
             @foreach (var item in questMaster.Quest
                 .Where(x => x.Type == HiyoshiCfhWeb.XML.Type.weekly && x.Category == Category.remodelling))
             {
@@ -264,7 +264,7 @@
     <div class="col-md-4">
         <h3>マンスリー</h3>
         <h4>出撃</h4>
-        <table class="table quest-table">
+        <table class="table table-sm quest-table">
             @foreach (var item in questMaster.Quest
                 .Where(x => x.Type == HiyoshiCfhWeb.XML.Type.monthly && x.Category == Category.sortie))
             {
@@ -279,7 +279,7 @@
             }
         </table>
         <h4>演習</h4>
-        <table class="table quest-table">
+        <table class="table table-sm quest-table">
             @foreach (var item in questMaster.Quest
                 .Where(x => x.Type == HiyoshiCfhWeb.XML.Type.monthly && x.Category == Category.practice))
             {
@@ -294,7 +294,7 @@
             }
         </table>
         <h4>遠征</h4>
-        <table class="table quest-table">
+        <table class="table table-sm quest-table">
             @foreach (var item in questMaster.Quest
                 .Where(x => x.Type == HiyoshiCfhWeb.XML.Type.monthly && x.Category == Category.expeditions))
             {
@@ -309,7 +309,7 @@
             }
         </table>
         <h4>工廠</h4>
-        <table class="table quest-table">
+        <table class="table table-sm quest-table">
             @foreach (var item in questMaster.Quest
                 .Where(x => x.Type == HiyoshiCfhWeb.XML.Type.monthly && x.Category == Category.building))
             {
@@ -325,7 +325,7 @@
         </table>
         <h3>クォータリー</h3>
         <h4>出撃</h4>
-        <table class="table quest-table">
+        <table class="table table-sm quest-table">
             @foreach (var item in questMaster.Quest
                 .Where(x => x.Type == HiyoshiCfhWeb.XML.Type.quarterly && x.Category == Category.sortie))
             {
@@ -340,7 +340,7 @@
             }
         </table>
         <h4>遠征</h4>
-        <table class="table quest-table">
+        <table class="table table-sm quest-table">
             @foreach (var item in questMaster.Quest
                 .Where(x => x.Type == HiyoshiCfhWeb.XML.Type.quarterly && x.Category == Category.expeditions))
             {
@@ -355,7 +355,7 @@
             }
         </table>
         <h4>工廠</h4>
-        <table class="table quest-table">
+        <table class="table table-sm quest-table">
             @foreach (var item in questMaster.Quest
                 .Where(x => x.Type == HiyoshiCfhWeb.XML.Type.quarterly && x.Category == Category.building))
             {
@@ -371,7 +371,7 @@
         </table>
         <h3>その他</h3>
         <h4>出撃</h4>
-        <table class="table quest-table">
+        <table class="table table-sm quest-table">
             @foreach (var item in questMaster.Quest
                 .Where(x => x.Type == HiyoshiCfhWeb.XML.Type.other && x.Category == Category.sortie))
             {
@@ -392,7 +392,7 @@
 <div class="row">
     <div class="col-md-4">
         <h4>編成</h4>
-        <table class="table quest-table">
+        <table class="table table-sm quest-table">
             @foreach (var item in questMaster.Quest
                 .Where(x => x.Category == Category.composition))
             {
@@ -409,7 +409,7 @@
     </div>
     <div class="col-md-4">
         <h4>出撃</h4>
-        <table class="table quest-table">
+        <table class="table table-sm quest-table">
             @foreach (var item in questMaster.Quest
                 .Where(x => x.Type == HiyoshiCfhWeb.XML.Type.onetime && x.Category == Category.sortie))
             {
@@ -426,7 +426,7 @@
     </div>
     <div class="col-md-4">
         <h4>演習</h4>
-        <table class="table quest-table">
+        <table class="table table-sm quest-table">
             @foreach (var item in questMaster.Quest
                 .Where(x => x.Type == HiyoshiCfhWeb.XML.Type.onetime && x.Category == Category.practice))
             {
@@ -441,7 +441,7 @@
             }
         </table>
         <h4>遠征</h4>
-        <table class="table quest-table">
+        <table class="table table-sm quest-table">
             @foreach (var item in questMaster.Quest
                 .Where(x => x.Type == HiyoshiCfhWeb.XML.Type.onetime && x.Category == Category.expeditions))
             {
@@ -456,7 +456,7 @@
             }
         </table>
         <h4>補給/入渠</h4>
-        <table class="table quest-table">
+        <table class="table table-sm quest-table">
             @foreach (var item in questMaster.Quest
                 .Where(x => x.Type == HiyoshiCfhWeb.XML.Type.onetime && x.Category == Category.supply))
             {
@@ -471,7 +471,7 @@
             }
         </table>
         <h4>工廠</h4>
-        <table class="table quest-table">
+        <table class="table table-sm quest-table">
             @foreach (var item in questMaster.Quest
                 .Where(x => x.Type == HiyoshiCfhWeb.XML.Type.onetime && x.Category == Category.building))
             {
@@ -486,7 +486,7 @@
             }
         </table>
         <h4>改装</h4>
-        <table class="table quest-table">
+        <table class="table table-sm quest-table">
             @foreach (var item in questMaster.Quest
                 .Where(x => x.Type == HiyoshiCfhWeb.XML.Type.onetime && x.Category == Category.remodelling))
             {
