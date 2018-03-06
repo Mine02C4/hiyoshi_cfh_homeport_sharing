@@ -351,6 +351,13 @@ namespace HiyoshiCfhClient.ViewModels
             }
         }
 
+        public void ResetClient()
+        {
+            OutDebugConsole("ResetClient");
+            Client = null;
+            PrepareClient();
+        }
+
         void InitClient()
         {
             if (CheckToken())
