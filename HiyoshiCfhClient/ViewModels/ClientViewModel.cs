@@ -90,6 +90,7 @@ namespace HiyoshiCfhClient.ViewModels
         PropertyChangedEventListener ItemyardListener = null;
         Client Client = null;
         QuestsTracker QuestsTracker;
+        IDisposable QuestSubscription;
 
         public ClientViewModel()
         {
@@ -165,7 +166,7 @@ namespace HiyoshiCfhClient.ViewModels
                 #endregion
                 #region 任務の取得検知
                 var proxy = KanColleClient.Current.Proxy;
-                proxy.api_get_member_questlist
+                QuestSubscription = proxy.api_get_member_questlist
                     .Select(QuestsTracker.QuestListSerialize)
                     .Where(x => x != null && x.api_count >= 0)
                     .Subscribe(async x => { await this.HandleQuests(x); });
@@ -184,6 +185,8 @@ namespace HiyoshiCfhClient.ViewModels
             OrganizationListener = null;
             ItemyardListener.Dispose();
             ItemyardListener = null;
+            KanColleClient.Current.Homeport.Materials.PropertyChanged -= MaterialsChanged;
+            QuestSubscription.Dispose();
             IsInited = false;
             InitHandlers();
         }
