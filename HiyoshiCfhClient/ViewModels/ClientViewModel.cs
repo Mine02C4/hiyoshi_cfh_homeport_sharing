@@ -114,6 +114,7 @@ namespace HiyoshiCfhClient.ViewModels
         {
             if (OrganizationListener == null || ItemyardListener == null)
             {
+                OutDebugConsole("InitHandlers");
                 #region 艦娘の変更検知
                 OrganizationListener = new PropertyChangedEventListener(KanColleClient.Current.Homeport.Organization);
                 OrganizationListener.RegisterHandler(() => KanColleClient.Current.Homeport.Organization.Ships,
@@ -174,6 +175,17 @@ namespace HiyoshiCfhClient.ViewModels
                 #endregion
                 IsInited = true;
             }
+        }
+
+        public void ResetHandlers()
+        {
+            OutDebugConsole("ResetHandlers");
+            OrganizationListener.Dispose();
+            OrganizationListener = null;
+            ItemyardListener.Dispose();
+            ItemyardListener = null;
+            IsInited = false;
+            InitHandlers();
         }
 
         private async void MaterialsChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)

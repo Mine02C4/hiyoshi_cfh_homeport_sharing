@@ -62,17 +62,24 @@
                     <TextBlock Text="{Binding AccessToken}" VerticalAlignment="Center" Margin="0" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <Button x:Name="ClearConsoleButton" Content="コンソールのクリア" Margin="10,0">
+                    <Button x:Name="ClearConsoleButton" Content="コンソールのクリア" Margin="10,0,0,0">
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Click">
                                 <ei:CallMethodAction TargetObject="{Binding}" MethodName="ClearConsole"/>
                             </i:EventTrigger>
                         </i:Interaction.Triggers>
                     </Button>
-                    <Button x:Name="WrackTokenButton" Content="トークンを破壊">
+                    <Button x:Name="WrackTokenButton" Content="トークンを破壊" Margin="10,0,0,0">
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Click">
                                 <ei:CallMethodAction TargetObject="{Binding}" MethodName="WrackToken"/>
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                    </Button>
+                    <Button x:Name="ResetHandlersButton" Content="Reset handler" Margin="10,0,0,0">
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="Click">
+                                <ei:CallMethodAction TargetObject="{Binding}" MethodName="ResetHandlers"/>
                             </i:EventTrigger>
                         </i:Interaction.Triggers>
                     </Button>
