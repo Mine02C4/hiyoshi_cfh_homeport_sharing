@@ -3,8 +3,8 @@ using Grabacr07.KanColleWrapper.Models.Raw;
 using HiyoshiCfhClient.Models;
 using HiyoshiCfhClient.Utils;
 using Livet;
-using Livet.EventListeners;
 using Livet.Messaging;
+using StatefulModel.EventListeners;
 using System;
 using System.IO;
 using System.Reactive.Linq;
@@ -100,7 +100,7 @@ namespace HiyoshiCfhClient.ViewModels
             TokenType = Settings.Current.TokenType;
             EnableAutoUpdate = true;
             var kccListener = new PropertyChangedEventListener(KanColleClient.Current);
-            kccListener.RegisterHandler(() => KanColleClient.Current.IsStarted, (_, __) =>
+            kccListener.RegisterHandler("IsStarted", (_, __) =>
             {
                 if (!IsInited && KanColleClient.Current.IsStarted)
                 {
@@ -117,7 +117,7 @@ namespace HiyoshiCfhClient.ViewModels
                 OutDebugConsole("InitHandlers");
                 #region 艦娘の変更検知
                 OrganizationListener = new PropertyChangedEventListener(KanColleClient.Current.Homeport.Organization);
-                OrganizationListener.RegisterHandler(() => KanColleClient.Current.Homeport.Organization.Ships,
+                OrganizationListener.RegisterHandler("Ships",
                 async (s, h) =>
                 {
                     try
@@ -144,7 +144,7 @@ namespace HiyoshiCfhClient.ViewModels
                 #endregion
                 #region 装備の変更検知
                 ItemyardListener = new PropertyChangedEventListener(KanColleClient.Current.Homeport.Itemyard);
-                ItemyardListener.RegisterHandler(() => KanColleClient.Current.Homeport.Itemyard.SlotItems,
+                ItemyardListener.RegisterHandler("SlotItems",
                 async (s, h) =>
                 {
                     try
