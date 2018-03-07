@@ -104,6 +104,7 @@ namespace HiyoshiCfhClient
                 try
                 {
                     Context.SaveChanges();
+                    DetachAll();
                 }
                 catch (DataServiceRequestException ex)
                 {
@@ -153,6 +154,7 @@ namespace HiyoshiCfhClient
             try
             {
                 Context.SaveChanges();
+                DetachAll();
             }
             catch (DataServiceRequestException ex)
             {
@@ -188,6 +190,7 @@ namespace HiyoshiCfhClient
                     }
                 }
                 Context.SaveChanges();
+                DetachAll();
             }
             catch (Exception ex)
             {
@@ -205,6 +208,7 @@ namespace HiyoshiCfhClient
                     (x, y) => x.Id == y.ShipInfoId, x => new WebShipInfo(x),
                     x => Context.AddToShipInfoes(x));
                 Context.SaveChanges();
+                DetachAll();
             }
             catch (Exception ex)
             {
@@ -222,6 +226,7 @@ namespace HiyoshiCfhClient
                     (x, y) => x.Id == y.SlotItemInfoId, x => new WebSlotItemInfo(x),
                     x => Context.AddToSlotItemInfoes(x));
                 Context.SaveChanges();
+                DetachAll();
             }
             catch (Exception ex)
             {
@@ -251,6 +256,7 @@ namespace HiyoshiCfhClient
                         );
                         OutDebugConsole("Saving ship data");
                         Context.SaveChanges();
+                        DetachAll();
                         OutDebugConsole("Saved ship data");
                     }
                     catch (DataServiceRequestException ex)
@@ -289,6 +295,7 @@ namespace HiyoshiCfhClient
                         );
                         OutDebugConsole("Saving SlotItem data");
                         Context.SaveChanges();
+                        DetachAll();
                         OutDebugConsole("Saved SlotItem data");
                     }
                     catch (DataServiceRequestException ex)
@@ -325,11 +332,8 @@ namespace HiyoshiCfhClient
                     );
                     OutDebugConsole("Saving quest data");
                     Context.SaveChanges();
+                    DetachAll();
                     OutDebugConsole("Saved quest data");
-                    foreach (var quest in quests)
-                    {
-                        Context.Detach(quest);
-                    }
                 }
                 catch (DataServiceRequestException ex)
                 {
@@ -354,6 +358,7 @@ namespace HiyoshiCfhClient
                     record.AdmiralId = Admiral.AdmiralId;
                     Context.AddToMaterialRecords(record);
                     Context.SaveChanges();
+                    DetachAll();
                 }
                 catch (DataServiceRequestException ex)
                 {
@@ -416,6 +421,19 @@ namespace HiyoshiCfhClient
                     OutDebugConsole("Add: " + local.ToString());
                     addOData(createOData(local));
                 }
+            }
+        }
+
+        void DetachAll()
+        {
+            foreach (var entity in Context.Entities.ToList())
+            {
+                Context.Detach(entity.Entity);
+            }
+
+            foreach (var link in Context.Links.ToList())
+            {
+                Context.DetachLink(link.Source, link.SourceProperty, link.Target);
             }
         }
     }
