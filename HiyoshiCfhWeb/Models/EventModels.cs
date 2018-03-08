@@ -91,6 +91,20 @@ namespace HiyoshiCfhWeb.Models
                 new DateTimeOffset(2017,  5,  2, 23, 30, 0, new TimeSpan(9, 0, 0)),
                 new DateTimeOffset(2017,  5, 22, 11,  0, 0, new TimeSpan(9, 0, 0))
             ),
+            // 2017年下半期のデータは未追加
+            new Event(201802,
+                "捷号決戦！邀撃、レイテ沖海戦(後篇)",
+                new List<SortieTag>
+                {
+                    new SortieTag("警戒部隊", Color.Gray, 1),
+                    new SortieTag("栗田艦隊", Color.FromArgb(0x3B662A), 2),
+                    new SortieTag("西村艦隊", Color.FromArgb(0xC0B812), 3),
+                    new SortieTag("小沢艦隊", Color.FromArgb(0x3C677F), 4),
+                    new SortieTag("志摩艦隊", Color.Purple, 5)
+                },
+                new DateTimeOffset(2018,  2, 17,  3,  0, 0, new TimeSpan(9, 0, 0)),
+                new DateTimeOffset(2018,  3, 23, 11,  0, 0, new TimeSpan(9, 0, 0))
+            ),
         };
 
         public static List<Event> Events
