@@ -48,9 +48,10 @@ namespace HiyoshiCfhClient
             _DebugConsole = debugConsole;
         }
 
-        private void ResetContext()
+        internal void ResetContext()
         {
             Context = new Container(new Uri("https://hiyoshicfhweb.azurewebsites.net/odata"));
+            GC.Collect();
             if (TokenType != null && AccessToken != null)
             {
                 Context.SendingRequest2 += (sender, eventArgs) =>
