@@ -12,7 +12,7 @@
             @if (User.IsInRole("Admin"))
             {
                 <li class="nav-item">
-                    @Html.ActionLink("設定", "Index", "Configuration", htmlAttributes: new { @class = "nav-link" })
+                    @Html.ActionLink("設定", "Index", "Configuration", null, htmlAttributes: new { @class = "nav-link" })
                 </li>
             }
             <li class="nav-item"><a href="javascript:document.getElementById('logoutForm').submit()" class="nav-link">ログオフ</a></li>
