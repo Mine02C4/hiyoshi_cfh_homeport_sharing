@@ -3393,6 +3393,43 @@
       <Achieve Id="B37"/>
     </Dependency>
   </Quest>
+  <Quest Id="A86" Category="composition" Type="onetime">
+    <Name>
+      改装「第十七駆逐隊」、再編始め！
+    </Name>
+    <Content>
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        3
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+      </Other>
+    </Bonus>
+    <Dependency>
+    </Dependency>
+  </Quest>
   <Quest Id="B1" Category="sortie" Type="onetime">
     <Name>
       はじめての「出撃」！
@@ -8065,6 +8102,43 @@
       <Achieve Id="B23"/>
     </Dependency>
   </Quest>
+  <Quest Id="B115" Category="sortie" Type="onetime">
+    <Name>
+      精鋭駆逐隊、獅子奮迅！
+    </Name>
+    <Content>
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+      </Other>
+    </Bonus>
+    <Dependency>
+    </Dependency>
+  </Quest>
   <Quest Id="Bd1" Category="sortie" Type="daily">
     <Name>
       敵艦隊を撃破せよ！
@@ -9989,6 +10063,45 @@
     </Bonus>
     <Dependency>
       <Achieve Id="A85"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="C18" Category="practice" Type="onetime">
+    <Name>
+      駆逐隊、特訓始め！
+    </Name>
+    <Content>
+      駆逐隊演習任務：駆逐艦4隻で編成される駆逐隊。この駆逐隊を含む艦隊を編成。&lt;br&gt;特訓を開始する！同艦隊で本日中に演習にて4回以上勝利せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        100
+      </Fuel>
+      <Bull>
+        100
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="Bd2"/>
     </Dependency>
   </Quest>
   <Quest Id="D1" Category="expeditions" Type="onetime">
@@ -13078,6 +13191,7 @@
     </Bonus>
     <Dependency>
       <Achieve Id="C3"/>
+      <Achieve Id="D21"/>
       <Achieve Id="F45"/>
     </Dependency>
   </Quest>
@@ -13160,6 +13274,7 @@
     </Bonus>
     <Dependency>
       <Achieve Id="F4"/>
+      <Achieve Id="F44"/>
     </Dependency>
   </Quest>
   <Quest Id="F49" Category="building" Type="onetime">
@@ -13365,6 +13480,7 @@
     </Bonus>
     <Dependency>
       <Achieve Id="F7"/>
+      <Achieve Id="F11"/>
     </Dependency>
   </Quest>
   <Quest Id="F54" Category="building" Type="onetime">
@@ -13406,7 +13522,6 @@
       </Other>
     </Bonus>
     <Dependency>
-      <Achieve Id="A45"/>
       <Achieve Id="F17"/>
       <Achieve Id="F53"/>
     </Dependency>
@@ -13943,7 +14058,7 @@
       </Other>
     </Bonus>
     <Dependency>
-      <!-- TODO -->
+      <Achieve Id="F66"/>
     </Dependency>
   </Quest>
   <Quest Id="F68" Category="building" Type="weekly">
@@ -14026,7 +14141,6 @@
     </Dependency>
   </Quest>
   <Quest Id="F70" Category="building" Type="quarterly">
-    <!-- TODO: quarterly ? -->
     <Name>
       主力艦上戦闘機の更新
     </Name>
@@ -14067,7 +14181,6 @@
     </Bonus>
     <Dependency>
       <Achieve Id="Bd2"/>
-      <Achieve Id="F68"/>
     </Dependency>
   </Quest>
   <Quest Id="F71" Category="building" Type="onetime">
@@ -14111,6 +14224,47 @@
     </Bonus>
     <Dependency>
       <Achieve Id="F5"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="F72" Category="building" Type="quarterly">
+    <Name>
+      対空兵装の整備拡充
+    </Name>
+    <Content>
+      対空兵装の整備拡充を継続実施する!「機銃」系装備x4、「電探」系装備x4を廃棄、ボーキサイト1,500を準備せよ!※任務達成後、準備した資源は消費します。
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        200
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <!-- TODO -->
+      <Other>
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="F5"/>
+      <Achieve Id="F71"/>
     </Dependency>
   </Quest>
   <Quest Id="G1" Category="remodelling" Type="onetime">
