@@ -3398,16 +3398,17 @@
       改装「第十七駆逐隊」、再編始め！
     </Name>
     <Content>
+      改装駆逐隊編成任務：改装した陽炎型駆逐艦「浦風改」「谷風改」、そして対空戦闘の激化に備え、&lt;br&gt;対空兵装を軸に大幅強化改装した「磯風乙改」「浜風乙改」による「第十七駆逐隊」を再編せよ！
     </Content>
     <Bonus>
       <Fuel>
-        0
+        170
       </Fuel>
       <Bull>
-        0
+        170
       </Bull>
       <Steel>
-        0
+        170
       </Steel>
       <Bauxite>
         0
@@ -3416,7 +3417,7 @@
         0
       </InstantBuildMaterials>
       <InstantRepairMaterials>
-        3
+        0
       </InstantRepairMaterials>
       <DevelopmentMaterials>
         0
@@ -8107,13 +8108,14 @@
       精鋭駆逐隊、獅子奮迅！
     </Name>
     <Content>
+      十分な装備と練度を誇る駆逐艦4隻からなる精鋭駆逐隊を含む艦隊を編成。鎮守府近海航路、&lt;br&gt;東部オリョール海、北方キス島沖、西方カレー洋に投入、各戦線の作戦展開を成功させよ！
     </Content>
     <Bonus>
       <Fuel>
-        0
+        480
       </Fuel>
       <Bull>
-        0
+        480
       </Bull>
       <Steel>
         0
@@ -10089,7 +10091,7 @@
         0
       </InstantBuildMaterials>
       <InstantRepairMaterials>
-        0
+        3
       </InstantRepairMaterials>
       <DevelopmentMaterials>
         0
@@ -10098,6 +10100,9 @@
         0
       </RenovationMaterials>
       <Other>
+        改修資材x2
+        開発資材x4
+        よりいずれか一つ
       </Other>
     </Bonus>
     <Dependency>
@@ -14231,7 +14236,7 @@
       対空兵装の整備拡充
     </Name>
     <Content>
-      対空兵装の整備拡充を継続実施する!「機銃」系装備x4、「電探」系装備x4を廃棄、ボーキサイト1,500を準備せよ!※任務達成後、準備した資源は消費します。
+      対空兵装の整備拡充を継続実施する！「機銃」系装備x4、「電探」系装備x4を廃棄、&lt;br&gt;ボーキサイト1,500を準備せよ！　※任務達成後、準備した資源は消費します。
     </Content>
     <Bonus>
       <Fuel>
@@ -14258,8 +14263,13 @@
       <RenovationMaterials>
         0
       </RenovationMaterials>
-      <!-- TODO -->
       <Other>
+        小口径主砲 10cm連装高角砲x2
+        対空機銃 12cm30連装噴進砲x2
+        よりいずれか一つ
+        副砲8cm高角砲x2
+        開発資材x6
+        よりいずれか一つ
       </Other>
     </Bonus>
     <Dependency>
