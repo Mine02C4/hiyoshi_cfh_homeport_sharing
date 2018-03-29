@@ -3426,9 +3426,13 @@
         0
       </RenovationMaterials>
       <Other>
+        給糧艦「伊良湖」x1
+        補強増設x1
+        任務達成ボイス有
       </Other>
     </Bonus>
     <Dependency>
+      <Achieve Id="F72"/>
     </Dependency>
   </Quest>
   <Quest Id="B1" Category="sortie" Type="onetime">
@@ -8136,9 +8140,17 @@
         0
       </RenovationMaterials>
       <Other>
+        特注家具職人x1
+        新型砲熕兵装資材x1
+        よりいずれか一つ
+        戦闘詳報x1
+        勲章x1
+        よりいずれか一つ
       </Other>
     </Bonus>
     <Dependency>
+      <Achieve Id="C18"/>
+      <Achieve Id="F72"/>
     </Dependency>
   </Quest>
   <Quest Id="Bd1" Category="sortie" Type="daily">
