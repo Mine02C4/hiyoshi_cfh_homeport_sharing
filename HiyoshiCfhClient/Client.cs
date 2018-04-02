@@ -52,7 +52,7 @@ namespace HiyoshiCfhClient
         {
             Context = new Container(new Uri("https://hiyoshicfhweb.azurewebsites.net/odata"));
             GC.Collect();
-            Context.MergeOption = MergeOption.NoTracking;
+            Context.MergeOption = MergeOption.PreserveChanges;
             if (TokenType != null && AccessToken != null)
             {
                 Context.SendingRequest2 += (sender, eventArgs) =>
