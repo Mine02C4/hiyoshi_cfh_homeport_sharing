@@ -3,8 +3,8 @@ using Grabacr07.KanColleWrapper.Models.Raw;
 using HiyoshiCfhClient.Models;
 using HiyoshiCfhClient.Utils;
 using Livet;
-using Livet.EventListeners;
 using Livet.Messaging;
+using StatefulModel.EventListeners;
 using System;
 using System.IO;
 using System.Reactive.Linq;
@@ -90,6 +90,7 @@ namespace HiyoshiCfhClient.ViewModels
         PropertyChangedEventListener ItemyardListener = null;
         Client Client = null;
         QuestsTracker QuestsTracker;
+        IDisposable QuestSubscription;
 
         public ClientViewModel()
         {
@@ -100,7 +101,7 @@ namespace HiyoshiCfhClient.ViewModels
             TokenType = Settings.Current.TokenType;
             EnableAutoUpdate = true;
             var kccListener = new PropertyChangedEventListener(KanColleClient.Current);
-            kccListener.RegisterHandler(() => KanColleClient.Current.IsStarted, (_, __) =>
+            kccListener.RegisterHandler("IsStarted", (_, __) =>
             {
                 if (!IsInited && KanColleClient.Current.IsStarted)
                 {
@@ -114,9 +115,10 @@ namespace HiyoshiCfhClient.ViewModels
         {
             if (OrganizationListener == null || ItemyardListener == null)
             {
+                OutDebugConsole("InitHandlers");
                 #region 艦娘の変更検知
                 OrganizationListener = new PropertyChangedEventListener(KanColleClient.Current.Homeport.Organization);
-                OrganizationListener.RegisterHandler(() => KanColleClient.Current.Homeport.Organization.Ships,
+                OrganizationListener.RegisterHandler("Ships",
                 async (s, h) =>
                 {
                     try
@@ -143,7 +145,7 @@ namespace HiyoshiCfhClient.ViewModels
                 #endregion
                 #region 装備の変更検知
                 ItemyardListener = new PropertyChangedEventListener(KanColleClient.Current.Homeport.Itemyard);
-                ItemyardListener.RegisterHandler(() => KanColleClient.Current.Homeport.Itemyard.SlotItems,
+                ItemyardListener.RegisterHandler("SlotItems",
                 async (s, h) =>
                 {
                     try
@@ -164,7 +166,7 @@ namespace HiyoshiCfhClient.ViewModels
                 #endregion
                 #region 任務の取得検知
                 var proxy = KanColleClient.Current.Proxy;
-                proxy.api_get_member_questlist
+                QuestSubscription = proxy.api_get_member_questlist
                     .Select(QuestsTracker.QuestListSerialize)
                     .Where(x => x != null && x.api_count >= 0)
                     .Subscribe(async x => { await this.HandleQuests(x); });
@@ -174,6 +176,19 @@ namespace HiyoshiCfhClient.ViewModels
                 #endregion
                 IsInited = true;
             }
+        }
+
+        public void ResetHandlers()
+        {
+            OutDebugConsole("ResetHandlers");
+            OrganizationListener.Dispose();
+            OrganizationListener = null;
+            ItemyardListener.Dispose();
+            ItemyardListener = null;
+            KanColleClient.Current.Homeport.Materials.PropertyChanged -= MaterialsChanged;
+            QuestSubscription.Dispose();
+            IsInited = false;
+            InitHandlers();
         }
 
         private async void MaterialsChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
@@ -336,6 +351,21 @@ namespace HiyoshiCfhClient.ViewModels
                 }
                 Client = new Client(TokenType, AccessToken, OutDebugConsole);
                 await Client.InitClientAsync();
+            }
+        }
+
+        public void ResetClient()
+        {
+            OutDebugConsole("ResetClient");
+            Client = null;
+            PrepareClient();
+        }
+
+        public void ResetContext()
+        {
+            if (Client != null)
+            {
+                Client.ResetContext();
             }
         }
 
