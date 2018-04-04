@@ -3432,6 +3432,7 @@
       </Other>
     </Bonus>
     <Dependency>
+      <Achieve Id="B61"/>
       <Achieve Id="F72"/>
     </Dependency>
   </Quest>
