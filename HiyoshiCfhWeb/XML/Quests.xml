@@ -3436,6 +3436,48 @@
       <Achieve Id="F72"/>
     </Dependency>
   </Quest>
+  <Quest Id="A87" Category="composition" Type="onetime">
+    <Name>
+      精鋭「第十八駆逐隊」を編成せよ！
+    </Name>
+    <Content>
+      精鋭駆逐隊編成任務：「霰改二」「霞改二/改二乙」「陽炎改」「不知火改」4隻による&lt;br&gt;精鋭「第十八駆逐隊」を編成せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        180
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        180
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        補強増設x1
+        特注家具職人x1
+        よりいずれか一つ
+      </Other>
+    </Bonus>
+    <Dependency>
+      <!-- TODO -->
+    </Dependency>
+  </Quest>
   <Quest Id="B1" Category="sortie" Type="onetime">
     <Name>
       はじめての「出撃」！
@@ -8154,6 +8196,50 @@
       <Achieve Id="F72"/>
     </Dependency>
   </Quest>
+  <Quest Id="B116" Category="sortie" Type="onetime">
+    <Name>
+      「十八駆」、北方海域キス島へ！
+    </Name>
+    <Content>
+      精鋭「第十八駆逐隊」を投入し、北方海域キス島撤退作戦を実施する！同作戦に反復出撃し、キス島撤退作戦を完全成功させよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        480
+      </Steel>
+      <Bauxite>
+        480
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        上陸用舟艇 大発動艇
+        副砲 10cm連装高角砲改＋増設機銃
+        改修資材x5
+        よりいずれか一つ
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="A87"/>
+      <Achieve Id="Bd8"/>
+    </Dependency>
+  </Quest>
   <Quest Id="Bd1" Category="sortie" Type="daily">
     <Name>
       敵艦隊を撃破せよ！
@@ -10119,7 +10205,48 @@
       </Other>
     </Bonus>
     <Dependency>
-      <Achieve Id="Bd2"/>
+      <!-- TODO -->
+    </Dependency>
+  </Quest>
+  <Quest Id="C19" Category="practice" Type="onetime">
+    <Name>
+      春季大演習
+    </Name>
+    <Content>
+      春季大演習：春の一日中に「演習」で8回以上「勝利」をおさめ、艦隊の練度向上に努めよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        1000
+      </Steel>
+      <Bauxite>
+        300
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        給糧艦「間宮」x1
+        プレゼント箱x1
+      </Other>
+    </Bonus>
+    <Dependency>
+      <!-- TODO -->
     </Dependency>
   </Quest>
   <Quest Id="D1" Category="expeditions" Type="onetime">
