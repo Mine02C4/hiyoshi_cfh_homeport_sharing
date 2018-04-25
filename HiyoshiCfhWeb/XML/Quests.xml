@@ -15427,4 +15427,222 @@
     <Dependency>
     </Dependency>
   </Quest>
+  <Quest Id="5A01" Category="building" Type="onetime">
+    <Name>
+      五周年任務【壱：工廠】
+    </Name>
+    <Content>
+      五周年任務：艦隊五周年特別任務群を開始する！同任務群は全五任務で構成。まずは工廠の整理から！&lt;br&gt;「小口径主砲」系装備x5 及び「中口径主砲」系装備x5 を廃棄、工廠環境の向上と整理整頓を実施せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        500
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        開発資材x8
+        12cm30連装噴進砲x3
+        紫電改二x2
+        よりいずれか一つ
+        特注家具職人X1
+        新型砲煩兵装資材x1
+        補強増設X1
+        よりいずれか一つ
+      </Other>
+    </Bonus>
+    <Dependency>
+      <!-- TODO -->
+    </Dependency>
+  </Quest>
+  <Quest Id="5A02" Category="sortie" Type="onetime">
+    <Name>
+      五周年任務【弐：鎮守府海域警戒】
+    </Name>
+    <Content>
+      五周年任務：軽巡クラスを旗艦に配備、駆逐艦または海防艦3隻以上を含む五周年艦隊で、鎮守府海域&lt;br&gt;(同正面海域/南西諸島沖/製油所地帯沿岸/南西諸島防衛線/鎮守府近海)の警戒防衛任務にあたれ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        5000
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        海防艦 対馬
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="5A01"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="5A03" Category="remodelling" Type="onetime">
+    <Name>
+      五周年任務【参：近代化改修】
+    </Name>
+    <Content>
+      五周年任務：鉄鋼555及びボーキサイト555を準備して、任意の海防艦の近代化改修を[駆逐艦]x5隻&lt;br&gt;同時使用により2回成功させよ！※任務達成後、準備した資源は消費します。
+    </Content>
+    <Bonus>
+      <Fuel>
+        500
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        高速修復材x10
+        改修資材x5
+        戦闘糧食戦闘糧食x5
+        よりいずれか一つ
+        シークレット家具 「五周年記念」掛け軸
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="5A02"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="5A04" Category="practice" Type="onetime">
+    <Name>
+      五周年任務【肆：演習】
+    </Name>
+    <Content>
+      五周年任務：駆逐艦または海防艦2隻以上を含む五隻の特別編成の艦隊を編成！&lt;br&gt;この五周年特別艦隊で、本日中に演習で4回以上勝利せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        500
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        選択報酬
+        給糧艦 「伊良湖」x5
+        爆雷 九五式爆雷★+5x1
+        よりいずれか一つ
+        選択報酬
+        戦闘詳報x1
+        小口径主砲 12.7cm連装砲C型改二★+5x1
+        よりいずれか一つ
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="5A03"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="5A05" Category="sortie" Type="onetime">
+    <Name>
+      五周年任務【伍：五周年艦隊出撃！】
+    </Name>
+    <Content>
+      五周年任務：軽巡クラス１隻、駆逐艦または海防艦2隻以上を含む五周年艦隊で、1)南西諸島海域全作戦&lt;br&gt;2)南方サブ島沖海域及びサーモン海域北方  3)中部海域KW環礁沖海域  いずれかの作戦を成功させよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        5000
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        駆逐艦 Samuel B.Roberts
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="5A04"/>
+    </Dependency>
+  </Quest>
 </Quests>
