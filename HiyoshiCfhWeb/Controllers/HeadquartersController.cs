@@ -238,22 +238,24 @@ namespace HiyoshiCfhWeb.Controllers
             if (type != null && type == "json")
             {
                 List<MaterialTuple> material;
-                if (target == null)
+                switch (target)
                 {
-                    material = Material.List;
-                }
-                else if (target == "main")
-                {
-                    material = Material.List.GetRange(0, 4);
-                }
-                else if (target == "bucket")
-                {
-                    material = Material.List.GetRange(5, 1);
-                }
-                else
-                {
-                    material = Material.List.GetRange(4, 4);
-                }
+                    case null:
+                        material = Material.List;
+                        break;
+                    case "main":
+                        material = Material.List.GetRange(0, 4);
+                        break;
+                    case "bucket":
+                        material = Material.List.GetRange(5, 1);
+                        break;
+                    case "screw":
+                        material = Material.List.GetRange(7, 1);
+                        break;
+                    default:
+                        material = Material.List.GetRange(4, 4);
+                        break;
+                };
                 var records = db.MaterialRecords.Where(x => x.AdmiralId == admiral.AdmiralId);
                 bool addCurrentValue = true;
                 if (range != null && range == "event")

@@ -1,11 +1,37 @@
 ﻿"use strict";
 
+var graph_set = {};
+
+var main_graph = {
+    svg: undefined,
+    line: undefined,
+    series: [
+        { name: '燃料', color: 'green', data: [], path: undefined },
+        { name: '弾薬', color: 'chocolate', data: [], path: undefined },
+        { name: '鋼材', color: 'gray', data: [], path: undefined },
+        { name: 'ボーキサイト', color: 'orange', data: [], path: undefined }
+    ],
+
+};
+
+var screw_graph = {
+    svg: undefined,
+    line: undefined,
+    series: [
+        { name: '改修資材', color: 'gray', data: [], path: undefined }
+    ],
+};
+
 var basedata = {
     expand: function () {
         var before = this.getBefore();
         this.fetch(before.year, before.month, function () {
             basedata.range.start = before;
             update_from_base_data();
+        });
+        this.fetch2(before.year, before.month, function () {
+            basedata.range.start = before;
+            update_from_base_data2();
         });
     },
     range: {
@@ -19,11 +45,18 @@ var basedata = {
         }
     },
     collection: {},
+    collection2: {},
     add: function (year, month, array) {
         this.collection[String(year) + ('00' + month).slice(-2)] = array;
     },
+    add2: function (year, month, array) {
+        this.collection2[String(year) + ('00' + month).slice(-2)] = array;
+    },
     getUri: function (year, month) {
         return "Materials?type=json&target=main&range=ym" + year + ('00' + month).slice(-2);
+    },
+    getUri2: function (year, month) {
+        return "Materials?type=json&target=screw&range=ym" + year + ('00' + month).slice(-2);
     },
     fetch: function (year, month, callback) {
         if (this.lock)
@@ -37,6 +70,23 @@ var basedata = {
                 basedata.add(year, month, data);
                 callback();
                 basedata.lock = false;
+            }
+        });
+        // TODO: URL generation
+        // add
+    },
+    fetch2: function (year, month, callback) {
+        if (this.lock2)
+            return;
+        this.lock2 = true;
+        d3.json(this.getUri2(year, month), function (error, data) {
+            if (error) {
+                basedata.lock2 = false;
+                return console.log("there was an error loading the data: " + error);
+            } else {
+                basedata.add2(year, month, data);
+                callback();
+                basedata.lock2 = false;
             }
         });
         // TODO: URL generation
@@ -81,6 +131,7 @@ var basedata = {
         }
     },
     lock: false,
+    lock2: false,
 };
 
 function update_from_base_data() {
@@ -97,38 +148,63 @@ function update_from_base_data() {
             };
         }
     };
-    var series = graph.series;
-    for (var i = 0; i < series.length; i++) {
-        series[i].data = [];
-    }
-    for (var target = basedata.range.start;
-        target.year < basedata.range.end.year ||
-        (target.year === basedata.range.end.year && target.month <= basedata.range.end.month) ;
-        target = increment(target)) {
-        var base = basedata.collection[String(target.year) + ('00' + target.month).slice(-2)];
+    {// Main Graph
+        var series = main_graph.series;
         for (var i = 0; i < series.length; i++) {
-            series[i].data.push(base[i]["values"]);
+            series[i].data = [];
         }
-    }
-    for (var i = 0; i < series.length; i++) {
-        series[i].data = d3.merge(series[i].data);
-        series[i].path.datum(series[i].data).attr("d", graph.line);
+        for (var target = basedata.range.start;
+            target.year < basedata.range.end.year ||
+            (target.year === basedata.range.end.year && target.month <= basedata.range.end.month);
+            target = increment(target)) {
+            var base = basedata.collection[String(target.year) + ('00' + target.month).slice(-2)];
+            for (var i = 0; i < series.length; i++) {
+                series[i].data.push(base[i]["values"]);
+            }
+        }
+        for (var i = 0; i < series.length; i++) {
+            series[i].data = d3.merge(series[i].data);
+            series[i].path.datum(series[i].data).attr("d", main_graph.line);
+        }
     }
 }
 
-var graph = {
-    svg: undefined,
-    line: undefined,
-    series: [
-        { name: '燃料', color: 'green', data: [], path: undefined },
-        { name: '弾薬', color: 'chocolate', data: [], path: undefined },
-        { name: '鋼材', color: 'gray', data: [], path: undefined },
-        { name: 'ボーキサイト', color: 'orange', data: [], path: undefined }
-    ],
+function update_from_base_data2() {
+    var increment = function (ym) {
+        if (ym.month === 12) {
+            return {
+                year: ym.year + 1,
+                month: 1
+            };
+        } else {
+            return {
+                year: ym.year,
+                month: ym.month + 1
+            };
+        }
+    };
+    {// Screw Graph
+        var series = screw_graph.series;
+        for (var i = 0; i < series.length; i++) {
+            series[i].data = [];
+        }
+        for (var target = basedata.range.start;
+            target.year < basedata.range.end.year ||
+            (target.year === basedata.range.end.year && target.month <= basedata.range.end.month);
+            target = increment(target)) {
+            var base = basedata.collection2[String(target.year) + ('00' + target.month).slice(-2)];
+            for (var i = 0; i < series.length; i++) {
+                series[i].data.push(base[i]["values"]);
+            }
+        }
+        for (var i = 0; i < series.length; i++) {
+            series[i].data = d3.merge(series[i].data);
+            series[i].path.datum(series[i].data).attr("d", screw_graph.line);
+        }
+    }
+}
 
-};
-
-function create_graph(data, selector) {
+function create_graph(data, selector, graph) {
     graph.svg = d3.select(selector);
 
     var legendHeight = 30;
@@ -223,7 +299,11 @@ function create_graph(data, selector) {
         y.domain([0, maxValue]);
         zoomed();
     }
-    basedata.add(basedata.range.start.year, basedata.range.start.month, data);
+    if (selector == "#main_chart") {
+        basedata.add(basedata.range.start.year, basedata.range.start.month, data);
+    } else {
+        basedata.add2(basedata.range.start.year, basedata.range.start.month, data);
+    }    
     for (var i = 0; i < graph.series.length; i++) {
         var path = graphG.append("path");
         graph.series[i].path = path;
