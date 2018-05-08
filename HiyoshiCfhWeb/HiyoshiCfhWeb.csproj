@@ -612,9 +612,6 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
-    <TypeScriptCompile Include="Scripts\typings\d3\d3.d.ts" />
-    <TypeScriptCompile Include="Scripts\typings\d3\plugins\d3.superformula.d.ts" />
-    <TypeScriptCompile Include="Scripts\typings\jquery\jquery.d.ts" />
     <TypeScriptCompile Include="TS\graphd3.ts" />
   </ItemGroup>
   <PropertyGroup>
