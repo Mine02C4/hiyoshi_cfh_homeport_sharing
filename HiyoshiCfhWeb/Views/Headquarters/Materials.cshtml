@@ -25,10 +25,10 @@
 <script type="text/javascript" src="@Url.Content("/Scripts/js/graphd3.js")"></script>
 <script type="text/javascript">
     function setup_chart2(url, selector, graph) {
-        d3.json(url, function (error, data) {
-            if (error)
-                return console.log("there was an error loading the data: " + error);
+        d3.json(url).then(function (data) {
             create_graph(data, selector, graph);
+        }).catch(function (error) {
+            console.log("there was an error loading the data: " + error);
         });
     }
     setup_chart2(basedata.getUri(basedata.range.start.year, basedata.range.start.month), "#main_chart", main_graph);

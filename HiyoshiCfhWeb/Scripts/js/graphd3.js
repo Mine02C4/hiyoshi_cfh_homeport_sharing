@@ -62,16 +62,12 @@ var basedata = {
         if (this.lock)
             return;
         this.lock = true;
-        d3.json(this.getUri(year, month), function (error, data) {
-            if (error) {
-                basedata.lock = false;
-                return console.log("there was an error loading the data: " + error);
-            } else {
-                basedata.add(year, month, data);
-                callback();
-                basedata.lock = false;
-            }
-        });
+        d3.json(this.getUri(year, month)).then(function (data) {
+            basedata.add(year, month, data);
+            callback();
+        }).catch(function (error) {
+            console.log("there was an error loading the data: " + error);
+        }).finally(function () { basedata.lock = false; });
         // TODO: URL generation
         // add
     },
@@ -79,16 +75,12 @@ var basedata = {
         if (this.lock2)
             return;
         this.lock2 = true;
-        d3.json(this.getUri2(year, month), function (error, data) {
-            if (error) {
-                basedata.lock2 = false;
-                return console.log("there was an error loading the data: " + error);
-            } else {
-                basedata.add2(year, month, data);
-                callback();
-                basedata.lock2 = false;
-            }
-        });
+        d3.json(this.getUri2(year, month)).then(function (data) {
+            basedata.add2(year, month, data);
+            callback();
+        }).catch(function (error) {
+            console.log("there was an error loading the data: " + error);
+        }).finally(function () { basedata.lock2 = false; });
         // TODO: URL generation
         // add
     },
@@ -240,22 +232,22 @@ function create_graph(data, selector, graph) {
     y.domain([0, maxValue]);
 
     var formatMillisecond = d3.timeFormat(".%L"),
-    formatSecond = d3.timeFormat(":%S"),
-    formatMinute = d3.timeFormat("%H:%M"),
-    formatHour = d3.timeFormat("%H"),
-    formatDay = d3.timeFormat("%a %d"),
-    formatWeek = d3.timeFormat("%m/%d"),
-    formatMonth = d3.timeFormat("%m月"),
-    formatYear = d3.timeFormat("%Y年");
+        formatSecond = d3.timeFormat(":%S"),
+        formatMinute = d3.timeFormat("%H:%M"),
+        formatHour = d3.timeFormat("%H"),
+        formatDay = d3.timeFormat("%a %d"),
+        formatWeek = d3.timeFormat("%m/%d"),
+        formatMonth = d3.timeFormat("%m月"),
+        formatYear = d3.timeFormat("%Y年");
 
     function multiFormat(date) {
         return (d3.timeSecond(date) < date ? formatMillisecond
             : d3.timeMinute(date) < date ? formatSecond
-            : d3.timeHour(date) < date ? formatMinute
-            : d3.timeDay(date) < date ? formatHour
-            : d3.timeMonth(date) < date ? (d3.timeWeek(date) < date ? formatDay : formatWeek)
-            : d3.timeYear(date) < date ? formatMonth
-            : formatYear)(date);
+                : d3.timeHour(date) < date ? formatMinute
+                    : d3.timeDay(date) < date ? formatHour
+                        : d3.timeMonth(date) < date ? (d3.timeWeek(date) < date ? formatDay : formatWeek)
+                            : d3.timeYear(date) < date ? formatMonth
+                                : formatYear)(date);
     }
 
     var xAxis = d3.axisBottom(x).tickSize(height).tickPadding(6).tickFormat(multiFormat);
@@ -268,13 +260,13 @@ function create_graph(data, selector, graph) {
         .call(yAxis);
     var x2 = x.copy();
     graph.line = d3.line()
-                .x(function (d) {
-                    return x2(new Date(d["time"]));
-                })
-                .y(function (d) {
-                    return y(d["value"]);
-                })
-                .curve(d3.curveStepAfter);
+        .x(function (d) {
+            return x2(new Date(d["time"]));
+        })
+        .y(function (d) {
+            return y(d["value"]);
+        })
+        .curve(d3.curveStepAfter);
 
     function zoomed() {
         x2 = d3.event.transform.rescaleX(x);
@@ -303,7 +295,7 @@ function create_graph(data, selector, graph) {
         basedata.add(basedata.range.start.year, basedata.range.start.month, data);
     } else {
         basedata.add2(basedata.range.start.year, basedata.range.start.month, data);
-    }    
+    }
     for (var i = 0; i < graph.series.length; i++) {
         var path = graphG.append("path");
         graph.series[i].path = path;
