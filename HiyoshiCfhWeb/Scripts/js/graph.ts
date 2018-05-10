@@ -1,8 +1,50 @@
 ﻿"use strict";
 
+
+interface RecordSeries {
+    key: string;
+    values: Array<{
+        time: string,
+        value: number,
+    }>;
+}
+
+let testdata: Array<RecordSeries>
+    = [{
+        "key": "燃料",
+        "values": [
+            { "time": "2018-05-01T09:58:33.3630000", "value": 190767 },
+            { "time": "2018-05-01T10:01:17.7830000", "value": 191459 },
+            { "time": "2018-05-01T10:15:22.5570000", "value": 191327 },
+            { "time": "2018-05-01T10:16:11.9770000", "value": 191391 },
+            { "time": "2018-05-01T10:22:11.2230000", "value": 191482 },
+            { "time": "2018-05-01T10:27:00.5800000", "value": 191494 },
+            { "time": "2018-05-01T10:29:31.4670000", "value": 191478 },
+            { "time": "2018-05-01T10:32:08.7000000", "value": 191457 },
+            { "time": "2018-05-01T10:37:52.2530000", "value": 191445 },
+            { "time": "2018-05-01T10:38:02.5330000", "value": 191381 },
+            { "time": "2018-05-01T10:41:17.1230000", "value": 191346 },
+            { "time": "2018-05-01T12:15:48.8230000", "value": 191542 },
+            { "time": "2018-05-01T12:16:32.0000000", "value": 191482 },
+            { "time": "2018-05-01T12:25:53.2830000", "value": 191524 }
+        ]
+        }];
+
+
+class Graph {
+    svg: any;
+    line: any;
+    series: Array<{
+        name: string;
+        color: string;
+        data: Array<any>;
+        path: any;
+    }>;
+}
+
 var graph_set = {};
 
-var main_graph = {
+var main_graph: Graph = {
     svg: undefined,
     line: undefined,
     series: [
@@ -11,10 +53,9 @@ var main_graph = {
         { name: '鋼材', color: 'gray', data: [], path: undefined },
         { name: 'ボーキサイト', color: 'orange', data: [], path: undefined }
     ],
-
 };
 
-var screw_graph = {
+var screw_graph: Graph = {
     svg: undefined,
     line: undefined,
     series: [
@@ -65,9 +106,11 @@ var basedata = {
         d3.json(this.getUri(year, month)).then(function (data) {
             basedata.add(year, month, data);
             callback();
+            basedata.lock = false;
         }).catch(function (error) {
             console.log("there was an error loading the data: " + error);
-        }).finally(function () { basedata.lock = false; });
+            basedata.lock = false;
+        });
         // TODO: URL generation
         // add
     },
@@ -78,9 +121,11 @@ var basedata = {
         d3.json(this.getUri2(year, month)).then(function (data) {
             basedata.add2(year, month, data);
             callback();
+            basedata.lock2 = false;
         }).catch(function (error) {
             console.log("there was an error loading the data: " + error);
-        }).finally(function () { basedata.lock2 = false; });
+            basedata.lock2 = false;
+        });
         // TODO: URL generation
         // add
     },
@@ -196,7 +241,7 @@ function update_from_base_data2() {
     }
 }
 
-function create_graph(data, selector, graph) {
+function create_graph(data: Array<RecordSeries>, selector: string, graph: Graph) {
     graph.svg = d3.select(selector);
 
     var legendHeight = 30;
@@ -226,9 +271,9 @@ function create_graph(data, selector, graph) {
     var latestTime = 0;
     for (var i = 0; i < series.length; i++) {
         maxValue = Math.max(maxValue, d3.max(data[i]["values"], function (d) { return d["value"]; }));
-        latestTime = Math.max(maxValue, d3.max(data[i]["values"], function (d) { return new Date(d["time"]); }));
+        latestTime = Math.max(latestTime, d3.max(data[i]["values"], function (d) { return new Date(d["time"]); }).getTime());
     }
-    x.domain([new Date(data[0]["values"][0]["time"]), latestTime]);
+    x.domain([new Date(data[0]["values"][0]["time"]), new Date(latestTime)]);
     y.domain([0, maxValue]);
 
     var formatMillisecond = d3.timeFormat(".%L"),

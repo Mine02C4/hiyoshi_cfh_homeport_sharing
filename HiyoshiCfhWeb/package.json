@@ -1,0 +1,7 @@
+{
+  "name": "myproject",
+  "version": "1.0.0",
+  "devDependencies": {
+    "@types/d3": "^5.0.0"
+  }
+}
