@@ -18,12 +18,18 @@ var testdata = [{
             { "time": "2018-05-01T12:25:53.2830000", "value": 191524 }
         ]
     }];
+var YearAndMonth = /** @class */ (function () {
+    function YearAndMonth(year, month) {
+        this.year = year;
+        this.month = month;
+    }
+    return YearAndMonth;
+}());
 var Graph = /** @class */ (function () {
     function Graph() {
     }
     return Graph;
 }());
-var graph_set = {};
 var main_graph = {
     svg: undefined,
     line: undefined,
@@ -41,8 +47,18 @@ var screw_graph = {
         { name: '改修資材', color: 'gray', data: [], path: undefined }
     ],
 };
-var basedata = {
-    expand: function () {
+var Basedata = /** @class */ (function () {
+    function Basedata() {
+        this.range = {
+            start: new YearAndMonth((new Date()).getFullYear(), (new Date()).getMonth() + 1),
+            end: new YearAndMonth((new Date()).getFullYear(), (new Date()).getMonth() + 1)
+        };
+        this.lock = false;
+        this.lock2 = false;
+        this.collection = {};
+        this.collection2 = {};
+    }
+    Basedata.prototype.expand = function () {
         var before = this.getBefore();
         this.fetch(before.year, before.month, function () {
             basedata.range.start = before;
@@ -52,32 +68,21 @@ var basedata = {
             basedata.range.start = before;
             update_from_base_data2();
         });
-    },
-    range: {
-        start: {
-            year: (new Date()).getFullYear(),
-            month: (new Date()).getMonth() + 1
-        },
-        end: {
-            year: (new Date()).getFullYear(),
-            month: (new Date()).getMonth() + 1
-        }
-    },
-    collection: {},
-    collection2: {},
-    add: function (year, month, array) {
+    };
+    ;
+    Basedata.prototype.add = function (year, month, array) {
         this.collection[String(year) + ('00' + month).slice(-2)] = array;
-    },
-    add2: function (year, month, array) {
+    };
+    Basedata.prototype.add2 = function (year, month, array) {
         this.collection2[String(year) + ('00' + month).slice(-2)] = array;
-    },
-    getUri: function (year, month) {
+    };
+    Basedata.prototype.getUri = function (year, month) {
         return "Materials?type=json&target=main&range=ym" + year + ('00' + month).slice(-2);
-    },
-    getUri2: function (year, month) {
+    };
+    Basedata.prototype.getUri2 = function (year, month) {
         return "Materials?type=json&target=screw&range=ym" + year + ('00' + month).slice(-2);
-    },
-    fetch: function (year, month, callback) {
+    };
+    Basedata.prototype.fetch = function (year, month, callback) {
         if (this.lock)
             return;
         this.lock = true;
@@ -91,8 +96,8 @@ var basedata = {
         });
         // TODO: URL generation
         // add
-    },
-    fetch2: function (year, month, callback) {
+    };
+    Basedata.prototype.fetch2 = function (year, month, callback) {
         if (this.lock2)
             return;
         this.lock2 = true;
@@ -106,29 +111,23 @@ var basedata = {
         });
         // TODO: URL generation
         // add
-    },
-    getBefore: function () {
+    };
+    Basedata.prototype.getBefore = function () {
         if (this.range.start !== null) {
             var start = this.range.start;
             if (start.month === 1) {
-                return {
-                    year: start.year - 1,
-                    month: 12
-                };
+                return new YearAndMonth(start.year - 1, 12);
             }
             else {
-                return {
-                    year: start.year,
-                    month: start.month - 1
-                };
+                return new YearAndMonth(start.year, start.month - 1);
             }
         }
         else {
             console.log('range.start is null');
             return null;
         }
-    },
-    getAfter: function () {
+    };
+    Basedata.prototype.getAfter = function () {
         if (this.range.end !== null) {
             var end = this.range.end;
             if (end.month === 12) {
@@ -148,10 +147,10 @@ var basedata = {
             console.log('range.end is null');
             return null;
         }
-    },
-    lock: false,
-    lock2: false,
-};
+    };
+    return Basedata;
+}());
+var basedata = new Basedata();
 function update_from_base_data() {
     var increment = function (ym) {
         if (ym.month === 12) {

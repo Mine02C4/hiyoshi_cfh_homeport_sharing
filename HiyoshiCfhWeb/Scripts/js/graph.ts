@@ -1,12 +1,13 @@
 ﻿"use strict";
 
+interface TimeValue {
+    time: string;
+    value: number;
+}
 
 interface RecordSeries {
     key: string;
-    values: Array<{
-        time: string,
-        value: number,
-    }>;
+    values: Array<TimeValue>;
 }
 
 let testdata: Array<RecordSeries>
@@ -28,12 +29,20 @@ let testdata: Array<RecordSeries>
             { "time": "2018-05-01T12:16:32.0000000", "value": 191482 },
             { "time": "2018-05-01T12:25:53.2830000", "value": 191524 }
         ]
-        }];
+    }];
 
+class YearAndMonth {
+    year: number;
+    month: number;
+    constructor(year: number, month: number) {
+        this.year = year;
+        this.month = month;
+    }
+}
 
 class Graph {
-    svg: any;
-    line: any;
+    svg: d3.Selection<SVGElement, {}, HTMLElement, any>;
+    line: d3.Line<TimeValue>;
     series: Array<{
         name: string;
         color: string;
@@ -41,8 +50,6 @@ class Graph {
         path: any;
     }>;
 }
-
-var graph_set = {};
 
 var main_graph: Graph = {
     svg: undefined,
@@ -63,8 +70,22 @@ var screw_graph: Graph = {
     ],
 };
 
-var basedata = {
-    expand: function () {
+class Basedata {
+    range = {
+        start: new YearAndMonth(
+            (new Date()).getFullYear(),
+            (new Date()).getMonth() + 1
+        ),
+        end: new YearAndMonth(
+            (new Date()).getFullYear(),
+            (new Date()).getMonth() + 1
+        )
+    };
+    lock = false;
+    lock2 = false;
+    collection: { [index: string]: Array<RecordSeries> } = {};
+    collection2: { [index: string]: Array<RecordSeries> } = {};
+    expand() {
         var before = this.getBefore();
         this.fetch(before.year, before.month, function () {
             basedata.range.start = before;
@@ -74,36 +95,24 @@ var basedata = {
             basedata.range.start = before;
             update_from_base_data2();
         });
-    },
-    range: {
-        start: {
-            year: (new Date()).getFullYear(),
-            month: (new Date()).getMonth() + 1
-        },
-        end: {
-            year: (new Date()).getFullYear(),
-            month: (new Date()).getMonth() + 1
-        }
-    },
-    collection: {},
-    collection2: {},
-    add: function (year, month, array) {
+    };
+    add(year: number, month: number, array: Array<RecordSeries>) {
         this.collection[String(year) + ('00' + month).slice(-2)] = array;
-    },
-    add2: function (year, month, array) {
+    }
+    add2(year: number, month: number, array: Array<RecordSeries>) {
         this.collection2[String(year) + ('00' + month).slice(-2)] = array;
-    },
-    getUri: function (year, month) {
+    }
+    getUri(year: number, month: number): string {
         return "Materials?type=json&target=main&range=ym" + year + ('00' + month).slice(-2);
-    },
-    getUri2: function (year, month) {
+    }
+    getUri2(year: number, month: number): string {
         return "Materials?type=json&target=screw&range=ym" + year + ('00' + month).slice(-2);
-    },
-    fetch: function (year, month, callback) {
+    }
+    fetch(year: number, month: number, callback: () => void) {
         if (this.lock)
             return;
         this.lock = true;
-        d3.json(this.getUri(year, month)).then(function (data) {
+        d3.json(this.getUri(year, month)).then(function (data: Array<RecordSeries>) {
             basedata.add(year, month, data);
             callback();
             basedata.lock = false;
@@ -113,12 +122,12 @@ var basedata = {
         });
         // TODO: URL generation
         // add
-    },
-    fetch2: function (year, month, callback) {
+    }
+    fetch2(year: number, month: number, callback: () => void) {
         if (this.lock2)
             return;
         this.lock2 = true;
-        d3.json(this.getUri2(year, month)).then(function (data) {
+        d3.json(this.getUri2(year, month)).then(function (data: Array<RecordSeries>) {
             basedata.add2(year, month, data);
             callback();
             basedata.lock2 = false;
@@ -128,28 +137,28 @@ var basedata = {
         });
         // TODO: URL generation
         // add
-    },
-    getBefore: function () {
+    }
+    getBefore(): YearAndMonth {
         if (this.range.start !== null) {
             var start = this.range.start;
             if (start.month === 1) {
-                return {
-                    year: start.year - 1,
-                    month: 12
-                };
+                return new YearAndMonth(
+                    start.year - 1,
+                    12
+                )
             } else {
-                return {
-                    year: start.year,
-                    month: start.month - 1
-                };
+                return new YearAndMonth(
+                    start.year,
+                    start.month - 1
+                );
             }
         } else {
             console.log('range.start is null');
             return null;
         }
-    },
-    getAfter: function () {
-        if (this.range.end !== null) {
+    }
+    getAfter(): YearAndMonth {
+        if(this.range.end !== null) {
             var end = this.range.end;
             if (end.month === 12) {
                 return {
@@ -166,13 +175,13 @@ var basedata = {
             console.log('range.end is null');
             return null;
         }
-    },
-    lock: false,
-    lock2: false,
-};
+    }
+}
+
+var basedata = new Basedata();
 
 function update_from_base_data() {
-    var increment = function (ym) {
+    var increment = function (ym: YearAndMonth): YearAndMonth {
         if (ym.month === 12) {
             return {
                 year: ym.year + 1,
@@ -207,7 +216,7 @@ function update_from_base_data() {
 }
 
 function update_from_base_data2() {
-    var increment = function (ym) {
+    var increment = function (ym: YearAndMonth): YearAndMonth {
         if (ym.month === 12) {
             return {
                 year: ym.year + 1,
@@ -256,7 +265,7 @@ function create_graph(data: Array<RecordSeries>, selector: string, graph: Graph)
         sg.append('text')
             .attr('x', 10)
             .attr('dominant-baseline', 'middle').text(series[i].name);
-        legendOffset += sg.node().getBBox().width + 10.0;
+        legendOffset += (sg.node() as SVGGElement).getBBox().width + 10.0;
     }
 
     var graphG = graph.svg.append('g').attr('class', 'graph-g')
@@ -285,7 +294,7 @@ function create_graph(data: Array<RecordSeries>, selector: string, graph: Graph)
         formatMonth = d3.timeFormat("%m月"),
         formatYear = d3.timeFormat("%Y年");
 
-    function multiFormat(date) {
+    function multiFormat(date: Date) {
         return (d3.timeSecond(date) < date ? formatMillisecond
             : d3.timeMinute(date) < date ? formatSecond
                 : d3.timeHour(date) < date ? formatMinute
@@ -304,7 +313,7 @@ function create_graph(data: Array<RecordSeries>, selector: string, graph: Graph)
         .attr("class", "axis axis-y")
         .call(yAxis);
     var x2 = x.copy();
-    graph.line = d3.line()
+    graph.line = d3.line<TimeValue>()
         .x(function (d) {
             return x2(new Date(d["time"]));
         })
