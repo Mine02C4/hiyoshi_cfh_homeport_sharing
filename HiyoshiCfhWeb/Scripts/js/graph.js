@@ -168,18 +168,20 @@ function update_from_base_data() {
     };
     {
         var series = main_graph.series;
+        var datatemp = [];
         for (var i = 0; i < series.length; i++) {
             series[i].data = [];
+            datatemp[i] = [];
         }
         for (var target = basedata.range.start; target.year < basedata.range.end.year ||
             (target.year === basedata.range.end.year && target.month <= basedata.range.end.month); target = increment(target)) {
             var base = basedata.collection[String(target.year) + ('00' + target.month).slice(-2)];
             for (var i = 0; i < series.length; i++) {
-                series[i].data.push(base[i]["values"]);
+                datatemp[i].push(base[i]["values"]);
             }
         }
         for (var i = 0; i < series.length; i++) {
-            series[i].data = d3.merge(series[i].data);
+            series[i].data = d3.merge(datatemp[i]);
             series[i].path.datum(series[i].data).attr("d", main_graph.line);
         }
     }
@@ -201,18 +203,19 @@ function update_from_base_data2() {
     };
     {
         var series = screw_graph.series;
+        var datatemp = [];
         for (var i = 0; i < series.length; i++) {
-            series[i].data = [];
+            datatemp[i] = [];
         }
         for (var target = basedata.range.start; target.year < basedata.range.end.year ||
             (target.year === basedata.range.end.year && target.month <= basedata.range.end.month); target = increment(target)) {
             var base = basedata.collection2[String(target.year) + ('00' + target.month).slice(-2)];
             for (var i = 0; i < series.length; i++) {
-                series[i].data.push(base[i]["values"]);
+                datatemp[i].push(base[i]["values"]);
             }
         }
         for (var i = 0; i < series.length; i++) {
-            series[i].data = d3.merge(series[i].data);
+            series[i].data = d3.merge(datatemp[i]);
             series[i].path.datum(series[i].data).attr("d", screw_graph.line);
         }
     }
@@ -306,8 +309,8 @@ function create_graph(data, selector, graph) {
         basedata.add2(basedata.range.start.year, basedata.range.start.month, data);
     }
     for (var i = 0; i < graph.series.length; i++) {
-        var path = graphG.append("path");
-        graph.series[i].path = path;
+        graph.series[i].path = graphG.append("path");
+        var path = graph.series[i].path;
         path.attr("class", "line line-" + String(i));
         path.attr("stroke", graph.series[i].color);
         path.datum(data[i]["values"]).attr("d", graph.line);
