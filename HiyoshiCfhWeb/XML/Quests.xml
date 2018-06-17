@@ -3478,6 +3478,48 @@
       <Achieve Id="B58"/>
     </Dependency>
   </Quest>
+  <Quest Id="A88" Category="composition" Type="onetime">
+    <Name>
+      最精鋭甲型駆逐艦、集結せよ！
+    </Name>
+    <Content>
+      甲型駆逐隊編成任務：「陽炎改二」「不知火改二」「黒潮改二」を集中配備、さらに練度70以上の&lt;br&gt;甲型駆逐艦【陽炎型/夕雲型駆逐艦】を3隻集中配備、精鋭艦隊型駆逐隊を編成せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        150
+      </Fuel>
+      <Bull>
+        150
+      </Bull>
+      <Steel>
+        150
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        12.7cm連装砲C型改二x1
+        勲章x1
+        よりいずれか一つ
+      </Other>
+    </Bonus>
+    <Dependency>
+      <!-- TODO -->
+    </Dependency>
+  </Quest>
   <Quest Id="B1" Category="sortie" Type="onetime">
     <Name>
       はじめての「出撃」！
@@ -8240,6 +8282,147 @@
       <Achieve Id="Bd8"/>
     </Dependency>
   </Quest>
+  <Quest Id="B117" Category="sortie" Type="onetime">
+    <Name>
+      最精鋭甲型駆逐艦、突入！敵中突破！
+    </Name>
+    <Content>
+      「黒潮改二」「不知火改二」「陽炎改二」のいずれかを旗艦、他2隻の練度75以上の甲型駆逐艦を配備した計6隻艦隊で西方カレー洋、北方キス島沖、南方サブ島沖海域に複数回突入、各作戦を完全成功させよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        1000
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        500
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        特注家具職人
+        新型砲熕兵装資材x1
+        戦闘詳報x1
+        よりいずれか一つ
+        勲章x2
+        試製甲板カタパルトx1
+        12.7cm連装砲D型改二x1
+        よりいずれか一つ
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="C20"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="B118" Category="sortie" Type="onetime">
+    <Name>
+      戦闘航空母艦、出撃せよ！
+    </Name>
+    <Content>
+      改装航空戦艦（戦闘航空母艦）一番艦、旗艦「伊勢改二」を中核とした航空火力打撃部隊を編成、北方AL海域戦闘哨戒、カレー洋リランカ島沖及びピーコック島沖の作戦に投入、敵を撃滅せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        1000
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        634
+      </Steel>
+      <Bauxite>
+        634
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        熟練搭乗員x1
+        新型航空兵装資材x1
+        改修資材x4
+        よりいずれか一つ
+        瑞雲(六三四空)x1
+        彗星二二型(六三四空)x1
+        新型砲熕兵装資材x2
+        よりいずれか一つ
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="C21"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="B119" Category="sortie" Type="onetime">
+    <Name>
+      「伊勢改二」、敵機動部隊を迎撃せよ！
+    </Name>
+    <Content>
+      旗艦「伊勢改二」随伴駆逐艦2隻の航空戦隊を基幹とする艦隊をKW環礁沖空母機動部隊迎撃戦に投入！同反復出撃によって、同方面に来襲する敵機動部隊を迎撃、完全撃滅せよ！　「伊勢改二」、抜錨！
+    </Content>
+    <Bonus>
+      <Fuel>
+        634
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        1000
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        九六式艦戦x3
+        九九式艦爆x3
+        零式艦戦21型x2
+        よりいずれか一つ
+        紫電改二x2
+        勲章x1
+        戦闘詳報x1
+        よりいずれか一つ
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="C21"/>
+    </Dependency>
+  </Quest>
   <Quest Id="Bd1" Category="sortie" Type="daily">
     <Name>
       敵艦隊を撃破せよ！
@@ -10249,6 +10432,141 @@
       <!-- TODO -->
     </Dependency>
   </Quest>
+  <Quest Id="C20" Category="practice" Type="onetime">
+    <Name>
+      最精鋭甲型駆逐艦、特訓始め！
+    </Name>
+    <Content>
+      甲型駆逐隊演習任務：練度70以上の甲型駆逐艦【陽炎型/夕雲型】駆逐艦4隻で編成される駆逐隊。この精鋭駆逐隊を含む艦隊を編成。演習を開始する！同艦隊で本日中に4回以上勝利せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        400
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        400
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        開発資材x4
+        高速修復材x4
+        よりいずれか一つ
+        戦闘詳報x1
+        勲章x1
+        よりいずれか一つ
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="A88"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="C21" Category="practice" Type="onetime">
+    <Name>
+      戦闘航空母艦一番艦、演習始め！
+    </Name>
+    <Content>
+      改装航空戦艦(戦闘航空母艦)演習任務：旗艦「伊勢改二」、随伴艦に駆逐艦2隻以上を配した航空戦隊&lt;br&gt;を編成。新改装艦の慣熟も兼ねた同航空戦隊の演習で、本日中に3回以上勝利せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        500
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        彗星x2
+        瑞雲x2
+        二式艦上偵察機x1
+        よりいずれか一つ
+        22号対水上電探x2
+        12cm30連装噴進砲x2
+        新型砲熕兵装資材x1
+        よりいずれか一つ
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="B23"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="C22" Category="practice" Type="onetime">
+    <Name>
+      海防艦、演習始め！
+    </Name>
+    <Content>
+      海防艦演習任務：海防艦を旗艦に配備し、随伴艦に駆逐艦2隻以上を配した演習艦隊を編成。&lt;br&gt;本演習艦隊で、本日中に演習で2回以上勝利せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        300
+      </Fuel>
+      <Bull>
+        300
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        補強増設x1
+        勲章x1
+        よりいずれか一つ
+        家具「択捉型海防艦」掛け軸
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="F73"/>
+    </Dependency>
+  </Quest>
   <Quest Id="D1" Category="expeditions" Type="onetime">
     <Name>
       はじめての「遠征」！
@@ -11332,6 +11650,50 @@
     <Dependency>
       <Achieve Id="B108"/>
       <Achieve Id="D2"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="D28" Category="expeditions" Type="onetime">
+    <Name>
+      「海防艦」、進発せよ！
+    </Name>
+    <Content>
+      海上護衛任務：遠征任務「兵站強化任務」「海峡警備行動」「海上護衛任務」「タンカー護衛任務」&lt;br&gt;を海防艦、駆逐艦などを主軸とした護衛艦艇で実施せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        800
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        600
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        洋上補給x2
+        高速修復材x8
+        改修資材x4
+        よりいずれか一つ
+        給糧艦「伊良湖」x1
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="F73"/>
     </Dependency>
   </Quest>
   <Quest Id="E1" Category="supply" Type="onetime">
@@ -14415,6 +14777,132 @@
     <Dependency>
       <Achieve Id="F5"/>
       <Achieve Id="F71"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="F73" Category="building" Type="onetime">
+    <Name>
+      「海防艦」整備計画
+    </Name>
+    <Content>
+      大型艦兵装を整理削減、警備及び海上護衛用小艦艇「海防艦」を整備する。「中口径主砲」系装備x4、&lt;br&gt;「大口径主砲」系装備x4を廃棄し、燃料500を準備せよ！　※任務達成後、準備資源は消費します。
+    </Content>
+    <Bonus>
+      <Fuel>
+        200
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        特注家具職人x1
+        開発資材x4
+        新型砲熕兵装資材x1
+        よりいずれか一つ
+        択捉
+        松輪
+        よりいずれか一つ
+      </Other>
+    </Bonus>
+    <Dependency>
+      <!-- TODO -->
+    </Dependency>
+  </Quest>
+  <Quest Id="F74" Category="building" Type="onetime">
+    <Name>
+      航空戦艦用強化型新主砲の研究
+    </Name>
+    <Content>
+      秘書艦「伊勢改二」一番スロに「試製41cm三連装砲」改修max搭載、「41cm連装砲」×3「22号対水上電探」×2を廃棄、開発資材×40、高速建造材×50、鋼材4500、新型砲熕兵装資材×2を準備せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        200
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        41cm三連装砲改二x1
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="C21"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="F75" Category="building" Type="onetime">
+    <Name>
+      精鋭「航空戦艦」彗星隊の編成
+    </Name>
+    <Content>
+      精鋭彗星隊編成：旗艦「伊勢改二」第三装備スロに「彗星二二型(六三四空)」搭載、熟練搭乗員、開発資材x30、新型航空兵装資材を用意、「九九艦爆」「彗星」各x3廃棄、ボーキサイト一定量確保せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        634
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        彗星二二型(六三四空／熟練)x1
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="B119"/>
     </Dependency>
   </Quest>
   <Quest Id="G1" Category="remodelling" Type="onetime">
