@@ -8326,7 +8326,8 @@
       </Other>
     </Bonus>
     <Dependency>
-      <Achieve Id="C20"/>
+      <Achieve Id="C21"/>
+      <Achieve Id="B115"/>
     </Dependency>
   </Quest>
   <Quest Id="B118" Category="sortie" Type="onetime">
@@ -8373,7 +8374,7 @@
       </Other>
     </Bonus>
     <Dependency>
-      <Achieve Id="C21"/>
+      <Achieve Id="C22"/>
     </Dependency>
   </Quest>
   <Quest Id="B119" Category="sortie" Type="onetime">
@@ -8420,7 +8421,7 @@
       </Other>
     </Bonus>
     <Dependency>
-      <Achieve Id="C21"/>
+      <Achieve Id="C22"/>
     </Dependency>
   </Quest>
   <Quest Id="Bd1" Category="sortie" Type="daily">
@@ -10434,6 +10435,49 @@
   </Quest>
   <Quest Id="C20" Category="practice" Type="onetime">
     <Name>
+      海防艦、演習始め！
+    </Name>
+    <Content>
+      海防艦演習任務：海防艦を旗艦に配備し、随伴艦に駆逐艦2隻以上を配した演習艦隊を編成。&lt;br&gt;本演習艦隊で、本日中に演習で2回以上勝利せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        300
+      </Fuel>
+      <Bull>
+        300
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        補強増設x1
+        勲章x1
+        よりいずれか一つ
+        家具「択捉型海防艦」掛け軸
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="F73"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="C21" Category="practice" Type="onetime">
+    <Name>
       最精鋭甲型駆逐艦、特訓始め！
     </Name>
     <Content>
@@ -10477,7 +10521,7 @@
       <Achieve Id="A88"/>
     </Dependency>
   </Quest>
-  <Quest Id="C21" Category="practice" Type="onetime">
+  <Quest Id="C22" Category="practice" Type="onetime">
     <Name>
       戦闘航空母艦一番艦、演習始め！
     </Name>
@@ -10522,49 +10566,6 @@
     </Bonus>
     <Dependency>
       <Achieve Id="B23"/>
-    </Dependency>
-  </Quest>
-  <Quest Id="C22" Category="practice" Type="onetime">
-    <Name>
-      海防艦、演習始め！
-    </Name>
-    <Content>
-      海防艦演習任務：海防艦を旗艦に配備し、随伴艦に駆逐艦2隻以上を配した演習艦隊を編成。&lt;br&gt;本演習艦隊で、本日中に演習で2回以上勝利せよ！
-    </Content>
-    <Bonus>
-      <Fuel>
-        300
-      </Fuel>
-      <Bull>
-        300
-      </Bull>
-      <Steel>
-        0
-      </Steel>
-      <Bauxite>
-        0
-      </Bauxite>
-      <InstantBuildMaterials>
-        0
-      </InstantBuildMaterials>
-      <InstantRepairMaterials>
-        0
-      </InstantRepairMaterials>
-      <DevelopmentMaterials>
-        0
-      </DevelopmentMaterials>
-      <RenovationMaterials>
-        0
-      </RenovationMaterials>
-      <Other>
-        補強増設x1
-        勲章x1
-        よりいずれか一つ
-        家具「択捉型海防艦」掛け軸
-      </Other>
-    </Bonus>
-    <Dependency>
-      <Achieve Id="F73"/>
     </Dependency>
   </Quest>
   <Quest Id="D1" Category="expeditions" Type="onetime">
@@ -14862,7 +14863,7 @@
       </Other>
     </Bonus>
     <Dependency>
-      <Achieve Id="C21"/>
+      <Achieve Id="C22"/>
     </Dependency>
   </Quest>
   <Quest Id="F75" Category="building" Type="onetime">
