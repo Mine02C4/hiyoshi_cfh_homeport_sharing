@@ -3514,6 +3514,7 @@
         12.7cm連装砲C型改二x1
         勲章x1
         よりいずれか一つ
+        任務達成ボイス
       </Other>
     </Bonus>
     <Dependency>
@@ -10519,6 +10520,7 @@
     </Bonus>
     <Dependency>
       <Achieve Id="A88"/>
+      <Achieve Id="C15"/>
     </Dependency>
   </Quest>
   <Quest Id="C22" Category="practice" Type="onetime">
