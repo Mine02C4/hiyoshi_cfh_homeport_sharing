@@ -8556,6 +8556,51 @@
       <Achieve Id="B115"/>
     </Dependency>
   </Quest>
+  <Quest Id="B122" Category="sortie" Type="onetime">
+    <Name>
+      精鋭「四戦隊」第二小隊、抜錨せよ！
+    </Name>
+    <Content>
+      「摩耶改二」及び「鳥海改二」から成る精鋭「第四戦隊」第二小隊を含む有力な艦隊を編成、南西&lt;br&gt;諸島防衛線、東部オリョール海、アルフォンシーノ方面、カレー洋リランカ島沖に出撃、敵を撃滅せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        400
+      </Fuel>
+      <Bull>
+        400
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        400
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        12.7cm連装高角砲(後期型)x2
+        高速修復材x8
+        勲章x1
+        よりいずれか一つ
+        家具「摩耶の盾」掛け軸
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="B13"/>
+      <Achieve Id="C2"/>
+    </Dependency>
+  </Quest>
   <Quest Id="Bd1" Category="sortie" Type="daily">
     <Name>
       敵艦隊を撃破せよ！
@@ -10788,6 +10833,90 @@
     </Bonus>
     <Dependency>
       <Achieve Id="Bq6"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="C24" Category="practice" Type="onetime">
+    <Name>
+      夏季大演習
+    </Name>
+    <Content>
+      夏季大演習：夏季期間の一日中に「演習」で8回以上「勝利」をおさめ、艦隊の練度向上に努めよ！&lt;br&gt;暑さに負けるな！　艦隊、抜錨！
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        300
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        1000
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        給糧艦「間宮」x1
+        プレゼント箱x1
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="Bq6"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="C25" Category="practice" Type="onetime">
+    <Name>
+      朝潮型集合！特訓始め！
+    </Name>
+    <Content>
+      朝潮型演習任務：朝潮型駆逐艦4隻による駆逐隊を含む艦隊を編成。&lt;br&gt;同艦隊で本日中に演習にて4回以上勝利せよ！朝潮型駆逐艦、前へ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        300
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        300
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        3
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        開発資材x4
+        三式爆雷投射機x1
+        家具職人x1
+        よりいずれか一つ
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="Bd3"/>
     </Dependency>
   </Quest>
   <Quest Id="D1" Category="expeditions" Type="onetime">
@@ -15206,6 +15335,46 @@
     </Bonus>
     <Dependency>
       <Achieve Id="F72"/>
+      <Achieve Id="F76"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="F78" Category="building" Type="onetime">
+    <Name>
+      駆逐艦主砲兵装の戦時改修【II】
+    </Name>
+    <Content>
+      旗艦「夕立改二」または「時雨改二」第一スロに「12.7cm連装砲B型改二」改修maxを装備、「10cm連装高角砲」x5、「94式高射装置」x1を廃棄、開発資材x50、鋼材1200、新型砲熕兵装資材x1を準備せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        220
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        12.7cm連装砲B型改四(戦時改修)＋高射装置
+      </Other>
+    </Bonus>
+    <Dependency>
       <Achieve Id="F76"/>
     </Dependency>
   </Quest>
