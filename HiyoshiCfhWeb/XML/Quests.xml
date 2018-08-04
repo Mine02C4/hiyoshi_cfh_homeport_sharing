@@ -10833,6 +10833,7 @@
     </Bonus>
     <Dependency>
       <Achieve Id="Bq6"/>
+      <Achieve Id="C21"/>
     </Dependency>
   </Quest>
   <Quest Id="C24" Category="practice" Type="onetime">
