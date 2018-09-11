@@ -147,7 +147,7 @@ function update_from_base_data() {
             };
         }
     };
-    {
+    { // Main Graph
         var series = main_graph.series;
         var datatemp = [];
         for (var i = 0; i < series.length; i++) {
@@ -182,7 +182,7 @@ function update_from_base_data2() {
             };
         }
     };
-    {
+    { // Screw Graph
         var series = screw_graph.series;
         var datatemp = [];
         for (var i = 0; i < series.length; i++) {
