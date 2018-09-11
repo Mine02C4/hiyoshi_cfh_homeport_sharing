@@ -4,6 +4,7 @@ using HiyoshiCfhClient.Models;
 using HiyoshiCfhClient.Utils;
 using Livet;
 using Livet.Messaging;
+using Microsoft.Win32;
 using StatefulModel.EventListeners;
 using System;
 using System.IO;
@@ -95,6 +96,7 @@ namespace HiyoshiCfhClient.ViewModels
         public ClientViewModel()
         {
             OutDebugConsole("Initialize");
+            SetRegistryFeatureBrowserEmulation();
             Settings.Init();
             QuestsTracker = new QuestsTracker();
             AccessToken = Settings.Current.AccessToken;
@@ -108,7 +110,7 @@ namespace HiyoshiCfhClient.ViewModels
                     InitHandlers();
                 }
             });
-            this.CompositeDisposable.Add(kccListener);
+            CompositeDisposable.Add(kccListener);
         }
 
         void InitHandlers()
@@ -520,6 +522,21 @@ namespace HiyoshiCfhClient.ViewModels
                     }
                 }
             });
+        }
+
+        private void SetRegistryFeatureBrowserEmulation()
+        {
+            const string key = @"HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main\FeatureControl\FEATURE_BROWSER_EMULATION";
+            const string value = @"11000";
+            try
+            {
+                var valueName = System.Diagnostics.Process.GetCurrentProcess().ProcessName + ".exe";
+                Registry.SetValue(key, valueName, value, RegistryValueKind.DWord);
+            }
+            catch (Exception ex)
+            {
+                OutDebugConsole(ex.ToString());
+            }
         }
     }
 }
