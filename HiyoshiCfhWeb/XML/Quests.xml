@@ -10874,7 +10874,7 @@
       </Other>
     </Bonus>
     <Dependency>
-      <Achieve Id="Bq6"/>
+      <!-- TODO -->
     </Dependency>
   </Quest>
   <Quest Id="C25" Category="practice" Type="onetime">
@@ -15295,6 +15295,7 @@
       </Other>
     </Bonus>
     <Dependency>
+      <Achieve Id="A53"/>
       <Achieve Id="F73"/>
     </Dependency>
   </Quest>
