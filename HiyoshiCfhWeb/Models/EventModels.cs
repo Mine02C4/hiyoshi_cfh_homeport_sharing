@@ -8,7 +8,7 @@ namespace HiyoshiCfhWeb.Models
 {
     public class Event
     {
-        private static List<Event> events = new List<Event> {
+        public static List<Event> Events { get; } = new List<Event> {
             new Event(201508,
                 "反撃！第二次SN作戦",
                 new List<SortieTag> {
@@ -106,14 +106,6 @@ namespace HiyoshiCfhWeb.Models
                 new DateTimeOffset(2018,  3, 23, 11,  0, 0, new TimeSpan(9, 0, 0))
             ),
         };
-
-        public static List<Event> Events
-        {
-            get
-            {
-                return events;
-            }
-        }
 
         /// <summary>
         /// イベントID 通常は開催年と開催月をつなげた整数。(例: 201605)
