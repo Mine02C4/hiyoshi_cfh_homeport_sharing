@@ -105,6 +105,20 @@ namespace HiyoshiCfhWeb.Models
                 new DateTimeOffset(2018,  2, 17,  3,  0, 0, new TimeSpan(9, 0, 0)),
                 new DateTimeOffset(2018,  3, 23, 11,  0, 0, new TimeSpan(9, 0, 0))
             ),
+            new Event(201809,
+                "抜錨！連合艦隊、西へ！",
+                new List<SortieTag>
+                {
+                    new SortieTag("警戒部隊", Color.Gray, 1),
+                    new SortieTag("海峡派遣艦隊", Color.FromArgb(0xC0B812), 2),
+                    new SortieTag("西方作戦部隊", Color.FromArgb(0x3B662A), 3),
+                    new SortieTag("欧州特務艦隊", Color.Orange, 4),
+                    new SortieTag("Force H", Color.Blue, 5),
+                    new SortieTag("ライン演習部隊", Color.Purple, 6)
+                },
+                new DateTimeOffset(2018,  9,  9,  3,  0, 0, new TimeSpan(9, 0, 0)),
+                new DateTimeOffset(2018, 10,  5, 11,  0, 0, new TimeSpan(9, 0, 0))
+            ),
         };
 
         /// <summary>
