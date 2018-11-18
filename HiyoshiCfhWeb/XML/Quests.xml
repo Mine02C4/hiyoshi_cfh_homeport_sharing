@@ -3603,7 +3603,50 @@
       </Other>
     </Bonus>
     <Dependency>
-      <!-- TODO -->
+      <Achieve Id="A86"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="A91" Category="composition" Type="onetime">
+    <Name>
+      精鋭「第十駆逐隊」、抜錨準備！
+    </Name>
+    <Content>
+      甲型駆逐艦編成任務：夕雲型駆逐艦「夕雲改二」及び「巻雲改二」の2隻から成る&lt;br&gt;精鋭第十駆逐隊(2隻編成)を編成せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        200
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        200
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        高速修復材x5
+        特注家具職人x1
+        よりいずれか一つ
+        戦闘糧食x1
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="A79"/>
     </Dependency>
   </Quest>
   <Quest Id="B1" Category="sortie" Type="onetime">
@@ -8738,6 +8781,98 @@
       <Achieve Id="F66"/>
     </Dependency>
   </Quest>
+  <Quest Id="B125" Category="sortie" Type="onetime">
+    <Name>
+      近海の警戒監視と哨戒活動を強化せよ！
+    </Name>
+    <Content>
+      軽巡旗艦、駆逐艦または海防艦2隻を含む艦隊を編成、南西諸島沖、製油所地帯沿岸、&lt;br&gt;南西諸島防衛線、南西諸島近海、バシー海峡を哨戒、敵艦隊を捕捉撃滅、近海の制海権を確立せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        800
+      </Fuel>
+      <Bull>
+        800
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        補強増設
+        勲章
+        よりいずれか一つ
+        新型砲熕兵装資材x2
+        探照灯x2
+        戦闘詳報
+        よりいずれか一つ
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="C2"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="B126" Category="sortie" Type="onetime">
+    <Name>
+      主力オブ主力、抜錨開始！
+    </Name>
+    <Content>
+      甲型駆逐艦編成任務:夕雲型駆逐艦「夕雲改二」及び「巻雲改二」の2隻から成る精鋭第十駆逐隊を含む有力な艦隊を南方海域に投入、サブ島沖海域、サーモン海域、サーモン海域北方の敵を捕捉撃滅せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        500
+      </Fuel>
+      <Bull>
+        500
+      </Bull>
+      <Steel>
+        500
+      </Steel>
+      <Bauxite>
+        1000
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        新型砲熕兵装資材
+        新型航空兵装資材
+        大発動艇
+        よりいずれか一つ
+        熟練搭乗員
+        改修資材x4
+        よりいずれか一つ
+      </Other>
+    </Bonus>
+    <Dependency>
+      <!-- TODO -->
+    </Dependency>
+  </Quest>
   <Quest Id="Bd1" Category="sortie" Type="daily">
     <Name>
       敵艦隊を撃破せよ！
@@ -10018,6 +10153,51 @@
     <Dependency>
       <Achieve Id="B41"/>
       <Achieve Id="Bw9"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="Bq8" Category="sortie" Type="quarterly">
+    <Name>
+      泊地周辺海域の安全確保を徹底せよ！
+    </Name>
+    <Content>
+      泊地近海警戒戦果拡張：有力な泊地哨戒部隊を編成、鎮守府近海、ブルネイ泊地沖、タウイタウイ泊地沖に反復出撃！各周辺海域に出没する敵船を制圧、さらに泊地周辺の脅威となる敵戦力を捕捉撃滅せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        2000
+      </Fuel>
+      <Bull>
+        500
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        500
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        熟練見張員
+        熟練搭乗員
+        洋上補給x4
+        よりいずれか一つ
+        戦果+300
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="B125"/>
+      <Achieve Id="Bw1"/>
     </Dependency>
   </Quest>
   <Quest Id="C1" Category="practice" Type="onetime">
