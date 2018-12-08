@@ -8870,7 +8870,10 @@
       </Other>
     </Bonus>
     <Dependency>
-      <!-- TODO -->
+      <Achieve Id="A91"/>
+      <Achieve Id="Bd1"/>
+    </Dependency>
+  </Quest>
   <Quest Id="B127" Category="sortie" Type="onetime">
     <Name>
       冬季北方海域作戦
