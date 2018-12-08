@@ -8871,6 +8871,51 @@
     </Bonus>
     <Dependency>
       <!-- TODO -->
+  <Quest Id="B127" Category="sortie" Type="onetime">
+    <Name>
+      冬季北方海域作戦
+    </Name>
+    <Content>
+      冬季北方作戦：軽巡級を旗艦とする有力な艦隊で、モーレイ海、アルフォンシーノ方面、北方海域全域及び北方AL海域に反復出撃！同海域に遊弋する敵艦隊を捕捉、これを撃滅し、北方海域制海権を確保せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        800
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        800
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        零式艦戦21型x3
+        零式艦戦32型x2
+        特注家具職人
+        よりいずれか一つ
+        改修資材x4
+        22号対水上電探x3
+        新型航空兵装資材x2
+        よりいずれか一つ
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="Bq9"/>
     </Dependency>
   </Quest>
   <Quest Id="Bd1" Category="sortie" Type="daily">
@@ -10198,6 +10243,52 @@
     <Dependency>
       <Achieve Id="B125"/>
       <Achieve Id="Bw1"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="Bq9" Category="sortie" Type="quarterly">
+    <Name>
+      空母戦力の投入による兵站線戦闘哨戒
+    </Name>
+    <Content>
+      空母を含む有力な哨戒艦隊を編成、製油所地帯沿岸、南西諸島防衛線、南西諸島近海、バシー海峡&lt;br&gt;及び東部オリョール海を戦闘哨戒、各海域の敵艦隊を捕捉撃滅、各海域兵站線の安全を確保せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        600
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        600
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        新型航空兵装資材x1
+        開発資材x4
+        よりいずれか一つ
+        彩雲
+        熟練搭乗員
+        プレゼント箱
+        よりいずれか一つ
+      </Other>
+    </Bonus>
+    <Dependency>
+      <!-- TODO -->
     </Dependency>
   </Quest>
   <Quest Id="C1" Category="practice" Type="onetime">
@@ -15822,6 +15913,93 @@
     </Bonus>
     <Dependency>
       <Achieve Id="F66"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="F80" Category="building" Type="onetime">
+    <Name>
+      戦闘機隊戦力の拡充
+    </Name>
+    <Content>
+      戦闘機拡充任務：「艦戦」「水偵」各x4、「艦偵」x2装備を廃棄、熟練搭乗員x1、新型航空兵装資材x1&lt;br&gt;ボーキサイト3,000を準備せよ！(任務達成後、準備した資源・熟練搭乗員・新型航空兵装資材は消費)
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        100
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        烈風改x1
+        三式戦 飛燕x2
+        Spitfire Mk.Ix2
+        よりいずれか一つ
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="B15"/>
+      <Achieve Id="C2"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="F81" Category="building" Type="onetime">
+    <Name>
+      基地航空隊戦力の拡充
+    </Name>
+    <Content>
+      「艦戦」「艦爆」「艦攻」各x4装備を廃棄、熟練搭乗員x1、新型航空兵装資材x2ボーキサイト4,800を準備せよ！(任務達成後、準備した資源・熟練搭乗員・新型航空兵装資材は消費)
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        200
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        雷電x1
+        試製東海x1
+        紫電一一型x2
+        よりいずれか一つ
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="F80"/>
     </Dependency>
   </Quest>
   <Quest Id="G1" Category="remodelling" Type="onetime">
