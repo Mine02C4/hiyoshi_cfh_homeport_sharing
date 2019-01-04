@@ -119,6 +119,18 @@ namespace HiyoshiCfhWeb.Models
                 new DateTimeOffset(2018,  9,  9,  3,  0, 0, new TimeSpan(9, 0, 0)),
                 new DateTimeOffset(2018, 10,  5, 11,  0, 0, new TimeSpan(9, 0, 0))
             ),
+            new Event(201812,
+                "邀撃！ブイン防衛作戦",
+                new List<SortieTag>
+                {
+                    new SortieTag("鼠輸送部隊", Color.Gray, 1),
+                    new SortieTag("ラバウル艦隊", Color.FromArgb(0x3B662A), 2),
+                    new SortieTag("連合艦隊", Color.Blue, 3),
+                    new SortieTag("ブイン派遣隊", Color.FromArgb(0xC0B812), 4)
+                },
+                new DateTimeOffset(2018, 12, 27,  3, 30, 0, new TimeSpan(9, 0, 0)),
+                new DateTimeOffset(2019,  1, 20, 11,  0, 0, new TimeSpan(9, 0, 0))
+            ),
         };
 
         /// <summary>
