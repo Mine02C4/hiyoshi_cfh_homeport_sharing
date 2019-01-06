@@ -15998,8 +15998,12 @@
       </Other>
     </Bonus>
     <Dependency>
+      <Achieve Id="B4"/>
       <Achieve Id="B15"/>
       <Achieve Id="C2"/>
+      <Achieve Id="F18"/>
+      <Achieve Id="F65"/>
+      <Achieve Id="G2"/>
     </Dependency>
   </Quest>
   <Quest Id="F81" Category="building" Type="onetime">
@@ -16042,6 +16046,7 @@
       </Other>
     </Bonus>
     <Dependency>
+      <Achieve Id="F37"/>
       <Achieve Id="F80"/>
     </Dependency>
   </Quest>
