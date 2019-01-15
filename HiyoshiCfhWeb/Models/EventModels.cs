@@ -129,7 +129,7 @@ namespace HiyoshiCfhWeb.Models
                     new SortieTag("ブイン派遣隊", Color.FromArgb(0xC0B812), 4)
                 },
                 new DateTimeOffset(2018, 12, 27,  3, 30, 0, new TimeSpan(9, 0, 0)),
-                new DateTimeOffset(2019,  1, 20, 11,  0, 0, new TimeSpan(9, 0, 0))
+                new DateTimeOffset(2019,  1, 22, 12,  0, 0, new TimeSpan(9, 0, 0))
             ),
         };
 
