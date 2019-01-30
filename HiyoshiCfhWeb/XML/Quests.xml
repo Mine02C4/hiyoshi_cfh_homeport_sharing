@@ -11198,6 +11198,7 @@
       </Other>
     </Bonus>
     <Dependency>
+      <Achieve Id="B18"/>
       <Achieve Id="B23"/>
     </Dependency>
   </Quest>
