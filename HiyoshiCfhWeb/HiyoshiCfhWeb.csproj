@@ -155,12 +155,6 @@
     <Reference Include="System.Data.SQLite, Version=1.0.109.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Data.SQLite.Core.1.0.109.1\lib\net46\System.Data.SQLite.dll</HintPath>
     </Reference>
-    <Reference Include="System.Data.SQLite.EF6, Version=1.0.109.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Data.SQLite.EF6.1.0.109.0\lib\net46\System.Data.SQLite.EF6.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Data.SQLite.Linq, Version=1.0.109.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Data.SQLite.Linq.1.0.109.0\lib\net46\System.Data.SQLite.Linq.dll</HintPath>
-    </Reference>
     <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.5.0\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
     </Reference>
@@ -270,7 +264,6 @@
     <Compile Include="Controllers\ConfigurationController.cs" />
     <Compile Include="Controllers\EventController.cs" />
     <Compile Include="Controllers\HeadquartersController.cs" />
-    <Compile Include="Controllers\ImportController.cs" />
     <Compile Include="Controllers\MonitorController.cs" />
     <Compile Include="Controllers\OData\AdmiralsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -545,8 +538,6 @@
     <Content Include="Views\Account\Succeeded.cshtml" />
     <Content Include="Views\Headquarters\Event.cshtml" />
     <Content Include="Views\Headquarters\Materials.cshtml" />
-    <Content Include="Views\Import\Materials.cshtml" />
-    <Content Include="Views\Import\MaterialsProc.cshtml" />
     <Content Include="Views\Event\e2015summer.cshtml" />
     <Content Include="Views\Headquarters\_AdmiralsDropdownPartial.cshtml" />
     <Content Include="Views\Headquarters\_HeaderPartial.cshtml" />
