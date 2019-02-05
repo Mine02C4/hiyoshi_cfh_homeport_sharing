@@ -8692,7 +8692,7 @@
       精強「十七駆」、北へ、南へ！
     </Name>
     <Content>
-      改装甲型駆逐艦「磯風乙改」「浜風乙改」「浦風丁改」「谷風丁改」4隻の精強「十七駆」を含む艦隊で鎮守府近海、キス島沖、ブルネイ泊地沖、南方海域前面に出撃、敵戦力と交戦、これを撃破せよ！
+      改装甲型駆逐艦「磯風乙改」「浜風乙改」「浦風丁改」「谷風丁改」4隻の精強「十七駆」を含む艦隊で&lt;br&gt;鎮守府近海、キス島沖、ブルネイ泊地沖、南方海域前面に出撃、敵戦力と交戦、これを撃破せよ！
     </Content>
     <Bonus>
       <Fuel>
@@ -8732,6 +8732,7 @@
     </Bonus>
     <Dependency>
       <Achieve Id="A90"/>
+      <Achieve Id="B108"/>
     </Dependency>
   </Quest>
   <Quest Id="B124" Category="sortie" Type="onetime">
@@ -11378,7 +11379,7 @@
       精強「十七駆」、猛特訓！
     </Name>
     <Content>
-      駆逐隊演習任務：精強「第十七駆逐隊」4隻を含む艦隊を編成。新改装精強駆逐隊による猛特訓を開始する！同艦隊で、本日中に演習で4回以上勝利せよ！
+      駆逐隊演習任務：精強「第十七駆逐隊」4隻を含む艦隊を編成。新改装精強駆逐隊による&lt;br&gt;猛特訓を開始する！同艦隊で、本日中に演習で4回以上勝利せよ！
     </Content>
     <Bonus>
       <Fuel>
@@ -11414,6 +11415,7 @@
     </Bonus>
     <Dependency>
       <Achieve Id="A90"/>
+      <Achieve Id="C25"/>
     </Dependency>
   </Quest>
   <Quest Id="C28" Category="practice" Type="onetime">
