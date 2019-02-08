@@ -18142,4 +18142,136 @@
       <Achieve Id="SB39"/>
     </Dependency>
   </Quest>
+  <Quest Id="SB41" Category="sortie" Type="onetime">
+    <Name>
+      バレンタイン限定任務 【１号作戦】
+    </Name>
+    <Content>
+      バレンタイン限定任務：軽巡1隻及び駆逐艦2隻以上を含む艦隊で南西諸島防衛線、南西諸島近海、&lt;br&gt;バシー海峡及び東部オリョール海を哨戒！敵艦隊を捕捉撃破し、各海域の制海権確保に努めよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        2019
+      </Fuel>
+      <Bull>
+        214
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        ・零式艦戦32型x2
+        ・九一式徹甲弾x3
+        ・特注家具職人x1
+        よりいずれか一つ
+        給糧艦「間宮」x1
+      </Other>
+    </Bonus>
+    <Dependency>
+      <!-- TODO -->
+    </Dependency>
+  </Quest>
+  <Quest Id="SB42" Category="sortie" Type="onetime">
+    <Name>
+      バレンタイン限定任務 【２号作戦】
+    </Name>
+    <Content>
+      バレンタイン限定任務：巡洋艦を旗艦とする艦隊で沖ノ島海域、北方モーレイ海、キス島沖及び&lt;br&gt;アルフォンシーノ方面を戦闘哨戒！敵艦隊を捕捉撃滅し、各海域の制海権を確保せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        2019
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        214
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        ・新型航空兵装資材x1
+        ・Re.2001 OR改x1
+        ・補強増設x1
+        よりいずれか一つ
+        艦娘からのチョコx1
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="SB41"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="SB43" Category="sortie" Type="onetime">
+    <Name>
+      「比叡」の出撃
+    </Name>
+    <Content>
+      「比叡」南方海域出撃任務：高速戦艦「比叡」を旗艦とする有力な艦隊で、南方海域&lt;br&gt;サブ島沖海域及びサーモン海域に出撃。同作戦海域の敵艦隊と交戦、これを撃滅せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        1113
+      </Bull>
+      <Steel>
+        1942
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        ・戦闘詳報x1
+        ・96式150cm探照灯x1
+        ・勲章x1
+        よりいずれか一つ
+        家具『「比叡」の掛け軸』
+      </Other>
+    </Bonus>
+    <Dependency>
+      <!-- TODO -->
+    </Dependency>
+  </Quest>
 </Quests>
