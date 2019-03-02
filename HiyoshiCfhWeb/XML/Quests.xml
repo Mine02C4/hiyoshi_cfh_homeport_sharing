@@ -8963,7 +8963,9 @@
       </Other>
     </Bonus>
     <Dependency>
-      <!-- TODO -->
+      <Achieve Id="B50"/>
+      <Achieve Id="F65"/>
+      <Achieve Id="F66"/>
     </Dependency>
   </Quest>
   <Quest Id="Bd1" Category="sortie" Type="daily">
