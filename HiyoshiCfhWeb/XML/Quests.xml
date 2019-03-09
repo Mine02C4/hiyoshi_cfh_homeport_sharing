@@ -11687,6 +11687,53 @@
       <Achieve Id="C2"/>
     </Dependency>
   </Quest>
+  <Quest Id="C29" Category="practice" Type="quarterly">
+    <Name>
+      空母機動部隊、演習始め！
+    </Name>
+    <Content>
+      空母機動部隊演習任務：航空母艦旗艦他1隻計2隻以上及び駆逐艦2隻を含む空母機動部隊を編成。&lt;br&gt;機動部隊各艦の練度向上を図る！同艦隊で、本日中に演習で4回以上勝利せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        400
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        400
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        九九式艦爆x4
+        彗星x2
+        開発資材x3
+        よりいずれか一つ
+        零式艦戦21型x3
+        零式艦戦52型x2
+        洋上補給
+        よりいずれか一つ
+      </Other>
+    </Bonus>
+    <Dependency>
+      <!-- TODO -->
+    </Dependency>
+  </Quest>
   <Quest Id="D1" Category="expeditions" Type="onetime">
     <Name>
       はじめての「遠征」！
@@ -16325,6 +16372,52 @@
     </Bonus>
     <Dependency>
       <Achieve Id="C2"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="F83" Category="building" Type="onetime">
+    <Name>
+      水上艦艇装備工廠の整備
+    </Name>
+    <Content>
+      水上艦艇装備工廠の整備を実施する！「小口径主砲」系装備x5、「大口径主砲」系装備x5、&lt;br&gt;「水偵」系装備x5を廃棄、鋼材3,000を準備せよ！　※任務達成後、準備した資源は消費します。
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        100
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        特注家具職人
+        改修資材x2
+        開発資材x5
+        よりいずれか一つ
+        増設バルジ(中型艦)x2
+        増設バルジ(大型艦)
+        よりいずれか一つ
+      </Other>
+    </Bonus>
+    <Dependency>
+      <!-- TODO -->
     </Dependency>
   </Quest>
   <Quest Id="G1" Category="remodelling" Type="onetime">

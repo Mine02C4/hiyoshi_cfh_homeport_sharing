@@ -339,6 +339,21 @@
                 </tr>
             }
         </table>
+        <h4>演習</h4>
+        <table class="table table-sm quest-table">
+            @foreach (var item in questMaster.Quest
+                .Where(x => x.Type == HiyoshiCfhWeb.XML.Type.quarterly && x.Category == Category.practice))
+            {
+                <tr class="@(StateToClass(item.State))">
+                    <td>
+                        @item.Id
+                    </td>
+                    <td>
+                        @item.Name
+                    </td>
+                </tr>
+            }
+        </table>
         <h4>遠征</h4>
         <table class="table table-sm quest-table">
             @foreach (var item in questMaster.Quest
