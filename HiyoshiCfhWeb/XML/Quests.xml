@@ -9192,6 +9192,89 @@
       <Achieve Id="F85"/>
     </Dependency>
   </Quest>
+  <Quest Id="B133" Category="sortie" Type="onetime">
+    <Name>
+      重改装高速戦艦「金剛改二丙」、南方突入！
+    </Name>
+    <Content>
+      南方海域出撃任務：「金剛改二丙」を旗艦、随伴艦に金剛型1隻、駆逐艦2隻以上を含む艦隊で、&lt;br&gt;南方海域前面、サブ島沖海域、サーモン海域、同海域北方に反復突入、各海域の敵を撃滅せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        1944
+      </Fuel>
+      <Bull>
+        2019
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        戦闘詳報x1
+        新型砲熕兵装資材x2
+        勲章x1
+        よりいずれか一つ
+        35.6cm連装砲改二x1
+      </Other>
+    </Bonus>
+    <Dependency>
+      <!-- TODO -->
+    </Dependency>
+  </Quest>
+  <Quest Id="B134" Category="sortie" Type="onetime">
+    <Name>
+      艦隊司令部の強化 【実施段階】
+    </Name>
+    <Content>
+      艦隊司令部強化：「大淀」を旗艦、随伴艦に「明石」または水上機母艦を含む艦隊を編成、同艦隊で東部オリョール海、アルフォンシーノ方面、西方ジャム島沖に反復出撃、敵艦隊を捕捉撃滅せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        1200
+      </Fuel>
+      <Bull>
+        1200
+      </Bull>
+      <Steel>
+        1200
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="D29"/>
+    </Dependency>
+  </Quest>
   <Quest Id="Bd1" Category="sortie" Type="daily">
     <Name>
       敵艦隊を撃破せよ！
@@ -11907,6 +11990,52 @@
       <Achieve Id="C29"/>
     </Dependency>
   </Quest>
+  <Quest Id="C32" Category="practice" Type="onetime">
+    <Name>
+      六周年記念演習
+    </Name>
+    <Content>
+      六周年記念演習：軽巡クラス1隻と駆逐艦または海防艦計3隻以上を含む6隻編成の特務艦隊を編成。&lt;br&gt;同艦隊による演習で本日中に【S判定】以上4回勝利せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        600
+      </Fuel>
+      <Bull>
+        600
+      </Bull>
+      <Steel>
+        600
+      </Steel>
+      <Bauxite>
+        600
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        ・開発資材x6
+        ・高速建造剤x6
+        よりいずれか一つ
+        ・零式艦戦52型x6
+        ・35.6cm連装砲x6
+        ・勲章x1
+        よりいずれか一つ
+      </Other>
+    </Bonus>
+    <Dependency>
+      <!-- TODO -->
+    </Dependency>
+  </Quest>
   <Quest Id="D1" Category="expeditions" Type="onetime">
     <Name>
       はじめての「遠征」！
@@ -13034,6 +13163,49 @@
     </Bonus>
     <Dependency>
       <Achieve Id="F73"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="D29" Category="expeditions" Type="onetime">
+    <Name>
+      艦隊司令部の強化 【準備段階】
+    </Name>
+    <Content>
+      艦隊司令部強化の準備：遠征任務「敵地偵察作戦」「海峡警備行動」「南西方面航空偵察作戦」&lt;br&gt;「兵站強化任務」を海防艦や水雷戦隊、水上機母艦等を投入、同遠征任務群を成功させよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        500
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        3
+      </RenovationMaterials>
+      <Other>
+        洋上補給x5
+        紫雲x1
+        零式水上偵察機11型乙x1
+        よりいずれか一つ
+      </Other>
+    </Bonus>
+    <Dependency>
+      <!-- TODO -->
     </Dependency>
   </Quest>
   <Quest Id="E1" Category="supply" Type="onetime">
@@ -19026,6 +19198,89 @@
     </Bonus>
     <Dependency>
       <Achieve Id="C2"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="SB45" Category="sortie" Type="onetime">
+    <Name>
+      【GW期間限定】六周年出撃任務
+    </Name>
+    <Content>
+      六周年出撃任務：軽巡級1隻以上と駆逐艦または海防艦計2隻以上を含む艦隊で、製油所地帯沿岸、&lt;br&gt;南西諸島防衛線、南西諸島近海、バシー海峡に展開！同方面の敵戦力を捕捉、これを撃滅せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        1000
+      </Fuel>
+      <Bull>
+        1000
+      </Bull>
+      <Steel>
+        1000
+      </Steel>
+      <Bauxite>
+        1000
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        開発資材x6
+        高速建造材x6
+        特注家具職人x1
+        よりいずれか一つ
+        家具『「六周年記念」掛け軸』
+      </Other>
+    </Bonus>
+    <Dependency>
+      <!-- TODO -->
+    </Dependency>
+  </Quest>
+  <Quest Id="SB46" Category="sortie" Type="onetime">
+    <Name>
+      【GW期間限定】六周年出撃任務-拡張作戦-
+    </Name>
+    <Content>
+      六周年出撃任務：水上機母艦または軽巡級1隻以上と駆逐艦2隻以上を含む艦隊で、北方キス島沖、西方カレー洋リランカ島沖、南方サブ島沖海域、中部グアノ環礁沖海域の敵艦隊を捕捉撃滅せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        2000
+      </Fuel>
+      <Bull>
+        2000
+      </Bull>
+      <Steel>
+        2000
+      </Steel>
+      <Bauxite>
+        2000
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="SB45"/>
     </Dependency>
   </Quest>
 </Quests>
