@@ -9104,6 +9104,94 @@
       <Achieve Id="B129"/>
     </Dependency>
   </Quest>
+  <Quest Id="B131" Category="sortie" Type="onetime">
+    <Name>
+      航空戦艦戦隊、戦闘哨戒！
+    </Name>
+    <Content>
+      航空戦艦二隻を中核とする艦隊を編成、同艦隊で南西諸島防衛線、鎮守府近海及び東部オリョール海、&lt;br&gt;タウイタウイ泊地沖に展開。同海域の脅威となる敵艦隊主力を捕捉、これを撃滅せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        600
+      </Fuel>
+      <Bull>
+        600
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        600
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        戦闘詳報
+        勲章x2
+        よりいずれか一つ
+        勲章x1
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="A18"/>
+      <Achieve Id="F6"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="B132" Category="sortie" Type="onetime">
+    <Name>
+      最新鋭｢第四航空戦隊｣、出撃せよ！
+    </Name>
+    <Content>
+      ｢日向改二」「伊勢改二」の最新鋭「四航戦」を含む第一艦隊で、鎮守府近海航路に反復出撃、さらに、カレー洋リランカ島沖、サーモン海域北方、KW環礁沖海域の敵艦隊を捕捉撃滅せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        1000
+      </Fuel>
+      <Bull>
+        1000
+      </Bull>
+      <Steel>
+        1000
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        S-51J
+        勲章x2
+        よりいずれか一つ
+        瑞雲改二(六三四空)
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="B131"/>
+      <Achieve Id="F85"/>
+    </Dependency>
+  </Quest>
   <Quest Id="Bd1" Category="sortie" Type="daily">
     <Name>
       敵艦隊を撃破せよ！
@@ -11256,7 +11344,7 @@
   </Quest>
   <Quest Id="C19" Category="practice" Type="onetime">
     <Name>
-      春季大演習
+      春季大演習(旧任務)
     </Name>
     <Content>
       春季大演習：春の一日中に「演習」で8回以上「勝利」をおさめ、艦隊の練度向上に努めよ！
@@ -11732,6 +11820,91 @@
     </Bonus>
     <Dependency>
       <!-- TODO -->
+    </Dependency>
+  </Quest>
+  <Quest Id="C30" Category="practice" Type="onetime">
+    <Name>
+      春季大演習
+    </Name>
+    <Content>
+      春季大演習：春の一日中に「演習」で8回以上「勝利」をおさめ、艦隊の練度向上に努めよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        1000
+      </Steel>
+      <Bauxite>
+        300
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        給糧艦「間宮」x1
+        プレゼント箱x1
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="C2"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="C31" Category="practice" Type="onetime">
+    <Name>
+      艦載機演習
+    </Name>
+    <Content>
+      艦載機演習任務：正規空母旗艦他1隻計2隻以上及び駆逐艦2隻を含む空母機動部隊を編成。&lt;br&gt;艦載機の練度向上と装備充実を図る！同機動部隊で、本日中に演習を【A判定】以上3回勝利せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        100
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        新型航空兵装資材
+        彗星x3
+        開発資材x6
+        よりいずれか一つ
+        彗星一二型甲
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="C29"/>
     </Dependency>
   </Quest>
   <Quest Id="D1" Category="expeditions" Type="onetime">
@@ -16418,6 +16591,173 @@
     </Bonus>
     <Dependency>
       <!-- TODO -->
+    </Dependency>
+  </Quest>
+  <Quest Id="F84" Category="building" Type="onetime">
+    <Name>
+      回転翼機の開発
+    </Name>
+    <Content>
+      回転翼機装備の研究開発を実施する。「水偵」系装備x4、「艦戦」系装備x3、「艦攻」系装備x2を廃棄、&lt;br&gt;ボーキサイト3,000、開発資材x20を準備せよ！　※任務達成後、準備した資源・資材は消費します。
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        新型航空兵装資材x2
+        オ号観測機改
+        よりいずれか一つ
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="F5"/>
+      <Achieve Id="F73"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="F85" Category="building" Type="onetime">
+    <Name>
+      新型航空艤装の研究
+    </Name>
+    <Content>
+      艦艇の航空運用能力を高める新型航空艤装の研究を行う。「瑞雲」x4、「彗星」x4、「流星」x2を廃棄、&lt;br&gt;鋼材8,500、ボーキサイト4,000、開発資材x60を準備せよ！　※準備した資源・資材は消費します。
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        試製甲板カタパルトx1
+        新型航空兵装資材x3
+        よりいずれか一つ
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="C2"/>
+      <Achieve Id="F84"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="F86" Category="building" Type="onetime">
+    <Name>
+      「彗星」艦爆の新運用研究
+    </Name>
+    <Content>
+      三号爆弾運用：旗艦「伊勢改二」または「日向改二」第一スロに「彗星一二型甲」搭載、 「彗星」x4、&lt;br&gt;「九九式艦爆」x3、「瑞雲」x2廃棄、弾薬x2,500、ボーキ5,000、新型航空兵装資材x1を準備せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        彗星一二型(六三四空／三号爆弾搭載機)
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="C31"/>
+      <Achieve Id="F84"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="F87" Category="building" Type="onetime">
+    <Name>
+      最精鋭「瑞雲」隊の編成
+    </Name>
+    <Content>
+      旗艦「伊勢改二」「日向改二」第一スロに「瑞雲改二(六三四空)」※改修max。「瑞雲」x6「彗星」x3、「試製烈風 後期型」x1を廃棄、弾薬2,000、ボーキ8,000、新型航空兵装資材x1、熟練搭乗員x2を準備！
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        瑞雲改二(六三四空／熟練)
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="B132"/>
     </Dependency>
   </Quest>
   <Quest Id="G1" Category="remodelling" Type="onetime">
