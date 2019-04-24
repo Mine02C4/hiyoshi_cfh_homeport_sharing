@@ -9233,7 +9233,7 @@
       </Other>
     </Bonus>
     <Dependency>
-      <!-- TODO -->
+      <Achieve Id="B128"/>
     </Dependency>
   </Quest>
   <Quest Id="B134" Category="sortie" Type="onetime">
@@ -9241,7 +9241,7 @@
       艦隊司令部の強化 【実施段階】
     </Name>
     <Content>
-      艦隊司令部強化：「大淀」を旗艦、随伴艦に「明石」または水上機母艦を含む艦隊を編成、同艦隊で東部オリョール海、アルフォンシーノ方面、西方ジャム島沖に反復出撃、敵艦隊を捕捉撃滅せよ！
+      艦隊司令部強化：「大淀」を旗艦、随伴艦に「明石」または水上機母艦を含む艦隊を編成、同艦隊で&lt;br&gt;東部オリョール海、アルフォンシーノ方面、西方ジャム島沖に反復出撃、敵艦隊を捕捉撃滅せよ！
     </Content>
     <Bonus>
       <Fuel>
@@ -13205,7 +13205,8 @@
       </Other>
     </Bonus>
     <Dependency>
-      <!-- TODO -->
+      <Achieve Id="D12"/>
+      <Achieve Id="D28"/>
     </Dependency>
   </Quest>
   <Quest Id="E1" Category="supply" Type="onetime">
@@ -19246,10 +19247,10 @@
   </Quest>
   <Quest Id="SB46" Category="sortie" Type="onetime">
     <Name>
-      【GW期間限定】六周年出撃任務-拡張作戦-
+      【GW期間限定】六周年出撃任務 -拡張作戦-
     </Name>
     <Content>
-      六周年出撃任務：水上機母艦または軽巡級1隻以上と駆逐艦2隻以上を含む艦隊で、北方キス島沖、西方カレー洋リランカ島沖、南方サブ島沖海域、中部グアノ環礁沖海域の敵艦隊を捕捉撃滅せよ！
+      六周年出撃任務：水上機母艦または軽巡級1隻以上と駆逐艦2隻以上を含む艦隊で、北方キス島沖、&lt;br&gt;西方カレー洋リランカ島沖、南方サブ島沖海域、中部グアノ環礁沖海域の敵艦隊を捕捉撃滅せよ！
     </Content>
     <Bonus>
       <Fuel>
