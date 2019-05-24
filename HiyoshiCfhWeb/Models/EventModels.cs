@@ -131,6 +131,19 @@ namespace HiyoshiCfhWeb.Models
                 new DateTimeOffset(2018, 12, 27,  3, 30, 0, new TimeSpan(9, 0, 0)),
                 new DateTimeOffset(2019,  1, 22, 12,  0, 0, new TimeSpan(9, 0, 0))
             ),
+            new Event(201905,
+                "発動！友軍救援「第二次ハワイ作戦」",
+                new List<SortieTag>
+                {
+                    new SortieTag("第百四戦隊", Color.Gray, 1),
+                    new SortieTag("第二艦隊", Color.DarkOrange, 2),
+                    new SortieTag("北方部隊", Color.Blue, 3),
+                    new SortieTag("機動部隊", Color.FromArgb(0x3B662A), 4),
+                    new SortieTag("攻略部隊", Color.FromArgb(0xC0B812), 5)
+                },
+                new DateTimeOffset(2019,  5, 21,  8, 50, 0, new TimeSpan(9, 0, 0)),
+                new DateTimeOffset(2019,  6, 20, 12,  0, 0, new TimeSpan(9, 0, 0))
+            ),
         };
 
         /// <summary>
