@@ -1,16 +1,12 @@
 "use strict";
-var YearAndMonth = /** @class */ (function () {
-    function YearAndMonth(year, month) {
+class YearAndMonth {
+    constructor(year, month) {
         this.year = year;
         this.month = month;
     }
-    return YearAndMonth;
-}());
-var Graph = /** @class */ (function () {
-    function Graph() {
-    }
-    return Graph;
-}());
+}
+class Graph {
+}
 var main_graph = {
     svg: undefined,
     line: undefined,
@@ -28,8 +24,8 @@ var screw_graph = {
         { name: '改修資材', color: 'gray', data: [], path: undefined }
     ],
 };
-var Basedata = /** @class */ (function () {
-    function Basedata() {
+class Basedata {
+    constructor() {
         this.range = {
             start: new YearAndMonth((new Date()).getFullYear(), (new Date()).getMonth() + 1),
             end: new YearAndMonth((new Date()).getFullYear(), (new Date()).getMonth() + 1)
@@ -39,7 +35,7 @@ var Basedata = /** @class */ (function () {
         this.collection = {};
         this.collection2 = {};
     }
-    Basedata.prototype.expand = function () {
+    expand() {
         var before = this.getBefore();
         this.fetch(before.year, before.month, function () {
             basedata.range.start = before;
@@ -49,21 +45,21 @@ var Basedata = /** @class */ (function () {
             basedata.range.start = before;
             update_from_base_data2();
         });
-    };
+    }
     ;
-    Basedata.prototype.add = function (year, month, array) {
+    add(year, month, array) {
         this.collection[String(year) + ('00' + month).slice(-2)] = array;
-    };
-    Basedata.prototype.add2 = function (year, month, array) {
+    }
+    add2(year, month, array) {
         this.collection2[String(year) + ('00' + month).slice(-2)] = array;
-    };
-    Basedata.prototype.getUri = function (year, month) {
+    }
+    getUri(year, month) {
         return "Materials?type=json&target=main&range=ym" + year + ('00' + month).slice(-2);
-    };
-    Basedata.prototype.getUri2 = function (year, month) {
+    }
+    getUri2(year, month) {
         return "Materials?type=json&target=screw&range=ym" + year + ('00' + month).slice(-2);
-    };
-    Basedata.prototype.fetch = function (year, month, callback) {
+    }
+    fetch(year, month, callback) {
         if (this.lock)
             return;
         this.lock = true;
@@ -77,8 +73,8 @@ var Basedata = /** @class */ (function () {
         });
         // TODO: URL generation
         // add
-    };
-    Basedata.prototype.fetch2 = function (year, month, callback) {
+    }
+    fetch2(year, month, callback) {
         if (this.lock2)
             return;
         this.lock2 = true;
@@ -92,8 +88,8 @@ var Basedata = /** @class */ (function () {
         });
         // TODO: URL generation
         // add
-    };
-    Basedata.prototype.getBefore = function () {
+    }
+    getBefore() {
         if (this.range.start !== null) {
             var start = this.range.start;
             if (start.month === 1) {
@@ -107,8 +103,8 @@ var Basedata = /** @class */ (function () {
             console.log('range.start is null');
             return null;
         }
-    };
-    Basedata.prototype.getAfter = function () {
+    }
+    getAfter() {
         if (this.range.end !== null) {
             var end = this.range.end;
             if (end.month === 12) {
@@ -128,9 +124,8 @@ var Basedata = /** @class */ (function () {
             console.log('range.end is null');
             return null;
         }
-    };
-    return Basedata;
-}());
+    }
+}
 var basedata = new Basedata();
 function update_from_base_data() {
     var increment = function (ym) {
