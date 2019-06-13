@@ -139,10 +139,11 @@ namespace HiyoshiCfhWeb.Models
                     new SortieTag("第二艦隊", Color.DarkOrange, 2),
                     new SortieTag("北方部隊", Color.Blue, 3),
                     new SortieTag("機動部隊", Color.FromArgb(0x3B662A), 4),
-                    new SortieTag("攻略部隊", Color.FromArgb(0xC0B812), 5)
+                    new SortieTag("攻略部隊", Color.FromArgb(0xC0B812), 5),
+                    new SortieTag("ハワイ派遣艦隊", Color.YellowGreen, 6),
                 },
                 new DateTimeOffset(2019,  5, 21,  8, 50, 0, new TimeSpan(9, 0, 0)),
-                new DateTimeOffset(2019,  6, 20, 12,  0, 0, new TimeSpan(9, 0, 0))
+                new DateTimeOffset(2019,  6, 25, 12,  0, 0, new TimeSpan(9, 0, 0))
             ),
         };
 
