@@ -9276,6 +9276,134 @@
       <Achieve Id="D29"/>
     </Dependency>
   </Quest>
+  <Quest Id="B135" Category="sortie" Type="onetime">
+    <Name>
+      近海哨戒を実施せよ！
+    </Name>
+    <Content>
+      哨戒任務：軽巡級1隻以上、駆逐艦または海防艦計3隻以上による艦隊で、鎮守府海域の南西諸島沖及び&lt;br&gt;製油所地帯沿岸、南西諸島海域の南西諸島近海及びバシー海峡の哨戒を実施、敵を捕捉撃滅せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        300
+      </Fuel>
+      <Bull>
+        300
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        ・開発資材x3
+        ・高速修復材x3
+        ・25mm三連装機銃x3
+        よりいずれか一つ
+        ・戦闘詳報x1
+      </Other>
+    </Bonus>
+    <Dependency>
+      <!-- TODO -->
+    </Dependency>
+  </Quest>
+  <Quest Id="B136" Category="sortie" Type="onetime">
+    <Name>
+      精鋭「二四駆逐隊」出撃せよ！
+    </Name>
+    <Content>
+      二四駆出撃任務：「海風改二」を旗艦とし、「山風」「江風」「涼風」のうち2隻以上を含む艦隊を編成、東部オリョール海、沖ノ島海域、南方海域前面、サブ島沖海域に突入！敵艦隊を捕捉、撃滅せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        800
+      </Fuel>
+      <Bull>
+        800
+      </Bull>
+      <Steel>
+        800
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+      </Other>
+      <!-- TODO -->
+    </Bonus>
+    <Dependency>
+      <Achieve Id="B135"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="B137" Category="sortie" Type="onetime">
+    <Name>
+      精強！「第一航空戦隊」出撃せよ！
+    </Name>
+    <Content>
+      第一艦隊旗艦「赤城改二(改二戊)」同二番艦「加賀」の第一航空戦隊を中核とした艦隊で、カレー洋リランカ島沖、珊瑚諸島沖に展開！さらにKW環礁沖海域に反復出撃！鎧袖一触！敵を粉砕せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        1000
+      </Steel>
+      <Bauxite>
+        1000
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        ・改修資材x5
+        ・新型航空兵装資材x1
+        ・熟練搭乗員x1
+        よりいずれか一つ
+        ・流星改(一航戦)
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="C33"/>
+    </Dependency>
+  </Quest>
   <Quest Id="Bd1" Category="sortie" Type="daily">
     <Name>
       敵艦隊を撃破せよ！
@@ -12037,6 +12165,92 @@
       <!-- TODO -->
     </Dependency>
   </Quest>
+  <Quest Id="C33" Category="practice" Type="onetime">
+    <Name>
+      航空戦隊演習(その壱)
+    </Name>
+    <Content>
+      航空戦隊演習任務：航空母艦3隻以上及び駆逐艦2隻以上を含む航空戦隊を編成。艦隊戦演習により、&lt;br&gt;戦技及び練度向上を図る。同航空戦隊で、本日中に演習を【S判定】勝利3回以上達成せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        300
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        300
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        ・開発資材x3
+        ・高速建造材x3
+        よりいずれか一つ
+        ・九七式艦攻x3
+        ・洋上補給x2
+        ・新型航空兵装資材x1
+        よりいずれか一つ
+      </Other>
+    </Bonus>
+    <Dependency>
+      <!-- TODO -->
+    </Dependency>
+  </Quest>
+  <Quest Id="C34" Category="practice" Type="onetime">
+    <Name>
+      航空戦隊演習(その弐)
+    </Name>
+    <Content>
+      航空戦隊演習任務：航空母艦3隻以上及び駆逐艦2隻以上を含む航空戦隊を編成。大規模演習により、さらなる戦技及び練度向上を図る。同航空戦隊で、本日中に演習を【S判定】勝利6回以上達成せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        500
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        500
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+      </Other>
+      <!-- TODO -->
+    </Bonus>
+    <Dependency>
+      <Achieve Id="C33"/>
+    </Dependency>
+  </Quest>
   <Quest Id="D1" Category="expeditions" Type="onetime">
     <Name>
       はじめての「遠征」！
@@ -13208,6 +13422,91 @@
     <Dependency>
       <Achieve Id="D12"/>
       <Achieve Id="D28"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="D30" Category="expeditions" Type="onetime">
+    <Name>
+      警備及び哨戒偵察を強化せよ！
+    </Name>
+    <Content>
+      警備哨戒任務：遠征「海峡警備行動」「強行偵察任務」「南西方面航空偵察作戦」を実施、&lt;br&gt;南方戦線遠征の前段作戦として、内地及び南西諸島方面の警備及び哨戒偵察を実施せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        500
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        ・給糧艦「間宮」x1
+        ・特注家具職人x1
+        よりいずれか一つ
+        ・開発資材x4
+        ・改修資材x2
+        ・7.7mm機銃x2
+        よりいずれか一つ
+      </Other>
+    </Bonus>
+    <Dependency>
+      <!-- TODO -->
+    </Dependency>
+  </Quest>
+  <Quest Id="D31" Category="expeditions" Type="onetime">
+    <Name>
+      南方戦線遠征を実施せよ！
+    </Name>
+    <Content>
+      南方戦線遠征：南方海域の作戦を援護する南方作戦遠征作戦を実施する。南方海域遠征「東京急行」「東京急行(弐)」「水上機基地建設」「水上機前線輸送」「MO作戦」を実施せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        750
+      </Steel>
+      <Bauxite>
+        750
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="D30"/>
     </Dependency>
   </Quest>
   <Quest Id="E1" Category="supply" Type="onetime">
@@ -16932,6 +17231,46 @@
     </Bonus>
     <Dependency>
       <Achieve Id="B132"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="F88" Category="building" Type="onetime">
+    <Name>
+      一航戦精鋭「流星改」隊の編成
+    </Name>
+    <Content>
+      一航戦任務：旗艦「赤城改二（改二戊）」第一装備スロに「流星（一航戦）」※連度maxを搭載し、「流星改」×4「彩雲」×1「九七艦攻」×2廃棄、弾薬×2800、ボーキ9000、熟練搭乗員×2を準備せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+      </Other>
+      <!-- TODO -->
+    </Bonus>
+    <Dependency>
+      <Achieve Id="B137"/>
     </Dependency>
   </Quest>
   <Quest Id="G1" Category="remodelling" Type="onetime">
