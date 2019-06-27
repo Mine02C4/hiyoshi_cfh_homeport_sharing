@@ -9358,8 +9358,12 @@
         0
       </RenovationMaterials>
       <Other>
+        ・新型砲熕兵装資材x1
+        ・13号対空電探x3
+        ・特注家具職人x1
+        よりいずれか一つ
+        ・12.7cm連装砲C型改二x1
       </Other>
-      <!-- TODO -->
     </Bonus>
     <Dependency>
       <Achieve Id="B135"/>
@@ -12249,8 +12253,14 @@
         0
       </RenovationMaterials>
       <Other>
+        ・13号対空電探x2
+        ・開発資材x4
+        よりいずれか一つ
+        ・彩雲★2x1
+        ・天山★2x2
+        ・熟練搭乗員x1
+        よりいずれか一つ
       </Other>
-      <!-- TODO -->
     </Bonus>
     <Dependency>
       <Achieve Id="C33"/>
@@ -13480,7 +13490,7 @@
       南方戦線遠征を実施せよ！
     </Name>
     <Content>
-      南方戦線遠征：南方海域の作戦を援護する南方作戦遠征作戦を実施する。南方海域遠征「東京急行」「東京急行(弐)」「水上機基地建設」「水上機前線輸送」「MO作戦」を実施せよ！
+      南方戦線遠征：南方海域の作戦を援護する南方作戦遠征作戦を実施する。南方海域遠征&lt;br&gt;「東京急行」「東京急行(弐)」「水上機基地建設」「水上機前線輸送」「MO作戦」を実施せよ！
     </Content>
     <Bonus>
       <Fuel>
@@ -13508,6 +13518,11 @@
         0
       </RenovationMaterials>
       <Other>
+        ・高速修復材x6
+        ・大発動艇x2
+        ・12.7mm単装機銃x3
+        よりいずれか一つ
+        ・給糧艦「伊良湖」x2
       </Other>
     </Bonus>
     <Dependency>
@@ -17271,8 +17286,8 @@
         0
       </RenovationMaterials>
       <Other>
+        流星改(一航戦／熟練)x1
       </Other>
-      <!-- TODO -->
     </Bonus>
     <Dependency>
       <Achieve Id="B137"/>
