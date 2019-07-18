@@ -9415,6 +9415,50 @@
       <Achieve Id="C33"/>
     </Dependency>
   </Quest>
+  <Quest Id="B138" Category="sortie" Type="onetime">
+    <Name>
+      「羽黒」「神風」、出撃せよ！
+    </Name>
+    <Content>
+      第五戦隊任務：「羽黒」「神風」を基幹として、他に重巡級1隻駆逐艦2隻、または駆逐艦4隻の艦隊で南西諸島近海、バシー海峡、東部オリョール海に出撃、敵艦隊と交戦、これを撃滅せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        516
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        1945
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        ・新型航空兵装資材x1
+        ・補強増設x1
+        ・特注家具職人x1
+        よりいずれか一つ
+        ・家具『「羽黒の護り」掛け軸』
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="B135"/>
+    </Dependency>
+  </Quest>
   <Quest Id="Bd1" Category="sortie" Type="daily">
     <Name>
       敵艦隊を撃破せよ！
@@ -11789,47 +11833,6 @@
       <Achieve Id="C21"/>
     </Dependency>
   </Quest>
-  <Quest Id="C24" Category="practice" Type="onetime">
-    <Name>
-      夏季大演習
-    </Name>
-    <Content>
-      夏季大演習：夏季期間の一日中に「演習」で8回以上「勝利」をおさめ、艦隊の練度向上に努めよ！&lt;br&gt;暑さに負けるな！　艦隊、抜錨！
-    </Content>
-    <Bonus>
-      <Fuel>
-        0
-      </Fuel>
-      <Bull>
-        300
-      </Bull>
-      <Steel>
-        0
-      </Steel>
-      <Bauxite>
-        1000
-      </Bauxite>
-      <InstantBuildMaterials>
-        0
-      </InstantBuildMaterials>
-      <InstantRepairMaterials>
-        0
-      </InstantRepairMaterials>
-      <DevelopmentMaterials>
-        0
-      </DevelopmentMaterials>
-      <RenovationMaterials>
-        0
-      </RenovationMaterials>
-      <Other>
-        給糧艦「間宮」x1
-        プレゼント箱x1
-      </Other>
-    </Bonus>
-    <Dependency>
-      <!-- TODO -->
-    </Dependency>
-  </Quest>
   <Quest Id="C25" Category="practice" Type="onetime">
     <Name>
       朝潮型集合！特訓始め！
@@ -12266,6 +12269,91 @@
     </Bonus>
     <Dependency>
       <Achieve Id="C33"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="C35" Category="practice" Type="onetime">
+    <Name>
+      新しき盾
+    </Name>
+    <Content>
+      「新しき盾」演習任務：重巡「摩耶」及び重巡「羽黒」を擁する艦隊による演習「新しき盾」を実施する。&lt;br&gt;本「新しき盾」演習において、本日中に【S判定】勝利3回以上達成せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        179
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        180
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        ・開発資材x4
+        ・25mm三連装機銃x3
+        ・12cm30連装噴進砲x2
+        よりいずれか一つ
+        ・新型航空兵装資材x1
+      </Other>
+    </Bonus>
+    <Dependency>
+      <!-- TODO -->
+    </Dependency>
+  </Quest>
+  <Quest Id="C36" Category="practice" Type="onetime">
+    <Name>
+      夏季大演習
+    </Name>
+    <Content>
+      夏季大演習：夏季期間の一日中に「演習」で8回以上「勝利」をおさめ、艦隊の練度向上に努めよ！&lt;br&gt;暑さに負けるな！　艦隊、抜錨！
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        300
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        1000
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        給糧艦「間宮」x1
+        プレゼント箱x1
+      </Other>
+    </Bonus>
+    <Dependency>
+      <!-- TODO -->
     </Dependency>
   </Quest>
   <Quest Id="D1" Category="expeditions" Type="onetime">
