@@ -9366,6 +9366,7 @@
       </Other>
     </Bonus>
     <Dependency>
+      <Achieve Id="B41"/>
       <Achieve Id="B135"/>
     </Dependency>
   </Quest>
@@ -9410,6 +9411,7 @@
       </Other>
     </Bonus>
     <Dependency>
+      <Achieve Id="B40"/>
       <Achieve Id="C33"/>
     </Dependency>
   </Quest>
@@ -13482,7 +13484,7 @@
       </Other>
     </Bonus>
     <Dependency>
-      <!-- TODO -->
+      <Achieve Id="D15"/>
     </Dependency>
   </Quest>
   <Quest Id="D31" Category="expeditions" Type="onetime">
@@ -13526,6 +13528,7 @@
       </Other>
     </Bonus>
     <Dependency>
+      <Achieve Id="D23"/>
       <Achieve Id="D30"/>
     </Dependency>
   </Quest>
@@ -17291,6 +17294,7 @@
     </Bonus>
     <Dependency>
       <Achieve Id="B137"/>
+      <Achieve Id="F20"/>
     </Dependency>
   </Quest>
   <Quest Id="G1" Category="remodelling" Type="onetime">
