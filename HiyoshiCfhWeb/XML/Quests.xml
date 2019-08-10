@@ -9459,6 +9459,48 @@
       <Achieve Id="B135"/>
     </Dependency>
   </Quest>
+  <Quest Id="B139" Category="sortie" Type="onetime">
+    <Name>
+      陸戦用装備の艦載運用実戦研究
+    </Name>
+    <Content>
+      陸戦用装備の艦載運用研究：水上機母艦または揚陸艦を含む艦隊を編成、西方海域カレー洋リランカ島沖及び中部北海域ピーコック島沖の各作戦において、敵地上戦力と交戦、これを複数回撃破せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        500
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        ・二式12cm迫撃砲改ｘ3
+        ・ 艦載型 四式20cm対地噴進砲x1
+        よりいずれか一つ
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="F89"/>
+    </Dependency>
+  </Quest>
   <Quest Id="Bd1" Category="sortie" Type="daily">
     <Name>
       敵艦隊を撃破せよ！
@@ -10877,6 +10919,96 @@
     </Bonus>
     <Dependency>
       <!-- TODO -->
+    </Dependency>
+  </Quest>
+  <Quest Id="Bq10" Category="sortie" Type="quarterly">
+    <Name>
+      戦果拡張任務！「Z作戦」後段作戦
+    </Name>
+    <Content>
+      戦果拡張作戦：我が第一艦隊に精鋭艦艇を集中配備、同精鋭艦隊を以て、南西海域タウイタウイ泊地沖、南方海域サーモン海域北方、中部海域MS諸島沖及びKW環礁沖海域の敵艦隊を捕捉、これを撃滅せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        2000
+      </Steel>
+      <Bauxite>
+        2000
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        ・改修資材x4
+        ・給糧艦「伊良湖」x3
+        ・洋上補給x4
+        よりいずれか一つ
+        ・戦果+400
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="Bq2"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="Bq11" Category="sortie" Type="quarterly">
+    <Name>
+      南西諸島方面「海上警備行動」発令！
+    </Name>
+    <Content>
+      海上警備任務：軽空母または軽巡級1隻、駆逐艦または海防艦を計3隻以上配備した海上護衛艦隊で、&lt;br&gt;南1号作戦、南西諸島哨戒、柳作戦、オリョール哨戒を実施、各作戦海域に出没する敵を撃滅せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        800
+      </Bull>
+      <Steel>
+        800
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        ・改修資材x2
+        ・九四式爆雷投射機x2
+        ・ドラム缶(輸送用)x2
+        よりいずれか一つ
+        ・プレゼント箱x1
+        ・戦果+80
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="Bm8"/>
+      <Achieve Id="C2"/>
     </Dependency>
   </Quest>
   <Quest Id="C1" Category="practice" Type="onetime">
@@ -12350,6 +12482,49 @@
       <Other>
         給糧艦「間宮」x1
         プレゼント箱x1
+      </Other>
+    </Bonus>
+    <Dependency>
+      <!-- TODO -->
+    </Dependency>
+  </Quest>
+  <Quest Id="C37" Category="practice" Type="onetime">
+    <Name>
+      輸送船団演習
+    </Name>
+    <Content>
+      輸送船団演習任務：補給艦または揚陸艦、海防艦を計2隻以上含む輸送船団を編成、&lt;br&gt;同輸送船団及び護衛艦艇による演習で、本日中に【A判定】勝利4回以上達成せよ。
+    </Content>
+    <Bonus>
+      <Fuel>
+        150
+      </Fuel>
+      <Bull>
+        150
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        ・九四式爆雷投射機x1
+        ・二式12cm迫撃砲改x1
+        ・九五式爆雷x2
+        よりいずれか一つ
       </Other>
     </Bonus>
     <Dependency>
@@ -17383,6 +17558,46 @@
     <Dependency>
       <Achieve Id="B137"/>
       <Achieve Id="F20"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="F89" Category="building" Type="onetime">
+    <Name>
+      陸戦用装備の艦載運用研究
+    </Name>
+    <Content>
+      第一艦隊旗艦軽巡級の第一装備スロに「7.7mm機銃」装備。「25mm単装機銃」x2、「ドラム缶(輸送&lt;br&gt;用)」x2、「12cm30連装噴進砲」x1を廃棄。弾薬x1,700、開発資材x30、高速建造材x10を準備せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        二式12cm迫撃砲改x1
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="F5"/>
     </Dependency>
   </Quest>
   <Quest Id="G1" Category="remodelling" Type="onetime">
