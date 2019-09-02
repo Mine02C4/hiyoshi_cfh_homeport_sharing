@@ -145,6 +145,17 @@ namespace HiyoshiCfhWeb.Models
                 new DateTimeOffset(2019,  5, 21,  8, 50, 0, new TimeSpan(9, 0, 0)),
                 new DateTimeOffset(2019,  6, 25, 12,  0, 0, new TimeSpan(9, 0, 0))
             ),
+            new Event(201908,
+                "欧州方面反撃作戦 発動！「シングル作戦」",
+                new List<SortieTag>
+                {
+                    new SortieTag("欧州防衛艦隊", Color.Blue, 1),
+                    new SortieTag("連合艦隊", Color.FromArgb(0x3B662A), 2),
+                    new SortieTag("??作戦", Color.DarkOrange, 3),
+                },
+                new DateTimeOffset(2019,  8, 30, 20,  0, 0, new TimeSpan(9, 0, 0)),
+                new DateTimeOffset(2019,  9, 30, 12,  0, 0, new TimeSpan(9, 0, 0))
+            ),
         };
 
         /// <summary>
