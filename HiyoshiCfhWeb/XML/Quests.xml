@@ -9498,6 +9498,7 @@
       </Other>
     </Bonus>
     <Dependency>
+      <Achieve Id="B80"/>
       <Achieve Id="F89"/>
     </Dependency>
   </Quest>
@@ -12528,7 +12529,8 @@
       </Other>
     </Bonus>
     <Dependency>
-      <!-- TODO -->
+      <Achieve Id="Bd1"/>
+      <Achieve Id="C35"/>
     </Dependency>
   </Quest>
   <Quest Id="D1" Category="expeditions" Type="onetime">
@@ -19866,6 +19868,7 @@
     </Bonus>
     <Dependency>
       <Achieve Id="C2"/>
+      <Achieve Id="B104"/>
     </Dependency>
   </Quest>
   <Quest Id="SB45" Category="sortie" Type="onetime">
