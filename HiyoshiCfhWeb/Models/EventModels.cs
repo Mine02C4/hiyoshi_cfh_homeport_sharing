@@ -151,7 +151,7 @@ namespace HiyoshiCfhWeb.Models
                 {
                     new SortieTag("欧州防衛艦隊", Color.Blue, 1),
                     new SortieTag("連合艦隊", Color.FromArgb(0x3B662A), 2),
-                    new SortieTag("??作戦", Color.DarkOrange, 3),
+                    new SortieTag("地中海艦隊", Color.DarkOrange, 3),
                 },
                 new DateTimeOffset(2019,  8, 30, 20,  0, 0, new TimeSpan(9, 0, 0)),
                 new DateTimeOffset(2019,  9, 30, 12,  0, 0, new TimeSpan(9, 0, 0))
