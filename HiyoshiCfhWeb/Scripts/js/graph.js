@@ -226,6 +226,7 @@ function create_graph(data, selector, graph) {
         maxValue = Math.max(maxValue, d3.max(data[i]["values"], function (d) { return d["value"]; }));
         latestTime = Math.max(latestTime, d3.max(data[i]["values"], function (d) { return new Date(d["time"]); }).getTime());
     }
+    maxValue = Math.min(maxValue * 1.1, 300000);
     x.domain([new Date(data[0]["values"][0]["time"]), new Date(latestTime)]);
     y.domain([0, maxValue]);
     var formatMillisecond = d3.timeFormat(".%L"), formatSecond = d3.timeFormat(":%S"), formatMinute = d3.timeFormat("%H:%M"), formatHour = d3.timeFormat("%H"), formatDay = d3.timeFormat("%a %d"), formatWeek = d3.timeFormat("%m/%d"), formatMonth = d3.timeFormat("%m月"), formatYear = d3.timeFormat("%Y年");
@@ -275,7 +276,9 @@ function create_graph(data, selector, graph) {
             });
             maxValue = Math.max(maxValue, d3.max(vdata, function (d) { return d["value"]; }));
         }
+        maxValue = Math.min(maxValue * 1.1, 300000);
         y.domain([0, maxValue]);
+        gY.transition().call(yAxis);
         zoomed();
     }
     if (selector == "#main_chart") {

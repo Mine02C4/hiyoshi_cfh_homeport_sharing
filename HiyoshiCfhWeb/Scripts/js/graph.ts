@@ -137,7 +137,7 @@ class Basedata {
         }
     }
     getAfter(): YearAndMonth {
-        if(this.range.end !== null) {
+        if (this.range.end !== null) {
             var end = this.range.end;
             if (end.month === 12) {
                 return {
@@ -264,6 +264,7 @@ function create_graph(data: Array<RecordSeries>, selector: string, graph: Graph)
         maxValue = Math.max(maxValue, d3.max(data[i]["values"], function (d) { return d["value"]; }));
         latestTime = Math.max(latestTime, d3.max(data[i]["values"], function (d) { return new Date(d["time"]); }).getTime());
     }
+    maxValue = Math.min(maxValue * 1.1, 300000);
     x.domain([new Date(data[0]["values"][0]["time"]), new Date(latestTime)]);
     y.domain([0, maxValue]);
 
@@ -324,7 +325,9 @@ function create_graph(data: Array<RecordSeries>, selector: string, graph: Graph)
             });
             maxValue = Math.max(maxValue, d3.max(vdata, function (d) { return d["value"]; }));
         }
+        maxValue = Math.min(maxValue * 1.1, 300000);
         y.domain([0, maxValue]);
+        gY.transition().call(yAxis);
         zoomed();
     }
     if (selector == "#main_chart") {
