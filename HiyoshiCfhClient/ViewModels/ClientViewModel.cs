@@ -500,7 +500,7 @@ namespace HiyoshiCfhClient.ViewModels
             Environment.CurrentDirectory,
             "HiyoshiCfhClient.log");
 
-        private void OutDebugConsole(string msg)
+        public void OutDebugConsole(string msg)
         {
             var log = DateTime.Now.ToString("O") + " : " + msg + System.Environment.NewLine;
             DebugConsole += log;

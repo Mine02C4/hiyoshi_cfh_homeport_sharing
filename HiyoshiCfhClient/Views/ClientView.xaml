@@ -14,7 +14,7 @@
              d:DataContext="{d:DesignInstance viewModels:ClientViewModel}">
     <i:Interaction.Triggers>
         <livet:InteractionMessageTrigger Messenger="{Binding Messenger}" MessageKey="Show/LoginWindow">
-            <livet:TransitionInteractionMessageAction Mode="NewOrActive" WindowType="views:LoginView" IsOwned="True" />
+            <livet:TransitionInteractionMessageAction Mode="NewOrActive" WindowType="views:LoginView" IsOwned="False" InvokeActionOnlyWhenWindowIsActive="False" />
         </livet:InteractionMessageTrigger>
         <i:EventTrigger EventName="Closed">
             <livet:DataContextDisposeAction/>
