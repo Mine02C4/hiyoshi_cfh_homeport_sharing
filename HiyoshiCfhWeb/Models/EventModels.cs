@@ -156,6 +156,20 @@ namespace HiyoshiCfhWeb.Models
                 new DateTimeOffset(2019,  8, 30, 20,  0, 0, new TimeSpan(9, 0, 0)),
                 new DateTimeOffset(2019,  9, 30, 12,  0, 0, new TimeSpan(9, 0, 0))
             ),
+            new Event(201911,
+                "進撃！第二次作戦「南方作戦」",
+                new List<SortieTag>
+                {
+                    new SortieTag("攻略護衛隊", Color.Pink, 1),
+                    new SortieTag("空襲部隊", Color.Cyan, 2),
+                    new SortieTag("蘭印部隊", Color.Blue, 3),
+                    new SortieTag("馬来部隊", Color.FromArgb(0x3B662A), 4),
+                    new SortieTag("哨戒部隊", Color.Gray, 5),
+                    new SortieTag("決戦部隊", Color.DarkOrange, 6),
+                },
+                new DateTimeOffset(2019, 11, 30, 10, 30, 0, new TimeSpan(9, 0, 0)),
+                new DateTimeOffset(2019, 12, 30, 12,  0, 0, new TimeSpan(9, 0, 0))
+            ),
         };
 
         /// <summary>
