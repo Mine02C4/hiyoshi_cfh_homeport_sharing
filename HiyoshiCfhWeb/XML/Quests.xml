@@ -9502,6 +9502,94 @@
       <Achieve Id="F89"/>
     </Dependency>
   </Quest>
+  <Quest Id="B140" Category="sortie" Type="onetime">
+    <Name>
+      「夕張改二」試してみてもいいかしら？
+    </Name>
+    <Content>
+      改装兵装実験軽巡「夕張改二」型を旗艦にした艦隊で、南西諸島沖ノ島沖、北方アルフォンシーノ方面、&lt;br&gt;南方サブ島沖海域、中部グアノ環礁沖海域に展開！同戦域の敵艦隊主力を捜索、これを捕捉撃滅せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        3000
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        ・二式爆雷x2
+        ・大発動艇x2
+        ・特注家具職人x1
+        よりいずれか一つ
+        ・14cm連装砲改x1
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="F5"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="B141" Category="sortie" Type="onetime">
+    <Name>
+      新編「六水戦」出撃！後で感想、聞かせてね！
+    </Name>
+    <Content>
+      改装軽巡「夕張改二」型旗艦を含む第六水雷戦隊4隻以上を擁する艦隊で、鎮守府近海、鎮守府近海航路、さらに南西諸島バシー海峡、北方キス島沖、南西ブルネイ泊地沖の各作戦を、それぞれ完全成功させよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        3000
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        ・開発資材x12
+        ・甲標的 丁型改(蛟龍改)x1
+        ・改修資材x6
+        よりいずれか一つ
+        ・補強増設x1
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="B140"/>
+    </Dependency>
+  </Quest>
   <Quest Id="Bd1" Category="sortie" Type="daily">
     <Name>
       敵艦隊を撃破せよ！
@@ -11054,6 +11142,50 @@
     </Bonus>
     <Dependency>
       <!-- TODO -->
+    </Dependency>
+  </Quest>
+  <Quest Id="Bq13" Category="sortie" Type="quarterly">
+    <Name>
+      拡張「六水戦」、最前線へ！
+    </Name>
+    <Content>
+      軽巡「夕張改二」型の旗艦に随伴第六水雷戦隊駆逐艦2隻以上または「由良改二」を含む艦隊で、南方海域前面、南方サーモン海域、中部北海域ピーコック島沖、中部KW環礁沖海域に展開、敵戦力を撃滅せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        1000
+      </Bull>
+      <Steel>
+        1000
+      </Steel>
+      <Bauxite>
+        1000
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        ・高速修復材x10
+        ・勲章x1
+        ・新型砲熕兵装資材x1
+        よりいずれか一つ
+        ・戦果+390
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="B141"/>
     </Dependency>
   </Quest>
   <Quest Id="C1" Category="practice" Type="onetime">
@@ -12663,6 +12795,46 @@
     </Bonus>
     <Dependency>
       <!-- TODO -->
+    </Dependency>
+  </Quest>
+  <Quest Id="C41" Category="practice" Type="onetime">
+    <Name>
+      冬季大演習
+    </Name>
+    <Content>
+      冬季大演習：冬の一日中に「演習」で8回以上「勝利」をおさめ、艦隊のさらなる練度に努めよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        300
+      </Fuel>
+      <Bull>
+        1000
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        3
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        ・給糧艦「間宮」x1
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="C2"/>
     </Dependency>
   </Quest>
   <Quest Id="D1" Category="expeditions" Type="onetime">
@@ -20548,6 +20720,176 @@
     <Dependency>
       <Achieve Id="SB53"/>
       <Achieve Id="SB54"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="SB56" Category="sortie" Type="weekly">
+    <Name>
+      【節分任務】令和二年節分作戦
+    </Name>
+    <Content>
+      節分任務：軽空母または軽巡級を旗艦とする駆逐艦または海防艦3隻以上を含む艦隊で、節分の鎮守府海域&lt;br&gt;南西諸島防衛線及び南西諸島海域南西諸島近海及びバシー海峡に展開、敵主力を捕捉、これを撃破せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        203
+      </Bull>
+      <Steel>
+        203
+      </Steel>
+      <Bauxite>
+        203
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        ・高速修復材x3
+        ・洋上補給x1
+        ・緊急修理資材x1
+        よりいずれか一つ
+        ・節分の豆x1
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="SC2"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="SB57" Category="sortie" Type="weekly">
+    <Name>
+      【節分任務】令和二年西方海域節分作戦
+    </Name>
+    <Content>
+      節分任務：水上機母艦または重巡級を旗艦とする駆逐艦2隻以上を含む艦隊で、節分期間の西方海域ジャム島沖、カレー洋海域、リランカ島の敵艦隊主力を捕捉、これを撃滅せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        2020
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        ・開発資材x5
+        ・改修資材x1
+        よりいずれか一つ
+        ・節分の豆x2
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="SB56"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="SB58" Category="sortie" Type="weekly">
+    <Name>
+      【節分拡張任務】令和二年節分作戦、全力出撃！
+    </Name>
+    <Content>
+      節分拡張任務：戦艦または航空母艦を旗艦とする駆逐艦2隻以上を含む艦隊で、節分期間の南方海域サーモン海域及び同北方、さらに中部北海域ピーコック島沖の敵戦力を捕捉撃滅せよ(戦果拡張可能)！
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        2020
+      </Bull>
+      <Steel>
+        2020
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        選択報酬
+        ・x1
+        確定報酬
+        ・x1
+        TODO
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="SB57"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="SC2" Category="practice" Type="daily">
+    <Name>
+      【節分任務】節分演習！
+    </Name>
+    <Content>
+      節分任務：駆逐艦または海防艦2隻を含む節分艦隊を編成、同艦隊を以て、節分演習を実施する！&lt;br&gt;令和二年節分演習艦隊で、本日中に演習において【完全勝利】を3回以上達成せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        23
+      </Fuel>
+      <Bull>
+        23
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        ・節分の豆x1
+      </Other>
+    </Bonus>
+    <Dependency>
     </Dependency>
   </Quest>
 </Quests>
