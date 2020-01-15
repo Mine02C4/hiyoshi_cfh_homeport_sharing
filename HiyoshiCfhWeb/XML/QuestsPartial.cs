@@ -26,7 +26,7 @@ namespace HiyoshiCfhWeb.XML
                             return false;
                         break;
                     case Category.sortie:
-                        if (quest.Category != Models.QuestCategory.Sortie && quest.Category != Models.QuestCategory.Sortie2)
+                        if (quest.Category != Models.QuestCategory.Sortie && quest.Category != Models.QuestCategory.Sortie2 && quest.Category != Models.QuestCategory.Sortie3)
                             return false;
                         break;
                     case Category.practice:

@@ -84,6 +84,11 @@ namespace HiyoshiCfhWeb.Models
         /// 出撃(おそらく期間限定)
         /// </summary>
         Sortie2 = 8,
+
+        /// <summary>
+        /// 出撃(?)
+        /// </summary>
+        Sortie3 = 9,
     }
 
     public enum QuestType

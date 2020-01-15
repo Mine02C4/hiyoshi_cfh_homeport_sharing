@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generation date: 2018/03/02 0:18:18
+// Generation date: 2020/01/15 11:55:23
 namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
 {
     /// <summary>
@@ -2769,7 +2769,8 @@ namespace HiyoshiCfhClient.HiyoshiCfhWeb.Models
         Supply = 5,
         Building = 6,
         Remodelling = 7,
-        Sortie2 = 8
+        Sortie2 = 8,
+        Sortie3 = 9
     }
     /// <summary>
     /// There are no comments for QuestType in the schema.
@@ -3417,6 +3418,7 @@ namespace HiyoshiCfhClient.Default
         <Member Name=""Building"" Value=""6"" />
         <Member Name=""Remodelling"" Value=""7"" />
         <Member Name=""Sortie2"" Value=""8"" />
+        <Member Name=""Sortie3"" Value=""9"" />
       </EnumType>
       <EnumType Name=""QuestType"">
         <Member Name=""OneTime"" Value=""1"" />
