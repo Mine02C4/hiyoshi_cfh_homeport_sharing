@@ -322,11 +322,16 @@ namespace HiyoshiCfhClient
                 OutDebugConsole("UpdateQuests");
                 try
                 {
-                    SyncWithOData(quests,
+                    SyncWithOData(quests.ToList(),
                         Context.Quests.Where(x => x.AdmiralId == Admiral.AdmiralId).ToList(),
                         "Quests", (x, y) => x.api_no == y.QuestNo,
                         x => new WebQuest(x, Admiral.AdmiralId),
-                        x => Context.AddToQuests(x), (x, y) =>
+                        x =>
+                        {
+                            Context.Detach(x);
+                            Context.AddToQuests(x);
+                        },
+                        (x, y) =>
                         {
                             x.QuestId = y.QuestId;
                             return x;
