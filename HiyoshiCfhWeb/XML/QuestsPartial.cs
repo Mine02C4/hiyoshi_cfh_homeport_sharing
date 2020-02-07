@@ -71,6 +71,7 @@ namespace HiyoshiCfhWeb.XML
                             return false;
                         break;
                     case Type.quarterly:
+                    case Type.yearly:
                     case Type.other:
                         if (quest.Type != Models.QuestType.Other)
                             return false;

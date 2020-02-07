@@ -24,6 +24,7 @@
       <xs:enumeration value="weekly"/>
       <xs:enumeration value="monthly"/>
       <xs:enumeration value="quarterly"/>
+      <xs:enumeration value="yearly"/>
       <xs:enumeration value="other"/>
     </xs:restriction>
   </xs:simpleType>

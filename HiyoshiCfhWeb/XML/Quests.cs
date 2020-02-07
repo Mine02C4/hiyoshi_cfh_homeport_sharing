@@ -350,6 +350,9 @@ namespace HiyoshiCfhWeb.XML {
         quarterly,
         
         /// <remarks/>
+        yearly,
+        
+        /// <remarks/>
         other,
     }
 }
