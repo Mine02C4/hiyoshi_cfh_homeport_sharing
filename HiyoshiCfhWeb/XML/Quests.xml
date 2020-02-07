@@ -11188,6 +11188,99 @@
       <Achieve Id="B141"/>
     </Dependency>
   </Quest>
+  <Quest Id="By1" Category="sortie" Type="yearly">
+    <Name>
+      精鋭「十九駆」、躍り出る！
+    </Name>
+    <Content>
+      改装特II型駆逐艦「綾波改二」及び同「敷波改二」を含む精鋭艦隊を前線に投入、南西諸島海域沖ノ島沖、&lt;br&gt;北方海域全域、西方海域カレー洋リランカ島沖、南方サブ島沖海域に展開、各敵主力を捕捉撃滅せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        1900
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        1900
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        ・特注家具職人
+        ・給糧艦「間宮」
+        ・家具箱(中)x10
+        よりいずれか一つ
+        ・高速修復材x8
+        ・開発資材x10
+        ・改修資材x4
+        よりいずれか一つ
+      </Other>
+    </Bonus>
+    <Dependency>
+      <!-- TODO -->
+    </Dependency>
+  </Quest>
+  <Quest Id="By2" Category="sortie" Type="yearly">
+    <Name>
+      「海防艦」、海を護る！
+    </Name>
+    <Content>
+      海防艦3隻を含む5隻以下の海上護衛隊を、鎮守府海域に展開。鎮守府正面海域、南西諸島沖海域、製油所&lt;br&gt;地帯沿岸、鎮守府近海、鎮守府近海航路の各海域の安全確保と対潜掃蕩を図れ！海防艦戦隊、抜錨せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        1200
+      </Fuel>
+      <Bull>
+        600
+      </Bull>
+      <Steel>
+        600
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        ・高速修復材x6
+        ・開発資材x8
+        よりいずれか一つ
+        ・特注家具職人
+        ・二式爆雷x1
+        ・勲章x1
+        よりいずれか一つ
+      </Other>
+    </Bonus>
+    <Dependency>
+      <!-- TODO -->
+    </Dependency>
+  </Quest>
   <Quest Id="C1" Category="practice" Type="onetime">
     <Name>
       はじめての「演習」！
@@ -12837,6 +12930,52 @@
       <Achieve Id="C2"/>
     </Dependency>
   </Quest>
+  <Quest Id="C42" Category="practice" Type="quarterly">
+    <Name>
+      「十九駆」演習！
+    </Name>
+    <Content>
+      駆逐艦演習任務：第十九駆逐隊「磯波」「浦波」「綾波」「敷波」の4隻を含む演習艦隊を編成。&lt;br&gt;同艦隊で本日中に演習で【S判定】勝利3回以上を達成せよ！精鋭十九駆、じゃ、見ててよね！
+    </Content>
+    <Bonus>
+      <Fuel>
+        190
+      </Fuel>
+      <Bull>
+        190
+      </Bull>
+      <Steel>
+        190
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        ・給糧艦「間宮」x1
+        ・改修資材x3
+        よりいずれか一つ
+        ・三式爆雷投射機
+        ・12.7cm連装砲B型改二
+        ・開発資材x8
+        よりいずれか一つ
+      </Other>
+    </Bonus>
+    <Dependency>
+      <!-- TODO -->
+    </Dependency>
+  </Quest>
   <Quest Id="D1" Category="expeditions" Type="onetime">
     <Name>
       はじめての「遠征」！
@@ -14099,6 +14238,53 @@
     <Dependency>
       <Achieve Id="D23"/>
       <Achieve Id="D30"/>
+    </Dependency>
+  </Quest>
+
+  <Quest Id="D32y" Category="expeditions" Type="yearly">
+    <Name>
+      特設護衛船団司令部、活動開始！
+    </Name>
+    <Content>
+      海上護衛任務：遠征任務「警備任務」「海上護衛任務」「兵站強化任務」「海峡警備行動」&lt;br&gt;「タンカー護衛任務」の各任務を、海防艦・駆逐艦などを主軸とした護衛艦艇で実施せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        1000
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        500
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        ・給糧艦「伊良湖」x2
+        ・高速修復材x5
+        よりいずれか一つ
+        ・洋上補給x2
+        ・改修資材x3
+        ・緊急修理資材x2
+        よりいずれか一つ
+      </Other>
+    </Bonus>
+    <Dependency>
+      <!-- TODO -->
     </Dependency>
   </Quest>
   <Quest Id="E1" Category="supply" Type="onetime">
@@ -20771,7 +20957,7 @@
       【節分任務】令和二年西方海域節分作戦
     </Name>
     <Content>
-      節分任務：水上機母艦または重巡級を旗艦とする駆逐艦2隻以上を含む艦隊で、節分期間の西方海域ジャム島沖、カレー洋海域、リランカ島の敵艦隊主力を捕捉、これを撃滅せよ！
+      節分任務：水上機母艦または重巡級を旗艦とする駆逐艦2隻以上を含む艦隊で、節分期間の西方海域&lt;br&gt;ジャム島沖、カレー洋海域、リランカ島の敵艦隊主力を捕捉、これを撃滅せよ！
     </Content>
     <Bonus>
       <Fuel>
