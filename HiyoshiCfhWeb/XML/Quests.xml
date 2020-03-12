@@ -21243,6 +21243,50 @@
       <Achieve Id="20WiB2"/>
     </Dependency>
   </Quest>
+  <Quest Id="20WiG3" Category="remodelling" Type="onetime">
+    <Name>
+      【桃の節句任務】軽巡洋艦桃の節句改修
+    </Name>
+    <Content>
+      桃の節句任務：鉄鋼4,230及びボーキサイト4,230を準備して、任意の軽巡洋艦の近代化改修を[海防艦]x2隻同時使用により2回成功させよ！※準備した資源は消費します。
+    </Content>
+    <Bonus>
+      <Fuel>
+        300
+      </Fuel>
+      <Bull>
+        300
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        高速修復材x5
+        開発資材x6
+        戦闘糧食x2
+        よりいずれか一つ
+        菱餅x4
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="20WiB3"/>
+    </Dependency>
+  </Quest>
   <Quest Id="20WiB1" Category="sortie" Type="weekly">
     <Name>
       【桃の節句作戦】鎮守府近海の安全を図れ！
@@ -21419,6 +21463,185 @@
     </Bonus>
     <Dependency>
       <Achieve Id="20WiB3"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="20WiG4" Category="remodelling" Type="onetime">
+    <Name>
+      【桃の節句任務】菱餅改修：序
+    </Name>
+    <Content>
+      桃の節句任務：菱餅10個を準備して、任意の夕雲型駆逐艦の&lt;br&gt;近代化改修を[重巡洋艦]x4隻同時使用により2回成功させよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        戦闘詳報x1
+        新型砲熕兵装資材x2
+        ネ式エンジンx1
+        よりいずれか一つ
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="20WiB1"/>
+      <Achieve Id="20WiB2"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="20WiG5" Category="remodelling" Type="onetime">
+    <Name>
+      【桃の節句任務】菱餅改修：破
+    </Name>
+    <Content>
+      桃の節句任務：菱餅15個、鉄鋼8,800及びボーキサイト8,800を準備して、夕雲型駆逐艦「沖波」の近代化改修を[戦艦]x4隻同時使用により2回成功させよ！※準備した資源は消費します。
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        改装設計図x1
+        新型航空機設計図x2
+        試製甲板カタパルトx1
+        よりいずれか一つ
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="20WiG4"/>
+      <Achieve Id="20WiB3"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="20WiG6" Category="remodelling" Type="weekly">
+    <Name>
+      【桃の節句任務】菱餅改修：週
+    </Name>
+    <Content>
+      桃の節句任務：菱餅6個、開発資材100及び鋼鉄3,000、ボーキサイト3,000を準備、任意の軽空母の近代化改修を[軽空母]x3隻同時使用により2回成功させよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        新型航空機設計図x1
+        新型砲熕兵装資材x1
+        新型噴進装備開発資材x1
+        よりいずれか一つ
+        高速修復材x6
+        改修資材x3
+        給糧艦「伊良湖」x3
+        よりいずれか一つ
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="20WiB4"/>
+      <Achieve Id="20WiG5"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="20WiG7" Category="remodelling" Type="onetime">
+    <Name>
+      【桃の節句任務】菱餅改修：果
+    </Name>
+    <Content>
+      桃の節句任務：菱餅17個、開発資材300及び鋼鉄15,000、ボーキサイト15,000を準備、任意の正規空母の近代化改修を[正規空母]x5隻同時使用により2回成功させよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        試製甲板カタパルトx1
+        ネ式エンジンx1
+        夜間作戦航空要員＋熟練甲板員x1
+        よりいずれか一つ
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="20WiG6"/>
     </Dependency>
   </Quest>
 </Quests>
