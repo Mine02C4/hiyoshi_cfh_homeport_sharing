@@ -9590,6 +9590,53 @@
       <Achieve Id="B140"/>
     </Dependency>
   </Quest>
+  <Quest Id="B142" Category="sortie" Type="onetime">
+    <Name>
+      再編「第三一駆逐隊」、抜錨せよ！
+    </Name>
+    <Content>
+      夕雲型駆逐艦「長波」「岸波」「朝霜」、そして「沖波改二」からなる再編第三一駆逐隊を含む艦隊を、&lt;br&gt;製油所地帯沿岸、南西諸島防衛線、鎮守府近海、バシー海峡、東部オリョール海に展開、敵を撃破せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        880
+      </Fuel>
+      <Bull>
+        880
+      </Bull>
+      <Steel>
+        880
+      </Steel>
+      <Bauxite>
+        500
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        洋上補給x3
+        高速修復材x6
+        戦闘糧食(特別なおにぎり)x2
+        よりいずれか一つ
+        新型砲熕兵装資材x1
+        新型噴進装備開発資材x1
+        家具『「沖に立つ波」私物棚』x1
+        よりいずれか一つ
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="C2"/>
+    </Dependency>
+  </Quest>
   <Quest Id="Bd1" Category="sortie" Type="daily">
     <Name>
       敵艦隊を撃破せよ！
@@ -21642,6 +21689,50 @@
     </Bonus>
     <Dependency>
       <Achieve Id="20WiG6"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="20WiB5" Category="sortie" Type="onetime">
+    <Name>
+      【桃の節句作戦】「沖に立つ波」出撃！
+    </Name>
+    <Content>
+      【桃の節句作戦】「沖波」を含む夕雲型駆逐艦3隻以上の駆逐隊を含む艦隊で、期間限定海域の&lt;br&gt;マニラ湾に侵入した敵艦隊、ミンドロ島侵攻部隊物資集積地、敵機動部隊を痛撃！ 「沖波」、出撃せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        1113
+      </Fuel>
+      <Bull>
+        1113
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        給糧艦「間宮」x2
+        13号対空電探改★4x1
+        勲章x1
+        よりいずれか一つ
+        菱餅x4
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="20WiG4"/>
     </Dependency>
   </Quest>
 </Quests>
