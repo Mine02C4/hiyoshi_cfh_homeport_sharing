@@ -9635,6 +9635,7 @@
     </Bonus>
     <Dependency>
       <Achieve Id="C2"/>
+      <Achieve Id="B65"/>
     </Dependency>
   </Quest>
   <Quest Id="Bd1" Category="sortie" Type="daily">
@@ -20452,7 +20453,6 @@
     </Bonus>
     <Dependency>
       <Achieve Id="C2"/>
-      <Achieve Id="B104"/>
     </Dependency>
   </Quest>
   <Quest Id="SB45" Category="sortie" Type="onetime">
@@ -21162,7 +21162,6 @@
       </Other>
     </Bonus>
     <Dependency>
-      <!-- TODO -->
     </Dependency>
   </Quest>
   <Quest Id="20WiD1" Category="expeditions" Type="weekly">
@@ -21286,7 +21285,7 @@
       </Other>
     </Bonus>
     <Dependency>
-      <Achieve Id="20WiG1"/>
+      <Achieve Id="20WiD1"/>
       <Achieve Id="20WiB2"/>
     </Dependency>
   </Quest>
@@ -21375,7 +21374,7 @@
       </Other>
     </Bonus>
     <Dependency>
-      <!-- TODO -->
+      <Achieve Id="B25"/>
     </Dependency>
   </Quest>
   <Quest Id="20WiB2" Category="sortie" Type="onetime">
@@ -21463,6 +21462,7 @@
       </Other>
     </Bonus>
     <Dependency>
+      <Achieve Id="20WiB1"/>
       <Achieve Id="20WiB2"/>
     </Dependency>
   </Quest>
@@ -21509,6 +21509,7 @@
       </Other>
     </Bonus>
     <Dependency>
+      <Achieve Id="20WiB1"/>
       <Achieve Id="20WiB3"/>
     </Dependency>
   </Quest>
@@ -21732,6 +21733,7 @@
       </Other>
     </Bonus>
     <Dependency>
+      <Achieve Id="20WiB3"/>
       <Achieve Id="20WiG4"/>
     </Dependency>
   </Quest>
