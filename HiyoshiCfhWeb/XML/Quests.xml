@@ -9638,6 +9638,52 @@
       <Achieve Id="B65"/>
     </Dependency>
   </Quest>
+  <Quest Id="B143" Category="sortie" Type="onetime">
+    <Name>
+      「第五航空戦隊」、縦横無尽！
+    </Name>
+    <Content>
+      航空母艦「翔鶴」「瑞鶴」、護衛随伴駆逐艦「朧」「秋雲」を中核とした機動部隊を編成。同機動部隊を&lt;br&gt;北方AL海域、珊瑚諸島沖、タウイタウイ泊地沖深部、KW環礁沖海域に展開、敵艦隊を捕捉撃滅せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        1000
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        洋上補給x2
+        高速修復材x6
+        25mm三連装機銃x2
+        よりいずれか一つ
+        試製東海x1
+        試製景雲(艦偵型)x1
+        よりいずれか一つ
+      </Other>
+    </Bonus>
+    <Dependency>
+      <!-- TODO -->
+    </Dependency>
+  </Quest>
   <Quest Id="Bd1" Category="sortie" Type="daily">
     <Name>
       敵艦隊を撃破せよ！
@@ -11329,6 +11375,96 @@
       <!-- TODO -->
     </Dependency>
   </Quest>
+  <Quest Id="By3" Category="sortie" Type="yearly">
+    <Name>
+      工作艦「明石」護衛任務
+    </Name>
+    <Content>
+      工作艦護衛任務：旗艦に工作艦「明石」、護衛の駆逐艦3隻以上で製油所地帯沿岸、鎮守府近海航路、&lt;br&gt;南西諸島近海、バシー海峡、東部オリョール海に展開。「明石」を護衛、同海域での作戦を成功させよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        600
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        600
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        緊急修理資材x2
+        高速修復材x5
+        開発資材x6
+        よりいずれか一つ
+        洋上補給x1
+      </Other>
+    </Bonus>
+    <Dependency>
+      <!-- TODO -->
+    </Dependency>
+  </Quest>
+  <Quest Id="By4" Category="sortie" Type="yearly">
+    <Name>
+      重巡戦隊、西へ！
+    </Name>
+    <Content>
+      重巡(航空巡洋艦含まず)3隻以上、駆逐艦1隻以上を中核とした艦隊を編成。同艦隊を西方に展開。西方海域ジャム島沖、カレー洋海域、リランカ島、カスガダマ島の敵戦力と交戦、これを撃破せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        800
+      </Bull>
+      <Steel>
+        800
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        高速修復材x5
+        新型砲熕兵装資材x1
+        増設バルジ(中型艦)x1
+        よりいずれか一つ
+        20.3cm(2号)連装砲x2
+        改修資材x4
+        よりいずれか一つ
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="By2"/>
+    </Dependency>
+  </Quest>
   <Quest Id="C1" Category="practice" Type="onetime">
     <Name>
       はじめての「演習」！
@@ -12498,47 +12634,6 @@
       <!-- TODO -->
     </Dependency>
   </Quest>
-  <Quest Id="C30" Category="practice" Type="onetime">
-    <Name>
-      春季大演習
-    </Name>
-    <Content>
-      春季大演習：春の一日中に「演習」で8回以上「勝利」をおさめ、艦隊の練度向上に努めよ！
-    </Content>
-    <Bonus>
-      <Fuel>
-        0
-      </Fuel>
-      <Bull>
-        0
-      </Bull>
-      <Steel>
-        1000
-      </Steel>
-      <Bauxite>
-        300
-      </Bauxite>
-      <InstantBuildMaterials>
-        0
-      </InstantBuildMaterials>
-      <InstantRepairMaterials>
-        0
-      </InstantRepairMaterials>
-      <DevelopmentMaterials>
-        0
-      </DevelopmentMaterials>
-      <RenovationMaterials>
-        0
-      </RenovationMaterials>
-      <Other>
-        給糧艦「間宮」x1
-        プレゼント箱x1
-      </Other>
-    </Bonus>
-    <Dependency>
-      <Achieve Id="C2"/>
-    </Dependency>
-  </Quest>
   <Quest Id="C31" Category="practice" Type="onetime">
     <Name>
       艦載機演習
@@ -13018,6 +13113,47 @@
         ・12.7cm連装砲B型改二
         ・開発資材x8
         よりいずれか一つ
+      </Other>
+    </Bonus>
+    <Dependency>
+      <!-- TODO -->
+    </Dependency>
+  </Quest>
+  <Quest Id="C43" Category="practice" Type="onetime">
+    <Name>
+      春季大演習
+    </Name>
+    <Content>
+      春季大演習：春の一日中に「演習」で8回以上「勝利」をおさめ、艦隊の練度向上に努めよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        1000
+      </Steel>
+      <Bauxite>
+        300
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        給糧艦「間宮」x1
+        プレゼント箱x1
       </Other>
     </Bonus>
     <Dependency>
@@ -14288,8 +14424,7 @@
       <Achieve Id="D30"/>
     </Dependency>
   </Quest>
-
-  <Quest Id="D32y" Category="expeditions" Type="yearly">
+  <Quest Id="D32" Category="expeditions" Type="yearly">
     <Name>
       特設護衛船団司令部、活動開始！
     </Name>
@@ -14328,6 +14463,52 @@
         ・洋上補給x2
         ・改修資材x3
         ・緊急修理資材x2
+        よりいずれか一つ
+      </Other>
+    </Bonus>
+    <Dependency>
+      <!-- TODO -->
+    </Dependency>
+  </Quest>
+  <Quest Id="D33" Category="expeditions" Type="yearly">
+    <Name>
+      練習航海及び警備任務を実施せよ！
+    </Name>
+    <Content>
+      練習航海及び警備任務：「練習航海」「長距離練習航海」「警備任務」「対潜警戒任務」&lt;br&gt;「強行偵察任務」の各遠征任務を、軽巡・駆逐艦・海防艦などの艦艇で実施せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        400
+      </Fuel>
+      <Bull>
+        400
+      </Bull>
+      <Steel>
+        400
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        ドラム缶(輸送用)x2
+        高速修復材x4
+        よりいずれか一つ
+        大発動艇x1
+        洋上補給x2
+        特注家具職人x1
         よりいずれか一つ
       </Other>
     </Bonus>
@@ -21735,6 +21916,92 @@
     <Dependency>
       <Achieve Id="20WiB3"/>
       <Achieve Id="20WiG4"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="2003LQ1" Category="sortie" Type="onetime">
+    <Name>
+      【春の期間限定任務】飛べ！下駄履きメカジキ
+    </Name>
+    <Content>
+      【春の期間限定任務】水上機母艦を旗艦とし、随伴護衛艦に駆逐艦または海防艦を含む水上機運用艦隊で、&lt;br&gt;南西諸島防衛線、東部オリョール海、沖ノ島海域へ展開！同海域の敵艦隊と交戦、これを撃破せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        300
+      </Bull>
+      <Steel>
+        300
+      </Steel>
+      <Bauxite>
+        600
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        Swordfish(水上機型)x1
+        戦闘詳報x1
+        よりいずれか一つ
+        熟練搭乗員x1
+        新型航空兵装資材x1
+        改修資材x4
+        よりいずれか一つ
+      </Other>
+    </Bonus>
+    <Dependency>
+      <!-- TODO -->
+    </Dependency>
+  </Quest>
+  <Quest Id="2003LQ2" Category="building" Type="onetime">
+    <Name>
+      【春の期間限定任務】下駄履きメカジキの改修
+    </Name>
+    <Content>
+      旗艦「Gotland」第一スロに「Swordfish(水上機型)」改修max、「瑞雲」x3、「零式水上偵察機」x3、「13号対空電探改」x1廃棄、弾薬x2,500、ボーキ4,000、新型航空兵装資材x1、熟練搭乗員x1を準備！
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        Swordfish Mk.III改(水上機型)x1
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="2003LQ1"/>
     </Dependency>
   </Quest>
 </Quests>
