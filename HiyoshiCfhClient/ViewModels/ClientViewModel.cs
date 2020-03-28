@@ -256,12 +256,8 @@ namespace HiyoshiCfhClient.ViewModels
                 OutDebugConsole("Handle questlist");
                 try
                 {
-                    QuestsTracker.AddPage(questlist);
-                    if (QuestsTracker.IsIntegral)
-                    {
-                        await PrepareClient();
-                        await Client.UpdateQuests(QuestsTracker.DisplayedQuests);
-                    }
+                    await PrepareClient();
+                    await Client.UpdateQuests(questlist.api_list);
                 }
                 catch (DeniedAccessToAdmiral)
                 {

@@ -12,100 +12,6 @@ namespace HiyoshiCfhClient.Utils
 {
     class QuestsTracker
     {
-        private int PageCount
-        {
-            get
-            {
-                if (QuestPages == null || QuestPages.Count == 0)
-                {
-                    return 0;
-                }
-                return QuestPages.Values[0].api_page_count;
-            }
-        }
-
-        private int QuestCount
-        {
-            get
-            {
-                if (QuestPages == null || QuestPages.Count == 0)
-                {
-                    return 0;
-                }
-                return QuestPages.Values[0].api_count;
-            }
-        }
-
-        public bool IsIntegral
-        {
-            get
-            {
-                if (QuestPages != null && Quests != null &&
-                    PageCount == QuestPages.Count && QuestCount == Quests.Count)
-                {
-                    return true;
-                }
-                return false;
-            }
-        }
-
-        public IEnumerable<kcsapi_quest> DisplayedQuests
-        {
-            get
-            {
-                return Quests.Values;
-            }
-        }
-
-        private SortedList<int, kcsapi_questlist> QuestPages;
-        private SortedList<int, kcsapi_quest> Quests;
-
-        public void AddPage(kcsapi_questlist page)
-        {
-            var position = page.api_disp_page;
-            if (PageCount == page.api_page_count && QuestCount == page.api_count)
-            {
-                try
-                {
-                    var old_page = QuestPages[position];
-                    foreach (var quest in old_page.api_list)
-                    {
-                        Quests.Remove(quest.api_no);
-                    }
-                }
-                catch (KeyNotFoundException) { }
-            }
-            else
-            {
-                Reset();
-            }
-            QuestPages[position] = page;
-            try
-            {
-                foreach (var quest in page.api_list)
-                {
-                    Quests.Add(quest.api_no, quest);
-                }
-            }
-            catch (ArgumentException)
-            {
-                Reset();
-                AddPage(page);
-            }
-        }
-
-        public QuestsTracker()
-        {
-            QuestPages = new SortedList<int, kcsapi_questlist>();
-            Quests = new SortedList<int, kcsapi_quest>();
-        }
-
-        void Reset()
-        {
-            QuestPages.Clear();
-            Quests.Clear();
-        }
-
         public static kcsapi_questlist QuestListSerialize(Session session)
         {
             try
@@ -116,9 +22,9 @@ namespace HiyoshiCfhClient.Utils
                 var questlist = new kcsapi_questlist
                 {
                     api_count = Convert.ToInt32(djson.api_data.api_count),
-                    api_disp_page = Convert.ToInt32(djson.api_data.api_disp_page),
-                    api_page_count = Convert.ToInt32(djson.api_data.api_page_count),
+                    api_completed_kind = Convert.ToInt32(djson.api_data.api_completed_kind),
                     api_exec_count = Convert.ToInt32(djson.api_data.api_exec_count),
+                    api_exec_type = Convert.ToInt32(djson.api_data.api_exec_type),
                 };
 
                 if (djson.api_data.api_list != null)
