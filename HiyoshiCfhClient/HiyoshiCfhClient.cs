@@ -17,7 +17,7 @@ namespace HiyoshiCfhClient
     [ExportMetadata("Title", "日吉連合艦隊司令部クライアント")]
     [ExportMetadata("Description", "日吉連合艦隊司令部のシステムを利用するためのクライアントです。")]
     [ExportMetadata("Version", "1.0")]
-    [ExportMetadata("Author", "@mine_studio")]
+    [ExportMetadata("Author", "@mine02c4")]
     [ExportMetadata("Guid", "673349DA-5502-4C0F-B2D5-B1284B347B6E")]
     public class HiyoshiCfhClient : IPlugin, ITool
     {
