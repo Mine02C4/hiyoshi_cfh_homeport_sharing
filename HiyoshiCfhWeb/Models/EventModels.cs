@@ -172,7 +172,7 @@ namespace HiyoshiCfhWeb.Models
             ),
             new Event(202003,
                 "桃の節句！沖に立つ波",
-                new List<SortieTag>{},
+                new List<SortieTag> {},
                 new DateTimeOffset(2020,  3,  3, 19,  0, 0, new TimeSpan(9, 0, 0)),
                 new DateTimeOffset(2019,  3, 27, 11,  0, 0, new TimeSpan(9, 0, 0))
             ),
