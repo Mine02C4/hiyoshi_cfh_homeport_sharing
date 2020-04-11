@@ -170,6 +170,12 @@ namespace HiyoshiCfhWeb.Models
                 new DateTimeOffset(2019, 11, 30, 10, 30, 0, new TimeSpan(9, 0, 0)),
                 new DateTimeOffset(2019, 12, 30, 12,  0, 0, new TimeSpan(9, 0, 0))
             ),
+            new Event(202003,
+                "桃の節句！沖に立つ波",
+                new List<SortieTag>{},
+                new DateTimeOffset(2020,  3,  3, 19,  0, 0, new TimeSpan(9, 0, 0)),
+                new DateTimeOffset(2019,  3, 27, 11,  0, 0, new TimeSpan(9, 0, 0))
+            ),
         };
 
         /// <summary>
