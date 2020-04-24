@@ -8500,8 +8500,9 @@
       </Other>
     </Bonus>
     <Dependency>
-      <Achieve Id="C21"/>
       <Achieve Id="B115"/>
+      <Achieve Id="C21"/>
+      <Achieve Id="F3"/>
     </Dependency>
   </Quest>
   <Quest Id="B118" Category="sortie" Type="onetime">
@@ -11235,7 +11236,8 @@
       </Other>
     </Bonus>
     <Dependency>
-      <!-- TODO -->
+      <Achieve Id="B23"/>
+      <Achieve Id="Bq11"/>
     </Dependency>
   </Quest>
   <Quest Id="Bq13" Category="sortie" Type="quarterly">
@@ -11243,7 +11245,7 @@
       拡張「六水戦」、最前線へ！
     </Name>
     <Content>
-      軽巡「夕張改二」型の旗艦に随伴第六水雷戦隊駆逐艦2隻以上または「由良改二」を含む艦隊で、南方海域前面、南方サーモン海域、中部北海域ピーコック島沖、中部KW環礁沖海域に展開、敵戦力を撃滅せよ！
+      軽巡「夕張改二」型の旗艦に随伴第六水雷戦隊駆逐艦2隻以上または「由良改二」を含む艦隊で、南方海域&lt;br&gt;前面、南方サーモン海域、中部北海域ピーコック島沖、中部KW環礁沖海域に展開、敵戦力を撃滅せよ！
     </Content>
     <Bonus>
       <Fuel>
@@ -11326,7 +11328,7 @@
       </Other>
     </Bonus>
     <Dependency>
-      <!-- TODO -->
+      <Achieve Id="B44"/>
     </Dependency>
   </Quest>
   <Quest Id="By2" Category="sortie" Type="yearly">
@@ -13116,7 +13118,8 @@
       </Other>
     </Bonus>
     <Dependency>
-      <!-- TODO -->
+      <Achieve Id="A72"/>
+      <Achieve Id="C38"/>
     </Dependency>
   </Quest>
   <Quest Id="C43" Category="practice" Type="onetime">
@@ -14467,7 +14470,7 @@
       </Other>
     </Bonus>
     <Dependency>
-      <!-- TODO -->
+      <Achieve Id="D23"/>
     </Dependency>
   </Quest>
   <Quest Id="D33" Category="expeditions" Type="yearly">
