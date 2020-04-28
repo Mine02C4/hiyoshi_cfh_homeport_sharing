@@ -9685,6 +9685,143 @@
       <Achieve Id="D21"/>
     </Dependency>
   </Quest>
+  <Quest Id="B144" Category="sortie" Type="onetime">
+    <Name>
+      「比叡改二丙」見参！第三戦隊、南方突入！
+    </Name>
+    <Content>
+      「比叡改二丙」含む金剛型高速戦艦2隻以上、軽巡級1隻、駆逐艦1隻以上を含む艦隊を南方海域に投入！&lt;br&gt;南方海域前面、珊瑚諸島沖、サブ島沖海域、サーモン海域、同北方の敵艦隊を捕捉、これを撃滅せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        1942
+      </Fuel>
+      <Bull>
+        2020
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        新型砲熕兵装資材x2
+        35.6cm連装砲改二
+        よりいずれか一つ
+        零式水上偵察機11型乙★+2
+        艦本新設計 増設バルジ(大型艦)★+2
+        戦闘詳報x1
+        よりいずれか一つ
+      </Other>
+    </Bonus>
+    <Dependency>
+      <!-- TODO -->
+    </Dependency>
+  </Quest>
+  <Quest Id="B145" Category="sortie" Type="onetime">
+    <Name>
+      改装航空軽巡「Gotland andra」、出撃！
+    </Name>
+    <Content>
+      「Gotland andra」旗艦、随伴駆逐艦1隻以上を含む艦隊で、南西諸島海域沖ノ島海域に出撃！&lt;br&gt;さらに西方カレー洋海域、カスガダマ島、カレー洋リランカ島沖に展開！同方面の敵を撃滅せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        700
+      </Fuel>
+      <Bull>
+        700
+      </Bull>
+      <Steel>
+        700
+      </Steel>
+      <Bauxite>
+        1000
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        Swordfish(水上機型)x2
+        S9 Ospreyx2
+        Swordfish Mk.III改(水上機型)x1
+        よりいずれか一つ
+        改修資材x4
+        新型航空兵装資材x1
+        補強増設x1
+        よりいずれか一つ
+      </Other>
+    </Bonus>
+    <Dependency>
+      <!-- TODO -->
+    </Dependency>
+  </Quest>
+  <Quest Id="B146" Category="sortie" Type="onetime">
+    <Name>
+      「Gotland」戦隊、進撃せよ！
+    </Name>
+    <Content>
+      「Gotland andra」旗艦、随伴駆逐艦1隻以上を含む艦隊で、南西諸島海域沖ノ島沖に進撃！
+      さらに中部海域に展開、グアノ環礁沖海域、中部北海域ピーコック島沖、KW環礁沖海域の敵を撃滅せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        1000
+      </Fuel>
+      <Bull>
+        1000
+      </Bull>
+      <Steel>
+        1000
+      </Steel>
+      <Bauxite>
+        2020
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        新型航空兵装資材x2
+        Fairey Seafox改x1
+        よりいずれか一つ
+        家具『北欧ソファー家具』
+      </Other>
+    </Bonus>
+    <Dependency>
+      <!-- TODO -->
+    </Dependency>
+  </Quest>
   <Quest Id="Bd1" Category="sortie" Type="daily">
     <Name>
       敵艦隊を撃破せよ！
@@ -22005,6 +22142,189 @@
     </Bonus>
     <Dependency>
       <Achieve Id="2003LQ1"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="7thAnvB1" Category="sortie" Type="onetime">
+    <Name>
+      七周年任務【前段作戦】
+    </Name>
+    <Content>
+      【丙作戦級】駆逐艦または海防艦計3隻以上を含む艦隊で、鎮守府海域南西諸島沖、製油所地帯沿岸、&lt;br&gt;南西諸島防衛線、鎮守府近海、南西諸島近海、バシー海峡に展開！警戒防衛任務にあたれ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        7000
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        特注家具職人x1
+        改修資材x3
+        よりいずれか一つ
+        大発動艇
+        補強増設x1
+        開発資材x7
+        よりいずれか一つ
+      </Other>
+    </Bonus>
+    <Dependency>
+      <!-- TODO -->
+    </Dependency>
+  </Quest>
+  <Quest Id="7thAnvB2" Category="sortie" Type="onetime">
+    <Name>
+      七周年任務【後段作戦】
+    </Name>
+    <Content>
+      【乙作戦級】軽巡級1隻駆逐艦2隻以上からなる精鋭水雷戦隊を含む艦隊で、南西諸島海域東部オリョール海、北方海域全海域、南西海域タウイタウイ泊地沖深部に展開、同方面の敵戦力を一掃せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        7000
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        高速修復材x7
+        61cm三連装(酸素)魚雷後期型★7x1
+        Swordfish(水上機型)x1
+        よりいずれか一つ
+        勲章x1
+        新型航空兵装資材x1
+        戦闘詳報x1
+        よりいずれか一つ
+      </Other>
+    </Bonus>
+    <Dependency>
+      <!-- TODO -->
+    </Dependency>
+  </Quest>
+  <Quest Id="7thAnvB3" Category="sortie" Type="onetime">
+    <Name>
+      七周年任務【拡張作戦】
+    </Name>
+    <Content>
+      【最終作戦:甲作戦級】編成自由の精鋭艦隊で、中部海域哨戒線、MS諸島沖、グアノ環礁沖海域、中部北海域ピーコック島沖、KW環礁沖海域に展開、同方面の敵戦力を撃滅！暁の水平線に勝利を刻め！
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        7000
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        「瑞穂」
+        「神威」
+        「速吸」
+        「Commandant Teste」
+        「Gotland」
+        よりいずれか一つ
+        洋上補給x7
+        改修資材x7
+        新型航空兵装資材x2
+        よりいずれか一つ
+      </Other>
+    </Bonus>
+    <Dependency>
+      <!-- TODO -->
+    </Dependency>
+  </Quest>
+  <Quest Id="7thAnvC1" Category="practice" Type="onetime">
+    <Name>
+      七周年任務【七駆演習】
+    </Name>
+    <Content>
+      七周年任務：第七駆逐隊「朧」「曙」「漣」「潮」のうち2隻以上を含む演習艦隊を編成、&lt;br&gt;本日中に【A判定】勝利3回以上達成せよ。七周年、第七駆逐隊、おめでとう＆ありがと！
+    </Content>
+    <Bonus>
+      <Fuel>
+        700
+      </Fuel>
+      <Bull>
+        700
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        給糧艦「間宮」x1
+        家具『「七周年記念」掛け軸』
+      </Other>
+    </Bonus>
+    <Dependency>
+      <!-- TODO -->
     </Dependency>
   </Quest>
 </Quests>
