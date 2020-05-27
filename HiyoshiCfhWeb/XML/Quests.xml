@@ -9822,6 +9822,231 @@
       <!-- TODO -->
     </Dependency>
   </Quest>
+  <Quest Id="B147" Category="sortie" Type="onetime">
+    <Name>
+      南西諸島海域合同哨戒
+    </Name>
+    <Content>
+      米出身(USS)艦娘を2隻以上含む艦隊で、南西諸島海域のバシー海峡、東部オリョール海、&lt;br&gt;沖ノ島海域の哨戒を実施。各作戦海域における敵艦隊を捜索、これを捕捉撃滅せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        400
+      </Fuel>
+      <Bull>
+        400
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        400
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        改修資材x2
+        緊急修理資材x2
+        高速修復材x4
+        よりいずれか一つ
+        天山x3
+        OS2Ux1
+        よりいずれか一つ
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="B135"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="B148" Category="sortie" Type="onetime">
+    <Name>
+      合同艦隊旗艦、改装「Fletcher」、抜錨！
+    </Name>
+    <Content>
+      「Fletcher改 Mod.2」を旗艦とする米・英・豪・蘭出身の艦娘計3隻以上を含む艦隊を編成、同艦隊を南西諸島防衛線、沖ノ島沖、北方AL海域に展開！各作戦海域の敵艦隊と交戦、これを撃滅せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        600
+      </Fuel>
+      <Bull>
+        600
+      </Bull>
+      <Steel>
+        600
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        F4F-3★3x2
+        TBD★3x2
+        開発資材x6
+        よりいずれか一つ
+        533mm五連装魚雷(後期型)x1
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="B30"/>
+      <Achieve Id="B147"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="B149" Category="sortie" Type="onetime">
+    <Name>
+      改装護衛駆逐艦「Fletcher Mk.II」作戦開始！
+    </Name>
+    <Content>
+      「Fletcher Mk.II」を旗艦とする米・英・豪・蘭出身の艦娘計3隻以上を含む精鋭艦隊を編成、同艦隊を鎮守府近海、ブルネイ泊地沖、MS諸島沖、KW環礁沖海域に反復出撃！敵艦隊を捕捉、撃滅せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        700
+      </Fuel>
+      <Bull>
+        700
+      </Bull>
+      <Steel>
+        700
+      </Steel>
+      <Bauxite>
+        700
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        改修資材x4
+        熟練搭乗員x1
+        洋上補給x3
+        よりいずれか一つ
+        RUR-4A Weapon Alpha改x1
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="B98"/>
+      <Achieve Id="B148"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="B150" Category="sortie" Type="onetime">
+    <Name>
+      合同艦隊作戦任務【拡張作戦】
+    </Name>
+    <Content>
+      【拡張作戦:甲作戦級】「Fletcher Mk.II」を含む米・英・豪・蘭出身の艦娘計4隻以上を含む精鋭艦隊を編成、カレー洋リランカ島沖、サーモン海域北方、中部北海域ピーコック島沖に反復出撃！敵戦力を撃滅せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        1000
+      </Fuel>
+      <Bull>
+        1000
+      </Bull>
+      <Steel>
+        1000
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        試製甲板カタパルトx1
+        対潜短魚雷(試作初期型)x1
+        改装設計図x1
+        よりいずれか一つ
+        勲章x1
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="B149"/>
+    </Dependency>
+  </Quest>
+  <Quest Id="B151" Category="sortie" Type="onetime">
+    <Name>
+      合同艦隊機動部隊、出撃せよ！
+    </Name>
+    <Content>
+      米・英出身航空母艦を1隻以上含む機動部隊で、西方海域リランカ島、北方海域全域、さらに南方海域珊瑚諸島沖、南西海域タウイタウイ泊地沖深部に展開、各方面の敵戦力を撃滅せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        0
+      </Bull>
+      <Steel>
+        500
+      </Steel>
+      <Bauxite>
+        1000
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        高速修復材x4
+        開発資材x5
+        よりいずれか一つ
+        SKレーダーx1
+        新型航空兵装資材x2
+        よりいずれか一つ
+      </Other>
+    </Bonus>
+    <Dependency>
+      <Achieve Id="B147"/>
+    </Dependency>
+  </Quest>
   <Quest Id="Bd1" Category="sortie" Type="daily">
     <Name>
       敵艦隊を撃破せよ！
@@ -13300,6 +13525,52 @@
       <Achieve Id="C2"/>
     </Dependency>
   </Quest>
+  <Quest Id="C44" Category="practice" Type="quarterly">
+    <Name>
+      小艦艇群演習強化任務
+    </Name>
+    <Content>
+      駆逐艦または海防艦計4隻(軽巡級1隻導入可能)を含む演習艦隊を編成、&lt;br&gt;同演習艦隊による演習で本日中に【A判定】以上の勝利を4回以上達成せよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        300
+      </Fuel>
+      <Bull>
+        300
+      </Bull>
+      <Steel>
+        300
+      </Steel>
+      <Bauxite>
+        0
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        開発資材x4
+        九五式爆雷x1
+        よりいずれか一つ
+        零式水上偵察機x2
+        25mm単装機銃x3
+        高速修復材x4
+        よりいずれか一つ
+      </Other>
+    </Bonus>
+    <Dependency>
+      <!-- TODO -->
+    </Dependency>
+  </Quest>
   <Quest Id="D1" Category="expeditions" Type="onetime">
     <Name>
       はじめての「遠征」！
@@ -14649,6 +14920,53 @@
         大発動艇x1
         洋上補給x2
         特注家具職人x1
+        よりいずれか一つ
+      </Other>
+    </Bonus>
+    <Dependency>
+      <!-- TODO -->
+    </Dependency>
+  </Quest>
+  <Quest Id="D34" Category="expeditions" Type="yearly">
+    <Name>
+      小笠原沖哨戒線の強化を実施せよ！
+    </Name>
+    <Content>
+      小笠原沖哨戒線任務：「対潜警戒任務」「小笠原沖哨戒線遠征」「小笠原沖戦闘哨戒」&lt;br&gt;「南西方面航空偵察作戦」の各遠征任務を軽巡・駆逐艦など実施、これを成功させよ！
+    </Content>
+    <Bonus>
+      <Fuel>
+        600
+      </Fuel>
+      <Bull>
+        600
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        400
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+
+        給糧艦「間宮」x1
+        特注家具職人x1
+        よりいずれか一つ
+        大発動艇x1
+        改修資材x3
+        開発資材x7
         よりいずれか一つ
       </Other>
     </Bonus>
