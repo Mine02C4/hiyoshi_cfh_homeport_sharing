@@ -22505,7 +22505,8 @@
       </Other>
     </Bonus>
     <Dependency>
-      <!-- TODO -->
+      <Achieve Id="B6"/>
+      <Achieve Id="F4"/>
     </Dependency>
   </Quest>
   <Quest Id="7thAnvB2" Category="sortie" Type="onetime">
@@ -22552,7 +22553,7 @@
       </Other>
     </Bonus>
     <Dependency>
-      <!-- TODO -->
+      <Achieve Id="7thAnvB1"/>
     </Dependency>
   </Quest>
   <Quest Id="7thAnvB3" Category="sortie" Type="onetime">
@@ -22601,7 +22602,7 @@
       </Other>
     </Bonus>
     <Dependency>
-      <!-- TODO -->
+      <Achieve Id="7thAnvB2"/>
     </Dependency>
   </Quest>
   <Quest Id="7thAnvC1" Category="practice" Type="onetime">
@@ -22642,7 +22643,7 @@
       </Other>
     </Bonus>
     <Dependency>
-      <!-- TODO -->
+      <Achieve Id="B6"/>
     </Dependency>
   </Quest>
 </Quests>
