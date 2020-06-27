@@ -13224,47 +13224,6 @@
       <!-- TODO -->
     </Dependency>
   </Quest>
-  <Quest Id="C36" Category="practice" Type="onetime">
-    <Name>
-      夏季大演習
-    </Name>
-    <Content>
-      夏季大演習：夏季期間の一日中に「演習」で8回以上「勝利」をおさめ、艦隊の練度向上に努めよ！&lt;br&gt;暑さに負けるな！　艦隊、抜錨！
-    </Content>
-    <Bonus>
-      <Fuel>
-        0
-      </Fuel>
-      <Bull>
-        300
-      </Bull>
-      <Steel>
-        0
-      </Steel>
-      <Bauxite>
-        1000
-      </Bauxite>
-      <InstantBuildMaterials>
-        0
-      </InstantBuildMaterials>
-      <InstantRepairMaterials>
-        0
-      </InstantRepairMaterials>
-      <DevelopmentMaterials>
-        0
-      </DevelopmentMaterials>
-      <RenovationMaterials>
-        0
-      </RenovationMaterials>
-      <Other>
-        給糧艦「間宮」x1
-        プレゼント箱x1
-      </Other>
-    </Bonus>
-    <Dependency>
-      <!-- TODO -->
-    </Dependency>
-  </Quest>
   <Quest Id="C37" Category="practice" Type="onetime">
     <Name>
       輸送船団演習
@@ -13565,6 +13524,47 @@
         25mm単装機銃x3
         高速修復材x4
         よりいずれか一つ
+      </Other>
+    </Bonus>
+    <Dependency>
+      <!-- TODO -->
+    </Dependency>
+  </Quest>
+  <Quest Id="C45" Category="practice" Type="onetime">
+    <Name>
+      夏季大演習
+    </Name>
+    <Content>
+      夏季大演習：夏季期間の一日中に「演習」で8回以上「勝利」をおさめ、艦隊の練度向上に努めよ！&lt;br&gt;暑さに負けるな！　艦隊、抜錨！
+    </Content>
+    <Bonus>
+      <Fuel>
+        0
+      </Fuel>
+      <Bull>
+        300
+      </Bull>
+      <Steel>
+        0
+      </Steel>
+      <Bauxite>
+        1000
+      </Bauxite>
+      <InstantBuildMaterials>
+        0
+      </InstantBuildMaterials>
+      <InstantRepairMaterials>
+        0
+      </InstantRepairMaterials>
+      <DevelopmentMaterials>
+        0
+      </DevelopmentMaterials>
+      <RenovationMaterials>
+        0
+      </RenovationMaterials>
+      <Other>
+        給糧艦「間宮」x1
+        プレゼント箱x1
       </Other>
     </Bonus>
     <Dependency>
