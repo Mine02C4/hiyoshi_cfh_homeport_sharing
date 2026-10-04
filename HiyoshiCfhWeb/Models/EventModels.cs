@@ -174,7 +174,24 @@ namespace HiyoshiCfhWeb.Models
                 "桃の節句！沖に立つ波",
                 new List<SortieTag> {},
                 new DateTimeOffset(2020,  3,  3, 19,  0, 0, new TimeSpan(9, 0, 0)),
-                new DateTimeOffset(2019,  3, 27, 11,  0, 0, new TimeSpan(9, 0, 0))
+                new DateTimeOffset(2020,  3, 27, 11,  0, 0, new TimeSpan(9, 0, 0))
+            ),
+            new Event(202006,
+                "侵攻阻止！島嶼防衛強化作戦",
+                new List<SortieTag>
+                {
+                    new SortieTag("千島方面部隊", Color.Pink, 1),
+                    new SortieTag("沖縄方面部隊", Color.Cyan, 2),
+                    new SortieTag("第二遊撃部隊", Color.Blue, 3),
+                    new SortieTag("小笠原方面部隊", Color.FromArgb(0x3B662A), 4),
+                    new SortieTag("南東方面部隊", Color.Gray, 5),
+                    new SortieTag("第二艦隊", Color.DarkOrange, 6),
+                    new SortieTag("前進部隊", Color.DarkOrange, 7),
+                    new SortieTag("機動部隊前衛", Color.DarkOrange, 8),
+                    new SortieTag("機動部隊", Color.DarkOrange, 9),
+                },
+                new DateTimeOffset(2020,  6, 27,  2,  0, 0, new TimeSpan(9, 0, 0)),
+                new DateTimeOffset(2020,  8, 27, 11,  0, 0, new TimeSpan(9, 0, 0))
             ),
         };
 
